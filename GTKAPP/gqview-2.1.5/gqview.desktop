@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=GQview
+GenericName=Image Viewer
+GenericName[et]=Piltide vaatur
+GenericName[tr]=Resim göstericisi
+GenericName[fr]=Explorateur d'images
+GenericName[hu]=Képnéző
+GenericName[es]=Visor de imágenes
+Comment=View and manage images
+Comment[hu]=Képek megjelenítése és rendszerezése
+Comment[es]=Visualiza y administra imágenes
+Exec=gqview -r %F
+Icon=gqview.png
+Type=Application
+Terminal=false
+# Startup notification disabled, since the remote -r switch may not open a new window...
+#StartupNotify=false
+#StartupWMClass=gqview
+Encoding=UTF-8
+Categories=Application;Graphics;Viewer;
+MimeType=application/x-navi-animation;image/bmp;image/x-bmp;image/x-MS-bmp;image/gif;image/x-icon;image/jpeg;image/png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-cmu-raster;image/x-sun-raster;image/x-tga;image/tiff;image/vnd.wap.wbmp;image/x-xbitmap;image/x-xpixmap;image/svg;image/svg+xml;image/x-png;image/xpm;image/x-ico;image/x-pcx;

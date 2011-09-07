@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>A</title>
+<indexentry><primaryie linkends="gdk-app-launch-context-new"><link linkend="gdk-app-launch-context-new">gdk_app_launch_context_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-app-launch-context-set-desktop"><link linkend="gdk-app-launch-context-set-desktop">gdk_app_launch_context_set_desktop</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-app-launch-context-set-display"><link linkend="gdk-app-launch-context-set-display">gdk_app_launch_context_set_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-app-launch-context-set-icon"><link linkend="gdk-app-launch-context-set-icon">gdk_app_launch_context_set_icon</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-app-launch-context-set-icon-name"><link linkend="gdk-app-launch-context-set-icon-name">gdk_app_launch_context_set_icon_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-app-launch-context-set-screen"><link linkend="gdk-app-launch-context-set-screen">gdk_app_launch_context_set_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-app-launch-context-set-timestamp"><link linkend="gdk-app-launch-context-set-timestamp">gdk_app_launch_context_set_timestamp</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="GdkScreen-monitors-changed"><link linkend="GdkScreen-monitors-changed">GdkScreen::monitors-changed</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-monitor-height-mm"><link linkend="gdk-screen-get-monitor-height-mm">gdk_screen_get_monitor_height_mm</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-monitor-plug-name"><link linkend="gdk-screen-get-monitor-plug-name">gdk_screen_get_monitor_plug_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-monitor-width-mm"><link linkend="gdk-screen-get-monitor-width-mm">gdk_screen_get_monitor_width_mm</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="gdk-test-render-sync"><link linkend="gdk-test-render-sync">gdk_test_render_sync</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-test-simulate-button"><link linkend="gdk-test-simulate-button">gdk_test_simulate_button</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-test-simulate-key"><link linkend="gdk-test-simulate-key">gdk_test_simulate_key</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-threads-add-timeout-seconds"><link linkend="gdk-threads-add-timeout-seconds">gdk_threads_add_timeout_seconds</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-threads-add-timeout-seconds-full"><link linkend="gdk-threads-add-timeout-seconds-full">gdk_threads_add_timeout_seconds_full</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="gdk-window-redirect-to-drawable"><link linkend="gdk-window-redirect-to-drawable">gdk_window_redirect_to_drawable</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-remove-redirection"><link linkend="gdk-window-remove-redirection">gdk_window_remove_redirection</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>X</title>
+<indexentry><primaryie linkends="gdk-x11-screen-get-monitor-output"><link linkend="gdk-x11-screen-get-monitor-output">gdk_x11_screen_get_monitor_output</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

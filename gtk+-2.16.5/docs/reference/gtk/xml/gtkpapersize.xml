@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="gtk-GtkPaperSize">
+<refmeta>
+<refentrytitle role="top_of_page" id="gtk-GtkPaperSize.top_of_page">GtkPaperSize</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkPaperSize</refname>
+<refpurpose>Support for named paper sizes</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gtk-GtkPaperSize.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkPaperSize">GtkPaperSize</link>;
+enum                <link linkend="GtkUnit">GtkUnit</link>;
+#define             <link linkend="GTK-PAPER-NAME-A3--CAPS">GTK_PAPER_NAME_A3</link>
+#define             <link linkend="GTK-PAPER-NAME-A4--CAPS">GTK_PAPER_NAME_A4</link>
+#define             <link linkend="GTK-PAPER-NAME-A5--CAPS">GTK_PAPER_NAME_A5</link>
+#define             <link linkend="GTK-PAPER-NAME-B5--CAPS">GTK_PAPER_NAME_B5</link>
+#define             <link linkend="GTK-PAPER-NAME-LETTER--CAPS">GTK_PAPER_NAME_LETTER</link>
+#define             <link linkend="GTK-PAPER-NAME-EXECUTIVE--CAPS">GTK_PAPER_NAME_EXECUTIVE</link>
+#define             <link linkend="GTK-PAPER-NAME-LEGAL--CAPS">GTK_PAPER_NAME_LEGAL</link>
+<link linkend="GtkPaperSize">GtkPaperSize</link> *      <link linkend="gtk-paper-size-new">gtk_paper_size_new</link>                  (const <link linkend="gchar">gchar</link> *name);
+<link linkend="GtkPaperSize">GtkPaperSize</link> *      <link linkend="gtk-paper-size-new-from-ppd">gtk_paper_size_new_from_ppd</link>         (const <link linkend="gchar">gchar</link> *ppd_name,
+                                                         const <link linkend="gchar">gchar</link> *ppd_display_name,
+                                                         <link linkend="gdouble">gdouble</link> width,
+                                                         <link linkend="gdouble">gdouble</link> height);
+<link linkend="GtkPaperSize">GtkPaperSize</link> *      <link linkend="gtk-paper-size-new-custom">gtk_paper_size_new_custom</link>           (const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *display_name,
+                                                         <link linkend="gdouble">gdouble</link> width,
+                                                         <link linkend="gdouble">gdouble</link> height,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="GtkPaperSize">GtkPaperSize</link> *      <link linkend="gtk-paper-size-copy">gtk_paper_size_copy</link>                 (<link linkend="GtkPaperSize">GtkPaperSize</link> *other);
+<link linkend="void">void</link>                <link linkend="gtk-paper-size-free">gtk_paper_size_free</link>                 (<link linkend="GtkPaperSize">GtkPaperSize</link> *size);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-paper-size-is-equal">gtk_paper_size_is_equal</link>             (<link linkend="GtkPaperSize">GtkPaperSize</link> *size1,
+                                                         <link linkend="GtkPaperSize">GtkPaperSize</link> *size2);
+<link linkend="GList">GList</link> *             <link linkend="gtk-paper-size-get-paper-sizes">gtk_paper_size_get_paper_sizes</link>      (<link linkend="gboolean">gboolean</link> include_custom);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-paper-size-get-name">gtk_paper_size_get_name</link>             (<link linkend="GtkPaperSize">GtkPaperSize</link> *size);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-paper-size-get-display-name">gtk_paper_size_get_display_name</link>     (<link linkend="GtkPaperSize">GtkPaperSize</link> *size);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-paper-size-get-ppd-name">gtk_paper_size_get_ppd_name</link>         (<link linkend="GtkPaperSize">GtkPaperSize</link> *size);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-paper-size-get-width">gtk_paper_size_get_width</link>            (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-paper-size-get-height">gtk_paper_size_get_height</link>           (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-paper-size-is-custom">gtk_paper_size_is_custom</link>            (<link linkend="GtkPaperSize">GtkPaperSize</link> *size);
+<link linkend="void">void</link>                <link linkend="gtk-paper-size-set-size">gtk_paper_size_set_size</link>             (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="gdouble">gdouble</link> width,
+                                                         <link linkend="gdouble">gdouble</link> height,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-paper-size-get-default-top-margin">gtk_paper_size_get_default_top_margin</link>
+                                                        (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-paper-size-get-default-bottom-margin">gtk_paper_size_get_default_bottom_margin</link>
+                                                        (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-paper-size-get-default-left-margin">gtk_paper_size_get_default_left_margin</link>
+                                                        (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-paper-size-get-default-right-margin">gtk_paper_size_get_default_right_margin</link>
+                                                        (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-paper-size-get-default">gtk_paper_size_get_default</link>          (void);
+
+<link linkend="GtkPaperSize">GtkPaperSize</link> *      <link linkend="gtk-paper-size-new-from-key-file">gtk_paper_size_new_from_key_file</link>    (<link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="void">void</link>                <link linkend="gtk-paper-size-to-key-file">gtk_paper_size_to_key_file</link>          (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gtk-GtkPaperSize.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+GtkPaperSize handles paper sizes. It uses the standard called
+"PWG 5101.1-2002 PWG: Standard for Media Standardized Names"
+<!-- FIXME link here -->
+to name the paper sizes (and to get the data for the page sizes).
+In addition to standard paper sizes, GtkPaperSize allows to
+construct custom paper sizes with arbitrary dimensions.
+</para>
+<para>
+The <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object stores not only the dimensions (width
+and height) of a paper size and its name, it also provides
+default <link linkend="print-margins">print margins</link>.
+</para>
+<para>
+Printing support has been added in GTK+ 2.10.
+</para>
+</refsect1>
+
+<refsect1 id="gtk-GtkPaperSize.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkPaperSize" role="struct">
+<title>GtkPaperSize</title>
+<indexterm zone="GtkPaperSize"><primary sortas="PaperSize">GtkPaperSize</primary></indexterm><programlisting>typedef struct _GtkPaperSize GtkPaperSize;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkUnit" role="enum">
+<title>enum GtkUnit</title>
+<indexterm zone="GtkUnit"><primary sortas="Unit">GtkUnit</primary></indexterm><programlisting>typedef enum
+{
+  GTK_UNIT_PIXEL,
+  GTK_UNIT_POINTS,
+  GTK_UNIT_INCH,
+  GTK_UNIT_MM
+} GtkUnit;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GTK-PAPER-NAME-A3--CAPS" role="macro">
+<title>GTK_PAPER_NAME_A3</title>
+<indexterm zone="GTK-PAPER-NAME-A3--CAPS"><primary sortas="PAPER_NAME_A3">GTK_PAPER_NAME_A3</primary></indexterm><programlisting>#define GTK_PAPER_NAME_A3 "iso_a3"
+</programlisting>
+<para>
+Name for the A4 paper size.
+</para></refsect2>
+<refsect2 id="GTK-PAPER-NAME-A4--CAPS" role="macro">
+<title>GTK_PAPER_NAME_A4</title>
+<indexterm zone="GTK-PAPER-NAME-A4--CAPS"><primary sortas="PAPER_NAME_A4">GTK_PAPER_NAME_A4</primary></indexterm><programlisting>#define GTK_PAPER_NAME_A4 "iso_a4"
+</programlisting>
+<para>
+Name for the A4 paper size.
+</para></refsect2>
+<refsect2 id="GTK-PAPER-NAME-A5--CAPS" role="macro">
+<title>GTK_PAPER_NAME_A5</title>
+<indexterm zone="GTK-PAPER-NAME-A5--CAPS"><primary sortas="PAPER_NAME_A5">GTK_PAPER_NAME_A5</primary></indexterm><programlisting>#define GTK_PAPER_NAME_A5 "iso_a5"
+</programlisting>
+<para>
+Name for the A5 paper size.
+</para></refsect2>
+<refsect2 id="GTK-PAPER-NAME-B5--CAPS" role="macro">
+<title>GTK_PAPER_NAME_B5</title>
+<indexterm zone="GTK-PAPER-NAME-B5--CAPS"><primary sortas="PAPER_NAME_B5">GTK_PAPER_NAME_B5</primary></indexterm><programlisting>#define GTK_PAPER_NAME_B5 "iso_b5"
+</programlisting>
+<para>
+Name for the B5 paper size.
+</para></refsect2>
+<refsect2 id="GTK-PAPER-NAME-LETTER--CAPS" role="macro">
+<title>GTK_PAPER_NAME_LETTER</title>
+<indexterm zone="GTK-PAPER-NAME-LETTER--CAPS"><primary sortas="PAPER_NAME_LETTER">GTK_PAPER_NAME_LETTER</primary></indexterm><programlisting>#define GTK_PAPER_NAME_LETTER "na_letter"
+</programlisting>
+<para>
+Name for the Letter paper size.
+</para></refsect2>
+<refsect2 id="GTK-PAPER-NAME-EXECUTIVE--CAPS" role="macro">
+<title>GTK_PAPER_NAME_EXECUTIVE</title>
+<indexterm zone="GTK-PAPER-NAME-EXECUTIVE--CAPS"><primary sortas="PAPER_NAME_EXECUTIVE">GTK_PAPER_NAME_EXECUTIVE</primary></indexterm><programlisting>#define GTK_PAPER_NAME_EXECUTIVE "na_executive"
+</programlisting>
+<para>
+Name for the Executive paper size.
+</para></refsect2>
+<refsect2 id="GTK-PAPER-NAME-LEGAL--CAPS" role="macro">
+<title>GTK_PAPER_NAME_LEGAL</title>
+<indexterm zone="GTK-PAPER-NAME-LEGAL--CAPS"><primary sortas="PAPER_NAME_LEGAL">GTK_PAPER_NAME_LEGAL</primary></indexterm><programlisting>#define GTK_PAPER_NAME_LEGAL "na_legal"
+</programlisting>
+<para>
+Name for the Legal paper size.
+</para></refsect2>
+<refsect2 id="gtk-paper-size-new" role="function" condition="since:2.10">
+<title>gtk_paper_size_new ()</title>
+<indexterm zone="gtk-paper-size-new" role="2.10"><primary sortas="paper_size_new">gtk_paper_size_new</primary></indexterm><programlisting><link linkend="GtkPaperSize">GtkPaperSize</link> *      gtk_paper_size_new                  (const <link linkend="gchar">gchar</link> *name);</programlisting>
+<para>
+Creates a new <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object by parsing a 
+<ulink url="ftp://ftp.pwg.org/pub/pwg/candidates/cs-pwgmsn10-20020226-5101.1.pdf">PWG 5101.1-2002</ulink>
+paper name. 
+</para>
+<para>
+If <parameter>name</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, the default paper size is returned,
+see <link linkend="gtk-paper-size-get-default"><function>gtk_paper_size_get_default()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> a paper size name, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>, use <link linkend="gtk-paper-size-free"><function>gtk_paper_size_free()</function></link>
+to free it
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-new-from-ppd" role="function" condition="since:2.10">
+<title>gtk_paper_size_new_from_ppd ()</title>
+<indexterm zone="gtk-paper-size-new-from-ppd" role="2.10"><primary sortas="paper_size_new_from_ppd">gtk_paper_size_new_from_ppd</primary></indexterm><programlisting><link linkend="GtkPaperSize">GtkPaperSize</link> *      gtk_paper_size_new_from_ppd         (const <link linkend="gchar">gchar</link> *ppd_name,
+                                                         const <link linkend="gchar">gchar</link> *ppd_display_name,
+                                                         <link linkend="gdouble">gdouble</link> width,
+                                                         <link linkend="gdouble">gdouble</link> height);</programlisting>
+<para>
+Creates a new <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object by using 
+PPD information. 
+</para>
+<para>
+If <parameter>ppd_name</parameter> is not a recognized PPD paper name, 
+<parameter>ppd_display_name</parameter>, <parameter>width</parameter> and <parameter>height</parameter> are used to 
+construct a custom <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>ppd_name</parameter>&#160;:</term>
+<listitem><simpara> a PPD paper name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ppd_display_name</parameter>&#160;:</term>
+<listitem><simpara> the corresponding human-readable name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> the paper width, in points
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> the paper height in points
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>, use <link linkend="gtk-paper-size-free"><function>gtk_paper_size_free()</function></link>
+to free it
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-new-custom" role="function" condition="since:2.10">
+<title>gtk_paper_size_new_custom ()</title>
+<indexterm zone="gtk-paper-size-new-custom" role="2.10"><primary sortas="paper_size_new_custom">gtk_paper_size_new_custom</primary></indexterm><programlisting><link linkend="GtkPaperSize">GtkPaperSize</link> *      gtk_paper_size_new_custom           (const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *display_name,
+                                                         <link linkend="gdouble">gdouble</link> width,
+                                                         <link linkend="gdouble">gdouble</link> height,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Creates a new <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object with the
+given parameters.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> the paper name 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>display_name</parameter>&#160;:</term>
+<listitem><simpara> the human-readable name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> the paper width, in units of <parameter>unit</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> the paper height, in units of <parameter>unit</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for <parameter>width</parameter> and <parameter>height</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object, use <link linkend="gtk-paper-size-free"><function>gtk_paper_size_free()</function></link>
+to free it
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-copy" role="function" condition="since:2.10">
+<title>gtk_paper_size_copy ()</title>
+<indexterm zone="gtk-paper-size-copy" role="2.10"><primary sortas="paper_size_copy">gtk_paper_size_copy</primary></indexterm><programlisting><link linkend="GtkPaperSize">GtkPaperSize</link> *      gtk_paper_size_copy                 (<link linkend="GtkPaperSize">GtkPaperSize</link> *other);</programlisting>
+<para>
+Copies an existing <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>other</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a copy of <parameter>other</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-free" role="function" condition="since:2.10">
+<title>gtk_paper_size_free ()</title>
+<indexterm zone="gtk-paper-size-free" role="2.10"><primary sortas="paper_size_free">gtk_paper_size_free</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_paper_size_free                 (<link linkend="GtkPaperSize">GtkPaperSize</link> *size);</programlisting>
+<para>
+Free the given <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-is-equal" role="function" condition="since:2.10">
+<title>gtk_paper_size_is_equal ()</title>
+<indexterm zone="gtk-paper-size-is-equal" role="2.10"><primary sortas="paper_size_is_equal">gtk_paper_size_is_equal</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_paper_size_is_equal             (<link linkend="GtkPaperSize">GtkPaperSize</link> *size1,
+                                                         <link linkend="GtkPaperSize">GtkPaperSize</link> *size2);</programlisting>
+<para>
+Compares two <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> objects.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size1</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size2</parameter>&#160;:</term>
+<listitem><simpara> another <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, if <parameter>size1</parameter> and <parameter>size2</parameter> 
+represent the same paper size
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-get-paper-sizes" role="function" condition="since:2.12">
+<title>gtk_paper_size_get_paper_sizes ()</title>
+<indexterm zone="gtk-paper-size-get-paper-sizes" role="2.12"><primary sortas="paper_size_get_paper_sizes">gtk_paper_size_get_paper_sizes</primary></indexterm><programlisting><link linkend="GList">GList</link> *             gtk_paper_size_get_paper_sizes      (<link linkend="gboolean">gboolean</link> include_custom);</programlisting>
+<para>
+Creates a list of known paper sizes.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>include_custom</parameter>&#160;:</term>
+<listitem><simpara> whether to include custom paper sizes
+    as defined in the page setup dialog
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly allocated list of newly 
+   allocated <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> objects
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-paper-size-get-name" role="function" condition="since:2.10">
+<title>gtk_paper_size_get_name ()</title>
+<indexterm zone="gtk-paper-size-get-name" role="2.10"><primary sortas="paper_size_get_name">gtk_paper_size_get_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_paper_size_get_name             (<link linkend="GtkPaperSize">GtkPaperSize</link> *size);</programlisting>
+<para>
+Gets the name of the <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the name of <parameter>size</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-get-display-name" role="function" condition="since:2.10">
+<title>gtk_paper_size_get_display_name ()</title>
+<indexterm zone="gtk-paper-size-get-display-name" role="2.10"><primary sortas="paper_size_get_display_name">gtk_paper_size_get_display_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_paper_size_get_display_name     (<link linkend="GtkPaperSize">GtkPaperSize</link> *size);</programlisting>
+<para>
+Gets the human-readable name of the <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the human-readable name of <parameter>size</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-get-ppd-name" role="function" condition="since:2.10">
+<title>gtk_paper_size_get_ppd_name ()</title>
+<indexterm zone="gtk-paper-size-get-ppd-name" role="2.10"><primary sortas="paper_size_get_ppd_name">gtk_paper_size_get_ppd_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_paper_size_get_ppd_name         (<link linkend="GtkPaperSize">GtkPaperSize</link> *size);</programlisting>
+<para>
+Gets the PPD name of the <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>, which
+may be <link linkend="NULL--CAPS"><literal>NULL</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the PPD name of <parameter>size</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-get-width" role="function" condition="since:2.10">
+<title>gtk_paper_size_get_width ()</title>
+<indexterm zone="gtk-paper-size-get-width" role="2.10"><primary sortas="paper_size_get_width">gtk_paper_size_get_width</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_paper_size_get_width            (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the paper width of the <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>, in 
+units of <parameter>unit</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the paper width 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-get-height" role="function" condition="since:2.10">
+<title>gtk_paper_size_get_height ()</title>
+<indexterm zone="gtk-paper-size-get-height" role="2.10"><primary sortas="paper_size_get_height">gtk_paper_size_get_height</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_paper_size_get_height           (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the paper height of the <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>, in 
+units of <parameter>unit</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the paper height 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-is-custom" role="function">
+<title>gtk_paper_size_is_custom ()</title>
+<indexterm zone="gtk-paper-size-is-custom"><primary sortas="paper_size_is_custom">gtk_paper_size_is_custom</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_paper_size_is_custom            (<link linkend="GtkPaperSize">GtkPaperSize</link> *size);</programlisting>
+<para>
+Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>size</parameter> is not a standard paper size.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether <parameter>size</parameter> is a custom paper size.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-paper-size-set-size" role="function" condition="since:2.10">
+<title>gtk_paper_size_set_size ()</title>
+<indexterm zone="gtk-paper-size-set-size" role="2.10"><primary sortas="paper_size_set_size">gtk_paper_size_set_size</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_paper_size_set_size             (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="gdouble">gdouble</link> width,
+                                                         <link linkend="gdouble">gdouble</link> height,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Changes the dimensions of a <parameter>size</parameter> to <parameter>width</parameter> x <parameter>height</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a custom <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> the new width in units of <parameter>unit</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> the new height in units of <parameter>unit</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for <parameter>width</parameter> and <parameter>height</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-get-default-top-margin" role="function" condition="since:2.10">
+<title>gtk_paper_size_get_default_top_margin ()</title>
+<indexterm zone="gtk-paper-size-get-default-top-margin" role="2.10"><primary sortas="paper_size_get_default_top_margin">gtk_paper_size_get_default_top_margin</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_paper_size_get_default_top_margin
+                                                        (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the default top margin for the <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the default top margin
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-get-default-bottom-margin" role="function" condition="since:2.10">
+<title>gtk_paper_size_get_default_bottom_margin ()</title>
+<indexterm zone="gtk-paper-size-get-default-bottom-margin" role="2.10"><primary sortas="paper_size_get_default_bottom_margin">gtk_paper_size_get_default_bottom_margin</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_paper_size_get_default_bottom_margin
+                                                        (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the default bottom margin for the <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the default bottom margin
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-get-default-left-margin" role="function" condition="since:2.10">
+<title>gtk_paper_size_get_default_left_margin ()</title>
+<indexterm zone="gtk-paper-size-get-default-left-margin" role="2.10"><primary sortas="paper_size_get_default_left_margin">gtk_paper_size_get_default_left_margin</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_paper_size_get_default_left_margin
+                                                        (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the default left margin for the <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the default left margin
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-get-default-right-margin" role="function" condition="since:2.10">
+<title>gtk_paper_size_get_default_right_margin ()</title>
+<indexterm zone="gtk-paper-size-get-default-right-margin" role="2.10"><primary sortas="paper_size_get_default_right_margin">gtk_paper_size_get_default_right_margin</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_paper_size_get_default_right_margin
+                                                        (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the default right margin for the <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the default right margin
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-get-default" role="function" condition="since:2.10">
+<title>gtk_paper_size_get_default ()</title>
+<indexterm zone="gtk-paper-size-get-default" role="2.10"><primary sortas="paper_size_get_default">gtk_paper_size_get_default</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_paper_size_get_default          (void);</programlisting>
+<para>
+Returns the name of the default paper size, which 
+depends on the current locale.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the name of the default paper size. The string
+is owned by GTK+ and should not be modified.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-paper-size-new-from-key-file" role="function" condition="since:2.12">
+<title>gtk_paper_size_new_from_key_file ()</title>
+<indexterm zone="gtk-paper-size-new-from-key-file" role="2.12"><primary sortas="paper_size_new_from_key_file">gtk_paper_size_new_from_key_file</primary></indexterm><programlisting><link linkend="GtkPaperSize">GtkPaperSize</link> *      gtk_paper_size_new_from_key_file    (<link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Reads a paper size from the group <parameter>group_name</parameter> in the key file
+<parameter>key_file</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key_file</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GKeyFile"><type>GKeyFile</type></link> to retrieve the papersize from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group_name</parameter>&#160;:</term>
+<listitem><simpara> the name ofthe group in the key file to read,
+    or <link linkend="NULL--CAPS"><literal>NULL</literal></link> to read the first group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> object with the restored
+         paper size, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if an error occurred.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-paper-size-to-key-file" role="function" condition="since:2.12">
+<title>gtk_paper_size_to_key_file ()</title>
+<indexterm zone="gtk-paper-size-to-key-file" role="2.12"><primary sortas="paper_size_to_key_file">gtk_paper_size_to_key_file</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_paper_size_to_key_file          (<link linkend="GtkPaperSize">GtkPaperSize</link> *size,
+                                                         <link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name);</programlisting>
+<para>
+This function adds the paper size from <parameter>size</parameter> to <parameter>key_file</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key_file</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GKeyFile"><type>GKeyFile</type></link> to save the paper size to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group_name</parameter>&#160;:</term>
+<listitem><simpara> the group to add the settings to in <parameter>key_file</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="gtk-GtkPaperSize.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</para>
+</refsect1>
+
+</refentry>

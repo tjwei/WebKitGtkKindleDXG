@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="SoupCookieJar">
+<refmeta>
+<refentrytitle role="top_of_page" id="SoupCookieJar.top_of_page">SoupCookieJar</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupCookieJar</refname>
+<refpurpose>Automatic cookie handling for <link linkend="SoupSession"><type>SoupSession</type></link></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="SoupCookieJar.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SoupCookieJar-struct">SoupCookieJar</link>;
+<link linkend="SoupCookieJar">SoupCookieJar</link> *     <link linkend="soup-cookie-jar-new">soup_cookie_jar_new</link>                 (void);
+<link linkend="void">void</link>                <link linkend="soup-cookie-jar-save">soup_cookie_jar_save</link>                (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar);
+<link linkend="char">char</link> *              <link linkend="soup-cookie-jar-get-cookies">soup_cookie_jar_get_cookies</link>         (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar,
+                                                         <link linkend="SoupURI">SoupURI</link> *uri,
+                                                         <link linkend="gboolean">gboolean</link> for_http);
+<link linkend="void">void</link>                <link linkend="soup-cookie-jar-set-cookie">soup_cookie_jar_set_cookie</link>          (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar,
+                                                         <link linkend="SoupURI">SoupURI</link> *uri,
+                                                         const <link linkend="char">char</link> *cookie);
+
+<link linkend="void">void</link>                <link linkend="soup-cookie-jar-add-cookie">soup_cookie_jar_add_cookie</link>          (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar,
+                                                         <link linkend="SoupCookie">SoupCookie</link> *cookie);
+<link linkend="void">void</link>                <link linkend="soup-cookie-jar-delete-cookie">soup_cookie_jar_delete_cookie</link>       (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar,
+                                                         <link linkend="SoupCookie">SoupCookie</link> *cookie);
+<link linkend="GSList">GSList</link> *            <link linkend="soup-cookie-jar-all-cookies">soup_cookie_jar_all_cookies</link>         (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar);
+
+#define             <link linkend="SOUP-COOKIE-JAR-READ-ONLY--CAPS">SOUP_COOKIE_JAR_READ_ONLY</link>
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="SoupCookieJar.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----SoupCookieJar
+         +----<link linkend="SoupCookieJarText">SoupCookieJarText</link>
+         +----<link linkend="SoupCookieJarSqlite">SoupCookieJarSqlite</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="SoupCookieJar.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+SoupCookieJar implements
+ <link linkend="SoupSessionFeature">SoupSessionFeature</link>.</para>
+</refsect1>
+
+
+<refsect1 id="SoupCookieJar.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="SoupCookieJar--read-only">read-only</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write / Construct Only
+</synopsis>
+</refsect1>
+
+<refsect1 id="SoupCookieJar.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="SoupCookieJar-changed">changed</link>&quot;                                        : Run First
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="SoupCookieJar.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link> stores <link linkend="SoupCookie"><type>SoupCookie</type></link><!-- -->s and arrange for them
+to be sent with the appropriate <link linkend="SoupMessage"><type>SoupMessage</type></link><!-- -->s.
+<link linkend="SoupCookieJar"><type>SoupCookieJar</type></link> implements <link linkend="SoupSessionFeature"><type>SoupSessionFeature</type></link>, so you can add a
+cookie jar to a session with <link linkend="soup-session-add-feature"><function>soup_session_add_feature()</function></link> or
+<link linkend="soup-session-add-feature-by-type"><function>soup_session_add_feature_by_type()</function></link>.
+</para>
+<para>
+Note that the base <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link> class does not support any form
+of long-term cookie persistence.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="SoupCookieJar.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupCookieJar-struct" role="struct">
+<title>SoupCookieJar</title>
+<indexterm zone="SoupCookieJar-struct"><primary sortas="SoupCookieJar">SoupCookieJar</primary></indexterm><programlisting>typedef struct _SoupCookieJar SoupCookieJar;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="soup-cookie-jar-new" role="function" condition="since:2.24">
+<title>soup_cookie_jar_new ()</title>
+<indexterm zone="soup-cookie-jar-new" role="2.24"><primary sortas="soup_cookie_jar_new">soup_cookie_jar_new</primary></indexterm><programlisting><link linkend="SoupCookieJar">SoupCookieJar</link> *     soup_cookie_jar_new                 (void);</programlisting>
+<para>
+Creates a new <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>. The base <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link> class does
+not support persistent storage of cookies; use a subclass for that.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-jar-save" role="function" condition="deprecated:">
+<title>soup_cookie_jar_save ()</title>
+<indexterm zone="soup-cookie-jar-save" role="deprecated"><primary sortas="soup_cookie_jar_save">soup_cookie_jar_save</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_jar_save                (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar);</programlisting>
+<warning><para><literal>soup_cookie_jar_save</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>jar</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-cookie-jar-get-cookies" role="function" condition="since:2.24">
+<title>soup_cookie_jar_get_cookies ()</title>
+<indexterm zone="soup-cookie-jar-get-cookies" role="2.24"><primary sortas="soup_cookie_jar_get_cookies">soup_cookie_jar_get_cookies</primary></indexterm><programlisting><link linkend="char">char</link> *              soup_cookie_jar_get_cookies         (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar,
+                                                         <link linkend="SoupURI">SoupURI</link> *uri,
+                                                         <link linkend="gboolean">gboolean</link> for_http);</programlisting>
+<para>
+Retrieves (in Cookie-header form) the list of cookies that would
+be sent with a request to <parameter>uri</parameter>.
+</para>
+<para>
+If <parameter>for_http</parameter> is <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, the return value will include cookies marked
+"HttpOnly" (that is, cookies that the server wishes to keep hidden
+from client-side scripting operations such as the JavaScript
+document.cookies property). Since <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link> sets the Cookie
+header itself when making the actual HTTP request, you should
+almost certainly be setting <parameter>for_http</parameter> to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if you are calling
+this.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>jar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupURI"><type>SoupURI</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>for_http</parameter>&#160;:</term>
+<listitem><simpara> whether or not the return value is being passed directly
+to an HTTP operation
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the cookies, in string form, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if there are no
+cookies for <parameter>uri</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-jar-set-cookie" role="function" condition="since:2.24">
+<title>soup_cookie_jar_set_cookie ()</title>
+<indexterm zone="soup-cookie-jar-set-cookie" role="2.24"><primary sortas="soup_cookie_jar_set_cookie">soup_cookie_jar_set_cookie</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_jar_set_cookie          (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar,
+                                                         <link linkend="SoupURI">SoupURI</link> *uri,
+                                                         const <link linkend="char">char</link> *cookie);</programlisting>
+<para>
+Adds <parameter>cookie</parameter> to <parameter>jar</parameter>, exactly as though it had appeared in a
+Set-Cookie header returned from a request to <parameter>uri</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>jar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the URI setting the cookie
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> the stringified cookie to set
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-jar-add-cookie" role="function" condition="since:2.26">
+<title>soup_cookie_jar_add_cookie ()</title>
+<indexterm zone="soup-cookie-jar-add-cookie" role="2.26"><primary sortas="soup_cookie_jar_add_cookie">soup_cookie_jar_add_cookie</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_jar_add_cookie          (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar,
+                                                         <link linkend="SoupCookie">SoupCookie</link> *cookie);</programlisting>
+<para>
+Adds <parameter>cookie</parameter> to <parameter>jar</parameter>, emitting the 'changed' signal if we are modifying
+an existing cookie or adding a valid new cookie ('valid' means
+that the cookie's expire date is not in the past).
+</para>
+<para>
+<parameter>cookie</parameter> will be 'stolen' by the jar, so don't free it afterwards.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>jar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-cookie-jar-delete-cookie" role="function" condition="since:2.26">
+<title>soup_cookie_jar_delete_cookie ()</title>
+<indexterm zone="soup-cookie-jar-delete-cookie" role="2.26"><primary sortas="soup_cookie_jar_delete_cookie">soup_cookie_jar_delete_cookie</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_jar_delete_cookie       (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar,
+                                                         <link linkend="SoupCookie">SoupCookie</link> *cookie);</programlisting>
+<para>
+Deletes <parameter>cookie</parameter> from <parameter>jar</parameter>, emitting the 'changed' signal.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>jar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-cookie-jar-all-cookies" role="function" condition="since:2.26">
+<title>soup_cookie_jar_all_cookies ()</title>
+<indexterm zone="soup-cookie-jar-all-cookies" role="2.26"><primary sortas="soup_cookie_jar_all_cookies">soup_cookie_jar_all_cookies</primary></indexterm><programlisting><link linkend="GSList">GSList</link> *            soup_cookie_jar_all_cookies         (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar);</programlisting>
+<para>
+Constructs a <link linkend="GSList"><type>GSList</type></link> with every cookie inside the <parameter>jar</parameter>.
+The cookies in the list are a copy of the original, so
+you have to free them when you are done with them.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>jar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GSList"><type>GSList</type></link> with all the cookies in the <parameter>jar</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="SOUP-COOKIE-JAR-READ-ONLY--CAPS" role="macro">
+<title>SOUP_COOKIE_JAR_READ_ONLY</title>
+<indexterm zone="SOUP-COOKIE-JAR-READ-ONLY--CAPS"><primary sortas="SOUP_COOKIE_JAR_READ_ONLY">SOUP_COOKIE_JAR_READ_ONLY</primary></indexterm><programlisting>#define SOUP_COOKIE_JAR_READ_ONLY "read-only"
+</programlisting>
+<para>
+Alias for the <link linkend="SoupCookieJar--read-only"><type>"read-only"</type></link> property. (Whether
+or not the cookie jar is read-only.)</para>
+<para>
+</para></refsect2>
+
+</refsect1>
+<refsect1 id="SoupCookieJar.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="SoupCookieJar--read-only" role="property"><title>The <literal>&quot;read-only&quot;</literal> property</title>
+<indexterm zone="SoupCookieJar--read-only"><primary sortas="SoupCookieJar:read-only">SoupCookieJar:read-only</primary></indexterm><programlisting>  &quot;read-only&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write / Construct Only</programlisting>
+<para>Whether or not the cookie jar is read-only.</para><para>Default value: FALSE</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="SoupCookieJar.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="SoupCookieJar-changed" role="signal"><title>The <literal>&quot;changed&quot;</literal> signal</title>
+<indexterm zone="SoupCookieJar-changed"><primary sortas="SoupCookieJar::changed">SoupCookieJar::changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="SoupCookieJar">SoupCookieJar</link> *jar,
+                                                        <link linkend="SoupCookie">SoupCookie</link>    *old_cookie,
+                                                        <link linkend="SoupCookie">SoupCookie</link>    *new_cookie,
+                                                        <link linkend="gpointer">gpointer</link>       user_data)       : Run First</programlisting>
+<para>
+Emitted when <parameter>jar</parameter> changes. If a cookie has been added,
+<parameter>new_cookie</parameter> will contain the newly-added cookie and
+<parameter>old_cookie</parameter> will be <link linkend="NULL--CAPS"><literal>NULL</literal></link>. If a cookie has been deleted,
+<parameter>old_cookie</parameter> will contain the to-be-deleted cookie and
+<parameter>new_cookie</parameter> will be <link linkend="NULL--CAPS"><literal>NULL</literal></link>. If a cookie has been changed,
+<parameter>old_cookie</parameter> will contain its old value, and <parameter>new_cookie</parameter> its
+new value.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>jar</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>old_cookie</parameter>&#160;:</term>
+<listitem><simpara> the old <link linkend="SoupCookie"><type>SoupCookie</type></link> value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>new_cookie</parameter>&#160;:</term>
+<listitem><simpara> the new <link linkend="SoupCookie"><type>SoupCookie</type></link> value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

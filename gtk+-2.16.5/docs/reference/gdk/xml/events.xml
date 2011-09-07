@@ -1,0 +1,1007 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="gdk-Events">
+<refmeta>
+<refentrytitle role="top_of_page" id="gdk-Events.top_of_page">Events</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Events</refname>
+<refpurpose>Functions for handling events from the window system</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gdk-Events.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gdk/gdk.h&gt;
+
+enum                <link linkend="GdkEventType">GdkEventType</link>;
+enum                <link linkend="GdkEventMask">GdkEventMask</link>;
+#define             <link linkend="GDK-CURRENT-TIME--CAPS">GDK_CURRENT_TIME</link>
+#define             <link linkend="GDK-PRIORITY-EVENTS--CAPS">GDK_PRIORITY_EVENTS</link>
+#define             <link linkend="GDK-PRIORITY-REDRAW--CAPS">GDK_PRIORITY_REDRAW</link>
+
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-events-pending">gdk_events_pending</link>                  (void);
+<link linkend="GdkEvent">GdkEvent</link>*           <link linkend="gdk-event-peek">gdk_event_peek</link>                      (void);
+<link linkend="GdkEvent">GdkEvent</link>*           <link linkend="gdk-event-get">gdk_event_get</link>                       (void);
+<link linkend="GdkEvent">GdkEvent</link>*           <link linkend="gdk-event-get-graphics-expose">gdk_event_get_graphics_expose</link>       (<link linkend="GdkWindow">GdkWindow</link> *window);
+<link linkend="void">void</link>                <link linkend="gdk-event-put">gdk_event_put</link>                       (const <link linkend="GdkEvent">GdkEvent</link> *event);
+<link linkend="GdkEvent">GdkEvent</link>*           <link linkend="gdk-event-new">gdk_event_new</link>                       (<link linkend="GdkEventType">GdkEventType</link> type);
+<link linkend="GdkEvent">GdkEvent</link>*           <link linkend="gdk-event-copy">gdk_event_copy</link>                      (const <link linkend="GdkEvent">GdkEvent</link> *event);
+<link linkend="void">void</link>                <link linkend="gdk-event-free">gdk_event_free</link>                      (<link linkend="GdkEvent">GdkEvent</link> *event);
+<link linkend="guint32">guint32</link>             <link linkend="gdk-event-get-time">gdk_event_get_time</link>                  (const <link linkend="GdkEvent">GdkEvent</link> *event);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-event-get-state">gdk_event_get_state</link>                 (const <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> *state);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-event-get-axis">gdk_event_get_axis</link>                  (const <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="GdkAxisUse">GdkAxisUse</link> axis_use,
+                                                         <link linkend="gdouble">gdouble</link> *value);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-event-get-coords">gdk_event_get_coords</link>                (const <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="gdouble">gdouble</link> *x_win,
+                                                         <link linkend="gdouble">gdouble</link> *y_win);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-event-get-root-coords">gdk_event_get_root_coords</link>           (const <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="gdouble">gdouble</link> *x_root,
+                                                         <link linkend="gdouble">gdouble</link> *y_root);
+<link linkend="void">void</link>                <link linkend="gdk-event-request-motions">gdk_event_request_motions</link>           (const <link linkend="GdkEventMotion">GdkEventMotion</link> *event);
+
+<link linkend="void">void</link>                <link linkend="gdk-event-handler-set">gdk_event_handler_set</link>               (<link linkend="GdkEventFunc">GdkEventFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> notify);
+<link linkend="void">void</link>                (<link linkend="GdkEventFunc">*GdkEventFunc</link>)                     (<link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="gpointer">gpointer</link> data);
+
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-event-send-client-message">gdk_event_send_client_message</link>       (<link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="GdkNativeWindow">GdkNativeWindow</link> winid);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-event-send-client-message-for-display">gdk_event_send_client_message_for_display</link>
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="GdkNativeWindow">GdkNativeWindow</link> winid);
+<link linkend="void">void</link>                <link linkend="gdk-event-send-clientmessage-toall">gdk_event_send_clientmessage_toall</link>  (<link linkend="GdkEvent">GdkEvent</link> *event);
+<link linkend="void">void</link>                <link linkend="gdk-add-client-message-filter">gdk_add_client_message_filter</link>       (<link linkend="GdkAtom">GdkAtom</link> message_type,
+                                                         <link linkend="GdkFilterFunc">GdkFilterFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data);
+
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-get-show-events">gdk_get_show_events</link>                 (void);
+<link linkend="void">void</link>                <link linkend="gdk-set-show-events">gdk_set_show_events</link>                 (<link linkend="gboolean">gboolean</link> show_events);
+<link linkend="void">void</link>                <link linkend="gdk-event-set-screen">gdk_event_set_screen</link>                (<link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="GdkScreen">GdkScreen</link> *         <link linkend="gdk-event-get-screen">gdk_event_get_screen</link>                (const <link linkend="GdkEvent">GdkEvent</link> *event);
+
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-setting-get">gdk_setting_get</link>                     (const <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="GValue">GValue</link> *value);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gdk-Events.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This section describes functions dealing with events from the window system.
+</para>
+<para>
+In GTK+ applications the events are handled automatically in
+<link linkend="gtk-main-do-event"><function>gtk_main_do_event()</function></link> and passed on to the appropriate widgets, so these
+functions are rarely needed. Though some of the fields in the
+<link linkend="gdk-Event-Structures">Event Structures</link> are useful.
+</para>
+</refsect1>
+
+<refsect1 id="gdk-Events.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GdkEventType" role="enum">
+<title>enum GdkEventType</title>
+<indexterm zone="GdkEventType"><primary sortas="EventType">GdkEventType</primary></indexterm><programlisting>typedef enum
+{
+  GDK_NOTHING		= -1,
+  GDK_DELETE		= 0,
+  GDK_DESTROY		= 1,
+  GDK_EXPOSE		= 2,
+  GDK_MOTION_NOTIFY	= 3,
+  GDK_BUTTON_PRESS	= 4,
+  GDK_2BUTTON_PRESS	= 5,
+  GDK_3BUTTON_PRESS	= 6,
+  GDK_BUTTON_RELEASE	= 7,
+  GDK_KEY_PRESS		= 8,
+  GDK_KEY_RELEASE	= 9,
+  GDK_ENTER_NOTIFY	= 10,
+  GDK_LEAVE_NOTIFY	= 11,
+  GDK_FOCUS_CHANGE	= 12,
+  GDK_CONFIGURE		= 13,
+  GDK_MAP		= 14,
+  GDK_UNMAP		= 15,
+  GDK_PROPERTY_NOTIFY	= 16,
+  GDK_SELECTION_CLEAR	= 17,
+  GDK_SELECTION_REQUEST = 18,
+  GDK_SELECTION_NOTIFY	= 19,
+  GDK_PROXIMITY_IN	= 20,
+  GDK_PROXIMITY_OUT	= 21,
+  GDK_DRAG_ENTER        = 22,
+  GDK_DRAG_LEAVE        = 23,
+  GDK_DRAG_MOTION       = 24,
+  GDK_DRAG_STATUS       = 25,
+  GDK_DROP_START        = 26,
+  GDK_DROP_FINISHED     = 27,
+  GDK_CLIENT_EVENT	= 28,
+  GDK_VISIBILITY_NOTIFY = 29,
+  GDK_NO_EXPOSE		= 30,
+  GDK_SCROLL            = 31,
+  GDK_WINDOW_STATE      = 32,
+  GDK_SETTING           = 33,
+  GDK_OWNER_CHANGE      = 34,
+  GDK_GRAB_BROKEN       = 35,
+  GDK_DAMAGE            = 36
+} GdkEventType;
+</programlisting>
+<para>
+Specifies the type of the event.
+</para>
+<para>
+Do not confuse these events with the signals that GTK+ widgets emit.
+Although many of these events result in corresponding signals being emitted,
+the events are often transformed or filtered along the way.
+</para><variablelist role="enum">
+<varlistentry id="GDK-NOTHING--CAPS" role="constant">
+<term><literal>GDK_NOTHING</literal></term>
+<listitem><simpara>a special code to indicate a null event.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-DELETE--CAPS" role="constant">
+<term><literal>GDK_DELETE</literal></term>
+<listitem><simpara>the window manager has requested that the toplevel window be
+hidden or destroyed, usually when the user clicks on a special icon in the
+title bar.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-DESTROY--CAPS" role="constant">
+<term><literal>GDK_DESTROY</literal></term>
+<listitem><simpara>the window has been destroyed.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-EXPOSE--CAPS" role="constant">
+<term><literal>GDK_EXPOSE</literal></term>
+<listitem><simpara>all or part of the window has become visible and needs to be
+redrawn.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-MOTION-NOTIFY--CAPS" role="constant">
+<term><literal>GDK_MOTION_NOTIFY</literal></term>
+<listitem><simpara>the pointer (usually a mouse) has moved.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-BUTTON-PRESS--CAPS" role="constant">
+<term><literal>GDK_BUTTON_PRESS</literal></term>
+<listitem><simpara>a mouse button has been pressed.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-2BUTTON-PRESS--CAPS" role="constant">
+<term><literal>GDK_2BUTTON_PRESS</literal></term>
+<listitem><simpara>a mouse button has been double-clicked (clicked twice
+within a short period of time). Note that each click also generates a
+<link linkend="GDK-BUTTON-PRESS--CAPS"><literal>GDK_BUTTON_PRESS</literal></link> event.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-3BUTTON-PRESS--CAPS" role="constant">
+<term><literal>GDK_3BUTTON_PRESS</literal></term>
+<listitem><simpara>a mouse button has been clicked 3 times in a short period
+of time. Note that each click also generates a <link linkend="GDK-BUTTON-PRESS--CAPS"><literal>GDK_BUTTON_PRESS</literal></link> event.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-BUTTON-RELEASE--CAPS" role="constant">
+<term><literal>GDK_BUTTON_RELEASE</literal></term>
+<listitem><simpara>a mouse button has been released.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-KEY-PRESS--CAPS" role="constant">
+<term><literal>GDK_KEY_PRESS</literal></term>
+<listitem><simpara>a key has been pressed.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-KEY-RELEASE--CAPS" role="constant">
+<term><literal>GDK_KEY_RELEASE</literal></term>
+<listitem><simpara>a key has been released.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-ENTER-NOTIFY--CAPS" role="constant">
+<term><literal>GDK_ENTER_NOTIFY</literal></term>
+<listitem><simpara>the pointer has entered the window.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-LEAVE-NOTIFY--CAPS" role="constant">
+<term><literal>GDK_LEAVE_NOTIFY</literal></term>
+<listitem><simpara>the pointer has left the window.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-FOCUS-CHANGE--CAPS" role="constant">
+<term><literal>GDK_FOCUS_CHANGE</literal></term>
+<listitem><simpara>the keyboard focus has entered or left the window.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-CONFIGURE--CAPS" role="constant">
+<term><literal>GDK_CONFIGURE</literal></term>
+<listitem><simpara>the size, position or stacking order of the window has changed.
+Note that GTK+ discards these events for <link linkend="GDK-WINDOW-CHILD--CAPS"><literal>GDK_WINDOW_CHILD</literal></link> windows.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-MAP--CAPS" role="constant">
+<term><literal>GDK_MAP</literal></term>
+<listitem><simpara>the window has been mapped.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-UNMAP--CAPS" role="constant">
+<term><literal>GDK_UNMAP</literal></term>
+<listitem><simpara>the window has been unmapped.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PROPERTY-NOTIFY--CAPS" role="constant">
+<term><literal>GDK_PROPERTY_NOTIFY</literal></term>
+<listitem><simpara>a property on the window has been changed or deleted.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-SELECTION-CLEAR--CAPS" role="constant">
+<term><literal>GDK_SELECTION_CLEAR</literal></term>
+<listitem><simpara>the application has lost ownership of a selection.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-SELECTION-REQUEST--CAPS" role="constant">
+<term><literal>GDK_SELECTION_REQUEST</literal></term>
+<listitem><simpara>another application has requested a selection.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-SELECTION-NOTIFY--CAPS" role="constant">
+<term><literal>GDK_SELECTION_NOTIFY</literal></term>
+<listitem><simpara>a selection has been received.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PROXIMITY-IN--CAPS" role="constant">
+<term><literal>GDK_PROXIMITY_IN</literal></term>
+<listitem><simpara>an input device has moved into contact with a sensing
+surface (e.g. a touchscreen or graphics tablet).
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PROXIMITY-OUT--CAPS" role="constant">
+<term><literal>GDK_PROXIMITY_OUT</literal></term>
+<listitem><simpara>an input device has moved out of contact with a sensing
+surface.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-DRAG-ENTER--CAPS" role="constant">
+<term><literal>GDK_DRAG_ENTER</literal></term>
+<listitem><simpara>the mouse has entered the window while a drag is in progress.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-DRAG-LEAVE--CAPS" role="constant">
+<term><literal>GDK_DRAG_LEAVE</literal></term>
+<listitem><simpara>the mouse has left the window while a drag is in progress.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-DRAG-MOTION--CAPS" role="constant">
+<term><literal>GDK_DRAG_MOTION</literal></term>
+<listitem><simpara>the mouse has moved in the window while a drag is in
+progress.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-DRAG-STATUS--CAPS" role="constant">
+<term><literal>GDK_DRAG_STATUS</literal></term>
+<listitem><simpara>the status of the drag operation initiated by the window
+has changed.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-DROP-START--CAPS" role="constant">
+<term><literal>GDK_DROP_START</literal></term>
+<listitem><simpara>a drop operation onto the window has started.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-DROP-FINISHED--CAPS" role="constant">
+<term><literal>GDK_DROP_FINISHED</literal></term>
+<listitem><simpara>the drop operation initiated by the window has completed.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-CLIENT-EVENT--CAPS" role="constant">
+<term><literal>GDK_CLIENT_EVENT</literal></term>
+<listitem><simpara>a message has been received from another application.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-VISIBILITY-NOTIFY--CAPS" role="constant">
+<term><literal>GDK_VISIBILITY_NOTIFY</literal></term>
+<listitem><simpara>the window visibility status has changed.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-NO-EXPOSE--CAPS" role="constant">
+<term><literal>GDK_NO_EXPOSE</literal></term>
+<listitem><simpara>indicates that the source region was completely available
+when parts of a drawable were copied. This is not very useful.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-SCROLL--CAPS" role="constant">
+<term><literal>GDK_SCROLL</literal></term>
+<listitem><simpara>the scroll wheel was turned
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-WINDOW-STATE--CAPS" role="constant">
+<term><literal>GDK_WINDOW_STATE</literal></term>
+<listitem><simpara>the state of a window has changed. See <link linkend="GdkWindowState"><type>GdkWindowState</type></link>
+for the possible window states
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-SETTING--CAPS" role="constant">
+<term><literal>GDK_SETTING</literal></term>
+<listitem><simpara>a setting has been modified.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-OWNER-CHANGE--CAPS" role="constant">
+<term><literal>GDK_OWNER_CHANGE</literal></term>
+<listitem><simpara>the owner of a selection has changed. This event type
+  was added in 2.6
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-GRAB-BROKEN--CAPS" role="constant">
+<term><literal>GDK_GRAB_BROKEN</literal></term>
+<listitem><simpara>a pointer or keyboard grab was broken. This event type
+  was added in 2.8.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-DAMAGE--CAPS" role="constant">
+<term><literal>GDK_DAMAGE</literal></term>
+<listitem><simpara>the content of the window has been changed. This event type
+  was added in 2.14.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkEventMask" role="enum">
+<title>enum GdkEventMask</title>
+<indexterm zone="GdkEventMask"><primary sortas="EventMask">GdkEventMask</primary></indexterm><programlisting>typedef enum
+{
+  GDK_EXPOSURE_MASK		= 1 &lt;&lt; 1,
+  GDK_POINTER_MOTION_MASK	= 1 &lt;&lt; 2,
+  GDK_POINTER_MOTION_HINT_MASK	= 1 &lt;&lt; 3,
+  GDK_BUTTON_MOTION_MASK	= 1 &lt;&lt; 4,
+  GDK_BUTTON1_MOTION_MASK	= 1 &lt;&lt; 5,
+  GDK_BUTTON2_MOTION_MASK	= 1 &lt;&lt; 6,
+  GDK_BUTTON3_MOTION_MASK	= 1 &lt;&lt; 7,
+  GDK_BUTTON_PRESS_MASK		= 1 &lt;&lt; 8,
+  GDK_BUTTON_RELEASE_MASK	= 1 &lt;&lt; 9,
+  GDK_KEY_PRESS_MASK		= 1 &lt;&lt; 10,
+  GDK_KEY_RELEASE_MASK		= 1 &lt;&lt; 11,
+  GDK_ENTER_NOTIFY_MASK		= 1 &lt;&lt; 12,
+  GDK_LEAVE_NOTIFY_MASK		= 1 &lt;&lt; 13,
+  GDK_FOCUS_CHANGE_MASK		= 1 &lt;&lt; 14,
+  GDK_STRUCTURE_MASK		= 1 &lt;&lt; 15,
+  GDK_PROPERTY_CHANGE_MASK	= 1 &lt;&lt; 16,
+  GDK_VISIBILITY_NOTIFY_MASK	= 1 &lt;&lt; 17,
+  GDK_PROXIMITY_IN_MASK		= 1 &lt;&lt; 18,
+  GDK_PROXIMITY_OUT_MASK	= 1 &lt;&lt; 19,
+  GDK_SUBSTRUCTURE_MASK		= 1 &lt;&lt; 20,
+  GDK_SCROLL_MASK               = 1 &lt;&lt; 21,
+  GDK_ALL_EVENTS_MASK		= 0x3FFFFE
+} GdkEventMask;
+</programlisting>
+<para>
+A set of bit-flags to indicate which events a window is to receive.
+Most of these masks map onto one or more of the <link linkend="GdkEventType"><type>GdkEventType</type></link> event types
+above.
+</para>
+<para>
+<link linkend="GDK-POINTER-MOTION-HINT-MASK--CAPS"><literal>GDK_POINTER_MOTION_HINT_MASK</literal></link> is a special mask which is used to reduce the
+number of <link linkend="GDK-MOTION-NOTIFY--CAPS"><literal>GDK_MOTION_NOTIFY</literal></link> events received. Normally a <link linkend="GDK-MOTION-NOTIFY--CAPS"><literal>GDK_MOTION_NOTIFY</literal></link>
+event is received each time the mouse moves. However, if the application
+spends a lot of time processing the event (updating the display, for example),
+it can lag behind the position of the mouse. When using
+<link linkend="GDK-POINTER-MOTION-HINT-MASK--CAPS"><literal>GDK_POINTER_MOTION_HINT_MASK</literal></link>, fewer <link linkend="GDK-MOTION-NOTIFY--CAPS"><literal>GDK_MOTION_NOTIFY</literal></link> events will be sent,
+some of which are marked as a hint (the is_hint member is <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>).
+To receive more motion events after a motion hint event, the application
+needs to asks for more, by calling <link linkend="gdk-event-request-motions"><function>gdk_event_request_motions()</function></link>.
+</para><variablelist role="enum">
+<varlistentry id="GDK-EXPOSURE-MASK--CAPS" role="constant">
+<term><literal>GDK_EXPOSURE_MASK</literal></term>
+<listitem><simpara>receive expose events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-POINTER-MOTION-MASK--CAPS" role="constant">
+<term><literal>GDK_POINTER_MOTION_MASK</literal></term>
+<listitem><simpara>receive all pointer motion events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-POINTER-MOTION-HINT-MASK--CAPS" role="constant">
+<term><literal>GDK_POINTER_MOTION_HINT_MASK</literal></term>
+<listitem><simpara>see the explanation above
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-BUTTON-MOTION-MASK--CAPS" role="constant">
+<term><literal>GDK_BUTTON_MOTION_MASK</literal></term>
+<listitem><simpara>receive pointer motion events while any button is pressed
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-BUTTON1-MOTION-MASK--CAPS" role="constant">
+<term><literal>GDK_BUTTON1_MOTION_MASK</literal></term>
+<listitem><simpara>receive pointer motion events while 1 button is pressed
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-BUTTON2-MOTION-MASK--CAPS" role="constant">
+<term><literal>GDK_BUTTON2_MOTION_MASK</literal></term>
+<listitem><simpara>receive pointer motion events while 2 button is pressed
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-BUTTON3-MOTION-MASK--CAPS" role="constant">
+<term><literal>GDK_BUTTON3_MOTION_MASK</literal></term>
+<listitem><simpara>receive pointer motion events while 3 button is pressed
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-BUTTON-PRESS-MASK--CAPS" role="constant">
+<term><literal>GDK_BUTTON_PRESS_MASK</literal></term>
+<listitem><simpara>receive button press events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-BUTTON-RELEASE-MASK--CAPS" role="constant">
+<term><literal>GDK_BUTTON_RELEASE_MASK</literal></term>
+<listitem><simpara>receive button release events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-KEY-PRESS-MASK--CAPS" role="constant">
+<term><literal>GDK_KEY_PRESS_MASK</literal></term>
+<listitem><simpara>receive key press events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-KEY-RELEASE-MASK--CAPS" role="constant">
+<term><literal>GDK_KEY_RELEASE_MASK</literal></term>
+<listitem><simpara>receive key release events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-ENTER-NOTIFY-MASK--CAPS" role="constant">
+<term><literal>GDK_ENTER_NOTIFY_MASK</literal></term>
+<listitem><simpara>receive window enter events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-LEAVE-NOTIFY-MASK--CAPS" role="constant">
+<term><literal>GDK_LEAVE_NOTIFY_MASK</literal></term>
+<listitem><simpara>receive window leave events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-FOCUS-CHANGE-MASK--CAPS" role="constant">
+<term><literal>GDK_FOCUS_CHANGE_MASK</literal></term>
+<listitem><simpara>receive focus change events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-STRUCTURE-MASK--CAPS" role="constant">
+<term><literal>GDK_STRUCTURE_MASK</literal></term>
+<listitem><simpara>receive events about window configuration change
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PROPERTY-CHANGE-MASK--CAPS" role="constant">
+<term><literal>GDK_PROPERTY_CHANGE_MASK</literal></term>
+<listitem><simpara>receive property change events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-VISIBILITY-NOTIFY-MASK--CAPS" role="constant">
+<term><literal>GDK_VISIBILITY_NOTIFY_MASK</literal></term>
+<listitem><simpara>receive visibility change events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PROXIMITY-IN-MASK--CAPS" role="constant">
+<term><literal>GDK_PROXIMITY_IN_MASK</literal></term>
+<listitem><simpara>receive proximity in events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PROXIMITY-OUT-MASK--CAPS" role="constant">
+<term><literal>GDK_PROXIMITY_OUT_MASK</literal></term>
+<listitem><simpara>receive proximity out events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-SUBSTRUCTURE-MASK--CAPS" role="constant">
+<term><literal>GDK_SUBSTRUCTURE_MASK</literal></term>
+<listitem><simpara>receive events about window configuration changes of 
+  child windows
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-SCROLL-MASK--CAPS" role="constant">
+<term><literal>GDK_SCROLL_MASK</literal></term>
+<listitem><simpara>receive scroll events
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-ALL-EVENTS-MASK--CAPS" role="constant">
+<term><literal>GDK_ALL_EVENTS_MASK</literal></term>
+<listitem><simpara>the combination of all the above event masks.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GDK-CURRENT-TIME--CAPS" role="macro">
+<title>GDK_CURRENT_TIME</title>
+<indexterm zone="GDK-CURRENT-TIME--CAPS"><primary sortas="CURRENT_TIME">GDK_CURRENT_TIME</primary></indexterm><programlisting>#define GDK_CURRENT_TIME     0L
+</programlisting>
+<para>
+Represents the current time, and can be used anywhere a time is expected.
+</para></refsect2>
+<refsect2 id="GDK-PRIORITY-EVENTS--CAPS" role="macro">
+<title>GDK_PRIORITY_EVENTS</title>
+<indexterm zone="GDK-PRIORITY-EVENTS--CAPS"><primary sortas="PRIORITY_EVENTS">GDK_PRIORITY_EVENTS</primary></indexterm><programlisting>#define             GDK_PRIORITY_EVENTS</programlisting>
+<para>
+This is the priority that events from the X server are given in the
+<link linkend="glib-The-Main-Event-Loop">GLib Main Loop</link>.
+</para></refsect2>
+<refsect2 id="GDK-PRIORITY-REDRAW--CAPS" role="macro">
+<title>GDK_PRIORITY_REDRAW</title>
+<indexterm zone="GDK-PRIORITY-REDRAW--CAPS"><primary sortas="PRIORITY_REDRAW">GDK_PRIORITY_REDRAW</primary></indexterm><programlisting>#define GDK_PRIORITY_REDRAW     (G_PRIORITY_HIGH_IDLE + 20)
+</programlisting>
+<para>
+This is the priority that the idle handler processing window updates
+is given in the <link linkend="glib-The-Main-Event-Loop">GLib Main Loop</link>.
+</para></refsect2>
+<refsect2 id="gdk-events-pending" role="function">
+<title>gdk_events_pending ()</title>
+<indexterm zone="gdk-events-pending"><primary sortas="events_pending">gdk_events_pending</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_events_pending                  (void);</programlisting>
+<para>
+Checks if any events are ready to be processed for any display.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>  <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if any events are pending.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-peek" role="function">
+<title>gdk_event_peek ()</title>
+<indexterm zone="gdk-event-peek"><primary sortas="event_peek">gdk_event_peek</primary></indexterm><programlisting><link linkend="GdkEvent">GdkEvent</link>*           gdk_event_peek                      (void);</programlisting>
+<para>
+If there is an event waiting in the event queue of some open
+display, returns a copy of it. See <link linkend="gdk-display-peek-event"><function>gdk_display_peek_event()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a copy of the first <link linkend="GdkEvent"><type>GdkEvent</type></link> on some event queue, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if no
+events are in any queues. The returned <link linkend="GdkEvent"><type>GdkEvent</type></link> should be freed with
+<link linkend="gdk-event-free"><function>gdk_event_free()</function></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-get" role="function">
+<title>gdk_event_get ()</title>
+<indexterm zone="gdk-event-get"><primary sortas="event_get">gdk_event_get</primary></indexterm><programlisting><link linkend="GdkEvent">GdkEvent</link>*           gdk_event_get                       (void);</programlisting>
+<para>
+Checks all open displays for a <link linkend="GdkEvent"><type>GdkEvent</type></link> to process,to be processed
+on, fetching events from the windowing system if necessary.
+See <link linkend="gdk-display-get-event"><function>gdk_display_get_event()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the next <link linkend="GdkEvent"><type>GdkEvent</type></link> to be processed, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if no events
+are pending. The returned <link linkend="GdkEvent"><type>GdkEvent</type></link> should be freed with <link linkend="gdk-event-free"><function>gdk_event_free()</function></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-get-graphics-expose" role="function">
+<title>gdk_event_get_graphics_expose ()</title>
+<indexterm zone="gdk-event-get-graphics-expose"><primary sortas="event_get_graphics_expose">gdk_event_get_graphics_expose</primary></indexterm><programlisting><link linkend="GdkEvent">GdkEvent</link>*           gdk_event_get_graphics_expose       (<link linkend="GdkWindow">GdkWindow</link> *window);</programlisting>
+<para>
+Waits for a GraphicsExpose or NoExpose event from the X server.
+This is used in the <link linkend="GtkText"><type>GtkText</type></link> and <link linkend="GtkCList"><type>GtkCList</type></link> widgets in GTK+ to make sure any
+GraphicsExpose events are handled before the widget is scrolled.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>window</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GdkWindow"><type>GdkWindow</type></link> to wait for the events for.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>  a <link linkend="GdkEventExpose"><type>GdkEventExpose</type></link> if a GraphicsExpose was received, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if a
+NoExpose event was received.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-put" role="function">
+<title>gdk_event_put ()</title>
+<indexterm zone="gdk-event-put"><primary sortas="event_put">gdk_event_put</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_event_put                       (const <link linkend="GdkEvent">GdkEvent</link> *event);</programlisting>
+<para>
+Appends a copy of the given event onto the front of the event
+queue for event->any.window's display, or the default event
+queue if event->any.window is <link linkend="NULL--CAPS"><literal>NULL</literal></link>. See <link linkend="gdk-display-put-event"><function>gdk_display_put_event()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEvent"><type>GdkEvent</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-new" role="function" condition="since:2.2">
+<title>gdk_event_new ()</title>
+<indexterm zone="gdk-event-new" role="2.2"><primary sortas="event_new">gdk_event_new</primary></indexterm><programlisting><link linkend="GdkEvent">GdkEvent</link>*           gdk_event_new                       (<link linkend="GdkEventType">GdkEventType</link> type);</programlisting>
+<para>
+Creates a new event of the given type. All fields are set to 0.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEventType"><type>GdkEventType</type></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly-allocated <link linkend="GdkEvent"><type>GdkEvent</type></link>. The returned <link linkend="GdkEvent"><type>GdkEvent</type></link> 
+should be freed with <link linkend="gdk-event-free"><function>gdk_event_free()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-event-copy" role="function">
+<title>gdk_event_copy ()</title>
+<indexterm zone="gdk-event-copy"><primary sortas="event_copy">gdk_event_copy</primary></indexterm><programlisting><link linkend="GdkEvent">GdkEvent</link>*           gdk_event_copy                      (const <link linkend="GdkEvent">GdkEvent</link> *event);</programlisting>
+<para>
+Copies a <link linkend="GdkEvent"><type>GdkEvent</type></link>, copying or incrementing the reference count of the
+resources associated with it (e.g. <link linkend="GdkWindow"><type>GdkWindow</type></link>'s and strings).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEvent"><type>GdkEvent</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a copy of <parameter>event</parameter>. The returned <link linkend="GdkEvent"><type>GdkEvent</type></link> should be freed with
+<link linkend="gdk-event-free"><function>gdk_event_free()</function></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-free" role="function">
+<title>gdk_event_free ()</title>
+<indexterm zone="gdk-event-free"><primary sortas="event_free">gdk_event_free</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_event_free                      (<link linkend="GdkEvent">GdkEvent</link> *event);</programlisting>
+<para>
+Frees a <link linkend="GdkEvent"><type>GdkEvent</type></link>, freeing or decrementing any resources associated with it.
+Note that this function should only be called with events returned from
+functions such as <link linkend="gdk-event-peek"><function>gdk_event_peek()</function></link>, <link linkend="gdk-event-get"><function>gdk_event_get()</function></link>,
+<link linkend="gdk-event-get-graphics-expose"><function>gdk_event_get_graphics_expose()</function></link> and <link linkend="gdk-event-copy"><function>gdk_event_copy()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara>  a <link linkend="GdkEvent"><type>GdkEvent</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-get-time" role="function">
+<title>gdk_event_get_time ()</title>
+<indexterm zone="gdk-event-get-time"><primary sortas="event_get_time">gdk_event_get_time</primary></indexterm><programlisting><link linkend="guint32">guint32</link>             gdk_event_get_time                  (const <link linkend="GdkEvent">GdkEvent</link> *event);</programlisting>
+<para>
+Returns the time stamp from <parameter>event</parameter>, if there is one; otherwise
+returns <link linkend="GDK-CURRENT-TIME--CAPS"><type>GDK_CURRENT_TIME</type></link>. If <parameter>event</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, returns <link linkend="GDK-CURRENT-TIME--CAPS"><type>GDK_CURRENT_TIME</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEvent"><type>GdkEvent</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> time stamp field from <parameter>event</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-get-state" role="function">
+<title>gdk_event_get_state ()</title>
+<indexterm zone="gdk-event-get-state"><primary sortas="event_get_state">gdk_event_get_state</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_event_get_state                 (const <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> *state);</programlisting>
+<para>
+If the event contains a "state" field, puts that field in <parameter>state</parameter>. Otherwise
+stores an empty state (0). Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if there was a state field
+in the event. <parameter>event</parameter> may be <link linkend="NULL--CAPS"><literal>NULL</literal></link>, in which case it's treated
+as if the event had no state field.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEvent"><type>GdkEvent</type></link> or NULL
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>state</parameter>&#160;:</term>
+<listitem><simpara> return location for state
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if there was a state field in the event 
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-get-axis" role="function">
+<title>gdk_event_get_axis ()</title>
+<indexterm zone="gdk-event-get-axis"><primary sortas="event_get_axis">gdk_event_get_axis</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_event_get_axis                  (const <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="GdkAxisUse">GdkAxisUse</link> axis_use,
+                                                         <link linkend="gdouble">gdouble</link> *value);</programlisting>
+<para>
+Extract the axis value for a particular axis use from
+an event structure.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEvent"><type>GdkEvent</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>axis_use</parameter>&#160;:</term>
+<listitem><simpara> the axis use to look for
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> location to store the value found
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the specified axis was found, otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-get-coords" role="function">
+<title>gdk_event_get_coords ()</title>
+<indexterm zone="gdk-event-get-coords"><primary sortas="event_get_coords">gdk_event_get_coords</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_event_get_coords                (const <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="gdouble">gdouble</link> *x_win,
+                                                         <link linkend="gdouble">gdouble</link> *y_win);</programlisting>
+<para>
+Extract the event window relative x/y coordinates from an event.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEvent"><type>GdkEvent</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x_win</parameter>&#160;:</term>
+<listitem><simpara> location to put event window x coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y_win</parameter>&#160;:</term>
+<listitem><simpara> location to put event window y coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the event delivered event window coordinates
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-get-root-coords" role="function">
+<title>gdk_event_get_root_coords ()</title>
+<indexterm zone="gdk-event-get-root-coords"><primary sortas="event_get_root_coords">gdk_event_get_root_coords</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_event_get_root_coords           (const <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="gdouble">gdouble</link> *x_root,
+                                                         <link linkend="gdouble">gdouble</link> *y_root);</programlisting>
+<para>
+Extract the root window relative x/y coordinates from an event.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEvent"><type>GdkEvent</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x_root</parameter>&#160;:</term>
+<listitem><simpara> location to put root window x coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y_root</parameter>&#160;:</term>
+<listitem><simpara> location to put root window y coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the event delivered root window coordinates
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-request-motions" role="function" condition="since:2.12">
+<title>gdk_event_request_motions ()</title>
+<indexterm zone="gdk-event-request-motions" role="2.12"><primary sortas="event_request_motions">gdk_event_request_motions</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_event_request_motions           (const <link linkend="GdkEventMotion">GdkEventMotion</link> *event);</programlisting>
+<para>
+Request more motion notifies if <parameter>event</parameter> is a motion notify hint event.
+This function should be used instead of <link linkend="gdk-window-get-pointer"><function>gdk_window_get_pointer()</function></link> to
+request further motion notifies, because it also works for extension
+events where motion notifies are provided for devices other than the
+core pointer. Coordinate extraction, processing and requesting more
+motion events from a <link linkend="GDK-MOTION-NOTIFY--CAPS"><literal>GDK_MOTION_NOTIFY</literal></link> event usually works like this:
+</para>
+<para>
+<informalexample><programlisting>
+{ 
+  /&ast; motion_event handler &ast;/
+  x = motion_event->x;
+  y = motion_event->y;
+  /&ast; handle (x,y) motion &ast;/
+  gdk_event_request_motions (motion_event); /&ast; handles is_hint events &ast;/
+}
+</programlisting></informalexample></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a valid <link linkend="GdkEvent"><type>GdkEvent</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gdk-event-handler-set" role="function">
+<title>gdk_event_handler_set ()</title>
+<indexterm zone="gdk-event-handler-set"><primary sortas="event_handler_set">gdk_event_handler_set</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_event_handler_set               (<link linkend="GdkEventFunc">GdkEventFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> notify);</programlisting>
+<para>
+Sets the function to call to handle all events from GDK.
+</para>
+<para>
+Note that GTK+ uses this to install its own event handler, so it is
+usually not useful for GTK+ applications. (Although an application
+can call this function then call <link linkend="gtk-main-do-event"><function>gtk_main_do_event()</function></link> to pass
+events to GTK+.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> the function to call to handle events from GDK.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> user data to pass to the function. 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>notify</parameter>&#160;:</term>
+<listitem><simpara> the function to call when the handler function is removed, i.e. when
+         <link linkend="gdk-event-handler-set"><function>gdk_event_handler_set()</function></link> is called with another event handler.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkEventFunc" role="function">
+<title>GdkEventFunc ()</title>
+<indexterm zone="GdkEventFunc"><primary sortas="EventFunc">GdkEventFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GdkEventFunc)                     (<link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<para>
+Specifies the type of function passed to <link linkend="gdk-event-handler-set"><function>gdk_event_handler_set()</function></link> to handle
+all GDK events.
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GdkEvent"><type>GdkEvent</type></link> to process.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the event handler was installed with
+<link linkend="gdk-event-handler-set"><function>gdk_event_handler_set()</function></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-send-client-message" role="function">
+<title>gdk_event_send_client_message ()</title>
+<indexterm zone="gdk-event-send-client-message"><primary sortas="event_send_client_message">gdk_event_send_client_message</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_event_send_client_message       (<link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="GdkNativeWindow">GdkNativeWindow</link> winid);</programlisting>
+<para>
+Sends an X ClientMessage event to a given window (which must be
+on the default <link linkend="GdkDisplay"><type>GdkDisplay</type></link>.)
+This could be used for communicating between different applications,
+though the amount of data is limited to 20 bytes.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GdkEvent"><type>GdkEvent</type></link> to send, which should be a <link linkend="GdkEventClient"><type>GdkEventClient</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>winid</parameter>&#160;:</term>
+<listitem><simpara>  the window to send the X ClientMessage event to.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> non-zero on success.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-send-client-message-for-display" role="function" condition="since:2.2">
+<title>gdk_event_send_client_message_for_display ()</title>
+<indexterm zone="gdk-event-send-client-message-for-display" role="2.2"><primary sortas="event_send_client_message_for_display">gdk_event_send_client_message_for_display</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_event_send_client_message_for_display
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="GdkNativeWindow">GdkNativeWindow</link> winid);</programlisting>
+<para>
+On X11, sends an X ClientMessage event to a given window. On
+Windows, sends a message registered with the name
+GDK_WIN32_CLIENT_MESSAGE.
+</para>
+<para>
+This could be used for communicating between different
+applications, though the amount of data is limited to 20 bytes on
+X11, and to just four bytes on Windows.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GdkDisplay"><type>GdkDisplay</type></link> for the window where the message is to be sent.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GdkEvent"><type>GdkEvent</type></link> to send, which should be a <link linkend="GdkEventClient"><type>GdkEventClient</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>winid</parameter>&#160;:</term>
+<listitem><simpara> the window to send the client message to.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> non-zero on success.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-event-send-clientmessage-toall" role="function">
+<title>gdk_event_send_clientmessage_toall ()</title>
+<indexterm zone="gdk-event-send-clientmessage-toall"><primary sortas="event_send_clientmessage_toall">gdk_event_send_clientmessage_toall</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_event_send_clientmessage_toall  (<link linkend="GdkEvent">GdkEvent</link> *event);</programlisting>
+<para>
+Sends an X ClientMessage event to all toplevel windows on the default
+<link linkend="GdkScreen"><type>GdkScreen</type></link>.
+</para>
+<para>
+Toplevel windows are determined by checking for the WM_STATE property, as
+described in the Inter-Client Communication Conventions Manual (ICCCM).
+If no windows are found with the WM_STATE property set, the message is sent
+to all children of the root window.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GdkEvent"><type>GdkEvent</type></link> to send, which should be a <link linkend="GdkEventClient"><type>GdkEventClient</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-add-client-message-filter" role="function">
+<title>gdk_add_client_message_filter ()</title>
+<indexterm zone="gdk-add-client-message-filter"><primary sortas="add_client_message_filter">gdk_add_client_message_filter</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_add_client_message_filter       (<link linkend="GdkAtom">GdkAtom</link> message_type,
+                                                         <link linkend="GdkFilterFunc">GdkFilterFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<para>
+Adds a filter to the default display to be called when X ClientMessage events
+are received. See <link linkend="gdk-display-add-client-message-filter"><function>gdk_display_add_client_message_filter()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>message_type</parameter>&#160;:</term>
+<listitem><simpara> the type of ClientMessage events to receive. This will be
+    checked against the <structfield>message_type</structfield> field of the
+    XClientMessage event struct.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> the function to call to process the event.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> user data to pass to <parameter>func</parameter>. 
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-get-show-events" role="function">
+<title>gdk_get_show_events ()</title>
+<indexterm zone="gdk-get-show-events"><primary sortas="get_show_events">gdk_get_show_events</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_get_show_events                 (void);</programlisting>
+<para>
+Gets whether event debugging output is enabled.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if event debugging output is enabled.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-set-show-events" role="function">
+<title>gdk_set_show_events ()</title>
+<indexterm zone="gdk-set-show-events"><primary sortas="set_show_events">gdk_set_show_events</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_set_show_events                 (<link linkend="gboolean">gboolean</link> show_events);</programlisting>
+<para>
+Sets whether a trace of received events is output.
+Note that GTK+ must be compiled with debugging (that is,
+configured using the <option>--enable-debug</option> option)
+to use this option.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>show_events</parameter>&#160;:</term>
+<listitem><simpara>  <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> to output event debugging information.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-event-set-screen" role="function" condition="since:2.2">
+<title>gdk_event_set_screen ()</title>
+<indexterm zone="gdk-event-set-screen" role="2.2"><primary sortas="event_set_screen">gdk_event_set_screen</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_event_set_screen                (<link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<para>
+Sets the screen for <parameter>event</parameter> to <parameter>screen</parameter>. The event must
+have been allocated by GTK+, for instance, by
+<link linkend="gdk-event-copy"><function>gdk_event_copy()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEvent"><type>GdkEvent</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-event-get-screen" role="function" condition="since:2.2">
+<title>gdk_event_get_screen ()</title>
+<indexterm zone="gdk-event-get-screen" role="2.2"><primary sortas="event_get_screen">gdk_event_get_screen</primary></indexterm><programlisting><link linkend="GdkScreen">GdkScreen</link> *         gdk_event_get_screen                (const <link linkend="GdkEvent">GdkEvent</link> *event);</programlisting>
+<para>
+Returns the screen for the event. The screen is
+typically the screen for <literal>event->any.window</literal>, but
+for events such as mouse events, it is the screen
+where the pointer was when the event occurs -
+that is, the screen which has the root window 
+to which <literal>event->motion.x_root</literal> and
+<literal>event->motion.y_root</literal> are relative.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEvent"><type>GdkEvent</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the screen for the event
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-setting-get" role="function">
+<title>gdk_setting_get ()</title>
+<indexterm zone="gdk-setting-get"><primary sortas="setting_get">gdk_setting_get</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_setting_get                     (const <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="GValue">GValue</link> *value);</programlisting>
+<para>
+Obtains a desktop-wide setting, such as the double-click time,
+for the default screen. See <link linkend="gdk-screen-get-setting"><function>gdk_screen_get_setting()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> the name of the setting.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> location to store the value of the setting.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the setting existed and a value was stored
+  in <parameter>value</parameter>, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="gdk-Events.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="gdk-Event-Structures">Event Structures</link></term>
+<listitem><para>
+The structs used for each type of event.
+</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

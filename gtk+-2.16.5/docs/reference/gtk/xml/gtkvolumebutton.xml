@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkVolumeButton">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkVolumeButton.top_of_page">GtkVolumeButton</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkVolumeButton</refname>
+<refpurpose>A button which pops up a volume control</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkVolumeButton.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkVolumeButton-struct">GtkVolumeButton</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-volume-button-new">gtk_volume_button_new</link>               (void);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkVolumeButton.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkButton">GtkButton</link>
+                                       +----<link linkend="GtkScaleButton">GtkScaleButton</link>
+                                             +----GtkVolumeButton
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkVolumeButton.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkVolumeButton implements
+ <link linkend="GtkActivatable">GtkActivatable</link>,  <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkVolumeButton.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkVolumeButton"><type>GtkVolumeButton</type></link> is a subclass of <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link> that has
+been tailored for use as a volume control widget with suitable
+icons, tooltips and accessible labels.
+</para>
+</refsect1>
+
+<refsect1 id="GtkVolumeButton.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkVolumeButton-struct" role="struct">
+<title>GtkVolumeButton</title>
+<indexterm zone="GtkVolumeButton-struct"><primary sortas="VolumeButton">GtkVolumeButton</primary></indexterm><programlisting>typedef struct _GtkVolumeButton GtkVolumeButton;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-volume-button-new" role="function" condition="since:2.12">
+<title>gtk_volume_button_new ()</title>
+<indexterm zone="gtk-volume-button-new" role="2.12"><primary sortas="volume_button_new">gtk_volume_button_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_volume_button_new               (void);</programlisting>
+<para>
+Creates a <link linkend="GtkVolumeButton"><type>GtkVolumeButton</type></link>, with a range between 0.0 and 1.0, with
+a stepping of 0.02. Volume values can be obtained and modified using
+the functions from <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkVolumeButton"><type>GtkVolumeButton</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

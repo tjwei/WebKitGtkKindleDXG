@@ -1,0 +1,6 @@
+if [ ! -e ./configure ]
+then
+	make
+fi
+LDFLAGS="-Xlinker -rpath -Xlinker /usr/local/lib" ./configure  $ARGS
+

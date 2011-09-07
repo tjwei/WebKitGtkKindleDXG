@@ -1,0 +1,4 @@
+ssh localhost cd `pwd` \; "$MYCONFDIR"/icu_remote_install
+mkdir -p "$DESTDIR"
+tar -C source/tmpdest -cf - usr|tar -C "$DESTDIR" -xvf -
+rm -fr source/tmpdest

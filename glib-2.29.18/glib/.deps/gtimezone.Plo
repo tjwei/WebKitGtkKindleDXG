@@ -1,0 +1,149 @@
+gtimezone.lo: gtimezone.c gtimezone.h ../glib/gtypes.h glibconfig.h \
+  ../glib/gmacros.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h \
+  /usr/include/limits.h /usr/include/features.h \
+  /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h \
+  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/float.h \
+  /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/types.h \
+  /usr/include/bits/typesizes.h /usr/include/string.h \
+  /usr/include/bits/string.h /usr/include/bits/string2.h \
+  /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/sys/select.h \
+  /usr/include/bits/select.h /usr/include/bits/sigset.h \
+  /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/alloca.h /usr/include/signal.h /usr/include/bits/signum.h \
+  /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
+  /usr/include/bits/sigcontext.h /usr/include/asm/sigcontext.h \
+  /usr/include/bits/sigstack.h /usr/include/bits/sigthread.h \
+  gmappedfile.h ../glib/gerror.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  ../glib/gquark.h gtestutils.h ../glib/gmessages.h ../glib/gstring.h \
+  ../glib/gunicode.h ../glib/gutils.h ../glib/gslist.h ../glib/gmem.h \
+  ../glib/gslice.h gfileutils.h gstrfuncs.h ghash.h ../glib/glist.h \
+  gthread.h ../glib/gatomic.h gbufferprivate.h
+
+gtimezone.h:
+
+../glib/gtypes.h:
+
+glibconfig.h:
+
+../glib/gmacros.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:
+
+/usr/include/limits.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/float.h:
+
+/usr/include/time.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/signal.h:
+
+/usr/include/bits/signum.h:
+
+/usr/include/bits/siginfo.h:
+
+/usr/include/bits/sigaction.h:
+
+/usr/include/bits/sigcontext.h:
+
+/usr/include/asm/sigcontext.h:
+
+/usr/include/bits/sigstack.h:
+
+/usr/include/bits/sigthread.h:
+
+gmappedfile.h:
+
+../glib/gerror.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+../glib/gquark.h:
+
+gtestutils.h:
+
+../glib/gmessages.h:
+
+../glib/gstring.h:
+
+../glib/gunicode.h:
+
+../glib/gutils.h:
+
+../glib/gslist.h:
+
+../glib/gmem.h:
+
+../glib/gslice.h:
+
+gfileutils.h:
+
+gstrfuncs.h:
+
+ghash.h:
+
+../glib/glist.h:
+
+gthread.h:
+
+../glib/gatomic.h:
+
+gbufferprivate.h:

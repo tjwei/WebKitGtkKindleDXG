@@ -1,0 +1,8 @@
+target=directfb
+
+Name: GDK Uninstalled
+Description: GTK+ Drawing Kit (${target} target), Not Installed
+Version: 2.16.5
+Requires: gdk-pixbuf-2.0-uninstalled pango pangocairo
+Libs: ${pc_top_builddir}/${pcfiledir}/gdk/libgdk-${target}-2.0.la 
+Cflags: -I${pc_top_builddir}/${pcfiledir}/./gdk -I${pc_top_builddir}/${pcfiledir}/. -I${pc_top_builddir}/${pcfiledir} -D_REENTRANT -pthread -I/usr/local/include/cairo -I/usr/local/include/directfb -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include/pixman-1 -I/usr/local/include -I/usr/local/include/freetype2 -I/usr/local/include/libpng14   

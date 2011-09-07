@@ -1,0 +1,583 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libsoup-24-SoupMessageBody">
+<refmeta>
+<refentrytitle role="top_of_page" id="libsoup-24-SoupMessageBody.top_of_page">SoupMessageBody</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupMessageBody</refname>
+<refpurpose>HTTP message body</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libsoup-24-SoupMessageBody.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SoupBuffer">SoupBuffer</link>;
+enum                <link linkend="SoupMemoryUse">SoupMemoryUse</link>;
+<link linkend="SoupBuffer">SoupBuffer</link> *        <link linkend="soup-buffer-new">soup_buffer_new</link>                     (<link linkend="SoupMemoryUse">SoupMemoryUse</link> use,
+                                                         <link linkend="gconstpointer">gconstpointer</link> data,
+                                                         <link linkend="gsize">gsize</link> length);
+<link linkend="SoupBuffer">SoupBuffer</link> *        <link linkend="soup-buffer-new-subbuffer">soup_buffer_new_subbuffer</link>           (<link linkend="SoupBuffer">SoupBuffer</link> *parent,
+                                                         <link linkend="gsize">gsize</link> offset,
+                                                         <link linkend="gsize">gsize</link> length);
+<link linkend="SoupBuffer">SoupBuffer</link> *        <link linkend="soup-buffer-new-with-owner">soup_buffer_new_with_owner</link>          (<link linkend="gconstpointer">gconstpointer</link> data,
+                                                         <link linkend="gsize">gsize</link> length,
+                                                         <link linkend="gpointer">gpointer</link> owner,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> owner_dnotify);
+<link linkend="gpointer">gpointer</link>            <link linkend="soup-buffer-get-owner">soup_buffer_get_owner</link>               (<link linkend="SoupBuffer">SoupBuffer</link> *buffer);
+<link linkend="SoupBuffer">SoupBuffer</link> *        <link linkend="soup-buffer-copy">soup_buffer_copy</link>                    (<link linkend="SoupBuffer">SoupBuffer</link> *buffer);
+<link linkend="void">void</link>                <link linkend="soup-buffer-free">soup_buffer_free</link>                    (<link linkend="SoupBuffer">SoupBuffer</link> *buffer);
+
+                    <link linkend="SoupMessageBody">SoupMessageBody</link>;
+<link linkend="SoupMessageBody">SoupMessageBody</link> *   <link linkend="soup-message-body-new">soup_message_body_new</link>               (void);
+<link linkend="void">void</link>                <link linkend="soup-message-body-free">soup_message_body_free</link>              (<link linkend="SoupMessageBody">SoupMessageBody</link> *body);
+
+<link linkend="void">void</link>                <link linkend="soup-message-body-set-accumulate">soup_message_body_set_accumulate</link>    (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="gboolean">gboolean</link> accumulate);
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-message-body-get-accumulate">soup_message_body_get_accumulate</link>    (<link linkend="SoupMessageBody">SoupMessageBody</link> *body);
+
+<link linkend="void">void</link>                <link linkend="soup-message-body-append">soup_message_body_append</link>            (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="SoupMemoryUse">SoupMemoryUse</link> use,
+                                                         <link linkend="gconstpointer">gconstpointer</link> data,
+                                                         <link linkend="gsize">gsize</link> length);
+<link linkend="void">void</link>                <link linkend="soup-message-body-append-buffer">soup_message_body_append_buffer</link>     (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *buffer);
+<link linkend="void">void</link>                <link linkend="soup-message-body-truncate">soup_message_body_truncate</link>          (<link linkend="SoupMessageBody">SoupMessageBody</link> *body);
+<link linkend="void">void</link>                <link linkend="soup-message-body-complete">soup_message_body_complete</link>          (<link linkend="SoupMessageBody">SoupMessageBody</link> *body);
+<link linkend="SoupBuffer">SoupBuffer</link> *        <link linkend="soup-message-body-flatten">soup_message_body_flatten</link>           (<link linkend="SoupMessageBody">SoupMessageBody</link> *body);
+<link linkend="SoupBuffer">SoupBuffer</link> *        <link linkend="soup-message-body-get-chunk">soup_message_body_get_chunk</link>         (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="goffset">goffset</link> offset);
+
+<link linkend="void">void</link>                <link linkend="soup-message-body-got-chunk">soup_message_body_got_chunk</link>         (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *chunk);
+<link linkend="void">void</link>                <link linkend="soup-message-body-wrote-chunk">soup_message_body_wrote_chunk</link>       (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *chunk);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libsoup-24-SoupMessageBody.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="SoupMessageBody"><type>SoupMessageBody</type></link> represents the request or response body of a
+<link linkend="SoupMessage"><type>SoupMessage</type></link>.
+</para>
+<para>
+In addition to <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>, libsoup also defines a "smaller"
+data buffer type, <link linkend="SoupBuffer"><type>SoupBuffer</type></link>, which is primarily used as a
+component of <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>. In particular, when using chunked
+encoding to transmit or receive a message, each chunk is
+represented as a <link linkend="SoupBuffer"><type>SoupBuffer</type></link>.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libsoup-24-SoupMessageBody.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupBuffer" role="struct">
+<title>SoupBuffer</title>
+<indexterm zone="SoupBuffer"><primary sortas="SoupBuffer">SoupBuffer</primary></indexterm><programlisting>typedef struct {
+	const char *data;
+	gsize       length;
+} SoupBuffer;
+</programlisting>
+<para>
+A data buffer, generally used to represent a chunk of a
+<link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>.
+</para>
+<para>
+<parameter>data</parameter> is a <link linkend="char"><type>char</type></link> because that's generally convenient; in some
+situations you may need to cast it to <link linkend="guchar"><type>guchar</type></link> or another type.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term>const&#160;<link linkend="char">char</link>&#160;*<structfield>data</structfield>;</term>
+<listitem><simpara> the data
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gsize">gsize</link>&#160;<structfield>length</structfield>;</term>
+<listitem><simpara> length of <parameter>data</parameter>
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SoupMemoryUse" role="enum">
+<title>enum SoupMemoryUse</title>
+<indexterm zone="SoupMemoryUse"><primary sortas="SoupMemoryUse">SoupMemoryUse</primary></indexterm><programlisting>typedef enum {
+	SOUP_MEMORY_STATIC,
+	SOUP_MEMORY_TAKE,
+	SOUP_MEMORY_COPY,
+	SOUP_MEMORY_TEMPORARY
+} SoupMemoryUse;
+</programlisting>
+<para>
+Describes how <link linkend="SoupBuffer"><type>SoupBuffer</type></link> should use the data passed in by the
+caller.
+</para>
+<para>
+See also <link linkend="soup-buffer-new-with-owner"><function>soup_buffer_new_with_owner()</function></link>, which allows to you create a
+buffer containing data which is owned by another object.</para>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="SOUP-MEMORY-STATIC--CAPS" role="constant">
+<term><literal>SOUP_MEMORY_STATIC</literal></term>
+<listitem><simpara> The memory is statically allocated and
+constant; libsoup can use the passed-in buffer directly and not
+need to worry about it being modified or freed.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-MEMORY-TAKE--CAPS" role="constant">
+<term><literal>SOUP_MEMORY_TAKE</literal></term>
+<listitem><simpara> The caller has allocated the memory for the
+<link linkend="SoupBuffer"><type>SoupBuffer</type></link>'s use; libsoup will assume ownership of it and free it
+(with <link linkend="g-free"><function>g_free()</function></link>) when it is done with it.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-MEMORY-COPY--CAPS" role="constant">
+<term><literal>SOUP_MEMORY_COPY</literal></term>
+<listitem><simpara> The passed-in data belongs to the caller; the
+<link linkend="SoupBuffer"><type>SoupBuffer</type></link> will copy it into new memory, leaving the caller free
+to reuse the original memory.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-MEMORY-TEMPORARY--CAPS" role="constant">
+<term><literal>SOUP_MEMORY_TEMPORARY</literal></term>
+<listitem><simpara> The passed-in data belongs to the caller,
+but will remain valid for the lifetime of the <link linkend="SoupBuffer"><type>SoupBuffer</type></link>. The
+difference between this and <parameter>SOUP_MEMORY_STATIC</parameter> is that if you copy
+a <parameter>SOUP_MEMORY_TEMPORARY</parameter> buffer, it will make a copy of the memory
+as well, rather than reusing the original memory.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-buffer-new" role="function">
+<title>soup_buffer_new ()</title>
+<indexterm zone="soup-buffer-new"><primary sortas="soup_buffer_new">soup_buffer_new</primary></indexterm><programlisting><link linkend="SoupBuffer">SoupBuffer</link> *        soup_buffer_new                     (<link linkend="SoupMemoryUse">SoupMemoryUse</link> use,
+                                                         <link linkend="gconstpointer">gconstpointer</link> data,
+                                                         <link linkend="gsize">gsize</link> length);</programlisting>
+<para>
+Creates a new <link linkend="SoupBuffer"><type>SoupBuffer</type></link> containing <parameter>length</parameter> bytes from <parameter>data</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>use</parameter>&#160;:</term>
+<listitem><simpara> how <parameter>data</parameter> is to be used by the buffer
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> data
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> length of <parameter>data</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="SoupBuffer"><type>SoupBuffer</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-buffer-new-subbuffer" role="function">
+<title>soup_buffer_new_subbuffer ()</title>
+<indexterm zone="soup-buffer-new-subbuffer"><primary sortas="soup_buffer_new_subbuffer">soup_buffer_new_subbuffer</primary></indexterm><programlisting><link linkend="SoupBuffer">SoupBuffer</link> *        soup_buffer_new_subbuffer           (<link linkend="SoupBuffer">SoupBuffer</link> *parent,
+                                                         <link linkend="gsize">gsize</link> offset,
+                                                         <link linkend="gsize">gsize</link> length);</programlisting>
+<para>
+Creates a new <link linkend="SoupBuffer"><type>SoupBuffer</type></link> containing <parameter>length</parameter> bytes "copied" from
+<parameter>parent</parameter> starting at <parameter>offset</parameter>. (Normally this will not actually copy
+any data, but will instead simply reference the same data as
+<parameter>parent</parameter> does.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> the parent <link linkend="SoupBuffer"><type>SoupBuffer</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>offset</parameter>&#160;:</term>
+<listitem><simpara> offset within <parameter>parent</parameter> to start at
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> number of bytes to copy from <parameter>parent</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="SoupBuffer"><type>SoupBuffer</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-buffer-new-with-owner" role="function">
+<title>soup_buffer_new_with_owner ()</title>
+<indexterm zone="soup-buffer-new-with-owner"><primary sortas="soup_buffer_new_with_owner">soup_buffer_new_with_owner</primary></indexterm><programlisting><link linkend="SoupBuffer">SoupBuffer</link> *        soup_buffer_new_with_owner          (<link linkend="gconstpointer">gconstpointer</link> data,
+                                                         <link linkend="gsize">gsize</link> length,
+                                                         <link linkend="gpointer">gpointer</link> owner,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> owner_dnotify);</programlisting>
+<para>
+Creates a new <link linkend="SoupBuffer"><type>SoupBuffer</type></link> containing <parameter>length</parameter> bytes from <parameter>data</parameter>. When
+the <link linkend="SoupBuffer"><type>SoupBuffer</type></link> is freed, it will call <parameter>owner_dnotify</parameter>, passing
+<parameter>owner</parameter> to it. You must ensure that <parameter>data</parameter> will remain valid until
+<parameter>owner_dnotify</parameter> is called.
+</para>
+<para>
+For example, you could use this to create a buffer containing data
+returned from libxml without needing to do an extra copy:
+</para>
+<para>
+<informalexample><programlisting>
+xmlDocDumpMemory (doc, &amp;xmlbody, &amp;len);
+return soup_buffer_new_with_owner (xmlbody, len, xmlbody,
+                                   (GDestroyNotify)xmlFree);
+</programlisting></informalexample>
+</para>
+<para>
+In this example, <parameter>data</parameter> and <parameter>owner</parameter> are the same, but in other cases
+they would be different (eg, <parameter>owner</parameter> would be a object, and <parameter>data</parameter>
+would be a pointer to one of the object's fields).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> data
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> length of <parameter>data</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>owner</parameter>&#160;:</term>
+<listitem><simpara> pointer to an object that owns <parameter>data</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>owner_dnotify</parameter>&#160;:</term>
+<listitem><simpara> a function to free/unref <parameter>owner</parameter> when the buffer is
+freed
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="SoupBuffer"><type>SoupBuffer</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-buffer-get-owner" role="function">
+<title>soup_buffer_get_owner ()</title>
+<indexterm zone="soup-buffer-get-owner"><primary sortas="soup_buffer_get_owner">soup_buffer_get_owner</primary></indexterm><programlisting><link linkend="gpointer">gpointer</link>            soup_buffer_get_owner               (<link linkend="SoupBuffer">SoupBuffer</link> *buffer);</programlisting>
+<para>
+Gets the "owner" object for a buffer created with
+<link linkend="soup-buffer-new-with-owner"><function>soup_buffer_new_with_owner()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupBuffer"><type>SoupBuffer</type></link> created with <link linkend="soup-buffer-new-with-owner"><function>soup_buffer_new_with_owner()</function></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the owner pointer
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-buffer-copy" role="function">
+<title>soup_buffer_copy ()</title>
+<indexterm zone="soup-buffer-copy"><primary sortas="soup_buffer_copy">soup_buffer_copy</primary></indexterm><programlisting><link linkend="SoupBuffer">SoupBuffer</link> *        soup_buffer_copy                    (<link linkend="SoupBuffer">SoupBuffer</link> *buffer);</programlisting>
+<para>
+Makes a copy of <parameter>buffer</parameter>. In reality, <link linkend="SoupBuffer"><type>SoupBuffer</type></link> is a refcounted
+type, and calling <link linkend="soup-buffer-copy"><function>soup_buffer_copy()</function></link> will normally just increment
+the refcount on <parameter>buffer</parameter> and return it. However, if <parameter>buffer</parameter> was
+created with <link linkend="SOUP-MEMORY-TEMPORARY--CAPS"><type>SOUP_MEMORY_TEMPORARY</type></link> memory, then <link linkend="soup-buffer-copy"><function>soup_buffer_copy()</function></link>
+will actually return a copy of it, so that the data in the copy
+will remain valid after the temporary buffer is freed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupBuffer"><type>SoupBuffer</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new (or newly-reffed) buffer
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-buffer-free" role="function">
+<title>soup_buffer_free ()</title>
+<indexterm zone="soup-buffer-free"><primary sortas="soup_buffer_free">soup_buffer_free</primary></indexterm><programlisting><link linkend="void">void</link>                soup_buffer_free                    (<link linkend="SoupBuffer">SoupBuffer</link> *buffer);</programlisting>
+<para>
+Frees <parameter>buffer</parameter>. (In reality, as described in the documentation for
+<link linkend="soup-buffer-copy"><function>soup_buffer_copy()</function></link>, this is actually an "unref" operation, and may
+or may not actually free <parameter>buffer</parameter>.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupBuffer"><type>SoupBuffer</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SoupMessageBody" role="struct">
+<title>SoupMessageBody</title>
+<indexterm zone="SoupMessageBody"><primary sortas="SoupMessageBody">SoupMessageBody</primary></indexterm><programlisting>typedef struct {
+	const char *data;
+	goffset     length;
+} SoupMessageBody;
+</programlisting>
+<para>
+A <link linkend="SoupMessage"><type>SoupMessage</type></link> request or response body.
+</para>
+<para>
+Note that while <parameter>length</parameter> always reflects the full length of the
+message body, <parameter>data</parameter> is normally <link linkend="NULL--CAPS"><literal>NULL</literal></link>, and will only be filled in
+after <link linkend="soup-message-body-flatten"><function>soup_message_body_flatten()</function></link> is called. For client-side
+messages, this automatically happens for the response body after it
+has been fully read, unless you set the
+<link linkend="SOUP-MESSAGE-OVERWRITE-CHUNKS--CAPS"><literal>SOUP_MESSAGE_OVERWRITE_CHUNKS</literal></link> flags. Likewise, for server-side
+messages, the request body is automatically filled in after being
+read.
+</para>
+<para>
+As an added bonus, when <parameter>data</parameter> is filled in, it is always terminated
+with a '\0' byte (which is not reflected in <parameter>length</parameter>).</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term>const&#160;<link linkend="char">char</link>&#160;*<structfield>data</structfield>;</term>
+<listitem><simpara> the data
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="goffset">goffset</link>&#160;<structfield>length</structfield>;</term>
+<listitem><simpara> length of <parameter>data</parameter>
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-body-new" role="function">
+<title>soup_message_body_new ()</title>
+<indexterm zone="soup-message-body-new"><primary sortas="soup_message_body_new">soup_message_body_new</primary></indexterm><programlisting><link linkend="SoupMessageBody">SoupMessageBody</link> *   soup_message_body_new               (void);</programlisting>
+<para>
+Creates a new <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>. <link linkend="SoupMessage"><type>SoupMessage</type></link> uses this internally; you
+will not normally need to call it yourself.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-body-free" role="function">
+<title>soup_message_body_free ()</title>
+<indexterm zone="soup-message-body-free"><primary sortas="soup_message_body_free">soup_message_body_free</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_body_free              (<link linkend="SoupMessageBody">SoupMessageBody</link> *body);</programlisting>
+<para>
+Frees <parameter>body</parameter>. You will not normally need to use this, as
+<link linkend="SoupMessage"><type>SoupMessage</type></link> frees its associated message bodies automatically.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-body-set-accumulate" role="function" condition="since:2.4.1">
+<title>soup_message_body_set_accumulate ()</title>
+<indexterm zone="soup-message-body-set-accumulate" role="2.4.1"><primary sortas="soup_message_body_set_accumulate">soup_message_body_set_accumulate</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_body_set_accumulate    (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="gboolean">gboolean</link> accumulate);</programlisting>
+<para>
+Sets or clears the accumulate flag on <parameter>body</parameter>. (The default value is
+<link linkend="TRUE--CAPS"><literal>TRUE</literal></link>.) If set to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, <parameter>body</parameter>'s <link linkend="data"><literal>data</literal></link> field will not be filled in
+after the body is fully sent/received, and the chunks that make up
+<parameter>body</parameter> may be discarded when they are no longer needed.
+</para>
+<para>
+In particular, if you set this flag to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> on an "incoming"
+message body (that is, the <link linkend="response-body"><literal>response_body</literal></link> of a client-side message,
+or <link linkend="request-body"><literal>request_body</literal></link> of a server-side message), this will cause each
+chunk of the body to be discarded after its corresponding
+<link linkend="SoupMessage-got-chunk"><type>"got_chunk"</type></link> signal is emitted. (This is equivalent to
+setting the deprecated <link linkend="SOUP-MESSAGE-OVERWRITE-CHUNKS--CAPS"><literal>SOUP_MESSAGE_OVERWRITE_CHUNKS</literal></link> flag on the
+message.)
+</para>
+<para>
+If you set this flag to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> on the <link linkend="response-body"><literal>response_body</literal></link> of a
+server-side message, it will cause each chunk of the body to be
+discarded after its corresponding <link linkend="SoupMessage-wrote-chunk"><type>"wrote_chunk"</type></link> signal
+is emitted.
+</para>
+<para>
+(If you set the flag to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> on the <link linkend="request-body"><literal>request_body</literal></link> of a
+client-side message, it will block the accumulation of chunks into
+<parameter>body</parameter>'s <link linkend="data"><literal>data</literal></link> field, but it will not cause the chunks to be
+discarded after being written like in the server-side
+<link linkend="response-body"><literal>response_body</literal></link> case, because the request body needs to be kept
+around in case the request needs to be sent a second time due to
+redirection or authentication.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>accumulate</parameter>&#160;:</term>
+<listitem><simpara> whether or not to accumulate body chunks in <parameter>body</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4.1</para></refsect2>
+<refsect2 id="soup-message-body-get-accumulate" role="function" condition="since:2.4.1">
+<title>soup_message_body_get_accumulate ()</title>
+<indexterm zone="soup-message-body-get-accumulate" role="2.4.1"><primary sortas="soup_message_body_get_accumulate">soup_message_body_get_accumulate</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_message_body_get_accumulate    (<link linkend="SoupMessageBody">SoupMessageBody</link> *body);</programlisting>
+<para>
+Gets the accumulate flag on <parameter>body</parameter>; see
+<link linkend="soup-message-body-set-accumulate"><function>soup_message_body_set_accumulate()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the accumulate flag for <parameter>body</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4.1</para></refsect2>
+<refsect2 id="soup-message-body-append" role="function">
+<title>soup_message_body_append ()</title>
+<indexterm zone="soup-message-body-append"><primary sortas="soup_message_body_append">soup_message_body_append</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_body_append            (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="SoupMemoryUse">SoupMemoryUse</link> use,
+                                                         <link linkend="gconstpointer">gconstpointer</link> data,
+                                                         <link linkend="gsize">gsize</link> length);</programlisting>
+<para>
+Appends <parameter>length</parameter> bytes from <parameter>data</parameter> to <parameter>body</parameter> according to <parameter>use</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>use</parameter>&#160;:</term>
+<listitem><simpara> how to use <parameter>data</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> data to append
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> length of <parameter>data</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-body-append-buffer" role="function">
+<title>soup_message_body_append_buffer ()</title>
+<indexterm zone="soup-message-body-append-buffer"><primary sortas="soup_message_body_append_buffer">soup_message_body_append_buffer</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_body_append_buffer     (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *buffer);</programlisting>
+<para>
+Appends the data from <parameter>buffer</parameter> to <parameter>body</parameter>. (<link linkend="SoupMessageBody"><type>SoupMessageBody</type></link> uses
+<link linkend="SoupBuffers"><type>SoupBuffers</type></link> internally, so this is normally a constant-time
+operation that doesn't actually require copying the data in
+<parameter>buffer</parameter>.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupBuffer"><type>SoupBuffer</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-body-truncate" role="function">
+<title>soup_message_body_truncate ()</title>
+<indexterm zone="soup-message-body-truncate"><primary sortas="soup_message_body_truncate">soup_message_body_truncate</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_body_truncate          (<link linkend="SoupMessageBody">SoupMessageBody</link> *body);</programlisting>
+<para>
+Deletes all of the data in <parameter>body</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-body-complete" role="function">
+<title>soup_message_body_complete ()</title>
+<indexterm zone="soup-message-body-complete"><primary sortas="soup_message_body_complete">soup_message_body_complete</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_body_complete          (<link linkend="SoupMessageBody">SoupMessageBody</link> *body);</programlisting>
+<para>
+Tags <parameter>body</parameter> as being complete; Call this when using chunked encoding
+after you have appended the last chunk.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-body-flatten" role="function">
+<title>soup_message_body_flatten ()</title>
+<indexterm zone="soup-message-body-flatten"><primary sortas="soup_message_body_flatten">soup_message_body_flatten</primary></indexterm><programlisting><link linkend="SoupBuffer">SoupBuffer</link> *        soup_message_body_flatten           (<link linkend="SoupMessageBody">SoupMessageBody</link> *body);</programlisting>
+<para>
+Fills in <parameter>body</parameter>'s data field with a buffer containing all of the
+data in <parameter>body</parameter> (plus an additional '\0' byte not counted by <parameter>body</parameter>'s
+length field).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="SoupBuffer"><type>SoupBuffer</type></link> containing the same data as <parameter>body</parameter>.
+(You must free this buffer if you do not want it.)
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-body-get-chunk" role="function">
+<title>soup_message_body_get_chunk ()</title>
+<indexterm zone="soup-message-body-get-chunk"><primary sortas="soup_message_body_get_chunk">soup_message_body_get_chunk</primary></indexterm><programlisting><link linkend="SoupBuffer">SoupBuffer</link> *        soup_message_body_get_chunk         (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="goffset">goffset</link> offset);</programlisting>
+<para>
+Gets a <link linkend="SoupBuffer"><type>SoupBuffer</type></link> containing data from <parameter>body</parameter> starting at <parameter>offset</parameter>.
+The size of the returned chunk is unspecified. You can iterate
+through the entire body by first calling
+<link linkend="soup-message-body-get-chunk"><function>soup_message_body_get_chunk()</function></link> with an offset of 0, and then on each
+successive call, increment the offset by the length of the
+previously-returned chunk.
+</para>
+<para>
+If <parameter>offset</parameter> is greater than or equal to the total length of <parameter>body</parameter>,
+then the return value depends on whether or not
+<link linkend="soup-message-body-complete"><function>soup_message_body_complete()</function></link> has been called or not; if it has,
+then <link linkend="soup-message-body-get-chunk"><function>soup_message_body_get_chunk()</function></link> will return a 0-length chunk
+(indicating the end of <parameter>body</parameter>). If it has not, then
+<link linkend="soup-message-body-get-chunk"><function>soup_message_body_get_chunk()</function></link> will return <link linkend="NULL--CAPS"><literal>NULL</literal></link> (indicating that
+<parameter>body</parameter> may still potentially have more data, but that data is not
+currently available).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>offset</parameter>&#160;:</term>
+<listitem><simpara> an offset
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="SoupBuffer"><type>SoupBuffer</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-body-got-chunk" role="function" condition="since:2.4.1">
+<title>soup_message_body_got_chunk ()</title>
+<indexterm zone="soup-message-body-got-chunk" role="2.4.1"><primary sortas="soup_message_body_got_chunk">soup_message_body_got_chunk</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_body_got_chunk         (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *chunk);</programlisting>
+<para>
+Handles the <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link> part of receiving a chunk of data from
+the network. Normally this means appending <parameter>chunk</parameter> to <parameter>body</parameter>, exactly
+as with <link linkend="soup-message-body-append-buffer"><function>soup_message_body_append_buffer()</function></link>, but if you have set
+<parameter>body</parameter>'s accumulate flag to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, then that will not happen.
+</para>
+<para>
+This is a low-level method which you should not normally need to
+use.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>chunk</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupBuffer"><type>SoupBuffer</type></link> received from the network
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4.1</para></refsect2>
+<refsect2 id="soup-message-body-wrote-chunk" role="function" condition="since:2.4.1">
+<title>soup_message_body_wrote_chunk ()</title>
+<indexterm zone="soup-message-body-wrote-chunk" role="2.4.1"><primary sortas="soup_message_body_wrote_chunk">soup_message_body_wrote_chunk</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_body_wrote_chunk       (<link linkend="SoupMessageBody">SoupMessageBody</link> *body,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *chunk);</programlisting>
+<para>
+Handles the <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link> part of writing a chunk of data to the
+network. Normally this is a no-op, but if you have set <parameter>body</parameter>'s
+accumulate flag to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, then this will cause <parameter>chunk</parameter> to be
+discarded to free up memory.
+</para>
+<para>
+This is a low-level method which you should not need to use, and
+there are further restrictions on its proper use which are not
+documented here.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageBody"><type>SoupMessageBody</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>chunk</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupBuffer"><type>SoupBuffer</type></link> returned from <link linkend="soup-message-body-get-chunk"><function>soup_message_body_get_chunk()</function></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4.1</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="libsoup-24-SoupMessageBody.see-also">
+<title>See Also</title>
+#SoupMessage
+</refsect1>
+
+</refentry>

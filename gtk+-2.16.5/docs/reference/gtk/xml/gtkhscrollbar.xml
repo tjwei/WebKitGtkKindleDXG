@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkHScrollbar">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkHScrollbar.top_of_page">GtkHScrollbar</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkHScrollbar</refname>
+<refpurpose>A horizontal scrollbar</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkHScrollbar.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkHScrollbar-struct">GtkHScrollbar</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-hscrollbar-new">gtk_hscrollbar_new</link>                  (<link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkHScrollbar.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkRange">GtkRange</link>
+                           +----<link linkend="GtkScrollbar">GtkScrollbar</link>
+                                 +----GtkHScrollbar
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkHScrollbar.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkHScrollbar implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkHScrollbar.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkHScrollbar"><type>GtkHScrollbar</type></link> widget is a widget arranged horizontally creating a
+scrollbar. See <link linkend="GtkScrollbar"><type>GtkScrollbar</type></link> for details on
+scrollbars. <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link> pointers may be added to handle the
+adjustment of the scrollbar or it may be left <link linkend="NULL--CAPS"><literal>NULL</literal></link> in which case one
+will be created for you. See <link linkend="GtkScrollbar"><type>GtkScrollbar</type></link> for a description of what the
+fields in an adjustment represent for a scrollbar.
+</para>
+</refsect1>
+
+<refsect1 id="GtkHScrollbar.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkHScrollbar-struct" role="struct">
+<title>GtkHScrollbar</title>
+<indexterm zone="GtkHScrollbar-struct"><primary sortas="HScrollbar">GtkHScrollbar</primary></indexterm><programlisting>typedef struct _GtkHScrollbar GtkHScrollbar;</programlisting>
+<para>
+The <link linkend="GtkHScrollbar"><type>GtkHScrollbar</type></link> struct contains private data and should be accessed
+using the functions below.
+</para></refsect2>
+<refsect2 id="gtk-hscrollbar-new" role="function">
+<title>gtk_hscrollbar_new ()</title>
+<indexterm zone="gtk-hscrollbar-new"><primary sortas="hscrollbar_new">gtk_hscrollbar_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_hscrollbar_new                  (<link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);</programlisting>
+<para>
+Creates a new horizontal scrollbar.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>adjustment</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link> to use, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> to create a new adjustment
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="GtkHScrollbar"><type>GtkHScrollbar</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkHScrollbar.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkScrollbar"><type>GtkScrollbar</type></link>, <link linkend="GtkScrolledWindow"><type>GtkScrolledWindow</type></link>
+</para>
+</refsect1>
+
+</refentry>

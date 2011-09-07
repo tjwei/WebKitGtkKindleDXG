@@ -1,0 +1,1171 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="gtk-Standard-Enumerations">
+<refmeta>
+<refentrytitle role="top_of_page" id="gtk-Standard-Enumerations.top_of_page">Standard Enumerations</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Standard Enumerations</refname>
+<refpurpose>Public enumerated types used throughout GTK+</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gtk-Standard-Enumerations.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+enum                <link linkend="GtkAccelFlags">GtkAccelFlags</link>;
+enum                <link linkend="GtkAnchorType">GtkAnchorType</link>;
+enum                <link linkend="GtkArrowPlacement">GtkArrowPlacement</link>;
+enum                <link linkend="GtkArrowType">GtkArrowType</link>;
+enum                <link linkend="GtkAttachOptions">GtkAttachOptions</link>;
+enum                <link linkend="GtkButtonBoxStyle">GtkButtonBoxStyle</link>;
+enum                <link linkend="GtkCornerType">GtkCornerType</link>;
+enum                <link linkend="GtkCurveType">GtkCurveType</link>;
+enum                <link linkend="GtkDeleteType">GtkDeleteType</link>;
+enum                <link linkend="GtkDirectionType">GtkDirectionType</link>;
+enum                <link linkend="GtkExpanderStyle">GtkExpanderStyle</link>;
+enum                <link linkend="GtkIMPreeditStyle">GtkIMPreeditStyle</link>;
+enum                <link linkend="GtkIMStatusStyle">GtkIMStatusStyle</link>;
+enum                <link linkend="GtkJustification">GtkJustification</link>;
+enum                <link linkend="GtkMatchType">GtkMatchType</link>;
+enum                <link linkend="GtkMetricType">GtkMetricType</link>;
+enum                <link linkend="GtkMovementStep">GtkMovementStep</link>;
+enum                <link linkend="GtkOrientation">GtkOrientation</link>;
+enum                <link linkend="GtkPackType">GtkPackType</link>;
+enum                <link linkend="GtkPathPriorityType">GtkPathPriorityType</link>;
+enum                <link linkend="GtkPathType">GtkPathType</link>;
+enum                <link linkend="GtkPolicyType">GtkPolicyType</link>;
+enum                <link linkend="GtkPositionType">GtkPositionType</link>;
+enum                <link linkend="GtkPreviewType">GtkPreviewType</link>;
+enum                <link linkend="GtkReliefStyle">GtkReliefStyle</link>;
+enum                <link linkend="GtkResizeMode">GtkResizeMode</link>;
+enum                <link linkend="GtkScrollStep">GtkScrollStep</link>;
+enum                <link linkend="GtkScrollType">GtkScrollType</link>;
+enum                <link linkend="GtkSelectionMode">GtkSelectionMode</link>;
+enum                <link linkend="GtkShadowType">GtkShadowType</link>;
+enum                <link linkend="GtkSideType">GtkSideType</link>;
+enum                <link linkend="GtkStateType">GtkStateType</link>;
+enum                <link linkend="GtkSubmenuDirection">GtkSubmenuDirection</link>;
+enum                <link linkend="GtkSubmenuPlacement">GtkSubmenuPlacement</link>;
+enum                <link linkend="GtkToolbarStyle">GtkToolbarStyle</link>;
+enum                <link linkend="GtkUpdateType">GtkUpdateType</link>;
+enum                <link linkend="GtkVisibility">GtkVisibility</link>;
+enum                <link linkend="GtkWindowPosition">GtkWindowPosition</link>;
+enum                <link linkend="GtkWindowType">GtkWindowType</link>;
+enum                <link linkend="GtkSortType">GtkSortType</link>;
+enum                <link linkend="GtkDragResult">GtkDragResult</link>;
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gtk-Standard-Enumerations.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="gtk-Standard-Enumerations.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkAccelFlags" role="enum">
+<title>enum GtkAccelFlags</title>
+<indexterm zone="GtkAccelFlags"><primary sortas="AccelFlags">GtkAccelFlags</primary></indexterm><programlisting>typedef enum
+{
+  GTK_ACCEL_VISIBLE        = 1 &lt;&lt; 0,	/* display in GtkAccelLabel? */
+  GTK_ACCEL_LOCKED         = 1 &lt;&lt; 1,	/* is it removable? */
+  GTK_ACCEL_MASK           = 0x07
+} GtkAccelFlags;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkAnchorType" role="enum">
+<title>enum GtkAnchorType</title>
+<indexterm zone="GtkAnchorType"><primary sortas="AnchorType">GtkAnchorType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_ANCHOR_CENTER,
+  GTK_ANCHOR_NORTH,
+  GTK_ANCHOR_NORTH_WEST,
+  GTK_ANCHOR_NORTH_EAST,
+  GTK_ANCHOR_SOUTH,
+  GTK_ANCHOR_SOUTH_WEST,
+  GTK_ANCHOR_SOUTH_EAST,
+  GTK_ANCHOR_WEST,
+  GTK_ANCHOR_EAST,
+  GTK_ANCHOR_N		= GTK_ANCHOR_NORTH,
+  GTK_ANCHOR_NW		= GTK_ANCHOR_NORTH_WEST,
+  GTK_ANCHOR_NE		= GTK_ANCHOR_NORTH_EAST,
+  GTK_ANCHOR_S		= GTK_ANCHOR_SOUTH,
+  GTK_ANCHOR_SW		= GTK_ANCHOR_SOUTH_WEST,
+  GTK_ANCHOR_SE		= GTK_ANCHOR_SOUTH_EAST,
+  GTK_ANCHOR_W		= GTK_ANCHOR_WEST,
+  GTK_ANCHOR_E		= GTK_ANCHOR_EAST
+} GtkAnchorType;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkArrowPlacement" role="enum">
+<title>enum GtkArrowPlacement</title>
+<indexterm zone="GtkArrowPlacement"><primary sortas="ArrowPlacement">GtkArrowPlacement</primary></indexterm><programlisting>typedef enum
+{
+  GTK_ARROWS_BOTH,
+  GTK_ARROWS_START,
+  GTK_ARROWS_END
+} GtkArrowPlacement;
+</programlisting>
+<para>
+Used to specify the placement of scroll arrows in scrolling menus.
+</para><variablelist role="enum">
+<varlistentry id="GTK-ARROWS-BOTH--CAPS" role="constant">
+<term><literal>GTK_ARROWS_BOTH</literal></term>
+<listitem><simpara>Place one arrow on each end of the menu.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-ARROWS-START--CAPS" role="constant">
+<term><literal>GTK_ARROWS_START</literal></term>
+<listitem><simpara>Place both arrows at the top of the menu.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-ARROWS-END--CAPS" role="constant">
+<term><literal>GTK_ARROWS_END</literal></term>
+<listitem><simpara>Place both arrows at the bottom of the menu.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkArrowType" role="enum">
+<title>enum GtkArrowType</title>
+<indexterm zone="GtkArrowType"><primary sortas="ArrowType">GtkArrowType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_ARROW_UP,
+  GTK_ARROW_DOWN,
+  GTK_ARROW_LEFT,
+  GTK_ARROW_RIGHT,
+  GTK_ARROW_NONE
+} GtkArrowType;
+</programlisting>
+<para>
+Used to indicate the direction in which a <link linkend="GtkArrow"><type>GtkArrow</type></link> should point.
+</para><variablelist role="enum">
+<varlistentry id="GTK-ARROW-UP--CAPS" role="constant">
+<term><literal>GTK_ARROW_UP</literal></term>
+<listitem><simpara>Represents an upward pointing arrow.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-ARROW-DOWN--CAPS" role="constant">
+<term><literal>GTK_ARROW_DOWN</literal></term>
+<listitem><simpara>Represents a downward pointing arrow.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-ARROW-LEFT--CAPS" role="constant">
+<term><literal>GTK_ARROW_LEFT</literal></term>
+<listitem><simpara>Represents a left pointing arrow.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-ARROW-RIGHT--CAPS" role="constant">
+<term><literal>GTK_ARROW_RIGHT</literal></term>
+<listitem><simpara>Represents a right pointing arrow.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-ARROW-NONE--CAPS" role="constant">
+<term><literal>GTK_ARROW_NONE</literal></term>
+<listitem><simpara>No arrow. Since 2.10.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkAttachOptions" role="enum">
+<title>enum GtkAttachOptions</title>
+<indexterm zone="GtkAttachOptions"><primary sortas="AttachOptions">GtkAttachOptions</primary></indexterm><programlisting>typedef enum
+{
+  GTK_EXPAND = 1 &lt;&lt; 0,
+  GTK_SHRINK = 1 &lt;&lt; 1,
+  GTK_FILL   = 1 &lt;&lt; 2
+} GtkAttachOptions;
+</programlisting>
+<para>
+Denotes the expansion properties that a widget will have when it (or its
+parent) is resized.
+</para><variablelist role="enum">
+<varlistentry id="GTK-EXPAND--CAPS" role="constant">
+<term><literal>GTK_EXPAND</literal></term>
+<listitem><simpara>the widget should expand to take up any extra space in its
+container that has been allocated.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-SHRINK--CAPS" role="constant">
+<term><literal>GTK_SHRINK</literal></term>
+<listitem><simpara>the widget should shrink as and when possible.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-FILL--CAPS" role="constant">
+<term><literal>GTK_FILL</literal></term>
+<listitem><simpara>the widget should fill the space allocated to it.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkButtonBoxStyle" role="enum">
+<title>enum GtkButtonBoxStyle</title>
+<indexterm zone="GtkButtonBoxStyle"><primary sortas="ButtonBoxStyle">GtkButtonBoxStyle</primary></indexterm><programlisting>typedef enum
+{
+  GTK_BUTTONBOX_DEFAULT_STYLE,
+  GTK_BUTTONBOX_SPREAD,
+  GTK_BUTTONBOX_EDGE,
+  GTK_BUTTONBOX_START,
+  GTK_BUTTONBOX_END,
+  GTK_BUTTONBOX_CENTER
+} GtkButtonBoxStyle;
+</programlisting>
+<para>
+Used to dictate the style that a <link linkend="GtkButtonBox"><type>GtkButtonBox</type></link> uses to layout the buttons it
+contains. (See also: <link linkend="GtkVButtonBox"><type>GtkVButtonBox</type></link> and <link linkend="GtkHButtonBox"><type>GtkHButtonBox</type></link>).
+</para><variablelist role="enum">
+<varlistentry id="GTK-BUTTONBOX-DEFAULT-STYLE--CAPS" role="constant">
+<term><literal>GTK_BUTTONBOX_DEFAULT_STYLE</literal></term>
+<listitem><simpara>Default packing.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUTTONBOX-SPREAD--CAPS" role="constant">
+<term><literal>GTK_BUTTONBOX_SPREAD</literal></term>
+<listitem><simpara>Buttons are evenly spread across the box.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUTTONBOX-EDGE--CAPS" role="constant">
+<term><literal>GTK_BUTTONBOX_EDGE</literal></term>
+<listitem><simpara>Buttons are placed at the edges of the box.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUTTONBOX-START--CAPS" role="constant">
+<term><literal>GTK_BUTTONBOX_START</literal></term>
+<listitem><simpara>Buttons are grouped towards the start of the box, 
+  (on the left for a HBox, or the top for a VBox).
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUTTONBOX-END--CAPS" role="constant">
+<term><literal>GTK_BUTTONBOX_END</literal></term>
+<listitem><simpara>Buttons are grouped towards the end of the box, 
+  (on the right for a HBox, or the bottom for a VBox).
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUTTONBOX-CENTER--CAPS" role="constant">
+<term><literal>GTK_BUTTONBOX_CENTER</literal></term>
+<listitem><simpara>Buttons are centered in the box. Since 2.12
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkCornerType" role="enum">
+<title>enum GtkCornerType</title>
+<indexterm zone="GtkCornerType"><primary sortas="CornerType">GtkCornerType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_CORNER_TOP_LEFT,
+  GTK_CORNER_BOTTOM_LEFT,
+  GTK_CORNER_TOP_RIGHT,
+  GTK_CORNER_BOTTOM_RIGHT
+} GtkCornerType;
+</programlisting>
+<para>
+Specifies which corner a child widget should be placed in when packed into
+a <link linkend="GtkScrolledWindow"><type>GtkScrolledWindow</type></link>. This is effectively the opposite of where the scroll
+bars are placed.
+</para><variablelist role="enum">
+<varlistentry id="GTK-CORNER-TOP-LEFT--CAPS" role="constant">
+<term><literal>GTK_CORNER_TOP_LEFT</literal></term>
+<listitem><simpara>Place the scrollbars on the right and bottom of the
+widget (default behaviour).
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-CORNER-BOTTOM-LEFT--CAPS" role="constant">
+<term><literal>GTK_CORNER_BOTTOM_LEFT</literal></term>
+<listitem><simpara>Place the scrollbars on the top and right of the
+widget.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-CORNER-TOP-RIGHT--CAPS" role="constant">
+<term><literal>GTK_CORNER_TOP_RIGHT</literal></term>
+<listitem><simpara>Place the scrollbars on the left and bottom of the
+widget.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-CORNER-BOTTOM-RIGHT--CAPS" role="constant">
+<term><literal>GTK_CORNER_BOTTOM_RIGHT</literal></term>
+<listitem><simpara>Place the scrollbars on the top and left of the
+widget.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkCurveType" role="enum">
+<title>enum GtkCurveType</title>
+<indexterm zone="GtkCurveType"><primary sortas="CurveType">GtkCurveType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_CURVE_TYPE_LINEAR,       /* linear interpolation */
+  GTK_CURVE_TYPE_SPLINE,       /* spline interpolation */
+  GTK_CURVE_TYPE_FREE          /* free form curve */
+} GtkCurveType;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkDeleteType" role="enum">
+<title>enum GtkDeleteType</title>
+<indexterm zone="GtkDeleteType"><primary sortas="DeleteType">GtkDeleteType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_DELETE_CHARS,
+  GTK_DELETE_WORD_ENDS,           /* delete only the portion of the word to the
+                                   * left/right of cursor if we're in the middle
+                                   * of a word */
+  GTK_DELETE_WORDS,
+  GTK_DELETE_DISPLAY_LINES,
+  GTK_DELETE_DISPLAY_LINE_ENDS,
+  GTK_DELETE_PARAGRAPH_ENDS,      /* like C-k in Emacs (or its reverse) */
+  GTK_DELETE_PARAGRAPHS,          /* C-k in pico, kill whole line */
+  GTK_DELETE_WHITESPACE           /* M-\ in Emacs */
+} GtkDeleteType;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkDirectionType" role="enum">
+<title>enum GtkDirectionType</title>
+<indexterm zone="GtkDirectionType"><primary sortas="DirectionType">GtkDirectionType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_DIR_TAB_FORWARD,
+  GTK_DIR_TAB_BACKWARD,
+  GTK_DIR_UP,
+  GTK_DIR_DOWN,
+  GTK_DIR_LEFT,
+  GTK_DIR_RIGHT
+} GtkDirectionType;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkExpanderStyle" role="enum">
+<title>enum GtkExpanderStyle</title>
+<indexterm zone="GtkExpanderStyle"><primary sortas="ExpanderStyle">GtkExpanderStyle</primary></indexterm><programlisting>typedef enum
+{
+  GTK_EXPANDER_COLLAPSED,
+  GTK_EXPANDER_SEMI_COLLAPSED,
+  GTK_EXPANDER_SEMI_EXPANDED,
+  GTK_EXPANDER_EXPANDED
+} GtkExpanderStyle;
+</programlisting>
+<para>
+Used to specify the style of the expanders drawn by a <link linkend="GtkTreeView"><type>GtkTreeView</type></link>.
+</para><variablelist role="enum">
+<varlistentry id="GTK-EXPANDER-COLLAPSED--CAPS" role="constant">
+<term><literal>GTK_EXPANDER_COLLAPSED</literal></term>
+<listitem><simpara>The style used for a collapsed subtree.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-EXPANDER-SEMI-COLLAPSED--CAPS" role="constant">
+<term><literal>GTK_EXPANDER_SEMI_COLLAPSED</literal></term>
+<listitem><simpara>Intermediate style used during animation.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-EXPANDER-SEMI-EXPANDED--CAPS" role="constant">
+<term><literal>GTK_EXPANDER_SEMI_EXPANDED</literal></term>
+<listitem><simpara>Intermediate style used during animation.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-EXPANDER-EXPANDED--CAPS" role="constant">
+<term><literal>GTK_EXPANDER_EXPANDED</literal></term>
+<listitem><simpara>The style used for an expanded subtree.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkIMPreeditStyle" role="enum">
+<title>enum GtkIMPreeditStyle</title>
+<indexterm zone="GtkIMPreeditStyle"><primary sortas="IMPreeditStyle">GtkIMPreeditStyle</primary></indexterm><programlisting>typedef enum
+{
+  GTK_IM_PREEDIT_NOTHING,
+  GTK_IM_PREEDIT_CALLBACK,
+  GTK_IM_PREEDIT_NONE
+} GtkIMPreeditStyle;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkIMStatusStyle" role="enum">
+<title>enum GtkIMStatusStyle</title>
+<indexterm zone="GtkIMStatusStyle"><primary sortas="IMStatusStyle">GtkIMStatusStyle</primary></indexterm><programlisting>typedef enum
+{
+  GTK_IM_STATUS_NOTHING,
+  GTK_IM_STATUS_CALLBACK,
+  GTK_IM_STATUS_NONE
+} GtkIMStatusStyle;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkJustification" role="enum">
+<title>enum GtkJustification</title>
+<indexterm zone="GtkJustification"><primary sortas="Justification">GtkJustification</primary></indexterm><programlisting>typedef enum
+{
+  GTK_JUSTIFY_LEFT,
+  GTK_JUSTIFY_RIGHT,
+  GTK_JUSTIFY_CENTER,
+  GTK_JUSTIFY_FILL
+} GtkJustification;
+</programlisting>
+<para>
+Used for justifying the text inside a <link linkend="GtkLabel"><type>GtkLabel</type></link> widget. (See also
+<link linkend="GtkAlignment"><type>GtkAlignment</type></link>).
+</para><variablelist role="enum">
+<varlistentry id="GTK-JUSTIFY-LEFT--CAPS" role="constant">
+<term><literal>GTK_JUSTIFY_LEFT</literal></term>
+<listitem><simpara>The text is placed at the left edge of the label.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-JUSTIFY-RIGHT--CAPS" role="constant">
+<term><literal>GTK_JUSTIFY_RIGHT</literal></term>
+<listitem><simpara>The text is placed at the right edge of the label.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-JUSTIFY-CENTER--CAPS" role="constant">
+<term><literal>GTK_JUSTIFY_CENTER</literal></term>
+<listitem><simpara>The text is placed in the center of the label.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-JUSTIFY-FILL--CAPS" role="constant">
+<term><literal>GTK_JUSTIFY_FILL</literal></term>
+<listitem><simpara>The text is placed is distributed across the label.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkMatchType" role="enum" condition="deprecated:">
+<title>enum GtkMatchType</title>
+<indexterm zone="GtkMatchType" role="deprecated"><primary sortas="MatchType">GtkMatchType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_MATCH_ALL,       /* "*A?A*" */
+  GTK_MATCH_ALL_TAIL,  /* "*A?AA" */
+  GTK_MATCH_HEAD,      /* "AAAA*" */
+  GTK_MATCH_TAIL,      /* "*AAAA" */
+  GTK_MATCH_EXACT,     /* "AAAAA" */
+  GTK_MATCH_LAST
+} GtkMatchType;
+</programlisting>
+<warning><para><literal>GtkMatchType</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="GtkMetricType" role="enum">
+<title>enum GtkMetricType</title>
+<indexterm zone="GtkMetricType"><primary sortas="MetricType">GtkMetricType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_PIXELS,
+  GTK_INCHES,
+  GTK_CENTIMETERS
+} GtkMetricType;
+</programlisting>
+<para>
+Used to indicate which metric is used by a <link linkend="GtkRuler"><type>GtkRuler</type></link>.
+</para><variablelist role="enum">
+<varlistentry id="GTK-PIXELS--CAPS" role="constant">
+<term><literal>GTK_PIXELS</literal></term>
+<listitem><simpara>Pixels.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-INCHES--CAPS" role="constant">
+<term><literal>GTK_INCHES</literal></term>
+<listitem><simpara>Inches.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-CENTIMETERS--CAPS" role="constant">
+<term><literal>GTK_CENTIMETERS</literal></term>
+<listitem><simpara>Centimeters.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkMovementStep" role="enum">
+<title>enum GtkMovementStep</title>
+<indexterm zone="GtkMovementStep"><primary sortas="MovementStep">GtkMovementStep</primary></indexterm><programlisting>typedef enum
+{
+  GTK_MOVEMENT_LOGICAL_POSITIONS, /* move by forw/back graphemes */
+  GTK_MOVEMENT_VISUAL_POSITIONS,  /* move by left/right graphemes */
+  GTK_MOVEMENT_WORDS,             /* move by forward/back words */
+  GTK_MOVEMENT_DISPLAY_LINES,     /* move up/down lines (wrapped lines) */
+  GTK_MOVEMENT_DISPLAY_LINE_ENDS, /* move up/down lines (wrapped lines) */
+  GTK_MOVEMENT_PARAGRAPHS,        /* move up/down paragraphs (newline-ended lines) */
+  GTK_MOVEMENT_PARAGRAPH_ENDS,    /* move to either end of a paragraph */
+  GTK_MOVEMENT_PAGES,	          /* move by pages */
+  GTK_MOVEMENT_BUFFER_ENDS,       /* move to ends of the buffer */
+  GTK_MOVEMENT_HORIZONTAL_PAGES   /* move horizontally by pages */
+} GtkMovementStep;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkOrientation" role="enum">
+<title>enum GtkOrientation</title>
+<indexterm zone="GtkOrientation"><primary sortas="Orientation">GtkOrientation</primary></indexterm><programlisting>typedef enum
+{
+  GTK_ORIENTATION_HORIZONTAL,
+  GTK_ORIENTATION_VERTICAL
+} GtkOrientation;
+</programlisting>
+<para>
+Represents the orientation of widgets which can be switched between horizontal
+and vertical orientation on the fly, like <link linkend="GtkToolbar"><type>GtkToolbar</type></link>.
+</para><variablelist role="enum">
+<varlistentry id="GTK-ORIENTATION-HORIZONTAL--CAPS" role="constant">
+<term><literal>GTK_ORIENTATION_HORIZONTAL</literal></term>
+<listitem><simpara>The widget is in horizontal orientation.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-ORIENTATION-VERTICAL--CAPS" role="constant">
+<term><literal>GTK_ORIENTATION_VERTICAL</literal></term>
+<listitem><simpara>The widget is in vertical orientation.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkPackType" role="enum">
+<title>enum GtkPackType</title>
+<indexterm zone="GtkPackType"><primary sortas="PackType">GtkPackType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_PACK_START,
+  GTK_PACK_END
+} GtkPackType;
+</programlisting>
+<para>
+Represents the packing location <link linkend="GtkBox"><type>GtkBox</type></link> children. (See: <link linkend="GtkVBox"><type>GtkVBox</type></link>,
+<link linkend="GtkHBox"><type>GtkHBox</type></link>, and <link linkend="GtkButtonBox"><type>GtkButtonBox</type></link>).
+</para><variablelist role="enum">
+<varlistentry id="GTK-PACK-START--CAPS" role="constant">
+<term><literal>GTK_PACK_START</literal></term>
+<listitem><simpara>The child is packed into the start of the box
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-PACK-END--CAPS" role="constant">
+<term><literal>GTK_PACK_END</literal></term>
+<listitem><simpara>The child is packed into the end of the box
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkPathPriorityType" role="enum">
+<title>enum GtkPathPriorityType</title>
+<indexterm zone="GtkPathPriorityType"><primary sortas="PathPriorityType">GtkPathPriorityType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_PATH_PRIO_LOWEST      = 0,
+  GTK_PATH_PRIO_GTK	    = 4,
+  GTK_PATH_PRIO_APPLICATION = 8,
+  GTK_PATH_PRIO_THEME       = 10,
+  GTK_PATH_PRIO_RC          = 12,
+  GTK_PATH_PRIO_HIGHEST     = 15
+} GtkPathPriorityType;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkPathType" role="enum">
+<title>enum GtkPathType</title>
+<indexterm zone="GtkPathType"><primary sortas="PathType">GtkPathType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_PATH_WIDGET,
+  GTK_PATH_WIDGET_CLASS,
+  GTK_PATH_CLASS
+} GtkPathType;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkPolicyType" role="enum">
+<title>enum GtkPolicyType</title>
+<indexterm zone="GtkPolicyType"><primary sortas="PolicyType">GtkPolicyType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_POLICY_ALWAYS,
+  GTK_POLICY_AUTOMATIC,
+  GTK_POLICY_NEVER
+} GtkPolicyType;
+</programlisting>
+<para>
+Determines when a scroll bar will be visible.
+</para><variablelist role="enum">
+<varlistentry id="GTK-POLICY-ALWAYS--CAPS" role="constant">
+<term><literal>GTK_POLICY_ALWAYS</literal></term>
+<listitem><simpara>The scrollbar is always visible.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-POLICY-AUTOMATIC--CAPS" role="constant">
+<term><literal>GTK_POLICY_AUTOMATIC</literal></term>
+<listitem><simpara>The scrollbar will appear and disappear as necessary. For example,
+when all of a <link linkend="GtkCList"><type>GtkCList</type></link> can not be seen.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-POLICY-NEVER--CAPS" role="constant">
+<term><literal>GTK_POLICY_NEVER</literal></term>
+<listitem><simpara>The scrollbar will never appear.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkPositionType" role="enum">
+<title>enum GtkPositionType</title>
+<indexterm zone="GtkPositionType"><primary sortas="PositionType">GtkPositionType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_POS_LEFT,
+  GTK_POS_RIGHT,
+  GTK_POS_TOP,
+  GTK_POS_BOTTOM
+} GtkPositionType;
+</programlisting>
+<para>
+Describes which edge of a widget a certain feature is positioned at, e.g. the
+tabs of a <link linkend="GtkNotebook"><type>GtkNotebook</type></link>, the handle of a <link linkend="GtkHandleBox"><type>GtkHandleBox</type></link> or the label of a
+<link linkend="GtkScale"><type>GtkScale</type></link>.
+</para><variablelist role="enum">
+<varlistentry id="GTK-POS-LEFT--CAPS" role="constant">
+<term><literal>GTK_POS_LEFT</literal></term>
+<listitem><simpara>The feature is at the left edge.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-POS-RIGHT--CAPS" role="constant">
+<term><literal>GTK_POS_RIGHT</literal></term>
+<listitem><simpara>The feature is at the right edge.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-POS-TOP--CAPS" role="constant">
+<term><literal>GTK_POS_TOP</literal></term>
+<listitem><simpara>The feature is at the top edge.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-POS-BOTTOM--CAPS" role="constant">
+<term><literal>GTK_POS_BOTTOM</literal></term>
+<listitem><simpara>The feature is at the bottom edge.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkPreviewType" role="enum" condition="deprecated:">
+<title>enum GtkPreviewType</title>
+<indexterm zone="GtkPreviewType" role="deprecated"><primary sortas="PreviewType">GtkPreviewType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_PREVIEW_COLOR,
+  GTK_PREVIEW_GRAYSCALE
+} GtkPreviewType;
+</programlisting>
+<warning><para><literal>GtkPreviewType</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+An enumeration which describes whether a preview
+contains grayscale or red-green-blue data.
+</para><variablelist role="enum">
+<varlistentry id="GTK-PREVIEW-COLOR--CAPS" role="constant">
+<term><literal>GTK_PREVIEW_COLOR</literal></term>
+<listitem><simpara>the preview contains red-green-blue data.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-PREVIEW-GRAYSCALE--CAPS" role="constant">
+<term><literal>GTK_PREVIEW_GRAYSCALE</literal></term>
+<listitem><simpara>The preview contains grayscale data.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkReliefStyle" role="enum">
+<title>enum GtkReliefStyle</title>
+<indexterm zone="GtkReliefStyle"><primary sortas="ReliefStyle">GtkReliefStyle</primary></indexterm><programlisting>typedef enum
+{
+  GTK_RELIEF_NORMAL,
+  GTK_RELIEF_HALF,
+  GTK_RELIEF_NONE
+} GtkReliefStyle;
+</programlisting>
+<para>
+Indicated the relief to be drawn around a <link linkend="GtkButton"><type>GtkButton</type></link>.
+</para><variablelist role="enum">
+<varlistentry id="GTK-RELIEF-NORMAL--CAPS" role="constant">
+<term><literal>GTK_RELIEF_NORMAL</literal></term>
+<listitem><simpara>Draw a normal relief.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RELIEF-HALF--CAPS" role="constant">
+<term><literal>GTK_RELIEF_HALF</literal></term>
+<listitem><simpara>A half relief.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RELIEF-NONE--CAPS" role="constant">
+<term><literal>GTK_RELIEF_NONE</literal></term>
+<listitem><simpara>No relief.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkResizeMode" role="enum">
+<title>enum GtkResizeMode</title>
+<indexterm zone="GtkResizeMode"><primary sortas="ResizeMode">GtkResizeMode</primary></indexterm><programlisting>typedef enum
+{
+  GTK_RESIZE_PARENT,		/* Pass resize request to the parent */
+  GTK_RESIZE_QUEUE,		/* Queue resizes on this widget */
+  GTK_RESIZE_IMMEDIATE		/* Perform the resizes now */
+} GtkResizeMode;
+</programlisting>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="GTK-RESIZE-PARENT--CAPS" role="constant">
+<term><literal>GTK_RESIZE_PARENT</literal></term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RESIZE-QUEUE--CAPS" role="constant">
+<term><literal>GTK_RESIZE_QUEUE</literal></term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RESIZE-IMMEDIATE--CAPS" role="constant">
+<term><literal>GTK_RESIZE_IMMEDIATE</literal></term>
+<listitem><simpara>Deprecated.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkScrollStep" role="enum">
+<title>enum GtkScrollStep</title>
+<indexterm zone="GtkScrollStep"><primary sortas="ScrollStep">GtkScrollStep</primary></indexterm><programlisting>typedef enum
+{
+  GTK_SCROLL_STEPS,
+  GTK_SCROLL_PAGES,
+  GTK_SCROLL_ENDS,
+  GTK_SCROLL_HORIZONTAL_STEPS,
+  GTK_SCROLL_HORIZONTAL_PAGES,
+  GTK_SCROLL_HORIZONTAL_ENDS
+} GtkScrollStep;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkScrollType" role="enum">
+<title>enum GtkScrollType</title>
+<indexterm zone="GtkScrollType"><primary sortas="ScrollType">GtkScrollType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_SCROLL_NONE,
+  GTK_SCROLL_JUMP,
+  GTK_SCROLL_STEP_BACKWARD,
+  GTK_SCROLL_STEP_FORWARD,
+  GTK_SCROLL_PAGE_BACKWARD,
+  GTK_SCROLL_PAGE_FORWARD,
+  GTK_SCROLL_STEP_UP,
+  GTK_SCROLL_STEP_DOWN,
+  GTK_SCROLL_PAGE_UP,
+  GTK_SCROLL_PAGE_DOWN,
+  GTK_SCROLL_STEP_LEFT,
+  GTK_SCROLL_STEP_RIGHT,
+  GTK_SCROLL_PAGE_LEFT,
+  GTK_SCROLL_PAGE_RIGHT,
+  GTK_SCROLL_START,
+  GTK_SCROLL_END
+} GtkScrollType;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkSelectionMode" role="enum">
+<title>enum GtkSelectionMode</title>
+<indexterm zone="GtkSelectionMode"><primary sortas="SelectionMode">GtkSelectionMode</primary></indexterm><programlisting>typedef enum
+{
+  GTK_SELECTION_NONE,                             /* Nothing can be selected */
+  GTK_SELECTION_SINGLE,
+  GTK_SELECTION_BROWSE,
+  GTK_SELECTION_MULTIPLE,
+  GTK_SELECTION_EXTENDED = GTK_SELECTION_MULTIPLE /* Deprecated */
+} GtkSelectionMode;
+</programlisting>
+<para>
+Used to control what selections users are allowed to make.
+</para><variablelist role="enum">
+<varlistentry id="GTK-SELECTION-NONE--CAPS" role="constant">
+<term><literal>GTK_SELECTION_NONE</literal></term>
+<listitem><simpara>No selection is possible.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-SELECTION-SINGLE--CAPS" role="constant">
+<term><literal>GTK_SELECTION_SINGLE</literal></term>
+<listitem><simpara>Zero or one element may be selected.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-SELECTION-BROWSE--CAPS" role="constant">
+<term><literal>GTK_SELECTION_BROWSE</literal></term>
+<listitem><simpara>Exactly one element is selected. In some circumstances,
+  such as initially or during a search operation, it's possible for no element
+  to be selected with <link linkend="GTK-SELECTION-BROWSE--CAPS"><literal>GTK_SELECTION_BROWSE</literal></link>. What is really enforced is that
+  the user can't deselect a currently selected element except by selecting
+  another element.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-SELECTION-MULTIPLE--CAPS" role="constant">
+<term><literal>GTK_SELECTION_MULTIPLE</literal></term>
+<listitem><simpara>Any number of elements may be selected. 
+   Clicks toggle the state of an item. Any number of elements may be selected.
+   The Ctrl key may be used to enlarge the selection, and Shift key to select
+   between the focus and the child pointed to. Some widgets may also allow
+   Click-drag to select a range of elements.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-SELECTION-EXTENDED--CAPS" role="constant">
+<term><literal>GTK_SELECTION_EXTENDED</literal></term>
+<listitem><simpara>Deprecated, behaves identical to <link linkend="GTK-SELECTION-MULTIPLE--CAPS"><literal>GTK_SELECTION_MULTIPLE</literal></link>.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkShadowType" role="enum">
+<title>enum GtkShadowType</title>
+<indexterm zone="GtkShadowType"><primary sortas="ShadowType">GtkShadowType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_SHADOW_NONE,
+  GTK_SHADOW_IN,
+  GTK_SHADOW_OUT,
+  GTK_SHADOW_ETCHED_IN,
+  GTK_SHADOW_ETCHED_OUT
+} GtkShadowType;
+</programlisting>
+<para>
+Used to change the appearance of an outline typically provided by a <link linkend="GtkFrame"><type>GtkFrame</type></link>.
+</para><variablelist role="enum">
+<varlistentry id="GTK-SHADOW-NONE--CAPS" role="constant">
+<term><literal>GTK_SHADOW_NONE</literal></term>
+<listitem><simpara>No outline.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-SHADOW-IN--CAPS" role="constant">
+<term><literal>GTK_SHADOW_IN</literal></term>
+<listitem><simpara>The outline is bevelled inwards.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-SHADOW-OUT--CAPS" role="constant">
+<term><literal>GTK_SHADOW_OUT</literal></term>
+<listitem><simpara>The outline is bevelled outwards like a button.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-SHADOW-ETCHED-IN--CAPS" role="constant">
+<term><literal>GTK_SHADOW_ETCHED_IN</literal></term>
+<listitem><simpara>The outline has a sunken 3d appearance.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-SHADOW-ETCHED-OUT--CAPS" role="constant">
+<term><literal>GTK_SHADOW_ETCHED_OUT</literal></term>
+<listitem><simpara>The outline has a raised 3d appearance
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkSideType" role="enum" condition="deprecated:">
+<title>enum GtkSideType</title>
+<indexterm zone="GtkSideType" role="deprecated"><primary sortas="SideType">GtkSideType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_SIDE_TOP,
+  GTK_SIDE_BOTTOM,
+  GTK_SIDE_LEFT,
+  GTK_SIDE_RIGHT
+} GtkSideType;
+</programlisting>
+<warning><para><literal>GtkSideType</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="GtkStateType" role="enum">
+<title>enum GtkStateType</title>
+<indexterm zone="GtkStateType"><primary sortas="StateType">GtkStateType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_STATE_NORMAL,
+  GTK_STATE_ACTIVE,
+  GTK_STATE_PRELIGHT,
+  GTK_STATE_SELECTED,
+  GTK_STATE_INSENSITIVE
+} GtkStateType;
+</programlisting>
+<para>
+This type indicates the current state of a widget; the state determines how
+the widget is drawn. The <link linkend="GtkStateType"><type>GtkStateType</type></link> enumeration is also used to
+identify different colors in a <link linkend="GtkStyle"><type>GtkStyle</type></link> for drawing, so states can be
+used for subparts of a widget as well as entire widgets.
+</para><variablelist role="enum">
+<varlistentry id="GTK-STATE-NORMAL--CAPS" role="constant">
+<term><literal>GTK_STATE_NORMAL</literal></term>
+<listitem><simpara>State during normal operation.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-STATE-ACTIVE--CAPS" role="constant">
+<term><literal>GTK_STATE_ACTIVE</literal></term>
+<listitem><simpara>State of a currently active widget, such as a depressed button.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-STATE-PRELIGHT--CAPS" role="constant">
+<term><literal>GTK_STATE_PRELIGHT</literal></term>
+<listitem><simpara>State indicating that the mouse pointer is over
+the widget and the widget will respond to mouse clicks.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-STATE-SELECTED--CAPS" role="constant">
+<term><literal>GTK_STATE_SELECTED</literal></term>
+<listitem><simpara>State of a selected item, such the selected row in a list.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-STATE-INSENSITIVE--CAPS" role="constant">
+<term><literal>GTK_STATE_INSENSITIVE</literal></term>
+<listitem><simpara>State indicating that the widget is
+unresponsive to user actions.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkSubmenuDirection" role="enum" condition="deprecated:">
+<title>enum GtkSubmenuDirection</title>
+<indexterm zone="GtkSubmenuDirection" role="deprecated"><primary sortas="SubmenuDirection">GtkSubmenuDirection</primary></indexterm><programlisting>typedef enum
+{
+  GTK_DIRECTION_LEFT,
+  GTK_DIRECTION_RIGHT
+} GtkSubmenuDirection;
+</programlisting>
+<warning><para><literal>GtkSubmenuDirection</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Indicates the direction a sub-menu will appear.
+</para><variablelist role="enum">
+<varlistentry id="GTK-DIRECTION-LEFT--CAPS" role="constant">
+<term><literal>GTK_DIRECTION_LEFT</literal></term>
+<listitem><simpara>A sub-menu will appear to the left of the current menu.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-DIRECTION-RIGHT--CAPS" role="constant">
+<term><literal>GTK_DIRECTION_RIGHT</literal></term>
+<listitem><simpara>A sub-menu will appear to the right of the current menu.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkSubmenuPlacement" role="enum" condition="deprecated:">
+<title>enum GtkSubmenuPlacement</title>
+<indexterm zone="GtkSubmenuPlacement" role="deprecated"><primary sortas="SubmenuPlacement">GtkSubmenuPlacement</primary></indexterm><programlisting>typedef enum
+{
+  GTK_TOP_BOTTOM,
+  GTK_LEFT_RIGHT
+} GtkSubmenuPlacement;
+</programlisting>
+<warning><para><literal>GtkSubmenuPlacement</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="GtkToolbarStyle" role="enum">
+<title>enum GtkToolbarStyle</title>
+<indexterm zone="GtkToolbarStyle"><primary sortas="ToolbarStyle">GtkToolbarStyle</primary></indexterm><programlisting>typedef enum
+{
+  GTK_TOOLBAR_ICONS,
+  GTK_TOOLBAR_TEXT,
+  GTK_TOOLBAR_BOTH,
+  GTK_TOOLBAR_BOTH_HORIZ
+} GtkToolbarStyle;
+</programlisting>
+<para>
+Used to customize the appearance of a <link linkend="GtkToolbar"><type>GtkToolbar</type></link>. Note that
+setting the toolbar style overrides the user's preferences
+for the default toolbar style.  Note that if the button has only
+a label set and GTK_TOOLBAR_ICONS is used, the label will be
+visible, and vice versa.
+</para><variablelist role="enum">
+<varlistentry id="GTK-TOOLBAR-ICONS--CAPS" role="constant">
+<term><literal>GTK_TOOLBAR_ICONS</literal></term>
+<listitem><simpara>Buttons display only icons in the toolbar.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-TOOLBAR-TEXT--CAPS" role="constant">
+<term><literal>GTK_TOOLBAR_TEXT</literal></term>
+<listitem><simpara>Buttons display only text labels in the toolbar.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-TOOLBAR-BOTH--CAPS" role="constant">
+<term><literal>GTK_TOOLBAR_BOTH</literal></term>
+<listitem><simpara>Buttons display text and icons in the toolbar.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-TOOLBAR-BOTH-HORIZ--CAPS" role="constant">
+<term><literal>GTK_TOOLBAR_BOTH_HORIZ</literal></term>
+<listitem><simpara>Buttons display icons and text alongside each
+other, rather than vertically stacked
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkUpdateType" role="enum">
+<title>enum GtkUpdateType</title>
+<indexterm zone="GtkUpdateType"><primary sortas="UpdateType">GtkUpdateType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_UPDATE_CONTINUOUS,
+  GTK_UPDATE_DISCONTINUOUS,
+  GTK_UPDATE_DELAYED
+} GtkUpdateType;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkVisibility" role="enum">
+<title>enum GtkVisibility</title>
+<indexterm zone="GtkVisibility"><primary sortas="Visibility">GtkVisibility</primary></indexterm><programlisting>typedef enum
+{
+  GTK_VISIBILITY_NONE,
+  GTK_VISIBILITY_PARTIAL,
+  GTK_VISIBILITY_FULL
+} GtkVisibility;
+</programlisting>
+<para>
+Used by <link linkend="GtkCList"><type>GtkCList</type></link> and <link linkend="GtkCTree"><type>GtkCTree</type></link> to indicate whether a row is visible.
+</para><variablelist role="enum">
+<varlistentry id="GTK-VISIBILITY-NONE--CAPS" role="constant">
+<term><literal>GTK_VISIBILITY_NONE</literal></term>
+<listitem><simpara>The row is not visible.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-VISIBILITY-PARTIAL--CAPS" role="constant">
+<term><literal>GTK_VISIBILITY_PARTIAL</literal></term>
+<listitem><simpara>The row is partially visible.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-VISIBILITY-FULL--CAPS" role="constant">
+<term><literal>GTK_VISIBILITY_FULL</literal></term>
+<listitem><simpara>The row is fully visible.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkWindowPosition" role="enum">
+<title>enum GtkWindowPosition</title>
+<indexterm zone="GtkWindowPosition"><primary sortas="WindowPosition">GtkWindowPosition</primary></indexterm><programlisting>typedef enum
+{
+  GTK_WIN_POS_NONE,
+  GTK_WIN_POS_CENTER,
+  GTK_WIN_POS_MOUSE,
+  GTK_WIN_POS_CENTER_ALWAYS,
+  GTK_WIN_POS_CENTER_ON_PARENT
+} GtkWindowPosition;
+</programlisting>
+<para>
+Window placement can be influenced using this enumeration. Note that
+using <link linkend="GTK-WIN-POS-CENTER-ALWAYS--CAPS"><type>GTK_WIN_POS_CENTER_ALWAYS</type></link> is almost always a bad idea.
+It won't necessarily work well with all window managers or on all windowing systems.
+</para><variablelist role="enum">
+<varlistentry id="GTK-WIN-POS-NONE--CAPS" role="constant">
+<term><literal>GTK_WIN_POS_NONE</literal></term>
+<listitem><simpara>No influence is made on placement.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-WIN-POS-CENTER--CAPS" role="constant">
+<term><literal>GTK_WIN_POS_CENTER</literal></term>
+<listitem><simpara>Windows should be placed in the center of the screen.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-WIN-POS-MOUSE--CAPS" role="constant">
+<term><literal>GTK_WIN_POS_MOUSE</literal></term>
+<listitem><simpara>Windows should be placed at the current mouse position.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-WIN-POS-CENTER-ALWAYS--CAPS" role="constant">
+<term><literal>GTK_WIN_POS_CENTER_ALWAYS</literal></term>
+<listitem><simpara>Keep window centered as it changes size, etc.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-WIN-POS-CENTER-ON-PARENT--CAPS" role="constant">
+<term><literal>GTK_WIN_POS_CENTER_ON_PARENT</literal></term>
+<listitem><simpara>Center the window on its transient
+parent (see <link linkend="gtk-window-set-transient-for"><function>gtk_window_set_transient_for()</function></link>).
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkWindowType" role="enum">
+<title>enum GtkWindowType</title>
+<indexterm zone="GtkWindowType"><primary sortas="WindowType">GtkWindowType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_WINDOW_TOPLEVEL,
+  GTK_WINDOW_POPUP
+} GtkWindowType;
+</programlisting>
+<para>
+A <link linkend="GtkWindow"><type>GtkWindow</type></link> can be one of these types. Most things you'd consider a
+"window" should have type <link linkend="GTK-WINDOW-TOPLEVEL--CAPS"><type>GTK_WINDOW_TOPLEVEL</type></link>; windows with this type
+are managed by the window manager and have a frame by default (call
+<link linkend="gtk-window-set-decorated"><function>gtk_window_set_decorated()</function></link> to toggle the frame).  Windows with type
+<link linkend="GTK-WINDOW-POPUP--CAPS"><type>GTK_WINDOW_POPUP</type></link> are ignored by the window manager; window manager
+keybindings won't work on them, the window manager won't decorate the
+window with a frame, many GTK+ features that rely on the window
+manager will not work (e.g. resize grips and
+maximization/minimization). <link linkend="GTK-WINDOW-POPUP--CAPS"><type>GTK_WINDOW_POPUP</type></link> is used to implement
+widgets such as <link linkend="GtkMenu"><type>GtkMenu</type></link> or tooltips that you normally don't think of
+as windows per se. Nearly all windows should be <link linkend="GTK-WINDOW-TOPLEVEL--CAPS"><type>GTK_WINDOW_TOPLEVEL</type></link>.
+In particular, do not use <link linkend="GTK-WINDOW-POPUP--CAPS"><type>GTK_WINDOW_POPUP</type></link> just to turn off
+the window borders; use <link linkend="gtk-window-set-decorated"><function>gtk_window_set_decorated()</function></link> for that.
+</para><variablelist role="enum">
+<varlistentry id="GTK-WINDOW-TOPLEVEL--CAPS" role="constant">
+<term><literal>GTK_WINDOW_TOPLEVEL</literal></term>
+<listitem><simpara>A regular window, such as a dialog.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-WINDOW-POPUP--CAPS" role="constant">
+<term><literal>GTK_WINDOW_POPUP</literal></term>
+<listitem><simpara>A special window such as a tooltip.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkSortType" role="enum">
+<title>enum GtkSortType</title>
+<indexterm zone="GtkSortType"><primary sortas="SortType">GtkSortType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_SORT_ASCENDING,
+  GTK_SORT_DESCENDING
+} GtkSortType;
+</programlisting>
+<para>
+Determines the direction of a sort.
+</para><variablelist role="enum">
+<varlistentry id="GTK-SORT-ASCENDING--CAPS" role="constant">
+<term><literal>GTK_SORT_ASCENDING</literal></term>
+<listitem><simpara>Sorting is in ascending order.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-SORT-DESCENDING--CAPS" role="constant">
+<term><literal>GTK_SORT_DESCENDING</literal></term>
+<listitem><simpara>Sorting is in descending order.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkDragResult" role="enum">
+<title>enum GtkDragResult</title>
+<indexterm zone="GtkDragResult"><primary sortas="DragResult">GtkDragResult</primary></indexterm><programlisting>typedef enum
+{
+  GTK_DRAG_RESULT_SUCCESS,
+  GTK_DRAG_RESULT_NO_TARGET,
+  GTK_DRAG_RESULT_USER_CANCELLED,
+  GTK_DRAG_RESULT_TIMEOUT_EXPIRED,
+  GTK_DRAG_RESULT_GRAB_BROKEN,
+  GTK_DRAG_RESULT_ERROR
+} GtkDragResult;
+</programlisting>
+<para>
+Gives an indication why a drag operation failed.
+The value can by obtained by connecting to the
+<link linkend="GtkWidget-drag-failed"><type>"drag-failed"</type></link> signal.
+</para><variablelist role="enum">
+<varlistentry id="GTK-DRAG-RESULT-SUCCESS--CAPS" role="constant">
+<term><literal>GTK_DRAG_RESULT_SUCCESS</literal></term>
+<listitem><simpara>The drag operation was successful
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-DRAG-RESULT-NO-TARGET--CAPS" role="constant">
+<term><literal>GTK_DRAG_RESULT_NO_TARGET</literal></term>
+<listitem><simpara>No suitable drag target
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-DRAG-RESULT-USER-CANCELLED--CAPS" role="constant">
+<term><literal>GTK_DRAG_RESULT_USER_CANCELLED</literal></term>
+<listitem><simpara>The user cancelled the drag operation
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-DRAG-RESULT-TIMEOUT-EXPIRED--CAPS" role="constant">
+<term><literal>GTK_DRAG_RESULT_TIMEOUT_EXPIRED</literal></term>
+<listitem><simpara>The drag operation timed out
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-DRAG-RESULT-GRAB-BROKEN--CAPS" role="constant">
+<term><literal>GTK_DRAG_RESULT_GRAB_BROKEN</literal></term>
+<listitem><simpara>The pointer or keyboard grab used
+   for the drag operation was broken
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-DRAG-RESULT-ERROR--CAPS" role="constant">
+<term><literal>GTK_DRAG_RESULT_ERROR</literal></term>
+<listitem><simpara>The drag operation failed due to some 
+   unspecified error
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

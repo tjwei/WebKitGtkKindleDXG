@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkVScale">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkVScale.top_of_page">GtkVScale</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkVScale</refname>
+<refpurpose>A vertical slider widget for selecting a value from a range</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkVScale.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkVScale-struct">GtkVScale</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-vscale-new">gtk_vscale_new</link>                      (<link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-vscale-new-with-range">gtk_vscale_new_with_range</link>           (<link linkend="gdouble">gdouble</link> min,
+                                                         <link linkend="gdouble">gdouble</link> max,
+                                                         <link linkend="gdouble">gdouble</link> step);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkVScale.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkRange">GtkRange</link>
+                           +----<link linkend="GtkScale">GtkScale</link>
+                                 +----GtkVScale
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkVScale.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkVScale implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkVScale.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkVScale"><type>GtkVScale</type></link> widget is used to allow the user to select a value using
+a vertical slider. To create one, use <link linkend="gtk-hscale-new-with-range"><function>gtk_hscale_new_with_range()</function></link>.
+</para>
+<para>
+The position to show the current value, and the number of decimal places
+shown can be set using the parent <link linkend="GtkScale"><type>GtkScale</type></link> class's functions.
+</para>
+</refsect1>
+
+<refsect1 id="GtkVScale.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkVScale-struct" role="struct">
+<title>GtkVScale</title>
+<indexterm zone="GtkVScale-struct"><primary sortas="VScale">GtkVScale</primary></indexterm><programlisting>typedef struct _GtkVScale GtkVScale;</programlisting>
+<para>
+The <link linkend="GtkVScale-struct"><type>GtkVScale</type></link> struct contains private data only, and
+should be accessed using the functions below.
+</para></refsect2>
+<refsect2 id="gtk-vscale-new" role="function">
+<title>gtk_vscale_new ()</title>
+<indexterm zone="gtk-vscale-new"><primary sortas="vscale_new">gtk_vscale_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_vscale_new                      (<link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);</programlisting>
+<para>
+Creates a new <link linkend="GtkVScale"><type>GtkVScale</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>adjustment</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link> which sets the range of the scale.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a new <link linkend="GtkVScale"><type>GtkVScale</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-vscale-new-with-range" role="function">
+<title>gtk_vscale_new_with_range ()</title>
+<indexterm zone="gtk-vscale-new-with-range"><primary sortas="vscale_new_with_range">gtk_vscale_new_with_range</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_vscale_new_with_range           (<link linkend="gdouble">gdouble</link> min,
+                                                         <link linkend="gdouble">gdouble</link> max,
+                                                         <link linkend="gdouble">gdouble</link> step);</programlisting>
+<para>
+Creates a new vertical scale widget that lets the user input a
+number between <parameter>min</parameter> and <parameter>max</parameter> (including <parameter>min</parameter> and <parameter>max</parameter>) with the
+increment <parameter>step</parameter>.  <parameter>step</parameter> must be nonzero; it's the distance the
+slider moves when using the arrow keys to adjust the scale value.
+</para>
+<para>
+Note that the way in which the precision is derived works best if <parameter>step</parameter>
+is a power of ten. If the resulting precision is not suitable for your
+needs, use <link linkend="gtk-scale-set-digits"><function>gtk_scale_set_digits()</function></link> to correct it.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>min</parameter>&#160;:</term>
+<listitem><simpara> minimum value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max</parameter>&#160;:</term>
+<listitem><simpara> maximum value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>step</parameter>&#160;:</term>
+<listitem><simpara> step increment (tick size) used with keyboard shortcuts
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkVScale"><type>GtkVScale</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

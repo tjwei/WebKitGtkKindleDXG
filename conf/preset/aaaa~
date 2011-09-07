@@ -1,0 +1,1 @@
+aclocal && autoheader && autoconf && autoconf && ./configure --prefix=/usr/local $ARGS

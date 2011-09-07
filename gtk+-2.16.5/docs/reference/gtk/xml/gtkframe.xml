@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkFrame">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkFrame.top_of_page">GtkFrame</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkFrame</refname>
+<refpurpose>A bin with a decorative frame and optional label</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkFrame.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkFrame-struct">GtkFrame</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-frame-new">gtk_frame_new</link>                       (const <link linkend="gchar">gchar</link> *label);
+<link linkend="void">void</link>                <link linkend="gtk-frame-set-label">gtk_frame_set_label</link>                 (<link linkend="GtkFrame">GtkFrame</link> *frame,
+                                                         const <link linkend="gchar">gchar</link> *label);
+<link linkend="void">void</link>                <link linkend="gtk-frame-set-label-widget">gtk_frame_set_label_widget</link>          (<link linkend="GtkFrame">GtkFrame</link> *frame,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *label_widget);
+<link linkend="void">void</link>                <link linkend="gtk-frame-set-label-align">gtk_frame_set_label_align</link>           (<link linkend="GtkFrame">GtkFrame</link> *frame,
+                                                         <link linkend="gfloat">gfloat</link> xalign,
+                                                         <link linkend="gfloat">gfloat</link> yalign);
+<link linkend="void">void</link>                <link linkend="gtk-frame-set-shadow-type">gtk_frame_set_shadow_type</link>           (<link linkend="GtkFrame">GtkFrame</link> *frame,
+                                                         <link linkend="GtkShadowType">GtkShadowType</link> type);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-frame-get-label">gtk_frame_get_label</link>                 (<link linkend="GtkFrame">GtkFrame</link> *frame);
+<link linkend="void">void</link>                <link linkend="gtk-frame-get-label-align">gtk_frame_get_label_align</link>           (<link linkend="GtkFrame">GtkFrame</link> *frame,
+                                                         <link linkend="gfloat">gfloat</link> *xalign,
+                                                         <link linkend="gfloat">gfloat</link> *yalign);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-frame-get-label-widget">gtk_frame_get_label_widget</link>          (<link linkend="GtkFrame">GtkFrame</link> *frame);
+<link linkend="GtkShadowType">GtkShadowType</link>       <link linkend="gtk-frame-get-shadow-type">gtk_frame_get_shadow_type</link>           (<link linkend="GtkFrame">GtkFrame</link> *frame);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkFrame.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----GtkFrame
+                                       +----<link linkend="GtkAspectFrame">GtkAspectFrame</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkFrame.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkFrame implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkFrame.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkFrame--label">label</link>&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkFrame--label-widget">label-widget</link>&quot;             <link linkend="GtkWidget">GtkWidget</link>*            : Read / Write
+  &quot;<link linkend="GtkFrame--label-xalign">label-xalign</link>&quot;             <link linkend="gfloat">gfloat</link>                : Read / Write
+  &quot;<link linkend="GtkFrame--label-yalign">label-yalign</link>&quot;             <link linkend="gfloat">gfloat</link>                : Read / Write
+  &quot;<link linkend="GtkFrame--shadow">shadow</link>&quot;                   <link linkend="GtkShadowType">GtkShadowType</link>         : Read / Write
+  &quot;<link linkend="GtkFrame--shadow-type">shadow-type</link>&quot;              <link linkend="GtkShadowType">GtkShadowType</link>         : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkFrame.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The frame widget is a Bin that surrounds its child
+with a decorative frame and an optional label.
+If present, the label is drawn in a gap in the
+top side of the frame. The position of the
+label can be controlled with <link linkend="gtk-frame-set-label-align"><function>gtk_frame_set_label_align()</function></link>.
+</para>
+<refsect2 id="GtkFrame-BUILDER-UI">
+<title>GtkFrame as GtkBuildable</title>
+<para>
+The GtkFrame implementation of the GtkBuildable interface
+supports placing a child in the label position by specifying
+"label" as the "type" attribute of a &lt;child&gt; element.
+A normal content child can be specified without specifying
+a &lt;child&gt; type attribute.
+</para>
+<example>
+<title>A UI definition fragment with GtkFrame</title>
+<programlisting><![CDATA[
+<object class="GtkFrame">
+  <child type="label">
+    <object class="GtkLabel" id="frame-label"/>
+  </child>
+  <child>
+    <object class="GtkEntry" id="frame-content"/>
+  </child>
+</object>
+]]></programlisting>
+</example>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkFrame.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkFrame-struct" role="struct">
+<title>GtkFrame</title>
+<indexterm zone="GtkFrame-struct"><primary sortas="Frame">GtkFrame</primary></indexterm><programlisting>typedef struct _GtkFrame GtkFrame;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-frame-new" role="function">
+<title>gtk_frame_new ()</title>
+<indexterm zone="gtk-frame-new"><primary sortas="frame_new">gtk_frame_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_frame_new                       (const <link linkend="gchar">gchar</link> *label);</programlisting>
+<para>
+Creates a new <link linkend="GtkFrame"><type>GtkFrame</type></link>, with optional label <parameter>label</parameter>.
+If <parameter>label</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, the label is omitted.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> the text to use as the label of the frame
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkFrame"><type>GtkFrame</type></link> widget
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-frame-set-label" role="function">
+<title>gtk_frame_set_label ()</title>
+<indexterm zone="gtk-frame-set-label"><primary sortas="frame_set_label">gtk_frame_set_label</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_frame_set_label                 (<link linkend="GtkFrame">GtkFrame</link> *frame,
+                                                         const <link linkend="gchar">gchar</link> *label);</programlisting>
+<para>
+Sets the text of the label. If <parameter>label</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>,
+the current label is removed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>frame</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFrame"><type>GtkFrame</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> the text to use as the label of the frame
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-frame-set-label-widget" role="function">
+<title>gtk_frame_set_label_widget ()</title>
+<indexterm zone="gtk-frame-set-label-widget"><primary sortas="frame_set_label_widget">gtk_frame_set_label_widget</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_frame_set_label_widget          (<link linkend="GtkFrame">GtkFrame</link> *frame,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *label_widget);</programlisting>
+<para>
+Sets the label widget for the frame. This is the widget that
+will appear embedded in the top edge of the frame as a
+title.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>frame</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFrame"><type>GtkFrame</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label_widget</parameter>&#160;:</term>
+<listitem><simpara> the new label widget
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-frame-set-label-align" role="function">
+<title>gtk_frame_set_label_align ()</title>
+<indexterm zone="gtk-frame-set-label-align"><primary sortas="frame_set_label_align">gtk_frame_set_label_align</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_frame_set_label_align           (<link linkend="GtkFrame">GtkFrame</link> *frame,
+                                                         <link linkend="gfloat">gfloat</link> xalign,
+                                                         <link linkend="gfloat">gfloat</link> yalign);</programlisting>
+<para>
+Sets the alignment of the frame widget's label. The
+default values for a newly created frame are 0.0 and 0.5.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>frame</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFrame"><type>GtkFrame</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xalign</parameter>&#160;:</term>
+<listitem><simpara> The position of the label along the top edge
+  of the widget. A value of 0.0 represents left alignment;
+  1.0 represents right alignment.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>yalign</parameter>&#160;:</term>
+<listitem><simpara> The y alignment of the label. A value of 0.0 aligns under 
+  the frame; 1.0 aligns above the frame. If the values are exactly
+  0.0 or 1.0 the gap in the frame won't be painted because the label
+  will be completely above or below the frame.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-frame-set-shadow-type" role="function">
+<title>gtk_frame_set_shadow_type ()</title>
+<indexterm zone="gtk-frame-set-shadow-type"><primary sortas="frame_set_shadow_type">gtk_frame_set_shadow_type</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_frame_set_shadow_type           (<link linkend="GtkFrame">GtkFrame</link> *frame,
+                                                         <link linkend="GtkShadowType">GtkShadowType</link> type);</programlisting>
+<para>
+Sets the shadow type for <parameter>frame</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>frame</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFrame"><type>GtkFrame</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> the new <link linkend="GtkShadowType"><type>GtkShadowType</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-frame-get-label" role="function">
+<title>gtk_frame_get_label ()</title>
+<indexterm zone="gtk-frame-get-label"><primary sortas="frame_get_label">gtk_frame_get_label</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_frame_get_label                 (<link linkend="GtkFrame">GtkFrame</link> *frame);</programlisting>
+<para>
+If the frame's label widget is a <link linkend="GtkLabel"><type>GtkLabel</type></link>, returns the
+text in the label widget. (The frame will have a <link linkend="GtkLabel"><type>GtkLabel</type></link>
+for the label widget if a non-<link linkend="NULL--CAPS"><literal>NULL</literal></link> argument was passed
+to <link linkend="gtk-frame-new"><function>gtk_frame_new()</function></link>.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>frame</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFrame"><type>GtkFrame</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the text in the label, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if there
+              was no label widget or the lable widget was not
+              a <link linkend="GtkLabel"><type>GtkLabel</type></link>. This string is owned by GTK+ and
+              must not be modified or freed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-frame-get-label-align" role="function">
+<title>gtk_frame_get_label_align ()</title>
+<indexterm zone="gtk-frame-get-label-align"><primary sortas="frame_get_label_align">gtk_frame_get_label_align</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_frame_get_label_align           (<link linkend="GtkFrame">GtkFrame</link> *frame,
+                                                         <link linkend="gfloat">gfloat</link> *xalign,
+                                                         <link linkend="gfloat">gfloat</link> *yalign);</programlisting>
+<para>
+Retrieves the X and Y alignment of the frame's label. See
+<link linkend="gtk-frame-set-label-align"><function>gtk_frame_set_label_align()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>frame</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFrame"><type>GtkFrame</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xalign</parameter>&#160;:</term>
+<listitem><simpara> location to store X alignment of frame's label, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>yalign</parameter>&#160;:</term>
+<listitem><simpara> location to store X alignment of frame's label, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-frame-get-label-widget" role="function">
+<title>gtk_frame_get_label_widget ()</title>
+<indexterm zone="gtk-frame-get-label-widget"><primary sortas="frame_get_label_widget">gtk_frame_get_label_widget</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_frame_get_label_widget          (<link linkend="GtkFrame">GtkFrame</link> *frame);</programlisting>
+<para>
+Retrieves the label widget for the frame. See
+<link linkend="gtk-frame-set-label-widget"><function>gtk_frame_set_label_widget()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>frame</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFrame"><type>GtkFrame</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the label widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if there is none.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-frame-get-shadow-type" role="function">
+<title>gtk_frame_get_shadow_type ()</title>
+<indexterm zone="gtk-frame-get-shadow-type"><primary sortas="frame_get_shadow_type">gtk_frame_get_shadow_type</primary></indexterm><programlisting><link linkend="GtkShadowType">GtkShadowType</link>       gtk_frame_get_shadow_type           (<link linkend="GtkFrame">GtkFrame</link> *frame);</programlisting>
+<para>
+Retrieves the shadow type of the frame. See
+<link linkend="gtk-frame-set-shadow-type"><function>gtk_frame_set_shadow_type()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>frame</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFrame"><type>GtkFrame</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the current shadow type of the frame.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkFrame.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkFrame--label" role="property"><title>The <literal>&quot;label&quot;</literal> property</title>
+<indexterm zone="GtkFrame--label"><primary sortas="Frame:label">GtkFrame:label</primary></indexterm><programlisting>  &quot;label&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Text of the frame's label.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkFrame--label-widget" role="property"><title>The <literal>&quot;label-widget&quot;</literal> property</title>
+<indexterm zone="GtkFrame--label-widget"><primary sortas="Frame:label-widget">GtkFrame:label-widget</primary></indexterm><programlisting>  &quot;label-widget&quot;             <link linkend="GtkWidget">GtkWidget</link>*            : Read / Write</programlisting>
+<para>A widget to display in place of the usual frame label.</para></refsect2>
+<refsect2 id="GtkFrame--label-xalign" role="property"><title>The <literal>&quot;label-xalign&quot;</literal> property</title>
+<indexterm zone="GtkFrame--label-xalign"><primary sortas="Frame:label-xalign">GtkFrame:label-xalign</primary></indexterm><programlisting>  &quot;label-xalign&quot;             <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>The horizontal alignment of the label.</para><para>Allowed values: [0,1]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkFrame--label-yalign" role="property"><title>The <literal>&quot;label-yalign&quot;</literal> property</title>
+<indexterm zone="GtkFrame--label-yalign"><primary sortas="Frame:label-yalign">GtkFrame:label-yalign</primary></indexterm><programlisting>  &quot;label-yalign&quot;             <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>The vertical alignment of the label.</para><para>Allowed values: [0,1]</para>
+<para>Default value: 0.5</para>
+</refsect2>
+<refsect2 id="GtkFrame--shadow" role="property"><title>The <literal>&quot;shadow&quot;</literal> property</title>
+<indexterm zone="GtkFrame--shadow"><primary sortas="Frame:shadow">GtkFrame:shadow</primary></indexterm><programlisting>  &quot;shadow&quot;                   <link linkend="GtkShadowType">GtkShadowType</link>         : Read / Write</programlisting>
+<para>Deprecated property, use shadow_type instead.</para><para>Default value: GTK_SHADOW_ETCHED_IN</para>
+</refsect2>
+<refsect2 id="GtkFrame--shadow-type" role="property"><title>The <literal>&quot;shadow-type&quot;</literal> property</title>
+<indexterm zone="GtkFrame--shadow-type"><primary sortas="Frame:shadow-type">GtkFrame:shadow-type</primary></indexterm><programlisting>  &quot;shadow-type&quot;              <link linkend="GtkShadowType">GtkShadowType</link>         : Read / Write</programlisting>
+<para>Appearance of the frame border.</para><para>Default value: GTK_SHADOW_ETCHED_IN</para>
+</refsect2>
+</refsect1>
+
+
+
+
+</refentry>

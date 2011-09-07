@@ -1,0 +1,8 @@
+memxor.lo: memxor.c ../config.h memxor.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h
+
+../config.h:
+
+memxor.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:

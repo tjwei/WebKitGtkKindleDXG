@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkToolShell">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkToolShell.top_of_page">GtkToolShell</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkToolShell</refname>
+<refpurpose>Interface for containers containing GtkToolItem widgets.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkToolShell.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkToolShell-struct">GtkToolShell</link>;
+                    <link linkend="GtkToolShellIface">GtkToolShellIface</link>;
+<link linkend="GtkIconSize">GtkIconSize</link>         <link linkend="gtk-tool-shell-get-icon-size">gtk_tool_shell_get_icon_size</link>        (<link linkend="GtkToolShell">GtkToolShell</link> *shell);
+<link linkend="GtkOrientation">GtkOrientation</link>      <link linkend="gtk-tool-shell-get-orientation">gtk_tool_shell_get_orientation</link>      (<link linkend="GtkToolShell">GtkToolShell</link> *shell);
+<link linkend="GtkReliefStyle">GtkReliefStyle</link>      <link linkend="gtk-tool-shell-get-relief-style">gtk_tool_shell_get_relief_style</link>     (<link linkend="GtkToolShell">GtkToolShell</link> *shell);
+<link linkend="GtkToolbarStyle">GtkToolbarStyle</link>     <link linkend="gtk-tool-shell-get-style">gtk_tool_shell_get_style</link>            (<link linkend="GtkToolShell">GtkToolShell</link> *shell);
+<link linkend="void">void</link>                <link linkend="gtk-tool-shell-rebuild-menu">gtk_tool_shell_rebuild_menu</link>         (<link linkend="GtkToolShell">GtkToolShell</link> *shell);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkToolShell.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GInterface">GInterface</link>
+   +----GtkToolShell
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkToolShell.prerequisites" role="prerequisites">
+<title role="prerequisites.title">Prerequisites</title>
+<para>
+GtkToolShell requires
+ <link linkend="GtkWidget">GtkWidget</link>.</para>
+</refsect1>
+
+
+
+<refsect1 id="GtkToolShell.implementations" role="implementations">
+<title role="implementations.title">Known Implementations</title>
+<para>
+GtkToolShell is implemented by
+ <link linkend="GtkToolbar">GtkToolbar</link>.</para>
+</refsect1>
+
+
+
+
+<refsect1 id="GtkToolShell.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkToolShell"><type>GtkToolShell</type></link> interface allows container widgets to provide additional
+information when embedding <link linkend="GtkToolItem"><type>GtkToolItem</type></link> widgets.
+</para>
+<para>
+<parameter>see_also</parameter>: <link linkend="GtkToolbar"><type>GtkToolbar</type></link>, <link linkend="GtkToolItem"><type>GtkToolItem</type></link></para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GtkToolShell.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkToolShell-struct" role="struct">
+<title>GtkToolShell</title>
+<indexterm zone="GtkToolShell-struct"><primary sortas="ToolShell">GtkToolShell</primary></indexterm><programlisting>typedef struct _GtkToolShell GtkToolShell;</programlisting>
+<para>
+Dummy structure for accessing instances of <link linkend="GtkToolShellIface"><type>GtkToolShellIface</type></link>.</para>
+<para>
+</para></refsect2>
+<refsect2 id="GtkToolShellIface" role="struct">
+<title>GtkToolShellIface</title>
+<indexterm zone="GtkToolShellIface"><primary sortas="ToolShellIface">GtkToolShellIface</primary></indexterm><programlisting>typedef struct {
+  GtkIconSize     (*get_icon_size)    (GtkToolShell *shell);
+  GtkOrientation  (*get_orientation)  (GtkToolShell *shell);
+  GtkToolbarStyle (*get_style)        (GtkToolShell *shell);
+  GtkReliefStyle  (*get_relief_style) (GtkToolShell *shell);
+  void            (*rebuild_menu)     (GtkToolShell *shell);
+} GtkToolShellIface;
+</programlisting>
+<para>
+Virtual function table for the <link linkend="GtkToolShell"><type>GtkToolShell</type></link> interface.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><structfield>get_icon_size</structfield>&#160;()</term>
+<listitem><simpara>    mandatory implementation of <link linkend="gtk-tool-shell-get-icon-size"><function>gtk_tool_shell_get_icon_size()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_orientation</structfield>&#160;()</term>
+<listitem><simpara>  mandatory implementation of <link linkend="gtk-tool-shell-get-orientation"><function>gtk_tool_shell_get_orientation()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_style</structfield>&#160;()</term>
+<listitem><simpara>        mandatory implementation of <link linkend="gtk-tool-shell-get-style"><function>gtk_tool_shell_get_style()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_relief_style</structfield>&#160;()</term>
+<listitem><simpara> optional implementation of <link linkend="gtk-tool-shell-get-relief-style"><function>gtk_tool_shell_get_relief_style()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>rebuild_menu</structfield>&#160;()</term>
+<listitem><simpara>     optional implementation of <link linkend="gtk-tool-shell-rebuild-menu"><function>gtk_tool_shell_rebuild_menu()</function></link>.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-tool-shell-get-icon-size" role="function" condition="since:2.14">
+<title>gtk_tool_shell_get_icon_size ()</title>
+<indexterm zone="gtk-tool-shell-get-icon-size" role="2.14"><primary sortas="tool_shell_get_icon_size">gtk_tool_shell_get_icon_size</primary></indexterm><programlisting><link linkend="GtkIconSize">GtkIconSize</link>         gtk_tool_shell_get_icon_size        (<link linkend="GtkToolShell">GtkToolShell</link> *shell);</programlisting>
+<para>
+Retrieves the icon size for the tool shell. Tool items must not call this
+function directly, but rely on <link linkend="gtk-tool-item-get-icon-size"><function>gtk_tool_item_get_icon_size()</function></link> instead.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>shell</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolShell"><type>GtkToolShell</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the current size for icons of <parameter>shell</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-tool-shell-get-orientation" role="function" condition="since:2.14">
+<title>gtk_tool_shell_get_orientation ()</title>
+<indexterm zone="gtk-tool-shell-get-orientation" role="2.14"><primary sortas="tool_shell_get_orientation">gtk_tool_shell_get_orientation</primary></indexterm><programlisting><link linkend="GtkOrientation">GtkOrientation</link>      gtk_tool_shell_get_orientation      (<link linkend="GtkToolShell">GtkToolShell</link> *shell);</programlisting>
+<para>
+Retrieves the current orientation for the tool shell. Tool items must not
+call this function directly, but rely on <link linkend="gtk-tool-item-get-orientation"><function>gtk_tool_item_get_orientation()</function></link>
+instead.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>shell</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolShell"><type>GtkToolShell</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the current orientation of <parameter>shell</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-tool-shell-get-relief-style" role="function" condition="since:2.14">
+<title>gtk_tool_shell_get_relief_style ()</title>
+<indexterm zone="gtk-tool-shell-get-relief-style" role="2.14"><primary sortas="tool_shell_get_relief_style">gtk_tool_shell_get_relief_style</primary></indexterm><programlisting><link linkend="GtkReliefStyle">GtkReliefStyle</link>      gtk_tool_shell_get_relief_style     (<link linkend="GtkToolShell">GtkToolShell</link> *shell);</programlisting>
+<para>
+Returns the relief style of buttons on <parameter>shell</parameter>. Tool items must not call this
+function directly, but rely on <link linkend="gtk-tool-item-get-relief-style"><function>gtk_tool_item_get_relief_style()</function></link> instead.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>shell</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolShell"><type>GtkToolShell</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The relief style of buttons on <parameter>shell</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-tool-shell-get-style" role="function" condition="since:2.14">
+<title>gtk_tool_shell_get_style ()</title>
+<indexterm zone="gtk-tool-shell-get-style" role="2.14"><primary sortas="tool_shell_get_style">gtk_tool_shell_get_style</primary></indexterm><programlisting><link linkend="GtkToolbarStyle">GtkToolbarStyle</link>     gtk_tool_shell_get_style            (<link linkend="GtkToolShell">GtkToolShell</link> *shell);</programlisting>
+<para>
+Retrieves whether the tool shell has text, icons, or both. Tool items must
+not call this function directly, but rely on <link linkend="gtk-tool-item-get-style"><function>gtk_tool_item_get_style()</function></link>
+instead.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>shell</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolShell"><type>GtkToolShell</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the current style of <parameter>shell</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-tool-shell-rebuild-menu" role="function" condition="since:2.14">
+<title>gtk_tool_shell_rebuild_menu ()</title>
+<indexterm zone="gtk-tool-shell-rebuild-menu" role="2.14"><primary sortas="tool_shell_rebuild_menu">gtk_tool_shell_rebuild_menu</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tool_shell_rebuild_menu         (<link linkend="GtkToolShell">GtkToolShell</link> *shell);</programlisting>
+<para>
+Calling this function signals the tool shell that the overflow menu item for
+tool items have changed. If there is an overflow menu and if it is visible
+when this function it called, the menu will be rebuilt.
+</para>
+<para>
+Tool items must not call this function directly, but rely on
+<link linkend="gtk-tool-item-rebuild-menu"><function>gtk_tool_item_rebuild_menu()</function></link> instead.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>shell</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolShell"><type>GtkToolShell</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

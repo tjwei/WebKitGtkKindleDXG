@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libsoup-24-SoupMultipart">
+<refmeta>
+<refentrytitle role="top_of_page" id="libsoup-24-SoupMultipart.top_of_page">SoupMultipart</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupMultipart</refname>
+<refpurpose>multipart HTTP message bodies</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libsoup-24-SoupMultipart.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+typedef             <link linkend="SoupMultipart">SoupMultipart</link>;
+<link linkend="SoupMultipart">SoupMultipart</link> *     <link linkend="soup-multipart-new">soup_multipart_new</link>                  (const <link linkend="char">char</link> *mime_type);
+<link linkend="SoupMultipart">SoupMultipart</link> *     <link linkend="soup-multipart-new-from-message">soup_multipart_new_from_message</link>     (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *headers,
+                                                         <link linkend="SoupMessageBody">SoupMessageBody</link> *body);
+<link linkend="void">void</link>                <link linkend="soup-multipart-free">soup_multipart_free</link>                 (<link linkend="SoupMultipart">SoupMultipart</link> *multipart);
+
+<link linkend="int">int</link>                 <link linkend="soup-multipart-get-length">soup_multipart_get_length</link>           (<link linkend="SoupMultipart">SoupMultipart</link> *multipart);
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-multipart-get-part">soup_multipart_get_part</link>             (<link linkend="SoupMultipart">SoupMultipart</link> *multipart,
+                                                         <link linkend="int">int</link> part,
+                                                         <link linkend="SoupMessageHeaders">SoupMessageHeaders</link> **headers,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> **body);
+<link linkend="void">void</link>                <link linkend="soup-multipart-append-part">soup_multipart_append_part</link>          (<link linkend="SoupMultipart">SoupMultipart</link> *multipart,
+                                                         <link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *headers,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *body);
+<link linkend="void">void</link>                <link linkend="soup-multipart-append-form-string">soup_multipart_append_form_string</link>   (<link linkend="SoupMultipart">SoupMultipart</link> *multipart,
+                                                         const <link linkend="char">char</link> *control_name,
+                                                         const <link linkend="char">char</link> *data);
+<link linkend="void">void</link>                <link linkend="soup-multipart-append-form-file">soup_multipart_append_form_file</link>     (<link linkend="SoupMultipart">SoupMultipart</link> *multipart,
+                                                         const <link linkend="char">char</link> *control_name,
+                                                         const <link linkend="char">char</link> *filename,
+                                                         const <link linkend="char">char</link> *content_type,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *body);
+<link linkend="void">void</link>                <link linkend="soup-multipart-to-message">soup_multipart_to_message</link>           (<link linkend="SoupMultipart">SoupMultipart</link> *multipart,
+                                                         <link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *dest_headers,
+                                                         <link linkend="SoupMessageBody">SoupMessageBody</link> *dest_body);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libsoup-24-SoupMultipart.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libsoup-24-SoupMultipart.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupMultipart" role="typedef" condition="since:2.26">
+<title>SoupMultipart</title>
+<indexterm zone="SoupMultipart" role="2.26"><primary sortas="SoupMultipart">SoupMultipart</primary></indexterm><programlisting>typedef struct SoupMultipart SoupMultipart;
+</programlisting>
+<para>
+Represents a multipart HTTP message body, parsed according to the
+syntax of RFC 2046. Of particular interest to HTTP are
+<literal>multipart/byte-ranges</literal> and
+<literal>multipart/form-data</literal>.
+</para>
+<para>
+Although the headers of a <link linkend="SoupMultipart"><type>SoupMultipart</type></link> body part will contain the
+full headers from that body part, libsoup does not interpret them
+according to MIME rules. For example, each body part is assumed to
+have "binary" Content-Transfer-Encoding, even if its headers
+explicitly state otherwise. In other words, don't try to use
+<link linkend="SoupMultipart"><type>SoupMultipart</type></link> for handling real MIME multiparts.</para>
+<para>
+</para><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-multipart-new" role="function" condition="since:2.26">
+<title>soup_multipart_new ()</title>
+<indexterm zone="soup-multipart-new" role="2.26"><primary sortas="soup_multipart_new">soup_multipart_new</primary></indexterm><programlisting><link linkend="SoupMultipart">SoupMultipart</link> *     soup_multipart_new                  (const <link linkend="char">char</link> *mime_type);</programlisting>
+<para>
+Creates a new empty <link linkend="SoupMultipart"><type>SoupMultipart</type></link> with a randomly-generated
+boundary string. Note that <parameter>mime_type</parameter> must be the full MIME type,
+including "multipart/".</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>mime_type</parameter>&#160;:</term>
+<listitem><simpara> the MIME type of the multipart to create.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new empty <link linkend="SoupMultipart"><type>SoupMultipart</type></link> of the given <parameter>mime_type</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-multipart-new-from-message" role="function" condition="since:2.26">
+<title>soup_multipart_new_from_message ()</title>
+<indexterm zone="soup-multipart-new-from-message" role="2.26"><primary sortas="soup_multipart_new_from_message">soup_multipart_new_from_message</primary></indexterm><programlisting><link linkend="SoupMultipart">SoupMultipart</link> *     soup_multipart_new_from_message     (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *headers,
+                                                         <link linkend="SoupMessageBody">SoupMessageBody</link> *body);</programlisting>
+<para>
+Parses <parameter>headers</parameter> and <parameter>body</parameter> to form a new <link linkend="SoupMultipart"><type>SoupMultipart</type></link></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>headers</parameter>&#160;:</term>
+<listitem><simpara> the headers of the HTTP message to parse
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> the body of the HTTP message to parse
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="SoupMultipart"><type>SoupMultipart</type></link> (or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if the message couldn't
+be parsed or wasn't multipart).
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-multipart-free" role="function" condition="since:2.26">
+<title>soup_multipart_free ()</title>
+<indexterm zone="soup-multipart-free" role="2.26"><primary sortas="soup_multipart_free">soup_multipart_free</primary></indexterm><programlisting><link linkend="void">void</link>                soup_multipart_free                 (<link linkend="SoupMultipart">SoupMultipart</link> *multipart);</programlisting>
+<para>
+Frees <parameter>multipart</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>multipart</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMultipart"><type>SoupMultipart</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-multipart-get-length" role="function" condition="since:2.26">
+<title>soup_multipart_get_length ()</title>
+<indexterm zone="soup-multipart-get-length" role="2.26"><primary sortas="soup_multipart_get_length">soup_multipart_get_length</primary></indexterm><programlisting><link linkend="int">int</link>                 soup_multipart_get_length           (<link linkend="SoupMultipart">SoupMultipart</link> *multipart);</programlisting>
+<para>
+Gets the number of body parts in <parameter>multipart</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>multipart</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMultipart"><type>SoupMultipart</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the number of body parts in <parameter>multipart</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-multipart-get-part" role="function" condition="since:2.26">
+<title>soup_multipart_get_part ()</title>
+<indexterm zone="soup-multipart-get-part" role="2.26"><primary sortas="soup_multipart_get_part">soup_multipart_get_part</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_multipart_get_part             (<link linkend="SoupMultipart">SoupMultipart</link> *multipart,
+                                                         <link linkend="int">int</link> part,
+                                                         <link linkend="SoupMessageHeaders">SoupMessageHeaders</link> **headers,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> **body);</programlisting>
+<para>
+Gets the indicated body part from <parameter>multipart</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>multipart</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMultipart"><type>SoupMultipart</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>part</parameter>&#160;:</term>
+<listitem><simpara> the part number to get (counting from 0)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>headers</parameter>&#160;:</term>
+<listitem><simpara> return location for the MIME part headers
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> return location for the MIME part body
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if <parameter>part</parameter> is out of range (in
+which case <parameter>headers</parameter> and <parameter>body</parameter> won't be set)
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-multipart-append-part" role="function" condition="since:2.26">
+<title>soup_multipart_append_part ()</title>
+<indexterm zone="soup-multipart-append-part" role="2.26"><primary sortas="soup_multipart_append_part">soup_multipart_append_part</primary></indexterm><programlisting><link linkend="void">void</link>                soup_multipart_append_part          (<link linkend="SoupMultipart">SoupMultipart</link> *multipart,
+                                                         <link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *headers,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *body);</programlisting>
+<para>
+Adds a new MIME part to <parameter>multipart</parameter> with the given headers and body.
+(The multipart will make its own copies of <parameter>headers</parameter> and <parameter>body</parameter>, so
+you should free your copies if you are not using them for anything
+else.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>multipart</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMultipart"><type>SoupMultipart</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>headers</parameter>&#160;:</term>
+<listitem><simpara> the MIME part headers
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> the MIME part body
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-multipart-append-form-string" role="function" condition="since:2.26">
+<title>soup_multipart_append_form_string ()</title>
+<indexterm zone="soup-multipart-append-form-string" role="2.26"><primary sortas="soup_multipart_append_form_string">soup_multipart_append_form_string</primary></indexterm><programlisting><link linkend="void">void</link>                soup_multipart_append_form_string   (<link linkend="SoupMultipart">SoupMultipart</link> *multipart,
+                                                         const <link linkend="char">char</link> *control_name,
+                                                         const <link linkend="char">char</link> *data);</programlisting>
+<para>
+Adds a new MIME part containing <parameter>data</parameter> to <parameter>multipart</parameter>, using
+"Content-Disposition: form-data", as per the HTML forms
+specification. See <link linkend="soup-form-request-new-from-multipart"><function>soup_form_request_new_from_multipart()</function></link> for more
+details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>multipart</parameter>&#160;:</term>
+<listitem><simpara> a multipart (presumably of type "multipart/form-data")
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>control_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the control associated with <parameter>data</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> the body data
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-multipart-append-form-file" role="function" condition="since:2.26">
+<title>soup_multipart_append_form_file ()</title>
+<indexterm zone="soup-multipart-append-form-file" role="2.26"><primary sortas="soup_multipart_append_form_file">soup_multipart_append_form_file</primary></indexterm><programlisting><link linkend="void">void</link>                soup_multipart_append_form_file     (<link linkend="SoupMultipart">SoupMultipart</link> *multipart,
+                                                         const <link linkend="char">char</link> *control_name,
+                                                         const <link linkend="char">char</link> *filename,
+                                                         const <link linkend="char">char</link> *content_type,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *body);</programlisting>
+<para>
+Adds a new MIME part containing <parameter>body</parameter> to <parameter>multipart</parameter>, using
+"Content-Disposition: form-data", as per the HTML forms
+specification. See <link linkend="soup-form-request-new-from-multipart"><function>soup_form_request_new_from_multipart()</function></link> for more
+details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>multipart</parameter>&#160;:</term>
+<listitem><simpara> a multipart (presumably of type "multipart/form-data")
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>control_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the control associated with this file
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> the name of the file, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if not known
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>content_type</parameter>&#160;:</term>
+<listitem><simpara> the MIME type of the file, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if not known
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>body</parameter>&#160;:</term>
+<listitem><simpara> the file data
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-multipart-to-message" role="function" condition="since:2.26">
+<title>soup_multipart_to_message ()</title>
+<indexterm zone="soup-multipart-to-message" role="2.26"><primary sortas="soup_multipart_to_message">soup_multipart_to_message</primary></indexterm><programlisting><link linkend="void">void</link>                soup_multipart_to_message           (<link linkend="SoupMultipart">SoupMultipart</link> *multipart,
+                                                         <link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *dest_headers,
+                                                         <link linkend="SoupMessageBody">SoupMessageBody</link> *dest_body);</programlisting>
+<para>
+Serializes <parameter>multipart</parameter> to <parameter>dest_headers</parameter> and <parameter>dest_body</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>multipart</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMultipart"><type>SoupMultipart</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dest_headers</parameter>&#160;:</term>
+<listitem><simpara> the headers of the HTTP message to serialize <parameter>multipart</parameter> to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dest_body</parameter>&#160;:</term>
+<listitem><simpara> the body of the HTTP message to serialize <parameter>multipart</parameter> to
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="libsoup-24-SoupMultipart.see-also">
+<title>See Also</title>
+#SoupMessageBody, <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</refsect1>
+
+</refentry>

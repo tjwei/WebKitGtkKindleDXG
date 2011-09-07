@@ -1,0 +1,562 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="SoupAddress">
+<refmeta>
+<refentrytitle role="top_of_page" id="SoupAddress.top_of_page">SoupAddress</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupAddress</refname>
+<refpurpose>DNS support</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="SoupAddress.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SoupAddress-struct">SoupAddress</link>;
+enum                <link linkend="SoupAddressFamily">SoupAddressFamily</link>;
+#define             <link linkend="SOUP-ADDRESS-ANY-PORT--CAPS">SOUP_ADDRESS_ANY_PORT</link>
+<link linkend="SoupAddress">SoupAddress</link> *       <link linkend="soup-address-new">soup_address_new</link>                    (const <link linkend="char">char</link> *name,
+                                                         <link linkend="guint">guint</link> port);
+<link linkend="SoupAddress">SoupAddress</link> *       <link linkend="soup-address-new-from-sockaddr">soup_address_new_from_sockaddr</link>      (<link linkend="struct-sockaddr">struct sockaddr</link> *sa,
+                                                         <link linkend="int">int</link> len);
+<link linkend="SoupAddress">SoupAddress</link> *       <link linkend="soup-address-new-any">soup_address_new_any</link>                (<link linkend="SoupAddressFamily">SoupAddressFamily</link> family,
+                                                         <link linkend="guint">guint</link> port);
+
+<link linkend="void">void</link>                (<link linkend="SoupAddressCallback">*SoupAddressCallback</link>)              (<link linkend="SoupAddress">SoupAddress</link> *addr,
+                                                         <link linkend="guint">guint</link> status,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="void">void</link>                <link linkend="soup-address-resolve-async">soup_address_resolve_async</link>          (<link linkend="SoupAddress">SoupAddress</link> *addr,
+                                                         <link linkend="GMainContext">GMainContext</link> *async_context,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="SoupAddressCallback">SoupAddressCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="guint">guint</link>               <link linkend="soup-address-resolve-sync">soup_address_resolve_sync</link>           (<link linkend="SoupAddress">SoupAddress</link> *addr,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable);
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-address-is-resolved">soup_address_is_resolved</link>            (<link linkend="SoupAddress">SoupAddress</link> *addr);
+
+const <link linkend="char">char</link> *        <link linkend="soup-address-get-name">soup_address_get_name</link>               (<link linkend="SoupAddress">SoupAddress</link> *addr);
+struct <link linkend="sockaddr">sockaddr</link> *   <link linkend="soup-address-get-sockaddr">soup_address_get_sockaddr</link>           (<link linkend="SoupAddress">SoupAddress</link> *addr,
+                                                         <link linkend="int">int</link> *len);
+const <link linkend="char">char</link> *        <link linkend="soup-address-get-physical">soup_address_get_physical</link>           (<link linkend="SoupAddress">SoupAddress</link> *addr);
+<link linkend="guint">guint</link>               <link linkend="soup-address-get-port">soup_address_get_port</link>               (<link linkend="SoupAddress">SoupAddress</link> *addr);
+
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-address-equal-by-name">soup_address_equal_by_name</link>          (<link linkend="gconstpointer">gconstpointer</link> addr1,
+                                                         <link linkend="gconstpointer">gconstpointer</link> addr2);
+<link linkend="guint">guint</link>               <link linkend="soup-address-hash-by-name">soup_address_hash_by_name</link>           (<link linkend="gconstpointer">gconstpointer</link> addr);
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-address-equal-by-ip">soup_address_equal_by_ip</link>            (<link linkend="gconstpointer">gconstpointer</link> addr1,
+                                                         <link linkend="gconstpointer">gconstpointer</link> addr2);
+<link linkend="guint">guint</link>               <link linkend="soup-address-hash-by-ip">soup_address_hash_by_ip</link>             (<link linkend="gconstpointer">gconstpointer</link> addr);
+
+#define             <link linkend="SOUP-ADDRESS-FAMILY--CAPS">SOUP_ADDRESS_FAMILY</link>
+#define             <link linkend="SOUP-ADDRESS-NAME--CAPS">SOUP_ADDRESS_NAME</link>
+#define             <link linkend="SOUP-ADDRESS-PHYSICAL--CAPS">SOUP_ADDRESS_PHYSICAL</link>
+#define             <link linkend="SOUP-ADDRESS-PORT--CAPS">SOUP_ADDRESS_PORT</link>
+#define             <link linkend="SOUP-ADDRESS-SOCKADDR--CAPS">SOUP_ADDRESS_SOCKADDR</link>
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="SoupAddress.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----SoupAddress
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="SoupAddress.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="SoupAddress--family">family</link>&quot;                   <link linkend="SoupAddressFamily">SoupAddressFamily</link>     : Read / Write / Construct Only
+  &quot;<link linkend="SoupAddress--name">name</link>&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write / Construct Only
+  &quot;<link linkend="SoupAddress--physical">physical</link>&quot;                 <link linkend="gchar">gchar</link>*                : Read
+  &quot;<link linkend="SoupAddress--port">port</link>&quot;                     <link linkend="gint">gint</link>                  : Read / Write / Construct Only
+  &quot;<link linkend="SoupAddress--sockaddr">sockaddr</link>&quot;                 <link linkend="gpointer">gpointer</link>              : Read / Write / Construct Only
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="SoupAddress.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="SoupAddress"><type>SoupAddress</type></link> represents the address of a TCP connection endpoint:
+both the IP address and the port. (It is somewhat like an
+object-oriented version of struct sockaddr.)</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="SoupAddress.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupAddress-struct" role="struct">
+<title>SoupAddress</title>
+<indexterm zone="SoupAddress-struct"><primary sortas="SoupAddress">SoupAddress</primary></indexterm><programlisting>typedef struct _SoupAddress SoupAddress;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SoupAddressFamily" role="enum">
+<title>enum SoupAddressFamily</title>
+<indexterm zone="SoupAddressFamily"><primary sortas="SoupAddressFamily">SoupAddressFamily</primary></indexterm><programlisting>typedef enum {
+	SOUP_ADDRESS_FAMILY_INVALID = -1,
+
+	SOUP_ADDRESS_FAMILY_IPV4 = G_SOCKET_FAMILY_IPV4,
+	SOUP_ADDRESS_FAMILY_IPV6 = G_SOCKET_FAMILY_IPV6
+} SoupAddressFamily;
+</programlisting>
+<para>
+The supported address families.</para>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="SOUP-ADDRESS-FAMILY-INVALID--CAPS" role="constant">
+<term><literal>SOUP_ADDRESS_FAMILY_INVALID</literal></term>
+<listitem><simpara> an invalid <link linkend="SoupAddress"><literal>SoupAddress</literal></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-ADDRESS-FAMILY-IPV4--CAPS" role="constant">
+<term><literal>SOUP_ADDRESS_FAMILY_IPV4</literal></term>
+<listitem><simpara> an IPv4 address
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-ADDRESS-FAMILY-IPV6--CAPS" role="constant">
+<term><literal>SOUP_ADDRESS_FAMILY_IPV6</literal></term>
+<listitem><simpara> an IPv6 address
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SOUP-ADDRESS-ANY-PORT--CAPS" role="macro">
+<title>SOUP_ADDRESS_ANY_PORT</title>
+<indexterm zone="SOUP-ADDRESS-ANY-PORT--CAPS"><primary sortas="SOUP_ADDRESS_ANY_PORT">SOUP_ADDRESS_ANY_PORT</primary></indexterm><programlisting>#define SOUP_ADDRESS_ANY_PORT 0
+</programlisting>
+<para>
+This can be passed to any <link linkend="SoupAddress"><type>SoupAddress</type></link> method that expects a port,
+to indicate that you don't care what port is used.</para>
+<para>
+</para></refsect2>
+<refsect2 id="soup-address-new" role="function">
+<title>soup_address_new ()</title>
+<indexterm zone="soup-address-new"><primary sortas="soup_address_new">soup_address_new</primary></indexterm><programlisting><link linkend="SoupAddress">SoupAddress</link> *       soup_address_new                    (const <link linkend="char">char</link> *name,
+                                                         <link linkend="guint">guint</link> port);</programlisting>
+<para>
+Creates a <link linkend="SoupAddress"><type>SoupAddress</type></link> from <parameter>name</parameter> and <parameter>port</parameter>. The <link linkend="SoupAddress"><type>SoupAddress</type></link>'s IP
+address may not be available right away; the caller can call
+<link linkend="soup-address-resolve-async"><function>soup_address_resolve_async()</function></link> or <link linkend="soup-address-resolve-sync"><function>soup_address_resolve_sync()</function></link> to
+force a DNS resolution.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> a hostname or physical address
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>port</parameter>&#160;:</term>
+<listitem><simpara> a port number
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-address-new-from-sockaddr" role="function">
+<title>soup_address_new_from_sockaddr ()</title>
+<indexterm zone="soup-address-new-from-sockaddr"><primary sortas="soup_address_new_from_sockaddr">soup_address_new_from_sockaddr</primary></indexterm><programlisting><link linkend="SoupAddress">SoupAddress</link> *       soup_address_new_from_sockaddr      (<link linkend="struct-sockaddr">struct sockaddr</link> *sa,
+                                                         <link linkend="int">int</link> len);</programlisting>
+<para>
+Returns a <link linkend="SoupAddress"><type>SoupAddress</type></link> equivalent to <parameter>sa</parameter> (or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if <parameter>sa</parameter>'s
+address family isn't supported)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sa</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a sockaddr
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara> size of <parameter>sa</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-address-new-any" role="function">
+<title>soup_address_new_any ()</title>
+<indexterm zone="soup-address-new-any"><primary sortas="soup_address_new_any">soup_address_new_any</primary></indexterm><programlisting><link linkend="SoupAddress">SoupAddress</link> *       soup_address_new_any                (<link linkend="SoupAddressFamily">SoupAddressFamily</link> family,
+                                                         <link linkend="guint">guint</link> port);</programlisting>
+<para>
+Returns a <link linkend="SoupAddress"><type>SoupAddress</type></link> corresponding to the "any" address
+for <parameter>family</parameter> (or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if <parameter>family</parameter> isn't supported), suitable for
+passing to <link linkend="soup-socket-server-new"><function>soup_socket_server_new()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>family</parameter>&#160;:</term>
+<listitem><simpara> the address family
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>port</parameter>&#160;:</term>
+<listitem><simpara> the port number (usually <link linkend="SOUP-ADDRESS-ANY-PORT--CAPS"><literal>SOUP_ADDRESS_ANY_PORT</literal></link>)
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SoupAddressCallback" role="function">
+<title>SoupAddressCallback ()</title>
+<indexterm zone="SoupAddressCallback"><primary sortas="SoupAddressCallback">SoupAddressCallback</primary></indexterm><programlisting><link linkend="void">void</link>                (*SoupAddressCallback)              (<link linkend="SoupAddress">SoupAddress</link> *addr,
+                                                         <link linkend="guint">guint</link> status,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<para>
+The callback function passed to <link linkend="soup-address-resolve-async"><function>soup_address_resolve_async()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="SoupAddress"><type>SoupAddress</type></link> that was resolved
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>status</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="SOUP-STATUS-OK--CAPS"><literal>SOUP_STATUS_OK</literal></link>, <link linkend="SOUP-STATUS-CANT-RESOLVE--CAPS"><literal>SOUP_STATUS_CANT_RESOLVE</literal></link>, or
+<link linkend="SOUP-STATUS-CANCELLED--CAPS"><literal>SOUP_STATUS_CANCELLED</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> the user data that was passed to
+<link linkend="soup-address-resolve-async"><function>soup_address_resolve_async()</function></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-address-resolve-async" role="function">
+<title>soup_address_resolve_async ()</title>
+<indexterm zone="soup-address-resolve-async"><primary sortas="soup_address_resolve_async">soup_address_resolve_async</primary></indexterm><programlisting><link linkend="void">void</link>                soup_address_resolve_async          (<link linkend="SoupAddress">SoupAddress</link> *addr,
+                                                         <link linkend="GMainContext">GMainContext</link> *async_context,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="SoupAddressCallback">SoupAddressCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+Asynchronously resolves the missing half of <parameter>addr</parameter> (its IP address
+if it was created with <link linkend="soup-address-new"><function>soup_address_new()</function></link>, or its hostname if it
+was created with <link linkend="soup-address-new-from-sockaddr"><function>soup_address_new_from_sockaddr()</function></link> or
+<link linkend="soup-address-new-any"><function>soup_address_new_any()</function></link>.)
+</para>
+<para>
+If <parameter>cancellable</parameter> is non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, it can be used to cancel the
+resolution. <parameter>callback</parameter> will still be invoked in this case, with a
+status of <link linkend="SOUP-STATUS-CANCELLED--CAPS"><literal>SOUP_STATUS_CANCELLED</literal></link>.
+</para>
+<para>
+It is safe to call this more than once on a given address, from the
+same thread, with the same <parameter>async_context</parameter> (and doing so will not
+result in redundant DNS queries being made). But it is not safe to
+call from multiple threads, or with different <parameter>async_contexts</parameter>, or
+mixed with calls to <link linkend="soup-address-resolve-sync"><function>soup_address_resolve_sync()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>async_context</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GMainContext"><type>GMainContext</type></link> to call <parameter>callback</parameter> from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GCancellable"><type>GCancellable</type></link> object, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback</parameter>&#160;:</term>
+<listitem><simpara> callback to call with the result
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> data for <parameter>callback</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-address-resolve-sync" role="function">
+<title>soup_address_resolve_sync ()</title>
+<indexterm zone="soup-address-resolve-sync"><primary sortas="soup_address_resolve_sync">soup_address_resolve_sync</primary></indexterm><programlisting><link linkend="guint">guint</link>               soup_address_resolve_sync           (<link linkend="SoupAddress">SoupAddress</link> *addr,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable);</programlisting>
+<para>
+Synchronously resolves the missing half of <parameter>addr</parameter>, as with
+<link linkend="soup-address-resolve-async"><function>soup_address_resolve_async()</function></link>.
+</para>
+<para>
+If <parameter>cancellable</parameter> is non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, it can be used to cancel the
+resolution. <link linkend="soup-address-resolve-sync"><function>soup_address_resolve_sync()</function></link> will then return a status
+of <link linkend="SOUP-STATUS-CANCELLED--CAPS"><literal>SOUP_STATUS_CANCELLED</literal></link>.
+</para>
+<para>
+It is safe to call this more than once, even from different
+threads, but it is not safe to mix calls to
+<link linkend="soup-address-resolve-sync"><function>soup_address_resolve_sync()</function></link> with calls to
+<link linkend="soup-address-resolve-async"><function>soup_address_resolve_async()</function></link> on the same address.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GCancellable"><type>GCancellable</type></link> object, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="SOUP-STATUS-OK--CAPS"><literal>SOUP_STATUS_OK</literal></link>, <link linkend="SOUP-STATUS-CANT-RESOLVE--CAPS"><literal>SOUP_STATUS_CANT_RESOLVE</literal></link>, or
+<link linkend="SOUP-STATUS-CANCELLED--CAPS"><literal>SOUP_STATUS_CANCELLED</literal></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-address-is-resolved" role="function">
+<title>soup_address_is_resolved ()</title>
+<indexterm zone="soup-address-is-resolved"><primary sortas="soup_address_is_resolved">soup_address_is_resolved</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_address_is_resolved            (<link linkend="SoupAddress">SoupAddress</link> *addr);</programlisting>
+<para>
+Tests if <parameter>addr</parameter> has already been resolved. Unlike the other
+<link linkend="SoupAddress"><type>SoupAddress</type></link> "get" methods, this is safe to call when <parameter>addr</parameter> might
+be being resolved in another thread.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>addr</parameter> has been resolved.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-address-get-name" role="function">
+<title>soup_address_get_name ()</title>
+<indexterm zone="soup-address-get-name"><primary sortas="soup_address_get_name">soup_address_get_name</primary></indexterm><programlisting>const <link linkend="char">char</link> *        soup_address_get_name               (<link linkend="SoupAddress">SoupAddress</link> *addr);</programlisting>
+<para>
+Returns the hostname associated with <parameter>addr</parameter>.
+</para>
+<para>
+This method is not thread-safe; if you call it while <parameter>addr</parameter> is being
+resolved in another thread, it may return garbage. You can use
+<link linkend="soup-address-is-resolved"><function>soup_address_is_resolved()</function></link> to safely test whether or not an address
+is resolved before fetching its name or address.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the hostname, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if it is not known.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-address-get-sockaddr" role="function">
+<title>soup_address_get_sockaddr ()</title>
+<indexterm zone="soup-address-get-sockaddr"><primary sortas="soup_address_get_sockaddr">soup_address_get_sockaddr</primary></indexterm><programlisting>struct <link linkend="sockaddr">sockaddr</link> *   soup_address_get_sockaddr           (<link linkend="SoupAddress">SoupAddress</link> *addr,
+                                                         <link linkend="int">int</link> *len);</programlisting>
+<para>
+Returns the sockaddr associated with <parameter>addr</parameter>, with its length in
+*<parameter>len</parameter>. If the sockaddr is not yet known, returns <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</para>
+<para>
+This method is not thread-safe; if you call it while <parameter>addr</parameter> is being
+resolved in another thread, it may return garbage. You can use
+<link linkend="soup-address-is-resolved"><function>soup_address_is_resolved()</function></link> to safely test whether or not an address
+is resolved before fetching its name or address.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara> return location for sockaddr length
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the sockaddr, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-address-get-physical" role="function">
+<title>soup_address_get_physical ()</title>
+<indexterm zone="soup-address-get-physical"><primary sortas="soup_address_get_physical">soup_address_get_physical</primary></indexterm><programlisting>const <link linkend="char">char</link> *        soup_address_get_physical           (<link linkend="SoupAddress">SoupAddress</link> *addr);</programlisting>
+<para>
+Returns the physical address associated with <parameter>addr</parameter> as a string.
+(Eg, "127.0.0.1"). If the address is not yet known, returns <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</para>
+<para>
+This method is not thread-safe; if you call it while <parameter>addr</parameter> is being
+resolved in another thread, it may return garbage. You can use
+<link linkend="soup-address-is-resolved"><function>soup_address_is_resolved()</function></link> to safely test whether or not an address
+is resolved before fetching its name or address.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the physical address, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-address-get-port" role="function">
+<title>soup_address_get_port ()</title>
+<indexterm zone="soup-address-get-port"><primary sortas="soup_address_get_port">soup_address_get_port</primary></indexterm><programlisting><link linkend="guint">guint</link>               soup_address_get_port               (<link linkend="SoupAddress">SoupAddress</link> *addr);</programlisting>
+<para>
+Returns the port associated with <parameter>addr</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the port
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-address-equal-by-name" role="function" condition="since:2.26">
+<title>soup_address_equal_by_name ()</title>
+<indexterm zone="soup-address-equal-by-name" role="2.26"><primary sortas="soup_address_equal_by_name">soup_address_equal_by_name</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_address_equal_by_name          (<link linkend="gconstpointer">gconstpointer</link> addr1,
+                                                         <link linkend="gconstpointer">gconstpointer</link> addr2);</programlisting>
+<para>
+Tests if <parameter>addr1</parameter> and <parameter>addr2</parameter> have the same "name". This method can be
+used with <link linkend="soup-address-hash-by-name"><function>soup_address_hash_by_name()</function></link> to create a <link linkend="GHashTable"><type>GHashTable</type></link> that
+hashes on address "names".
+</para>
+<para>
+Comparing by name normally means comparing the addresses by their
+hostnames. But if the address was originally created using an IP
+address literal, then it will be compared by that instead.
+</para>
+<para>
+In particular, if "www.example.com" has the IP address 10.0.0.1,
+and <parameter>addr1</parameter> was created with the name "www.example.com" and <parameter>addr2</parameter>
+was created with the name "10.0.0.1", then they will compare as
+unequal for purposes of <link linkend="soup-address-equal-by-name"><function>soup_address_equal_by_name()</function></link>.
+</para>
+<para>
+This would be used to distinguish hosts in situations where
+different virtual hosts on the same IP address should be considered
+different. Eg, for purposes of HTTP authentication or cookies, two
+hosts with the same IP address but different names are considered
+to be different hosts.
+</para>
+<para>
+See also <link linkend="soup-address-equal-by-ip"><function>soup_address_equal_by_ip()</function></link>, which compares by IP address
+rather than by name.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr1</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link> with a resolved name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>addr2</parameter>&#160;:</term>
+<listitem><simpara> another <link linkend="SoupAddress"><type>SoupAddress</type></link> with a resolved name
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether or not <parameter>addr1</parameter> and <parameter>addr2</parameter> have the same name
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-address-hash-by-name" role="function" condition="since:2.26">
+<title>soup_address_hash_by_name ()</title>
+<indexterm zone="soup-address-hash-by-name" role="2.26"><primary sortas="soup_address_hash_by_name">soup_address_hash_by_name</primary></indexterm><programlisting><link linkend="guint">guint</link>               soup_address_hash_by_name           (<link linkend="gconstpointer">gconstpointer</link> addr);</programlisting>
+<para>
+A hash function (for <link linkend="GHashTable"><type>GHashTable</type></link>) that corresponds to
+<link linkend="soup-address-equal-by-name"><function>soup_address_equal_by_name()</function></link>, qv</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the named-based hash value for <parameter>addr</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-address-equal-by-ip" role="function" condition="since:2.26">
+<title>soup_address_equal_by_ip ()</title>
+<indexterm zone="soup-address-equal-by-ip" role="2.26"><primary sortas="soup_address_equal_by_ip">soup_address_equal_by_ip</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_address_equal_by_ip            (<link linkend="gconstpointer">gconstpointer</link> addr1,
+                                                         <link linkend="gconstpointer">gconstpointer</link> addr2);</programlisting>
+<para>
+Tests if <parameter>addr1</parameter> and <parameter>addr2</parameter> have the same IP address. This method
+can be used with <link linkend="soup-address-hash-by-ip"><function>soup_address_hash_by_ip()</function></link> to create a
+<link linkend="GHashTable"><type>GHashTable</type></link> that hashes on IP address.
+</para>
+<para>
+This would be used to distinguish hosts in situations where
+different virtual hosts on the same IP address should be considered
+the same. Eg, if "www.example.com" and "www.example.net" have the
+same IP address, then a single <link linkend="SoupConnection"><type>SoupConnection</type></link> can be used to talk
+to either of them.
+</para>
+<para>
+See also <link linkend="soup-address-equal-by-name"><function>soup_address_equal_by_name()</function></link>, which compares by name
+rather than by IP address.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr1</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link> with a resolved IP address
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>addr2</parameter>&#160;:</term>
+<listitem><simpara> another <link linkend="SoupAddress"><type>SoupAddress</type></link> with a resolved IP address
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether or not <parameter>addr1</parameter> and <parameter>addr2</parameter> have the same IP
+address.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-address-hash-by-ip" role="function" condition="since:2.26">
+<title>soup_address_hash_by_ip ()</title>
+<indexterm zone="soup-address-hash-by-ip" role="2.26"><primary sortas="soup_address_hash_by_ip">soup_address_hash_by_ip</primary></indexterm><programlisting><link linkend="guint">guint</link>               soup_address_hash_by_ip             (<link linkend="gconstpointer">gconstpointer</link> addr);</programlisting>
+<para>
+A hash function (for <link linkend="GHashTable"><type>GHashTable</type></link>) that corresponds to
+<link linkend="soup-address-equal-by-ip"><function>soup_address_equal_by_ip()</function></link>, qv</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupAddress"><type>SoupAddress</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the IP-based hash value for <parameter>addr</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="SOUP-ADDRESS-FAMILY--CAPS" role="macro">
+<title>SOUP_ADDRESS_FAMILY</title>
+<indexterm zone="SOUP-ADDRESS-FAMILY--CAPS"><primary sortas="SOUP_ADDRESS_FAMILY">SOUP_ADDRESS_FAMILY</primary></indexterm><programlisting>#define SOUP_ADDRESS_FAMILY   "family"
+</programlisting>
+<para>
+Alias for the <link linkend="SoupAddress--family"><type>"family"</type></link> property. (The
+<link linkend="SoupAddressFamily"><type>SoupAddressFamily</type></link> for this address.)</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-ADDRESS-NAME--CAPS" role="macro">
+<title>SOUP_ADDRESS_NAME</title>
+<indexterm zone="SOUP-ADDRESS-NAME--CAPS"><primary sortas="SOUP_ADDRESS_NAME">SOUP_ADDRESS_NAME</primary></indexterm><programlisting>#define SOUP_ADDRESS_NAME     "name"
+</programlisting>
+<para>
+Alias for the <link linkend="SoupAddress--name"><type>"name"</type></link> property. (The hostname for
+this address.)</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-ADDRESS-PHYSICAL--CAPS" role="macro">
+<title>SOUP_ADDRESS_PHYSICAL</title>
+<indexterm zone="SOUP-ADDRESS-PHYSICAL--CAPS"><primary sortas="SOUP_ADDRESS_PHYSICAL">SOUP_ADDRESS_PHYSICAL</primary></indexterm><programlisting>#define SOUP_ADDRESS_PHYSICAL "physical"
+</programlisting>
+<para>
+An alias for the <link linkend="SoupAddress--physical"><type>"physical"</type></link> property. (The
+stringified IP address for this address.)</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-ADDRESS-PORT--CAPS" role="macro">
+<title>SOUP_ADDRESS_PORT</title>
+<indexterm zone="SOUP-ADDRESS-PORT--CAPS"><primary sortas="SOUP_ADDRESS_PORT">SOUP_ADDRESS_PORT</primary></indexterm><programlisting>#define SOUP_ADDRESS_PORT     "port"
+</programlisting>
+<para>
+An alias for the <link linkend="SoupAddress--port"><type>"port"</type></link> property. (The port for
+this address.)</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-ADDRESS-SOCKADDR--CAPS" role="macro">
+<title>SOUP_ADDRESS_SOCKADDR</title>
+<indexterm zone="SOUP-ADDRESS-SOCKADDR--CAPS"><primary sortas="SOUP_ADDRESS_SOCKADDR">SOUP_ADDRESS_SOCKADDR</primary></indexterm><programlisting>#define SOUP_ADDRESS_SOCKADDR "sockaddr"
+</programlisting>
+<para>
+An alias for the <link linkend="SoupAddress--sockaddr"><type>"sockaddr"</type></link> property. (A pointer
+to the struct sockaddr for this address.)</para>
+<para>
+</para></refsect2>
+
+</refsect1>
+<refsect1 id="SoupAddress.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="SoupAddress--family" role="property"><title>The <literal>&quot;family&quot;</literal> property</title>
+<indexterm zone="SoupAddress--family"><primary sortas="SoupAddress:family">SoupAddress:family</primary></indexterm><programlisting>  &quot;family&quot;                   <link linkend="SoupAddressFamily">SoupAddressFamily</link>     : Read / Write / Construct Only</programlisting>
+<para>Address family for this address.</para><para>Default value: SOUP_ADDRESS_FAMILY_INVALID</para>
+</refsect2>
+<refsect2 id="SoupAddress--name" role="property"><title>The <literal>&quot;name&quot;</literal> property</title>
+<indexterm zone="SoupAddress--name"><primary sortas="SoupAddress:name">SoupAddress:name</primary></indexterm><programlisting>  &quot;name&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write / Construct Only</programlisting>
+<para>Hostname for this address.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="SoupAddress--physical" role="property"><title>The <literal>&quot;physical&quot;</literal> property</title>
+<indexterm zone="SoupAddress--physical"><primary sortas="SoupAddress:physical">SoupAddress:physical</primary></indexterm><programlisting>  &quot;physical&quot;                 <link linkend="gchar">gchar</link>*                : Read</programlisting>
+<para>IP address for this address.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="SoupAddress--port" role="property"><title>The <literal>&quot;port&quot;</literal> property</title>
+<indexterm zone="SoupAddress--port"><primary sortas="SoupAddress:port">SoupAddress:port</primary></indexterm><programlisting>  &quot;port&quot;                     <link linkend="gint">gint</link>                  : Read / Write / Construct Only</programlisting>
+<para>Port for this address.</para><para>Allowed values: [-1,65535]</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="SoupAddress--sockaddr" role="property"><title>The <literal>&quot;sockaddr&quot;</literal> property</title>
+<indexterm zone="SoupAddress--sockaddr"><primary sortas="SoupAddress:sockaddr">SoupAddress:sockaddr</primary></indexterm><programlisting>  &quot;sockaddr&quot;                 <link linkend="gpointer">gpointer</link>              : Read / Write / Construct Only</programlisting>
+<para>struct sockaddr for this address.</para></refsect2>
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,665 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="gdk-Points-Rectangles-and-Regions">
+<refmeta>
+<refentrytitle role="top_of_page" id="gdk-Points-Rectangles-and-Regions.top_of_page">Points, Rectangles and Regions</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Points, Rectangles and Regions</refname>
+<refpurpose>Simple graphical data types</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gdk-Points-Rectangles-and-Regions.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gdk/gdk.h&gt;
+
+                    <link linkend="GdkPoint">GdkPoint</link>;
+
+                    <link linkend="GdkRectangle">GdkRectangle</link>;
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-rectangle-intersect">gdk_rectangle_intersect</link>             (const <link linkend="GdkRectangle">GdkRectangle</link> *src1,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *src2,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> *dest);
+<link linkend="void">void</link>                <link linkend="gdk-rectangle-union">gdk_rectangle_union</link>                 (const <link linkend="GdkRectangle">GdkRectangle</link> *src1,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *src2,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> *dest);
+
+                    <link linkend="GdkRegion">GdkRegion</link>;
+<link linkend="GdkRegion">GdkRegion</link> *         <link linkend="gdk-region-new">gdk_region_new</link>                      (void);
+<link linkend="GdkRegion">GdkRegion</link> *         <link linkend="gdk-region-polygon">gdk_region_polygon</link>                  (const <link linkend="GdkPoint">GdkPoint</link> *points,
+                                                         <link linkend="gint">gint</link> n_points,
+                                                         <link linkend="GdkFillRule">GdkFillRule</link> fill_rule);
+enum                <link linkend="GdkFillRule">GdkFillRule</link>;
+<link linkend="GdkRegion">GdkRegion</link> *         <link linkend="gdk-region-copy">gdk_region_copy</link>                     (const <link linkend="GdkRegion">GdkRegion</link> *region);
+<link linkend="GdkRegion">GdkRegion</link> *         <link linkend="gdk-region-rectangle">gdk_region_rectangle</link>                (const <link linkend="GdkRectangle">GdkRectangle</link> *rectangle);
+<link linkend="void">void</link>                <link linkend="gdk-region-destroy">gdk_region_destroy</link>                  (<link linkend="GdkRegion">GdkRegion</link> *region);
+
+<link linkend="void">void</link>                <link linkend="gdk-region-get-clipbox">gdk_region_get_clipbox</link>              (const <link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> *rectangle);
+<link linkend="void">void</link>                <link linkend="gdk-region-get-rectangles">gdk_region_get_rectangles</link>           (const <link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> **rectangles,
+                                                         <link linkend="gint">gint</link> *n_rectangles);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-region-empty">gdk_region_empty</link>                    (const <link linkend="GdkRegion">GdkRegion</link> *region);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-region-equal">gdk_region_equal</link>                    (const <link linkend="GdkRegion">GdkRegion</link> *region1,
+                                                         const <link linkend="GdkRegion">GdkRegion</link> *region2);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-region-point-in">gdk_region_point_in</link>                 (const <link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y);
+<link linkend="GdkOverlapType">GdkOverlapType</link>      <link linkend="gdk-region-rect-in">gdk_region_rect_in</link>                  (const <link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *rectangle);
+enum                <link linkend="GdkOverlapType">GdkOverlapType</link>;
+
+<link linkend="void">void</link>                <link linkend="gdk-region-offset">gdk_region_offset</link>                   (<link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         <link linkend="gint">gint</link> dx,
+                                                         <link linkend="gint">gint</link> dy);
+<link linkend="void">void</link>                <link linkend="gdk-region-shrink">gdk_region_shrink</link>                   (<link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         <link linkend="gint">gint</link> dx,
+                                                         <link linkend="gint">gint</link> dy);
+<link linkend="void">void</link>                <link linkend="gdk-region-union-with-rect">gdk_region_union_with_rect</link>          (<link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *rect);
+<link linkend="void">void</link>                <link linkend="gdk-region-intersect">gdk_region_intersect</link>                (<link linkend="GdkRegion">GdkRegion</link> *source1,
+                                                         const <link linkend="GdkRegion">GdkRegion</link> *source2);
+<link linkend="void">void</link>                <link linkend="gdk-region-union">gdk_region_union</link>                    (<link linkend="GdkRegion">GdkRegion</link> *source1,
+                                                         const <link linkend="GdkRegion">GdkRegion</link> *source2);
+<link linkend="void">void</link>                <link linkend="gdk-region-subtract">gdk_region_subtract</link>                 (<link linkend="GdkRegion">GdkRegion</link> *source1,
+                                                         const <link linkend="GdkRegion">GdkRegion</link> *source2);
+<link linkend="void">void</link>                <link linkend="gdk-region-xor">gdk_region_xor</link>                      (<link linkend="GdkRegion">GdkRegion</link> *source1,
+                                                         const <link linkend="GdkRegion">GdkRegion</link> *source2);
+
+                    <link linkend="GdkSpan">GdkSpan</link>;
+<link linkend="void">void</link>                (<link linkend="GdkSpanFunc">*GdkSpanFunc</link>)                      (<link linkend="GdkSpan">GdkSpan</link> *span,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="void">void</link>                <link linkend="gdk-region-spans-intersect-foreach">gdk_region_spans_intersect_foreach</link>  (<link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         const <link linkend="GdkSpan">GdkSpan</link> *spans,
+                                                         <link linkend="int">int</link> n_spans,
+                                                         <link linkend="gboolean">gboolean</link> sorted,
+                                                         <link linkend="GdkSpanFunc">GdkSpanFunc</link> function,
+                                                         <link linkend="gpointer">gpointer</link> data);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gdk-Points-Rectangles-and-Regions.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+GDK provides the <link linkend="GdkPoint"><type>GdkPoint</type></link>, <link linkend="GdkRectangle"><type>GdkRectangle</type></link>, <link linkend="GdkRegion"><type>GdkRegion</type></link> and <link linkend="GdkSpan"><type>GdkSpan</type></link> data types
+for representing pixels and sets of pixels on the screen.
+</para>
+<para>
+<link linkend="GdkPoint"><type>GdkPoint</type></link> is a simple structure containing an x and y coordinate of a point.
+</para>
+<para>
+<link linkend="GdkRectangle"><type>GdkRectangle</type></link> is a structure holding the position and size of a rectangle.
+The intersection of two rectangles can be computed with
+<link linkend="gdk-rectangle-intersect"><function>gdk_rectangle_intersect()</function></link>. To find the union of two rectangles use
+<link linkend="gdk-rectangle-union"><function>gdk_rectangle_union()</function></link>.
+</para>
+<para>
+<link linkend="GdkRegion"><type>GdkRegion</type></link> is an opaque data type holding a set of arbitrary pixels, and is
+usually used for clipping graphical operations (see <link linkend="gdk-gc-set-clip-region"><function>gdk_gc_set_clip_region()</function></link>).
+</para>
+<para>
+<link linkend="GdkSpan"><type>GdkSpan</type></link> is a structure holding a spanline. A spanline is a horizontal line that
+is one pixel wide. It is mainly used when rasterizing other graphics primitives.
+It can be intersected to regions by using <link linkend="gdk-region-spans-intersect-foreach"><function>gdk_region_spans_intersect_foreach()</function></link>.
+</para>
+</refsect1>
+
+<refsect1 id="gdk-Points-Rectangles-and-Regions.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GdkPoint" role="struct">
+<title>GdkPoint</title>
+<indexterm zone="GdkPoint"><primary sortas="Point">GdkPoint</primary></indexterm><programlisting>typedef struct {
+  gint x;
+  gint y;
+} GdkPoint;
+</programlisting>
+<para>
+Defines the x and y coordinates of a point.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>x</structfield>;</term>
+<listitem><simpara>the x coordinate of the point.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>y</structfield>;</term>
+<listitem><simpara>the y coordinate of the point.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkRectangle" role="struct">
+<title>GdkRectangle</title>
+<indexterm zone="GdkRectangle"><primary sortas="Rectangle">GdkRectangle</primary></indexterm><programlisting>typedef struct {
+  gint x;
+  gint y;
+  gint width;
+  gint height;
+} GdkRectangle;
+</programlisting>
+<para>
+Defines the position and size of a rectangle.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>x</structfield>;</term>
+<listitem><simpara>the x coordinate of the left edge of the rectangle.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>y</structfield>;</term>
+<listitem><simpara>the y coordinate of the top of the rectangle.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>width</structfield>;</term>
+<listitem><simpara>the width of the rectangle.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>height</structfield>;</term>
+<listitem><simpara>the height of the rectangle.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-rectangle-intersect" role="function">
+<title>gdk_rectangle_intersect ()</title>
+<indexterm zone="gdk-rectangle-intersect"><primary sortas="rectangle_intersect">gdk_rectangle_intersect</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_rectangle_intersect             (const <link linkend="GdkRectangle">GdkRectangle</link> *src1,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *src2,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> *dest);</programlisting>
+<para>
+Calculates the intersection of two rectangles. It is allowed for
+<parameter>dest</parameter> to be the same as either <parameter>src1</parameter> or <parameter>src2</parameter>. If the rectangles 
+do not intersect, <parameter>dest</parameter>'s width and height is set to 0 and its x 
+and y values are undefined. If you are only interested in whether
+the rectangles intersect, but not in the intersecting area itself,
+pass <link linkend="NULL--CAPS"><literal>NULL</literal></link> for <parameter>dest</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>src1</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRectangle"><type>GdkRectangle</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>src2</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRectangle"><type>GdkRectangle</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dest</parameter>&#160;:</term>
+<listitem><simpara> return location for the intersection of <parameter>src1</parameter> and <parameter>src2</parameter>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the rectangles intersect.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-rectangle-union" role="function">
+<title>gdk_rectangle_union ()</title>
+<indexterm zone="gdk-rectangle-union"><primary sortas="rectangle_union">gdk_rectangle_union</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_rectangle_union                 (const <link linkend="GdkRectangle">GdkRectangle</link> *src1,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *src2,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> *dest);</programlisting>
+<para>
+Calculates the union of two rectangles.
+The union of rectangles <parameter>src1</parameter> and <parameter>src2</parameter> is the smallest rectangle which
+includes both <parameter>src1</parameter> and <parameter>src2</parameter> within it.
+It is allowed for <parameter>dest</parameter> to be the same as either <parameter>src1</parameter> or <parameter>src2</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>src1</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRectangle"><type>GdkRectangle</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>src2</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRectangle"><type>GdkRectangle</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dest</parameter>&#160;:</term>
+<listitem><simpara> return location for the union of <parameter>src1</parameter> and <parameter>src2</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkRegion" role="struct">
+<title>GdkRegion</title>
+<indexterm zone="GdkRegion"><primary sortas="Region">GdkRegion</primary></indexterm><programlisting>typedef struct _GdkRegion GdkRegion;</programlisting>
+<para>
+A GdkRegion represents a set of pixels on the screen.
+</para></refsect2>
+<refsect2 id="gdk-region-new" role="function">
+<title>gdk_region_new ()</title>
+<indexterm zone="gdk-region-new"><primary sortas="region_new">gdk_region_new</primary></indexterm><programlisting><link linkend="GdkRegion">GdkRegion</link> *         gdk_region_new                      (void);</programlisting>
+<para>
+Creates a new empty <link linkend="GdkRegion"><type>GdkRegion</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new empty <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-polygon" role="function">
+<title>gdk_region_polygon ()</title>
+<indexterm zone="gdk-region-polygon"><primary sortas="region_polygon">gdk_region_polygon</primary></indexterm><programlisting><link linkend="GdkRegion">GdkRegion</link> *         gdk_region_polygon                  (const <link linkend="GdkPoint">GdkPoint</link> *points,
+                                                         <link linkend="gint">gint</link> n_points,
+                                                         <link linkend="GdkFillRule">GdkFillRule</link> fill_rule);</programlisting>
+<para>
+Creates a new <link linkend="GdkRegion"><type>GdkRegion</type></link> using the polygon defined by a 
+number of points.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>points</parameter>&#160;:</term>
+<listitem><simpara> an array of <link linkend="GdkPoint"><type>GdkPoint</type></link> structs
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_points</parameter>&#160;:</term>
+<listitem><simpara> the number of elements in the <parameter>points</parameter> array
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>fill_rule</parameter>&#160;:</term>
+<listitem><simpara> specifies which pixels are included in the region when the 
+    polygon overlaps itself.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GdkRegion"><type>GdkRegion</type></link> based on the given polygon
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkFillRule" role="enum">
+<title>enum GdkFillRule</title>
+<indexterm zone="GdkFillRule"><primary sortas="FillRule">GdkFillRule</primary></indexterm><programlisting>typedef enum
+{
+  GDK_EVEN_ODD_RULE,
+  GDK_WINDING_RULE
+} GdkFillRule;
+</programlisting>
+<para>
+The method for determining which pixels are included in a region, when
+creating a <link linkend="GdkRegion"><type>GdkRegion</type></link> from a polygon.
+The fill rule is only relevant for polygons which overlap themselves.
+</para><variablelist role="enum">
+<varlistentry id="GDK-EVEN-ODD-RULE--CAPS" role="constant">
+<term><literal>GDK_EVEN_ODD_RULE</literal></term>
+<listitem><simpara>areas which are overlapped an odd number of times are
+included in the region, while areas overlapped an even number of times are not.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-WINDING-RULE--CAPS" role="constant">
+<term><literal>GDK_WINDING_RULE</literal></term>
+<listitem><simpara>overlapping areas are always included.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-copy" role="function">
+<title>gdk_region_copy ()</title>
+<indexterm zone="gdk-region-copy"><primary sortas="region_copy">gdk_region_copy</primary></indexterm><programlisting><link linkend="GdkRegion">GdkRegion</link> *         gdk_region_copy                     (const <link linkend="GdkRegion">GdkRegion</link> *region);</programlisting>
+<para>
+Copies <parameter>region</parameter>, creating an identical new region.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new region identical to <parameter>region</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-rectangle" role="function">
+<title>gdk_region_rectangle ()</title>
+<indexterm zone="gdk-region-rectangle"><primary sortas="region_rectangle">gdk_region_rectangle</primary></indexterm><programlisting><link linkend="GdkRegion">GdkRegion</link> *         gdk_region_rectangle                (const <link linkend="GdkRectangle">GdkRectangle</link> *rectangle);</programlisting>
+<para>
+Creates a new region containing the area <parameter>rectangle</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>rectangle</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRectangle"><type>GdkRectangle</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new region
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-destroy" role="function">
+<title>gdk_region_destroy ()</title>
+<indexterm zone="gdk-region-destroy"><primary sortas="region_destroy">gdk_region_destroy</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_destroy                  (<link linkend="GdkRegion">GdkRegion</link> *region);</programlisting>
+<para>
+Destroys a <link linkend="GdkRegion"><type>GdkRegion</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-get-clipbox" role="function">
+<title>gdk_region_get_clipbox ()</title>
+<indexterm zone="gdk-region-get-clipbox"><primary sortas="region_get_clipbox">gdk_region_get_clipbox</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_get_clipbox              (const <link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> *rectangle);</programlisting>
+<para>
+Obtains the smallest rectangle which includes the entire <link linkend="GdkRegion"><type>GdkRegion</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rectangle</parameter>&#160;:</term>
+<listitem><simpara> return location for the clipbox
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-get-rectangles" role="function">
+<title>gdk_region_get_rectangles ()</title>
+<indexterm zone="gdk-region-get-rectangles"><primary sortas="region_get_rectangles">gdk_region_get_rectangles</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_get_rectangles           (const <link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> **rectangles,
+                                                         <link linkend="gint">gint</link> *n_rectangles);</programlisting>
+<para>
+Obtains the area covered by the region as a list of rectangles.
+The array returned in <parameter>rectangles</parameter> must be freed with <link linkend="g-free"><function>g_free()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rectangles</parameter>&#160;:</term>
+<listitem><simpara> return location for an array of rectangles
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_rectangles</parameter>&#160;:</term>
+<listitem><simpara> length of returned array
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-empty" role="function">
+<title>gdk_region_empty ()</title>
+<indexterm zone="gdk-region-empty"><primary sortas="region_empty">gdk_region_empty</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_region_empty                    (const <link linkend="GdkRegion">GdkRegion</link> *region);</programlisting>
+<para>
+Finds out if the <link linkend="GdkRegion"><type>GdkRegion</type></link> is empty.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>region</parameter> is empty.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-equal" role="function">
+<title>gdk_region_equal ()</title>
+<indexterm zone="gdk-region-equal"><primary sortas="region_equal">gdk_region_equal</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_region_equal                    (const <link linkend="GdkRegion">GdkRegion</link> *region1,
+                                                         const <link linkend="GdkRegion">GdkRegion</link> *region2);</programlisting>
+<para>
+Finds out if the two regions are the same.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region1</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>region2</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>region1</parameter> and <parameter>region2</parameter> are equal.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-point-in" role="function">
+<title>gdk_region_point_in ()</title>
+<indexterm zone="gdk-region-point-in"><primary sortas="region_point_in">gdk_region_point_in</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_region_point_in                 (const <link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y);</programlisting>
+<para>
+Finds out if a point is in a region.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> the x coordinate of a point
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> the y coordinate of a point
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the point is in <parameter>region</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-rect-in" role="function">
+<title>gdk_region_rect_in ()</title>
+<indexterm zone="gdk-region-rect-in"><primary sortas="region_rect_in">gdk_region_rect_in</primary></indexterm><programlisting><link linkend="GdkOverlapType">GdkOverlapType</link>      gdk_region_rect_in                  (const <link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *rectangle);</programlisting>
+<para>
+Tests whether a rectangle is within a region.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rectangle</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRectangle"><type>GdkRectangle</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="GDK-OVERLAP-RECTANGLE-IN--CAPS"><literal>GDK_OVERLAP_RECTANGLE_IN</literal></link>, <link linkend="GDK-OVERLAP-RECTANGLE-OUT--CAPS"><literal>GDK_OVERLAP_RECTANGLE_OUT</literal></link>, or
+  <link linkend="GDK-OVERLAP-RECTANGLE-PART--CAPS"><literal>GDK_OVERLAP_RECTANGLE_PART</literal></link>, depending on whether the rectangle is inside,
+  outside, or partly inside the <link linkend="GdkRegion"><type>GdkRegion</type></link>, respectively.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkOverlapType" role="enum">
+<title>enum GdkOverlapType</title>
+<indexterm zone="GdkOverlapType"><primary sortas="OverlapType">GdkOverlapType</primary></indexterm><programlisting>typedef enum
+{
+  GDK_OVERLAP_RECTANGLE_IN,
+  GDK_OVERLAP_RECTANGLE_OUT,
+  GDK_OVERLAP_RECTANGLE_PART
+} GdkOverlapType;
+</programlisting>
+<para>
+Specifies the possible values returned by <link linkend="gdk-region-rect-in"><function>gdk_region_rect_in()</function></link>.
+</para><variablelist role="enum">
+<varlistentry id="GDK-OVERLAP-RECTANGLE-IN--CAPS" role="constant">
+<term><literal>GDK_OVERLAP_RECTANGLE_IN</literal></term>
+<listitem><simpara>if the rectangle is inside the <link linkend="GdkRegion"><type>GdkRegion</type></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-OVERLAP-RECTANGLE-OUT--CAPS" role="constant">
+<term><literal>GDK_OVERLAP_RECTANGLE_OUT</literal></term>
+<listitem><simpara>if the rectangle is outside the <link linkend="GdkRegion"><type>GdkRegion</type></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-OVERLAP-RECTANGLE-PART--CAPS" role="constant">
+<term><literal>GDK_OVERLAP_RECTANGLE_PART</literal></term>
+<listitem><simpara>if the rectangle is partly inside the <link linkend="GdkRegion"><type>GdkRegion</type></link>.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-offset" role="function">
+<title>gdk_region_offset ()</title>
+<indexterm zone="gdk-region-offset"><primary sortas="region_offset">gdk_region_offset</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_offset                   (<link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         <link linkend="gint">gint</link> dx,
+                                                         <link linkend="gint">gint</link> dy);</programlisting>
+<para>
+Moves a region the specified distance.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dx</parameter>&#160;:</term>
+<listitem><simpara> the distance to move the region horizontally
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dy</parameter>&#160;:</term>
+<listitem><simpara> the distance to move the region vertically
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-shrink" role="function">
+<title>gdk_region_shrink ()</title>
+<indexterm zone="gdk-region-shrink"><primary sortas="region_shrink">gdk_region_shrink</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_shrink                   (<link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         <link linkend="gint">gint</link> dx,
+                                                         <link linkend="gint">gint</link> dy);</programlisting>
+<para>
+Resizes a region by the specified amount.
+Positive values shrink the region. Negative values expand it.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dx</parameter>&#160;:</term>
+<listitem><simpara> the number of pixels to shrink the region horizontally
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dy</parameter>&#160;:</term>
+<listitem><simpara> the number of pixels to shrink the region vertically
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-union-with-rect" role="function">
+<title>gdk_region_union_with_rect ()</title>
+<indexterm zone="gdk-region-union-with-rect"><primary sortas="region_union_with_rect">gdk_region_union_with_rect</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_union_with_rect          (<link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *rect);</programlisting>
+<para>
+Sets the area of <parameter>region</parameter> to the union of the areas of <parameter>region</parameter> and
+<parameter>rect</parameter>. The resulting area is the set of pixels contained in
+either <parameter>region</parameter> or <parameter>rect</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rect</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRectangle"><type>GdkRectangle</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-intersect" role="function">
+<title>gdk_region_intersect ()</title>
+<indexterm zone="gdk-region-intersect"><primary sortas="region_intersect">gdk_region_intersect</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_intersect                (<link linkend="GdkRegion">GdkRegion</link> *source1,
+                                                         const <link linkend="GdkRegion">GdkRegion</link> *source2);</programlisting>
+<para>
+Sets the area of <parameter>source1</parameter> to the intersection of the areas of <parameter>source1</parameter>
+and <parameter>source2</parameter>. The resulting area is the set of pixels contained in
+both <parameter>source1</parameter> and <parameter>source2</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>source1</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>source2</parameter>&#160;:</term>
+<listitem><simpara> another <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-union" role="function">
+<title>gdk_region_union ()</title>
+<indexterm zone="gdk-region-union"><primary sortas="region_union">gdk_region_union</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_union                    (<link linkend="GdkRegion">GdkRegion</link> *source1,
+                                                         const <link linkend="GdkRegion">GdkRegion</link> *source2);</programlisting>
+<para>
+Sets the area of <parameter>source1</parameter> to the union of the areas of <parameter>source1</parameter> and
+<parameter>source2</parameter>. The resulting area is the set of pixels contained in
+either <parameter>source1</parameter> or <parameter>source2</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>source1</parameter>&#160;:</term>
+<listitem><simpara>  a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>source2</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link> 
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-subtract" role="function">
+<title>gdk_region_subtract ()</title>
+<indexterm zone="gdk-region-subtract"><primary sortas="region_subtract">gdk_region_subtract</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_subtract                 (<link linkend="GdkRegion">GdkRegion</link> *source1,
+                                                         const <link linkend="GdkRegion">GdkRegion</link> *source2);</programlisting>
+<para>
+Subtracts the area of <parameter>source2</parameter> from the area <parameter>source1</parameter>. The resulting
+area is the set of pixels contained in <parameter>source1</parameter> but not in <parameter>source2</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>source1</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>source2</parameter>&#160;:</term>
+<listitem><simpara> another <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-xor" role="function">
+<title>gdk_region_xor ()</title>
+<indexterm zone="gdk-region-xor"><primary sortas="region_xor">gdk_region_xor</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_xor                      (<link linkend="GdkRegion">GdkRegion</link> *source1,
+                                                         const <link linkend="GdkRegion">GdkRegion</link> *source2);</programlisting>
+<para>
+Sets the area of <parameter>source1</parameter> to the exclusive-OR of the areas of <parameter>source1</parameter>
+and <parameter>source2</parameter>. The resulting area is the set of pixels contained in one
+or the other of the two sources but not in both.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>source1</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>source2</parameter>&#160;:</term>
+<listitem><simpara> another <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkSpan" role="struct">
+<title>GdkSpan</title>
+<indexterm zone="GdkSpan"><primary sortas="Span">GdkSpan</primary></indexterm><programlisting>typedef struct {
+  gint x;
+  gint y;
+  gint width;
+} GdkSpan;
+</programlisting>
+<para>
+A GdkSpan represents a horizontal line of pixels starting
+at the pixel with coordinates <parameter>x</parameter>, <parameter>y</parameter> and ending before <parameter>x</parameter> + <parameter>width</parameter>, <parameter>y</parameter>.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>x</structfield>;</term>
+<listitem><simpara>x coordinate of the first pixel.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>y</structfield>;</term>
+<listitem><simpara>y coordinate of the first pixel.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>width</structfield>;</term>
+<listitem><simpara>number of pixels in the span.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkSpanFunc" role="function">
+<title>GdkSpanFunc ()</title>
+<indexterm zone="GdkSpanFunc"><primary sortas="SpanFunc">GdkSpanFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GdkSpanFunc)                      (<link linkend="GdkSpan">GdkSpan</link> *span,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<para>
+This defines the type of the function passed to
+<link linkend="gdk-region-spans-intersect-foreach"><function>gdk_region_spans_intersect_foreach()</function></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>span</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GdkSpan"><type>GdkSpan</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>the user data passed to <link linkend="gdk-region-spans-intersect-foreach"><function>gdk_region_spans_intersect_foreach()</function></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-region-spans-intersect-foreach" role="function">
+<title>gdk_region_spans_intersect_foreach ()</title>
+<indexterm zone="gdk-region-spans-intersect-foreach"><primary sortas="region_spans_intersect_foreach">gdk_region_spans_intersect_foreach</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_region_spans_intersect_foreach  (<link linkend="GdkRegion">GdkRegion</link> *region,
+                                                         const <link linkend="GdkSpan">GdkSpan</link> *spans,
+                                                         <link linkend="int">int</link> n_spans,
+                                                         <link linkend="gboolean">gboolean</link> sorted,
+                                                         <link linkend="GdkSpanFunc">GdkSpanFunc</link> function,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<para>
+Calls a function on each span in the intersection of <parameter>region</parameter> and <parameter>spans</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>region</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRegion"><type>GdkRegion</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>spans</parameter>&#160;:</term>
+<listitem><simpara> an array of <link linkend="GdkSpans"><type>GdkSpans</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_spans</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>spans</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sorted</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>spans</parameter> is sorted wrt. the y coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>function</parameter>&#160;:</term>
+<listitem><simpara> function to call on each span in the intersection
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to <parameter>function</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

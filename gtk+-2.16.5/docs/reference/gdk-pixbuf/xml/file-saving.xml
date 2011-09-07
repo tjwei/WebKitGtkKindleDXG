@@ -1,0 +1,460 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+
+<!ENTITY gdk-pixbuf "<application>gdk-pixbuf</application>">
+<!ENTITY Imlib "<application>Imlib</application>">
+]>
+<refentry id="gdk-pixbuf-file-saving">
+<refmeta>
+<refentrytitle role="top_of_page" id="gdk-pixbuf-file-saving.top_of_page">File saving</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK-PIXBUF Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>File saving</refname>
+<refpurpose>Saving a pixbuf to a file.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gdk-pixbuf-file-saving.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gdk-pixbuf/gdk-pixbuf.h&gt;
+
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-savev">gdk_pixbuf_savev</link>                    (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         const <link linkend="char">char</link> *filename,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="char">char</link> **option_keys,
+                                                         <link linkend="char">char</link> **option_values,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-save">gdk_pixbuf_save</link>                     (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         const <link linkend="char">char</link> *filename,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="GError">GError</link> **error,
+                                                         ...);
+<link linkend="gboolean">gboolean</link>            (<link linkend="GdkPixbufSaveFunc">*GdkPixbufSaveFunc</link>)                (const <link linkend="gchar">gchar</link> *buf,
+                                                         <link linkend="gsize">gsize</link> count,
+                                                         <link linkend="GError">GError</link> **error,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-save-to-callback">gdk_pixbuf_save_to_callback</link>         (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="GdkPixbufSaveFunc">GdkPixbufSaveFunc</link> save_func,
+                                                         <link linkend="gpointer">gpointer</link> user_data,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="GError">GError</link> **error,
+                                                         ...);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-save-to-callbackv">gdk_pixbuf_save_to_callbackv</link>        (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="GdkPixbufSaveFunc">GdkPixbufSaveFunc</link> save_func,
+                                                         <link linkend="gpointer">gpointer</link> user_data,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="char">char</link> **option_keys,
+                                                         <link linkend="char">char</link> **option_values,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-save-to-buffer">gdk_pixbuf_save_to_buffer</link>           (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="gchar">gchar</link> **buffer,
+                                                         <link linkend="gsize">gsize</link> *buffer_size,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="GError">GError</link> **error,
+                                                         ...);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-save-to-bufferv">gdk_pixbuf_save_to_bufferv</link>          (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="gchar">gchar</link> **buffer,
+                                                         <link linkend="gsize">gsize</link> *buffer_size,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="char">char</link> **option_keys,
+                                                         <link linkend="char">char</link> **option_values,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-save-to-stream">gdk_pixbuf_save_to_stream</link>           (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="GOutputStream">GOutputStream</link> *stream,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="GError">GError</link> **error,
+                                                         ...);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gdk-pixbuf-file-saving.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+These functions allow to save a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> in a number of
+file formats. The formatted data can be written to a file
+or to a memory buffer. &gdk-pixbuf; can also call a user-defined
+callback on the data, which allows to e.g. write the image
+to a socket or store it in a database.
+</para>
+</refsect1>
+
+<refsect1 id="gdk-pixbuf-file-saving.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="gdk-pixbuf-savev" role="function">
+<title>gdk_pixbuf_savev ()</title>
+<indexterm zone="gdk-pixbuf-savev"><primary sortas="savev">gdk_pixbuf_savev</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_savev                    (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         const <link linkend="char">char</link> *filename,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="char">char</link> **option_keys,
+                                                         <link linkend="char">char</link> **option_values,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Saves pixbuf to a file in <parameter>type</parameter>, which is currently "jpeg", "png", "tiff", "ico" or "bmp".
+If <parameter>error</parameter> is set, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> will be returned. 
+See <link linkend="gdk-pixbuf-save"><function>gdk_pixbuf_save()</function></link> for more details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> name of file to save.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> name of file format.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>option_keys</parameter>&#160;:</term>
+<listitem><simpara> name of options to set, <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>option_values</parameter>&#160;:</term>
+<listitem><simpara> values for named options
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether an error was set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pixbuf-save" role="function">
+<title>gdk_pixbuf_save ()</title>
+<indexterm zone="gdk-pixbuf-save"><primary sortas="save">gdk_pixbuf_save</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_save                     (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         const <link linkend="char">char</link> *filename,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="GError">GError</link> **error,
+                                                         ...);</programlisting>
+<para>
+Saves pixbuf to a file in format <parameter>type</parameter>. By default, "jpeg", "png", "ico" 
+and "bmp" are possible file formats to save in, but more formats may be
+installed. The list of all writable formats can be determined in the 
+following way:
+</para>
+<para>
+<informalexample><programlisting>
+void add_if_writable (GdkPixbufFormat *data, GSList **list)
+{
+  if (gdk_pixbuf_format_is_writable (data))
+    *list = g_slist_prepend (*list, data);
+}
+
+GSList *formats = gdk_pixbuf_get_formats ();
+GSList *writable_formats = NULL;
+g_slist_foreach (formats, add_if_writable, &amp;writable_formats);
+g_slist_free (formats);
+</programlisting></informalexample>
+</para>
+<para>
+If <parameter>error</parameter> is set, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> will be returned. Possible errors include 
+those in the <link linkend="GDK-PIXBUF-ERROR--CAPS"><type>GDK_PIXBUF_ERROR</type></link> domain and those in the <link linkend="G-FILE-ERROR--CAPS"><type>G_FILE_ERROR</type></link> domain.
+</para>
+<para>
+The variable argument list should be <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated; if not empty,
+it should contain pairs of strings that modify the save
+parameters. For example:
+<informalexample><programlisting>
+gdk_pixbuf_save (pixbuf, handle, "jpeg", &amp;error,
+                 "quality", "100", NULL);
+</programlisting></informalexample>
+</para>
+<para>
+Currently only few parameters exist. JPEG images can be saved with a
+"quality" parameter; its value should be in the range [0,100].
+</para>
+<para>
+Text chunks can be attached to PNG images by specifying parameters of
+the form "tEXt::key", where key is an ASCII string of length 1-79.
+The values are UTF-8 encoded strings. The PNG compression level can
+be specified using the "compression" parameter; it's value is in an
+integer in the range of [0,9].
+</para>
+<para>
+ICO images can be saved in depth 16, 24, or 32, by using the "depth"
+parameter. When the ICO saver is given "x_hot" and "y_hot" parameters,
+it produces a CUR instead of an ICO.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> name of file to save.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> name of file format.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> list of key-value save options
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether an error was set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkPixbufSaveFunc" role="function" condition="since:2.4">
+<title>GdkPixbufSaveFunc ()</title>
+<indexterm zone="GdkPixbufSaveFunc" role="2.4"><primary>GdkPixbufSaveFunc</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            (*GdkPixbufSaveFunc)                (const <link linkend="gchar">gchar</link> *buf,
+                                                         <link linkend="gsize">gsize</link> count,
+                                                         <link linkend="GError">GError</link> **error,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<para>
+Specifies the type of the function passed to
+<link linkend="gdk-pixbuf-save-to-callback"><function>gdk_pixbuf_save_to_callback()</function></link>.  It is called once for each block of
+bytes that is "written" by <link linkend="gdk-pixbuf-save-to-callback"><function>gdk_pixbuf_save_to_callback()</function></link>.  If
+successful it should return <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>.  If an error occurs it should set
+<parameter>error</parameter> and return <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, in which case <link linkend="gdk-pixbuf-save-to-callback"><function>gdk_pixbuf_save_to_callback()</function></link>
+will fail with the same error.
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>bytes to be written.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>count</parameter>&#160;:</term>
+<listitem><simpara>number of bytes in <parameter>buf</parameter>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>A location to return an error.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>user data passed to <link linkend="gdk-pixbuf-save-to-callback"><function>gdk_pixbuf_save_to_callback()</function></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>%TRUE if successful, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> (with <parameter>error</parameter> set) if failed.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-pixbuf-save-to-callback" role="function" condition="since:2.4">
+<title>gdk_pixbuf_save_to_callback ()</title>
+<indexterm zone="gdk-pixbuf-save-to-callback" role="2.4"><primary sortas="save_to_callback">gdk_pixbuf_save_to_callback</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_save_to_callback         (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="GdkPixbufSaveFunc">GdkPixbufSaveFunc</link> save_func,
+                                                         <link linkend="gpointer">gpointer</link> user_data,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="GError">GError</link> **error,
+                                                         ...);</programlisting>
+<para>
+Saves pixbuf in format <parameter>type</parameter> by feeding the produced data to a 
+callback. Can be used when you want to store the image to something 
+other than a file, such as an in-memory buffer or a socket.  
+If <parameter>error</parameter> is set, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> will be returned. Possible errors
+include those in the <link linkend="GDK-PIXBUF-ERROR--CAPS"><type>GDK_PIXBUF_ERROR</type></link> domain and whatever the save
+function generates.
+</para>
+<para>
+See <link linkend="gdk-pixbuf-save"><function>gdk_pixbuf_save()</function></link> for more details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>save_func</parameter>&#160;:</term>
+<listitem><simpara> a function that is called to save each block of data that
+  the save routine generates.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> user data to pass to the save function.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> name of file format.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> list of key-value save options
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether an error was set
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-pixbuf-save-to-callbackv" role="function" condition="since:2.4">
+<title>gdk_pixbuf_save_to_callbackv ()</title>
+<indexterm zone="gdk-pixbuf-save-to-callbackv" role="2.4"><primary sortas="save_to_callbackv">gdk_pixbuf_save_to_callbackv</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_save_to_callbackv        (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="GdkPixbufSaveFunc">GdkPixbufSaveFunc</link> save_func,
+                                                         <link linkend="gpointer">gpointer</link> user_data,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="char">char</link> **option_keys,
+                                                         <link linkend="char">char</link> **option_values,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Saves pixbuf to a callback in format <parameter>type</parameter>, which is currently "jpeg",
+"png", "tiff", "ico" or "bmp".  If <parameter>error</parameter> is set, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> will be returned. See
+<link linkend="gdk-pixbuf-save-to-callback"><function>gdk_pixbuf_save_to_callback()</function></link> for more details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>save_func</parameter>&#160;:</term>
+<listitem><simpara> a function that is called to save each block of data that
+  the save routine generates.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> user data to pass to the save function.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> name of file format.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>option_keys</parameter>&#160;:</term>
+<listitem><simpara> name of options to set, <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>option_values</parameter>&#160;:</term>
+<listitem><simpara> values for named options
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether an error was set
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-pixbuf-save-to-buffer" role="function" condition="since:2.4">
+<title>gdk_pixbuf_save_to_buffer ()</title>
+<indexterm zone="gdk-pixbuf-save-to-buffer" role="2.4"><primary sortas="save_to_buffer">gdk_pixbuf_save_to_buffer</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_save_to_buffer           (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="gchar">gchar</link> **buffer,
+                                                         <link linkend="gsize">gsize</link> *buffer_size,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="GError">GError</link> **error,
+                                                         ...);</programlisting>
+<para>
+Saves pixbuf to a new buffer in format <parameter>type</parameter>, which is currently "jpeg",
+"png", "tiff", "ico" or "bmp".  This is a convenience function that uses
+<link linkend="gdk-pixbuf-save-to-callback"><function>gdk_pixbuf_save_to_callback()</function></link> to do the real work. Note that the buffer 
+is not nul-terminated and may contain embedded  nuls.
+If <parameter>error</parameter> is set, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> will be returned and <parameter>buffer</parameter> will be set to
+<link linkend="NULL--CAPS"><literal>NULL</literal></link>. Possible errors include those in the <link linkend="GDK-PIXBUF-ERROR--CAPS"><type>GDK_PIXBUF_ERROR</type></link>
+domain.
+</para>
+<para>
+See <link linkend="gdk-pixbuf-save"><function>gdk_pixbuf_save()</function></link> for more details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> location to receive a pointer to the new buffer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer_size</parameter>&#160;:</term>
+<listitem><simpara> location to receive the size of the new buffer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> name of file format.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> list of key-value save options
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether an error was set
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-pixbuf-save-to-bufferv" role="function" condition="since:2.4">
+<title>gdk_pixbuf_save_to_bufferv ()</title>
+<indexterm zone="gdk-pixbuf-save-to-bufferv" role="2.4"><primary sortas="save_to_bufferv">gdk_pixbuf_save_to_bufferv</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_save_to_bufferv          (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="gchar">gchar</link> **buffer,
+                                                         <link linkend="gsize">gsize</link> *buffer_size,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="char">char</link> **option_keys,
+                                                         <link linkend="char">char</link> **option_values,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Saves pixbuf to a new buffer in format <parameter>type</parameter>, which is currently "jpeg",
+"tiff", "png", "ico" or "bmp".  See <link linkend="gdk-pixbuf-save-to-buffer"><function>gdk_pixbuf_save_to_buffer()</function></link> 
+for more details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> location to receive a pointer to the new buffer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer_size</parameter>&#160;:</term>
+<listitem><simpara> location to receive the size of the new buffer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> name of file format.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>option_keys</parameter>&#160;:</term>
+<listitem><simpara> name of options to set, <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>option_values</parameter>&#160;:</term>
+<listitem><simpara> values for named options
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether an error was set
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-pixbuf-save-to-stream" role="function" condition="since:2.14">
+<title>gdk_pixbuf_save_to_stream ()</title>
+<indexterm zone="gdk-pixbuf-save-to-stream" role="2.14"><primary sortas="save_to_stream">gdk_pixbuf_save_to_stream</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_save_to_stream           (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="GOutputStream">GOutputStream</link> *stream,
+                                                         const <link linkend="char">char</link> *type,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="GError">GError</link> **error,
+                                                         ...);</programlisting>
+<para>
+Saves <parameter>pixbuf</parameter> to an output stream.
+</para>
+<para>
+Supported file formats are currently "jpeg", "tiff", "png", "ico" or 
+"bmp". See <link linkend="gdk-pixbuf-save-to-buffer"><function>gdk_pixbuf_save_to_buffer()</function></link> for more details.
+</para>
+<para>
+The <parameter>cancellable</parameter> can be used to abort the operation from another 
+thread. If the operation was cancelled, the error <link linkend="GIO-ERROR-CANCELLED--CAPS"><literal>GIO_ERROR_CANCELLED</literal></link> 
+will be returned. Other possible errors are in the <link linkend="GDK-PIXBUF-ERROR--CAPS"><type>GDK_PIXBUF_ERROR</type></link> 
+and <link linkend="G-IO-ERROR--CAPS"><literal>G_IO_ERROR</literal></link> domains. 
+</para>
+<para>
+The stream is not closed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>stream</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GOutputStream"><type>GOutputStream</type></link> to save the pixbuf to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> name of file format
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara> optional <link linkend="GCancellable"><type>GCancellable</type></link> object, <link linkend="NULL--CAPS"><literal>NULL</literal></link> to ignore
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> list of key-value save options
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the pixbuf was saved successfully, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if an
+    error was set.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

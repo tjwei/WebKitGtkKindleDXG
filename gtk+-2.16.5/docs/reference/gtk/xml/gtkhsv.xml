@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkHSV">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkHSV.top_of_page">GtkHSV</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkHSV</refname>
+<refpurpose>A 'color wheel' widget</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkHSV.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkHSV-struct">GtkHSV</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-hsv-new">gtk_hsv_new</link>                         (void);
+<link linkend="void">void</link>                <link linkend="gtk-hsv-set-color">gtk_hsv_set_color</link>                   (<link linkend="GtkHSV">GtkHSV</link> *hsv,
+                                                         <link linkend="double">double</link> h,
+                                                         <link linkend="double">double</link> s,
+                                                         <link linkend="double">double</link> v);
+<link linkend="void">void</link>                <link linkend="gtk-hsv-get-color">gtk_hsv_get_color</link>                   (<link linkend="GtkHSV">GtkHSV</link> *hsv,
+                                                         <link linkend="gdouble">gdouble</link> *h,
+                                                         <link linkend="gdouble">gdouble</link> *s,
+                                                         <link linkend="gdouble">gdouble</link> *v);
+<link linkend="void">void</link>                <link linkend="gtk-hsv-set-metrics">gtk_hsv_set_metrics</link>                 (<link linkend="GtkHSV">GtkHSV</link> *hsv,
+                                                         <link linkend="gint">gint</link> size,
+                                                         <link linkend="gint">gint</link> ring_width);
+<link linkend="void">void</link>                <link linkend="gtk-hsv-get-metrics">gtk_hsv_get_metrics</link>                 (<link linkend="GtkHSV">GtkHSV</link> *hsv,
+                                                         <link linkend="gint">gint</link> *size,
+                                                         <link linkend="gint">gint</link> *ring_width);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-hsv-is-adjusting">gtk_hsv_is_adjusting</link>                (<link linkend="GtkHSV">GtkHSV</link> *hsv);
+<link linkend="void">void</link>                <link linkend="gtk-hsv-to-rgb">gtk_hsv_to_rgb</link>                      (<link linkend="gdouble">gdouble</link> h,
+                                                         <link linkend="gdouble">gdouble</link> s,
+                                                         <link linkend="gdouble">gdouble</link> v,
+                                                         <link linkend="gdouble">gdouble</link> *r,
+                                                         <link linkend="gdouble">gdouble</link> *g,
+                                                         <link linkend="gdouble">gdouble</link> *b);
+<link linkend="void">void</link>                <link linkend="gtk-rgb-to-hsv">gtk_rgb_to_hsv</link>                      (<link linkend="gdouble">gdouble</link> r,
+                                                         <link linkend="gdouble">gdouble</link> g,
+                                                         <link linkend="gdouble">gdouble</link> b,
+                                                         <link linkend="gdouble">gdouble</link> *h,
+                                                         <link linkend="gdouble">gdouble</link> *s,
+                                                         <link linkend="gdouble">gdouble</link> *v);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkHSV.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----GtkHSV
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkHSV.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkHSV implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+
+<refsect1 id="GtkHSV.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkHSV-changed">changed</link>&quot;                                        : Run First
+  &quot;<link linkend="GtkHSV-move">move</link>&quot;                                           : Run Last / Action
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkHSV.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkHSV"><type>GtkHSV</type></link> is the 'color wheel' part of a complete color selector widget.
+It allows to select a color by determining its HSV components in an
+intuitive way. Moving the selection around the outer ring changes the hue,
+and moving the selection point inside the inner triangle changes value and
+saturation.
+</para>
+</refsect1>
+
+<refsect1 id="GtkHSV.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkHSV-struct" role="struct">
+<title>GtkHSV</title>
+<indexterm zone="GtkHSV-struct"><primary sortas="HSV">GtkHSV</primary></indexterm><programlisting>typedef struct _GtkHSV GtkHSV;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-hsv-new" role="function" condition="since:2.14">
+<title>gtk_hsv_new ()</title>
+<indexterm zone="gtk-hsv-new" role="2.14"><primary sortas="hsv_new">gtk_hsv_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_hsv_new                         (void);</programlisting>
+<para>
+Creates a new HSV color selector.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A newly-created HSV color selector.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-hsv-set-color" role="function" condition="since:2.14">
+<title>gtk_hsv_set_color ()</title>
+<indexterm zone="gtk-hsv-set-color" role="2.14"><primary sortas="hsv_set_color">gtk_hsv_set_color</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_hsv_set_color                   (<link linkend="GtkHSV">GtkHSV</link> *hsv,
+                                                         <link linkend="double">double</link> h,
+                                                         <link linkend="double">double</link> s,
+                                                         <link linkend="double">double</link> v);</programlisting>
+<para>
+Sets the current color in an HSV color selector.
+Color component values must be in the [0.0, 1.0] range.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hsv</parameter>&#160;:</term>
+<listitem><simpara> An HSV color selector
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>h</parameter>&#160;:</term>
+<listitem><simpara> Hue
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>s</parameter>&#160;:</term>
+<listitem><simpara> Saturation
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>v</parameter>&#160;:</term>
+<listitem><simpara> Value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-hsv-get-color" role="function" condition="since:2.14">
+<title>gtk_hsv_get_color ()</title>
+<indexterm zone="gtk-hsv-get-color" role="2.14"><primary sortas="hsv_get_color">gtk_hsv_get_color</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_hsv_get_color                   (<link linkend="GtkHSV">GtkHSV</link> *hsv,
+                                                         <link linkend="gdouble">gdouble</link> *h,
+                                                         <link linkend="gdouble">gdouble</link> *s,
+                                                         <link linkend="gdouble">gdouble</link> *v);</programlisting>
+<para>
+Queries the current color in an HSV color selector.
+Returned values will be in the [0.0, 1.0] range.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hsv</parameter>&#160;:</term>
+<listitem><simpara> An HSV color selector
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>h</parameter>&#160;:</term>
+<listitem><simpara> Return value for the hue
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>s</parameter>&#160;:</term>
+<listitem><simpara> Return value for the saturation
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>v</parameter>&#160;:</term>
+<listitem><simpara> Return value for the value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-hsv-set-metrics" role="function" condition="since:2.14">
+<title>gtk_hsv_set_metrics ()</title>
+<indexterm zone="gtk-hsv-set-metrics" role="2.14"><primary sortas="hsv_set_metrics">gtk_hsv_set_metrics</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_hsv_set_metrics                 (<link linkend="GtkHSV">GtkHSV</link> *hsv,
+                                                         <link linkend="gint">gint</link> size,
+                                                         <link linkend="gint">gint</link> ring_width);</programlisting>
+<para>
+Sets the size and ring width of an HSV color selector.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hsv</parameter>&#160;:</term>
+<listitem><simpara> An HSV color selector
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> Diameter for the hue ring
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ring_width</parameter>&#160;:</term>
+<listitem><simpara> Width of the hue ring
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-hsv-get-metrics" role="function" condition="since:2.14">
+<title>gtk_hsv_get_metrics ()</title>
+<indexterm zone="gtk-hsv-get-metrics" role="2.14"><primary sortas="hsv_get_metrics">gtk_hsv_get_metrics</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_hsv_get_metrics                 (<link linkend="GtkHSV">GtkHSV</link> *hsv,
+                                                         <link linkend="gint">gint</link> *size,
+                                                         <link linkend="gint">gint</link> *ring_width);</programlisting>
+<para>
+Queries the size and ring width of an HSV color selector.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hsv</parameter>&#160;:</term>
+<listitem><simpara> An HSV color selector
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> Return value for the diameter of the hue ring
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ring_width</parameter>&#160;:</term>
+<listitem><simpara> Return value for the width of the hue ring
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-hsv-is-adjusting" role="function" condition="since:2.14">
+<title>gtk_hsv_is_adjusting ()</title>
+<indexterm zone="gtk-hsv-is-adjusting" role="2.14"><primary sortas="hsv_is_adjusting">gtk_hsv_is_adjusting</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_hsv_is_adjusting                (<link linkend="GtkHSV">GtkHSV</link> *hsv);</programlisting>
+<para>
+An HSV color selector can be said to be adjusting if multiple rapid
+changes are being made to its value, for example, when the user is 
+adjusting the value with the mouse. This function queries whether 
+the HSV color selector is being adjusted or not.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hsv</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GtkHSV"><type>GtkHSV</type></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if clients can ignore changes to the color value,
+    since they may be transitory, or <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if they should consider
+    the color value status to be final.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-hsv-to-rgb" role="function" condition="since:2.14">
+<title>gtk_hsv_to_rgb ()</title>
+<indexterm zone="gtk-hsv-to-rgb" role="2.14"><primary sortas="hsv_to_rgb">gtk_hsv_to_rgb</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_hsv_to_rgb                      (<link linkend="gdouble">gdouble</link> h,
+                                                         <link linkend="gdouble">gdouble</link> s,
+                                                         <link linkend="gdouble">gdouble</link> v,
+                                                         <link linkend="gdouble">gdouble</link> *r,
+                                                         <link linkend="gdouble">gdouble</link> *g,
+                                                         <link linkend="gdouble">gdouble</link> *b);</programlisting>
+<para>
+Converts a color from HSV space to RGB.
+Input values must be in the [0.0, 1.0] range; 
+output values will be in the same range.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>h</parameter>&#160;:</term>
+<listitem><simpara> Hue
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>s</parameter>&#160;:</term>
+<listitem><simpara> Saturation
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>v</parameter>&#160;:</term>
+<listitem><simpara> Value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>r</parameter>&#160;:</term>
+<listitem><simpara> Return value for the red component
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>g</parameter>&#160;:</term>
+<listitem><simpara> Return value for the green component
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>b</parameter>&#160;:</term>
+<listitem><simpara> Return value for the blue component
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-rgb-to-hsv" role="function" condition="since:2.14">
+<title>gtk_rgb_to_hsv ()</title>
+<indexterm zone="gtk-rgb-to-hsv" role="2.14"><primary sortas="rgb_to_hsv">gtk_rgb_to_hsv</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_rgb_to_hsv                      (<link linkend="gdouble">gdouble</link> r,
+                                                         <link linkend="gdouble">gdouble</link> g,
+                                                         <link linkend="gdouble">gdouble</link> b,
+                                                         <link linkend="gdouble">gdouble</link> *h,
+                                                         <link linkend="gdouble">gdouble</link> *s,
+                                                         <link linkend="gdouble">gdouble</link> *v);</programlisting>
+<para>
+Converts a color from RGB space to HSV.
+Input values must be in the [0.0, 1.0] range;
+output values will be in the same range.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>r</parameter>&#160;:</term>
+<listitem><simpara> Red
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>g</parameter>&#160;:</term>
+<listitem><simpara> Green
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>b</parameter>&#160;:</term>
+<listitem><simpara> Blue
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>h</parameter>&#160;:</term>
+<listitem><simpara> Return value for the hue component
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>s</parameter>&#160;:</term>
+<listitem><simpara> Return value for the saturation component
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>v</parameter>&#160;:</term>
+<listitem><simpara> Return value for the value component
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+
+</refsect1>
+
+<refsect1 id="GtkHSV.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkHSV-changed" role="signal"><title>The <literal>&quot;changed&quot;</literal> signal</title>
+<indexterm zone="GtkHSV-changed"><primary sortas="HSV::changed">GtkHSV::changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkHSV">GtkHSV</link>  *hsv,
+                                                        <link linkend="gpointer">gpointer</link> user_data)      : Run First</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hsv</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkHSV-move" role="signal"><title>The <literal>&quot;move&quot;</literal> signal</title>
+<indexterm zone="GtkHSV-move"><primary sortas="HSV::move">GtkHSV::move</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkHSV">GtkHSV</link>          *hsv,
+                                                        <link linkend="GtkDirectionType">GtkDirectionType</link> arg1,
+                                                        <link linkend="gpointer">gpointer</link>         user_data)      : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hsv</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+<refsect1 id="GtkHSV.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+  <varlistentry>
+    <term><link linkend="GtkColorSelection"><type>GtkColorSelection</type></link></term>
+    <listitem>a complete color selection widget</listitem>
+  </varlistentry>
+  <varlistentry>
+    <term><link linkend="GtkColorSelectionDialog"><type>GtkColorSelectionDialog</type></link></term>
+    <listitem>a color selection dialog</listitem>
+  </varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

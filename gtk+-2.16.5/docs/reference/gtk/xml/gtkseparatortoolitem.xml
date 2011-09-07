@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkSeparatorToolItem">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkSeparatorToolItem.top_of_page">GtkSeparatorToolItem</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkSeparatorToolItem</refname>
+<refpurpose>A toolbar item that separates groups of other toolbar items</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkSeparatorToolItem.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkSeparatorToolItem-struct">GtkSeparatorToolItem</link>;
+<link linkend="GtkToolItem">GtkToolItem</link> *       <link linkend="gtk-separator-tool-item-new">gtk_separator_tool_item_new</link>         (void);
+<link linkend="void">void</link>                <link linkend="gtk-separator-tool-item-set-draw">gtk_separator_tool_item_set_draw</link>    (<link linkend="GtkSeparatorToolItem">GtkSeparatorToolItem</link> *item,
+                                                         <link linkend="gboolean">gboolean</link> draw);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-separator-tool-item-get-draw">gtk_separator_tool_item_get_draw</link>    (<link linkend="GtkSeparatorToolItem">GtkSeparatorToolItem</link> *item);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkSeparatorToolItem.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkToolItem">GtkToolItem</link>
+                                       +----GtkSeparatorToolItem
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkSeparatorToolItem.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkSeparatorToolItem implements
+ <link linkend="GtkActivatable">GtkActivatable</link>,  <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkSeparatorToolItem.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkSeparatorToolItem--draw">draw</link>&quot;                     <link linkend="gboolean">gboolean</link>              : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkSeparatorToolItem.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+  A <link linkend="GtkSeparatorItem"><type>GtkSeparatorItem</type></link> is a <link linkend="GtkToolItem"><type>GtkToolItem</type></link> that separates groups of other
+  <link linkend="GtkToolItems"><type>GtkToolItems</type></link>. Depending on the theme, a <link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link> will
+  often look like a vertical line on horizontally docked toolbars.
+</para>
+<para>
+If the property "expand" is <link linkend="TRUE--CAPS"><type>TRUE</type></link> and the property "draw" is <link linkend="FALSE--CAPS"><type>FALSE</type></link>, a
+<link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link> will act as a "spring" that forces other items
+to the ends of the toolbar.
+</para>
+<para>
+  Use <link linkend="gtk-separator-tool-item-new"><function>gtk_separator_tool_item_new()</function></link> to create a new <link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link>.
+</para>
+</refsect1>
+
+<refsect1 id="GtkSeparatorToolItem.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkSeparatorToolItem-struct" role="struct">
+<title>GtkSeparatorToolItem</title>
+<indexterm zone="GtkSeparatorToolItem-struct"><primary sortas="SeparatorToolItem">GtkSeparatorToolItem</primary></indexterm><programlisting>typedef struct _GtkSeparatorToolItem GtkSeparatorToolItem;</programlisting>
+<para>
+The <link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link> struct contains only private data and
+should only be accessed through the functions described below.
+</para></refsect2>
+<refsect2 id="gtk-separator-tool-item-new" role="function" condition="since:2.4">
+<title>gtk_separator_tool_item_new ()</title>
+<indexterm zone="gtk-separator-tool-item-new" role="2.4"><primary sortas="separator_tool_item_new">gtk_separator_tool_item_new</primary></indexterm><programlisting><link linkend="GtkToolItem">GtkToolItem</link> *       gtk_separator_tool_item_new         (void);</programlisting>
+<para>
+Create a new <link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-separator-tool-item-set-draw" role="function" condition="since:2.4">
+<title>gtk_separator_tool_item_set_draw ()</title>
+<indexterm zone="gtk-separator-tool-item-set-draw" role="2.4"><primary sortas="separator_tool_item_set_draw">gtk_separator_tool_item_set_draw</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_separator_tool_item_set_draw    (<link linkend="GtkSeparatorToolItem">GtkSeparatorToolItem</link> *item,
+                                                         <link linkend="gboolean">gboolean</link> draw);</programlisting>
+<para>
+Whether <parameter>item</parameter> is drawn as a vertical line, or just blank.
+Setting this to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> along with <link linkend="gtk-tool-item-set-expand"><function>gtk_tool_item_set_expand()</function></link> is useful
+to create an item that forces following items to the end of the toolbar.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>draw</parameter>&#160;:</term>
+<listitem><simpara> whether <parameter>item</parameter> is drawn as a vertical line
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-separator-tool-item-get-draw" role="function" condition="since:2.4">
+<title>gtk_separator_tool_item_get_draw ()</title>
+<indexterm zone="gtk-separator-tool-item-get-draw" role="2.4"><primary sortas="separator_tool_item_get_draw">gtk_separator_tool_item_get_draw</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_separator_tool_item_get_draw    (<link linkend="GtkSeparatorToolItem">GtkSeparatorToolItem</link> *item);</programlisting>
+<para>
+Returns whether <parameter>item</parameter> is drawn as a line, or just blank. 
+See <link linkend="gtk-separator-tool-item-set-draw"><function>gtk_separator_tool_item_set_draw()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>item</parameter> is drawn as a line, or just blank.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkSeparatorToolItem.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkSeparatorToolItem--draw" role="property"><title>The <literal>&quot;draw&quot;</literal> property</title>
+<indexterm zone="GtkSeparatorToolItem--draw"><primary sortas="SeparatorToolItem:draw">GtkSeparatorToolItem:draw</primary></indexterm><programlisting>  &quot;draw&quot;                     <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the separator is drawn, or just blank.</para><para>Default value: TRUE</para>
+</refsect2>
+</refsect1>
+
+
+
+<refsect1 id="GtkSeparatorToolItem.see-also">
+<title>See Also</title>
+<para>
+  <variablelist>
+    <varlistentry>
+      <term><link linkend="GtkToolbar"><type>GtkToolbar</type></link></term>
+      <listitem><para>The toolbar widget</para></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term><link linkend="GtkRadioToolButton"><type>GtkRadioToolButton</type></link></term>
+      <listitem><para>A toolbar item containing a radio
+	  button</para></listitem>
+    </varlistentry>
+  </variablelist>
+</para>
+</refsect1>
+
+</refentry>

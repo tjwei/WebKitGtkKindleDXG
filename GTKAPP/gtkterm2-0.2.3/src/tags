@@ -1,0 +1,241 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACLOCAL	Makefile	/^ACLOCAL = aclocal-1.4$/;"	m
+AM_CFLAGS	Makefile	/^AM_CFLAGS =  	$(vte_CFLAGS) 	 -Wall 	 -g$/;"	m
+AS	Makefile	/^AS = @AS@$/;"	m
+AUTOCONF	Makefile	/^AUTOCONF = autoconf$/;"	m
+AUTOHEADER	Makefile	/^AUTOHEADER = autoheader$/;"	m
+AUTOMAKE	Makefile	/^AUTOMAKE = automake-1.4$/;"	m
+BUILD_INCLUDED_LIBINTL	Makefile	/^BUILD_INCLUDED_LIBINTL = no$/;"	m
+CATALOGS	Makefile	/^CATALOGS =  de.gmo$/;"	m
+CATOBJEXT	Makefile	/^CATOBJEXT = .gmo$/;"	m
+CC	Makefile	/^CC = gcc$/;"	m
+CCLD	Makefile	/^CCLD = $(CC)$/;"	m
+CFLAGS	Makefile	/^CFLAGS = $/;"	m
+COMPILE	Makefile	/^COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)$/;"	m
+CONFIG_CLEAN_FILES	Makefile	/^CONFIG_CLEAN_FILES = $/;"	m
+CONFIG_HEADER	Makefile	/^CONFIG_HEADER = ..\/config.h$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS = $/;"	m
+DATADIRNAME	Makefile	/^DATADIRNAME = share$/;"	m
+DEFS	Makefile	/^DEFS = -DHAVE_CONFIG_H -I. -I$(srcdir) -I..$/;"	m
+DESTDIR	Makefile	/^DESTDIR =$/;"	m
+DISTFILES	Makefile	/^DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DIST_COMMON	Makefile	/^DIST_COMMON =  Makefile.am Makefile.in$/;"	m
+DLLTOOL	Makefile	/^DLLTOOL = @DLLTOOL@$/;"	m
+ECHO	Makefile	/^ECHO = echo$/;"	m
+EXEEXT	Makefile	/^EXEEXT = $/;"	m
+GENCAT	Makefile	/^GENCAT = gencat$/;"	m
+GETTEXT_PACKAGE	Makefile	/^GETTEXT_PACKAGE = gtkterm2$/;"	m
+GLADE_HOOKUP_OBJECT	interface.c	25;"	d	file:
+GLADE_HOOKUP_OBJECT	main.c	20;"	d	file:
+GLADE_HOOKUP_OBJECT_NO_REF	interface.c	29;"	d	file:
+GLIBC21	Makefile	/^GLIBC21 = yes$/;"	m
+GMOFILES	Makefile	/^GMOFILES =  de.gmo$/;"	m
+GMSGFMT	Makefile	/^GMSGFMT = \/scratchbox\/tools\/bin\/msgfmt$/;"	m
+GTK_CFLAGS	Makefile	/^GTK_CFLAGS = -pthread -D_REENTRANT -I\/usr\/include\/glib-2.0 -I\/usr\/lib\/glib-2.0\/include -I\/usr\/include\/freetype2 -I\/usr\/include\/libpng14 -I\/usr\/local\/include\/gtk-2.0 -I\/usr\/local\/lib\/gtk-2.0\/include -I\/usr\/local\/include\/cairo -I\/usr\/local\/include\/directfb -I\/usr\/local\/include\/pixman-1 -I\/usr\/local\/include -I\/usr\/local\/include\/atk-1.0 -I\/usr\/local\/include\/pango-1.0  $/;"	m
+GTK_LIBS	Makefile	/^GTK_LIBS = -pthread -L\/usr\/local\/lib -lgtk-directfb-2.0 -latk-1.0 -lgio-2.0 -lgdk-directfb-2.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpango-1.0 -lcairo -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0  $/;"	m
+GZIP_ENV	Makefile	/^GZIP_ENV = --best$/;"	m
+INCLUDES	Makefile	/^INCLUDES =  	$(GTK_CFLAGS)$/;"	m
+INSTALL	Makefile	/^INSTALL = \/scratchbox\/tools\/bin\/install -c$/;"	m
+INSTALL_DATA	Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = ${INSTALL} $(AM_INSTALL_PROGRAM_FLAGS)$/;"	m
+INSTALL_SCRIPT	Makefile	/^INSTALL_SCRIPT = ${INSTALL_PROGRAM}$/;"	m
+INSTOBJEXT	Makefile	/^INSTOBJEXT = .mo$/;"	m
+INTLBISON	Makefile	/^INTLBISON = bison$/;"	m
+INTLLIBS	Makefile	/^INTLLIBS = $/;"	m
+INTLOBJS	Makefile	/^INTLOBJS = $/;"	m
+INTL_LIBTOOL_SUFFIX_PREFIX	Makefile	/^INTL_LIBTOOL_SUFFIX_PREFIX = $/;"	m
+LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
+LIBICONV	Makefile	/^LIBICONV = $/;"	m
+LIBS	Makefile	/^LIBS = $/;"	m
+LIBTOOL	Makefile	/^LIBTOOL = $(SHELL) $(top_builddir)\/libtool$/;"	m
+LINK	Makefile	/^LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@$/;"	m
+LN_S	Makefile	/^LN_S = ln -s$/;"	m
+LTCOMPILE	Makefile	/^LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)$/;"	m
+MAKEINFO	Makefile	/^MAKEINFO = makeinfo$/;"	m
+MAX_LINE_LENGTH	prefs.h	5;"	d
+MKINSTALLDIRS	Makefile	/^MKINSTALLDIRS = .\/mkinstalldirs$/;"	m
+MSGFMT	Makefile	/^MSGFMT = \/scratchbox\/tools\/bin\/msgfmt$/;"	m
+NORMAL_INSTALL	Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_UNINSTALL	Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NO_PREFIX_PACKAGE_DATA_DIR	Makefile	/^NO_PREFIX_PACKAGE_DATA_DIR = share$/;"	m
+NO_PREFIX_PACKAGE_DOC_DIR	Makefile	/^NO_PREFIX_PACKAGE_DOC_DIR = doc\/gtkterm2$/;"	m
+NO_PREFIX_PACKAGE_HELP_DIR	Makefile	/^NO_PREFIX_PACKAGE_HELP_DIR = share\/help$/;"	m
+NO_PREFIX_PACKAGE_MENU_DIR	Makefile	/^NO_PREFIX_PACKAGE_MENU_DIR = share$/;"	m
+NO_PREFIX_PACKAGE_PIXMAPS_DIR	Makefile	/^NO_PREFIX_PACKAGE_PIXMAPS_DIR = share\/pixmaps$/;"	m
+N_	support.h	19;"	d
+N_	support.h	21;"	d
+N_	support.h	30;"	d
+OBJDUMP	Makefile	/^OBJDUMP = @OBJDUMP@$/;"	m
+OBJECTS	Makefile	/^OBJECTS = $(gtkterm2_OBJECTS)$/;"	m
+OBJEXT	Makefile	/^OBJEXT = o$/;"	m
+PACKAGE	Makefile	/^PACKAGE = gtkterm2$/;"	m
+PACKAGE_DATA_DIR	Makefile	/^PACKAGE_DATA_DIR = \/usr\/local\/share$/;"	m
+PACKAGE_DOC_DIR	Makefile	/^PACKAGE_DOC_DIR = \/usr\/local\/doc\/gtkterm2$/;"	m
+PACKAGE_HELP_DIR	Makefile	/^PACKAGE_HELP_DIR = \/usr\/local\/share\/help$/;"	m
+PACKAGE_MENU_DIR	Makefile	/^PACKAGE_MENU_DIR = \/usr\/local\/share$/;"	m
+PACKAGE_PIXMAPS_DIR	Makefile	/^PACKAGE_PIXMAPS_DIR = \/usr\/local\/share\/pixmaps$/;"	m
+PKG_CONFIG	Makefile	/^PKG_CONFIG = \/scratchbox\/tools\/bin\/pkg-config$/;"	m
+POFILES	Makefile	/^POFILES =  de.po$/;"	m
+POST_INSTALL	Makefile	/^POST_INSTALL = :$/;"	m
+POST_UNINSTALL	Makefile	/^POST_UNINSTALL = :$/;"	m
+POSUB	Makefile	/^POSUB = po$/;"	m
+PRE_INSTALL	Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_UNINSTALL	Makefile	/^PRE_UNINSTALL = :$/;"	m
+PROGRAMS	Makefile	/^PROGRAMS =  $(bin_PROGRAMS)$/;"	m
+RANLIB	Makefile	/^RANLIB = ranlib$/;"	m
+SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
+SOURCES	Makefile	/^SOURCES = $(gtkterm2_SOURCES)$/;"	m
+STRIP	Makefile	/^STRIP = strip$/;"	m
+TAR	Makefile	/^TAR = tar$/;"	m
+USE_INCLUDED_LIBINTL	Makefile	/^USE_INCLUDED_LIBINTL = no$/;"	m
+USE_NLS	Makefile	/^USE_NLS = yes$/;"	m
+VERSION	Makefile	/^VERSION = 0.2.3$/;"	m
+_	support.h	16;"	d
+_	support.h	17;"	d
+_	support.h	29;"	d
+_MPREF	prefs.h	/^struct _MPREF$/;"	s
+_PREF	prefs.h	/^struct _PREF$/;"	s
+__PREFS_H_	prefs.h	3;"	d
+add_pixmap_directory	support.c	/^add_pixmap_directory                   (const gchar     *directory)$/;"	f
+adjust_font_size	callbacks.c	/^adjust_font_size(GtkWidget *widget, gpointer data, gint howmuch)$/;"	f
+back	prefs.h	/^	GdkColor back[1];$/;"	m	struct:_MPREF
+back	prefs.h	/^	GdkColor back[1];$/;"	m	struct:_PREF
+beep	prefs.h	/^	int beep;$/;"	m	struct:_MPREF
+beep	prefs.h	/^	int beep;$/;"	m	struct:_PREF
+bin_PROGRAMS	Makefile	/^bin_PROGRAMS =  gtkterm2$(EXEEXT)$/;"	m
+bin_PROGRAMS	Makefile	/^bin_PROGRAMS = gtkterm2$/;"	m
+bindir	Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+bindtextdomain	support.h	28;"	d
+blink	prefs.h	/^	int blink;$/;"	m	struct:_MPREF
+blink	prefs.h	/^	int blink;$/;"	m	struct:_PREF
+button_pressed	callbacks.c	/^button_pressed(GtkWidget *widget, GdkEventButton *event, gpointer data)$/;"	f
+char_size_changed	callbacks.c	/^char_size_changed(GtkWidget *widget, guint width, guint height, gpointer data)$/;"	f
+clipboard_get	callbacks.c	/^clipboard_get(GtkClipboard *clipboard, GtkSelectionData *selection_data,$/;"	f
+colors	prefs.h	/^	GdkColor colors[16];$/;"	m	struct:_MPREF
+colors	prefs.h	/^	GdkColor colors[16];$/;"	m	struct:_PREF
+commit	callbacks.c	/^commit(GtkWidget *widget, gchar *arg1, guint arg2, gpointer user_data)$/;"	f
+create_pixbuf	support.c	/^create_pixbuf                          (const gchar     *filename)$/;"	f
+create_pixmap	support.c	/^create_pixmap                          (GtkWidget       *widget,$/;"	f
+create_terminal	interface.c	/^GtkWidget* create_terminal (GtkWidget *notebook, GtkWidget *window, gtkTermPref *pref)$/;"	f
+create_window	interface.c	/^create_window (gtkTermPref* pref)$/;"	f
+create_window_about	interface.c	/^create_window_about (void)$/;"	f
+datadir	Makefile	/^datadir = ${prefix}\/share$/;"	m
+dcgettext	support.h	27;"	d
+decrease_font_size	callbacks.c	/^decrease_font_size(GtkWidget *widget, gpointer data)$/;"	f
+deiconify_window	callbacks.c	/^deiconify_window(GtkWidget *widget, gpointer data)$/;"	f
+destroy_and_quit	callbacks.c	/^destroy_and_quit(GtkWidget *widget, gpointer data)$/;"	f
+destroy_and_quit_eof	callbacks.c	/^destroy_and_quit_eof(GtkWidget *widget, gpointer data)$/;"	f
+destroy_and_quit_exited	callbacks.c	/^destroy_and_quit_exited(GtkWidget *widget, gpointer data)$/;"	f
+dgettext	support.h	26;"	d
+disconnect_watch	callbacks.c	/^disconnect_watch(GtkWidget *widget, gpointer data)$/;"	f
+distdir	Makefile	/^distdir = $(top_builddir)\/$(PACKAGE)-$(VERSION)\/$(subdir)$/;"	m
+exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
+find_pixmap_file	support.c	/^find_pixmap_file                       (const gchar     *filename)$/;"	f	file:
+fore	prefs.h	/^	GdkColor fore[1];$/;"	m	struct:_MPREF
+fore	prefs.h	/^	GdkColor fore[1];$/;"	m	struct:_PREF
+fullscreen	prefs.h	/^	int fullscreen;$/;"	m	struct:_PREF
+gettext	support.h	25;"	d
+glade_set_atk_action_description	support.c	/^glade_set_atk_action_description       (AtkAction       *action,$/;"	f
+gtkTermFindMPref	prefs.c	/^int gtkTermFindMPref(char *matchstr, gtkTermPref *pref)$/;"	f
+gtkTermMPref	prefs.h	/^typedef struct _MPREF gtkTermMPref;$/;"	t	typeref:struct:_MPREF
+gtkTermMPref_init	prefs.c	/^gtkTermMPref* gtkTermMPref_init(gtkTermPref* pref)$/;"	f
+gtkTermPref	prefs.h	/^typedef struct _PREF gtkTermPref;$/;"	t	typeref:struct:_PREF
+gtkTermPref_free	prefs.c	/^int gtkTermPref_free(gtkTermPref* pref)$/;"	f
+gtkTermPref_get	prefs.c	/^gtkTermPref* gtkTermPref_get (void)$/;"	f
+gtkTermPref_init	prefs.c	/^gtkTermPref* gtkTermPref_init(void)$/;"	f
+gtkTermPref_save	prefs.c	/^int gtkTermPref_save(gtkTermPref* pref, GString *path)$/;"	f
+gtkTermSetMPref	prefs.c	/^void gtkTermSetMPref(GtkWidget *term, gtkTermPref *pref, int i)$/;"	f
+gtkterm2_DEPENDENCIES	Makefile	/^gtkterm2_DEPENDENCIES = $/;"	m
+gtkterm2_LDADD	Makefile	/^gtkterm2_LDADD =  	$(GTK_LIBS)$/;"	m
+gtkterm2_LDFLAGS	Makefile	/^gtkterm2_LDFLAGS =  	$(vte_LIBS)$/;"	m
+gtkterm2_OBJECTS	Makefile	/^gtkterm2_OBJECTS =  support.$(OBJEXT) main.$(OBJEXT) interface.$(OBJEXT) \\$/;"	m
+gtkterm2_SOURCES	Makefile	/^gtkterm2_SOURCES =  	support.h 	support.c 	main.c 	interface.h 	interface.c 	callbacks.h 	callbacks.c 	prefs.c 	prefs.h$/;"	m
+help	main.c	/^void help(char *argv[])$/;"	f
+host_alias	Makefile	/^host_alias = arm-unknown-linux-gnu$/;"	m
+host_triplet	Makefile	/^host_triplet = arm-unknown-linux-gnu$/;"	m
+iconify_window	callbacks.c	/^iconify_window(GtkWidget *widget, gpointer data)$/;"	f
+includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
+increase_font_size	callbacks.c	/^increase_font_size(GtkWidget *widget, gpointer data)$/;"	f
+infodir	Makefile	/^infodir = ${prefix}\/info$/;"	m
+libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+list	Makefile	/^	list='$(bin_PROGRAMS)'; for p in $$list; do \\$/;"	m
+localstatedir	Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+login_shell	prefs.h	/^	int login_shell;$/;"	m	struct:_PREF
+lookup_widget	support.c	/^lookup_widget                          (GtkWidget       *widget,$/;"	f
+lower_window	callbacks.c	/^lower_window(GtkWidget *widget, gpointer data)$/;"	f
+main	main.c	/^main (int argc, char *argv[])$/;"	f
+mandir	Makefile	/^mandir = ${prefix}\/man$/;"	m
+match	prefs.h	/^	char match[MAX_LINE_LENGTH];$/;"	m	struct:_MPREF
+maxScrollbackBuffer	prefs.h	/^	int maxScrollbackBuffer;$/;"	m	struct:_PREF
+maximize_window	callbacks.c	/^maximize_window(GtkWidget *widget, gpointer data)$/;"	f
+mess_with_fontconfig	callbacks.c	/^mess_with_fontconfig(void)$/;"	f
+mkinstalldirs	Makefile	/^mkinstalldirs = $(SHELL) $(top_srcdir)\/mkinstalldirs$/;"	m
+move_window	callbacks.c	/^move_window(GtkWidget *widget, guint x, guint y, gpointer data)$/;"	f
+mpref	prefs.h	/^	gtkTermMPref **mpref;$/;"	m	struct:_PREF
+mprefSize	prefs.h	/^	int mprefSize;$/;"	m	struct:_PREF
+nb_handle_key	callbacks.c	/^nb_handle_key (GtkWidget* fenster, GdkEventKey* event, gpointer user_data)$/;"	f
+nbpage	prefs.h	/^	gint nbpage;$/;"	m	struct:_PREF
+notebook	prefs.h	/^	GtkWidget* notebook;$/;"	m	struct:_PREF
+notebookPanel	prefs.h	/^	GtkPositionType notebookPanel;$/;"	m	struct:_PREF
+oldincludedir	Makefile	/^oldincludedir = \/usr\/include$/;"	m
+on_close_tab_activate	callbacks.c	/^on_close_tab_activate                  (GtkMenuItem     *menuitem,$/;"	f
+on_close_window_activate	callbacks.c	/^on_close_window_activate               (GtkMenuItem     *menuitem,$/;"	f
+on_commit	callbacks.c	/^void on_commit (VteTerminal *vteterminal, gpointer user_data)$/;"	f
+on_copy_activate	callbacks.c	/^on_copy_activate                       (GtkMenuItem     *menuitem,$/;"	f
+on_full_screen_activate	callbacks.c	/^on_full_screen_activate                (GtkMenuItem     *menuitem,$/;"	f
+on_hide_menu_activate	callbacks.c	/^on_hide_menu_activate                  (GtkMenuItem     *menuitem,$/;"	f
+on_info_activate	callbacks.c	/^on_info_activate                       (GtkMenuItem     *menuitem,$/;"	f
+on_new_tab_activate	callbacks.c	/^on_new_tab_activate                    (GtkMenuItem     *menuitem,$/;"	f
+on_new_window_activate	callbacks.c	/^on_new_window_activate                 (GtkMenuItem     *menuitem,$/;"	f
+on_paste_activate	callbacks.c	/^on_paste_activate                      (GtkMenuItem     *menuitem,$/;"	f
+on_window_about_close_button_activate	callbacks.c	/^on_window_about_close_button_activate  (GtkButton       *button,$/;"	f
+opacity	prefs.h	/^	float opacity;$/;"	m	struct:_PREF
+pixmaps_directories	support.c	/^static GList *pixmaps_directories = NULL;$/;"	v	file:
+pkgdatadir	Makefile	/^pkgdatadir = $(datadir)\/gtkterm2$/;"	m
+pkgincludedir	Makefile	/^pkgincludedir = $(includedir)\/gtkterm2$/;"	m
+pkglibdir	Makefile	/^pkglibdir = $(libdir)\/gtkterm2$/;"	m
+prefix	Makefile	/^prefix = \/usr\/local$/;"	m
+quitPRGonExitLastTerminal	prefs.h	/^	int quitPRGonExitLastTerminal;$/;"	m	struct:_PREF
+raise_window	callbacks.c	/^raise_window(GtkWidget *widget, gpointer data)$/;"	f
+read_and_feed	callbacks.c	/^read_and_feed(GIOChannel *source, GIOCondition condition, gpointer data)$/;"	f
+refresh_window	callbacks.c	/^refresh_window(GtkWidget *widget, gpointer data)$/;"	f
+resize_window	callbacks.c	/^resize_window(GtkWidget *widget, guint width, guint height, gpointer data)$/;"	f
+restore_window	callbacks.c	/^restore_window(GtkWidget *widget, gpointer data)$/;"	f
+sbindir	Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+scrollOnKeyStroke	prefs.h	/^	int scrollOnKeyStroke;$/;"	m	struct:_MPREF
+scrollOnKeyStroke	prefs.h	/^	int scrollOnKeyStroke;$/;"	m	struct:_PREF
+scrollOnOutput	prefs.h	/^	int scrollOnOutput;$/;"	m	struct:_MPREF
+scrollOnOutput	prefs.h	/^	int scrollOnOutput;$/;"	m	struct:_PREF
+set_menuitem_text	callbacks.c	/^set_menuitem_text (GtkWidget  *mi,$/;"	f	file:
+sharedstatedir	Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+showTabsByOneTerminal	prefs.h	/^	int showTabsByOneTerminal;$/;"	m	struct:_PREF
+srcdir	Makefile	/^srcdir = .$/;"	m
+status_line_changed	callbacks.c	/^status_line_changed(GtkWidget *widget, gpointer data)$/;"	f
+stealth	prefs.h	/^	int stealth;$/;"	m	struct:_PREF
+subdir	Makefile	/^subdir = src$/;"	m
+sysconfdir	Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+take_xconsole_ownership	callbacks.c	/^take_xconsole_ownership(GtkWidget *widget, gpointer data)$/;"	f
+termProp	prefs.h	/^	GSList* termProp;$/;"	m	struct:_PREF
+termX	prefs.h	/^	int termX;$/;"	m	struct:_PREF
+termY	prefs.h	/^	int termY;$/;"	m	struct:_PREF
+terminalFont	prefs.h	/^	char terminalFont[MAX_LINE_LENGTH];$/;"	m	struct:_PREF
+terminalScrollbar	prefs.h	/^	GtkPositionType terminalScrollbar;$/;"	m	struct:_PREF
+test	callbacks.c	/^gboolean test (VteTerminal *terminal,glong column,glong row,gpointer data)$/;"	f
+textdomain	support.h	24;"	d
+top_builddir	Makefile	/^top_builddir = ..$/;"	m
+top_srcdir	Makefile	/^top_srcdir = ..$/;"	m
+transform	Makefile	/^transform = s,x,x,$/;"	m
+transparent	prefs.h	/^	int transparent;$/;"	m	struct:_PREF
+vte_CFLAGS	Makefile	/^vte_CFLAGS = -pthread -D_REENTRANT -I\/usr\/include\/glib-2.0 -I\/usr\/lib\/glib-2.0\/include -I\/usr\/include\/gio-unix-2.0\/ -I\/usr\/include\/freetype2 -I\/usr\/include\/libpng14 -I\/usr\/local\/include -I\/usr\/local\/include\/pango-1.0 -I\/usr\/local\/include\/gtk-2.0 -I\/usr\/local\/lib\/gtk-2.0\/include -I\/usr\/local\/include\/cairo -I\/usr\/local\/include\/directfb -I\/usr\/local\/include\/pixman-1 -I\/usr\/local\/include\/atk-1.0  $/;"	m
+vte_LIBS	Makefile	/^vte_LIBS = -pthread -L\/usr\/local\/lib -lvte -lgtk-directfb-2.0 -lgdk-directfb-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpango-1.0 -lcairo -lgio-2.0 -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0  $/;"	m
+winPosX	prefs.h	/^	int winPosX;$/;"	m	struct:_PREF
+winPosY	prefs.h	/^	int winPosY;$/;"	m	struct:_PREF
+window_title_changed	callbacks.c	/^window_title_changed(GtkWidget *widget, gpointer pref)$/;"	f
+worldClass	prefs.h	/^	char worldClass[MAX_LINE_LENGTH];$/;"	m	struct:_MPREF
+worldClass	prefs.h	/^	char worldClass[MAX_LINE_LENGTH];$/;"	m	struct:_PREF

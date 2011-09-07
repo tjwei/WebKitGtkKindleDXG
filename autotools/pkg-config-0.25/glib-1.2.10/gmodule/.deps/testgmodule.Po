@@ -1,0 +1,44 @@
+testgmodule.o: testgmodule.c gmodule.h ../glib.h ../glibconfig.h \
+  /usr/include/limits.h /usr/include/features.h \
+  /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h \
+  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/float.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  gmoduleconf.h
+
+gmodule.h:
+
+../glib.h:
+
+../glibconfig.h:
+
+/usr/include/limits.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/float.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+gmoduleconf.h:

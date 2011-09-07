@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="SoupMultipart"><link linkend="SoupMultipart">SoupMultipart</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SoupRange"><link linkend="SoupRange">SoupRange</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-address-equal-by-ip"><link linkend="soup-address-equal-by-ip">soup_address_equal_by_ip</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-address-equal-by-name"><link linkend="soup-address-equal-by-name">soup_address_equal_by_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-address-hash-by-ip"><link linkend="soup-address-hash-by-ip">soup_address_hash_by_ip</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-address-hash-by-name"><link linkend="soup-address-hash-by-name">soup_address_hash_by_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-jar-add-cookie"><link linkend="soup-cookie-jar-add-cookie">soup_cookie_jar_add_cookie</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-jar-all-cookies"><link linkend="soup-cookie-jar-all-cookies">soup_cookie_jar_all_cookies</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-jar-delete-cookie"><link linkend="soup-cookie-jar-delete-cookie">soup_cookie_jar_delete_cookie</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-jar-sqlite-new"><link linkend="soup-cookie-jar-sqlite-new">soup_cookie_jar_sqlite_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-jar-text-new"><link linkend="soup-cookie-jar-text-new">soup_cookie_jar_text_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-form-decode-multipart"><link linkend="soup-form-decode-multipart">soup_form_decode_multipart</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-FORM-MIME-TYPE-MULTIPART--CAPS"><link linkend="SOUP-FORM-MIME-TYPE-MULTIPART--CAPS">SOUP_FORM_MIME_TYPE_MULTIPART</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-FORM-MIME-TYPE-URLENCODED--CAPS"><link linkend="SOUP-FORM-MIME-TYPE-URLENCODED--CAPS">SOUP_FORM_MIME_TYPE_URLENCODED</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-form-request-new-from-multipart"><link linkend="soup-form-request-new-from-multipart">soup_form_request_new_from_multipart</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-headers-parse"><link linkend="soup-headers-parse">soup_headers_parse</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-header-g-string-append-param"><link linkend="soup-header-g-string-append-param">soup_header_g_string_append_param</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-get-address"><link linkend="soup-message-get-address">soup_message_get_address</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-headers-free-ranges"><link linkend="soup-message-headers-free-ranges">soup_message_headers_free_ranges</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-headers-get-content-disposition"><link linkend="soup-message-headers-get-content-disposition">soup_message_headers_get_content_disposition</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-headers-get-content-range"><link linkend="soup-message-headers-get-content-range">soup_message_headers_get_content_range</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-headers-get-content-type"><link linkend="soup-message-headers-get-content-type">soup_message_headers_get_content_type</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-headers-get-ranges"><link linkend="soup-message-headers-get-ranges">soup_message_headers_get_ranges</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-headers-set-content-disposition"><link linkend="soup-message-headers-set-content-disposition">soup_message_headers_set_content_disposition</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-headers-set-content-range"><link linkend="soup-message-headers-set-content-range">soup_message_headers_set_content_range</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-headers-set-content-type"><link linkend="soup-message-headers-set-content-type">soup_message_headers_set_content_type</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-headers-set-range"><link linkend="soup-message-headers-set-range">soup_message_headers_set_range</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-message-headers-set-ranges"><link linkend="soup-message-headers-set-ranges">soup_message_headers_set_ranges</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-multipart-append-form-file"><link linkend="soup-multipart-append-form-file">soup_multipart_append_form_file</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-multipart-append-form-string"><link linkend="soup-multipart-append-form-string">soup_multipart_append_form_string</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-multipart-append-part"><link linkend="soup-multipart-append-part">soup_multipart_append_part</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-multipart-free"><link linkend="soup-multipart-free">soup_multipart_free</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-multipart-get-length"><link linkend="soup-multipart-get-length">soup_multipart_get_length</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-multipart-get-part"><link linkend="soup-multipart-get-part">soup_multipart_get_part</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-multipart-new"><link linkend="soup-multipart-new">soup_multipart_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-multipart-new-from-message"><link linkend="soup-multipart-new-from-message">soup_multipart_new_from_message</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-multipart-to-message"><link linkend="soup-multipart-to-message">soup_multipart_to_message</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-session-get-feature"><link linkend="soup-session-get-feature">soup_session_get_feature</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-session-get-features"><link linkend="soup-session-get-features">soup_session_get_features</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-status-proxify"><link linkend="soup-status-proxify">soup_status_proxify</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-TYPE-GNOME-FEATURES-2-26--CAPS"><link linkend="SOUP-TYPE-GNOME-FEATURES-2-26--CAPS">SOUP_TYPE_GNOME_FEATURES_2_26</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-TYPE-PROXY-RESOLVER-GNOME--CAPS"><link linkend="SOUP-TYPE-PROXY-RESOLVER-GNOME--CAPS">SOUP_TYPE_PROXY_RESOLVER_GNOME</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

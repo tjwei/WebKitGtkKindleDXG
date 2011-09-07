@@ -1,0 +1,139 @@
+libdbus_1_la-dbus-server-socket.lo: dbus-server-socket.c ../config.h \
+  dbus-internals.h ../dbus/dbus-memory.h ../dbus/dbus-macros.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h \
+  ../dbus/dbus-types.h ../dbus/dbus-arch-deps.h ../dbus/dbus-errors.h \
+  ../dbus/dbus-protocol.h ../dbus/dbus-sysdeps.h /usr/include/stdint.h \
+  /usr/include/features.h /usr/include/bits/predefs.h \
+  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+  /usr/include/gnu/stubs.h /usr/include/bits/wchar.h ../dbus/dbus-file.h \
+  ../dbus/dbus-string.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+  /usr/include/bits/string2.h /usr/include/stdlib.h \
+  /usr/include/sys/poll.h /usr/include/bits/poll.h \
+  /usr/include/bits/sigset.h /usr/include/time.h \
+  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+  ../dbus/dbus-threads-internal.h ../dbus/dbus-threads.h \
+  dbus-server-socket.h ../dbus/dbus-internals.h \
+  ../dbus/dbus-server-protected.h ../dbus/dbus-server.h \
+  ../dbus/dbus-message.h ../dbus/dbus-connection.h ../dbus/dbus-shared.h \
+  ../dbus/dbus-address.h ../dbus/dbus-timeout.h ../dbus/dbus-watch.h \
+  ../dbus/dbus-resources.h ../dbus/dbus-dataslot.h ../dbus/dbus-nonce.h \
+  dbus-transport-socket.h ../dbus/dbus-transport-protected.h \
+  ../dbus/dbus-transport.h ../dbus/dbus-message-internal.h \
+  ../dbus/dbus-marshal-validate.h ../dbus/dbus-list.h ../dbus/dbus-auth.h \
+  dbus-connection-internal.h dbus-memory.h dbus-nonce.h dbus-string.h
+
+../config.h:
+
+dbus-internals.h:
+
+../dbus/dbus-memory.h:
+
+../dbus/dbus-macros.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:
+
+../dbus/dbus-types.h:
+
+../dbus/dbus-arch-deps.h:
+
+../dbus/dbus-errors.h:
+
+../dbus/dbus-protocol.h:
+
+../dbus/dbus-sysdeps.h:
+
+/usr/include/stdint.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/bits/wchar.h:
+
+../dbus/dbus-file.h:
+
+../dbus/dbus-string.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/poll.h:
+
+/usr/include/bits/poll.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/time.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+../dbus/dbus-threads-internal.h:
+
+../dbus/dbus-threads.h:
+
+dbus-server-socket.h:
+
+../dbus/dbus-internals.h:
+
+../dbus/dbus-server-protected.h:
+
+../dbus/dbus-server.h:
+
+../dbus/dbus-message.h:
+
+../dbus/dbus-connection.h:
+
+../dbus/dbus-shared.h:
+
+../dbus/dbus-address.h:
+
+../dbus/dbus-timeout.h:
+
+../dbus/dbus-watch.h:
+
+../dbus/dbus-resources.h:
+
+../dbus/dbus-dataslot.h:
+
+../dbus/dbus-nonce.h:
+
+dbus-transport-socket.h:
+
+../dbus/dbus-transport-protected.h:
+
+../dbus/dbus-transport.h:
+
+../dbus/dbus-message-internal.h:
+
+../dbus/dbus-marshal-validate.h:
+
+../dbus/dbus-list.h:
+
+../dbus/dbus-auth.h:
+
+dbus-connection-internal.h:
+
+dbus-memory.h:
+
+dbus-nonce.h:
+
+dbus-string.h:

@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkRadioAction">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkRadioAction.top_of_page">GtkRadioAction</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkRadioAction</refname>
+<refpurpose>An action of which only one in a group can be active</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkRadioAction.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkRadioAction-struct">GtkRadioAction</link>;
+<link linkend="GtkRadioAction">GtkRadioAction</link> *    <link linkend="gtk-radio-action-new">gtk_radio_action_new</link>                (const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *label,
+                                                         const <link linkend="gchar">gchar</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="gint">gint</link> value);
+<link linkend="GSList">GSList</link> *            <link linkend="gtk-radio-action-get-group">gtk_radio_action_get_group</link>          (<link linkend="GtkRadioAction">GtkRadioAction</link> *action);
+<link linkend="void">void</link>                <link linkend="gtk-radio-action-set-group">gtk_radio_action_set_group</link>          (<link linkend="GtkRadioAction">GtkRadioAction</link> *action,
+                                                         <link linkend="GSList">GSList</link> *group);
+<link linkend="gint">gint</link>                <link linkend="gtk-radio-action-get-current-value">gtk_radio_action_get_current_value</link>  (<link linkend="GtkRadioAction">GtkRadioAction</link> *action);
+<link linkend="void">void</link>                <link linkend="gtk-radio-action-set-current-value">gtk_radio_action_set_current_value</link>  (<link linkend="GtkRadioAction">GtkRadioAction</link> *action,
+                                                         <link linkend="gint">gint</link> current_value);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkRadioAction.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GtkAction">GtkAction</link>
+         +----<link linkend="GtkToggleAction">GtkToggleAction</link>
+               +----GtkRadioAction
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkRadioAction.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkRadioAction implements
+ <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkRadioAction.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkRadioAction--current-value">current-value</link>&quot;            <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkRadioAction--group">group</link>&quot;                    <link linkend="GtkRadioAction">GtkRadioAction</link>*       : Write
+  &quot;<link linkend="GtkRadioAction--value">value</link>&quot;                    <link linkend="gint">gint</link>                  : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkRadioAction.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkRadioAction-changed">changed</link>&quot;                                        : Run First / No Recursion
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkRadioAction.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A <link linkend="GtkRadioAction"><type>GtkRadioAction</type></link> is similar to <link linkend="GtkRadioMenuItem"><type>GtkRadioMenuItem</type></link>. A number of radio
+actions can be linked together so that only one may be active at any
+one time.
+</para>
+</refsect1>
+
+<refsect1 id="GtkRadioAction.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkRadioAction-struct" role="struct">
+<title>GtkRadioAction</title>
+<indexterm zone="GtkRadioAction-struct"><primary sortas="RadioAction">GtkRadioAction</primary></indexterm><programlisting>typedef struct _GtkRadioAction GtkRadioAction;</programlisting>
+<para>
+The <structname>GtkRadioAction</structname> struct contains
+only private members and should not be accessed directly.
+</para></refsect2>
+<refsect2 id="gtk-radio-action-new" role="function" condition="since:2.4">
+<title>gtk_radio_action_new ()</title>
+<indexterm zone="gtk-radio-action-new" role="2.4"><primary sortas="radio_action_new">gtk_radio_action_new</primary></indexterm><programlisting><link linkend="GtkRadioAction">GtkRadioAction</link> *    gtk_radio_action_new                (const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *label,
+                                                         const <link linkend="gchar">gchar</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="gint">gint</link> value);</programlisting>
+<para>
+Creates a new <link linkend="GtkRadioAction"><type>GtkRadioAction</type></link> object. To add the action to
+a <link linkend="GtkActionGroup"><type>GtkActionGroup</type></link> and set the accelerator for the action,
+call <link linkend="gtk-action-group-add-action-with-accel"><function>gtk_action_group_add_action_with_accel()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> A unique name for the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> The label displayed in menu items and on buttons, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tooltip</parameter>&#160;:</term>
+<listitem><simpara> A tooltip for this action, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> The stock icon to display in widgets representing this
+  action, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> The value which <link linkend="gtk-radio-action-get-current-value"><function>gtk_radio_action_get_current_value()</function></link> should
+  return if this action is selected.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkRadioAction"><type>GtkRadioAction</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-radio-action-get-group" role="function" condition="since:2.4">
+<title>gtk_radio_action_get_group ()</title>
+<indexterm zone="gtk-radio-action-get-group" role="2.4"><primary sortas="radio_action_get_group">gtk_radio_action_get_group</primary></indexterm><programlisting><link linkend="GSList">GSList</link> *            gtk_radio_action_get_group          (<link linkend="GtkRadioAction">GtkRadioAction</link> *action);</programlisting>
+<para>
+Returns the list representing the radio group for this object.
+Note that the returned list is only valid until the next change
+to the group. 
+</para>
+<para>
+A common way to set up a group of radio group is the following:
+<informalexample><programlisting>
+  GSList *group = NULL;
+  GtkRadioAction *action;
+ 
+  while (/&ast; more actions to add &ast;/)
+    {
+       action = gtk_radio_action_new (...);
+       
+       gtk_radio_action_set_group (action, group);
+       group = gtk_radio_action_get_group (action);
+    }
+</programlisting></informalexample></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the list representing the radio group for this object
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-radio-action-set-group" role="function" condition="since:2.4">
+<title>gtk_radio_action_set_group ()</title>
+<indexterm zone="gtk-radio-action-set-group" role="2.4"><primary sortas="radio_action_set_group">gtk_radio_action_set_group</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_radio_action_set_group          (<link linkend="GtkRadioAction">GtkRadioAction</link> *action,
+                                                         <link linkend="GSList">GSList</link> *group);</programlisting>
+<para>
+Sets the radio group for the radio action object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group</parameter>&#160;:</term>
+<listitem><simpara> a list representing a radio group
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-radio-action-get-current-value" role="function" condition="since:2.4">
+<title>gtk_radio_action_get_current_value ()</title>
+<indexterm zone="gtk-radio-action-get-current-value" role="2.4"><primary sortas="radio_action_get_current_value">gtk_radio_action_get_current_value</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_radio_action_get_current_value  (<link linkend="GtkRadioAction">GtkRadioAction</link> *action);</programlisting>
+<para>
+Obtains the value property of the currently active member of 
+the group to which <parameter>action</parameter> belongs.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRadioAction"><type>GtkRadioAction</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The value of the currently active group member
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-radio-action-set-current-value" role="function" condition="since:2.10">
+<title>gtk_radio_action_set_current_value ()</title>
+<indexterm zone="gtk-radio-action-set-current-value" role="2.10"><primary sortas="radio_action_set_current_value">gtk_radio_action_set_current_value</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_radio_action_set_current_value  (<link linkend="GtkRadioAction">GtkRadioAction</link> *action,
+                                                         <link linkend="gint">gint</link> current_value);</programlisting>
+<para>
+Sets the currently active group member to the member with value
+property <parameter>current_value</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRadioAction"><type>GtkRadioAction</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>current_value</parameter>&#160;:</term>
+<listitem><simpara> the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkRadioAction.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkRadioAction--current-value" role="property"><title>The <literal>&quot;current-value&quot;</literal> property</title>
+<indexterm zone="GtkRadioAction--current-value" role="2.10"><primary sortas="RadioAction:current-value">GtkRadioAction:current-value</primary></indexterm><programlisting>  &quot;current-value&quot;            <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+The value property of the currently active member of the group to which
+this action belongs.</para>
+<para>
+</para><para>Default value: 0</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkRadioAction--group" role="property"><title>The <literal>&quot;group&quot;</literal> property</title>
+<indexterm zone="GtkRadioAction--group" role="2.4"><primary sortas="RadioAction:group">GtkRadioAction:group</primary></indexterm><programlisting>  &quot;group&quot;                    <link linkend="GtkRadioAction">GtkRadioAction</link>*       : Write</programlisting>
+<para>
+Sets a new group for a radio action.</para>
+<para>
+</para><para>Since 2.4</para>
+</refsect2>
+<refsect2 id="GtkRadioAction--value" role="property"><title>The <literal>&quot;value&quot;</literal> property</title>
+<indexterm zone="GtkRadioAction--value" role="2.4"><primary sortas="RadioAction:value">GtkRadioAction:value</primary></indexterm><programlisting>  &quot;value&quot;                    <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+The value is an arbitrary integer which can be used as a
+convenient way to determine which action in the group is
+currently active in an ::activate or ::changed signal handler.
+See <link linkend="gtk-radio-action-get-current-value"><function>gtk_radio_action_get_current_value()</function></link> and <link linkend="GtkRadioActionEntry"><type>GtkRadioActionEntry</type></link>
+for convenient ways to get and set this property.</para>
+<para>
+</para><para>Default value: 0</para>
+<para>Since 2.4</para>
+</refsect2>
+
+</refsect1>
+
+<refsect1 id="GtkRadioAction.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkRadioAction-changed" role="signal"><title>The <literal>&quot;changed&quot;</literal> signal</title>
+<indexterm zone="GtkRadioAction-changed" role="2.4"><primary sortas="RadioAction::changed">GtkRadioAction::changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkRadioAction">GtkRadioAction</link> *action,
+                                                        <link linkend="GtkRadioAction">GtkRadioAction</link> *current,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)      : Run First / No Recursion</programlisting>
+<para>
+The ::changed signal is emitted on every member of a radio group when the
+active member is changed. The signal gets emitted after the ::activate signals
+for the previous and current active members.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>current</parameter>&#160;:</term>
+<listitem><simpara> the member of <parameter>action</parameter><!-- -->s group which has just been activated
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2>
+</refsect1>
+
+
+
+</refentry>

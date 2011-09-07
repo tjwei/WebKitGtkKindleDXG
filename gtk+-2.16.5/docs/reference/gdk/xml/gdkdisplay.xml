@@ -1,0 +1,887 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="GdkDisplay">
+<refmeta>
+<refentrytitle role="top_of_page" id="GdkDisplay.top_of_page">GdkDisplay</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GdkDisplay</refname>
+<refpurpose>Controls the keyboard/mouse pointer grabs and a set of <type>GdkScreen</type>s</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GdkDisplay.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gdk/gdk.h&gt;
+
+                    <link linkend="GdkDisplay-struct">GdkDisplay</link>;
+<link linkend="GdkDisplay">GdkDisplay</link> *        <link linkend="gdk-display-open">gdk_display_open</link>                    (const <link linkend="gchar">gchar</link> *display_name);
+<link linkend="GdkDisplay">GdkDisplay</link> *        <link linkend="gdk-display-get-default">gdk_display_get_default</link>             (void);
+const <link linkend="gchar">gchar</link> *       <link linkend="gdk-display-get-name">gdk_display_get_name</link>                (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="gint">gint</link>                <link linkend="gdk-display-get-n-screens">gdk_display_get_n_screens</link>           (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="GdkScreen">GdkScreen</link> *         <link linkend="gdk-display-get-screen">gdk_display_get_screen</link>              (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="gint">gint</link> screen_num);
+<link linkend="GdkScreen">GdkScreen</link> *         <link linkend="gdk-display-get-default-screen">gdk_display_get_default_screen</link>      (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="void">void</link>                <link linkend="gdk-display-pointer-ungrab">gdk_display_pointer_ungrab</link>          (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="guint32">guint32</link> time_);
+<link linkend="void">void</link>                <link linkend="gdk-display-keyboard-ungrab">gdk_display_keyboard_ungrab</link>         (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="guint32">guint32</link> time_);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-display-pointer-is-grabbed">gdk_display_pointer_is_grabbed</link>      (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="void">void</link>                <link linkend="gdk-display-beep">gdk_display_beep</link>                    (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="void">void</link>                <link linkend="gdk-display-sync">gdk_display_sync</link>                    (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="void">void</link>                <link linkend="gdk-display-flush">gdk_display_flush</link>                   (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="void">void</link>                <link linkend="gdk-display-close">gdk_display_close</link>                   (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="GList">GList</link> *             <link linkend="gdk-display-list-devices">gdk_display_list_devices</link>            (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="GdkEvent">GdkEvent</link>*           <link linkend="gdk-display-get-event">gdk_display_get_event</link>               (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="GdkEvent">GdkEvent</link>*           <link linkend="gdk-display-peek-event">gdk_display_peek_event</link>              (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="void">void</link>                <link linkend="gdk-display-put-event">gdk_display_put_event</link>               (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         const <link linkend="GdkEvent">GdkEvent</link> *event);
+<link linkend="void">void</link>                <link linkend="gdk-display-add-client-message-filter">gdk_display_add_client_message_filter</link>
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkAtom">GdkAtom</link> message_type,
+                                                         <link linkend="GdkFilterFunc">GdkFilterFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="void">void</link>                <link linkend="gdk-display-set-double-click-time">gdk_display_set_double_click_time</link>   (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="guint">guint</link> msec);
+<link linkend="void">void</link>                <link linkend="gdk-display-set-double-click-distance">gdk_display_set_double_click_distance</link>
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="guint">guint</link> distance);
+<link linkend="void">void</link>                <link linkend="gdk-display-get-pointer">gdk_display_get_pointer</link>             (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkScreen">GdkScreen</link> **screen,
+                                                         <link linkend="gint">gint</link> *x,
+                                                         <link linkend="gint">gint</link> *y,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> *mask);
+<link linkend="GdkWindow">GdkWindow</link> *         <link linkend="gdk-display-get-window-at-pointer">gdk_display_get_window_at_pointer</link>   (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="gint">gint</link> *win_x,
+                                                         <link linkend="gint">gint</link> *win_y);
+                    <link linkend="GdkDisplayPointerHooks">GdkDisplayPointerHooks</link>;
+<link linkend="GdkDisplayPointerHooks">GdkDisplayPointerHooks</link> * <link linkend="gdk-display-set-pointer-hooks">gdk_display_set_pointer_hooks</link>  (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         const <link linkend="GdkDisplayPointerHooks">GdkDisplayPointerHooks</link> *new_hooks);
+<link linkend="void">void</link>                <link linkend="gdk-display-warp-pointer">gdk_display_warp_pointer</link>            (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-display-supports-cursor-color">gdk_display_supports_cursor_color</link>   (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-display-supports-cursor-alpha">gdk_display_supports_cursor_alpha</link>   (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="guint">guint</link>               <link linkend="gdk-display-get-default-cursor-size">gdk_display_get_default_cursor_size</link> (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="void">void</link>                <link linkend="gdk-display-get-maximal-cursor-size">gdk_display_get_maximal_cursor_size</link> (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="guint">guint</link> *width,
+                                                         <link linkend="guint">guint</link> *height);
+<link linkend="GdkWindow">GdkWindow</link> *         <link linkend="gdk-display-get-default-group">gdk_display_get_default_group</link>       (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-display-supports-selection-notification">gdk_display_supports_selection_notification</link>
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-display-request-selection-notification">gdk_display_request_selection_notification</link>
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-display-supports-clipboard-persistence">gdk_display_supports_clipboard_persistence</link>
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="void">void</link>                <link linkend="gdk-display-store-clipboard">gdk_display_store_clipboard</link>         (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkWindow">GdkWindow</link> *clipboard_window,
+                                                         <link linkend="guint32">guint32</link> time_,
+                                                         const <link linkend="GdkAtom">GdkAtom</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-display-supports-shapes">gdk_display_supports_shapes</link>         (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-display-supports-input-shapes">gdk_display_supports_input_shapes</link>   (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-display-supports-composite">gdk_display_supports_composite</link>      (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GdkDisplay.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GdkDisplay
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+<refsect1 id="GdkDisplay.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GdkDisplay-closed">closed</link>&quot;                                         : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GdkDisplay.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GdkDisplay"><type>GdkDisplay</type></link> objects purpose are two fold:
+<itemizedlist>
+<listitem><para>To grab/ungrab keyboard focus and mouse pointer</para></listitem>
+<listitem><para>To manage and provide information about the <link linkend="GdkScreen"><type>GdkScreen</type></link>(s)
+		available for this <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+	  </para></listitem>
+</itemizedlist>
+</para>
+<para>
+  <link linkend="GdkDisplay"><type>GdkDisplay</type></link> objects are the GDK representation of the X Display which can be
+  described as <emphasis>a workstation consisting of a keyboard a pointing
+  device (such as a mouse) and one or more screens</emphasis>.
+  It is used to open and keep track of various <link linkend="GdkScreen"><type>GdkScreen</type></link> objects currently
+  instanciated by the application. It is also used to grab and release the keyboard
+  and the mouse pointer.
+</para>
+</refsect1>
+
+<refsect1 id="GdkDisplay.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GdkDisplay-struct" role="struct">
+<title>GdkDisplay</title>
+<indexterm zone="GdkDisplay-struct" role="2.2"><primary sortas="Display">GdkDisplay</primary></indexterm><programlisting>typedef struct _GdkDisplay GdkDisplay;</programlisting>
+<para>
+The <structname>GdkDisplay</structname> struct is the GDK representation
+of an X display. All its fields are private and should not be accessed directly.
+</para><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-open" role="function" condition="since:2.2">
+<title>gdk_display_open ()</title>
+<indexterm zone="gdk-display-open" role="2.2"><primary sortas="display_open">gdk_display_open</primary></indexterm><programlisting><link linkend="GdkDisplay">GdkDisplay</link> *        gdk_display_open                    (const <link linkend="gchar">gchar</link> *display_name);</programlisting>
+<para>
+Opens a display.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the display to open
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if the display
+ could not be opened.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-get-default" role="function" condition="since:2.2">
+<title>gdk_display_get_default ()</title>
+<indexterm zone="gdk-display-get-default" role="2.2"><primary sortas="display_get_default">gdk_display_get_default</primary></indexterm><programlisting><link linkend="GdkDisplay">GdkDisplay</link> *        gdk_display_get_default             (void);</programlisting>
+<para>
+Gets the default <link linkend="GdkDisplay"><type>GdkDisplay</type></link>. This is a convenience
+function for
+<literal>gdk_display_manager_get_default_display (<link linkend="gdk-display-manager-get"><function>gdk_display_manager_get()</function></link>)</literal>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if there is no default
+  display.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-get-name" role="function" condition="since:2.2">
+<title>gdk_display_get_name ()</title>
+<indexterm zone="gdk-display-get-name" role="2.2"><primary sortas="display_get_name">gdk_display_get_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gdk_display_get_name                (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Gets the name of the display.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a string representing the display name. This string is owned
+by GDK and should not be modified or freed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-get-n-screens" role="function" condition="since:2.2">
+<title>gdk_display_get_n_screens ()</title>
+<indexterm zone="gdk-display-get-n-screens" role="2.2"><primary sortas="display_get_n_screens">gdk_display_get_n_screens</primary></indexterm><programlisting><link linkend="gint">gint</link>                gdk_display_get_n_screens           (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Gets the number of screen managed by the <parameter>display</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> number of screens.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-get-screen" role="function" condition="since:2.2">
+<title>gdk_display_get_screen ()</title>
+<indexterm zone="gdk-display-get-screen" role="2.2"><primary sortas="display_get_screen">gdk_display_get_screen</primary></indexterm><programlisting><link linkend="GdkScreen">GdkScreen</link> *         gdk_display_get_screen              (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="gint">gint</link> screen_num);</programlisting>
+<para>
+Returns a screen object for one of the screens of the display.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen_num</parameter>&#160;:</term>
+<listitem><simpara> the screen number
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the <link linkend="GdkScreen"><type>GdkScreen</type></link> object
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-get-default-screen" role="function" condition="since:2.2">
+<title>gdk_display_get_default_screen ()</title>
+<indexterm zone="gdk-display-get-default-screen" role="2.2"><primary sortas="display_get_default_screen">gdk_display_get_default_screen</primary></indexterm><programlisting><link linkend="GdkScreen">GdkScreen</link> *         gdk_display_get_default_screen      (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Get the default <link linkend="GdkScreen"><type>GdkScreen</type></link> for <parameter>display</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the default <link linkend="GdkScreen"><type>GdkScreen</type></link> object for <parameter>display</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-pointer-ungrab" role="function" condition="since:2.2">
+<title>gdk_display_pointer_ungrab ()</title>
+<indexterm zone="gdk-display-pointer-ungrab" role="2.2"><primary sortas="display_pointer_ungrab">gdk_display_pointer_ungrab</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_pointer_ungrab          (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="guint32">guint32</link> time_);</programlisting>
+<para>
+Release any pointer grab.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>time_</parameter>&#160;:</term>
+<listitem><simpara> a timestap (e.g. <link linkend="GDK-CURRENT-TIME--CAPS"><literal>GDK_CURRENT_TIME</literal></link>).
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-keyboard-ungrab" role="function" condition="since:2.2">
+<title>gdk_display_keyboard_ungrab ()</title>
+<indexterm zone="gdk-display-keyboard-ungrab" role="2.2"><primary sortas="display_keyboard_ungrab">gdk_display_keyboard_ungrab</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_keyboard_ungrab         (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="guint32">guint32</link> time_);</programlisting>
+<para>
+Release any keyboard grab</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>time_</parameter>&#160;:</term>
+<listitem><simpara> a timestap (e.g <link linkend="GDK-CURRENT-TIME--CAPS"><type>GDK_CURRENT_TIME</type></link>).
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-pointer-is-grabbed" role="function" condition="since:2.2">
+<title>gdk_display_pointer_is_grabbed ()</title>
+<indexterm zone="gdk-display-pointer-is-grabbed" role="2.2"><primary sortas="display_pointer_is_grabbed">gdk_display_pointer_is_grabbed</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_display_pointer_is_grabbed      (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Test if the pointer is grabbed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if an active X pointer grab is in effect
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-beep" role="function" condition="since:2.2">
+<title>gdk_display_beep ()</title>
+<indexterm zone="gdk-display-beep" role="2.2"><primary sortas="display_beep">gdk_display_beep</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_beep                    (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Emits a short beep on <parameter>display</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-sync" role="function" condition="since:2.2">
+<title>gdk_display_sync ()</title>
+<indexterm zone="gdk-display-sync" role="2.2"><primary sortas="display_sync">gdk_display_sync</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_sync                    (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Flushes any requests queued for the windowing system and waits until all
+requests have been handled. This is often used for making sure that the
+display is synchronized with the current state of the program. Calling
+<link linkend="gdk-display-sync"><function>gdk_display_sync()</function></link> before <link linkend="gdk-error-trap-pop"><function>gdk_error_trap_pop()</function></link> makes sure that any errors
+generated from earlier requests are handled before the error trap is 
+removed.
+</para>
+<para>
+This is most useful for X11. On windowing systems where requests are
+handled synchronously, this function will do nothing.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-flush" role="function" condition="since:2.4">
+<title>gdk_display_flush ()</title>
+<indexterm zone="gdk-display-flush" role="2.4"><primary sortas="display_flush">gdk_display_flush</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_flush                   (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Flushes any requests queued for the windowing system; this happens automatically
+when the main loop blocks waiting for new events, but if your application
+is drawing without returning control to the main loop, you may need
+to call this function explicitely. A common case where this function
+needs to be called is when an application is executing drawing commands
+from a thread other than the thread where the main loop is running.
+</para>
+<para>
+This is most useful for X11. On windowing systems where requests are
+handled synchronously, this function will do nothing.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-display-close" role="function" condition="since:2.2">
+<title>gdk_display_close ()</title>
+<indexterm zone="gdk-display-close" role="2.2"><primary sortas="display_close">gdk_display_close</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_close                   (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Closes the connection to the windowing system for the given display,
+and cleans up associated resources.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-list-devices" role="function" condition="since:2.2">
+<title>gdk_display_list_devices ()</title>
+<indexterm zone="gdk-display-list-devices" role="2.2"><primary sortas="display_list_devices">gdk_display_list_devices</primary></indexterm><programlisting><link linkend="GList">GList</link> *             gdk_display_list_devices            (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns the list of available input devices attached to <parameter>display</parameter>.
+The list is statically allocated and should not be freed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a list of <link linkend="GdkDevice"><type>GdkDevice</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-get-event" role="function" condition="since:2.2">
+<title>gdk_display_get_event ()</title>
+<indexterm zone="gdk-display-get-event" role="2.2"><primary sortas="display_get_event">gdk_display_get_event</primary></indexterm><programlisting><link linkend="GdkEvent">GdkEvent</link>*           gdk_display_get_event               (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Gets the next <link linkend="GdkEvent"><type>GdkEvent</type></link> to be processed for <parameter>display</parameter>, fetching events from the
+windowing system if necessary.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the next <link linkend="GdkEvent"><type>GdkEvent</type></link> to be processed, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if no events
+are pending. The returned <link linkend="GdkEvent"><type>GdkEvent</type></link> should be freed with <link linkend="gdk-event-free"><function>gdk_event_free()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-peek-event" role="function" condition="since:2.2">
+<title>gdk_display_peek_event ()</title>
+<indexterm zone="gdk-display-peek-event" role="2.2"><primary sortas="display_peek_event">gdk_display_peek_event</primary></indexterm><programlisting><link linkend="GdkEvent">GdkEvent</link>*           gdk_display_peek_event              (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Gets a copy of the first <link linkend="GdkEvent"><type>GdkEvent</type></link> in the <parameter>display</parameter>'s event queue, without
+removing the event from the queue.  (Note that this function will
+not get more events from the windowing system.  It only checks the events
+that have already been moved to the GDK event queue.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a copy of the first <link linkend="GdkEvent"><type>GdkEvent</type></link> on the event queue, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> 
+if no events are in the queue. The returned <link linkend="GdkEvent"><type>GdkEvent</type></link> should be freed with
+<link linkend="gdk-event-free"><function>gdk_event_free()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-put-event" role="function" condition="since:2.2">
+<title>gdk_display_put_event ()</title>
+<indexterm zone="gdk-display-put-event" role="2.2"><primary sortas="display_put_event">gdk_display_put_event</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_put_event               (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         const <link linkend="GdkEvent">GdkEvent</link> *event);</programlisting>
+<para>
+Appends a copy of the given event onto the front of the event
+queue for <parameter>display</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEvent"><type>GdkEvent</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-add-client-message-filter" role="function" condition="since:2.2">
+<title>gdk_display_add_client_message_filter ()</title>
+<indexterm zone="gdk-display-add-client-message-filter" role="2.2"><primary sortas="display_add_client_message_filter">gdk_display_add_client_message_filter</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_add_client_message_filter
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkAtom">GdkAtom</link> message_type,
+                                                         <link linkend="GdkFilterFunc">GdkFilterFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<para>
+Adds a filter to be called when X ClientMessage events are received.
+See <link linkend="gdk-window-add-filter"><function>gdk_window_add_filter()</function></link> if you are interested in filtering other
+types of events.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link> for which this message filter applies
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>message_type</parameter>&#160;:</term>
+<listitem><simpara> the type of ClientMessage events to receive.
+  This will be checked against the <parameter>message_type</parameter> field 
+  of the XClientMessage event struct.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> the function to call to process the event.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> user data to pass to <parameter>func</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-set-double-click-time" role="function" condition="since:2.2">
+<title>gdk_display_set_double_click_time ()</title>
+<indexterm zone="gdk-display-set-double-click-time" role="2.2"><primary sortas="display_set_double_click_time">gdk_display_set_double_click_time</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_set_double_click_time   (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="guint">guint</link> msec);</programlisting>
+<para>
+Sets the double click time (two clicks within this time interval
+count as a double click and result in a <link linkend="GDK-2BUTTON-PRESS--CAPS"><type>GDK_2BUTTON_PRESS</type></link> event).
+Applications should <emphasis>not</emphasis> set this, it is a global 
+user-configured setting.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>msec</parameter>&#160;:</term>
+<listitem><simpara> double click time in milliseconds (thousandths of a second) 
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-set-double-click-distance" role="function" condition="since:2.4">
+<title>gdk_display_set_double_click_distance ()</title>
+<indexterm zone="gdk-display-set-double-click-distance" role="2.4"><primary sortas="display_set_double_click_distance">gdk_display_set_double_click_distance</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_set_double_click_distance
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="guint">guint</link> distance);</programlisting>
+<para>
+Sets the double click distance (two clicks within this distance
+count as a double click and result in a <link linkend="GDK-2BUTTON-PRESS--CAPS"><type>GDK_2BUTTON_PRESS</type></link> event).
+See also <link linkend="gdk-display-set-double-click-time"><function>gdk_display_set_double_click_time()</function></link>.
+Applications should <emphasis>not</emphasis> set this, it is a global 
+user-configured setting.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>distance</parameter>&#160;:</term>
+<listitem><simpara> distance in pixels
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-display-get-pointer" role="function" condition="since:2.2">
+<title>gdk_display_get_pointer ()</title>
+<indexterm zone="gdk-display-get-pointer" role="2.2"><primary sortas="display_get_pointer">gdk_display_get_pointer</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_get_pointer             (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkScreen">GdkScreen</link> **screen,
+                                                         <link linkend="gint">gint</link> *x,
+                                                         <link linkend="gint">gint</link> *y,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> *mask);</programlisting>
+<para>
+Gets the current location of the pointer and the current modifier
+mask for a given display.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> location to store the screen that the
+         cursor is on, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> location to store root window X coordinate of pointer, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> location to store root window Y coordinate of pointer, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mask</parameter>&#160;:</term>
+<listitem><simpara> location to store current modifier mask, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-get-window-at-pointer" role="function" condition="since:2.2">
+<title>gdk_display_get_window_at_pointer ()</title>
+<indexterm zone="gdk-display-get-window-at-pointer" role="2.2"><primary sortas="display_get_window_at_pointer">gdk_display_get_window_at_pointer</primary></indexterm><programlisting><link linkend="GdkWindow">GdkWindow</link> *         gdk_display_get_window_at_pointer   (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="gint">gint</link> *win_x,
+                                                         <link linkend="gint">gint</link> *win_y);</programlisting>
+<para>
+Obtains the window underneath the mouse pointer, returning the location
+of the pointer in that window in <parameter>win_x</parameter>, <parameter>win_y</parameter> for <parameter>screen</parameter>. Returns <link linkend="NULL--CAPS"><literal>NULL</literal></link> 
+if the window under the mouse pointer is not known to GDK (for example, 
+belongs to another application).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>win_x</parameter>&#160;:</term>
+<listitem><simpara> return location for x coordinate of the pointer location relative 
+   to the window origin, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>win_y</parameter>&#160;:</term>
+<listitem><simpara> return location for y coordinate of the pointer location relative
+ &amp;    to the window origin, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the window under the mouse pointer, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GdkDisplayPointerHooks" role="struct" condition="since:2.2">
+<title>GdkDisplayPointerHooks</title>
+<indexterm zone="GdkDisplayPointerHooks" role="2.2"><primary sortas="DisplayPointerHooks">GdkDisplayPointerHooks</primary></indexterm><programlisting>typedef struct {
+  void (*get_pointer)              (GdkDisplay      *display,
+				    GdkScreen      **screen,
+				    gint            *x,
+				    gint            *y,
+				    GdkModifierType *mask);
+  GdkWindow* (*window_get_pointer) (GdkDisplay      *display,
+				    GdkWindow       *window,
+				    gint            *x,
+				    gint            *y,
+				    GdkModifierType *mask);
+  GdkWindow* (*window_at_pointer)  (GdkDisplay      *display,
+				    gint            *win_x,
+				    gint            *win_y);
+} GdkDisplayPointerHooks;
+</programlisting>
+<para>
+A table of pointers to functions for getting quantities related to
+the current pointer position. Each <link linkend="GdkDisplay"><type>GdkDisplay</type></link> has a table of this type,
+which can be set using <link linkend="gdk-display-set-pointer-hooks"><function>gdk_display_set_pointer_hooks()</function></link>.
+</para>
+<para>
+This is only useful for such low-level tools as an event recorder.
+Applications should never have any reason to use this facility
+</para><variablelist role="struct">
+<varlistentry>
+<term><structfield>get_pointer</structfield>&#160;()</term>
+<listitem><simpara>Obtains the current pointer position and modifier state.
+  The position is given in coordinates relative to the window containing
+  the pointer, which is returned in <parameter>window</parameter>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>window_get_pointer</structfield>&#160;()</term>
+<listitem><simpara>Obtains the window underneath the mouse pointer.
+  Current pointer position and modifier state are returned in <parameter>x</parameter>, <parameter>y</parameter> and
+  <parameter>mask</parameter>. The position is given in coordinates relative to <parameter>window</parameter>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>window_at_pointer</structfield>&#160;()</term>
+<listitem><simpara>Obtains the window underneath the mouse pointer, 
+  returning the location of that window in <parameter>win_x</parameter>, <parameter>win_y</parameter>. Returns <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+  if the window under the mouse pointer is not known to GDK (for example,
+  belongs to another application).
+</simpara></listitem>
+</varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-set-pointer-hooks" role="function" condition="since:2.2">
+<title>gdk_display_set_pointer_hooks ()</title>
+<indexterm zone="gdk-display-set-pointer-hooks" role="2.2"><primary sortas="display_set_pointer_hooks">gdk_display_set_pointer_hooks</primary></indexterm><programlisting><link linkend="GdkDisplayPointerHooks">GdkDisplayPointerHooks</link> * gdk_display_set_pointer_hooks  (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         const <link linkend="GdkDisplayPointerHooks">GdkDisplayPointerHooks</link> *new_hooks);</programlisting>
+<para>
+This function allows for hooking into the operation
+of getting the current location of the pointer on a particular
+display. This is only useful for such low-level tools as an
+event recorder. Applications should never have any
+reason to use this facility.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>new_hooks</parameter>&#160;:</term>
+<listitem><simpara> a table of pointers to functions for getting
+  quantities related to the current pointer position,
+  or <link linkend="NULL--CAPS"><literal>NULL</literal></link> to restore the default table.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the previous pointer hook table
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-warp-pointer" role="function" condition="since:2.8">
+<title>gdk_display_warp_pointer ()</title>
+<indexterm zone="gdk-display-warp-pointer" role="2.8"><primary sortas="display_warp_pointer">gdk_display_warp_pointer</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_warp_pointer            (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y);</programlisting>
+<para>
+Warps the pointer of <parameter>display</parameter> to the point <parameter>x</parameter>,<parameter>y</parameter> on 
+the screen <parameter>screen</parameter>, unless the pointer is confined
+to a window by a grab, in which case it will be moved
+as far as allowed by the grab. Warping the pointer 
+creates events as if the user had moved the mouse 
+instantaneously to the destination.
+</para>
+<para>
+Note that the pointer should normally be under the
+control of the user. This function was added to cover
+some rare use cases like keyboard navigation support
+for the color picker in the <link linkend="GtkColorSelectionDialog"><type>GtkColorSelectionDialog</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> the screen of <parameter>display</parameter> to warp the pointer to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> the x coordinate of the destination
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> the y coordinate of the destination
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.8</para></refsect2>
+<refsect2 id="gdk-display-supports-cursor-color" role="function" condition="since:2.4">
+<title>gdk_display_supports_cursor_color ()</title>
+<indexterm zone="gdk-display-supports-cursor-color" role="2.4"><primary sortas="display_supports_cursor_color">gdk_display_supports_cursor_color</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_display_supports_cursor_color   (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if multicolored cursors are supported
+on <parameter>display</parameter>. Otherwise, cursors have only a forground
+and a background color.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether cursors can have multiple colors.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-display-supports-cursor-alpha" role="function" condition="since:2.4">
+<title>gdk_display_supports_cursor_alpha ()</title>
+<indexterm zone="gdk-display-supports-cursor-alpha" role="2.4"><primary sortas="display_supports_cursor_alpha">gdk_display_supports_cursor_alpha</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_display_supports_cursor_alpha   (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if cursors can use an 8bit alpha channel
+on <parameter>display</parameter>. Otherwise, cursors are restricted to bilevel
+alpha (i.e. a mask).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether cursors can have alpha channels.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-display-get-default-cursor-size" role="function" condition="since:2.4">
+<title>gdk_display_get_default_cursor_size ()</title>
+<indexterm zone="gdk-display-get-default-cursor-size" role="2.4"><primary sortas="display_get_default_cursor_size">gdk_display_get_default_cursor_size</primary></indexterm><programlisting><link linkend="guint">guint</link>               gdk_display_get_default_cursor_size (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns the default size to use for cursors on <parameter>display</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the default cursor size.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-display-get-maximal-cursor-size" role="function" condition="since:2.4">
+<title>gdk_display_get_maximal_cursor_size ()</title>
+<indexterm zone="gdk-display-get-maximal-cursor-size" role="2.4"><primary sortas="display_get_maximal_cursor_size">gdk_display_get_maximal_cursor_size</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_get_maximal_cursor_size (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="guint">guint</link> *width,
+                                                         <link linkend="guint">guint</link> *height);</programlisting>
+<para>
+Gets the maximal size to use for cursors on <parameter>display</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> the return location for the maximal cursor width
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> the return location for the maximal cursor height
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-display-get-default-group" role="function" condition="since:2.4">
+<title>gdk_display_get_default_group ()</title>
+<indexterm zone="gdk-display-get-default-group" role="2.4"><primary sortas="display_get_default_group">gdk_display_get_default_group</primary></indexterm><programlisting><link linkend="GdkWindow">GdkWindow</link> *         gdk_display_get_default_group       (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns the default group leader window for all toplevel windows
+on <parameter>display</parameter>. This window is implicitly created by GDK. 
+See <link linkend="gdk-window-set-group"><function>gdk_window_set_group()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The default group leader window for <parameter>display</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gdk-display-supports-selection-notification" role="function" condition="since:2.6">
+<title>gdk_display_supports_selection_notification ()</title>
+<indexterm zone="gdk-display-supports-selection-notification" role="2.6"><primary sortas="display_supports_selection_notification">gdk_display_supports_selection_notification</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_display_supports_selection_notification
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns whether <link linkend="GdkEventOwnerChange"><type>GdkEventOwnerChange</type></link> events will be 
+sent when the owner of a selection changes.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether <link linkend="GdkEventOwnerChange"><type>GdkEventOwnerChange</type></link> events will 
+              be sent.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-display-request-selection-notification" role="function" condition="since:2.6">
+<title>gdk_display_request_selection_notification ()</title>
+<indexterm zone="gdk-display-request-selection-notification" role="2.6"><primary sortas="display_request_selection_notification">gdk_display_request_selection_notification</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_display_request_selection_notification
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection);</programlisting>
+<para>
+Request <link linkend="GdkEventOwnerChange"><type>GdkEventOwnerChange</type></link> events for ownership changes
+of the selection named by the given atom.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>selection</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GdkAtom"><type>GdkAtom</type></link> naming the selection for which
+            ownership change notification is requested
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether <link linkend="GdkEventOwnerChange"><type>GdkEventOwnerChange</type></link> events will 
+              be sent.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-display-supports-clipboard-persistence" role="function" condition="since:2.6">
+<title>gdk_display_supports_clipboard_persistence ()</title>
+<indexterm zone="gdk-display-supports-clipboard-persistence" role="2.6"><primary sortas="display_supports_clipboard_persistence">gdk_display_supports_clipboard_persistence</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_display_supports_clipboard_persistence
+                                                        (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns whether the speicifed display supports clipboard
+persistance; i.e. if it's possible to store the clipboard data after an
+application has quit. On X11 this checks if a clipboard daemon is
+running.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the display supports clipboard persistance.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-display-store-clipboard" role="function" condition="since:2.6">
+<title>gdk_display_store_clipboard ()</title>
+<indexterm zone="gdk-display-store-clipboard" role="2.6"><primary sortas="display_store_clipboard">gdk_display_store_clipboard</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_store_clipboard         (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GdkWindow">GdkWindow</link> *clipboard_window,
+                                                         <link linkend="guint32">guint32</link> time_,
+                                                         const <link linkend="GdkAtom">GdkAtom</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets);</programlisting>
+<para>
+Issues a request to the clipboard manager to store the
+clipboard data. On X11, this is a special program that works
+according to the freedesktop clipboard specification, available at
+<ulink url="http://www.freedesktop.org/Standards/clipboard-manager-spec">
+http://www.freedesktop.org/Standards/clipboard-manager-spec</ulink>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara>          a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>clipboard_window</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkWindow"><type>GdkWindow</type></link> belonging to the clipboard owner
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>time_</parameter>&#160;:</term>
+<listitem><simpara>            a timestamp
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>targets</parameter>&#160;:</term>
+<listitem><simpara>	      an array of targets that should be saved, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> 
+                   if all available targets should be saved.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_targets</parameter>&#160;:</term>
+<listitem><simpara>        length of the <parameter>targets</parameter> array
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-display-supports-shapes" role="function" condition="since:2.10">
+<title>gdk_display_supports_shapes ()</title>
+<indexterm zone="gdk-display-supports-shapes" role="2.10"><primary sortas="display_supports_shapes">gdk_display_supports_shapes</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_display_supports_shapes         (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <link linkend="gdk-window-shape-combine-mask"><function>gdk_window_shape_combine_mask()</function></link> can
+be used to create shaped windows on <parameter>display</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if shaped windows are supported 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gdk-display-supports-input-shapes" role="function" condition="since:2.10">
+<title>gdk_display_supports_input_shapes ()</title>
+<indexterm zone="gdk-display-supports-input-shapes" role="2.10"><primary sortas="display_supports_input_shapes">gdk_display_supports_input_shapes</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_display_supports_input_shapes   (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <link linkend="gdk-window-input-shape-combine-mask"><function>gdk_window_input_shape_combine_mask()</function></link> can
+be used to modify the input shape of windows on <parameter>display</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if windows with modified input shape are supported 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gdk-display-supports-composite" role="function" condition="since:2.12">
+<title>gdk_display_supports_composite ()</title>
+<indexterm zone="gdk-display-supports-composite" role="2.12"><primary sortas="display_supports_composite">gdk_display_supports_composite</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_display_supports_composite      (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <link linkend="gdk-window-set-composited"><function>gdk_window_set_composited()</function></link> can be used
+to redirect drawing on the window using compositing.
+</para>
+<para>
+Currently this only works on X11 with XComposite and
+XDamage extensions available.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if windows may be composited.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+
+</refsect1>
+
+<refsect1 id="GdkDisplay.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GdkDisplay-closed" role="signal"><title>The <literal>&quot;closed&quot;</literal> signal</title>
+<indexterm zone="GdkDisplay-closed" role="2.2"><primary sortas="Display::closed">GdkDisplay::closed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                        <link linkend="gboolean">gboolean</link>    is_error,
+                                                        <link linkend="gpointer">gpointer</link>    user_data)      : Run Last</programlisting>
+<para>
+The ::closed signal is emitted when the connection to the windowing
+system for <parameter>display</parameter> is closed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> the object on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>is_error</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the display was closed due to an error
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.2</para></refsect2>
+</refsect1>
+
+
+
+</refentry>

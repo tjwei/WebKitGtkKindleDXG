@@ -1,0 +1,210 @@
+2004-07-31 20:39  ofeige
+
+	* src/prefs.h: fix opacity
+
+2004-07-31 20:39  ofeige
+
+	* src/main.c: new help function (all help stuff in a function) fix
+	  opacity
+
+2004-07-31 20:23  ofeige
+
+	* src/main.c: Delete extra \n in --help
+
+2004-07-31 00:03  ofeige
+
+	* ChangeLog, GTKTerm.prj, Makefile.am, Makefile.in, config.h.in,
+	  configure, configure.in, pixmaps/Makefile.in: Update files for
+	  Anjuta
+
+2004-07-31 00:01  ofeige
+
+	* po/: GTKTerm.pot, POTFILES.in, de.gmo, de.po: Update language
+	  files
+
+2004-07-30 21:54  ofeige
+
+	* po/de.gmo, po/de.po, src/interface.c, src/main.c, src/prefs.c,
+	  src/prefs.h: Update opacity
+
+2004-07-16 09:32  ofeige
+
+	* configure.in: Update name from GTKTerm2 to gtkterm2
+
+2004-07-13 23:37  ofeige
+
+	* src/callbacks.c: Fixed compile warnings
+
+2004-07-13 23:36  ofeige
+
+	* src/main.c: add param -X -Y
+
+2004-07-13 23:36  ofeige
+
+	* src/interface.c: Fixed:  [ 977527 ] focus lost when
+	  showTabsByOneTerminal=1  compile warnings
+
+2004-06-08 14:53  ofeige
+
+	* GTKTerm.glade, GTKTerm.gladep, GTKTerm.prj, Makefile.am,
+	  Makefile.in, aclocal.m4, autogen.sh, config.h.in, configure,
+	  configure.in, ltmain.sh, setup-gettext, po/de.gmo, po/de.po,
+	  src/Makefile.am, src/Makefile.in: Update Project to Anjuta 1.2.2
+	  Fix gettext 1.12.1 Bug
+
+2004-06-08 14:52  ofeige
+
+	* src/: callbacks.c, callbacks.h, interface.c, main.c, prefs.c,
+	  prefs.h: Add stealth modus Add transparent Add argv Params for
+	  Window positioning
+
+2004-06-08 14:33  ofeige
+
+	* GTKTerm.pws: no longer required
+
+2004-02-20 00:04  ofeige
+
+	* GTKTerm.pws, po/de.po, src/interface.c: Fix Version Number in
+	  Info Dialog Fix Menus, only functionaly menuitem are visible
+
+2004-02-18 10:59  ofeige
+
+	* src/interface.c: Fix syntax bug
+
+2004-02-18 00:42  ofeige
+
+	* src/interface.c: add rudimentary fullscreenmodus
+
+2004-02-18 00:38  ofeige
+
+	* src/: prefs.c, prefs.h: add rudimentary fullscreenmodus
+
+2004-02-18 00:35  ofeige
+
+	* src/callbacks.c: add rudimentary fullscreenmodus
+
+2004-02-17 23:50  ofeige
+
+	* GTKTerm.prj, GTKTerm.pws, Makefile.am, Makefile.in, aclocal.m4,
+	  config.h.in, config.sub, configure, configure.in, ltmain.sh,
+	  po/de.gmo, po/de.po, src/callbacks.c: Update version string to
+	  0.2.1
+
+2004-02-14 18:44  ofeige
+
+	* README: The first README with hints for configuring
+
+2004-02-14 18:23  ofeige
+
+	* po/de.gmo, po/de.po, src/interface.c, src/prefs.c: Update default
+	  Language from German to English
+
+2004-01-17 15:08  ofeige
+
+	* src/prefs.c: Change the default blue text color. Its to dark to
+	  read it on black background.
+
+2004-01-14 00:12  ofeige
+
+	* po/de.gmo, po/de.po, src/interface.c: Fix Bug: Press ALT+B the
+	  cursor does not move by words.
+
+2004-01-13 23:54  ofeige
+
+	* src/main.c: Fix Path in add_pixmap_directory for rpm an ebuild
+	  installation. Otherwise no pixmap is found
+
+2004-01-06 17:04  ofeige
+
+	* pixmaps/: gtkterm.png, gtkterm2.png: Change gtkterm.png to
+	  gtkterm2.png
+
+2004-01-06 17:02  ofeige
+
+	* GTKTerm.prj, GTKTerm.pws, Makefile.in, configure, configure.in,
+	  pixmaps/Makefile.am, pixmaps/Makefile.in, po/de.gmo, po/de.po:
+	  Change gtkterm to gtkterm2 and GTKTerm to GTKTerm2
+
+2004-01-06 16:23  ofeige
+
+	* configure.in, Makefile.am: Change target to gtkterm2
+
+2004-01-06 16:19  ofeige
+
+	* src/: Makefile.am, Makefile.in, interface.c, main.c, prefs.c:
+	  change target to gtkterm2 to allow install gtkterm-0.1.11 and
+	  gtkterm-0.2.0 a the same time
+
+2004-01-05 12:55  ofeige
+
+	* src/prefs.c: Fix configfile read terminalFont Value. Now it is
+	  possible to write font names with with-space and size
+
+2004-01-05 09:19  ofeige
+
+	* src/interface.c: Menuitem copy disable STRG-C in Terminal. Kill
+	  the menuitem
+
+2004-01-05 09:18  ofeige
+
+	* configure.in: Change Projects Name from GTKTerm to gtkterm
+
+2004-01-04 17:27  ofeige
+
+	* GTKTerm.prj, GTKTerm.pws, Makefile.am, aclocal.m4, config.h.in,
+	  configure, pixmaps/Makefile.am, pixmaps/Makefile.in,
+	  po/GTKTerm.pot, po/Makefile.in.in, po/de.gmo, po/de.po: -
+	  Downgrade to gettext 0.11.5 - fix rename gtkterm.png in Makefile
+
+2004-01-04 16:35  ofeige
+
+	* GTKTerm.gladep, GTKTerm.prj, acconfig.h, acinclude.m4,
+	  autogen.sh, setup-gettext, AUTHORS, ChangeLog, GTKTerm.glade,
+	  Makefile.am, NEWS, README, TODO, configure.in, stamp-h.in,
+	  aclocal.m4, config.guess, config.sub, ABOUT-NLS, Makefile.in,
+	  config.h.in, ltmain.sh, configure, GTKTerm.pws, po/ChangeLog,
+	  po/GTKTerm.pot, po/Makefile.in.in, po/POTFILES.in, po/de.gmo,
+	  po/de.po, src/Makefile.am, src/interface.h, src/main.c,
+	  src/support.c, src/support.h, src/callbacks.c, src/callbacks.h,
+	  src/interface.c, src/Makefile.in, src/prefs.c, src/prefs.h,
+	  intl/ChangeLog, intl/Makefile.in, intl/VERSION,
+	  intl/bindtextdom.c, intl/config.charset, intl/dcgettext.c,
+	  intl/dcigettext.c, intl/dcngettext.c, intl/dgettext.c,
+	  intl/dngettext.c, intl/explodename.c, intl/finddomain.c,
+	  intl/gettext.c, intl/gettext.h, intl/gettextP.h,
+	  intl/hash-string.h, intl/intl-compat.c, intl/l10nflist.c,
+	  intl/libgettext.h, intl/libgnuintl.h, intl/loadinfo.h,
+	  intl/loadmsgcat.c, intl/localcharset.c, intl/locale.alias,
+	  intl/localealias.c, intl/ngettext.c, intl/plural.c,
+	  intl/plural.y, intl/ref-add.sin, intl/ref-del.sin,
+	  intl/textdomain.c, m4/codeset.m4, m4/gettext.m4, m4/glibc21.m4,
+	  m4/iconv.m4, m4/isc-posix.m4, m4/lcmessage.m4, m4/progtest.m4,
+	  pixmaps/Makefile.am, pixmaps/Makefile.in, pixmaps/gtkterm.png:
+	  First Import
+
+2004-01-04 16:35  ofeige
+
+	* GTKTerm.gladep, GTKTerm.prj, acconfig.h, acinclude.m4,
+	  autogen.sh, setup-gettext, AUTHORS, ChangeLog, GTKTerm.glade,
+	  Makefile.am, NEWS, README, TODO, configure.in, stamp-h.in,
+	  aclocal.m4, config.guess, config.sub, ABOUT-NLS, Makefile.in,
+	  config.h.in, ltmain.sh, configure, GTKTerm.pws, po/ChangeLog,
+	  po/GTKTerm.pot, po/Makefile.in.in, po/POTFILES.in, po/de.gmo,
+	  po/de.po, src/Makefile.am, src/interface.h, src/main.c,
+	  src/support.c, src/support.h, src/callbacks.c, src/callbacks.h,
+	  src/interface.c, src/Makefile.in, src/prefs.c, src/prefs.h,
+	  intl/ChangeLog, intl/Makefile.in, intl/VERSION,
+	  intl/bindtextdom.c, intl/config.charset, intl/dcgettext.c,
+	  intl/dcigettext.c, intl/dcngettext.c, intl/dgettext.c,
+	  intl/dngettext.c, intl/explodename.c, intl/finddomain.c,
+	  intl/gettext.c, intl/gettext.h, intl/gettextP.h,
+	  intl/hash-string.h, intl/intl-compat.c, intl/l10nflist.c,
+	  intl/libgettext.h, intl/libgnuintl.h, intl/loadinfo.h,
+	  intl/loadmsgcat.c, intl/localcharset.c, intl/locale.alias,
+	  intl/localealias.c, intl/ngettext.c, intl/plural.c,
+	  intl/plural.y, intl/ref-add.sin, intl/ref-del.sin,
+	  intl/textdomain.c, m4/codeset.m4, m4/gettext.m4, m4/glibc21.m4,
+	  m4/iconv.m4, m4/isc-posix.m4, m4/lcmessage.m4, m4/progtest.m4,
+	  pixmaps/Makefile.am, pixmaps/Makefile.in, pixmaps/gtkterm.png:
+	  Initial revision
+

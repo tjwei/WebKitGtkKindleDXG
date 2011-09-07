@@ -1,0 +1,954 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkSettings">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkSettings.top_of_page">Settings</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Settings</refname>
+<refpurpose>Sharing settings between applications</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkSettings.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkSettings-struct">GtkSettings</link>;
+                    <link linkend="GtkSettingsValue">GtkSettingsValue</link>;
+<link linkend="GtkSettings">GtkSettings</link>*        <link linkend="gtk-settings-get-default">gtk_settings_get_default</link>            (void);
+<link linkend="GtkSettings">GtkSettings</link>*        <link linkend="gtk-settings-get-for-screen">gtk_settings_get_for_screen</link>         (<link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="void">void</link>                <link linkend="gtk-settings-install-property">gtk_settings_install_property</link>       (<link linkend="GParamSpec">GParamSpec</link> *pspec);
+<link linkend="void">void</link>                <link linkend="gtk-settings-install-property-parser">gtk_settings_install_property_parser</link>
+                                                        (<link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         <link linkend="GtkRcPropertyParser">GtkRcPropertyParser</link> parser);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-rc-property-parse-color">gtk_rc_property_parse_color</link>         (const <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="GString">GString</link> *gstring,
+                                                         <link linkend="GValue">GValue</link> *property_value);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-rc-property-parse-enum">gtk_rc_property_parse_enum</link>          (const <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="GString">GString</link> *gstring,
+                                                         <link linkend="GValue">GValue</link> *property_value);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-rc-property-parse-flags">gtk_rc_property_parse_flags</link>         (const <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="GString">GString</link> *gstring,
+                                                         <link linkend="GValue">GValue</link> *property_value);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-rc-property-parse-requisition">gtk_rc_property_parse_requisition</link>   (const <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="GString">GString</link> *gstring,
+                                                         <link linkend="GValue">GValue</link> *property_value);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-rc-property-parse-border">gtk_rc_property_parse_border</link>        (const <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="GString">GString</link> *gstring,
+                                                         <link linkend="GValue">GValue</link> *property_value);
+<link linkend="void">void</link>                <link linkend="gtk-settings-set-property-value">gtk_settings_set_property_value</link>     (<link linkend="GtkSettings">GtkSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="GtkSettingsValue">GtkSettingsValue</link> *svalue);
+<link linkend="void">void</link>                <link linkend="gtk-settings-set-string-property">gtk_settings_set_string_property</link>    (<link linkend="GtkSettings">GtkSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *v_string,
+                                                         const <link linkend="gchar">gchar</link> *origin);
+<link linkend="void">void</link>                <link linkend="gtk-settings-set-long-property">gtk_settings_set_long_property</link>      (<link linkend="GtkSettings">GtkSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="glong">glong</link> v_long,
+                                                         const <link linkend="gchar">gchar</link> *origin);
+<link linkend="void">void</link>                <link linkend="gtk-settings-set-double-property">gtk_settings_set_double_property</link>    (<link linkend="GtkSettings">GtkSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="gdouble">gdouble</link> v_double,
+                                                         const <link linkend="gchar">gchar</link> *origin);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkSettings.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkSettings
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkSettings.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkSettings--color-hash">color-hash</link>&quot;               <link linkend="GHashTable">GHashTable</link>*           : Read
+  &quot;<link linkend="GtkSettings--gtk-alternative-button-order">gtk-alternative-button-order</link>&quot; <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-alternative-sort-arrows">gtk-alternative-sort-arrows</link>&quot; <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-button-images">gtk-button-images</link>&quot;        <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-can-change-accels">gtk-can-change-accels</link>&quot;    <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-color-palette">gtk-color-palette</link>&quot;        <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-color-scheme">gtk-color-scheme</link>&quot;         <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-cursor-blink">gtk-cursor-blink</link>&quot;         <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-cursor-blink-time">gtk-cursor-blink-time</link>&quot;    <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-cursor-blink-timeout">gtk-cursor-blink-timeout</link>&quot; <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-cursor-theme-name">gtk-cursor-theme-name</link>&quot;    <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-cursor-theme-size">gtk-cursor-theme-size</link>&quot;    <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-dnd-drag-threshold">gtk-dnd-drag-threshold</link>&quot;   <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-double-click-distance">gtk-double-click-distance</link>&quot; <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-double-click-time">gtk-double-click-time</link>&quot;    <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-enable-accels">gtk-enable-accels</link>&quot;        <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-enable-animations">gtk-enable-animations</link>&quot;    <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-enable-event-sounds">gtk-enable-event-sounds</link>&quot;  <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-enable-input-feedback-sounds">gtk-enable-input-feedback-sounds</link>&quot; <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-enable-mnemonics">gtk-enable-mnemonics</link>&quot;     <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-enable-tooltips">gtk-enable-tooltips</link>&quot;      <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-entry-password-hint-timeout">gtk-entry-password-hint-timeout</link>&quot; <link linkend="guint">guint</link>                 : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-entry-select-on-focus">gtk-entry-select-on-focus</link>&quot; <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-error-bell">gtk-error-bell</link>&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-fallback-icon-theme">gtk-fallback-icon-theme</link>&quot;  <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-file-chooser-backend">gtk-file-chooser-backend</link>&quot; <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-font-name">gtk-font-name</link>&quot;            <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-fontconfig-timestamp">gtk-fontconfig-timestamp</link>&quot; <link linkend="guint">guint</link>                 : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-icon-sizes">gtk-icon-sizes</link>&quot;           <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-icon-theme-name">gtk-icon-theme-name</link>&quot;      <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-im-module">gtk-im-module</link>&quot;            <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-key-theme-name">gtk-key-theme-name</link>&quot;       <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-keynav-cursor-only">gtk-keynav-cursor-only</link>&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-keynav-wrap-around">gtk-keynav-wrap-around</link>&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-label-select-on-focus">gtk-label-select-on-focus</link>&quot; <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-menu-bar-accel">gtk-menu-bar-accel</link>&quot;       <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-menu-bar-popup-delay">gtk-menu-bar-popup-delay</link>&quot; <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-menu-images">gtk-menu-images</link>&quot;          <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-menu-popdown-delay">gtk-menu-popdown-delay</link>&quot;   <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-menu-popup-delay">gtk-menu-popup-delay</link>&quot;     <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-modules">gtk-modules</link>&quot;              <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-print-backends">gtk-print-backends</link>&quot;       <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-print-preview-command">gtk-print-preview-command</link>&quot; <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-recent-files-limit">gtk-recent-files-limit</link>&quot;   <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-recent-files-max-age">gtk-recent-files-max-age</link>&quot; <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-scrolled-window-placement">gtk-scrolled-window-placement</link>&quot; <link linkend="GtkCornerType">GtkCornerType</link>         : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-show-input-method-menu">gtk-show-input-method-menu</link>&quot; <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-show-unicode-menu">gtk-show-unicode-menu</link>&quot;    <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-sound-theme-name">gtk-sound-theme-name</link>&quot;     <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-split-cursor">gtk-split-cursor</link>&quot;         <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-theme-name">gtk-theme-name</link>&quot;           <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-timeout-expand">gtk-timeout-expand</link>&quot;       <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-timeout-initial">gtk-timeout-initial</link>&quot;      <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-timeout-repeat">gtk-timeout-repeat</link>&quot;       <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-toolbar-icon-size">gtk-toolbar-icon-size</link>&quot;    <link linkend="GtkIconSize">GtkIconSize</link>           : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-toolbar-style">gtk-toolbar-style</link>&quot;        <link linkend="GtkToolbarStyle">GtkToolbarStyle</link>       : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-tooltip-browse-mode-timeout">gtk-tooltip-browse-mode-timeout</link>&quot; <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-tooltip-browse-timeout">gtk-tooltip-browse-timeout</link>&quot; <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-tooltip-timeout">gtk-tooltip-timeout</link>&quot;      <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-touchscreen-mode">gtk-touchscreen-mode</link>&quot;     <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-xft-antialias">gtk-xft-antialias</link>&quot;        <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-xft-dpi">gtk-xft-dpi</link>&quot;              <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-xft-hinting">gtk-xft-hinting</link>&quot;          <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-xft-hintstyle">gtk-xft-hintstyle</link>&quot;        <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkSettings--gtk-xft-rgba">gtk-xft-rgba</link>&quot;             <link linkend="gchar">gchar</link>*                : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkSettings.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GtkSettings.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkSettings-struct" role="struct">
+<title>GtkSettings</title>
+<indexterm zone="GtkSettings-struct"><primary sortas="Settings">GtkSettings</primary></indexterm><programlisting>typedef struct _GtkSettings GtkSettings;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkSettingsValue" role="struct">
+<title>GtkSettingsValue</title>
+<indexterm zone="GtkSettingsValue"><primary sortas="SettingsValue">GtkSettingsValue</primary></indexterm><programlisting>typedef struct {
+  /* origin should be something like "filename:linenumber" for rc files,
+   * or e.g. "XProperty" for other sources
+   */
+  gchar *origin;
+
+  /* valid types are LONG, DOUBLE and STRING corresponding to the token parsed,
+   * or a GSTRING holding an unparsed statement
+   */
+  GValue value;
+} GtkSettingsValue;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-settings-get-default" role="function">
+<title>gtk_settings_get_default ()</title>
+<indexterm zone="gtk-settings-get-default"><primary sortas="settings_get_default">gtk_settings_get_default</primary></indexterm><programlisting><link linkend="GtkSettings">GtkSettings</link>*        gtk_settings_get_default            (void);</programlisting>
+<para>
+Gets the <link linkend="GtkSettings"><type>GtkSettings</type></link> object for the default GDK screen, creating
+it if necessary. See <link linkend="gtk-settings-get-for-screen"><function>gtk_settings_get_for_screen()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GtkSettings"><type>GtkSettings</type></link> object. If there is no default
+ screen, then returns <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-settings-get-for-screen" role="function" condition="since:2.2">
+<title>gtk_settings_get_for_screen ()</title>
+<indexterm zone="gtk-settings-get-for-screen" role="2.2"><primary sortas="settings_get_for_screen">gtk_settings_get_for_screen</primary></indexterm><programlisting><link linkend="GtkSettings">GtkSettings</link>*        gtk_settings_get_for_screen         (<link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<para>
+Gets the <link linkend="GtkSettings"><type>GtkSettings</type></link> object for <parameter>screen</parameter>, creating it if necessary.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GtkSettings"><type>GtkSettings</type></link> object.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gtk-settings-install-property" role="function">
+<title>gtk_settings_install_property ()</title>
+<indexterm zone="gtk-settings-install-property"><primary sortas="settings_install_property">gtk_settings_install_property</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_settings_install_property       (<link linkend="GParamSpec">GParamSpec</link> *pspec);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pspec</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-settings-install-property-parser" role="function">
+<title>gtk_settings_install_property_parser ()</title>
+<indexterm zone="gtk-settings-install-property-parser"><primary sortas="settings_install_property_parser">gtk_settings_install_property_parser</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_settings_install_property_parser
+                                                        (<link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         <link linkend="GtkRcPropertyParser">GtkRcPropertyParser</link> parser);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pspec</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parser</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-rc-property-parse-color" role="function">
+<title>gtk_rc_property_parse_color ()</title>
+<indexterm zone="gtk-rc-property-parse-color"><primary sortas="rc_property_parse_color">gtk_rc_property_parse_color</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_rc_property_parse_color         (const <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="GString">GString</link> *gstring,
+                                                         <link linkend="GValue">GValue</link> *property_value);</programlisting>
+<para>
+A <link linkend="GtkRcPropertyParser"><type>GtkRcPropertyParser</type></link> for use with <link linkend="gtk-settings-install-property-parser"><function>gtk_settings_install_property_parser()</function></link>
+or <link linkend="gtk-widget-class-install-style-property-parser"><function>gtk_widget_class_install_style_property_parser()</function></link> which parses a
+color given either by its name or in the form 
+<literal>{ red, green, blue }</literal> where <link linkend="red"><literal>red</literal></link>, <link linkend="green"><literal>green</literal></link> and
+<link linkend="blue"><literal>blue</literal></link> are integers between 0 and 65535 or floating-point numbers
+between 0 and 1.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pspec</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GParamSpec"><type>GParamSpec</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gstring</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GString"><type>GString</type></link> to be parsed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>property_value</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GValue"><type>GValue</type></link> which must hold <link linkend="GdkColor"><type>GdkColor</type></link> values.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>gstring</parameter> could be parsed and <parameter>property_value</parameter>
+has been set to the resulting <link linkend="GdkColor"><type>GdkColor</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-rc-property-parse-enum" role="function">
+<title>gtk_rc_property_parse_enum ()</title>
+<indexterm zone="gtk-rc-property-parse-enum"><primary sortas="rc_property_parse_enum">gtk_rc_property_parse_enum</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_rc_property_parse_enum          (const <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="GString">GString</link> *gstring,
+                                                         <link linkend="GValue">GValue</link> *property_value);</programlisting>
+<para>
+A <link linkend="GtkRcPropertyParser"><type>GtkRcPropertyParser</type></link> for use with <link linkend="gtk-settings-install-property-parser"><function>gtk_settings_install_property_parser()</function></link>
+or <link linkend="gtk-widget-class-install-style-property-parser"><function>gtk_widget_class_install_style_property_parser()</function></link> which parses a single
+enumeration value.
+</para>
+<para>
+The enumeration value can be specified by its name, its nickname or
+its numeric value. For consistency with flags parsing, the value
+may be surrounded by parentheses.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pspec</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GParamSpec"><type>GParamSpec</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gstring</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GString"><type>GString</type></link> to be parsed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>property_value</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GValue"><type>GValue</type></link> which must hold enum values.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>gstring</parameter> could be parsed and <parameter>property_value</parameter>
+has been set to the resulting <link linkend="GEnumValue"><type>GEnumValue</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-rc-property-parse-flags" role="function">
+<title>gtk_rc_property_parse_flags ()</title>
+<indexterm zone="gtk-rc-property-parse-flags"><primary sortas="rc_property_parse_flags">gtk_rc_property_parse_flags</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_rc_property_parse_flags         (const <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="GString">GString</link> *gstring,
+                                                         <link linkend="GValue">GValue</link> *property_value);</programlisting>
+<para>
+A <link linkend="GtkRcPropertyParser"><type>GtkRcPropertyParser</type></link> for use with <link linkend="gtk-settings-install-property-parser"><function>gtk_settings_install_property_parser()</function></link>
+or <link linkend="gtk-widget-class-install-style-property-parser"><function>gtk_widget_class_install_style_property_parser()</function></link> which parses flags. 
+</para>
+<para>
+Flags can be specified by their name, their nickname or
+numerically. Multiple flags can be specified in the form 
+<literal>"( flag1 | flag2 | ... )"</literal>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pspec</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GParamSpec"><type>GParamSpec</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gstring</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GString"><type>GString</type></link> to be parsed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>property_value</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GValue"><type>GValue</type></link> which must hold flags values.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>gstring</parameter> could be parsed and <parameter>property_value</parameter>
+has been set to the resulting flags value.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-rc-property-parse-requisition" role="function">
+<title>gtk_rc_property_parse_requisition ()</title>
+<indexterm zone="gtk-rc-property-parse-requisition"><primary sortas="rc_property_parse_requisition">gtk_rc_property_parse_requisition</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_rc_property_parse_requisition   (const <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="GString">GString</link> *gstring,
+                                                         <link linkend="GValue">GValue</link> *property_value);</programlisting>
+<para>
+A <link linkend="GtkRcPropertyParser"><type>GtkRcPropertyParser</type></link> for use with <link linkend="gtk-settings-install-property-parser"><function>gtk_settings_install_property_parser()</function></link>
+or <link linkend="gtk-widget-class-install-style-property-parser"><function>gtk_widget_class_install_style_property_parser()</function></link> which parses a
+requisition in the form 
+<literal>"{ width, height }"</literal> for integers <link linkend="width"><literal>width</literal></link> and <link linkend="height"><literal>height</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pspec</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GParamSpec"><type>GParamSpec</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gstring</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GString"><type>GString</type></link> to be parsed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>property_value</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GValue"><type>GValue</type></link> which must hold boxed values.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>gstring</parameter> could be parsed and <parameter>property_value</parameter>
+has been set to the resulting <link linkend="GtkRequisition"><type>GtkRequisition</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-rc-property-parse-border" role="function">
+<title>gtk_rc_property_parse_border ()</title>
+<indexterm zone="gtk-rc-property-parse-border"><primary sortas="rc_property_parse_border">gtk_rc_property_parse_border</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_rc_property_parse_border        (const <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="GString">GString</link> *gstring,
+                                                         <link linkend="GValue">GValue</link> *property_value);</programlisting>
+<para>
+A <link linkend="GtkRcPropertyParser"><type>GtkRcPropertyParser</type></link> for use with <link linkend="gtk-settings-install-property-parser"><function>gtk_settings_install_property_parser()</function></link>
+or <link linkend="gtk-widget-class-install-style-property-parser"><function>gtk_widget_class_install_style_property_parser()</function></link> which parses
+borders in the form 
+<literal>"{ left, right, top, bottom }"</literal> for integers 
+<link linkend="left"><literal>left</literal></link>, <link linkend="right"><literal>right</literal></link>, <link linkend="top"><literal>top</literal></link> and <link linkend="bottom"><literal>bottom</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pspec</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GParamSpec"><type>GParamSpec</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gstring</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GString"><type>GString</type></link> to be parsed
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>property_value</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GValue"><type>GValue</type></link> which must hold boxed values.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>gstring</parameter> could be parsed and <parameter>property_value</parameter>
+has been set to the resulting <link linkend="GtkBorder"><type>GtkBorder</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-settings-set-property-value" role="function">
+<title>gtk_settings_set_property_value ()</title>
+<indexterm zone="gtk-settings-set-property-value"><primary sortas="settings_set_property_value">gtk_settings_set_property_value</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_settings_set_property_value     (<link linkend="GtkSettings">GtkSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="GtkSettingsValue">GtkSettingsValue</link> *svalue);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>svalue</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-settings-set-string-property" role="function">
+<title>gtk_settings_set_string_property ()</title>
+<indexterm zone="gtk-settings-set-string-property"><primary sortas="settings_set_string_property">gtk_settings_set_string_property</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_settings_set_string_property    (<link linkend="GtkSettings">GtkSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *v_string,
+                                                         const <link linkend="gchar">gchar</link> *origin);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>v_string</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>origin</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-settings-set-long-property" role="function">
+<title>gtk_settings_set_long_property ()</title>
+<indexterm zone="gtk-settings-set-long-property"><primary sortas="settings_set_long_property">gtk_settings_set_long_property</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_settings_set_long_property      (<link linkend="GtkSettings">GtkSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="glong">glong</link> v_long,
+                                                         const <link linkend="gchar">gchar</link> *origin);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>v_long</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>origin</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-settings-set-double-property" role="function">
+<title>gtk_settings_set_double_property ()</title>
+<indexterm zone="gtk-settings-set-double-property"><primary sortas="settings_set_double_property">gtk_settings_set_double_property</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_settings_set_double_property    (<link linkend="GtkSettings">GtkSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="gdouble">gdouble</link> v_double,
+                                                         const <link linkend="gchar">gchar</link> *origin);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>v_double</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>origin</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkSettings.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkSettings--color-hash" role="property"><title>The <literal>&quot;color-hash&quot;</literal> property</title>
+<indexterm zone="GtkSettings--color-hash" role="2.10"><primary sortas="Settings:color-hash">GtkSettings:color-hash</primary></indexterm><programlisting>  &quot;color-hash&quot;               <link linkend="GHashTable">GHashTable</link>*           : Read</programlisting>
+<para>
+Holds a hash table representation of the <link linkend="GtkSettings--gtk-color-scheme"><type>"gtk-color-scheme"</type></link>
+setting, mapping color names to <link linkend="GdkColor"><type>GdkColor</type></link><!-- -->s.</para>
+<para>
+</para><para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-alternative-button-order" role="property"><title>The <literal>&quot;gtk-alternative-button-order&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-alternative-button-order"><primary sortas="Settings:gtk-alternative-button-order">GtkSettings:gtk-alternative-button-order</primary></indexterm><programlisting>  &quot;gtk-alternative-button-order&quot; <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether buttons in dialogs should use the alternative button order.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-alternative-sort-arrows" role="property"><title>The <literal>&quot;gtk-alternative-sort-arrows&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-alternative-sort-arrows" role="2.12"><primary sortas="Settings:gtk-alternative-sort-arrows">GtkSettings:gtk-alternative-sort-arrows</primary></indexterm><programlisting>  &quot;gtk-alternative-sort-arrows&quot; <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Controls the direction of the sort indicators in sorted list and tree
+views. By default an arrow pointing down means the column is sorted
+in ascending order. When set to <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, this order will be inverted.</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-button-images" role="property"><title>The <literal>&quot;gtk-button-images&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-button-images"><primary sortas="Settings:gtk-button-images">GtkSettings:gtk-button-images</primary></indexterm><programlisting>  &quot;gtk-button-images&quot;        <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether images should be shown on buttons.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-can-change-accels" role="property"><title>The <literal>&quot;gtk-can-change-accels&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-can-change-accels"><primary sortas="Settings:gtk-can-change-accels">GtkSettings:gtk-can-change-accels</primary></indexterm><programlisting>  &quot;gtk-can-change-accels&quot;    <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether menu accelerators can be changed by pressing a key over the menu item.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-color-palette" role="property"><title>The <literal>&quot;gtk-color-palette&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-color-palette"><primary sortas="Settings:gtk-color-palette">GtkSettings:gtk-color-palette</primary></indexterm><programlisting>  &quot;gtk-color-palette&quot;        <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Palette to use in the color selector.</para><para>Default value: "black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger blue:pink:light green:gray10:gray30:gray75:gray90"</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-color-scheme" role="property"><title>The <literal>&quot;gtk-color-scheme&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-color-scheme" role="2.10"><primary sortas="Settings:gtk-color-scheme">GtkSettings:gtk-color-scheme</primary></indexterm><programlisting>  &quot;gtk-color-scheme&quot;         <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+A palette of named colors for use in themes. The format of the string is
+<programlisting>
+name1: color1
+name2: color2
+...
+</programlisting>
+Color names must be acceptable as identifiers in the 
+<link linkend="gtk-Resource-Files">gtkrc</link> syntax, and
+color specifications must be in the format accepted by
+<link linkend="gdk-color-parse"><function>gdk_color_parse()</function></link>.
+</para>
+<para>
+Note that due to the way the color tables from different sources are
+merged, color specifications will be converted to hexadecimal form
+when getting this property.
+</para>
+<para>
+Starting with GTK+ 2.12, the entries can alternatively be separated
+by ';' instead of newlines:
+<programlisting>
+name1: color1; name2: color2; ...
+</programlisting></para>
+<para>
+</para><para>Default value: ""</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-cursor-blink" role="property"><title>The <literal>&quot;gtk-cursor-blink&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-cursor-blink"><primary sortas="Settings:gtk-cursor-blink">GtkSettings:gtk-cursor-blink</primary></indexterm><programlisting>  &quot;gtk-cursor-blink&quot;         <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether the cursor should blink. 
+</para>
+<para>
+Also see the <link linkend="GtkSettings--gtk-cursor-blink-timeout"><type>"gtk-cursor-blink-timeout"</type></link> setting, 
+which allows more flexible control over cursor blinking.</para>
+<para>
+</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-cursor-blink-time" role="property"><title>The <literal>&quot;gtk-cursor-blink-time&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-cursor-blink-time"><primary sortas="Settings:gtk-cursor-blink-time">GtkSettings:gtk-cursor-blink-time</primary></indexterm><programlisting>  &quot;gtk-cursor-blink-time&quot;    <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Length of the cursor blink cycle, in milliseconds.</para><para>Allowed values: &gt;= 100</para>
+<para>Default value: 1200</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-cursor-blink-timeout" role="property"><title>The <literal>&quot;gtk-cursor-blink-timeout&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-cursor-blink-timeout" role="2.12"><primary sortas="Settings:gtk-cursor-blink-timeout">GtkSettings:gtk-cursor-blink-timeout</primary></indexterm><programlisting>  &quot;gtk-cursor-blink-timeout&quot; <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+Time after which the cursor stops blinking, in seconds.
+The timer is reset after each user interaction.
+</para>
+<para>
+Setting this to zero has the same effect as setting
+<link linkend="GtkSettings--gtk-cursor-blink"><type>"gtk-cursor-blink"</type></link> to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.</para>
+<para>
+</para><para>Allowed values: &gt;= 1</para>
+<para>Default value: 2147483647</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-cursor-theme-name" role="property"><title>The <literal>&quot;gtk-cursor-theme-name&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-cursor-theme-name"><primary sortas="Settings:gtk-cursor-theme-name">GtkSettings:gtk-cursor-theme-name</primary></indexterm><programlisting>  &quot;gtk-cursor-theme-name&quot;    <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Name of the cursor theme to use, or NULL to use the default theme.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-cursor-theme-size" role="property"><title>The <literal>&quot;gtk-cursor-theme-size&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-cursor-theme-size"><primary sortas="Settings:gtk-cursor-theme-size">GtkSettings:gtk-cursor-theme-size</primary></indexterm><programlisting>  &quot;gtk-cursor-theme-size&quot;    <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Size to use for cursors, or 0 to use the default size.</para><para>Allowed values: [0,128]</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-dnd-drag-threshold" role="property"><title>The <literal>&quot;gtk-dnd-drag-threshold&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-dnd-drag-threshold"><primary sortas="Settings:gtk-dnd-drag-threshold">GtkSettings:gtk-dnd-drag-threshold</primary></indexterm><programlisting>  &quot;gtk-dnd-drag-threshold&quot;   <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Number of pixels the cursor can move before dragging.</para><para>Allowed values: &gt;= 1</para>
+<para>Default value: 8</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-double-click-distance" role="property"><title>The <literal>&quot;gtk-double-click-distance&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-double-click-distance"><primary sortas="Settings:gtk-double-click-distance">GtkSettings:gtk-double-click-distance</primary></indexterm><programlisting>  &quot;gtk-double-click-distance&quot; <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Maximum distance allowed between two clicks for them to be considered a double click (in pixels).</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 5</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-double-click-time" role="property"><title>The <literal>&quot;gtk-double-click-time&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-double-click-time"><primary sortas="Settings:gtk-double-click-time">GtkSettings:gtk-double-click-time</primary></indexterm><programlisting>  &quot;gtk-double-click-time&quot;    <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Maximum time allowed between two clicks for them to be considered a double click (in milliseconds).</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 250</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-enable-accels" role="property"><title>The <literal>&quot;gtk-enable-accels&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-enable-accels" role="2.12"><primary sortas="Settings:gtk-enable-accels">GtkSettings:gtk-enable-accels</primary></indexterm><programlisting>  &quot;gtk-enable-accels&quot;        <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether menu items should have visible accelerators which can be
+activated.</para>
+<para>
+</para><para>Default value: TRUE</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-enable-animations" role="property"><title>The <literal>&quot;gtk-enable-animations&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-enable-animations"><primary sortas="Settings:gtk-enable-animations">GtkSettings:gtk-enable-animations</primary></indexterm><programlisting>  &quot;gtk-enable-animations&quot;    <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether to enable toolkit-wide animations.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-enable-event-sounds" role="property"><title>The <literal>&quot;gtk-enable-event-sounds&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-enable-event-sounds" role="2.14"><primary sortas="Settings:gtk-enable-event-sounds">GtkSettings:gtk-enable-event-sounds</primary></indexterm><programlisting>  &quot;gtk-enable-event-sounds&quot;  <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether to play any event sounds at all.
+</para>
+<para>
+See the <ulink url="http://www.freedesktop.org/wiki/Specifications/sound-theme-spec">Sound Theme spec</ulink> 
+for more information on event sounds and sound themes.
+</para>
+<para>
+GTK+ itself does not support event sounds, you have to use a loadable 
+module like the one that comes with libcanberra.</para>
+<para>
+</para><para>Default value: TRUE</para>
+<para>Since 2.14</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-enable-input-feedback-sounds" role="property"><title>The <literal>&quot;gtk-enable-input-feedback-sounds&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-enable-input-feedback-sounds" role="2.14"><primary sortas="Settings:gtk-enable-input-feedback-sounds">GtkSettings:gtk-enable-input-feedback-sounds</primary></indexterm><programlisting>  &quot;gtk-enable-input-feedback-sounds&quot; <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether to play event sounds as feedback to user input.
+</para>
+<para>
+See the <ulink url="http://www.freedesktop.org/wiki/Specifications/sound-theme-spec">Sound Theme spec</ulink> 
+for more information on event sounds and sound themes.
+</para>
+<para>
+GTK+ itself does not support event sounds, you have to use a loadable 
+module like the one that comes with libcanberra.</para>
+<para>
+</para><para>Default value: TRUE</para>
+<para>Since 2.14</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-enable-mnemonics" role="property"><title>The <literal>&quot;gtk-enable-mnemonics&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-enable-mnemonics" role="2.12"><primary sortas="Settings:gtk-enable-mnemonics">GtkSettings:gtk-enable-mnemonics</primary></indexterm><programlisting>  &quot;gtk-enable-mnemonics&quot;     <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether labels and menu items should have visible mnemonics which
+can be activated.</para>
+<para>
+</para><para>Default value: TRUE</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-enable-tooltips" role="property"><title>The <literal>&quot;gtk-enable-tooltips&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-enable-tooltips" role="2.14"><primary sortas="Settings:gtk-enable-tooltips">GtkSettings:gtk-enable-tooltips</primary></indexterm><programlisting>  &quot;gtk-enable-tooltips&quot;      <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether tooltips should be shown on widgets.</para>
+<para>
+</para><para>Default value: TRUE</para>
+<para>Since 2.14</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-entry-password-hint-timeout" role="property"><title>The <literal>&quot;gtk-entry-password-hint-timeout&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-entry-password-hint-timeout" role="2.10"><primary sortas="Settings:gtk-entry-password-hint-timeout">GtkSettings:gtk-entry-password-hint-timeout</primary></indexterm><programlisting>  &quot;gtk-entry-password-hint-timeout&quot; <link linkend="guint">guint</link>                 : Read / Write</programlisting>
+<para>
+How long to show the last input character in hidden
+entries. This value is in milliseconds. 0 disables showing the
+last char. 600 is a good value for enabling it.</para>
+<para>
+</para><para>Default value: 0</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-entry-select-on-focus" role="property"><title>The <literal>&quot;gtk-entry-select-on-focus&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-entry-select-on-focus"><primary sortas="Settings:gtk-entry-select-on-focus">GtkSettings:gtk-entry-select-on-focus</primary></indexterm><programlisting>  &quot;gtk-entry-select-on-focus&quot; <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether to select the contents of an entry when it is focused.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-error-bell" role="property"><title>The <literal>&quot;gtk-error-bell&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-error-bell" role="2.12"><primary sortas="Settings:gtk-error-bell">GtkSettings:gtk-error-bell</primary></indexterm><programlisting>  &quot;gtk-error-bell&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+When <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, keyboard navigation and other input-related errors
+will cause a beep. Since the error bell is implemented using
+<link linkend="gdk-window-beep"><function>gdk_window_beep()</function></link>, the windowing system may offer ways to
+configure the error bell in many ways, such as flashing the
+window or similar visual effects.</para>
+<para>
+</para><para>Default value: TRUE</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-fallback-icon-theme" role="property"><title>The <literal>&quot;gtk-fallback-icon-theme&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-fallback-icon-theme"><primary sortas="Settings:gtk-fallback-icon-theme">GtkSettings:gtk-fallback-icon-theme</primary></indexterm><programlisting>  &quot;gtk-fallback-icon-theme&quot;  <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Name of a icon theme to fall back to.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-file-chooser-backend" role="property"><title>The <literal>&quot;gtk-file-chooser-backend&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-file-chooser-backend"><primary sortas="Settings:gtk-file-chooser-backend">GtkSettings:gtk-file-chooser-backend</primary></indexterm><programlisting>  &quot;gtk-file-chooser-backend&quot; <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Name of the GtkFileChooser backend to use by default.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-font-name" role="property"><title>The <literal>&quot;gtk-font-name&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-font-name"><primary sortas="Settings:gtk-font-name">GtkSettings:gtk-font-name</primary></indexterm><programlisting>  &quot;gtk-font-name&quot;            <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Name of default font to use.</para><para>Default value: "Sans 10"</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-fontconfig-timestamp" role="property"><title>The <literal>&quot;gtk-fontconfig-timestamp&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-fontconfig-timestamp"><primary sortas="Settings:gtk-fontconfig-timestamp">GtkSettings:gtk-fontconfig-timestamp</primary></indexterm><programlisting>  &quot;gtk-fontconfig-timestamp&quot; <link linkend="guint">guint</link>                 : Read / Write</programlisting>
+<para>Timestamp of current fontconfig configuration.</para><para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-icon-sizes" role="property"><title>The <literal>&quot;gtk-icon-sizes&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-icon-sizes"><primary sortas="Settings:gtk-icon-sizes">GtkSettings:gtk-icon-sizes</primary></indexterm><programlisting>  &quot;gtk-icon-sizes&quot;           <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+A list of icon sizes. The list is separated by colons, and
+item has the form:
+</para>
+<para>
+<replaceable>size-name</replaceable> = <replaceable>width</replaceable> , <replaceable>height</replaceable>
+</para>
+<para>
+E.g. "gtk-menu=16,16:gtk-button=20,20:gtk-dialog=48,48". 
+GTK+ itself use the following named icon sizes: gtk-menu, 
+gtk-button, gtk-small-toolbar, gtk-large-toolbar, gtk-dnd, 
+gtk-dialog. Applications can register their own named icon 
+sizes with <link linkend="gtk-icon-size-register"><function>gtk_icon_size_register()</function></link>.</para>
+<para>
+</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-icon-theme-name" role="property"><title>The <literal>&quot;gtk-icon-theme-name&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-icon-theme-name"><primary sortas="Settings:gtk-icon-theme-name">GtkSettings:gtk-icon-theme-name</primary></indexterm><programlisting>  &quot;gtk-icon-theme-name&quot;      <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Name of icon theme to use.</para><para>Default value: "hicolor"</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-im-module" role="property"><title>The <literal>&quot;gtk-im-module&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-im-module"><primary sortas="Settings:gtk-im-module">GtkSettings:gtk-im-module</primary></indexterm><programlisting>  &quot;gtk-im-module&quot;            <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+Which IM (input method) module should be used by default. This is the 
+input method that will be used if the user has not explicitly chosen 
+another input method from the IM context menu.  
+</para>
+<para>
+See <link linkend="GtkIMContext"><type>GtkIMContext</type></link> and see the <link linkend="GtkSettings--gtk-show-input-method-menu"><type>"gtk-show-input-method-menu"</type></link> property.</para>
+<para>
+</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-key-theme-name" role="property"><title>The <literal>&quot;gtk-key-theme-name&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-key-theme-name"><primary sortas="Settings:gtk-key-theme-name">GtkSettings:gtk-key-theme-name</primary></indexterm><programlisting>  &quot;gtk-key-theme-name&quot;       <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Name of key theme RC file to load.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-keynav-cursor-only" role="property"><title>The <literal>&quot;gtk-keynav-cursor-only&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-keynav-cursor-only" role="2.12"><primary sortas="Settings:gtk-keynav-cursor-only">GtkSettings:gtk-keynav-cursor-only</primary></indexterm><programlisting>  &quot;gtk-keynav-cursor-only&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+When <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, keyboard navigation should be able to reach all widgets
+by using the cursor keys only. Tab, Shift etc. keys can't be expected
+to be present on the used input device.</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-keynav-wrap-around" role="property"><title>The <literal>&quot;gtk-keynav-wrap-around&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-keynav-wrap-around" role="2.12"><primary sortas="Settings:gtk-keynav-wrap-around">GtkSettings:gtk-keynav-wrap-around</primary></indexterm><programlisting>  &quot;gtk-keynav-wrap-around&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+When <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, some widgets will wrap around when doing keyboard
+navigation, such as menus, menubars and notebooks.</para>
+<para>
+</para><para>Default value: TRUE</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-label-select-on-focus" role="property"><title>The <literal>&quot;gtk-label-select-on-focus&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-label-select-on-focus"><primary sortas="Settings:gtk-label-select-on-focus">GtkSettings:gtk-label-select-on-focus</primary></indexterm><programlisting>  &quot;gtk-label-select-on-focus&quot; <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether to select the contents of a selectable label when it is focused.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-menu-bar-accel" role="property"><title>The <literal>&quot;gtk-menu-bar-accel&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-menu-bar-accel"><primary sortas="Settings:gtk-menu-bar-accel">GtkSettings:gtk-menu-bar-accel</primary></indexterm><programlisting>  &quot;gtk-menu-bar-accel&quot;       <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Keybinding to activate the menu bar.</para><para>Default value: "F10"</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-menu-bar-popup-delay" role="property"><title>The <literal>&quot;gtk-menu-bar-popup-delay&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-menu-bar-popup-delay"><primary sortas="Settings:gtk-menu-bar-popup-delay">GtkSettings:gtk-menu-bar-popup-delay</primary></indexterm><programlisting>  &quot;gtk-menu-bar-popup-delay&quot; <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Delay before the submenus of a menu bar appear.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-menu-images" role="property"><title>The <literal>&quot;gtk-menu-images&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-menu-images"><primary sortas="Settings:gtk-menu-images">GtkSettings:gtk-menu-images</primary></indexterm><programlisting>  &quot;gtk-menu-images&quot;          <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether images should be shown in menus.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-menu-popdown-delay" role="property"><title>The <literal>&quot;gtk-menu-popdown-delay&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-menu-popdown-delay"><primary sortas="Settings:gtk-menu-popdown-delay">GtkSettings:gtk-menu-popdown-delay</primary></indexterm><programlisting>  &quot;gtk-menu-popdown-delay&quot;   <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>The time before hiding a submenu when the pointer is moving towards the submenu.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 1000</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-menu-popup-delay" role="property"><title>The <literal>&quot;gtk-menu-popup-delay&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-menu-popup-delay"><primary sortas="Settings:gtk-menu-popup-delay">GtkSettings:gtk-menu-popup-delay</primary></indexterm><programlisting>  &quot;gtk-menu-popup-delay&quot;     <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Minimum time the pointer must stay over a menu item before the submenu appear.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 225</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-modules" role="property"><title>The <literal>&quot;gtk-modules&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-modules"><primary sortas="Settings:gtk-modules">GtkSettings:gtk-modules</primary></indexterm><programlisting>  &quot;gtk-modules&quot;              <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>List of currently active GTK modules.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-print-backends" role="property"><title>The <literal>&quot;gtk-print-backends&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-print-backends" role="2.10"><primary sortas="Settings:gtk-print-backends">GtkSettings:gtk-print-backends</primary></indexterm><programlisting>  &quot;gtk-print-backends&quot;       <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+A comma-separated list of print backends to use in the print
+dialog. Available print backends depend on the GTK+ installation,
+and may include "pdf", "cups" or "lpr".</para>
+<para>
+</para><para>Default value: "file,cups"</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-print-preview-command" role="property"><title>The <literal>&quot;gtk-print-preview-command&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-print-preview-command" role="2.10"><primary sortas="Settings:gtk-print-preview-command">GtkSettings:gtk-print-preview-command</primary></indexterm><programlisting>  &quot;gtk-print-preview-command&quot; <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+A command to run for displaying the print preview. The command
+should contain a <link linkend="f"><literal>f</literal></link> placeholder, which will get replaced by
+the path to the pdf file. The command may also contain a <link linkend="s"><literal>s</literal></link>
+placeholder, which will get replaced by the path to a file
+containing the print settings in the format produced by 
+<link linkend="gtk-print-settings-to-file"><function>gtk_print_settings_to_file()</function></link>.
+</para>
+<para>
+The preview application is responsible for removing the pdf file
+and the print settings file when it is done.</para>
+<para>
+</para><para>Default value: "evince --unlink-tempfile --preview --print-settings %s %f"</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-recent-files-limit" role="property"><title>The <literal>&quot;gtk-recent-files-limit&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-recent-files-limit" role="2.12"><primary sortas="Settings:gtk-recent-files-limit">GtkSettings:gtk-recent-files-limit</primary></indexterm><programlisting>  &quot;gtk-recent-files-limit&quot;   <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+The number of recently used files that should be displayed by default by
+<link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link> implementations and by the <link linkend="GtkFileChooser"><type>GtkFileChooser</type></link>. A value of
+-1 means every recently used file stored.</para>
+<para>
+</para><para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 50</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-recent-files-max-age" role="property"><title>The <literal>&quot;gtk-recent-files-max-age&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-recent-files-max-age" role="2.14"><primary sortas="Settings:gtk-recent-files-max-age">GtkSettings:gtk-recent-files-max-age</primary></indexterm><programlisting>  &quot;gtk-recent-files-max-age&quot; <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+The maximum age, in days, of the items inside the recently used
+resources list. Items older than this setting will be excised
+from the list. If set to 0, the list will always be empty; if
+set to -1, no item will be removed.</para>
+<para>
+</para><para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 30</para>
+<para>Since 2.14</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-scrolled-window-placement" role="property"><title>The <literal>&quot;gtk-scrolled-window-placement&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-scrolled-window-placement" role="2.10"><primary sortas="Settings:gtk-scrolled-window-placement">GtkSettings:gtk-scrolled-window-placement</primary></indexterm><programlisting>  &quot;gtk-scrolled-window-placement&quot; <link linkend="GtkCornerType">GtkCornerType</link>         : Read / Write</programlisting>
+<para>
+Where the contents of scrolled windows are located with respect to the 
+scrollbars, if not overridden by the scrolled window's own placement.</para>
+<para>
+</para><para>Default value: GTK_CORNER_TOP_LEFT</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-show-input-method-menu" role="property"><title>The <literal>&quot;gtk-show-input-method-menu&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-show-input-method-menu"><primary sortas="Settings:gtk-show-input-method-menu">GtkSettings:gtk-show-input-method-menu</primary></indexterm><programlisting>  &quot;gtk-show-input-method-menu&quot; <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the context menus of entries and text views should offer to change the input method.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-show-unicode-menu" role="property"><title>The <literal>&quot;gtk-show-unicode-menu&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-show-unicode-menu"><primary sortas="Settings:gtk-show-unicode-menu">GtkSettings:gtk-show-unicode-menu</primary></indexterm><programlisting>  &quot;gtk-show-unicode-menu&quot;    <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the context menus of entries and text views should offer to insert control characters.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-sound-theme-name" role="property"><title>The <literal>&quot;gtk-sound-theme-name&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-sound-theme-name" role="2.14"><primary sortas="Settings:gtk-sound-theme-name">GtkSettings:gtk-sound-theme-name</primary></indexterm><programlisting>  &quot;gtk-sound-theme-name&quot;     <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+The XDG sound theme to use for event sounds.
+</para>
+<para>
+See the <ulink url="http://www.freedesktop.org/wiki/Specifications/sound-theme-spec">Sound Theme spec</ulink> 
+for more information on event sounds and sound themes.
+</para>
+<para>
+GTK+ itself does not support event sounds, you have to use a loadable 
+module like the one that comes with libcanberra.</para>
+<para>
+</para><para>Default value: "freedesktop"</para>
+<para>Since 2.14</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-split-cursor" role="property"><title>The <literal>&quot;gtk-split-cursor&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-split-cursor"><primary sortas="Settings:gtk-split-cursor">GtkSettings:gtk-split-cursor</primary></indexterm><programlisting>  &quot;gtk-split-cursor&quot;         <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether two cursors should be displayed for mixed left-to-right and right-to-left text.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-theme-name" role="property"><title>The <literal>&quot;gtk-theme-name&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-theme-name"><primary sortas="Settings:gtk-theme-name">GtkSettings:gtk-theme-name</primary></indexterm><programlisting>  &quot;gtk-theme-name&quot;           <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Name of theme RC file to load.</para><para>Default value: "Raleigh"</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-timeout-expand" role="property"><title>The <literal>&quot;gtk-timeout-expand&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-timeout-expand"><primary sortas="Settings:gtk-timeout-expand">GtkSettings:gtk-timeout-expand</primary></indexterm><programlisting>  &quot;gtk-timeout-expand&quot;       <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Expand value for timeouts, when a widget is expanding a new region.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 500</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-timeout-initial" role="property"><title>The <literal>&quot;gtk-timeout-initial&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-timeout-initial"><primary sortas="Settings:gtk-timeout-initial">GtkSettings:gtk-timeout-initial</primary></indexterm><programlisting>  &quot;gtk-timeout-initial&quot;      <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Starting value for timeouts, when button is pressed.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 200</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-timeout-repeat" role="property"><title>The <literal>&quot;gtk-timeout-repeat&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-timeout-repeat"><primary sortas="Settings:gtk-timeout-repeat">GtkSettings:gtk-timeout-repeat</primary></indexterm><programlisting>  &quot;gtk-timeout-repeat&quot;       <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Repeat value for timeouts, when button is pressed.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 20</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-toolbar-icon-size" role="property"><title>The <literal>&quot;gtk-toolbar-icon-size&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-toolbar-icon-size"><primary sortas="Settings:gtk-toolbar-icon-size">GtkSettings:gtk-toolbar-icon-size</primary></indexterm><programlisting>  &quot;gtk-toolbar-icon-size&quot;    <link linkend="GtkIconSize">GtkIconSize</link>           : Read / Write</programlisting>
+<para>Size of icons in default toolbars.</para><para>Default value: GTK_ICON_SIZE_LARGE_TOOLBAR</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-toolbar-style" role="property"><title>The <literal>&quot;gtk-toolbar-style&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-toolbar-style"><primary sortas="Settings:gtk-toolbar-style">GtkSettings:gtk-toolbar-style</primary></indexterm><programlisting>  &quot;gtk-toolbar-style&quot;        <link linkend="GtkToolbarStyle">GtkToolbarStyle</link>       : Read / Write</programlisting>
+<para>Whether default toolbars have text only, text and icons, icons only, etc.</para><para>Default value: GTK_TOOLBAR_BOTH</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-tooltip-browse-mode-timeout" role="property"><title>The <literal>&quot;gtk-tooltip-browse-mode-timeout&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-tooltip-browse-mode-timeout" role="2.12"><primary sortas="Settings:gtk-tooltip-browse-mode-timeout">GtkSettings:gtk-tooltip-browse-mode-timeout</primary></indexterm><programlisting>  &quot;gtk-tooltip-browse-mode-timeout&quot; <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+Amount of time, in milliseconds, after which the browse mode
+will be disabled.
+</para>
+<para>
+See <link linkend="GtkSettings--gtk-tooltip-browse-timeout"><type>"gtk-tooltip-browse-timeout"</type></link> for more information
+about browse mode.</para>
+<para>
+</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 500</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-tooltip-browse-timeout" role="property"><title>The <literal>&quot;gtk-tooltip-browse-timeout&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-tooltip-browse-timeout" role="2.12"><primary sortas="Settings:gtk-tooltip-browse-timeout">GtkSettings:gtk-tooltip-browse-timeout</primary></indexterm><programlisting>  &quot;gtk-tooltip-browse-timeout&quot; <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+Controls the time after which tooltips will appear when
+browse mode is enabled, in milliseconds.
+</para>
+<para>
+Browse mode is enabled when the mouse pointer moves off an object
+where a tooltip was currently being displayed. If the mouse pointer
+hits another object before the browse mode timeout expires (see
+<link linkend="GtkSettings--gtk-tooltip-browse-mode-timeout"><type>"gtk-tooltip-browse-mode-timeout"</type></link>), it will take the 
+amount of milliseconds specified by this setting to popup the tooltip
+for the new object.</para>
+<para>
+</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 60</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-tooltip-timeout" role="property"><title>The <literal>&quot;gtk-tooltip-timeout&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-tooltip-timeout" role="2.12"><primary sortas="Settings:gtk-tooltip-timeout">GtkSettings:gtk-tooltip-timeout</primary></indexterm><programlisting>  &quot;gtk-tooltip-timeout&quot;      <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+Time, in milliseconds, after which a tooltip could appear if the
+cursor is hovering on top of a widget.</para>
+<para>
+</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 500</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-touchscreen-mode" role="property"><title>The <literal>&quot;gtk-touchscreen-mode&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-touchscreen-mode" role="2.10"><primary sortas="Settings:gtk-touchscreen-mode">GtkSettings:gtk-touchscreen-mode</primary></indexterm><programlisting>  &quot;gtk-touchscreen-mode&quot;     <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+When <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, there are no motion notify events delivered on this screen,
+and widgets can't use the pointer hovering them for any essential
+functionality.</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-xft-antialias" role="property"><title>The <literal>&quot;gtk-xft-antialias&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-xft-antialias"><primary sortas="Settings:gtk-xft-antialias">GtkSettings:gtk-xft-antialias</primary></indexterm><programlisting>  &quot;gtk-xft-antialias&quot;        <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Whether to antialias Xft fonts; 0=no, 1=yes, -1=default.</para><para>Allowed values: [G_MAXULONG,1]</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-xft-dpi" role="property"><title>The <literal>&quot;gtk-xft-dpi&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-xft-dpi"><primary sortas="Settings:gtk-xft-dpi">GtkSettings:gtk-xft-dpi</primary></indexterm><programlisting>  &quot;gtk-xft-dpi&quot;              <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Resolution for Xft, in 1024 * dots/inch. -1 to use default value.</para><para>Allowed values: [G_MAXULONG,1048576]</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-xft-hinting" role="property"><title>The <literal>&quot;gtk-xft-hinting&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-xft-hinting"><primary sortas="Settings:gtk-xft-hinting">GtkSettings:gtk-xft-hinting</primary></indexterm><programlisting>  &quot;gtk-xft-hinting&quot;          <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Whether to hint Xft fonts; 0=no, 1=yes, -1=default.</para><para>Allowed values: [G_MAXULONG,1]</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-xft-hintstyle" role="property"><title>The <literal>&quot;gtk-xft-hintstyle&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-xft-hintstyle"><primary sortas="Settings:gtk-xft-hintstyle">GtkSettings:gtk-xft-hintstyle</primary></indexterm><programlisting>  &quot;gtk-xft-hintstyle&quot;        <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>What degree of hinting to use; hintnone, hintslight, hintmedium, or hintfull.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkSettings--gtk-xft-rgba" role="property"><title>The <literal>&quot;gtk-xft-rgba&quot;</literal> property</title>
+<indexterm zone="GtkSettings--gtk-xft-rgba"><primary sortas="Settings:gtk-xft-rgba">GtkSettings:gtk-xft-rgba</primary></indexterm><programlisting>  &quot;gtk-xft-rgba&quot;             <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Type of subpixel antialiasing; none, rgb, bgr, vrgb, vbgr.</para><para>Default value: NULL</para>
+</refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

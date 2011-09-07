@@ -1,0 +1,454 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkText">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkText.top_of_page">GtkText</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkText</refname>
+<refpurpose>A text widget</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkText.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkText-struct">GtkText</link>;
+                    <link linkend="GtkTextFont">GtkTextFont</link>;
+                    <link linkend="GtkPropertyMark">GtkPropertyMark</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-text-new">gtk_text_new</link>                        (<link linkend="GtkAdjustment">GtkAdjustment</link> *hadj,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *vadj);
+<link linkend="void">void</link>                <link linkend="gtk-text-set-editable">gtk_text_set_editable</link>               (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="gboolean">gboolean</link> editable);
+<link linkend="void">void</link>                <link linkend="gtk-text-set-word-wrap">gtk_text_set_word_wrap</link>              (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="gboolean">gboolean</link> word_wrap);
+<link linkend="void">void</link>                <link linkend="gtk-text-set-line-wrap">gtk_text_set_line_wrap</link>              (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="gboolean">gboolean</link> line_wrap);
+<link linkend="void">void</link>                <link linkend="gtk-text-set-adjustments">gtk_text_set_adjustments</link>            (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *hadj,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *vadj);
+<link linkend="void">void</link>                <link linkend="gtk-text-set-point">gtk_text_set_point</link>                  (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="guint">guint</link> index);
+<link linkend="guint">guint</link>               <link linkend="gtk-text-get-point">gtk_text_get_point</link>                  (<link linkend="GtkText">GtkText</link> *text);
+<link linkend="guint">guint</link>               <link linkend="gtk-text-get-length">gtk_text_get_length</link>                 (<link linkend="GtkText">GtkText</link> *text);
+<link linkend="void">void</link>                <link linkend="gtk-text-freeze">gtk_text_freeze</link>                     (<link linkend="GtkText">GtkText</link> *text);
+<link linkend="void">void</link>                <link linkend="gtk-text-thaw">gtk_text_thaw</link>                       (<link linkend="GtkText">GtkText</link> *text);
+<link linkend="void">void</link>                <link linkend="gtk-text-insert">gtk_text_insert</link>                     (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="GdkFont">GdkFont</link> *font,
+                                                         const <link linkend="GdkColor">GdkColor</link> *fore,
+                                                         const <link linkend="GdkColor">GdkColor</link> *back,
+                                                         const <link linkend="char">char</link> *chars,
+                                                         <link linkend="gint">gint</link> length);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-backward-delete">gtk_text_backward_delete</link>            (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="guint">guint</link> nchars);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-forward-delete">gtk_text_forward_delete</link>             (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="guint">guint</link> nchars);
+#define             <link linkend="GTK-TEXT-INDEX--CAPS">GTK_TEXT_INDEX</link>                      (t, index)
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkText.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkOldEditable">GtkOldEditable</link>
+                           +----GtkText
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkText.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkText implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkEditable">GtkEditable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkText.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkText--hadjustment">hadjustment</link>&quot;              <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write
+  &quot;<link linkend="GtkText--line-wrap">line-wrap</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkText--vadjustment">vadjustment</link>&quot;              <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write
+  &quot;<link linkend="GtkText--word-wrap">word-wrap</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkText.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkText-set-scroll-adjustments">set-scroll-adjustments</link>&quot;                         : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkText.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<warning>
+<para>
+<link linkend="GtkText"><type>GtkText</type></link> is deprecated and unsupported. It is known to be
+buggy. To use it, you must define the symbol <link linkend="GTK-ENABLE-BROKEN--CAPS"><literal>GTK_ENABLE_BROKEN</literal></link>
+prior to including the GTK+ header files. Use <link linkend="GtkTextView"><type>GtkTextView</type></link> instead.
+</para>
+</warning>
+A <link linkend="GtkText"><type>GtkText</type></link> widget allows one to display any given text and manipulate it
+by deleting from one point to another, selecting a region, and various
+other functions as outlined below.  It is inherited from <link linkend="GtkEditable"><type>GtkEditable</type></link>.
+</para>
+</refsect1>
+
+<refsect1 id="GtkText.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkText-struct" role="struct">
+<title>GtkText</title>
+<indexterm zone="GtkText-struct" role="deprecated"><primary sortas="Text">GtkText</primary></indexterm><programlisting>typedef struct _GtkText GtkText;</programlisting>
+<warning><para><literal>GtkText</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Most of the <link linkend="GtkText-struct"><type>GtkText</type></link> struct members should not be accessed directly.
+Listed below are a few exceptions and how to use them.
+</para></refsect2>
+<refsect2 id="GtkTextFont" role="struct" condition="deprecated:">
+<title>GtkTextFont</title>
+<indexterm zone="GtkTextFont" role="deprecated"><primary sortas="TextFont">GtkTextFont</primary></indexterm><programlisting>typedef struct _GtkTextFont GtkTextFont;</programlisting>
+<warning><para><literal>GtkTextFont</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Internal <link linkend="GtkText"><type>GtkText</type></link> data type.
+<!-- Pretty sure.. declared in gtktext.c -->
+</para></refsect2>
+<refsect2 id="GtkPropertyMark" role="struct" condition="deprecated:">
+<title>GtkPropertyMark</title>
+<indexterm zone="GtkPropertyMark" role="deprecated"><primary sortas="PropertyMark">GtkPropertyMark</primary></indexterm><programlisting>typedef struct {
+  /* Position in list. */
+  GList* property;
+
+  /* Offset into that property. */
+  guint offset;
+
+  /* Current index. */
+  guint index;
+} GtkPropertyMark;
+</programlisting>
+<warning><para><literal>GtkPropertyMark</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Internal <link linkend="GtkText"><type>GtkText</type></link> data type.  Should not be accessed directly.
+<!-- FIXME: unsure about this  -->
+</para></refsect2>
+<refsect2 id="gtk-text-new" role="function" condition="deprecated:">
+<title>gtk_text_new ()</title>
+<indexterm zone="gtk-text-new" role="deprecated"><primary sortas="text_new">gtk_text_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_text_new                        (<link linkend="GtkAdjustment">GtkAdjustment</link> *hadj,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *vadj);</programlisting>
+<warning><para><literal>gtk_text_new</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Creates a new <link linkend="GtkText"><type>GtkText</type></link> widget, initialized with the given pointers to
+<link linkend="GtkAdjustments"><type>GtkAdjustments</type></link>.  These pointers can be used to track the viewing position
+of the <link linkend="GtkText"><type>GtkText</type></link> widget.  Passing <link linkend="NULL--CAPS"><literal>NULL</literal></link> to either or both of them will make
+the <link linkend="GtkText"><type>GtkText</type></link> create its own.  You can set these later with the function
+<link linkend="gtk-text-set-adjustment"><function>gtk_text_set_adjustment()</function></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>hadj</parameter>&#160;:</term>
+<listitem><simpara>horizontal adjustment.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>vadj</parameter>&#160;:</term>
+<listitem><simpara>vertical adjustment.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>the new <link linkend="GtkText"><type>GtkText</type></link> widget.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-set-editable" role="function" condition="deprecated:">
+<title>gtk_text_set_editable ()</title>
+<indexterm zone="gtk-text-set-editable" role="deprecated"><primary sortas="text_set_editable">gtk_text_set_editable</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_set_editable               (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="gboolean">gboolean</link> editable);</programlisting>
+<warning><para><literal>gtk_text_set_editable</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets whether the <link linkend="GtkText"><type>GtkText</type></link> widget can be edited by the user or not.  This
+still allows you the programmer to make changes with the various <link linkend="GtkText"><type>GtkText</type></link>
+functions.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>editable</parameter>&#160;:</term>
+<listitem><simpara>%TRUE makes it editable, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> makes it immutable by the user
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-set-word-wrap" role="function" condition="deprecated:">
+<title>gtk_text_set_word_wrap ()</title>
+<indexterm zone="gtk-text-set-word-wrap" role="deprecated"><primary sortas="text_set_word_wrap">gtk_text_set_word_wrap</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_set_word_wrap              (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="gboolean">gboolean</link> word_wrap);</programlisting>
+<warning><para><literal>gtk_text_set_word_wrap</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets whether the <link linkend="GtkText"><type>GtkText</type></link> widget wraps words down to the next line if it
+can't be completed on the current line.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>word_wrap</parameter>&#160;:</term>
+<listitem><simpara>%TRUE makes it word wrap, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> disables word wrapping
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-set-line-wrap" role="function" condition="deprecated:">
+<title>gtk_text_set_line_wrap ()</title>
+<indexterm zone="gtk-text-set-line-wrap" role="deprecated"><primary sortas="text_set_line_wrap">gtk_text_set_line_wrap</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_set_line_wrap              (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="gboolean">gboolean</link> line_wrap);</programlisting>
+<warning><para><literal>gtk_text_set_line_wrap</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Controls how <link linkend="GtkText"><type>GtkText</type></link> handles long lines of continuous text.  If line wrap
+is on, the line is broken when it reaches the extent of the <link linkend="GtkText"><type>GtkText</type></link> widget
+viewing area and the rest is displayed on the next line.  If it is not set,
+the line continues regardless size of current viewing area.  Similar to word
+wrap but it disregards word boundaries.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>line_wrap</parameter>&#160;:</term>
+<listitem><simpara>%TRUE turns line wrap on, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> turns it off
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-set-adjustments" role="function" condition="deprecated:">
+<title>gtk_text_set_adjustments ()</title>
+<indexterm zone="gtk-text-set-adjustments" role="deprecated"><primary sortas="text_set_adjustments">gtk_text_set_adjustments</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_set_adjustments            (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *hadj,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *vadj);</programlisting>
+<warning><para><literal>gtk_text_set_adjustments</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Allows you to set <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link> pointers which in turn allows you to
+keep track of the viewing position of the <link linkend="GtkText"><type>GtkText</type></link> widget.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>hadj</parameter>&#160;:</term>
+<listitem><simpara>the horizontal adjustment
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>vadj</parameter>&#160;:</term>
+<listitem><simpara>the vertical adjustment
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-set-point" role="function" condition="deprecated:">
+<title>gtk_text_set_point ()</title>
+<indexterm zone="gtk-text-set-point" role="deprecated"><primary sortas="text_set_point">gtk_text_set_point</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_set_point                  (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="guint">guint</link> index);</programlisting>
+<warning><para><literal>gtk_text_set_point</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the cursor at the given point.  In this case a point constitutes
+the number of characters from the extreme upper left corner of the <link linkend="GtkText"><type>GtkText</type></link>
+widget.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>index</parameter>&#160;:</term>
+<listitem><simpara>the number of characters from the upper left corner
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-get-point" role="function" condition="deprecated:">
+<title>gtk_text_get_point ()</title>
+<indexterm zone="gtk-text-get-point" role="deprecated"><primary sortas="text_get_point">gtk_text_get_point</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_text_get_point                  (<link linkend="GtkText">GtkText</link> *text);</programlisting>
+<warning><para><literal>gtk_text_get_point</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Gets the current position of the cursor as the number of characters from
+the upper left corner of the <link linkend="GtkText"><type>GtkText</type></link> widget.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>the number of characters from the upper left corner
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-get-length" role="function" condition="deprecated:">
+<title>gtk_text_get_length ()</title>
+<indexterm zone="gtk-text-get-length" role="deprecated"><primary sortas="text_get_length">gtk_text_get_length</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_text_get_length                 (<link linkend="GtkText">GtkText</link> *text);</programlisting>
+<warning><para><literal>gtk_text_get_length</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Returns the length of the all the text contained within the <link linkend="GtkText"><type>GtkText</type></link> widget;
+disregards current point position.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>the length of the text
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-freeze" role="function" condition="deprecated:">
+<title>gtk_text_freeze ()</title>
+<indexterm zone="gtk-text-freeze" role="deprecated"><primary sortas="text_freeze">gtk_text_freeze</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_freeze                     (<link linkend="GtkText">GtkText</link> *text);</programlisting>
+<warning><para><literal>gtk_text_freeze</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Freezes the <link linkend="GtkText"><type>GtkText</type></link> widget which disallows redrawing of the widget until
+it is thawed.  This is useful if a large number of changes are going to
+made to the text within the widget, reducing the amount of flicker seen
+by the user.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-thaw" role="function" condition="deprecated:">
+<title>gtk_text_thaw ()</title>
+<indexterm zone="gtk-text-thaw" role="deprecated"><primary sortas="text_thaw">gtk_text_thaw</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_thaw                       (<link linkend="GtkText">GtkText</link> *text);</programlisting>
+<warning><para><literal>gtk_text_thaw</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Allows the <link linkend="GtkText"><type>GtkText</type></link> widget to be redrawn again by GTK.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-insert" role="function" condition="deprecated:">
+<title>gtk_text_insert ()</title>
+<indexterm zone="gtk-text-insert" role="deprecated"><primary sortas="text_insert">gtk_text_insert</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_insert                     (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="GdkFont">GdkFont</link> *font,
+                                                         const <link linkend="GdkColor">GdkColor</link> *fore,
+                                                         const <link linkend="GdkColor">GdkColor</link> *back,
+                                                         const <link linkend="char">char</link> *chars,
+                                                         <link linkend="gint">gint</link> length);</programlisting>
+<warning><para><literal>gtk_text_insert</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Inserts given text into the <link linkend="GtkText"><type>GtkText</type></link> widget with the given properties as
+outlined below.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>font</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GdkFont"><type>GdkFont</type></link> to use
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>fore</parameter>&#160;:</term>
+<listitem><simpara>the foreground color to insert with
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>back</parameter>&#160;:</term>
+<listitem><simpara>the background color to insert with
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>chars</parameter>&#160;:</term>
+<listitem><simpara>the actual text to be inserted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara>the length of the text to be inserted, passing -1 makes it insert
+all the text.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-backward-delete" role="function" condition="deprecated:">
+<title>gtk_text_backward_delete ()</title>
+<indexterm zone="gtk-text-backward-delete" role="deprecated"><primary sortas="text_backward_delete">gtk_text_backward_delete</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_backward_delete            (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="guint">guint</link> nchars);</programlisting>
+<warning><para><literal>gtk_text_backward_delete</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Deletes from the current point position backward the given number of
+characters.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>nchars</parameter>&#160;:</term>
+<listitem><simpara>the number of characters to delete
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>%TRUE if the operation was successful, otherwise returns <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-forward-delete" role="function" condition="deprecated:">
+<title>gtk_text_forward_delete ()</title>
+<indexterm zone="gtk-text-forward-delete" role="deprecated"><primary sortas="text_forward_delete">gtk_text_forward_delete</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_forward_delete             (<link linkend="GtkText">GtkText</link> *text,
+                                                         <link linkend="guint">guint</link> nchars);</programlisting>
+<warning><para><literal>gtk_text_forward_delete</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Deletes from the current point position forward the given number of
+characters.
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>nchars</parameter>&#160;:</term>
+<listitem><simpara>the number of characters to delete
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>%TRUE if the operation was successful, otherwise returns <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GTK-TEXT-INDEX--CAPS" role="macro" condition="deprecated:">
+<title>GTK_TEXT_INDEX()</title>
+<indexterm zone="GTK-TEXT-INDEX--CAPS" role="deprecated"><primary sortas="TEXT_INDEX">GTK_TEXT_INDEX</primary></indexterm><programlisting>#define             GTK_TEXT_INDEX(t, index)</programlisting>
+<warning><para><literal>GTK_TEXT_INDEX</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Returns the character at the given index within the <link linkend="GtkText"><type>GtkText</type></link> widget.
+</para><variablelist role="params">
+<varlistentry><term><parameter>t</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkText"><type>GtkText</type></link> widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>index</parameter>&#160;:</term>
+<listitem><simpara>the number of characters from the upper left corner
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkText.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkText--hadjustment" role="property"><title>The <literal>&quot;hadjustment&quot;</literal> property</title>
+<indexterm zone="GtkText--hadjustment"><primary sortas="Text:hadjustment">GtkText:hadjustment</primary></indexterm><programlisting>  &quot;hadjustment&quot;              <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write</programlisting>
+<para>
+Used by the <link linkend="GtkText"><type>GtkText</type></link> widget to keep track of the size of its horizontal
+text.
+</para></refsect2>
+<refsect2 id="GtkText--line-wrap" role="property"><title>The <literal>&quot;line-wrap&quot;</literal> property</title>
+<indexterm zone="GtkText--line-wrap"><primary sortas="Text:line-wrap">GtkText:line-wrap</primary></indexterm><programlisting>  &quot;line-wrap&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Boolean value indicating whether line wrap is enabled or not.
+</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkText--vadjustment" role="property"><title>The <literal>&quot;vadjustment&quot;</literal> property</title>
+<indexterm zone="GtkText--vadjustment"><primary sortas="Text:vadjustment">GtkText:vadjustment</primary></indexterm><programlisting>  &quot;vadjustment&quot;              <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write</programlisting>
+<para>
+Used by the <link linkend="GtkText"><type>GtkText</type></link> widget to keep track of the size of its vertical
+text.
+</para></refsect2>
+<refsect2 id="GtkText--word-wrap" role="property"><title>The <literal>&quot;word-wrap&quot;</literal> property</title>
+<indexterm zone="GtkText--word-wrap"><primary sortas="Text:word-wrap">GtkText:word-wrap</primary></indexterm><programlisting>  &quot;word-wrap&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Boolean value indicated whether word wrap is enabled or not.
+</para><para>Default value: FALSE</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkText.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkText-set-scroll-adjustments" role="signal"><title>The <literal>&quot;set-scroll-adjustments&quot;</literal> signal</title>
+<indexterm zone="GtkText-set-scroll-adjustments"><primary sortas="Text::set-scroll-adjustments">GtkText::set-scroll-adjustments</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkText">GtkText</link>       *text,
+                                                        <link linkend="GtkAdjustment">GtkAdjustment</link> *arg1,
+                                                        <link linkend="GtkAdjustment">GtkAdjustment</link> *arg2,
+                                                        <link linkend="gpointer">gpointer</link>       user_data)      : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg2</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

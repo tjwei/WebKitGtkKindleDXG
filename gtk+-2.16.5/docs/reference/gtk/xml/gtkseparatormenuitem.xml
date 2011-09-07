@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkSeparatorMenuItem">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkSeparatorMenuItem.top_of_page">GtkSeparatorMenuItem</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkSeparatorMenuItem</refname>
+<refpurpose>A separator used in menus</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkSeparatorMenuItem.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkSeparatorMenuItem-struct">GtkSeparatorMenuItem</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-separator-menu-item-new">gtk_separator_menu_item_new</link>         (void);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkSeparatorMenuItem.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkItem">GtkItem</link>
+                                       +----<link linkend="GtkMenuItem">GtkMenuItem</link>
+                                             +----GtkSeparatorMenuItem
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkSeparatorMenuItem.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkSeparatorMenuItem implements
+ <link linkend="GtkActivatable">GtkActivatable</link>,  <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkSeparatorMenuItem.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkSeparatorMenuItem"><type>GtkSeparatorMenuItem</type></link> is a separator used to group
+items within a menu. It displays a horizontal line with a shadow to
+make it appear sunken into the interface.
+</para>
+</refsect1>
+
+<refsect1 id="GtkSeparatorMenuItem.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkSeparatorMenuItem-struct" role="struct">
+<title>GtkSeparatorMenuItem</title>
+<indexterm zone="GtkSeparatorMenuItem-struct"><primary sortas="SeparatorMenuItem">GtkSeparatorMenuItem</primary></indexterm><programlisting>typedef struct _GtkSeparatorMenuItem GtkSeparatorMenuItem;</programlisting>
+<para>
+The <link linkend="GtkSeparatorMenuItem-struct"><type>GtkSeparatorMenuItem</type></link> struct contains private data only, and
+should be accessed using the functions below.
+</para></refsect2>
+<refsect2 id="gtk-separator-menu-item-new" role="function">
+<title>gtk_separator_menu_item_new ()</title>
+<indexterm zone="gtk-separator-menu-item-new"><primary sortas="separator_menu_item_new">gtk_separator_menu_item_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_separator_menu_item_new         (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkSeparatorMenuItem"><type>GtkSeparatorMenuItem</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a new <link linkend="GtkSeparatorMenuItem"><type>GtkSeparatorMenuItem</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

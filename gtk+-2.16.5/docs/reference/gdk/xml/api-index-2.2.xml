@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="gdk-colormap-get-screen"><link linkend="gdk-colormap-get-screen">gdk_colormap_get_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-cursor-get-display"><link linkend="gdk-cursor-get-display">gdk_cursor_get_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-cursor-new-for-display"><link linkend="gdk-cursor-new-for-display">gdk_cursor_new_for_display</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="GdkDisplay-struct"><link linkend="GdkDisplay-struct">GdkDisplay</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkDisplay-closed"><link linkend="GdkDisplay-closed">GdkDisplay::closed</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkDisplayManager-struct"><link linkend="GdkDisplayManager-struct">GdkDisplayManager</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkDisplayManager-display-opened"><link linkend="GdkDisplayManager-display-opened">GdkDisplayManager::display-opened</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkDisplayPointerHooks"><link linkend="GdkDisplayPointerHooks">GdkDisplayPointerHooks</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-add-client-message-filter"><link linkend="gdk-display-add-client-message-filter">gdk_display_add_client_message_filter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-beep"><link linkend="gdk-display-beep">gdk_display_beep</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-close"><link linkend="gdk-display-close">gdk_display_close</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-core-pointer"><link linkend="gdk-display-get-core-pointer">gdk_display_get_core_pointer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-default"><link linkend="gdk-display-get-default">gdk_display_get_default</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-default-screen"><link linkend="gdk-display-get-default-screen">gdk_display_get_default_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-event"><link linkend="gdk-display-get-event">gdk_display_get_event</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-name"><link linkend="gdk-display-get-name">gdk_display_get_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-n-screens"><link linkend="gdk-display-get-n-screens">gdk_display_get_n_screens</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-pointer"><link linkend="gdk-display-get-pointer">gdk_display_get_pointer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-screen"><link linkend="gdk-display-get-screen">gdk_display_get_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-window-at-pointer"><link linkend="gdk-display-get-window-at-pointer">gdk_display_get_window_at_pointer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-keyboard-ungrab"><link linkend="gdk-display-keyboard-ungrab">gdk_display_keyboard_ungrab</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-list-devices"><link linkend="gdk-display-list-devices">gdk_display_list_devices</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-manager-get"><link linkend="gdk-display-manager-get">gdk_display_manager_get</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-manager-get-default-display"><link linkend="gdk-display-manager-get-default-display">gdk_display_manager_get_default_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-manager-list-displays"><link linkend="gdk-display-manager-list-displays">gdk_display_manager_list_displays</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-manager-set-default-display"><link linkend="gdk-display-manager-set-default-display">gdk_display_manager_set_default_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-open"><link linkend="gdk-display-open">gdk_display_open</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-peek-event"><link linkend="gdk-display-peek-event">gdk_display_peek_event</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-pointer-is-grabbed"><link linkend="gdk-display-pointer-is-grabbed">gdk_display_pointer_is_grabbed</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-pointer-ungrab"><link linkend="gdk-display-pointer-ungrab">gdk_display_pointer_ungrab</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-put-event"><link linkend="gdk-display-put-event">gdk_display_put_event</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-set-double-click-time"><link linkend="gdk-display-set-double-click-time">gdk_display_set_double_click_time</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-set-pointer-hooks"><link linkend="gdk-display-set-pointer-hooks">gdk_display_set_pointer_hooks</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-sync"><link linkend="gdk-display-sync">gdk_display_sync</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drag-find-window-for-screen"><link linkend="gdk-drag-find-window-for-screen">gdk_drag_find_window_for_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drag-get-protocol-for-display"><link linkend="gdk-drag-get-protocol-for-display">gdk_drag_get_protocol_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drawable-get-display"><link linkend="gdk-drawable-get-display">gdk_drawable_get_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drawable-get-screen"><link linkend="gdk-drawable-get-screen">gdk_drawable_get_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-draw-pixbuf"><link linkend="gdk-draw-pixbuf">gdk_draw_pixbuf</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="gdk-event-get-screen"><link linkend="gdk-event-get-screen">gdk_event_get_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-event-new"><link linkend="gdk-event-new">gdk_event_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-event-send-client-message-for-display"><link linkend="gdk-event-send-client-message-for-display">gdk_event_send_client_message_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-event-set-screen"><link linkend="gdk-event-set-screen">gdk_event_set_screen</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>F</title>
+<indexentry><primaryie linkends="gdk-fontset-load-for-display"><link linkend="gdk-fontset-load-for-display">gdk_fontset_load_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-from-description-for-display"><link linkend="gdk-font-from-description-for-display">gdk_font_from_description_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-get-display"><link linkend="gdk-font-get-display">gdk_font_get_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-load-for-display"><link linkend="gdk-font-load-for-display">gdk_font_load_for_display</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="gdk-gc-get-screen"><link linkend="gdk-gc-get-screen">gdk_gc_get_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-get-display-arg-name"><link linkend="gdk-get-display-arg-name">gdk_get_display_arg_name</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>K</title>
+<indexentry><primaryie linkends="GdkKeymap-keys-changed"><link linkend="GdkKeymap-keys-changed">GdkKeymap::keys-changed</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-keymap-get-for-display"><link linkend="gdk-keymap-get-for-display">gdk_keymap_get_for_display</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>N</title>
+<indexentry><primaryie linkends="gdk-notify-startup-complete"><link linkend="gdk-notify-startup-complete">gdk_notify_startup_complete</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="gdk-pango-context-get-for-screen"><link linkend="gdk-pango-context-get-for-screen">gdk_pango_context_get_for_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-parse-args"><link linkend="gdk-parse-args">gdk_parse_args</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixmap-foreign-new-for-display"><link linkend="gdk-pixmap-foreign-new-for-display">gdk_pixmap_foreign_new_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixmap-lookup-for-display"><link linkend="gdk-pixmap-lookup-for-display">gdk_pixmap_lookup_for_display</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="GdkScreen-struct"><link linkend="GdkScreen-struct">GdkScreen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkScreen-size-changed"><link linkend="GdkScreen-size-changed">GdkScreen::size-changed</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-broadcast-client-message"><link linkend="gdk-screen-broadcast-client-message">gdk_screen_broadcast_client_message</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-default"><link linkend="gdk-screen-get-default">gdk_screen_get_default</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-default-colormap"><link linkend="gdk-screen-get-default-colormap">gdk_screen_get_default_colormap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-display"><link linkend="gdk-screen-get-display">gdk_screen_get_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-height"><link linkend="gdk-screen-get-height">gdk_screen_get_height</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-height-mm"><link linkend="gdk-screen-get-height-mm">gdk_screen_get_height_mm</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-monitor-at-point"><link linkend="gdk-screen-get-monitor-at-point">gdk_screen_get_monitor_at_point</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-monitor-at-window"><link linkend="gdk-screen-get-monitor-at-window">gdk_screen_get_monitor_at_window</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-monitor-geometry"><link linkend="gdk-screen-get-monitor-geometry">gdk_screen_get_monitor_geometry</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-number"><link linkend="gdk-screen-get-number">gdk_screen_get_number</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-n-monitors"><link linkend="gdk-screen-get-n-monitors">gdk_screen_get_n_monitors</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-rgb-colormap"><link linkend="gdk-screen-get-rgb-colormap">gdk_screen_get_rgb_colormap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-rgb-visual"><link linkend="gdk-screen-get-rgb-visual">gdk_screen_get_rgb_visual</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-root-window"><link linkend="gdk-screen-get-root-window">gdk_screen_get_root_window</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-setting"><link linkend="gdk-screen-get-setting">gdk_screen_get_setting</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-system-colormap"><link linkend="gdk-screen-get-system-colormap">gdk_screen_get_system_colormap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-system-visual"><link linkend="gdk-screen-get-system-visual">gdk_screen_get_system_visual</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-toplevel-windows"><link linkend="gdk-screen-get-toplevel-windows">gdk_screen_get_toplevel_windows</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-width"><link linkend="gdk-screen-get-width">gdk_screen_get_width</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-width-mm"><link linkend="gdk-screen-get-width-mm">gdk_screen_get_width_mm</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-list-visuals"><link linkend="gdk-screen-list-visuals">gdk_screen_list_visuals</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-make-display-name"><link linkend="gdk-screen-make-display-name">gdk_screen_make_display_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-set-default-colormap"><link linkend="gdk-screen-set-default-colormap">gdk_screen_set_default_colormap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-selection-owner-get-for-display"><link linkend="gdk-selection-owner-get-for-display">gdk_selection_owner_get_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-selection-owner-set-for-display"><link linkend="gdk-selection-owner-set-for-display">gdk_selection_owner_set_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-selection-send-notify-for-display"><link linkend="gdk-selection-send-notify-for-display">gdk_selection_send_notify_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-string-to-compound-text-for-display"><link linkend="gdk-string-to-compound-text-for-display">gdk_string_to_compound_text_for_display</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="gdk-text-property-to-text-list-for-display"><link linkend="gdk-text-property-to-text-list-for-display">gdk_text_property_to_text_list_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-text-property-to-utf8-list-for-display"><link linkend="gdk-text-property-to-utf8-list-for-display">gdk_text_property_to_utf8_list_for_display</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>U</title>
+<indexentry><primaryie linkends="gdk-utf8-to-compound-text-for-display"><link linkend="gdk-utf8-to-compound-text-for-display">gdk_utf8_to_compound_text_for_display</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>V</title>
+<indexentry><primaryie linkends="gdk-visual-get-screen"><link linkend="gdk-visual-get-screen">gdk_visual_get_screen</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="gdk-window-foreign-new-for-display"><link linkend="gdk-window-foreign-new-for-display">gdk_window_foreign_new_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-fullscreen"><link linkend="gdk-window-fullscreen">gdk_window_fullscreen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-lookup-for-display"><link linkend="gdk-window-lookup-for-display">gdk_window_lookup_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-skip-pager-hint"><link linkend="gdk-window-set-skip-pager-hint">gdk_window_set_skip_pager_hint</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-skip-taskbar-hint"><link linkend="gdk-window-set-skip-taskbar-hint">gdk_window_set_skip_taskbar_hint</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-unfullscreen"><link linkend="gdk-window-unfullscreen">gdk_window_unfullscreen</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>X</title>
+<indexentry><primaryie linkends="gdk-x11-atom-to-xatom-for-display"><link linkend="gdk-x11-atom-to-xatom-for-display">gdk_x11_atom_to_xatom_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-colormap-foreign-new"><link linkend="gdk-x11-colormap-foreign-new">gdk_x11_colormap_foreign_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-display-get-xdisplay"><link linkend="gdk-x11-display-get-xdisplay">gdk_x11_display_get_xdisplay</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-display-grab"><link linkend="gdk-x11-display-grab">gdk_x11_display_grab</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-display-ungrab"><link linkend="gdk-x11-display-ungrab">gdk_x11_display_ungrab</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-get-xatom-by-name-for-display"><link linkend="gdk-x11-get-xatom-by-name-for-display">gdk_x11_get_xatom_by_name_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-get-xatom-name-for-display"><link linkend="gdk-x11-get-xatom-name-for-display">gdk_x11_get_xatom_name_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-lookup-xdisplay"><link linkend="gdk-x11-lookup-xdisplay">gdk_x11_lookup_xdisplay</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-screen-get-screen-number"><link linkend="gdk-x11-screen-get-screen-number">gdk_x11_screen_get_screen_number</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-screen-get-window-manager-name"><link linkend="gdk-x11-screen-get-window-manager-name">gdk_x11_screen_get_window_manager_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-screen-get-xscreen"><link linkend="gdk-x11-screen-get-xscreen">gdk_x11_screen_get_xscreen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-screen-lookup-visual"><link linkend="gdk-x11-screen-lookup-visual">gdk_x11_screen_lookup_visual</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-screen-supports-net-wm-hint"><link linkend="gdk-x11-screen-supports-net-wm-hint">gdk_x11_screen_supports_net_wm_hint</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-xatom-to-atom-for-display"><link linkend="gdk-x11-xatom-to-atom-for-display">gdk_x11_xatom_to_atom_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-xid-table-lookup-for-display"><link linkend="gdk-xid-table-lookup-for-display">gdk_xid_table_lookup_for_display</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="gtk-gtkfilefilter">
+<refmeta>
+<refentrytitle role="top_of_page" id="gtk-gtkfilefilter.top_of_page">GtkFileFilter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkFileFilter</refname>
+<refpurpose>A filter for selecting a file subset</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gtk-gtkfilefilter.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+<anchor id="GtkFileFilter"/>
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkFileFilter-struct">GtkFileFilter</link>;
+                    <link linkend="GtkFileFilterInfo">GtkFileFilterInfo</link>;
+enum                <link linkend="GtkFileFilterFlags">GtkFileFilterFlags</link>;
+<link linkend="gboolean">gboolean</link>            (<link linkend="GtkFileFilterFunc">*GtkFileFilterFunc</link>)                (const <link linkend="GtkFileFilterInfo">GtkFileFilterInfo</link> *filter_info,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="GtkFileFilter">GtkFileFilter</link> *     <link linkend="gtk-file-filter-new">gtk_file_filter_new</link>                 (void);
+<link linkend="void">void</link>                <link linkend="gtk-file-filter-set-name">gtk_file_filter_set_name</link>            (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *name);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-file-filter-get-name">gtk_file_filter_get_name</link>            (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter);
+<link linkend="void">void</link>                <link linkend="gtk-file-filter-add-mime-type">gtk_file_filter_add_mime_type</link>       (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *mime_type);
+<link linkend="void">void</link>                <link linkend="gtk-file-filter-add-pattern">gtk_file_filter_add_pattern</link>         (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *pattern);
+<link linkend="void">void</link>                <link linkend="gtk-file-filter-add-pixbuf-formats">gtk_file_filter_add_pixbuf_formats</link>  (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter);
+<link linkend="void">void</link>                <link linkend="gtk-file-filter-add-custom">gtk_file_filter_add_custom</link>          (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter,
+                                                         <link linkend="GtkFileFilterFlags">GtkFileFilterFlags</link> needed,
+                                                         <link linkend="GtkFileFilterFunc">GtkFileFilterFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> notify);
+<link linkend="GtkFileFilterFlags">GtkFileFilterFlags</link>  <link linkend="gtk-file-filter-get-needed">gtk_file_filter_get_needed</link>          (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-file-filter-filter">gtk_file_filter_filter</link>              (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter,
+                                                         const <link linkend="GtkFileFilterInfo">GtkFileFilterInfo</link> *filter_info);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="gtk-gtkfilefilter.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----GtkFileFilter
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+
+
+<refsect1 id="gtk-gtkfilefilter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A GtkFileFilter can be used to restrict the files being shown
+in a <link linkend="GtkFileChooser"><type>GtkFileChooser</type></link>. Files can be filtered based on their name
+(with <link linkend="gtk-file-filter-add-pattern"><function>gtk_file_filter_add_pattern()</function></link>), on their mime type (with
+<link linkend="gtk-file-filter-add-mime-type"><function>gtk_file_filter_add_mime_type()</function></link>), or by a custom filter function
+(with <link linkend="gtk-file-filter-add-custom"><function>gtk_file_filter_add_custom()</function></link>).
+</para>
+<para>
+Filtering by mime types handles aliasing and subclassing of mime
+types; e.g. a filter for text/plain also matches a file with mime
+type application/rtf, since application/rtf is a subclass of
+text/plain. Note that <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link> allows wildcards for the
+subtype of a mime type, so you can e.g. filter for image/*.
+</para>
+<para>
+Normally, filters are used by adding them to a <link linkend="GtkFileChooser"><type>GtkFileChooser</type></link>,
+see <link linkend="gtk-file-chooser-add-filter"><function>gtk_file_chooser_add_filter()</function></link>, but it is also possible
+to manually use a filter on a file with <link linkend="gtk-file-filter-filter"><function>gtk_file_filter_filter()</function></link>.
+</para>
+</refsect1>
+
+<refsect1 id="gtk-gtkfilefilter.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkFileFilter-struct" role="struct">
+<title>GtkFileFilter</title>
+<indexterm zone="GtkFileFilter-struct"><primary sortas="FileFilter">GtkFileFilter</primary></indexterm><programlisting>typedef struct _GtkFileFilter GtkFileFilter;</programlisting>
+<para>
+The <structname>GtkFileFilter</structname> struct contains
+only private fields and should not be directly accessed.
+</para></refsect2>
+<refsect2 id="GtkFileFilterInfo" role="struct">
+<title>GtkFileFilterInfo</title>
+<indexterm zone="GtkFileFilterInfo"><primary sortas="FileFilterInfo">GtkFileFilterInfo</primary></indexterm><programlisting>typedef struct {
+  GtkFileFilterFlags contains;
+
+  const gchar *filename;
+  const gchar *uri;
+  const gchar *display_name;
+  const gchar *mime_type;
+} GtkFileFilterInfo;
+</programlisting>
+<para>
+A <structname>GtkFileFilterInfo</structname> struct is used
+to pass information about the tested file to
+<link linkend="gtk-file-filter-filter"><function>gtk_file_filter_filter()</function></link>.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GtkFileFilterFlags">GtkFileFilterFlags</link>&#160;<structfield>contains</structfield>;</term>
+<listitem><simpara>Flags indicating which of the following fields need
+  are filled
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>filename</structfield>;</term>
+<listitem><simpara>the filename of the file being tested
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>uri</structfield>;</term>
+<listitem><simpara>the URI for the file being tested
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>display_name</structfield>;</term>
+<listitem><simpara>the string that will be used to display the file
+  in the file chooser
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>mime_type</structfield>;</term>
+<listitem><simpara>the mime type of the file
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkFileFilterFlags" role="enum">
+<title>enum GtkFileFilterFlags</title>
+<indexterm zone="GtkFileFilterFlags"><primary sortas="FileFilterFlags">GtkFileFilterFlags</primary></indexterm><programlisting>typedef enum {
+  GTK_FILE_FILTER_FILENAME     = 1 &lt;&lt; 0,
+  GTK_FILE_FILTER_URI          = 1 &lt;&lt; 1,
+  GTK_FILE_FILTER_DISPLAY_NAME = 1 &lt;&lt; 2,
+  GTK_FILE_FILTER_MIME_TYPE    = 1 &lt;&lt; 3
+} GtkFileFilterFlags;
+</programlisting>
+<para>
+These flags indicate what parts of a <link linkend="GtkFileFilterInfo"><type>GtkFileFilterInfo</type></link> struct
+are filled or need to be filled.
+</para><variablelist role="enum">
+<varlistentry id="GTK-FILE-FILTER-FILENAME--CAPS" role="constant">
+<term><literal>GTK_FILE_FILTER_FILENAME</literal></term>
+<listitem><simpara>the filename of the file being tested
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-FILE-FILTER-URI--CAPS" role="constant">
+<term><literal>GTK_FILE_FILTER_URI</literal></term>
+<listitem><simpara>the URI for the file being tested
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-FILE-FILTER-DISPLAY-NAME--CAPS" role="constant">
+<term><literal>GTK_FILE_FILTER_DISPLAY_NAME</literal></term>
+<listitem><simpara>the string that will be used to 
+  display the file in the file chooser
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-FILE-FILTER-MIME-TYPE--CAPS" role="constant">
+<term><literal>GTK_FILE_FILTER_MIME_TYPE</literal></term>
+<listitem><simpara>the mime type of the file
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkFileFilterFunc" role="function">
+<title>GtkFileFilterFunc ()</title>
+<indexterm zone="GtkFileFilterFunc"><primary sortas="FileFilterFunc">GtkFileFilterFunc</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            (*GtkFileFilterFunc)                (const <link linkend="GtkFileFilterInfo">GtkFileFilterInfo</link> *filter_info,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<para>
+The type of function that is used with custom filters,
+see <link linkend="gtk-file-filter-add-custom"><function>gtk_file_filter_add_custom()</function></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter_info</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkFileFilterInfo"><type>GtkFileFilterInfo</type></link> that is filled according
+  to the <parameter>needed</parameter> flags passed to <link linkend="gtk-file-filter-add-custom"><function>gtk_file_filter_add_custom()</function></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara>user data passed to <link linkend="gtk-file-filter-add-custom"><function>gtk_file_filter_add_custom()</function></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>%TRUE if the file should be displayed
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-file-filter-new" role="function" condition="since:2.4">
+<title>gtk_file_filter_new ()</title>
+<indexterm zone="gtk-file-filter-new" role="2.4"><primary sortas="file_filter_new">gtk_file_filter_new</primary></indexterm><programlisting><link linkend="GtkFileFilter">GtkFileFilter</link> *     gtk_file_filter_new                 (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link> with no rules added to it.
+Such a filter doesn't accept any files, so is not
+particularly useful until you add rules with
+<link linkend="gtk-file-filter-add-mime-type"><function>gtk_file_filter_add_mime_type()</function></link>, <link linkend="gtk-file-filter-add-pattern"><function>gtk_file_filter_add_pattern()</function></link>,
+or <link linkend="gtk-file-filter-add-custom"><function>gtk_file_filter_add_custom()</function></link>. To create a filter
+that accepts any file, use:
+<informalexample><programlisting>
+GtkFileFilter *filter = gtk_file_filter_new ();
+gtk_file_filter_add_pattern (filter, "*");
+</programlisting></informalexample></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-file-filter-set-name" role="function" condition="since:2.4">
+<title>gtk_file_filter_set_name ()</title>
+<indexterm zone="gtk-file-filter-set-name" role="2.4"><primary sortas="file_filter_set_name">gtk_file_filter_set_name</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_file_filter_set_name            (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *name);</programlisting>
+<para>
+Sets the human-readable name of the filter; this is the string
+that will be displayed in the file selector user interface if
+there is a selectable list of filters.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> the human-readable-name for the filter, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+  to remove any existing name.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-file-filter-get-name" role="function" condition="since:2.4">
+<title>gtk_file_filter_get_name ()</title>
+<indexterm zone="gtk-file-filter-get-name" role="2.4"><primary sortas="file_filter_get_name">gtk_file_filter_get_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_file_filter_get_name            (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter);</programlisting>
+<para>
+Gets the human-readable name for the filter. See <link linkend="gtk-file-filter-set-name"><function>gtk_file_filter_set_name()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The human-readable name of the filter,
+  or <link linkend="NULL--CAPS"><literal>NULL</literal></link>. This value is owned by GTK+ and must not
+  be modified or freed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-file-filter-add-mime-type" role="function" condition="since:2.4">
+<title>gtk_file_filter_add_mime_type ()</title>
+<indexterm zone="gtk-file-filter-add-mime-type" role="2.4"><primary sortas="file_filter_add_mime_type">gtk_file_filter_add_mime_type</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_file_filter_add_mime_type       (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *mime_type);</programlisting>
+<para>
+Adds a rule allowing a given mime type to <parameter>filter</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mime_type</parameter>&#160;:</term>
+<listitem><simpara> name of a MIME type
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-file-filter-add-pattern" role="function" condition="since:2.4">
+<title>gtk_file_filter_add_pattern ()</title>
+<indexterm zone="gtk-file-filter-add-pattern" role="2.4"><primary sortas="file_filter_add_pattern">gtk_file_filter_add_pattern</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_file_filter_add_pattern         (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *pattern);</programlisting>
+<para>
+Adds a rule allowing a shell style glob to a filter.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pattern</parameter>&#160;:</term>
+<listitem><simpara> a shell style glob
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-file-filter-add-pixbuf-formats" role="function" condition="since:2.6">
+<title>gtk_file_filter_add_pixbuf_formats ()</title>
+<indexterm zone="gtk-file-filter-add-pixbuf-formats" role="2.6"><primary sortas="file_filter_add_pixbuf_formats">gtk_file_filter_add_pixbuf_formats</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_file_filter_add_pixbuf_formats  (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter);</programlisting>
+<para>
+Adds a rule allowing image files in the formats supported
+by GdkPixbuf.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-file-filter-add-custom" role="function" condition="since:2.4">
+<title>gtk_file_filter_add_custom ()</title>
+<indexterm zone="gtk-file-filter-add-custom" role="2.4"><primary sortas="file_filter_add_custom">gtk_file_filter_add_custom</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_file_filter_add_custom          (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter,
+                                                         <link linkend="GtkFileFilterFlags">GtkFileFilterFlags</link> needed,
+                                                         <link linkend="GtkFileFilterFunc">GtkFileFilterFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> notify);</programlisting>
+<para>
+Adds rule to a filter that allows files based on a custom callback
+function. The bitfield <parameter>needed</parameter> which is passed in provides information
+about what sorts of information that the filter function needs;
+this allows GTK+ to avoid retrieving expensive information when
+it isn't needed by the filter.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>needed</parameter>&#160;:</term>
+<listitem><simpara> bitfield of flags indicating the information that the custom
+         filter function needs.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> callback function; if the function returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, then
+  the file will be displayed.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to <parameter>func</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>notify</parameter>&#160;:</term>
+<listitem><simpara> function to call to free <parameter>data</parameter> when it is no longer needed.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-file-filter-get-needed" role="function" condition="since:2.4">
+<title>gtk_file_filter_get_needed ()</title>
+<indexterm zone="gtk-file-filter-get-needed" role="2.4"><primary sortas="file_filter_get_needed">gtk_file_filter_get_needed</primary></indexterm><programlisting><link linkend="GtkFileFilterFlags">GtkFileFilterFlags</link>  gtk_file_filter_get_needed          (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter);</programlisting>
+<para>
+Gets the fields that need to be filled in for the structure
+passed to <link linkend="gtk-file-filter-filter"><function>gtk_file_filter_filter()</function></link>
+</para>
+<para>
+This function will not typically be used by applications; it
+is intended principally for use in the implementation of
+<link linkend="GtkFileChooser"><type>GtkFileChooser</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> bitfield of flags indicating needed fields when
+  calling <link linkend="gtk-file-filter-filter"><function>gtk_file_filter_filter()</function></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-file-filter-filter" role="function" condition="since:2.4">
+<title>gtk_file_filter_filter ()</title>
+<indexterm zone="gtk-file-filter-filter" role="2.4"><primary sortas="file_filter_filter">gtk_file_filter_filter</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_file_filter_filter              (<link linkend="GtkFileFilter">GtkFileFilter</link> *filter,
+                                                         const <link linkend="GtkFileFilterInfo">GtkFileFilterInfo</link> *filter_info);</programlisting>
+<para>
+Tests whether a file should be displayed according to <parameter>filter</parameter>.
+The <link linkend="GtkFileFilterInfo"><type>GtkFileFilterInfo</type></link> structure <parameter>filter_info</parameter> should include
+the fields returned from <link linkend="gtk-file-filter-get-needed"><function>gtk_file_filter_get_needed()</function></link>.
+</para>
+<para>
+This function will not typically be used by applications; it
+is intended principally for use in the implementation of
+<link linkend="GtkFileChooser"><type>GtkFileChooser</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFileFilter"><type>GtkFileFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filter_info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFileFilterInfo"><type>GtkFileFilterInfo</type></link> structure containing information
+ about a file.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the file should be displayed
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="gtk-gtkfilefilter.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkFileChooser"><type>GtkFileChooser</type></link>
+</para>
+</refsect1>
+
+</refentry>

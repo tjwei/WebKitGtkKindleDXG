@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="gtk-Filesystem-utilities">
+<refmeta>
+<refentrytitle role="top_of_page" id="gtk-Filesystem-utilities.top_of_page">Filesystem utilities</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Filesystem utilities</refname>
+<refpurpose>Functions for working with GIO</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gtk-Filesystem-utilities.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+<anchor id="GtkMountOperation"/>
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkMountOperation-struct">GtkMountOperation</link>;
+<link linkend="GMountOperation">GMountOperation</link> *   <link linkend="gtk-mount-operation-new">gtk_mount_operation_new</link>             (<link linkend="GtkWindow">GtkWindow</link> *parent);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-mount-operation-is-showing">gtk_mount_operation_is_showing</link>      (<link linkend="GtkMountOperation">GtkMountOperation</link> *op);
+<link linkend="void">void</link>                <link linkend="gtk-mount-operation-set-parent">gtk_mount_operation_set_parent</link>      (<link linkend="GtkMountOperation">GtkMountOperation</link> *op,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);
+<link linkend="GtkWindow">GtkWindow</link> *         <link linkend="gtk-mount-operation-get-parent">gtk_mount_operation_get_parent</link>      (<link linkend="GtkMountOperation">GtkMountOperation</link> *op);
+<link linkend="void">void</link>                <link linkend="gtk-mount-operation-set-screen">gtk_mount_operation_set_screen</link>      (<link linkend="GtkMountOperation">GtkMountOperation</link> *op,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="GdkScreen">GdkScreen</link> *         <link linkend="gtk-mount-operation-get-screen">gtk_mount_operation_get_screen</link>      (<link linkend="GtkMountOperation">GtkMountOperation</link> *op);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-show-uri">gtk_show_uri</link>                        (<link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         const <link linkend="gchar">gchar</link> *uri,
+                                                         <link linkend="guint32">guint32</link> timestamp,
+                                                         <link linkend="GError">GError</link> **error);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="gtk-Filesystem-utilities.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GMountOperation">GMountOperation</link>
+         +----GtkMountOperation
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="gtk-Filesystem-utilities.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkMountOperation--is-showing">is-showing</link>&quot;               <link linkend="gboolean">gboolean</link>              : Read
+  &quot;<link linkend="GtkMountOperation--parent">parent</link>&quot;                   <link linkend="GtkWindow">GtkWindow</link>*            : Read / Write
+  &quot;<link linkend="GtkMountOperation--screen">screen</link>&quot;                   <link linkend="GdkScreen">GdkScreen</link>*            : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="gtk-Filesystem-utilities.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The functions and objects described here make working with GTK+ and
+GIO more convenient. <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link> is needed when mounting volumes
+and <link linkend="gtk-show-uri"><function>gtk_show_uri()</function></link> is a convenient way to launch applications for URIs.
+Another object that is worth mentioning in this context is 
+<link linkend="GdkAppLaunchContext"><type>GdkAppLaunchContext</type></link>, which provides visual feedback when lauching
+applications.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="gtk-Filesystem-utilities.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkMountOperation-struct" role="struct">
+<title>GtkMountOperation</title>
+<indexterm zone="GtkMountOperation-struct"><primary sortas="MountOperation">GtkMountOperation</primary></indexterm><programlisting>typedef struct _GtkMountOperation GtkMountOperation;</programlisting>
+<para>
+<link linkend="GtkMountOperation"><type>GtkMountOperation</type></link> is an implementation of <link linkend="GMountOperation"><type>GMountOperation</type></link> that 
+can be used with GIO functions for mounting volumes such as
+<link linkend="g-file-mount-enclosing-volume"><function>g_file_mount_enclosing_volume()</function></link> or <link linkend="g-file-mount-mountable"><function>g_file_mount_mountable()</function></link>.
+</para>
+<para>
+When necessary, <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link> shows dialogs to ask for passwords.</para>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-mount-operation-new" role="function" condition="since:2.14">
+<title>gtk_mount_operation_new ()</title>
+<indexterm zone="gtk-mount-operation-new" role="2.14"><primary sortas="mount_operation_new">gtk_mount_operation_new</primary></indexterm><programlisting><link linkend="GMountOperation">GMountOperation</link> *   gtk_mount_operation_new             (<link linkend="GtkWindow">GtkWindow</link> *parent);</programlisting>
+<para>
+Creates a new <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> transient parent of the window, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-mount-operation-is-showing" role="function" condition="since:2.14">
+<title>gtk_mount_operation_is_showing ()</title>
+<indexterm zone="gtk-mount-operation-is-showing" role="2.14"><primary sortas="mount_operation_is_showing">gtk_mount_operation_is_showing</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_mount_operation_is_showing      (<link linkend="GtkMountOperation">GtkMountOperation</link> *op);</programlisting>
+<para>
+Returns whether the <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link> is currently displaying
+a window.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>op</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>op</parameter> is currently displaying a window
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-mount-operation-set-parent" role="function" condition="since:2.14">
+<title>gtk_mount_operation_set_parent ()</title>
+<indexterm zone="gtk-mount-operation-set-parent" role="2.14"><primary sortas="mount_operation_set_parent">gtk_mount_operation_set_parent</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_mount_operation_set_parent      (<link linkend="GtkMountOperation">GtkMountOperation</link> *op,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);</programlisting>
+<para>
+Sets the transient parent for windows shown by the
+<link linkend="GtkMountOperation"><type>GtkMountOperation</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>op</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> transient parent of the window, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-mount-operation-get-parent" role="function" condition="since:2.14">
+<title>gtk_mount_operation_get_parent ()</title>
+<indexterm zone="gtk-mount-operation-get-parent" role="2.14"><primary sortas="mount_operation_get_parent">gtk_mount_operation_get_parent</primary></indexterm><programlisting><link linkend="GtkWindow">GtkWindow</link> *         gtk_mount_operation_get_parent      (<link linkend="GtkMountOperation">GtkMountOperation</link> *op);</programlisting>
+<para>
+Gets the transient parent used by the <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>op</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the transient parent for windows shown by <parameter>op</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-mount-operation-set-screen" role="function" condition="since:2.14">
+<title>gtk_mount_operation_set_screen ()</title>
+<indexterm zone="gtk-mount-operation-set-screen" role="2.14"><primary sortas="mount_operation_set_screen">gtk_mount_operation_set_screen</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_mount_operation_set_screen      (<link linkend="GtkMountOperation">GtkMountOperation</link> *op,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<para>
+Sets the screen to show windows of the <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link> on.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>op</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-mount-operation-get-screen" role="function" condition="since:2.14">
+<title>gtk_mount_operation_get_screen ()</title>
+<indexterm zone="gtk-mount-operation-get-screen" role="2.14"><primary sortas="mount_operation_get_screen">gtk_mount_operation_get_screen</primary></indexterm><programlisting><link linkend="GdkScreen">GdkScreen</link> *         gtk_mount_operation_get_screen      (<link linkend="GtkMountOperation">GtkMountOperation</link> *op);</programlisting>
+<para>
+Gets the screen on which windows of the <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link> 
+will be shown.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>op</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkMountOperation"><type>GtkMountOperation</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the screen on which windows of <parameter>op</parameter> are shown
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-show-uri" role="function" condition="since:2.14">
+<title>gtk_show_uri ()</title>
+<indexterm zone="gtk-show-uri" role="2.14"><primary sortas="show_uri">gtk_show_uri</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_show_uri                        (<link linkend="GdkScreen">GdkScreen</link> *screen,
+                                                         const <link linkend="gchar">gchar</link> *uri,
+                                                         <link linkend="guint32">guint32</link> timestamp,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+This is a convenience function for launching the default application
+to show the uri. The uri must be of a form understood by GIO. Typical
+examples are
+<simplelist>
+  <member><filename>file:///home/gnome/pict.jpg</filename></member>
+  <member><filename>http://www.gnome.org</filename></member>
+  <member><filename>mailto:me&commat;gnome.org</filename></member>
+</simplelist>
+Ideally the timestamp is taken from the event triggering
+the <link linkend="gtk-show-uri"><function>gtk_show_uri()</function></link> call. If timestamp is not known you can take
+<link linkend="GDK-CURRENT-TIME--CAPS"><literal>GDK_CURRENT_TIME</literal></link>.
+</para>
+<para>
+This function can be used as a replacement for <link linkend="gnome-vfs-url-show"><function>gnome_vfs_url_show()</function></link>
+and <link linkend="gnome-url-show"><function>gnome_url_show()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> screen to show the uri on or <link linkend="NULL--CAPS"><literal>NULL</literal></link> for the default screen
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the uri to show
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>timestamp</parameter>&#160;:</term>
+<listitem><simpara> a timestamp to prevent focus stealing.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GError"><type>GError</type></link> that is returned in case of errors
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> on error.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+
+</refsect1>
+<refsect1 id="gtk-Filesystem-utilities.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkMountOperation--is-showing" role="property"><title>The <literal>&quot;is-showing&quot;</literal> property</title>
+<indexterm zone="GtkMountOperation--is-showing"><primary sortas="MountOperation:is-showing">GtkMountOperation:is-showing</primary></indexterm><programlisting>  &quot;is-showing&quot;               <link linkend="gboolean">gboolean</link>              : Read</programlisting>
+<para>Are we showing a dialog.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkMountOperation--parent" role="property"><title>The <literal>&quot;parent&quot;</literal> property</title>
+<indexterm zone="GtkMountOperation--parent"><primary sortas="MountOperation:parent">GtkMountOperation:parent</primary></indexterm><programlisting>  &quot;parent&quot;                   <link linkend="GtkWindow">GtkWindow</link>*            : Read / Write</programlisting>
+<para>The parent window.</para></refsect2>
+<refsect2 id="GtkMountOperation--screen" role="property"><title>The <literal>&quot;screen&quot;</literal> property</title>
+<indexterm zone="GtkMountOperation--screen"><primary sortas="MountOperation:screen">GtkMountOperation:screen</primary></indexterm><programlisting>  &quot;screen&quot;                   <link linkend="GdkScreen">GdkScreen</link>*            : Read / Write</programlisting>
+<para>The screen where this window will be displayed.</para></refsect2>
+</refsect1>
+
+
+
+
+</refentry>

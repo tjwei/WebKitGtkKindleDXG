@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="SoupSessionFeature">
+<refmeta>
+<refentrytitle role="top_of_page" id="SoupSessionFeature.top_of_page">SoupSessionFeature</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupSessionFeature</refname>
+<refpurpose>Interface for miscellaneous session features</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="SoupSessionFeature.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SoupSessionFeature-struct">SoupSessionFeature</link>;
+                    <link linkend="SoupSessionFeatureInterface">SoupSessionFeatureInterface</link>;
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="SoupSessionFeature.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GInterface">GInterface</link>
+   +----SoupSessionFeature
+</synopsis>
+</refsect1>
+
+<refsect1 id="SoupSessionFeature.prerequisites" role="prerequisites">
+<title role="prerequisites.title">Prerequisites</title>
+<para>
+SoupSessionFeature requires
+ <link linkend="GObject">GObject</link>.</para>
+</refsect1>
+
+
+
+<refsect1 id="SoupSessionFeature.implementations" role="implementations">
+<title role="implementations.title">Known Implementations</title>
+<para>
+SoupSessionFeature is implemented by
+ <link linkend="SoupCookieJarSqlite">SoupCookieJarSqlite</link>,  <link linkend="SoupLogger">SoupLogger</link>,  <link linkend="SoupCookieJar">SoupCookieJar</link> and  <link linkend="SoupCookieJarText">SoupCookieJarText</link>.</para>
+</refsect1>
+
+
+
+
+<refsect1 id="SoupSessionFeature.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="SoupSessionFeature"><type>SoupSessionFeature</type></link> is the interface used by classes that extend
+the functionality of a <link linkend="SoupSession"><type>SoupSession</type></link>. Some features like HTTP
+authentication handling are implemented internally via
+<link linkend="SoupSessionFeature"><type>SoupSessionFeature</type></link><!-- -->s. Other features can be added to the session
+by the application. (Eg, <link linkend="SoupLogger"><type>SoupLogger</type></link>, <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>.)
+</para>
+<para>
+See <link linkend="soup-session-add-feature"><function>soup_session_add_feature()</function></link>, etc, to add a feature to a session.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="SoupSessionFeature.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupSessionFeature-struct" role="struct">
+<title>SoupSessionFeature</title>
+<indexterm zone="SoupSessionFeature-struct" role="2.24"><primary sortas="SoupSessionFeature">SoupSessionFeature</primary></indexterm><programlisting>typedef struct _SoupSessionFeature SoupSessionFeature;</programlisting>
+<para>
+An object that implement some sort of optional feature for
+<link linkend="SoupSession"><type>SoupSession</type></link>.</para>
+<para>
+</para><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="SoupSessionFeatureInterface" role="struct" condition="since:2.24">
+<title>SoupSessionFeatureInterface</title>
+<indexterm zone="SoupSessionFeatureInterface" role="2.24"><primary sortas="SoupSessionFeatureInterface">SoupSessionFeatureInterface</primary></indexterm><programlisting>typedef struct {
+	GTypeInterface parent;
+
+	/* methods */
+	void (*attach)           (SoupSessionFeature *feature,
+				  SoupSession        *session);
+	void (*detach)           (SoupSessionFeature *feature,
+				  SoupSession        *session);
+
+	void (*request_queued)   (SoupSessionFeature *feature,
+				  SoupSession        *session,
+				  SoupMessage        *msg);
+	void (*request_started)  (SoupSessionFeature *feature,
+				  SoupSession        *session,
+				  SoupMessage        *msg,
+				  SoupSocket         *socket);
+	void (*request_unqueued) (SoupSessionFeature *feature,
+				  SoupSession        *session,
+				  SoupMessage        *msg);
+} SoupSessionFeatureInterface;
+</programlisting>
+<para>
+The interface implemented by <link linkend="SoupSessionFeature"><type>SoupSessionFeature</type></link><!-- -->s.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GTypeInterface">GTypeInterface</link>&#160;<structfield>parent</structfield>;</term>
+<listitem><simpara> The parent interface.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>attach</structfield>&#160;()</term>
+<listitem><simpara> Perform setup when a feature is added to a session
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>detach</structfield>&#160;()</term>
+<listitem><simpara> Perform cleanup when a feature is removed from a session
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>request_queued</structfield>&#160;()</term>
+<listitem><simpara> Proxies the session's <link linkend="SoupSession-request-queued"><type>"request_queued"</type></link> signal
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>request_started</structfield>&#160;()</term>
+<listitem><simpara> Proxies the session's <link linkend="SoupSession-request-started"><type>"request_started"</type></link> signal
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>request_unqueued</structfield>&#160;()</term>
+<listitem><simpara> Proxies the session's <link linkend="SoupSession-request-unqueued"><type>"request_unqueued"</type></link> signal
+</simpara></listitem>
+</varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

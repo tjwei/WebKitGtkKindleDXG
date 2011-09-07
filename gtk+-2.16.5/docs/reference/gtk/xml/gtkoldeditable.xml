@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkOldEditable">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkOldEditable.top_of_page">GtkOldEditable</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkOldEditable</refname>
+<refpurpose>Base class for text-editing widgets</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkOldEditable.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkOldEditable-struct">GtkOldEditable</link>;
+<link linkend="void">void</link>                (<link linkend="GtkTextFunction">*GtkTextFunction</link>)                  (<link linkend="GtkOldEditable">GtkOldEditable</link> *editable,
+                                                         <link linkend="guint32">guint32</link> time_);
+<link linkend="void">void</link>                <link linkend="gtk-old-editable-claim-selection">gtk_old_editable_claim_selection</link>    (<link linkend="GtkOldEditable">GtkOldEditable</link> *old_editable,
+                                                         <link linkend="gboolean">gboolean</link> claim,
+                                                         <link linkend="guint32">guint32</link> time_);
+<link linkend="void">void</link>                <link linkend="gtk-old-editable-changed">gtk_old_editable_changed</link>            (<link linkend="GtkOldEditable">GtkOldEditable</link> *old_editable);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkOldEditable.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----GtkOldEditable
+                           +----<link linkend="GtkText">GtkText</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkOldEditable.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkOldEditable implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkEditable">GtkEditable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkOldEditable.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkOldEditable--editable">editable</link>&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkOldEditable--text-position">text-position</link>&quot;            <link linkend="gint">gint</link>                  : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkOldEditable.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkOldEditable-activate">activate</link>&quot;                                       : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-copy-clipboard">copy-clipboard</link>&quot;                                 : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-cut-clipboard">cut-clipboard</link>&quot;                                  : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-kill-char">kill-char</link>&quot;                                      : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-kill-line">kill-line</link>&quot;                                      : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-kill-word">kill-word</link>&quot;                                      : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-move-cursor">move-cursor</link>&quot;                                    : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-move-page">move-page</link>&quot;                                      : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-move-to-column">move-to-column</link>&quot;                                 : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-move-to-row">move-to-row</link>&quot;                                    : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-move-word">move-word</link>&quot;                                      : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-paste-clipboard">paste-clipboard</link>&quot;                                : Run Last / Action
+  &quot;<link linkend="GtkOldEditable-set-editable">set-editable</link>&quot;                                   : Run Last / Action
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkOldEditable.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+GtkOldEditable has been deprecated since GTK+ 2.0 and should not be used
+in newly written code. Use the <link linkend="GtkEditable"><type>GtkEditable</type></link> interface instead.
+</para>
+</refsect1>
+
+<refsect1 id="GtkOldEditable.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkOldEditable-struct" role="struct">
+<title>GtkOldEditable</title>
+<indexterm zone="GtkOldEditable-struct" role="deprecated"><primary sortas="OldEditable">GtkOldEditable</primary></indexterm><programlisting>typedef struct {
+  guint      current_pos;
+
+  guint      selection_start_pos;
+  guint      selection_end_pos;
+  guint      has_selection : 1;
+} GtkOldEditable;
+</programlisting>
+<warning><para><literal>GtkOldEditable</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="GtkTextFunction" role="function" condition="deprecated:">
+<title>GtkTextFunction ()</title>
+<indexterm zone="GtkTextFunction" role="deprecated"><primary sortas="TextFunction">GtkTextFunction</primary></indexterm><programlisting><link linkend="void">void</link>                (*GtkTextFunction)                  (<link linkend="GtkOldEditable">GtkOldEditable</link> *editable,
+                                                         <link linkend="guint32">guint32</link> time_);</programlisting>
+<warning><para><literal>GtkTextFunction</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>editable</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>time_</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-old-editable-claim-selection" role="function" condition="deprecated:">
+<title>gtk_old_editable_claim_selection ()</title>
+<indexterm zone="gtk-old-editable-claim-selection" role="deprecated"><primary sortas="old_editable_claim_selection">gtk_old_editable_claim_selection</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_old_editable_claim_selection    (<link linkend="GtkOldEditable">GtkOldEditable</link> *old_editable,
+                                                         <link linkend="gboolean">gboolean</link> claim,
+                                                         <link linkend="guint32">guint32</link> time_);</programlisting>
+<warning><para><literal>gtk_old_editable_claim_selection</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Claims or gives up ownership of the selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>old_editable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkOldEditable"><type>GtkOldEditable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>claim</parameter>&#160;:</term>
+<listitem><simpara> if <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, claim ownership of the selection, if <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, give
+  up ownership
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>time_</parameter>&#160;:</term>
+<listitem><simpara> timestamp for this operation
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-old-editable-changed" role="function" condition="deprecated:">
+<title>gtk_old_editable_changed ()</title>
+<indexterm zone="gtk-old-editable-changed" role="deprecated"><primary sortas="old_editable_changed">gtk_old_editable_changed</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_old_editable_changed            (<link linkend="GtkOldEditable">GtkOldEditable</link> *old_editable);</programlisting>
+<warning><para><literal>gtk_old_editable_changed</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Emits the ::changed signal on <parameter>old_editable</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>old_editable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkOldEditable"><type>GtkOldEditable</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkOldEditable.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkOldEditable--editable" role="property"><title>The <literal>&quot;editable&quot;</literal> property</title>
+<indexterm zone="GtkOldEditable--editable"><primary sortas="OldEditable:editable">GtkOldEditable:editable</primary></indexterm><programlisting>  &quot;editable&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para></para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkOldEditable--text-position" role="property"><title>The <literal>&quot;text-position&quot;</literal> property</title>
+<indexterm zone="GtkOldEditable--text-position"><primary sortas="OldEditable:text-position">GtkOldEditable:text-position</primary></indexterm><programlisting>  &quot;text-position&quot;            <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para></para><para>Default value: 0</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkOldEditable.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkOldEditable-activate" role="signal"><title>The <literal>&quot;activate&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-activate"><primary sortas="OldEditable::activate">GtkOldEditable::activate</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-copy-clipboard" role="signal"><title>The <literal>&quot;copy-clipboard&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-copy-clipboard"><primary sortas="OldEditable::copy-clipboard">GtkOldEditable::copy-clipboard</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-cut-clipboard" role="signal"><title>The <literal>&quot;cut-clipboard&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-cut-clipboard"><primary sortas="OldEditable::cut-clipboard">GtkOldEditable::cut-clipboard</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-kill-char" role="signal"><title>The <literal>&quot;kill-char&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-kill-char"><primary sortas="OldEditable::kill-char">GtkOldEditable::kill-char</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gint">gint</link>            arg1,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-kill-line" role="signal"><title>The <literal>&quot;kill-line&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-kill-line"><primary sortas="OldEditable::kill-line">GtkOldEditable::kill-line</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gint">gint</link>            arg1,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-kill-word" role="signal"><title>The <literal>&quot;kill-word&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-kill-word"><primary sortas="OldEditable::kill-word">GtkOldEditable::kill-word</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gint">gint</link>            arg1,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-move-cursor" role="signal"><title>The <literal>&quot;move-cursor&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-move-cursor"><primary sortas="OldEditable::move-cursor">GtkOldEditable::move-cursor</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gint">gint</link>            arg1,
+                                                        <link linkend="gint">gint</link>            arg2,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg2</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-move-page" role="signal"><title>The <literal>&quot;move-page&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-move-page"><primary sortas="OldEditable::move-page">GtkOldEditable::move-page</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gint">gint</link>            arg1,
+                                                        <link linkend="gint">gint</link>            arg2,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg2</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-move-to-column" role="signal"><title>The <literal>&quot;move-to-column&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-move-to-column"><primary sortas="OldEditable::move-to-column">GtkOldEditable::move-to-column</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gint">gint</link>            arg1,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-move-to-row" role="signal"><title>The <literal>&quot;move-to-row&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-move-to-row"><primary sortas="OldEditable::move-to-row">GtkOldEditable::move-to-row</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gint">gint</link>            arg1,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-move-word" role="signal"><title>The <literal>&quot;move-word&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-move-word"><primary sortas="OldEditable::move-word">GtkOldEditable::move-word</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gint">gint</link>            arg1,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-paste-clipboard" role="signal"><title>The <literal>&quot;paste-clipboard&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-paste-clipboard"><primary sortas="OldEditable::paste-clipboard">GtkOldEditable::paste-clipboard</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkOldEditable-set-editable" role="signal"><title>The <literal>&quot;set-editable&quot;</literal> signal</title>
+<indexterm zone="GtkOldEditable-set-editable"><primary sortas="OldEditable::set-editable">GtkOldEditable::set-editable</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOldEditable">GtkOldEditable</link> *oldeditable,
+                                                        <link linkend="gboolean">gboolean</link>        arg1,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)        : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>oldeditable</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

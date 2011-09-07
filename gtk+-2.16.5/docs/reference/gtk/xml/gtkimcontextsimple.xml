@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkIMContextSimple">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkIMContextSimple.top_of_page">GtkIMContextSimple</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkIMContextSimple</refname>
+<refpurpose>An input method context supporting table-based input methods</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkIMContextSimple.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkIMContextSimple-struct">GtkIMContextSimple</link>;
+<link linkend="GtkIMContext">GtkIMContext</link> *      <link linkend="gtk-im-context-simple-new">gtk_im_context_simple_new</link>           (void);
+<link linkend="void">void</link>                <link linkend="gtk-im-context-simple-add-table">gtk_im_context_simple_add_table</link>     (<link linkend="GtkIMContextSimple">GtkIMContextSimple</link> *context_simple,
+                                                         <link linkend="guint16">guint16</link> *data,
+                                                         <link linkend="gint">gint</link> max_seq_len,
+                                                         <link linkend="gint">gint</link> n_seqs);
+#define             <link linkend="GTK-MAX-COMPOSE-LEN--CAPS">GTK_MAX_COMPOSE_LEN</link>
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkIMContextSimple.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GtkIMContext">GtkIMContext</link>
+         +----GtkIMContextSimple
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+
+
+<refsect1 id="GtkIMContextSimple.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GtkIMContextSimple.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkIMContextSimple-struct" role="struct">
+<title>GtkIMContextSimple</title>
+<indexterm zone="GtkIMContextSimple-struct"><primary sortas="IMContextSimple">GtkIMContextSimple</primary></indexterm><programlisting>typedef struct _GtkIMContextSimple GtkIMContextSimple;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-im-context-simple-new" role="function">
+<title>gtk_im_context_simple_new ()</title>
+<indexterm zone="gtk-im-context-simple-new"><primary sortas="im_context_simple_new">gtk_im_context_simple_new</primary></indexterm><programlisting><link linkend="GtkIMContext">GtkIMContext</link> *      gtk_im_context_simple_new           (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkIMContextSimple"><type>GtkIMContextSimple</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkIMContextSimple"><type>GtkIMContextSimple</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-simple-add-table" role="function">
+<title>gtk_im_context_simple_add_table ()</title>
+<indexterm zone="gtk-im-context-simple-add-table"><primary sortas="im_context_simple_add_table">gtk_im_context_simple_add_table</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_context_simple_add_table     (<link linkend="GtkIMContextSimple">GtkIMContextSimple</link> *context_simple,
+                                                         <link linkend="guint16">guint16</link> *data,
+                                                         <link linkend="gint">gint</link> max_seq_len,
+                                                         <link linkend="gint">gint</link> n_seqs);</programlisting>
+<para>
+Adds an additional table to search to the input context.
+Each row of the table consists of <parameter>max_seq_len</parameter> key symbols
+followed by two <link linkend="guint16"><type>guint16</type></link> interpreted as the high and low
+words of a <link linkend="gunicode"><type>gunicode</type></link> value. Tables are searched starting
+from the last added.
+</para>
+<para>
+The table must be sorted in dictionary order on the
+numeric value of the key symbol fields. (Values beyond
+the length of the sequence should be zero.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context_simple</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GtkIMContextSimple"><type>GtkIMContextSimple</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> the table 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_seq_len</parameter>&#160;:</term>
+<listitem><simpara> Maximum length of a sequence in the table
+              (cannot be greater than <link linkend="GTK-MAX-COMPOSE-LEN--CAPS"><type>GTK_MAX_COMPOSE_LEN</type></link>)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_seqs</parameter>&#160;:</term>
+<listitem><simpara> number of sequences in the table
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GTK-MAX-COMPOSE-LEN--CAPS" role="macro">
+<title>GTK_MAX_COMPOSE_LEN</title>
+<indexterm zone="GTK-MAX-COMPOSE-LEN--CAPS"><primary sortas="MAX_COMPOSE_LEN">GTK_MAX_COMPOSE_LEN</primary></indexterm><programlisting>#define GTK_MAX_COMPOSE_LEN 7
+</programlisting>
+<para>
+The maximum length of sequences in compose tables.
+</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

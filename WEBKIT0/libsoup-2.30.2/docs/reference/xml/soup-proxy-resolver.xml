@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="SoupProxyResolver">
+<refmeta>
+<refentrytitle role="top_of_page" id="SoupProxyResolver.top_of_page">SoupProxyResolver</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupProxyResolver</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="SoupProxyResolver.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SoupProxyResolver-struct">SoupProxyResolver</link>;
+<link linkend="void">void</link>                (<link linkend="SoupProxyResolverCallback">*SoupProxyResolverCallback</link>)        (<link linkend="SoupProxyResolver">SoupProxyResolver</link> *,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *,
+                                                         <link linkend="guint">guint</link> ,
+                                                         <link linkend="SoupAddress">SoupAddress</link> *,
+                                                         <link linkend="gpointer">gpointer</link> );
+<link linkend="void">void</link>                <link linkend="soup-proxy-resolver-get-proxy-async">soup_proxy_resolver_get_proxy_async</link> (<link linkend="SoupProxyResolver">SoupProxyResolver</link> *proxy_resolver,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *msg,
+                                                         <link linkend="GMainContext">GMainContext</link> *async_context,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="SoupProxyResolverCallback">SoupProxyResolverCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="guint">guint</link>               <link linkend="soup-proxy-resolver-get-proxy-sync">soup_proxy_resolver_get_proxy_sync</link>  (<link linkend="SoupProxyResolver">SoupProxyResolver</link> *proxy_resolver,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *msg,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="SoupAddress">SoupAddress</link> **addr);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="SoupProxyResolver.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GInterface">GInterface</link>
+   +----SoupProxyResolver
+</synopsis>
+</refsect1>
+
+<refsect1 id="SoupProxyResolver.prerequisites" role="prerequisites">
+<title role="prerequisites.title">Prerequisites</title>
+<para>
+SoupProxyResolver requires
+ <link linkend="SoupSessionFeature">SoupSessionFeature</link> and  <link linkend="GObject">GObject</link>.</para>
+</refsect1>
+
+
+
+
+
+
+
+<refsect1 id="SoupProxyResolver.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="SoupProxyResolver.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupProxyResolver-struct" role="struct">
+<title>SoupProxyResolver</title>
+<indexterm zone="SoupProxyResolver-struct" role="deprecated"><primary sortas="SoupProxyResolver">SoupProxyResolver</primary></indexterm><programlisting>typedef struct _SoupProxyResolver SoupProxyResolver;</programlisting>
+<warning><para><literal>SoupProxyResolver</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="SoupProxyResolverCallback" role="function" condition="deprecated:">
+<title>SoupProxyResolverCallback ()</title>
+<indexterm zone="SoupProxyResolverCallback" role="deprecated"><primary sortas="SoupProxyResolverCallback">SoupProxyResolverCallback</primary></indexterm><programlisting><link linkend="void">void</link>                (*SoupProxyResolverCallback)        (<link linkend="SoupProxyResolver">SoupProxyResolver</link> *,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *,
+                                                         <link linkend="guint">guint</link> ,
+                                                         <link linkend="SoupAddress">SoupAddress</link> *,
+                                                         <link linkend="gpointer">gpointer</link> );</programlisting>
+<warning><para><literal>SoupProxyResolverCallback</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>Param1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>Param2</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>Param3</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>Param4</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>Param5</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-proxy-resolver-get-proxy-async" role="function" condition="deprecated:">
+<title>soup_proxy_resolver_get_proxy_async ()</title>
+<indexterm zone="soup-proxy-resolver-get-proxy-async" role="deprecated"><primary sortas="soup_proxy_resolver_get_proxy_async">soup_proxy_resolver_get_proxy_async</primary></indexterm><programlisting><link linkend="void">void</link>                soup_proxy_resolver_get_proxy_async (<link linkend="SoupProxyResolver">SoupProxyResolver</link> *proxy_resolver,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *msg,
+                                                         <link linkend="GMainContext">GMainContext</link> *async_context,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="SoupProxyResolverCallback">SoupProxyResolverCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<warning><para><literal>soup_proxy_resolver_get_proxy_async</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>proxy_resolver</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>msg</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>async_context</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-proxy-resolver-get-proxy-sync" role="function" condition="deprecated:">
+<title>soup_proxy_resolver_get_proxy_sync ()</title>
+<indexterm zone="soup-proxy-resolver-get-proxy-sync" role="deprecated"><primary sortas="soup_proxy_resolver_get_proxy_sync">soup_proxy_resolver_get_proxy_sync</primary></indexterm><programlisting><link linkend="guint">guint</link>               soup_proxy_resolver_get_proxy_sync  (<link linkend="SoupProxyResolver">SoupProxyResolver</link> *proxy_resolver,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *msg,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="SoupAddress">SoupAddress</link> **addr);</programlisting>
+<warning><para><literal>soup_proxy_resolver_get_proxy_sync</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>proxy_resolver</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>msg</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>addr</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

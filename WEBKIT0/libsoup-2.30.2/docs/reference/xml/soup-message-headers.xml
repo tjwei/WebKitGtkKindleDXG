@@ -1,0 +1,972 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libsoup-24-SoupMessageHeaders">
+<refmeta>
+<refentrytitle role="top_of_page" id="libsoup-24-SoupMessageHeaders.top_of_page">SoupMessageHeaders</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupMessageHeaders</refname>
+<refpurpose>HTTP message headers</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libsoup-24-SoupMessageHeaders.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+typedef             <link linkend="SoupMessageHeaders">SoupMessageHeaders</link>;
+enum                <link linkend="SoupMessageHeadersType">SoupMessageHeadersType</link>;
+<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> * <link linkend="soup-message-headers-new">soup_message_headers_new</link>           (<link linkend="SoupMessageHeadersType">SoupMessageHeadersType</link> type);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-free">soup_message_headers_free</link>           (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);
+
+<link linkend="void">void</link>                <link linkend="soup-message-headers-append">soup_message_headers_append</link>         (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name,
+                                                         const <link linkend="char">char</link> *value);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-replace">soup_message_headers_replace</link>        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name,
+                                                         const <link linkend="char">char</link> *value);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-remove">soup_message_headers_remove</link>         (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-clear">soup_message_headers_clear</link>          (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);
+const <link linkend="char">char</link> *        <link linkend="soup-message-headers-get-one">soup_message_headers_get_one</link>        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name);
+const <link linkend="char">char</link> *        <link linkend="soup-message-headers-get-list">soup_message_headers_get_list</link>       (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name);
+const <link linkend="char">char</link> *        <link linkend="soup-message-headers-get">soup_message_headers_get</link>            (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name);
+
+<link linkend="void">void</link>                (<link linkend="SoupMessageHeadersForeachFunc">*SoupMessageHeadersForeachFunc</link>)    (const <link linkend="char">char</link> *name,
+                                                         const <link linkend="char">char</link> *value,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-foreach">soup_message_headers_foreach</link>        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="SoupMessageHeadersForeachFunc">SoupMessageHeadersForeachFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+
+                    <link linkend="SoupMessageHeadersIter">SoupMessageHeadersIter</link>;
+<link linkend="void">void</link>                <link linkend="soup-message-headers-iter-init">soup_message_headers_iter_init</link>      (<link linkend="SoupMessageHeadersIter">SoupMessageHeadersIter</link> *iter,
+                                                         <link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-message-headers-iter-next">soup_message_headers_iter_next</link>      (<link linkend="SoupMessageHeadersIter">SoupMessageHeadersIter</link> *iter,
+                                                         const <link linkend="char">char</link> **name,
+                                                         const <link linkend="char">char</link> **value);
+
+enum                <link linkend="SoupEncoding">SoupEncoding</link>;
+<link linkend="SoupEncoding">SoupEncoding</link>        <link linkend="soup-message-headers-get-encoding">soup_message_headers_get_encoding</link>   (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-set-encoding">soup_message_headers_set_encoding</link>   (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="SoupEncoding">SoupEncoding</link> encoding);
+<link linkend="goffset">goffset</link>             <link linkend="soup-message-headers-get-content-length">soup_message_headers_get_content_length</link>
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-set-content-length">soup_message_headers_set_content_length</link>
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="goffset">goffset</link> content_length);
+
+enum                <link linkend="SoupExpectation">SoupExpectation</link>;
+<link linkend="SoupExpectation">SoupExpectation</link>     <link linkend="soup-message-headers-get-expectations">soup_message_headers_get_expectations</link>
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-set-expectations">soup_message_headers_set_expectations</link>
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="SoupExpectation">SoupExpectation</link> expectations);
+
+const <link linkend="char">char</link> *        <link linkend="soup-message-headers-get-content-type">soup_message_headers_get_content_type</link>
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="GHashTable">GHashTable</link> **params);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-set-content-type">soup_message_headers_set_content_type</link>
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *content_type,
+                                                         <link linkend="GHashTable">GHashTable</link> *params);
+
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-message-headers-get-content-disposition">soup_message_headers_get_content_disposition</link>
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="char">char</link> **disposition,
+                                                         <link linkend="GHashTable">GHashTable</link> **params);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-set-content-disposition">soup_message_headers_set_content_disposition</link>
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *disposition,
+                                                         <link linkend="GHashTable">GHashTable</link> *params);
+
+                    <link linkend="SoupRange">SoupRange</link>;
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-message-headers-get-ranges">soup_message_headers_get_ranges</link>     (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="goffset">goffset</link> total_length,
+                                                         <link linkend="SoupRange">SoupRange</link> **ranges,
+                                                         <link linkend="int">int</link> *length);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-set-ranges">soup_message_headers_set_ranges</link>     (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="SoupRange">SoupRange</link> *ranges,
+                                                         <link linkend="int">int</link> length);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-set-range">soup_message_headers_set_range</link>      (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="goffset">goffset</link> start,
+                                                         <link linkend="goffset">goffset</link> end);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-free-ranges">soup_message_headers_free_ranges</link>    (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="SoupRange">SoupRange</link> *ranges);
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-message-headers-get-content-range">soup_message_headers_get_content_range</link>
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="goffset">goffset</link> *start,
+                                                         <link linkend="goffset">goffset</link> *end,
+                                                         <link linkend="goffset">goffset</link> *total_length);
+<link linkend="void">void</link>                <link linkend="soup-message-headers-set-content-range">soup_message_headers_set_content_range</link>
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="goffset">goffset</link> start,
+                                                         <link linkend="goffset">goffset</link> end,
+                                                         <link linkend="goffset">goffset</link> total_length);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libsoup-24-SoupMessageHeaders.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link> represents the HTTP message headers associated
+with a request or response.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libsoup-24-SoupMessageHeaders.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupMessageHeaders" role="typedef">
+<title>SoupMessageHeaders</title>
+<indexterm zone="SoupMessageHeaders"><primary sortas="SoupMessageHeaders">SoupMessageHeaders</primary></indexterm><programlisting>typedef struct SoupMessageHeaders SoupMessageHeaders;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SoupMessageHeadersType" role="enum">
+<title>enum SoupMessageHeadersType</title>
+<indexterm zone="SoupMessageHeadersType"><primary sortas="SoupMessageHeadersType">SoupMessageHeadersType</primary></indexterm><programlisting>typedef enum {
+	SOUP_MESSAGE_HEADERS_REQUEST,
+	SOUP_MESSAGE_HEADERS_RESPONSE,
+	SOUP_MESSAGE_HEADERS_MULTIPART
+} SoupMessageHeadersType;
+</programlisting>
+<para>
+Value passed to <link linkend="soup-message-headers-new"><function>soup_message_headers_new()</function></link> to set certain default
+behaviors.</para>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="SOUP-MESSAGE-HEADERS-REQUEST--CAPS" role="constant">
+<term><literal>SOUP_MESSAGE_HEADERS_REQUEST</literal></term>
+<listitem><simpara> request headers
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-MESSAGE-HEADERS-RESPONSE--CAPS" role="constant">
+<term><literal>SOUP_MESSAGE_HEADERS_RESPONSE</literal></term>
+<listitem><simpara> response headers
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-MESSAGE-HEADERS-MULTIPART--CAPS" role="constant">
+<term><literal>SOUP_MESSAGE_HEADERS_MULTIPART</literal></term>
+<listitem><simpara> multipart body part headers
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-new" role="function">
+<title>soup_message_headers_new ()</title>
+<indexterm zone="soup-message-headers-new"><primary sortas="soup_message_headers_new">soup_message_headers_new</primary></indexterm><programlisting><link linkend="SoupMessageHeaders">SoupMessageHeaders</link> * soup_message_headers_new           (<link linkend="SoupMessageHeadersType">SoupMessageHeadersType</link> type);</programlisting>
+<para>
+Creates a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>. (<link linkend="SoupMessage"><type>SoupMessage</type></link> does this
+automatically for its own headers. You would only need to use this
+method if you are manually parsing or generating message headers.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> the type of headers
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-free" role="function">
+<title>soup_message_headers_free ()</title>
+<indexterm zone="soup-message-headers-free"><primary sortas="soup_message_headers_free">soup_message_headers_free</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_free           (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);</programlisting>
+<para>
+Frees <parameter>hdrs</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-append" role="function">
+<title>soup_message_headers_append ()</title>
+<indexterm zone="soup-message-headers-append"><primary sortas="soup_message_headers_append">soup_message_headers_append</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_append         (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name,
+                                                         const <link linkend="char">char</link> *value);</programlisting>
+<para>
+Appends a new header with name <parameter>name</parameter> and value <parameter>value</parameter> to <parameter>hdrs</parameter>. (If
+there is an existing header with name <parameter>name</parameter>, then this creates a
+second one, which is only allowed for list-valued headers; see also
+<link linkend="soup-message-headers-replace"><function>soup_message_headers_replace()</function></link>.)
+</para>
+<para>
+The caller is expected to make sure that <parameter>name</parameter> and <parameter>value</parameter> are
+syntactically correct.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> the header name to add
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the new value of <parameter>name</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-replace" role="function">
+<title>soup_message_headers_replace ()</title>
+<indexterm zone="soup-message-headers-replace"><primary sortas="soup_message_headers_replace">soup_message_headers_replace</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_replace        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name,
+                                                         const <link linkend="char">char</link> *value);</programlisting>
+<para>
+Replaces the value of the header <parameter>name</parameter> in <parameter>hdrs</parameter> with <parameter>value</parameter>. (See
+also <link linkend="soup-message-headers-append"><function>soup_message_headers_append()</function></link>.)
+</para>
+<para>
+The caller is expected to make sure that <parameter>name</parameter> and <parameter>value</parameter> are
+syntactically correct.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> the header name to replace
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the new value of <parameter>name</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-remove" role="function">
+<title>soup_message_headers_remove ()</title>
+<indexterm zone="soup-message-headers-remove"><primary sortas="soup_message_headers_remove">soup_message_headers_remove</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_remove         (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name);</programlisting>
+<para>
+Removes <parameter>name</parameter> from <parameter>hdrs</parameter>. If there are multiple values for <parameter>name</parameter>,
+they are all removed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> the header name to remove
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-clear" role="function">
+<title>soup_message_headers_clear ()</title>
+<indexterm zone="soup-message-headers-clear"><primary sortas="soup_message_headers_clear">soup_message_headers_clear</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_clear          (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);</programlisting>
+<para>
+Clears <parameter>hdrs</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-get-one" role="function" condition="since:2.26.1">
+<title>soup_message_headers_get_one ()</title>
+<indexterm zone="soup-message-headers-get-one" role="2.26.1"><primary sortas="soup_message_headers_get_one">soup_message_headers_get_one</primary></indexterm><programlisting>const <link linkend="char">char</link> *        soup_message_headers_get_one        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name);</programlisting>
+<para>
+Gets the value of header <parameter>name</parameter> in <parameter>hdrs</parameter>. Use this for headers whose
+values are <emphasis>not</emphasis> comma-delimited lists, and
+which therefore can only appear at most once in the headers. For
+list-valued headers, use <link linkend="soup-message-headers-get-list"><function>soup_message_headers_get_list()</function></link>.
+</para>
+<para>
+If <parameter>hdrs</parameter> does erroneously contain multiple copies of the header, it
+is not defined which one will be returned. (Ideally, it will return
+whichever one makes libsoup most compatible with other HTTP
+implementations.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> header name
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the header's value or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if not found.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26.1</para></refsect2>
+<refsect2 id="soup-message-headers-get-list" role="function" condition="since:2.26.1">
+<title>soup_message_headers_get_list ()</title>
+<indexterm zone="soup-message-headers-get-list" role="2.26.1"><primary sortas="soup_message_headers_get_list">soup_message_headers_get_list</primary></indexterm><programlisting>const <link linkend="char">char</link> *        soup_message_headers_get_list       (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name);</programlisting>
+<para>
+Gets the value of header <parameter>name</parameter> in <parameter>hdrs</parameter>. Use this for headers whose
+values are comma-delimited lists, and which are therefore allowed
+to appear multiple times in the headers. For non-list-valued
+headers, use <link linkend="soup-message-headers-get-one"><function>soup_message_headers_get_one()</function></link>.
+</para>
+<para>
+If <parameter>name</parameter> appears multiple times in <parameter>hdrs</parameter>,
+<link linkend="soup-message-headers-get-list"><function>soup_message_headers_get_list()</function></link> will concatenate all of the values
+together, separated by commas. This is sometimes awkward to parse
+(eg, WWW-Authenticate, Set-Cookie), but you have to be able to deal
+with it anyway, because the HTTP spec explicitly states that this
+transformation is allowed, and so an upstream proxy could do the
+same thing.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> header name
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the header's value or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if not found.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26.1</para></refsect2>
+<refsect2 id="soup-message-headers-get" role="function" condition="deprecated">
+<title>soup_message_headers_get ()</title>
+<indexterm zone="soup-message-headers-get" role="deprecated"><primary sortas="soup_message_headers_get">soup_message_headers_get</primary></indexterm><programlisting>const <link linkend="char">char</link> *        soup_message_headers_get            (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *name);</programlisting>
+<warning><para><literal>soup_message_headers_get</literal> is deprecated and should not be used in newly-written code. Use <link linkend="soup-message-headers-get-one"><function>soup_message_headers_get_one()</function></link> or
+<link linkend="soup-message-headers-get-list"><function>soup_message_headers_get_list()</function></link> instead.</para></warning>
+<para>
+Gets the value of header <parameter>name</parameter> in <parameter>hdrs</parameter>.
+</para>
+<para>
+This method was supposed to work correctly for both single-valued
+and list-valued headers, but because some HTTP clients/servers
+mistakenly send multiple copies of headers that are supposed to be
+single-valued, it sometimes returns incorrect results. To fix this,
+the methods <link linkend="soup-message-headers-get-one"><function>soup_message_headers_get_one()</function></link> and
+<link linkend="soup-message-headers-get-list"><function>soup_message_headers_get_list()</function></link> were introduced, so callers can
+explicitly state which behavior they are expecting.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> header name
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> as with <link linkend="soup-message-headers-get-list"><function>soup_message_headers_get_list()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SoupMessageHeadersForeachFunc" role="function">
+<title>SoupMessageHeadersForeachFunc ()</title>
+<indexterm zone="SoupMessageHeadersForeachFunc"><primary sortas="SoupMessageHeadersForeachFunc">SoupMessageHeadersForeachFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*SoupMessageHeadersForeachFunc)    (const <link linkend="char">char</link> *name,
+                                                         const <link linkend="char">char</link> *value,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+The callback passed to <link linkend="soup-message-headers-foreach"><function>soup_message_headers_foreach()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> the header name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the header value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> the data passed to <link linkend="soup-message-headers-foreach"><function>soup_message_headers_foreach()</function></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-foreach" role="function">
+<title>soup_message_headers_foreach ()</title>
+<indexterm zone="soup-message-headers-foreach"><primary sortas="soup_message_headers_foreach">soup_message_headers_foreach</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_foreach        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="SoupMessageHeadersForeachFunc">SoupMessageHeadersForeachFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+Calls <parameter>func</parameter> once for each header value in <parameter>hdrs</parameter>.
+</para>
+<para>
+Beware that unlike <link linkend="soup-message-headers-get"><function>soup_message_headers_get()</function></link>, this processes the
+headers in exactly the way they were added, rather than
+concatenating multiple same-named headers into a single value.
+(This is intentional; it ensures that if you call
+<link linkend="soup-message-headers-append"><function>soup_message_headers_append()</function></link> multiple times with the same name,
+then the I/O code will output multiple copies of the header when
+sending the message to the remote implementation, which may be
+required for interoperability in some cases.)
+</para>
+<para>
+You may not modify the headers from <parameter>func</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> callback function to run for each header
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to <parameter>func</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SoupMessageHeadersIter" role="struct">
+<title>SoupMessageHeadersIter</title>
+<indexterm zone="SoupMessageHeadersIter"><primary sortas="SoupMessageHeadersIter">SoupMessageHeadersIter</primary></indexterm><programlisting>typedef struct {
+} SoupMessageHeadersIter;
+</programlisting>
+<para>
+An opaque type used to iterate over a <link linkend="SoupMessageHeaders"><literal>SoupMessageHeaders</literal></link>
+structure.
+</para>
+<para>
+After intializing the iterator with
+<link linkend="soup-message-headers-iter-init"><function>soup_message_headers_iter_init()</function></link>, call
+<link linkend="soup-message-headers-iter-next"><function>soup_message_headers_iter_next()</function></link> to fetch data from it.
+</para>
+<para>
+You may not modify the headers while iterating over them.</para>
+<para>
+</para></refsect2>
+<refsect2 id="soup-message-headers-iter-init" role="function">
+<title>soup_message_headers_iter_init ()</title>
+<indexterm zone="soup-message-headers-iter-init"><primary sortas="soup_message_headers_iter_init">soup_message_headers_iter_init</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_iter_init      (<link linkend="SoupMessageHeadersIter">SoupMessageHeadersIter</link> *iter,
+                                                         <link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);</programlisting>
+<para>
+Initializes <parameter>iter</parameter> for iterating <parameter>hdrs</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="SoupMessageHeadersIter"><literal>SoupMessageHeadersIter</literal></link> structure
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><literal>SoupMessageHeaders</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-iter-next" role="function">
+<title>soup_message_headers_iter_next ()</title>
+<indexterm zone="soup-message-headers-iter-next"><primary sortas="soup_message_headers_iter_next">soup_message_headers_iter_next</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_message_headers_iter_next      (<link linkend="SoupMessageHeadersIter">SoupMessageHeadersIter</link> *iter,
+                                                         const <link linkend="char">char</link> **name,
+                                                         const <link linkend="char">char</link> **value);</programlisting>
+<para>
+Yields the next name/value pair in the <link linkend="SoupMessageHeaders"><literal>SoupMessageHeaders</literal></link> being
+iterated by <parameter>iter</parameter>. If <parameter>iter</parameter> has already yielded the last header,
+then <link linkend="soup-message-headers-iter-next"><function>soup_message_headers_iter_next()</function></link> will return <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> and <parameter>name</parameter>
+and <parameter>value</parameter> will be unchanged.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeadersIter"><literal>SoupMessageHeadersIter</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> pointer to a variable to return the header name in
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> pointer to a variable to return the header value in
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if another name and value were returned, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>
+if the end of the headers has been reached.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SoupEncoding" role="enum">
+<title>enum SoupEncoding</title>
+<indexterm zone="SoupEncoding"><primary sortas="SoupEncoding">SoupEncoding</primary></indexterm><programlisting>typedef enum {
+	SOUP_ENCODING_UNRECOGNIZED,
+	SOUP_ENCODING_NONE,
+	SOUP_ENCODING_CONTENT_LENGTH,
+	SOUP_ENCODING_EOF,
+	SOUP_ENCODING_CHUNKED,
+	SOUP_ENCODING_BYTERANGES
+} SoupEncoding;
+</programlisting>
+<para>
+How a message body is encoded for transport</para>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="SOUP-ENCODING-UNRECOGNIZED--CAPS" role="constant">
+<term><literal>SOUP_ENCODING_UNRECOGNIZED</literal></term>
+<listitem><simpara> unknown / error
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-ENCODING-NONE--CAPS" role="constant">
+<term><literal>SOUP_ENCODING_NONE</literal></term>
+<listitem><simpara> no body is present (which is not the same as a
+0-length body, and only occurs in certain places)
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-ENCODING-CONTENT-LENGTH--CAPS" role="constant">
+<term><literal>SOUP_ENCODING_CONTENT_LENGTH</literal></term>
+<listitem><simpara> Content-Length encoding
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-ENCODING-EOF--CAPS" role="constant">
+<term><literal>SOUP_ENCODING_EOF</literal></term>
+<listitem><simpara> Response body ends when the connection is closed
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-ENCODING-CHUNKED--CAPS" role="constant">
+<term><literal>SOUP_ENCODING_CHUNKED</literal></term>
+<listitem><simpara> chunked encoding (currently only supported
+for response)
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-ENCODING-BYTERANGES--CAPS" role="constant">
+<term><literal>SOUP_ENCODING_BYTERANGES</literal></term>
+<listitem><simpara> multipart/byteranges (Reserved for future
+use: NOT CURRENTLY IMPLEMENTED)
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-get-encoding" role="function">
+<title>soup_message_headers_get_encoding ()</title>
+<indexterm zone="soup-message-headers-get-encoding"><primary sortas="soup_message_headers_get_encoding">soup_message_headers_get_encoding</primary></indexterm><programlisting><link linkend="SoupEncoding">SoupEncoding</link>        soup_message_headers_get_encoding   (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);</programlisting>
+<para>
+Gets the message body encoding that <parameter>hdrs</parameter> declare. This may not
+always correspond to the encoding used on the wire; eg, a HEAD
+response may declare a Content-Length or Transfer-Encoding, but
+it will never actually include a body.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the encoding declared by <parameter>hdrs</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-set-encoding" role="function">
+<title>soup_message_headers_set_encoding ()</title>
+<indexterm zone="soup-message-headers-set-encoding"><primary sortas="soup_message_headers_set_encoding">soup_message_headers_set_encoding</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_set_encoding   (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="SoupEncoding">SoupEncoding</link> encoding);</programlisting>
+<para>
+Sets the message body encoding that <parameter>hdrs</parameter> will declare. In particular,
+you should use this if you are going to send a request or response in
+chunked encoding.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>encoding</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupEncoding"><type>SoupEncoding</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-get-content-length" role="function">
+<title>soup_message_headers_get_content_length ()</title>
+<indexterm zone="soup-message-headers-get-content-length"><primary sortas="soup_message_headers_get_content_length">soup_message_headers_get_content_length</primary></indexterm><programlisting><link linkend="goffset">goffset</link>             soup_message_headers_get_content_length
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);</programlisting>
+<para>
+Gets the message body length that <parameter>hdrs</parameter> declare. This will only
+be non-0 if <link linkend="soup-message-headers-get-encoding"><function>soup_message_headers_get_encoding()</function></link> returns
+<link linkend="SOUP-ENCODING-CONTENT-LENGTH--CAPS"><literal>SOUP_ENCODING_CONTENT_LENGTH</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the message body length declared by <parameter>hdrs</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-set-content-length" role="function">
+<title>soup_message_headers_set_content_length ()</title>
+<indexterm zone="soup-message-headers-set-content-length"><primary sortas="soup_message_headers_set_content_length">soup_message_headers_set_content_length</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_set_content_length
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="goffset">goffset</link> content_length);</programlisting>
+<para>
+Sets the message body length that <parameter>hdrs</parameter> will declare, and sets
+<parameter>hdrs</parameter>'s encoding to <link linkend="SOUP-ENCODING-CONTENT-LENGTH--CAPS"><literal>SOUP_ENCODING_CONTENT_LENGTH</literal></link>.
+</para>
+<para>
+You do not normally need to call this; if <parameter>hdrs</parameter> is set to use
+Content-Length encoding, libsoup will automatically set its
+Content-Length header for you immediately before sending the
+headers. One situation in which this method is useful is when
+generating the response to a HEAD request; Calling
+<link linkend="soup-message-headers-set-content-length"><function>soup_message_headers_set_content_length()</function></link> allows you to put the
+correct content length into the response without needing to waste
+memory by filling in a response body which won't actually be sent.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>content_length</parameter>&#160;:</term>
+<listitem><simpara> the message body length
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="SoupExpectation" role="enum">
+<title>enum SoupExpectation</title>
+<indexterm zone="SoupExpectation"><primary sortas="SoupExpectation">SoupExpectation</primary></indexterm><programlisting>typedef enum {
+	SOUP_EXPECTATION_UNRECOGNIZED = (1 &lt;&lt; 0),
+	SOUP_EXPECTATION_CONTINUE     = (1 &lt;&lt; 1)
+} SoupExpectation;
+</programlisting>
+<para>
+Represents the parsed value of the "Expect" header.</para>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="SOUP-EXPECTATION-UNRECOGNIZED--CAPS" role="constant">
+<term><literal>SOUP_EXPECTATION_UNRECOGNIZED</literal></term>
+<listitem><simpara> any unrecognized expectation
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="SOUP-EXPECTATION-CONTINUE--CAPS" role="constant">
+<term><literal>SOUP_EXPECTATION_CONTINUE</literal></term>
+<listitem><simpara> "100-continue"
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-get-expectations" role="function">
+<title>soup_message_headers_get_expectations ()</title>
+<indexterm zone="soup-message-headers-get-expectations"><primary sortas="soup_message_headers_get_expectations">soup_message_headers_get_expectations</primary></indexterm><programlisting><link linkend="SoupExpectation">SoupExpectation</link>     soup_message_headers_get_expectations
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs);</programlisting>
+<para>
+Gets the expectations declared by <parameter>hdrs</parameter>'s "Expect" header.
+Currently this will either be <link linkend="SOUP-EXPECTATION-CONTINUE--CAPS"><literal>SOUP_EXPECTATION_CONTINUE</literal></link> or
+<link linkend="SOUP-EXPECTATION-UNRECOGNIZED--CAPS"><literal>SOUP_EXPECTATION_UNRECOGNIZED</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the contents of <parameter>hdrs</parameter>'s "Expect" header
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-set-expectations" role="function">
+<title>soup_message_headers_set_expectations ()</title>
+<indexterm zone="soup-message-headers-set-expectations"><primary sortas="soup_message_headers_set_expectations">soup_message_headers_set_expectations</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_set_expectations
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="SoupExpectation">SoupExpectation</link> expectations);</programlisting>
+<para>
+Sets <parameter>hdrs</parameter>'s "Expect" header according to <parameter>expectations</parameter>.
+</para>
+<para>
+Currently <link linkend="SOUP-EXPECTATION-CONTINUE--CAPS"><literal>SOUP_EXPECTATION_CONTINUE</literal></link> is the only known expectation
+value. You should set this value on a request if you are sending a
+large message body (eg, via POST or PUT), and want to give the
+server a chance to reject the request after seeing just the headers
+(eg, because it will require authentication before allowing you to
+post, or because you're POSTing to a URL that doesn't exist). This
+saves you from having to transmit the large request body when the
+server is just going to ignore it anyway.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>expectations</parameter>&#160;:</term>
+<listitem><simpara> the expectations to set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-message-headers-get-content-type" role="function" condition="since:2.26">
+<title>soup_message_headers_get_content_type ()</title>
+<indexterm zone="soup-message-headers-get-content-type" role="2.26"><primary sortas="soup_message_headers_get_content_type">soup_message_headers_get_content_type</primary></indexterm><programlisting>const <link linkend="char">char</link> *        soup_message_headers_get_content_type
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="GHashTable">GHashTable</link> **params);</programlisting>
+<para>
+Looks up the "Content-Type" header in <parameter>hdrs</parameter>, parses it, and returns
+its value in *<parameter>content_type</parameter> and *<parameter>params</parameter>. <parameter>params</parameter> can be <link linkend="NULL--CAPS"><literal>NULL</literal></link> if you
+are only interested in the content type itself.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>params</parameter>&#160;:</term>
+<listitem><simpara> return location for the Content-Type parameters (eg,
+"charset"), or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a string with the value of the "Content-Type" header
+or NULL if <parameter>hdrs</parameter> does not contain that header or it cannot be
+parsed (in which case *<parameter>params</parameter> will be unchanged).
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-message-headers-set-content-type" role="function" condition="since:2.26">
+<title>soup_message_headers_set_content_type ()</title>
+<indexterm zone="soup-message-headers-set-content-type" role="2.26"><primary sortas="soup_message_headers_set_content_type">soup_message_headers_set_content_type</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_set_content_type
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *content_type,
+                                                         <link linkend="GHashTable">GHashTable</link> *params);</programlisting>
+<para>
+Sets the "Content-Type" header in <parameter>hdrs</parameter> to <parameter>content_type</parameter>,
+optionally with additional parameters specified in <parameter>params</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>content_type</parameter>&#160;:</term>
+<listitem><simpara> the MIME type
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>params</parameter>&#160;:</term>
+<listitem><simpara> additional parameters, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-message-headers-get-content-disposition" role="function" condition="since:2.26">
+<title>soup_message_headers_get_content_disposition ()</title>
+<indexterm zone="soup-message-headers-get-content-disposition" role="2.26"><primary sortas="soup_message_headers_get_content_disposition">soup_message_headers_get_content_disposition</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_message_headers_get_content_disposition
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="char">char</link> **disposition,
+                                                         <link linkend="GHashTable">GHashTable</link> **params);</programlisting>
+<para>
+Looks up the "Content-Disposition" header in <parameter>hdrs</parameter>, parses it, and
+returns its value in *<parameter>disposition</parameter> and *<parameter>params</parameter>. <parameter>params</parameter> can be
+<link linkend="NULL--CAPS"><literal>NULL</literal></link> if you are only interested in the disposition-type.
+</para>
+<para>
+In HTTP, the most common use of this header is to set a
+disposition-type of "attachment", to suggest to the browser that a
+response should be saved to disk rather than displayed in the
+browser. If <parameter>params</parameter> contains a "filename" parameter, this is a
+suggestion of a filename to use. (If the parameter value in the
+header contains an absolute or relative path, libsoup will truncate
+it down to just the final path component, so you do not need to
+test this yourself.)
+</para>
+<para>
+Content-Disposition is also used in "multipart/form-data", however
+this is handled automatically by <link linkend="SoupMultipart"><type>SoupMultipart</type></link> and the associated
+form methods.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>disposition</parameter>&#160;:</term>
+<listitem><simpara> return location for the disposition-type, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>params</parameter>&#160;:</term>
+<listitem><simpara> return location for the Content-Disposition parameters, or
+<link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>hdrs</parameter> contains a "Content-Disposition"
+header, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if not (in which case *<parameter>disposition</parameter> and *<parameter>params</parameter>
+will be unchanged).
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-message-headers-set-content-disposition" role="function" condition="since:2.26">
+<title>soup_message_headers_set_content_disposition ()</title>
+<indexterm zone="soup-message-headers-set-content-disposition" role="2.26"><primary sortas="soup_message_headers_set_content_disposition">soup_message_headers_set_content_disposition</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_set_content_disposition
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         const <link linkend="char">char</link> *disposition,
+                                                         <link linkend="GHashTable">GHashTable</link> *params);</programlisting>
+<para>
+Sets the "Content-Disposition" header in <parameter>hdrs</parameter> to <parameter>disposition</parameter>,
+optionally with additional parameters specified in <parameter>params</parameter>.
+</para>
+<para>
+See <link linkend="soup-message-headers-get-content-disposition"><function>soup_message_headers_get_content_disposition()</function></link> for a discussion
+of how Content-Disposition is used in HTTP.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>disposition</parameter>&#160;:</term>
+<listitem><simpara> the disposition-type
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>params</parameter>&#160;:</term>
+<listitem><simpara> additional parameters, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="SoupRange" role="struct" condition="since:2.26">
+<title>SoupRange</title>
+<indexterm zone="SoupRange" role="2.26"><primary sortas="SoupRange">SoupRange</primary></indexterm><programlisting>typedef struct {
+	goffset start;
+	goffset end;
+} SoupRange;
+</programlisting>
+<para>
+Represents a byte range as used in the Range header.
+</para>
+<para>
+If <parameter>end</parameter> is non-negative, then <parameter>start</parameter> and <parameter>end</parameter> represent the bounds
+of of the range, counting from <link linkend="0--CAPS"><literal>0</literal></link>. (Eg, the first 500 bytes would be
+represented as <parameter>start</parameter> = <link linkend="0--CAPS"><literal>0</literal></link> and <parameter>end</parameter> = <link linkend="499--CAPS"><literal>499</literal></link>.)
+</para>
+<para>
+If <parameter>end</parameter> is <link linkend="1--CAPS"><literal>-1</literal></link> and <parameter>start</parameter> is non-negative, then this represents a
+range starting at <parameter>start</parameter> and ending with the last byte of the
+requested resource body. (Eg, all but the first 500 bytes would be
+<parameter>start</parameter> = <link linkend="500--CAPS"><literal>500</literal></link>, and <parameter>end</parameter> = <link linkend="1--CAPS"><literal>-1</literal></link>.)
+</para>
+<para>
+If <parameter>end</parameter> is <link linkend="1--CAPS"><literal>-1</literal></link> and <parameter>start</parameter> is negative, then it represents a "suffix
+range", referring to the last -<parameter>start</parameter> bytes of the resource body.
+(Eg, the last 500 bytes would be <parameter>start</parameter> = <link linkend="500--CAPS"><literal>-500</literal></link> and <parameter>end</parameter> = <link linkend="1--CAPS"><literal>-1</literal></link>.)</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="goffset">goffset</link>&#160;<structfield>start</structfield>;</term>
+<listitem><simpara> the start of the range
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="goffset">goffset</link>&#160;<structfield>end</structfield>;</term>
+<listitem><simpara> the end of the range
+</simpara></listitem>
+</varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-message-headers-get-ranges" role="function" condition="since:2.26">
+<title>soup_message_headers_get_ranges ()</title>
+<indexterm zone="soup-message-headers-get-ranges" role="2.26"><primary sortas="soup_message_headers_get_ranges">soup_message_headers_get_ranges</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_message_headers_get_ranges     (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="goffset">goffset</link> total_length,
+                                                         <link linkend="SoupRange">SoupRange</link> **ranges,
+                                                         <link linkend="int">int</link> *length);</programlisting>
+<para>
+Parses <parameter>hdrs</parameter>'s Range header and returns an array of the requested
+byte ranges. The returned array must be freed with
+<link linkend="soup-message-headers-free-ranges"><function>soup_message_headers_free_ranges()</function></link>.
+</para>
+<para>
+If <parameter>total_length</parameter> is non-0, its value will be used to adjust the
+returned ranges to have explicit start and end values, and the
+returned ranges will be sorted and non-overlapping. If
+<parameter>total_length</parameter> is 0, then some ranges may have an end value of -1,
+as described under <link linkend="SoupRange"><type>SoupRange</type></link>, and some of the ranges may be
+redundant.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>total_length</parameter>&#160;:</term>
+<listitem><simpara> the total_length of the response body
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ranges</parameter>&#160;:</term>
+<listitem><simpara> return location for an array of <link linkend="SoupRange"><type>SoupRange</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> the length of the returned array
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>hdrs</parameter> contained a "Range" header containing
+byte ranges which could be parsed, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise (in which case
+<parameter>range</parameter> and <parameter>length</parameter> will not be set).
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-message-headers-set-ranges" role="function" condition="since:2.26">
+<title>soup_message_headers_set_ranges ()</title>
+<indexterm zone="soup-message-headers-set-ranges" role="2.26"><primary sortas="soup_message_headers_set_ranges">soup_message_headers_set_ranges</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_set_ranges     (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="SoupRange">SoupRange</link> *ranges,
+                                                         <link linkend="int">int</link> length);</programlisting>
+<para>
+Sets <parameter>hdrs</parameter>'s Range header to request the indicated ranges. (If you
+only want to request a single range, you can use
+<link linkend="soup-message-headers-set-range"><function>soup_message_headers_set_range()</function></link>.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ranges</parameter>&#160;:</term>
+<listitem><simpara> an array of <link linkend="SoupRange"><type>SoupRange</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>range</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-message-headers-set-range" role="function" condition="since:2.26">
+<title>soup_message_headers_set_range ()</title>
+<indexterm zone="soup-message-headers-set-range" role="2.26"><primary sortas="soup_message_headers_set_range">soup_message_headers_set_range</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_set_range      (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="goffset">goffset</link> start,
+                                                         <link linkend="goffset">goffset</link> end);</programlisting>
+<para>
+Sets <parameter>hdrs</parameter>'s Range header to request the indicated range.
+<parameter>start</parameter> and <parameter>end</parameter> are interpreted as in a <link linkend="SoupRange"><type>SoupRange</type></link>.
+</para>
+<para>
+If you need to request multiple ranges, use
+<link linkend="soup-message-headers-set-ranges"><function>soup_message_headers_set_ranges()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>start</parameter>&#160;:</term>
+<listitem><simpara> the start of the range to request
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>end</parameter>&#160;:</term>
+<listitem><simpara> the end of the range to request
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-message-headers-free-ranges" role="function" condition="since:2.26">
+<title>soup_message_headers_free_ranges ()</title>
+<indexterm zone="soup-message-headers-free-ranges" role="2.26"><primary sortas="soup_message_headers_free_ranges">soup_message_headers_free_ranges</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_free_ranges    (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="SoupRange">SoupRange</link> *ranges);</programlisting>
+<para>
+Frees the array of ranges returned from <link linkend="soup-message-headers-get-ranges"><function>soup_message_headers_get_ranges()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ranges</parameter>&#160;:</term>
+<listitem><simpara> an array of <link linkend="SoupRange"><type>SoupRange</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-message-headers-get-content-range" role="function" condition="since:2.26">
+<title>soup_message_headers_get_content_range ()</title>
+<indexterm zone="soup-message-headers-get-content-range" role="2.26"><primary sortas="soup_message_headers_get_content_range">soup_message_headers_get_content_range</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_message_headers_get_content_range
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="goffset">goffset</link> *start,
+                                                         <link linkend="goffset">goffset</link> *end,
+                                                         <link linkend="goffset">goffset</link> *total_length);</programlisting>
+<para>
+Parses <parameter>hdrs</parameter>'s Content-Range header and returns it in <parameter>start</parameter>,
+<parameter>end</parameter>, and <parameter>total_length</parameter>. If the total length field in the header
+was specified as "*", then <parameter>total_length</parameter> will be set to -1.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>start</parameter>&#160;:</term>
+<listitem><simpara> return value for the start of the range
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>end</parameter>&#160;:</term>
+<listitem><simpara> return value for the end of the range
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>total_length</parameter>&#160;:</term>
+<listitem><simpara> return value for the total length of the resource,
+or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if you don't care.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>hdrs</parameter> contained a "Content-Range" header
+containing a byte range which could be parsed, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-message-headers-set-content-range" role="function" condition="since:2.26">
+<title>soup_message_headers_set_content_range ()</title>
+<indexterm zone="soup-message-headers-set-content-range" role="2.26"><primary sortas="soup_message_headers_set_content_range">soup_message_headers_set_content_range</primary></indexterm><programlisting><link linkend="void">void</link>                soup_message_headers_set_content_range
+                                                        (<link linkend="SoupMessageHeaders">SoupMessageHeaders</link> *hdrs,
+                                                         <link linkend="goffset">goffset</link> start,
+                                                         <link linkend="goffset">goffset</link> end,
+                                                         <link linkend="goffset">goffset</link> total_length);</programlisting>
+<para>
+Sets <parameter>hdrs</parameter>'s Content-Range header according to the given values.
+(Note that <parameter>total_length</parameter> is the total length of the entire resource
+that this is a range of, not simply <parameter>end</parameter> - <parameter>start</parameter> + 1.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hdrs</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessageHeaders"><type>SoupMessageHeaders</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>start</parameter>&#160;:</term>
+<listitem><simpara> the start of the range
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>end</parameter>&#160;:</term>
+<listitem><simpara> the end of the range
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>total_length</parameter>&#160;:</term>
+<listitem><simpara> the total length of the resource, or -1 if unknown
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="libsoup-24-SoupMessageHeaders.see-also">
+<title>See Also</title>
+#SoupMessage
+</refsect1>
+
+</refentry>

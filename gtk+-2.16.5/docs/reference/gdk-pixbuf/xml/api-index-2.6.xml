@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+
+<!ENTITY gdk-pixbuf "<application>gdk-pixbuf</application>">
+<!ENTITY Imlib "<application>Imlib</application>">
+]>
+<indexdiv>
+<indexdiv><title>F</title>
+<indexentry><primaryie linkends="gdk-pixbuf-flip"><link linkend="gdk-pixbuf-flip">gdk_pixbuf_flip</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-get-license"><link linkend="gdk-pixbuf-format-get-license">gdk_pixbuf_format_get_license</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-is-disabled"><link linkend="gdk-pixbuf-format-is-disabled">gdk_pixbuf_format_is_disabled</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-is-scalable"><link linkend="gdk-pixbuf-format-is-scalable">gdk_pixbuf_format_is_scalable</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-set-disabled"><link linkend="gdk-pixbuf-format-set-disabled">gdk_pixbuf_format_set_disabled</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>N</title>
+<indexentry><primaryie linkends="gdk-pixbuf-new-from-file-at-scale"><link linkend="gdk-pixbuf-new-from-file-at-scale">gdk_pixbuf_new_from_file_at_scale</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>R</title>
+<indexentry><primaryie linkends="gdk-pixbuf-rotate-simple"><link linkend="gdk-pixbuf-rotate-simple">gdk_pixbuf_rotate_simple</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

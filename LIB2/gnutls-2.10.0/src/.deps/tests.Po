@@ -1,0 +1,231 @@
+tests.o: tests.c ../config.h ../lib/includes/gnutls/gnutls.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h \
+  /usr/include/sys/types.h /usr/include/features.h \
+  /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /usr/include/bits/types.h /usr/include/bits/typesizes.h ../gl/time.h \
+  /usr/include/time.h /usr/include/endian.h /usr/include/bits/endian.h \
+  ../gl/sys/select.h /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/xlocale.h ../lib/includes/gnutls/compat.h \
+  ../libextra/includes/gnutls/extra.h ../lib/includes/gnutls/x509.h \
+  ../gl/unistd.h /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h /usr/include/bits/confname.h \
+  /usr/include/getopt.h /usr/include/signal.h /usr/include/bits/signum.h \
+  /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
+  /usr/include/bits/sigcontext.h /usr/include/asm/sigcontext.h \
+  /usr/include/bits/sigstack.h /usr/include/sys/ucontext.h \
+  /usr/include/sys/procfs.h ../gl/sys/time.h /usr/include/sys/time.h \
+  /usr/include/sys/user.h /usr/include/bits/sigthread.h ../gl/stdio.h \
+  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+  ../gl/wchar.h /usr/include/wchar.h /usr/include/bits/wchar.h \
+  /usr/include/gconv.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+  /usr/include/bits/stdio.h ../gl/stdlib.h /usr/include/stdlib.h \
+  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+  ../gl/alloca.h ../gl/string.h /usr/include/string.h \
+  /usr/include/bits/string.h /usr/include/bits/string2.h common.h \
+  ../gl/sys/socket.h /usr/include/sys/socket.h /usr/include/sys/uio.h \
+  /usr/include/bits/uio.h /usr/include/bits/socket.h \
+  /usr/include/limits.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h \
+  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/xopen_lim.h /usr/include/bits/sockaddr.h \
+  /usr/include/asm/socket.h /usr/include/asm/sockios.h ../gl/arpa/inet.h \
+  /usr/include/arpa/inet.h /usr/include/netinet/in.h ../gl/stdint.h \
+  /usr/include/stdint.h /usr/include/inttypes.h /usr/include/bits/in.h \
+  /usr/include/bits/byteswap.h ../gl/netdb.h /usr/include/netdb.h \
+  /usr/include/rpc/netdb.h /usr/include/bits/netdb.h tests.h
+
+../config.h:
+
+../lib/includes/gnutls/gnutls.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+../gl/time.h:
+
+/usr/include/time.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+../gl/sys/select.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/xlocale.h:
+
+../lib/includes/gnutls/compat.h:
+
+../libextra/includes/gnutls/extra.h:
+
+../lib/includes/gnutls/x509.h:
+
+../gl/unistd.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/signal.h:
+
+/usr/include/bits/signum.h:
+
+/usr/include/bits/siginfo.h:
+
+/usr/include/bits/sigaction.h:
+
+/usr/include/bits/sigcontext.h:
+
+/usr/include/asm/sigcontext.h:
+
+/usr/include/bits/sigstack.h:
+
+/usr/include/sys/ucontext.h:
+
+/usr/include/sys/procfs.h:
+
+../gl/sys/time.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/sys/user.h:
+
+/usr/include/bits/sigthread.h:
+
+../gl/stdio.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+../gl/wchar.h:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/gconv.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+../gl/stdlib.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+../gl/alloca.h:
+
+../gl/string.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+common.h:
+
+../gl/sys/socket.h:
+
+/usr/include/sys/socket.h:
+
+/usr/include/sys/uio.h:
+
+/usr/include/bits/uio.h:
+
+/usr/include/bits/socket.h:
+
+/usr/include/limits.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/bits/sockaddr.h:
+
+/usr/include/asm/socket.h:
+
+/usr/include/asm/sockios.h:
+
+../gl/arpa/inet.h:
+
+/usr/include/arpa/inet.h:
+
+/usr/include/netinet/in.h:
+
+../gl/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/inttypes.h:
+
+/usr/include/bits/in.h:
+
+/usr/include/bits/byteswap.h:
+
+../gl/netdb.h:
+
+/usr/include/netdb.h:
+
+/usr/include/rpc/netdb.h:
+
+/usr/include/bits/netdb.h:
+
+tests.h:

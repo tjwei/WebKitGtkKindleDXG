@@ -1,0 +1,935 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkActionGroup">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkActionGroup.top_of_page">GtkActionGroup</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkActionGroup</refname>
+<refpurpose>A group of actions</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkActionGroup.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkActionGroup-struct">GtkActionGroup</link>;
+<link linkend="GtkActionGroup">GtkActionGroup</link> *    <link linkend="gtk-action-group-new">gtk_action_group_new</link>                (const <link linkend="gchar">gchar</link> *name);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-action-group-get-name">gtk_action_group_get_name</link>           (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-action-group-get-sensitive">gtk_action_group_get_sensitive</link>      (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group);
+<link linkend="void">void</link>                <link linkend="gtk-action-group-set-sensitive">gtk_action_group_set_sensitive</link>      (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="gboolean">gboolean</link> sensitive);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-action-group-get-visible">gtk_action_group_get_visible</link>        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group);
+<link linkend="void">void</link>                <link linkend="gtk-action-group-set-visible">gtk_action_group_set_visible</link>        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="gboolean">gboolean</link> visible);
+<link linkend="GtkAction">GtkAction</link> *         <link linkend="gtk-action-group-get-action">gtk_action_group_get_action</link>         (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="gchar">gchar</link> *action_name);
+<link linkend="GList">GList</link> *             <link linkend="gtk-action-group-list-actions">gtk_action_group_list_actions</link>       (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group);
+<link linkend="void">void</link>                <link linkend="gtk-action-group-add-action">gtk_action_group_add_action</link>         (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="GtkAction">GtkAction</link> *action);
+<link linkend="void">void</link>                <link linkend="gtk-action-group-add-action-with-accel">gtk_action_group_add_action_with_accel</link>
+                                                        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="GtkAction">GtkAction</link> *action,
+                                                         const <link linkend="gchar">gchar</link> *accelerator);
+<link linkend="void">void</link>                <link linkend="gtk-action-group-remove-action">gtk_action_group_remove_action</link>      (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="GtkAction">GtkAction</link> *action);
+                    <link linkend="GtkActionEntry">GtkActionEntry</link>;
+<link linkend="void">void</link>                <link linkend="gtk-action-group-add-actions">gtk_action_group_add_actions</link>        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkActionEntry">GtkActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                <link linkend="gtk-action-group-add-actions-full">gtk_action_group_add_actions_full</link>   (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkActionEntry">GtkActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gpointer">gpointer</link> user_data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> destroy);
+                    <link linkend="GtkToggleActionEntry">GtkToggleActionEntry</link>;
+<link linkend="void">void</link>                <link linkend="gtk-action-group-add-toggle-actions">gtk_action_group_add_toggle_actions</link> (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkToggleActionEntry">GtkToggleActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                <link linkend="gtk-action-group-add-toggle-actions-full">gtk_action_group_add_toggle_actions_full</link>
+                                                        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkToggleActionEntry">GtkToggleActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gpointer">gpointer</link> user_data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> destroy);
+                    <link linkend="GtkRadioActionEntry">GtkRadioActionEntry</link>;
+<link linkend="void">void</link>                <link linkend="gtk-action-group-add-radio-actions">gtk_action_group_add_radio_actions</link>  (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkRadioActionEntry">GtkRadioActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gint">gint</link> value,
+                                                         <link linkend="GCallback">GCallback</link> on_change,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                <link linkend="gtk-action-group-add-radio-actions-full">gtk_action_group_add_radio_actions_full</link>
+                                                        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkRadioActionEntry">GtkRadioActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gint">gint</link> value,
+                                                         <link linkend="GCallback">GCallback</link> on_change,
+                                                         <link linkend="gpointer">gpointer</link> user_data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> destroy);
+<link linkend="void">void</link>                <link linkend="gtk-action-group-set-translate-func">gtk_action_group_set_translate_func</link> (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="GtkTranslateFunc">GtkTranslateFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> notify);
+<link linkend="void">void</link>                <link linkend="gtk-action-group-set-translation-domain">gtk_action_group_set_translation_domain</link>
+                                                        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="gchar">gchar</link> *domain);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-action-group-translate-string">gtk_action_group_translate_string</link>   (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="gchar">gchar</link> *string);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkActionGroup.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkActionGroup
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkActionGroup.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkActionGroup implements
+ <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkActionGroup.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkActionGroup--name">name</link>&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write / Construct Only
+  &quot;<link linkend="GtkActionGroup--sensitive">sensitive</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkActionGroup--visible">visible</link>&quot;                  <link linkend="gboolean">gboolean</link>              : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkActionGroup.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkActionGroup-connect-proxy">connect-proxy</link>&quot;                                  
+  &quot;<link linkend="GtkActionGroup-disconnect-proxy">disconnect-proxy</link>&quot;                               
+  &quot;<link linkend="GtkActionGroup-post-activate">post-activate</link>&quot;                                  
+  &quot;<link linkend="GtkActionGroup-pre-activate">pre-activate</link>&quot;                                   
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkActionGroup.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+Actions are organised into groups.  An action group is essentially a
+map from names to <link linkend="GtkAction"><type>GtkAction</type></link> objects.
+</para>
+<para>
+All actions that would make sense to use in a particular context
+should be in a single group.  Multiple action groups may be used for a
+particular user interface.  In fact, it is expected that most nontrivial
+applications will make use of multiple groups.  For example, in an application
+that can edit multiple documents, one group holding global actions
+(e.g. quit, about, new), and one group per document holding actions that
+act on that document (eg. save, cut/copy/paste, etc).  Each window's menus
+would be constructed from a combination of two action groups.
+</para>
+<para id="Action-Accel">
+Accelerators are handled by the GTK+ accelerator map. All actions are assigned an
+accelerator path (which normally has the form
+<literal>&lt;Actions&gt;/<replaceable>group-name</replaceable>/<replaceable>action-name</replaceable></literal>)
+and a shortcut is associated with this accelerator path. All menuitems and
+toolitems take on this accelerator path. The GTK+ accelerator map code makes
+sure that the correct shortcut is displayed next to the menu item.
+</para>
+<refsect2 id="GtkActionGroup-BUILDER-UI">
+<title>GtkActionGroup as GtkBuildable</title>
+<para>
+The GtkActionGroup implementation of the GtkBuildable interface accepts
+GtkAction objects as &lt;child&gt; elements in UI definitions.
+</para>
+<para>
+Note that it is probably more common to define actions and action groups
+in the code, since they are directly related to what the code can do.
+</para>
+<para>
+The GtkActionGroup implementation of the GtkBuildable interface supports a
+custom &lt;accelerator&gt; element, which has attributes named key and
+modifiers and allows to specify accelerators. This is similar to the
+&lt;accelerator&gt; element of GtkWidget, the main difference is that
+it doesn't allow you to specify a signal.
+</para>
+<example>
+<title>A <structname>GtkDialog</structname> UI definition fragment.</title>
+<programlisting><![CDATA[
+<object class="GtkActionGroup" id="actiongroup">
+  <child>
+      <object class="GtkAction" id="About">
+          <property name="name">About</property>
+          <property name="stock_id">gtk-about</property>
+          <signal handler="about_activate" name="activate"/>
+      </object>
+      <accelerator key="F1" modifiers="GDK_CONTROL_MASK | GDK_SHIFT_MASK"/>
+  </child>
+</object>
+]]></programlisting>
+</example>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkActionGroup.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkActionGroup-struct" role="struct">
+<title>GtkActionGroup</title>
+<indexterm zone="GtkActionGroup-struct"><primary sortas="ActionGroup">GtkActionGroup</primary></indexterm><programlisting>typedef struct _GtkActionGroup GtkActionGroup;</programlisting>
+<para>
+The <structname>GtkActionGroup</structname> struct contains only private
+members and should not be accessed directly.
+</para></refsect2>
+<refsect2 id="gtk-action-group-new" role="function" condition="since:2.4">
+<title>gtk_action_group_new ()</title>
+<indexterm zone="gtk-action-group-new" role="2.4"><primary sortas="action_group_new">gtk_action_group_new</primary></indexterm><programlisting><link linkend="GtkActionGroup">GtkActionGroup</link> *    gtk_action_group_new                (const <link linkend="gchar">gchar</link> *name);</programlisting>
+<para>
+Creates a new <link linkend="GtkActionGroup"><type>GtkActionGroup</type></link> object. The name of the action group
+is used when associating <link linkend="Action-Accel">keybindings</link> 
+with the actions.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> the name of the action group.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="GtkActionGroup"><type>GtkActionGroup</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-get-name" role="function" condition="since:2.4">
+<title>gtk_action_group_get_name ()</title>
+<indexterm zone="gtk-action-group-get-name" role="2.4"><primary sortas="action_group_get_name">gtk_action_group_get_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_action_group_get_name           (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group);</programlisting>
+<para>
+Gets the name of the action group.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the name of the action group.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-get-sensitive" role="function" condition="since:2.4">
+<title>gtk_action_group_get_sensitive ()</title>
+<indexterm zone="gtk-action-group-get-sensitive" role="2.4"><primary sortas="action_group_get_sensitive">gtk_action_group_get_sensitive</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_action_group_get_sensitive      (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group);</programlisting>
+<para>
+Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the group is sensitive.  The constituent actions
+can only be logically sensitive (see <link linkend="gtk-action-is-sensitive"><function>gtk_action_is_sensitive()</function></link>) if
+they are sensitive (see <link linkend="gtk-action-get-sensitive"><function>gtk_action_get_sensitive()</function></link>) and their group
+is sensitive.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the group is sensitive.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-set-sensitive" role="function" condition="since:2.4">
+<title>gtk_action_group_set_sensitive ()</title>
+<indexterm zone="gtk-action-group-set-sensitive" role="2.4"><primary sortas="action_group_set_sensitive">gtk_action_group_set_sensitive</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_set_sensitive      (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="gboolean">gboolean</link> sensitive);</programlisting>
+<para>
+Changes the sensitivity of <parameter>action_group</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>sensitive</parameter>&#160;:</term>
+<listitem><simpara> new sensitivity
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-get-visible" role="function" condition="since:2.4">
+<title>gtk_action_group_get_visible ()</title>
+<indexterm zone="gtk-action-group-get-visible" role="2.4"><primary sortas="action_group_get_visible">gtk_action_group_get_visible</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_action_group_get_visible        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group);</programlisting>
+<para>
+Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the group is visible.  The constituent actions
+can only be logically visible (see <link linkend="gtk-action-is-visible"><function>gtk_action_is_visible()</function></link>) if
+they are visible (see <link linkend="gtk-action-get-visible"><function>gtk_action_get_visible()</function></link>) and their group
+is visible.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the group is visible.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-set-visible" role="function" condition="since:2.4">
+<title>gtk_action_group_set_visible ()</title>
+<indexterm zone="gtk-action-group-set-visible" role="2.4"><primary sortas="action_group_set_visible">gtk_action_group_set_visible</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_set_visible        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="gboolean">gboolean</link> visible);</programlisting>
+<para>
+Changes the visible of <parameter>action_group</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>visible</parameter>&#160;:</term>
+<listitem><simpara> new visiblity
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-get-action" role="function" condition="since:2.4">
+<title>gtk_action_group_get_action ()</title>
+<indexterm zone="gtk-action-group-get-action" role="2.4"><primary sortas="action_group_get_action">gtk_action_group_get_action</primary></indexterm><programlisting><link linkend="GtkAction">GtkAction</link> *         gtk_action_group_get_action         (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="gchar">gchar</link> *action_name);</programlisting>
+<para>
+Looks up an action in the action group by name.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the action, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if no action by that name exists
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-list-actions" role="function" condition="since:2.4">
+<title>gtk_action_group_list_actions ()</title>
+<indexterm zone="gtk-action-group-list-actions" role="2.4"><primary sortas="action_group_list_actions">gtk_action_group_list_actions</primary></indexterm><programlisting><link linkend="GList">GList</link> *             gtk_action_group_list_actions       (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group);</programlisting>
+<para>
+Lists the actions in the action group.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an allocated list of the action objects in the action group
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-add-action" role="function" condition="since:2.4">
+<title>gtk_action_group_add_action ()</title>
+<indexterm zone="gtk-action-group-add-action" role="2.4"><primary sortas="action_group_add_action">gtk_action_group_add_action</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_add_action         (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="GtkAction">GtkAction</link> *action);</programlisting>
+<para>
+Adds an action object to the action group. Note that this function
+does not set up the accel path of the action, which can lead to problems
+if a user tries to modify the accelerator of a menuitem associated with
+the action. Therefore you must either set the accel path yourself with
+<link linkend="gtk-action-set-accel-path"><function>gtk_action_set_accel_path()</function></link>, or use 
+<literal>gtk_action_group_add_action_with_accel (..., NULL)</literal>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> an action
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-add-action-with-accel" role="function" condition="since:2.4">
+<title>gtk_action_group_add_action_with_accel ()</title>
+<indexterm zone="gtk-action-group-add-action-with-accel" role="2.4"><primary sortas="action_group_add_action_with_accel">gtk_action_group_add_action_with_accel</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_add_action_with_accel
+                                                        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="GtkAction">GtkAction</link> *action,
+                                                         const <link linkend="gchar">gchar</link> *accelerator);</programlisting>
+<para>
+Adds an action object to the action group and sets up the accelerator.
+</para>
+<para>
+If <parameter>accelerator</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, attempts to use the accelerator associated 
+with the stock_id of the action. 
+</para>
+<para>
+Accel paths are set to
+<literal>&lt;Actions&gt;/<replaceable>group-name</replaceable>/<replaceable>action-name</replaceable></literal>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action to add 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>accelerator</parameter>&#160;:</term>
+<listitem><simpara> the accelerator for the action, in
+  the format understood by <link linkend="gtk-accelerator-parse"><function>gtk_accelerator_parse()</function></link>, or "" for no accelerator, or 
+  <link linkend="NULL--CAPS"><literal>NULL</literal></link> to use the stock accelerator 
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-remove-action" role="function" condition="since:2.4">
+<title>gtk_action_group_remove_action ()</title>
+<indexterm zone="gtk-action-group-remove-action" role="2.4"><primary sortas="action_group_remove_action">gtk_action_group_remove_action</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_remove_action      (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="GtkAction">GtkAction</link> *action);</programlisting>
+<para>
+Removes an action object from the action group.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> an action
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="GtkActionEntry" role="struct">
+<title>GtkActionEntry</title>
+<indexterm zone="GtkActionEntry"><primary sortas="ActionEntry">GtkActionEntry</primary></indexterm><programlisting>typedef struct {
+  const gchar     *name;
+  const gchar     *stock_id;
+  const gchar     *label;
+  const gchar     *accelerator;
+  const gchar     *tooltip;
+  GCallback  callback;
+} GtkActionEntry;
+</programlisting>
+<para>
+<structname>GtkActionEntry</structname> structs are used with
+<link linkend="gtk-action-group-add-actions"><function>gtk_action_group_add_actions()</function></link> to construct actions.
+</para><variablelist role="struct">
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>name</structfield>;</term>
+<listitem><simpara>The name of the action.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>stock_id</structfield>;</term>
+<listitem><simpara>The stock id for the action, or the name of an icon from the icon 
+    theme.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>label</structfield>;</term>
+<listitem><simpara>The label for the action. This field should typically be marked for 
+    translation, see <link linkend="gtk-action-group-set-translation-domain"><function>gtk_action_group_set_translation_domain()</function></link>. If <parameter>label</parameter>
+    is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, the label of the stock item with id <parameter>stock_id</parameter> is used.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>accelerator</structfield>;</term>
+<listitem><simpara>The accelerator for the action, in the format understood by 
+    <link linkend="gtk-accelerator-parse"><function>gtk_accelerator_parse()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>tooltip</structfield>;</term>
+<listitem><simpara>The tooltip for the action. This field should typically be marked 
+    for translation, see <link linkend="gtk-action-group-set-translation-domain"><function>gtk_action_group_set_translation_domain()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GCallback">GCallback</link>&#160;<structfield>callback</structfield>;</term>
+<listitem><simpara>The function to call when the action is activated.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-action-group-add-actions" role="function" condition="since:2.4">
+<title>gtk_action_group_add_actions ()</title>
+<indexterm zone="gtk-action-group-add-actions" role="2.4"><primary sortas="action_group_add_actions">gtk_action_group_add_actions</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_add_actions        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkActionEntry">GtkActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+This is a convenience function to create a number of actions and add them 
+to the action group.
+</para>
+<para>
+The "activate" signals of the actions are connected to the callbacks and 
+their accel paths are set to 
+<literal>&lt;Actions&gt;/<replaceable>group-name</replaceable>/<replaceable>action-name</replaceable></literal>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>entries</parameter>&#160;:</term>
+<listitem><simpara> an array of action descriptions
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_entries</parameter>&#160;:</term>
+<listitem><simpara> the number of entries
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to the action callbacks
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-add-actions-full" role="function" condition="since:2.4">
+<title>gtk_action_group_add_actions_full ()</title>
+<indexterm zone="gtk-action-group-add-actions-full" role="2.4"><primary sortas="action_group_add_actions_full">gtk_action_group_add_actions_full</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_add_actions_full   (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkActionEntry">GtkActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gpointer">gpointer</link> user_data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> destroy);</programlisting>
+<para>
+This variant of <link linkend="gtk-action-group-add-actions"><function>gtk_action_group_add_actions()</function></link> adds a <link linkend="GDestroyNotify"><type>GDestroyNotify</type></link>
+callback for <parameter>user_data</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>entries</parameter>&#160;:</term>
+<listitem><simpara> an array of action descriptions
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_entries</parameter>&#160;:</term>
+<listitem><simpara> the number of entries
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to the action callbacks
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>destroy</parameter>&#160;:</term>
+<listitem><simpara> destroy notification callback for <parameter>user_data</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="GtkToggleActionEntry" role="struct">
+<title>GtkToggleActionEntry</title>
+<indexterm zone="GtkToggleActionEntry"><primary sortas="ToggleActionEntry">GtkToggleActionEntry</primary></indexterm><programlisting>typedef struct {
+  const gchar     *name;
+  const gchar     *stock_id;
+  const gchar     *label;
+  const gchar     *accelerator;
+  const gchar     *tooltip;
+  GCallback  callback;
+  gboolean   is_active;
+} GtkToggleActionEntry;
+</programlisting>
+<para>
+<structname>GtkToggleActionEntry</structname> structs are used with
+<link linkend="gtk-action-group-add-toggle-actions"><function>gtk_action_group_add_toggle_actions()</function></link> to construct toggle actions.
+</para><variablelist role="struct">
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>name</structfield>;</term>
+<listitem><simpara>The name of the action.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>stock_id</structfield>;</term>
+<listitem><simpara>The stock id for the action, or the name of an icon from the icon 
+    theme.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>label</structfield>;</term>
+<listitem><simpara>The label for the action. This field should typically be marked for 
+    translation, see <link linkend="gtk-action-group-set-translation-domain"><function>gtk_action_group_set_translation_domain()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>accelerator</structfield>;</term>
+<listitem><simpara>The accelerator for the action, in the format understood by 
+    <link linkend="gtk-accelerator-parse"><function>gtk_accelerator_parse()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>tooltip</structfield>;</term>
+<listitem><simpara>The tooltip for the action. This field should typically be marked 
+    for translation, see <link linkend="gtk-action-group-set-translation-domain"><function>gtk_action_group_set_translation_domain()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GCallback">GCallback</link>&#160;<structfield>callback</structfield>;</term>
+<listitem><simpara>The function to call when the action is activated.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gboolean">gboolean</link>&#160;<structfield>is_active</structfield>;</term>
+<listitem><simpara>The initial state of the toggle action.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-action-group-add-toggle-actions" role="function" condition="since:2.4">
+<title>gtk_action_group_add_toggle_actions ()</title>
+<indexterm zone="gtk-action-group-add-toggle-actions" role="2.4"><primary sortas="action_group_add_toggle_actions">gtk_action_group_add_toggle_actions</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_add_toggle_actions (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkToggleActionEntry">GtkToggleActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+This is a convenience function to create a number of toggle actions and add them 
+to the action group.
+</para>
+<para>
+The "activate" signals of the actions are connected to the callbacks and 
+their accel paths are set to 
+<literal>&lt;Actions&gt;/<replaceable>group-name</replaceable>/<replaceable>action-name</replaceable></literal>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>entries</parameter>&#160;:</term>
+<listitem><simpara> an array of toggle action descriptions
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_entries</parameter>&#160;:</term>
+<listitem><simpara> the number of entries
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to the action callbacks
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-add-toggle-actions-full" role="function" condition="since:2.4">
+<title>gtk_action_group_add_toggle_actions_full ()</title>
+<indexterm zone="gtk-action-group-add-toggle-actions-full" role="2.4"><primary sortas="action_group_add_toggle_actions_full">gtk_action_group_add_toggle_actions_full</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_add_toggle_actions_full
+                                                        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkToggleActionEntry">GtkToggleActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gpointer">gpointer</link> user_data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> destroy);</programlisting>
+<para>
+This variant of <link linkend="gtk-action-group-add-toggle-actions"><function>gtk_action_group_add_toggle_actions()</function></link> adds a 
+<link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> callback for <parameter>user_data</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>entries</parameter>&#160;:</term>
+<listitem><simpara> an array of toggle action descriptions
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_entries</parameter>&#160;:</term>
+<listitem><simpara> the number of entries
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to the action callbacks
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>destroy</parameter>&#160;:</term>
+<listitem><simpara> destroy notification callback for <parameter>user_data</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="GtkRadioActionEntry" role="struct">
+<title>GtkRadioActionEntry</title>
+<indexterm zone="GtkRadioActionEntry"><primary sortas="RadioActionEntry">GtkRadioActionEntry</primary></indexterm><programlisting>typedef struct {
+  const gchar *name;
+  const gchar *stock_id;
+  const gchar *label;
+  const gchar *accelerator;
+  const gchar *tooltip;
+  gint   value; 
+} GtkRadioActionEntry;
+</programlisting>
+<para>
+<structname>GtkRadioActionEntry</structname> structs are used with
+<link linkend="gtk-action-group-add-radio-actions"><function>gtk_action_group_add_radio_actions()</function></link> to construct groups of radio actions.
+</para><variablelist role="struct">
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>name</structfield>;</term>
+<listitem><simpara>The name of the action.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>stock_id</structfield>;</term>
+<listitem><simpara>The stock id for the action, or the name of an icon from the icon 
+    theme.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>label</structfield>;</term>
+<listitem><simpara>The label for the action. This field should typically be marked for 
+    translation, see <link linkend="gtk-action-group-set-translation-domain"><function>gtk_action_group_set_translation_domain()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>accelerator</structfield>;</term>
+<listitem><simpara>The accelerator for the action, in the format understood by 
+    <link linkend="gtk-accelerator-parse"><function>gtk_accelerator_parse()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>tooltip</structfield>;</term>
+<listitem><simpara>The tooltip for the action. This field should typically be marked for 
+    translation, see <link linkend="gtk-action-group-set-translation-domain"><function>gtk_action_group_set_translation_domain()</function></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>value</structfield>;</term>
+<listitem><simpara>The value to set on the radio action. See <link linkend="gtk-radio-action-get-current-value"><function>gtk_radio_action_get_current_value()</function></link>.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-action-group-add-radio-actions" role="function" condition="since:2.4">
+<title>gtk_action_group_add_radio_actions ()</title>
+<indexterm zone="gtk-action-group-add-radio-actions" role="2.4"><primary sortas="action_group_add_radio_actions">gtk_action_group_add_radio_actions</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_add_radio_actions  (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkRadioActionEntry">GtkRadioActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gint">gint</link> value,
+                                                         <link linkend="GCallback">GCallback</link> on_change,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+This is a convenience routine to create a group of radio actions and
+add them to the action group. 
+</para>
+<para>
+The "changed" signal of the first radio action is connected to the 
+<parameter>on_change</parameter> callback and the accel paths of the actions are set to 
+<literal>&lt;Actions&gt;/<replaceable>group-name</replaceable>/<replaceable>action-name</replaceable></literal>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>entries</parameter>&#160;:</term>
+<listitem><simpara> an array of radio action descriptions
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_entries</parameter>&#160;:</term>
+<listitem><simpara> the number of entries
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the value of the action to activate initially, or -1 if
+  no action should be activated
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>on_change</parameter>&#160;:</term>
+<listitem><simpara> the callback to connect to the changed signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to the action callbacks
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-add-radio-actions-full" role="function" condition="since:2.4">
+<title>gtk_action_group_add_radio_actions_full ()</title>
+<indexterm zone="gtk-action-group-add-radio-actions-full" role="2.4"><primary sortas="action_group_add_radio_actions_full">gtk_action_group_add_radio_actions_full</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_add_radio_actions_full
+                                                        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="GtkRadioActionEntry">GtkRadioActionEntry</link> *entries,
+                                                         <link linkend="guint">guint</link> n_entries,
+                                                         <link linkend="gint">gint</link> value,
+                                                         <link linkend="GCallback">GCallback</link> on_change,
+                                                         <link linkend="gpointer">gpointer</link> user_data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> destroy);</programlisting>
+<para>
+This variant of <link linkend="gtk-action-group-add-radio-actions"><function>gtk_action_group_add_radio_actions()</function></link> adds a 
+<link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> callback for <parameter>user_data</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>entries</parameter>&#160;:</term>
+<listitem><simpara> an array of radio action descriptions
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_entries</parameter>&#160;:</term>
+<listitem><simpara> the number of entries
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the value of the action to activate initially, or -1 if
+  no action should be activated
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>on_change</parameter>&#160;:</term>
+<listitem><simpara> the callback to connect to the changed signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to the action callbacks
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>destroy</parameter>&#160;:</term>
+<listitem><simpara> destroy notification callback for <parameter>user_data</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-set-translate-func" role="function" condition="since:2.4">
+<title>gtk_action_group_set_translate_func ()</title>
+<indexterm zone="gtk-action-group-set-translate-func" role="2.4"><primary sortas="action_group_set_translate_func">gtk_action_group_set_translate_func</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_set_translate_func (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="GtkTranslateFunc">GtkTranslateFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> notify);</programlisting>
+<para>
+Sets a function to be used for translating the <parameter>label</parameter> and <parameter>tooltip</parameter> of 
+<link linkend="GtkActionGroupEntry"><type>GtkActionGroupEntry</type></link><!-- -->s added by <link linkend="gtk-action-group-add-actions"><function>gtk_action_group_add_actions()</function></link>.
+</para>
+<para>
+If you're using <link linkend="gettext"><function>gettext()</function></link>, it is enough to set the translation domain
+with <link linkend="gtk-action-group-set-translation-domain"><function>gtk_action_group_set_translation_domain()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkActionGroup"><type>GtkActionGroup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTranslateFunc"><type>GtkTranslateFunc</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> data to be passed to <parameter>func</parameter> and <parameter>notify</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>notify</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> function to be called when <parameter>action_group</parameter> is
+  destroyed and when the translation function is changed again
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-set-translation-domain" role="function" condition="since:2.4">
+<title>gtk_action_group_set_translation_domain ()</title>
+<indexterm zone="gtk-action-group-set-translation-domain" role="2.4"><primary sortas="action_group_set_translation_domain">gtk_action_group_set_translation_domain</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_action_group_set_translation_domain
+                                                        (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="gchar">gchar</link> *domain);</programlisting>
+<para>
+Sets the translation domain and uses <link linkend="g-dgettext"><function>g_dgettext()</function></link> for translating the 
+<parameter>label</parameter> and <parameter>tooltip</parameter> of <link linkend="GtkActionEntry"><type>GtkActionEntry</type></link><!-- -->s added by 
+<link linkend="gtk-action-group-add-actions"><function>gtk_action_group_add_actions()</function></link>.
+</para>
+<para>
+If you're not using <link linkend="gettext"><function>gettext()</function></link> for localization, see 
+<link linkend="gtk-action-group-set-translate-func"><function>gtk_action_group_set_translate_func()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkActionGroup"><type>GtkActionGroup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>domain</parameter>&#160;:</term>
+<listitem><simpara> the translation domain to use for <link linkend="g-dgettext"><function>g_dgettext()</function></link> calls
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-action-group-translate-string" role="function" condition="since:2.6">
+<title>gtk_action_group_translate_string ()</title>
+<indexterm zone="gtk-action-group-translate-string" role="2.6"><primary sortas="action_group_translate_string">gtk_action_group_translate_string</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_action_group_translate_string   (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         const <link linkend="gchar">gchar</link> *string);</programlisting>
+<para>
+Translates a string using the specified <link linkend="translate-func"><function>translate_func()</function></link>. This
+is mainly intended for language bindings.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkActionGroup"><type>GtkActionGroup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>string</parameter>&#160;:</term>
+<listitem><simpara> a string
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the translation of <parameter>string</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkActionGroup.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkActionGroup--name" role="property"><title>The <literal>&quot;name&quot;</literal> property</title>
+<indexterm zone="GtkActionGroup--name"><primary sortas="ActionGroup:name">GtkActionGroup:name</primary></indexterm><programlisting>  &quot;name&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write / Construct Only</programlisting>
+<para>A name for the action group.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkActionGroup--sensitive" role="property"><title>The <literal>&quot;sensitive&quot;</literal> property</title>
+<indexterm zone="GtkActionGroup--sensitive"><primary sortas="ActionGroup:sensitive">GtkActionGroup:sensitive</primary></indexterm><programlisting>  &quot;sensitive&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the action group is enabled.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkActionGroup--visible" role="property"><title>The <literal>&quot;visible&quot;</literal> property</title>
+<indexterm zone="GtkActionGroup--visible"><primary sortas="ActionGroup:visible">GtkActionGroup:visible</primary></indexterm><programlisting>  &quot;visible&quot;                  <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the action group is visible.</para><para>Default value: TRUE</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkActionGroup.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkActionGroup-connect-proxy" role="signal"><title>The <literal>&quot;connect-proxy&quot;</literal> signal</title>
+<indexterm zone="GtkActionGroup-connect-proxy" role="2.4"><primary sortas="ActionGroup::connect-proxy">GtkActionGroup::connect-proxy</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                        <link linkend="GtkAction">GtkAction</link>      *action,
+                                                        <link linkend="GtkWidget">GtkWidget</link>      *proxy,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)</programlisting>
+<para>
+The ::connect-proxy signal is emitted after connecting a proxy to
+an action in the group. Note that the proxy may have been connected 
+to a different action before.
+</para>
+<para>
+This is intended for simple customizations for which a custom action
+class would be too clumsy, e.g. showing tooltips for menuitems in the
+statusbar.
+</para>
+<para>
+<link linkend="GtkUIManager"><type>GtkUIManager</type></link> proxies the signal and provides global notification 
+just before any action is connected to a proxy, which is probably more
+convenient to use.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>proxy</parameter>&#160;:</term>
+<listitem><simpara> the proxy
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2><refsect2 id="GtkActionGroup-disconnect-proxy" role="signal"><title>The <literal>&quot;disconnect-proxy&quot;</literal> signal</title>
+<indexterm zone="GtkActionGroup-disconnect-proxy" role="2.4"><primary sortas="ActionGroup::disconnect-proxy">GtkActionGroup::disconnect-proxy</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                        <link linkend="GtkAction">GtkAction</link>      *action,
+                                                        <link linkend="GtkWidget">GtkWidget</link>      *proxy,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)</programlisting>
+<para>
+The ::disconnect-proxy signal is emitted after disconnecting a proxy 
+from an action in the group. 
+</para>
+<para>
+<link linkend="GtkUIManager"><type>GtkUIManager</type></link> proxies the signal and provides global notification 
+just before any action is connected to a proxy, which is probably more
+convenient to use.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>proxy</parameter>&#160;:</term>
+<listitem><simpara> the proxy
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2><refsect2 id="GtkActionGroup-post-activate" role="signal"><title>The <literal>&quot;post-activate&quot;</literal> signal</title>
+<indexterm zone="GtkActionGroup-post-activate" role="2.4"><primary sortas="ActionGroup::post-activate">GtkActionGroup::post-activate</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                        <link linkend="GtkAction">GtkAction</link>      *action,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)</programlisting>
+<para>
+The ::post-activate signal is emitted just after the <parameter>action</parameter> in the
+<parameter>action_group</parameter> is activated
+</para>
+<para>
+This is intended for <link linkend="GtkUIManager"><type>GtkUIManager</type></link> to proxy the signal and provide global
+notification just after any action is activated.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2><refsect2 id="GtkActionGroup-pre-activate" role="signal"><title>The <literal>&quot;pre-activate&quot;</literal> signal</title>
+<indexterm zone="GtkActionGroup-pre-activate" role="2.4"><primary sortas="ActionGroup::pre-activate">GtkActionGroup::pre-activate</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                        <link linkend="GtkAction">GtkAction</link>      *action,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)</programlisting>
+<para>
+The ::pre-activate signal is emitted just before the <parameter>action</parameter> in the
+<parameter>action_group</parameter> is activated
+</para>
+<para>
+This is intended for <link linkend="GtkUIManager"><type>GtkUIManager</type></link> to proxy the signal and provide global
+notification just before any action is activated.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the group
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2>
+</refsect1>
+
+
+
+</refentry>

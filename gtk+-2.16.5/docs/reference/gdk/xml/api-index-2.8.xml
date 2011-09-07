@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="gdk-cairo-create"><link linkend="gdk-cairo-create">gdk_cairo_create</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-cairo-rectangle"><link linkend="gdk-cairo-rectangle">gdk_cairo_rectangle</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-cairo-region"><link linkend="gdk-cairo-region">gdk_cairo_region</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-cairo-set-source-color"><link linkend="gdk-cairo-set-source-color">gdk_cairo_set_source_color</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-cairo-set-source-pixbuf"><link linkend="gdk-cairo-set-source-pixbuf">gdk_cairo_set_source_pixbuf</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-cursor-get-image"><link linkend="gdk-cursor-get-image">gdk_cursor_get_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-cursor-new-from-name"><link linkend="gdk-cursor-new-from-name">gdk_cursor_new_from_name</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="gdk-display-warp-pointer"><link linkend="gdk-display-warp-pointer">gdk_display_warp_pointer</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="GdkEventGrabBroken"><link linkend="GdkEventGrabBroken">GdkEventGrabBroken</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="gdk-screen-get-rgba-colormap"><link linkend="gdk-screen-get-rgba-colormap">gdk_screen_get_rgba_colormap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-rgba-visual"><link linkend="gdk-screen-get-rgba-visual">gdk_screen_get_rgba_visual</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="gdk-window-move-region"><link linkend="gdk-window-move-region">gdk_window_move_region</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-urgency-hint"><link linkend="gdk-window-set-urgency-hint">gdk_window_set_urgency_hint</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>X</title>
+<indexentry><primaryie linkends="gdk-x11-display-get-user-time"><link linkend="gdk-x11-display-get-user-time">gdk_x11_display_get_user_time</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-display-set-cursor-theme"><link linkend="gdk-x11-display-set-cursor-theme">gdk_x11_display_set_cursor_theme</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-window-move-to-current-desktop"><link linkend="gdk-x11-window-move-to-current-desktop">gdk_x11_window_move_to_current_desktop</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

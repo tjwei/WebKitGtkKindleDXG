@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>Editor Options - GQview User Manual</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040805;23590500">
+	<META NAME="CHANGED" CONTENT="20050613;17101000">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="10_4_filtering.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER>Editors &ndash; Options Explained</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="10_6_advanced.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</CENTER>
+<HR>
+<H1>10.5 Editor Commands</H1>
+<P>This section describes the options presented under the Editors Tab
+of the preferences dialog.</P>
+<P>GQview includes ten entries that can be used for executing other
+applications or shell commands with the selected image. These
+commands are accessible by menu and keyboard shortcuts. The keyboard
+shortcuts use [Control] + [1] through [Control] + [0], which
+correspond to lines one through ten in the preferences dialog.</P>
+<P><BR><BR>
+</P>
+<P><B>Menu name</B>: This field is used to represent the command in
+the menus of GQview, it is intended to describe the application or
+function that results from executing the command in the <U>Command
+Line</U> field.</P>
+<P><BR><BR>
+</P>
+<P><B>Command Line</B>: This field is the command to execute. Several
+macros are available to position image file names within the command.
+If no macro is specified, the behavior will be to append the
+filenames onto the end of the command (the result will be the same as
+&ldquo;<I>command %f</I>&rdquo;).</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=80% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+			<COL WIDTH=51*>
+			<COL WIDTH=205*>
+			<TR VALIGN=TOP>
+				<TD WIDTH=20%>
+					<P ALIGN=CENTER><B>Macro</B></P>
+				</TD>
+				<TD WIDTH=80%>
+					<P><B>Description</B></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=20%>
+					<P ALIGN=CENTER>%f</P>
+				</TD>
+				<TD WIDTH=80%>
+					<P>Inserts list of selected files, may occur only once.</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=20%>
+					<P ALIGN=CENTER>%p</P>
+				</TD>
+				<TD WIDTH=80%>
+					<P>Command is executed once for each selected file, may occur
+					multiple times.</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=20%>
+					<P ALIGN=CENTER>%v</P>
+				</TD>
+				<TD WIDTH=80%>
+					<P>Display the result of the command in an output window. Must
+					occur as the first two characters, or immediately after the &ldquo;%w&rdquo;
+					macro.</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=20%>
+					<P ALIGN=CENTER>%V</P>
+				</TD>
+				<TD WIDTH=80%>
+					<P>Like %v above, but when used with %p, only displays output
+					window when multiple files are selected; The output of a single
+					file is suppressed.</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=20%>
+					<P ALIGN=CENTER>%w</P>
+				</TD>
+				<TD WIDTH=80%>
+					<P>Prevent full screen from deactivating when command is
+					executed. Must occur as the first two characters.</P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P><BR><BR>
+</P>
+<P><B>Help</B> button: Displays reference list of the supported
+command macros.</P>
+<P><B>Defaults</B> button: Resets all commands to the default
+settings, discarding any customizations made by the user.</P>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<HR>
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="10_4_filtering.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><A HREF="index.html">Contents</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="10_6_advanced.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT>GQview User Manual</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>

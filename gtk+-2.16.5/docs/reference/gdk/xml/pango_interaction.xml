@@ -1,0 +1,623 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="gdk-Pango-Interaction">
+<refmeta>
+<refentrytitle role="top_of_page" id="gdk-Pango-Interaction.top_of_page">Pango Interaction</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Pango Interaction</refname>
+<refpurpose>Using Pango in GDK</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gdk-Pango-Interaction.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+<anchor id="GdkPangoRenderer"/>
+<synopsis>
+
+#include &lt;gdk/gdk.h&gt;
+
+                    <link linkend="GdkPangoRenderer-struct">GdkPangoRenderer</link>;
+                    <link linkend="GdkPangoRendererClass">GdkPangoRendererClass</link>;
+<link linkend="PangoRenderer">PangoRenderer</link> *     <link linkend="gdk-pango-renderer-new">gdk_pango_renderer_new</link>              (<link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="PangoRenderer">PangoRenderer</link> *     <link linkend="gdk-pango-renderer-get-default">gdk_pango_renderer_get_default</link>      (<link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="void">void</link>                <link linkend="gdk-pango-renderer-set-drawable">gdk_pango_renderer_set_drawable</link>     (<link linkend="GdkPangoRenderer">GdkPangoRenderer</link> *gdk_renderer,
+                                                         <link linkend="GdkDrawable">GdkDrawable</link> *drawable);
+<link linkend="void">void</link>                <link linkend="gdk-pango-renderer-set-gc">gdk_pango_renderer_set_gc</link>           (<link linkend="GdkPangoRenderer">GdkPangoRenderer</link> *gdk_renderer,
+                                                         <link linkend="GdkGC">GdkGC</link> *gc);
+<link linkend="void">void</link>                <link linkend="gdk-pango-renderer-set-stipple">gdk_pango_renderer_set_stipple</link>      (<link linkend="GdkPangoRenderer">GdkPangoRenderer</link> *gdk_renderer,
+                                                         <link linkend="PangoRenderPart">PangoRenderPart</link> part,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *stipple);
+<link linkend="void">void</link>                <link linkend="gdk-pango-renderer-set-override-color">gdk_pango_renderer_set_override_color</link>
+                                                        (<link linkend="GdkPangoRenderer">GdkPangoRenderer</link> *gdk_renderer,
+                                                         <link linkend="PangoRenderPart">PangoRenderPart</link> part,
+                                                         const <link linkend="GdkColor">GdkColor</link> *color);
+<link linkend="PangoContext">PangoContext</link> *      <link linkend="gdk-pango-context-get">gdk_pango_context_get</link>               (void);
+<link linkend="PangoContext">PangoContext</link> *      <link linkend="gdk-pango-context-get-for-screen">gdk_pango_context_get_for_screen</link>    (<link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="void">void</link>                <link linkend="gdk-pango-context-set-colormap">gdk_pango_context_set_colormap</link>      (<link linkend="PangoContext">PangoContext</link> *context,
+                                                         <link linkend="GdkColormap">GdkColormap</link> *colormap);
+                    <link linkend="GdkPangoAttrEmbossed">GdkPangoAttrEmbossed</link>;
+                    <link linkend="GdkPangoAttrEmbossColor">GdkPangoAttrEmbossColor</link>;
+                    <link linkend="GdkPangoAttrStipple">GdkPangoAttrStipple</link>;
+<link linkend="PangoAttribute">PangoAttribute</link> *    <link linkend="gdk-pango-attr-emboss-color-new">gdk_pango_attr_emboss_color_new</link>     (const <link linkend="GdkColor">GdkColor</link> *color);
+<link linkend="PangoAttribute">PangoAttribute</link> *    <link linkend="gdk-pango-attr-embossed-new">gdk_pango_attr_embossed_new</link>         (<link linkend="gboolean">gboolean</link> embossed);
+<link linkend="PangoAttribute">PangoAttribute</link> *    <link linkend="gdk-pango-attr-stipple-new">gdk_pango_attr_stipple_new</link>          (<link linkend="GdkBitmap">GdkBitmap</link> *stipple);
+<link linkend="GdkRegion">GdkRegion</link> *         <link linkend="gdk-pango-layout-get-clip-region">gdk_pango_layout_get_clip_region</link>    (<link linkend="PangoLayout">PangoLayout</link> *layout,
+                                                         <link linkend="gint">gint</link> x_origin,
+                                                         <link linkend="gint">gint</link> y_origin,
+                                                         const <link linkend="gint">gint</link> *index_ranges,
+                                                         <link linkend="gint">gint</link> n_ranges);
+<link linkend="GdkRegion">GdkRegion</link> *         <link linkend="gdk-pango-layout-line-get-clip-region">gdk_pango_layout_line_get_clip_region</link>
+                                                        (<link linkend="PangoLayoutLine">PangoLayoutLine</link> *line,
+                                                         <link linkend="gint">gint</link> x_origin,
+                                                         <link linkend="gint">gint</link> y_origin,
+                                                         const <link linkend="gint">gint</link> *index_ranges,
+                                                         <link linkend="gint">gint</link> n_ranges);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="gdk-Pango-Interaction.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="PangoRenderer">PangoRenderer</link>
+         +----GdkPangoRenderer
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="gdk-Pango-Interaction.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GdkPangoRenderer--screen">screen</link>&quot;                   <link linkend="GdkScreen">GdkScreen</link>*            : Read / Write / Construct Only
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="gdk-Pango-Interaction.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+Pango is the text layout system used by GDK and GTK+. The functions
+and types in this section are used to render Pango objects to GDK.
+drawables, and also extend the set of Pango attributes to include
+stippling and embossing.
+</para>
+<para>
+Creating a <link linkend="PangoLayout"><type>PangoLayout</type></link> object is the first step in rendering text,
+and requires getting a handle to a <link linkend="PangoContext"><type>PangoContext</type></link>. For GTK+ programs,
+you'll usually want to use <link linkend="gtk-widget-get-pango-context"><function>gtk_widget_get_pango_context()</function></link>, or
+<link linkend="gtk-widget-create-pango-layout"><function>gtk_widget_create_pango_layout()</function></link>, rather than using the lowlevel
+<link linkend="gdk-pango-context-get-for-screen"><function>gdk_pango_context_get_for_screen()</function></link>. Once you have a <link linkend="PangoLayout"><type>PangoLayout</type></link>, you
+can set the text and attributes of it with Pango functions like
+<link linkend="pango-layout-set-text"><function>pango_layout_set_text()</function></link> and get its size with <link linkend="pango-layout-get-size"><function>pango_layout_get_size()</function></link>.
+(Note that Pango uses a fixed point system internally, so converting
+between Pango units and pixels using <link
+linkend="PANGO-SCALE-CAPS">PANGO_SCALE</link> or the <link linkend="PANGO-PIXELS--CAPS"><function>PANGO_PIXELS()</function></link> macro.)
+</para>
+<para>
+Rendering a Pango layout is done most simply with <link linkend="gdk-draw-layout"><function>gdk_draw_layout()</function></link>;
+you can also draw pieces of the layout with <link linkend="gdk-draw-layout"><function>gdk_draw_layout()</function></link> or
+<link linkend="gdk-draw-glyphs"><function>gdk_draw_glyphs()</function></link>. <link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link> is a subclass of <link linkend="PangoRenderer"><type>PangoRenderer</type></link>
+that is used internally to implement these functions. Using it
+directly or subclassing it can be useful in some cases. See the
+<link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link> documentation for details.
+</para>
+<example id="rotated-example">
+<title>Using <link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link> to draw transformed text</title>
+<!-- Note that this example is basically the same as
+     demos/gtk-demo/rotated_text.c -->
+<programlisting>
+#define RADIUS 100
+#define N_WORDS 10
+#define FONT "Sans Bold 18"
+GdkScreen *screen = gdk_drawable_get_screen (drawable);
+PangoRenderer *renderer;
+GdkGC *gc;
+PangoMatrix matrix = PANGO_MATRIX_INIT;
+PangoContext *context;
+PangoLayout *layout;
+PangoFontDescription *desc;
+double device_radius;
+int width, height;
+int i;
+/* Get the default renderer for the screen, and set it up for drawing  */
+renderer = gdk_pango_renderer_get_default (screen);
+gdk_pango_renderer_set_drawable (GDK_PANGO_RENDERER (renderer), drawable);
+gc = gdk_gc_new (drawable);
+gdk_pango_renderer_set_gc (GDK_PANGO_RENDERER (renderer), gc);
+/* Set up a transformation matrix so that the user space coordinates for
+ * where we are drawing are [-RADIUS, RADIUS], [-RADIUS, RADIUS]
+ * We first center, then change the scale */
+gdk_drawable_get_size (drawable, &amp;width, &amp;height);
+device_radius = MIN (width, height) / 2.;
+pango_matrix_translate (&amp;matrix,
+                        device_radius + (width - 2 * device_radius) / 2,
+                        device_radius + (height - 2 * device_radius) / 2);
+pango_matrix_scale (&amp;matrix, device_radius / RADIUS, device_radius / RADIUS);
+/* Create a PangoLayout, set the font and text */
+context = gdk_pango_context_get_for_screen (screen);
+layout = pango_layout_new (context);
+pango_layout_set_text (layout, "Text", -1);
+desc = pango_font_description_from_string (FONT);
+pango_layout_set_font_description (layout, desc);
+pango_font_description_free (desc);
+/* Draw the layout N_WORDS times in a circle */
+for (i = 0; i &lt; N_WORDS; i++)
+  {
+    GdkColor color;
+    PangoMatrix rotated_matrix = matrix;
+    int width, height;
+    double angle = (360. * i) / N_WORDS;
+    /* Gradient from red at angle == 60 to blue at angle == 300 */
+    color.red   = 65535 * (1 + cos ((angle - 60) * M_PI / 180.)) / 2;
+    color.green = 0;
+    color.blue  = 65535  - color.red;
+    gdk_pango_renderer_set_override_color (GDK_PANGO_RENDERER (renderer),
+                                           PANGO_RENDER_PART_FOREGROUND, &amp;color);
+    pango_matrix_rotate (&amp;rotated_matrix, angle);
+    pango_context_set_matrix (context, &amp;rotated_matrix);
+    /* Inform Pango to re-layout the text with the new transformation matrix */
+    pango_layout_context_changed (layout);
+    pango_layout_get_size (layout, &amp;width, &amp;height);
+    pango_renderer_draw_layout (renderer, layout,
+                                - width / 2, - RADIUS * PANGO_SCALE);
+  }
+/* Clean up default renderer, since it is shared */
+gdk_pango_renderer_set_override_color (GDK_PANGO_RENDERER (renderer),
+                                       PANGO_RENDER_PART_FOREGROUND, NULL);
+gdk_pango_renderer_set_drawable (GDK_PANGO_RENDERER (renderer), NULL);
+gdk_pango_renderer_set_gc (GDK_PANGO_RENDERER (renderer), NULL);
+/* free the objects we created */
+g_object_unref (layout);
+g_object_unref (context);
+g_object_unref (gc);
+</programlisting>
+</example>
+<figure>
+  <title>Output of <xref linkend="rotated-example"/></title>
+  <graphic fileref="rotated-text.png" format="PNG"/>
+</figure>
+</refsect1>
+
+<refsect1 id="gdk-Pango-Interaction.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GdkPangoRenderer-struct" role="struct">
+<title>GdkPangoRenderer</title>
+<indexterm zone="GdkPangoRenderer-struct" role="2.6"><primary sortas="PangoRenderer">GdkPangoRenderer</primary></indexterm><programlisting>typedef struct _GdkPangoRenderer GdkPangoRenderer;</programlisting>
+<para>
+<link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link> is a subclass of <link linkend="PangoRenderer"><type>PangoRenderer</type></link> used for rendering
+Pango objects into GDK drawables. The default renderer for a particular
+screen is obtained with <link linkend="gdk-pango-renderer-get-default"><function>gdk_pango_renderer_get_default()</function></link>; Pango
+functions like <link linkend="pango-renderer-draw-layout"><function>pango_renderer_draw_layout()</function></link> and
+<link linkend="pango-renderer-draw-layout-line"><function>pango_renderer_draw_layout_line()</function></link> are then used to draw objects with
+the renderer.
+</para>
+<para>
+In most simple cases, applications can just use <link linkend="gdk-draw-layout"><function>gdk_draw_layout()</function></link>, and
+don't need to directly use <link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link> at all. Using the
+<link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link> directly is most useful when working with a
+transformation such as a rotation, because the Pango drawing functions
+take user space coordinates (coordinates before the transformation)
+instead of device coordinates.
+</para>
+<para>
+In certain cases it can be useful to subclass <link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link>. Examples
+of reasons to do this are to add handling of custom attributes by
+overriding 'prepare_run' or to do custom drawing of embedded objects
+by overriding 'draw_shape'.</para>
+<para>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GdkPangoRendererClass" role="struct" condition="since:2.6">
+<title>GdkPangoRendererClass</title>
+<indexterm zone="GdkPangoRendererClass" role="2.6"><primary sortas="PangoRendererClass">GdkPangoRendererClass</primary></indexterm><programlisting>typedef struct {
+} GdkPangoRendererClass;
+</programlisting>
+<para>
+<link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link> is the class structure for <link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link>.</para>
+<para>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-pango-renderer-new" role="function" condition="since:2.6">
+<title>gdk_pango_renderer_new ()</title>
+<indexterm zone="gdk-pango-renderer-new" role="2.6"><primary sortas="pango_renderer_new">gdk_pango_renderer_new</primary></indexterm><programlisting><link linkend="PangoRenderer">PangoRenderer</link> *     gdk_pango_renderer_new              (<link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<para>
+Creates a new <link linkend="PangoRenderer"><type>PangoRenderer</type></link> for <parameter>screen</parameter>. Normally you can use the
+results of <link linkend="gdk-pango-renderer-get-default"><function>gdk_pango_renderer_get_default()</function></link> rather than creating a new
+renderer.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly created <link linkend="PangoRenderer"><type>PangoRenderer</type></link>. Free with <link linkend="g-object-unref"><function>g_object_unref()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-pango-renderer-get-default" role="function" condition="since:2.6">
+<title>gdk_pango_renderer_get_default ()</title>
+<indexterm zone="gdk-pango-renderer-get-default" role="2.6"><primary sortas="pango_renderer_get_default">gdk_pango_renderer_get_default</primary></indexterm><programlisting><link linkend="PangoRenderer">PangoRenderer</link> *     gdk_pango_renderer_get_default      (<link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<para>
+Gets the default <link linkend="PangoRenderer"><type>PangoRenderer</type></link> for a screen. This default renderer
+is shared by all users of the display, so properties such as the color
+or transformation matrix set for the renderer may be overwritten
+by functions such as <link linkend="gdk-draw-layout"><function>gdk_draw_layout()</function></link>.
+</para>
+<para>
+Before using the renderer, you need to call <link linkend="gdk-pango-renderer-set-drawable"><function>gdk_pango_renderer_set_drawable()</function></link>
+and <link linkend="gdk-pango-renderer-set-gc"><function>gdk_pango_renderer_set_gc()</function></link> to set the drawable and graphics context
+to use for drawing.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the default <link linkend="PangoRenderer"><type>PangoRenderer</type></link> for <parameter>screen</parameter>. The
+ renderer is owned by GTK+ and will be kept around until the
+ screen is closed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-pango-renderer-set-drawable" role="function" condition="since:2.6">
+<title>gdk_pango_renderer_set_drawable ()</title>
+<indexterm zone="gdk-pango-renderer-set-drawable" role="2.6"><primary sortas="pango_renderer_set_drawable">gdk_pango_renderer_set_drawable</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_pango_renderer_set_drawable     (<link linkend="GdkPangoRenderer">GdkPangoRenderer</link> *gdk_renderer,
+                                                         <link linkend="GdkDrawable">GdkDrawable</link> *drawable);</programlisting>
+<para>
+Sets the drawable the renderer draws to.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gdk_renderer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>drawable</parameter>&#160;:</term>
+<listitem><simpara> the new target drawable, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-pango-renderer-set-gc" role="function" condition="since:2.6">
+<title>gdk_pango_renderer_set_gc ()</title>
+<indexterm zone="gdk-pango-renderer-set-gc" role="2.6"><primary sortas="pango_renderer_set_gc">gdk_pango_renderer_set_gc</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_pango_renderer_set_gc           (<link linkend="GdkPangoRenderer">GdkPangoRenderer</link> *gdk_renderer,
+                                                         <link linkend="GdkGC">GdkGC</link> *gc);</programlisting>
+<para>
+Sets the GC the renderer draws with. Note that the GC must not be
+modified until it is unset by calling the function again with
+<link linkend="NULL--CAPS"><literal>NULL</literal></link> for the <parameter>gc</parameter> parameter, since GDK may make internal copies
+of the GC which won't be updated to follow changes to the
+original GC.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gdk_renderer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gc</parameter>&#160;:</term>
+<listitem><simpara> the new GC to use for drawing, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-pango-renderer-set-stipple" role="function" condition="since:2.6">
+<title>gdk_pango_renderer_set_stipple ()</title>
+<indexterm zone="gdk-pango-renderer-set-stipple" role="2.6"><primary sortas="pango_renderer_set_stipple">gdk_pango_renderer_set_stipple</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_pango_renderer_set_stipple      (<link linkend="GdkPangoRenderer">GdkPangoRenderer</link> *gdk_renderer,
+                                                         <link linkend="PangoRenderPart">PangoRenderPart</link> part,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *stipple);</programlisting>
+<para>
+Sets the stipple for one render part (foreground, background, underline,
+etc.) Note that this is overwritten when iterating through the individual
+styled runs of a <link linkend="PangoLayout"><type>PangoLayout</type></link> or <link linkend="PangoLayoutLine"><type>PangoLayoutLine</type></link>. This function is thus
+only useful when you call low level functions like <link linkend="pango-renderer-draw-glyphs"><function>pango_renderer_draw_glyphs()</function></link>
+directly, or in the 'prepare_run' virtual function of a subclass of
+<link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gdk_renderer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>part</parameter>&#160;:</term>
+<listitem><simpara> the part to render with the stipple
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>stipple</parameter>&#160;:</term>
+<listitem><simpara> the new stipple value.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-pango-renderer-set-override-color" role="function" condition="since:2.6">
+<title>gdk_pango_renderer_set_override_color ()</title>
+<indexterm zone="gdk-pango-renderer-set-override-color" role="2.6"><primary sortas="pango_renderer_set_override_color">gdk_pango_renderer_set_override_color</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_pango_renderer_set_override_color
+                                                        (<link linkend="GdkPangoRenderer">GdkPangoRenderer</link> *gdk_renderer,
+                                                         <link linkend="PangoRenderPart">PangoRenderPart</link> part,
+                                                         const <link linkend="GdkColor">GdkColor</link> *color);</programlisting>
+<para>
+Sets the color for a particular render part (foreground,
+background, underline, etc.), overriding any attributes on the layouts
+renderered with this renderer.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gdk_renderer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPangoRenderer"><type>GdkPangoRenderer</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>part</parameter>&#160;:</term>
+<listitem><simpara> the part to render to set the color of
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>color</parameter>&#160;:</term>
+<listitem><simpara> the color to use, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> to unset a previously
+        set override color.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-pango-context-get" role="function">
+<title>gdk_pango_context_get ()</title>
+<indexterm zone="gdk-pango-context-get"><primary sortas="pango_context_get">gdk_pango_context_get</primary></indexterm><programlisting><link linkend="PangoContext">PangoContext</link> *      gdk_pango_context_get               (void);</programlisting>
+<para>
+Creates a <link linkend="PangoContext"><type>PangoContext</type></link> for the default GDK screen.
+</para>
+<para>
+The context must be freed when you're finished with it.
+</para>
+<para>
+When using GTK+, normally you should use <link linkend="gtk-widget-get-pango-context"><function>gtk_widget_get_pango_context()</function></link>
+instead of this function, to get the appropriate context for
+the widget you intend to render text onto.
+</para>
+<para>
+The newly created context will have the default font options (see
+<link linkend="cairo-font-options-t"><type>cairo_font_options_t</type></link>) for the default screen; if these options
+change it will not be updated. Using <link linkend="gtk-widget-get-pango-context"><function>gtk_widget_get_pango_context()</function></link>
+is more convenient if you want to keep a context around and track
+changes to the screen's font rendering settings.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="PangoContext"><type>PangoContext</type></link> for the default display
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pango-context-get-for-screen" role="function" condition="since:2.2">
+<title>gdk_pango_context_get_for_screen ()</title>
+<indexterm zone="gdk-pango-context-get-for-screen" role="2.2"><primary sortas="pango_context_get_for_screen">gdk_pango_context_get_for_screen</primary></indexterm><programlisting><link linkend="PangoContext">PangoContext</link> *      gdk_pango_context_get_for_screen    (<link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<para>
+Creates a <link linkend="PangoContext"><type>PangoContext</type></link> for <parameter>screen</parameter>.
+</para>
+<para>
+The context must be freed when you're finished with it.
+</para>
+<para>
+When using GTK+, normally you should use <link linkend="gtk-widget-get-pango-context"><function>gtk_widget_get_pango_context()</function></link>
+instead of this function, to get the appropriate context for
+the widget you intend to render text onto.
+</para>
+<para>
+The newly created context will have the default font options
+(see <link linkend="cairo-font-options-t"><type>cairo_font_options_t</type></link>) for the screen; if these options
+change it will not be updated. Using <link linkend="gtk-widget-get-pango-context"><function>gtk_widget_get_pango_context()</function></link>
+is more convenient if you want to keep a context around and track
+changes to the screen's font rendering settings.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GdkScreen"><type>GdkScreen</type></link> for which the context is to be created.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="PangoContext"><type>PangoContext</type></link> for <parameter>screen</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-pango-context-set-colormap" role="function" condition="deprecated:">
+<title>gdk_pango_context_set_colormap ()</title>
+<indexterm zone="gdk-pango-context-set-colormap" role="deprecated"><primary sortas="pango_context_set_colormap">gdk_pango_context_set_colormap</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_pango_context_set_colormap      (<link linkend="PangoContext">PangoContext</link> *context,
+                                                         <link linkend="GdkColormap">GdkColormap</link> *colormap);</programlisting>
+<warning><para><literal>gdk_pango_context_set_colormap</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+This function used to set the colormap to be used for drawing with
+<parameter>context</parameter>. The colormap is now always derived from the graphics
+context used for drawing, so calling this function is no longer
+necessary.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="PangoContext"><type>PangoContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>colormap</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkColormap"><type>GdkColormap</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkPangoAttrEmbossed" role="struct">
+<title>GdkPangoAttrEmbossed</title>
+<indexterm zone="GdkPangoAttrEmbossed"><primary sortas="PangoAttrEmbossed">GdkPangoAttrEmbossed</primary></indexterm><programlisting>typedef struct {
+  PangoAttribute attr;
+  gboolean embossed;
+} GdkPangoAttrEmbossed;
+</programlisting>
+<para>
+A Pango text attribute containing a embossed bitmap to be used when
+rendering the text.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="PangoAttribute">PangoAttribute</link>&#160;<structfield>attr</structfield>;</term>
+<listitem><simpara>the <link linkend="PangoAttribute"><type>PangoAttribute</type></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gboolean">gboolean</link>&#160;<structfield>embossed</structfield>;</term>
+<listitem><simpara>the embossed bitmap.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkPangoAttrEmbossColor" role="struct">
+<title>GdkPangoAttrEmbossColor</title>
+<indexterm zone="GdkPangoAttrEmbossColor"><primary sortas="PangoAttrEmbossColor">GdkPangoAttrEmbossColor</primary></indexterm><programlisting>typedef struct {
+  PangoAttribute attr;
+  PangoColor color;
+} GdkPangoAttrEmbossColor;
+</programlisting>
+<para>
+A Pango text attribute specifying the color to emboss text with.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="PangoAttribute">PangoAttribute</link>&#160;<structfield>attr</structfield>;</term>
+<listitem><simpara>the <link linkend="PangoAttribute"><type>PangoAttribute</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="PangoColor">PangoColor</link>&#160;<structfield>color</structfield>;</term>
+<listitem><simpara>the color
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkPangoAttrStipple" role="struct">
+<title>GdkPangoAttrStipple</title>
+<indexterm zone="GdkPangoAttrStipple"><primary sortas="PangoAttrStipple">GdkPangoAttrStipple</primary></indexterm><programlisting>typedef struct {
+  PangoAttribute attr;
+  GdkBitmap *stipple;
+} GdkPangoAttrStipple;
+</programlisting>
+<para>
+A Pango text attribute containing a stipple bitmap to be used when
+rendering the text.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="PangoAttribute">PangoAttribute</link>&#160;<structfield>attr</structfield>;</term>
+<listitem><simpara>the <link linkend="PangoAttribute"><type>PangoAttribute</type></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GdkBitmap">GdkBitmap</link>&#160;*<structfield>stipple</structfield>;</term>
+<listitem><simpara>the stipple bitmap.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pango-attr-emboss-color-new" role="function" condition="since:2.12">
+<title>gdk_pango_attr_emboss_color_new ()</title>
+<indexterm zone="gdk-pango-attr-emboss-color-new" role="2.12"><primary sortas="pango_attr_emboss_color_new">gdk_pango_attr_emboss_color_new</primary></indexterm><programlisting><link linkend="PangoAttribute">PangoAttribute</link> *    gdk_pango_attr_emboss_color_new     (const <link linkend="GdkColor">GdkColor</link> *color);</programlisting>
+<para>
+Creates a new attribute specifying the color to emboss text with.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>color</parameter>&#160;:</term>
+<listitem><simpara> a GdkColor representing the color to emboss with
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> new <link linkend="PangoAttribute"><type>PangoAttribute</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gdk-pango-attr-embossed-new" role="function">
+<title>gdk_pango_attr_embossed_new ()</title>
+<indexterm zone="gdk-pango-attr-embossed-new"><primary sortas="pango_attr_embossed_new">gdk_pango_attr_embossed_new</primary></indexterm><programlisting><link linkend="PangoAttribute">PangoAttribute</link> *    gdk_pango_attr_embossed_new         (<link linkend="gboolean">gboolean</link> embossed);</programlisting>
+<para>
+Creates a new attribute flagging a region as embossed or not.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>embossed</parameter>&#160;:</term>
+<listitem><simpara> if the region should be embossed
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> new <link linkend="PangoAttribute"><type>PangoAttribute</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pango-attr-stipple-new" role="function">
+<title>gdk_pango_attr_stipple_new ()</title>
+<indexterm zone="gdk-pango-attr-stipple-new"><primary sortas="pango_attr_stipple_new">gdk_pango_attr_stipple_new</primary></indexterm><programlisting><link linkend="PangoAttribute">PangoAttribute</link> *    gdk_pango_attr_stipple_new          (<link linkend="GdkBitmap">GdkBitmap</link> *stipple);</programlisting>
+<para>
+Creates a new attribute containing a stipple bitmap to be used when
+rendering the text.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>stipple</parameter>&#160;:</term>
+<listitem><simpara> a bitmap to be set as stipple
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> new <link linkend="PangoAttribute"><type>PangoAttribute</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pango-layout-get-clip-region" role="function">
+<title>gdk_pango_layout_get_clip_region ()</title>
+<indexterm zone="gdk-pango-layout-get-clip-region"><primary sortas="pango_layout_get_clip_region">gdk_pango_layout_get_clip_region</primary></indexterm><programlisting><link linkend="GdkRegion">GdkRegion</link> *         gdk_pango_layout_get_clip_region    (<link linkend="PangoLayout">PangoLayout</link> *layout,
+                                                         <link linkend="gint">gint</link> x_origin,
+                                                         <link linkend="gint">gint</link> y_origin,
+                                                         const <link linkend="gint">gint</link> *index_ranges,
+                                                         <link linkend="gint">gint</link> n_ranges);</programlisting>
+<para>
+Obtains a clip region which contains the areas where the given ranges
+of text would be drawn. <parameter>x_origin</parameter> and <parameter>y_origin</parameter> are the same position
+you would pass to <link linkend="gdk-draw-layout-line"><function>gdk_draw_layout_line()</function></link>. <parameter>index_ranges</parameter> should contain
+ranges of bytes in the layout's text.
+</para>
+<para>
+Note that the regions returned correspond to logical extents of the text
+ranges, not ink extents. So the drawn layout may in fact touch areas out of
+the clip region.  The clip region is mainly useful for highlightling parts
+of text, such as when text is selected.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>layout</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="PangoLayout"><type>PangoLayout</type></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x_origin</parameter>&#160;:</term>
+<listitem><simpara> X pixel where you intend to draw the layout with this clip
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y_origin</parameter>&#160;:</term>
+<listitem><simpara> Y pixel where you intend to draw the layout with this clip
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>index_ranges</parameter>&#160;:</term>
+<listitem><simpara> array of byte indexes into the layout, where even members of array are start indexes and odd elements are end indexes
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_ranges</parameter>&#160;:</term>
+<listitem><simpara> number of ranges in <parameter>index_ranges</parameter>, i.e. half the size of <parameter>index_ranges</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a clip region containing the given ranges
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pango-layout-line-get-clip-region" role="function">
+<title>gdk_pango_layout_line_get_clip_region ()</title>
+<indexterm zone="gdk-pango-layout-line-get-clip-region"><primary sortas="pango_layout_line_get_clip_region">gdk_pango_layout_line_get_clip_region</primary></indexterm><programlisting><link linkend="GdkRegion">GdkRegion</link> *         gdk_pango_layout_line_get_clip_region
+                                                        (<link linkend="PangoLayoutLine">PangoLayoutLine</link> *line,
+                                                         <link linkend="gint">gint</link> x_origin,
+                                                         <link linkend="gint">gint</link> y_origin,
+                                                         const <link linkend="gint">gint</link> *index_ranges,
+                                                         <link linkend="gint">gint</link> n_ranges);</programlisting>
+<para>
+Obtains a clip region which contains the areas where the given
+ranges of text would be drawn. <parameter>x_origin</parameter> and <parameter>y_origin</parameter> are the same
+position you would pass to <link linkend="gdk-draw-layout-line"><function>gdk_draw_layout_line()</function></link>. <parameter>index_ranges</parameter>
+should contain ranges of bytes in the layout's text. The clip
+region will include space to the left or right of the line (to the
+layout bounding box) if you have indexes above or below the indexes
+contained inside the line. This is to draw the selection all the way
+to the side of the layout. However, the clip region is in line coordinates,
+not layout coordinates.
+</para>
+<para>
+Note that the regions returned correspond to logical extents of the text
+ranges, not ink extents. So the drawn line may in fact touch areas out of
+the clip region.  The clip region is mainly useful for highlightling parts
+of text, such as when text is selected.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>line</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="PangoLayoutLine"><type>PangoLayoutLine</type></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x_origin</parameter>&#160;:</term>
+<listitem><simpara> X pixel where you intend to draw the layout line with this clip
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y_origin</parameter>&#160;:</term>
+<listitem><simpara> baseline pixel where you intend to draw the layout line with this clip
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>index_ranges</parameter>&#160;:</term>
+<listitem><simpara> array of byte indexes into the layout, where even members of array are start indexes and odd elements are end indexes
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_ranges</parameter>&#160;:</term>
+<listitem><simpara> number of ranges in <parameter>index_ranges</parameter>, i.e. half the size of <parameter>index_ranges</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a clip region containing the given ranges
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="gdk-Pango-Interaction.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GdkPangoRenderer--screen" role="property"><title>The <literal>&quot;screen&quot;</literal> property</title>
+<indexterm zone="GdkPangoRenderer--screen"><primary sortas="PangoRenderer:screen">GdkPangoRenderer:screen</primary></indexterm><programlisting>  &quot;screen&quot;                   <link linkend="GdkScreen">GdkScreen</link>*            : Read / Write / Construct Only</programlisting>
+<para>the GdkScreen for the renderer.</para></refsect2>
+</refsect1>
+
+
+
+
+</refentry>

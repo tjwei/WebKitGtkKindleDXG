@@ -1,0 +1,3395 @@
+# gqview ESPERANTO language support
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) Antonio C. Codazzi "la Filozofo" <f_sophia@libero.it>, 2006.
+# 
+# Check Esperanto special letters= ĉŝĥĵĝŭ
+#
+# Tradukaĵoj:
+# checksum = kontrolsumo
+msgid ""
+msgstr ""
+"Project-Id-Version: gqview-2.1.2_dev_eo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-02 20:43-0500\n"
+"PO-Revision-Date: 2006-10-28 09:40+0200\n"
+"Last-Translator: Antonio C. Codazzi <f_sophia@libero.it>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+
+#: src/bar_info.c:30
+msgid "Favorite"
+msgstr "Favorata"
+
+#: src/bar_info.c:31
+msgid "Todo"
+msgstr "Farendaĵoj"
+
+#: src/bar_info.c:32
+msgid "People"
+msgstr "Uloj"
+
+#: src/bar_info.c:33
+msgid "Places"
+msgstr "Lokoj"
+
+#: src/bar_info.c:34
+msgid "Art"
+msgstr "Arto"
+
+#: src/bar_info.c:35
+msgid "Nature"
+msgstr "Naturo"
+
+#: src/bar_info.c:36
+msgid "Possessions"
+msgstr "Objektoj"
+
+#: src/bar_info.c:505
+msgid "Keyword Presets"
+msgstr "Agordoj de ŝlosila vorto"
+
+#: src/bar_info.c:508
+msgid "Favorite keywords list"
+msgstr "Listo de favorataj ŝlosilvortoj"
+
+#: src/bar_info.c:992 src/info.c:167 src/search.c:2683
+msgid "Keywords"
+msgstr "Ŝlosilaj Vortoj"
+
+#: src/bar_info.c:1006 src/info.c:722 src/pan-view.c:1521 src/print.c:2614
+msgid "Filename:"
+msgstr "Dosiernomo:"
+
+#: src/bar_info.c:1007 src/info.c:366
+msgid "File date:"
+msgstr "Dosierdato:"
+
+#: src/bar_info.c:1027
+msgid "Keywords:"
+msgstr "Ŝlosilaj Vortoj:"
+
+#: src/bar_info.c:1095
+msgid "Comment:"
+msgstr "Komento:"
+
+#: src/bar_info.c:1119
+msgid "Edit favorite keywords list."
+msgstr "Redaktu liston de favorataj ŝlosilvortoj."
+
+#: src/bar_info.c:1123
+msgid "Add keywords to selected files"
+msgstr "Aldonu ŝlosilajn vortojn al elektitaj dosieroj"
+
+#: src/bar_info.c:1126
+msgid "Add keywords to selected files, replacing the existing ones."
+msgstr ""
+"Aldonu ŝlosilajn vortojn al elektitaj dosieroj, anstataŭante jam-"
+"ekzistantajn vortojn."
+
+#: src/bar_info.c:1130
+msgid "Save comment now"
+msgstr "Konservu komenton nur"
+
+#: src/bar_exif.c:436
+msgid "Tag"
+msgstr "Slipo"
+
+#: src/bar_exif.c:437 src/dupe.c:2589 src/dupe.c:3112 src/print.c:3205
+#: src/search.c:2744 src/utilops.c:2779 src/view_file_list.c:1655
+msgid "Name"
+msgstr "Nomo"
+
+#: src/bar_exif.c:438
+msgid "Value"
+msgstr "Valoro"
+
+#: src/bar_exif.c:439
+msgid "Format"
+msgstr "Formato"
+
+#: src/bar_exif.c:440
+msgid "Elements"
+msgstr "Elementoj"
+
+#: src/bar_exif.c:441 src/preferences.c:1063
+msgid "Description"
+msgstr "Priscribo"
+
+#: src/bar_exif.c:562 src/info.c:106
+msgid "Exif"
+msgstr "Exif"
+
+#: src/bar_exif.c:635
+msgid "Advanced view"
+msgstr "Avana videbligo"
+
+#: src/bar_sort.c:217
+#, fuzzy, c-format
+msgid ""
+"Unable to remove symbolic link:\n"
+"%s"
+msgstr ""
+"Estas neeble formovi simbola kunligo:\n"
+"%s"
+
+#: src/bar_sort.c:218
+msgid "Unlink failed"
+msgstr "Malkonekto malsukcesis"
+
+#: src/bar_sort.c:297
+#, fuzzy, c-format
+msgid ""
+"Unable to create symbolic link:\n"
+"%s"
+msgstr ""
+"Estas neeble krei simbola kunligo:\n"
+"%s"
+
+#: src/bar_sort.c:298
+msgid "Link failed"
+msgstr "Konekto malsukcesis"
+
+#: src/bar_sort.c:435
+#, c-format
+msgid ""
+"The collection:\n"
+"%s\n"
+"already exists."
+msgstr ""
+"La kolekto:\n"
+"%s\n"
+"jam ekzistas."
+
+#: src/bar_sort.c:436
+msgid "Collection exists"
+msgstr "La kolekto jam ekzistas"
+
+#: src/bar_sort.c:450 src/collect.c:1057 src/collect-dlg.c:84
+#, c-format
+msgid ""
+"Failed to save the collection:\n"
+"%s"
+msgstr ""
+"Konservo de kolekto malsukcesis:\n"
+"%s"
+
+#: src/bar_sort.c:451 src/collect.c:1058 src/collect-dlg.c:85
+msgid "Save Failed"
+msgstr "Konservo malsukcesis"
+
+#: src/bar_sort.c:485 src/bar_sort.c:611
+msgid "Add Bookmark"
+msgstr "Aldonu Legosignon"
+
+#: src/bar_sort.c:489
+msgid "Add Collection"
+msgstr "Agldonu Kolekton"
+
+#: src/bar_sort.c:506 src/ui_bookmark.c:603
+msgid "Name:"
+msgstr "Nomo:"
+
+#: src/bar_sort.c:568
+msgid "Sort Manager"
+msgstr "Ordigilo"
+
+#: src/bar_sort.c:577 src/pan-view.c:2378 src/ui_pathsel.c:1094
+msgid "Folders"
+msgstr "Dosierujoj"
+
+#: src/bar_sort.c:578 src/main.c:1125
+msgid "Collections"
+msgstr "Kolektoj"
+
+#: src/bar_sort.c:586
+msgid "Copy"
+msgstr "Kopiu"
+
+#: src/bar_sort.c:589
+msgid "Move"
+msgstr "Movu"
+
+#: src/bar_sort.c:592
+msgid "Link"
+msgstr "Kunligo"
+
+#: src/bar_sort.c:598
+msgid "Add image"
+msgstr "Aldonu bildon"
+
+#: src/bar_sort.c:601
+msgid "Add selection"
+msgstr "Aldonu elekton"
+
+#: src/bar_sort.c:614
+msgid "Undo last image"
+msgstr "Reiru al lasta bildo"
+
+#: src/cache_maint.c:126 src/cache_maint.c:680 src/cache_maint.c:893
+#: src/editors.c:437
+msgid "done"
+msgstr "farite"
+
+#: src/cache_maint.c:303
+msgid "Removing old metadata..."
+msgstr "Formovante malnovajn metadatumojn..."
+
+#: src/cache_maint.c:307
+msgid "Clearing cached thumbnails..."
+msgstr "Vakigante kaŝenmemorigitajn miniaturojn..."
+
+#: src/cache_maint.c:311 src/cache_maint.c:1047
+msgid "Removing old thumbnails..."
+msgstr "Formovante malnovajn miniaturojn..."
+
+#: src/cache_maint.c:314 src/cache_maint.c:1050
+msgid "Maintenance"
+msgstr "Bontenado"
+
+#: src/cache_maint.c:791 src/utilops.c:952
+msgid "Invalid folder"
+msgstr "Nevalida dosierujo"
+
+#: src/cache_maint.c:792
+msgid "The specified folder can not be found."
+msgstr "Specifita dosierujo ne estis trovita."
+
+#: src/cache_maint.c:820 src/cache_maint.c:834 src/cache_maint.c:1215
+msgid "Create thumbnails"
+msgstr "Kreu miniaturojn"
+
+#: src/cache_maint.c:828 src/cache_maint.c:1057
+msgid "S_tart"
+msgstr "S_tartu"
+
+#: src/cache_maint.c:841 src/preferences.c:1200
+msgid "Folder:"
+msgstr "Dosierujo:"
+
+#: src/cache_maint.c:844
+msgid "Select folder"
+msgstr "Elektu dosierujon"
+
+#: src/cache_maint.c:848
+msgid "Include subfolders"
+msgstr "Inkluzivigu subdosierujojn"
+
+#: src/cache_maint.c:849
+msgid "Store thumbnails local to source images"
+msgstr "Storu miniaturojn kun fontaj bildoj"
+
+#: src/cache_maint.c:858 src/cache_maint.c:1066
+msgid "click start to begin"
+msgstr "kliku starto-butonon por komenci"
+
+#: src/cache_maint.c:996 src/editors.c:585
+msgid "running..."
+msgstr "procezumante..."
+
+#: src/cache_maint.c:1042
+msgid "Clearing thumbnails..."
+msgstr "Vakigante miniaturojn..."
+
+#: src/cache_maint.c:1108 src/cache_maint.c:1111 src/cache_maint.c:1190
+#: src/cache_maint.c:1210
+msgid "Clear cache"
+msgstr "Vakigu kaŝmemoron"
+
+#: src/cache_maint.c:1112
+msgid ""
+"This will remove all thumbnails that have\n"
+"been saved to disk, continue?"
+msgstr ""
+"Ĉi tiu formovos ĉiujn miniaturojn\n"
+"kiuj estas konservitaj en disko. Ĉu daŭre?"
+
+#: src/cache_maint.c:1162
+msgid "Cache Maintenance - GQview"
+msgstr "Kaŝmemora Bontenado - GQview"
+
+#: src/cache_maint.c:1172
+msgid "Cache and Data Maintenance"
+msgstr "Bontenado de kaŝmemoro kaj datumoj"
+
+#: src/cache_maint.c:1176
+msgid "GQview thumbnail cache"
+msgstr "Kaŝmemoro de GQview miniaturoj"
+
+#: src/cache_maint.c:1178 src/cache_maint.c:1198 src/cache_maint.c:1226
+#: src/pan-view.c:1523 src/pan-view.c:2367 src/preferences.c:1177
+#: src/utilops.c:1571
+msgid "Location:"
+msgstr "Lokado:"
+
+#: src/cache_maint.c:1185 src/cache_maint.c:1205 src/cache_maint.c:1233
+msgid "Clean up"
+msgstr "Vakigu"
+
+#: src/cache_maint.c:1188 src/cache_maint.c:1208
+msgid "Remove orphaned or outdated thumbnails."
+msgstr "Formovu orfajn kaj oldajn miniaturojn."
+
+#: src/cache_maint.c:1193 src/cache_maint.c:1213
+msgid "Delete all cached thumbnails."
+msgstr "Forigu ĉiujn kaŝenmemorigitajn miniaturojn."
+
+#: src/cache_maint.c:1196
+msgid "Shared thumbnail cache"
+msgstr "Kunpartigu miniaturan kaŝmemoron"
+
+#: src/cache_maint.c:1219
+msgid "Render"
+msgstr "Transdono"
+
+#: src/cache_maint.c:1222
+msgid "Render thumbnails for a specific folder."
+msgstr "Transdonu miniaturojn laŭ specifita dosierujo."
+
+#: src/cache_maint.c:1224
+msgid "Metadata"
+msgstr "Metadatumoj"
+
+#: src/cache_maint.c:1236
+msgid "Remove orphaned keywords and comments."
+msgstr "Formovu orfajn ŝlosilvortojn kaj komentojn."
+
+#: src/collect.c:350 src/image.c:151 src/image-overlay.c:110
+#: src/image-overlay.c:152
+#, c-format
+msgid "Untitled"
+msgstr "Sen titola"
+
+#: src/collect.c:354
+#, c-format
+msgid "Untitled (%d)"
+msgstr "Sen titola (%d)"
+
+#: src/collect.c:976
+#, c-format
+msgid "%s - GQview Collection"
+msgstr "%s - GQview Kolekto"
+
+#: src/collect.c:1094 src/collect.c:1098
+msgid "Close collection"
+msgstr "Malfermu kolekton"
+
+#: src/collect.c:1099
+msgid ""
+"Collection has been modified.\n"
+"Save first?"
+msgstr ""
+"Kolekto estis modifita.\n"
+"Ĉu oni devas konservi ĝin?"
+
+#: src/collect.c:1102
+msgid "_Discard"
+msgstr "_Rifuzu"
+
+#: src/collect-dlg.c:58
+#, c-format
+msgid ""
+"Specified path:\n"
+"%s\n"
+"is a folder, collections are files"
+msgstr ""
+"Specifita raŭto:\n"
+"%s\n"
+"estas dosierujo, sed kolektoj estas dosieroj!"
+
+#: src/collect-dlg.c:59
+msgid "Invalid filename"
+msgstr "Nevalida dosiernomo"
+
+#: src/collect-dlg.c:68
+msgid "Overwrite File"
+msgstr "Surskribu Dosieron"
+
+#: src/collect-dlg.c:73
+msgid "Overwrite existing file?"
+msgstr "Ĉu oni devas surskribi ekzistantan dosieron?"
+
+#: src/collect-dlg.c:75 src/utilops.c:514 src/utilops.c:835 src/utilops.c:1725
+#: src/utilops.c:2447
+msgid "_Overwrite"
+msgstr "S_urskribu"
+
+#: src/collect-dlg.c:169
+msgid "Save collection"
+msgstr "Konservu kolekton"
+
+#: src/collect-dlg.c:176
+msgid "Open collection"
+msgstr "Malfermu kolekton"
+
+#: src/collect-dlg.c:184
+msgid "Append collection"
+msgstr "Aldonu kolekton"
+
+#: src/collect-dlg.c:185
+msgid "_Append"
+msgstr "_Aldonu"
+
+#: src/collect-dlg.c:203
+msgid "Collection Files"
+msgstr "Kolekta Dosiero"
+
+#: src/collect-dlg.c:221
+msgid "Collection empty"
+msgstr "Malplena kolekto"
+
+#: src/collect-dlg.c:222
+msgid "The current collection is empty, save aborted."
+msgstr "La nuna kolekto estas malplena: konservo nuliĝis."
+
+#: src/collect-table.c:164 src/layout.c:372 src/layout_util.c:737
+msgid "Empty"
+msgstr "Malplena"
+
+#: src/collect-table.c:168
+#, c-format
+msgid "%d images (%d)"
+msgstr "%d bildoj (%d)"
+
+#: src/collect-table.c:172
+#, c-format
+msgid "%d images"
+msgstr "%d bildoj"
+
+#: src/collect-table.c:186 src/dupe.c:1296 src/search.c:303
+#: src/view_file_icon.c:1776 src/view_file_icon.c:1891
+#: src/view_file_list.c:916 src/view_file_list.c:1021
+msgid "Loading thumbs..."
+msgstr "Ŝargante miniaturojn..."
+
+#: src/collect-table.c:773 src/dupe.c:2187 src/dupe.c:2497
+#: src/layout_util.c:780 src/search.c:969
+msgid "_View"
+msgstr "_Videbligu"
+
+#: src/collect-table.c:775 src/dupe.c:2189 src/dupe.c:2499 src/img-view.c:1251
+#: src/layout_image.c:735 src/pan-view.c:2788 src/search.c:971
+#: src/view_file_icon.c:287 src/view_file_list.c:398
+msgid "View in _new window"
+msgstr "Videbligu en _nova fenestro"
+
+#: src/collect-table.c:778 src/dupe.c:2219 src/dupe.c:2507 src/search.c:997
+msgid "Rem_ove"
+msgstr "Form_ovu"
+
+#: src/collect-table.c:781
+msgid "Append from file list"
+msgstr "Aldonu el dosierlisto"
+
+#: src/collect-table.c:783
+msgid "Append from collection..."
+msgstr "Aldonu el kolekto..."
+
+#: src/collect-table.c:786 src/dupe.c:2192 src/dupe.c:2502 src/search.c:974
+msgid "Select all"
+msgstr "Elektu ĉion"
+
+#: src/collect-table.c:788 src/dupe.c:2194 src/dupe.c:2504 src/search.c:976
+msgid "Select none"
+msgstr "Elektu nenion"
+
+#: src/collect-table.c:796 src/dupe.c:2203 src/img-view.c:1249
+#: src/layout_image.c:732 src/layout_util.c:815 src/pan-view.c:2785
+#: src/search.c:981 src/view_file_icon.c:284 src/view_file_list.c:396
+msgid "_Properties"
+msgstr "_Ecoj"
+
+#: src/collect-table.c:799 src/dupe.c:2210 src/img-view.c:1254
+#: src/layout_image.c:740 src/layout_util.c:792 src/pan-view.c:2792
+#: src/search.c:988 src/view_file_icon.c:291 src/view_file_list.c:402
+msgid "_Copy..."
+msgstr "_Kopiu..."
+
+#: src/collect-table.c:801 src/dupe.c:2212 src/img-view.c:1255
+#: src/layout_image.c:742 src/layout_util.c:793 src/pan-view.c:2794
+#: src/search.c:990 src/view_file_icon.c:293 src/view_file_list.c:404
+msgid "_Move..."
+msgstr "_Movu..."
+
+#: src/collect-table.c:803 src/dupe.c:2214 src/img-view.c:1256
+#: src/layout_image.c:744 src/layout_util.c:794 src/pan-view.c:2796
+#: src/search.c:992 src/view_dir_list.c:415 src/view_dir_tree.c:514
+#: src/view_file_icon.c:295 src/view_file_list.c:406
+msgid "_Rename..."
+msgstr "_Renomu..."
+
+#: src/collect-table.c:805 src/dupe.c:2216 src/img-view.c:1257
+#: src/layout_image.c:746 src/layout_util.c:795 src/pan-view.c:2798
+#: src/search.c:994 src/view_dir_list.c:417 src/view_dir_tree.c:516
+#: src/view_file_icon.c:297 src/view_file_list.c:408
+msgid "_Delete..."
+msgstr "Fori_gu..."
+
+#: src/collect-table.c:810 src/view_file_icon.c:313
+msgid "Show filename _text"
+msgstr "Montru dosiernomajn _tekstojn"
+
+#: src/collect-table.c:813
+msgid "_Save collection"
+msgstr "_Konservu kolekton"
+
+#: src/collect-table.c:815
+msgid "Save collection _as..."
+msgstr "Ko_nservu kolekton kiel..."
+
+#: src/collect-table.c:818 src/layout_util.c:788
+msgid "_Find duplicates..."
+msgstr "Trovu _duplikatojn..."
+
+#: src/collect-table.c:820 src/dupe.c:2207 src/search.c:985
+msgid "Print..."
+msgstr "Presu..."
+
+#: src/collect-table.c:1972 src/dupe.c:3300 src/img-view.c:1411
+msgid "Dropped list includes folders."
+msgstr "La forigita listo entenas dosierujojn."
+
+#: src/collect-table.c:1974 src/dupe.c:3302 src/img-view.c:1413
+msgid "_Add contents"
+msgstr "_Aldonu enhavojn"
+
+#: src/collect-table.c:1976 src/dupe.c:3303 src/img-view.c:1414
+msgid "Add contents _recursive"
+msgstr "Aldonu enhavojn _ripete"
+
+#: src/collect-table.c:1978 src/dupe.c:3304 src/img-view.c:1415
+msgid "_Skip folders"
+msgstr "Preterla_su dosierujojn"
+
+#: src/collect-table.c:1981 src/dupe.c:3306 src/img-view.c:1417
+#: src/view_dir_list.c:214 src/view_dir_tree.c:306
+msgid "Cancel"
+msgstr "Nuligu"
+
+#: src/dupe.c:96
+msgid "Drop files to compare them."
+msgstr "Movu dosierojn por kompari ilin."
+
+#: src/dupe.c:100
+#, c-format
+msgid "%d files"
+msgstr "%d dosieroj"
+
+#: src/dupe.c:104
+#, c-format
+msgid "%d matches found in %d files"
+msgstr "%d respondoj estis trovitaj en %d dosiero"
+
+#: src/dupe.c:109
+msgid "[set 1]"
+msgstr "[grupo 1]"
+
+#: src/dupe.c:1422
+msgid "Reading checksums..."
+msgstr "Legante kontrolsumojn..."
+
+#: src/dupe.c:1455
+msgid "Reading dimensions..."
+msgstr "Legante dimensiojn..."
+
+#: src/dupe.c:1489
+msgid "Reading similarity data..."
+msgstr "Legante datumojn de simileco..."
+
+#: src/dupe.c:1524 src/dupe.c:1555
+msgid "Comparing..."
+msgstr "Komparante..."
+
+#: src/dupe.c:1535 src/pan-view.c:1080
+msgid "Sorting..."
+msgstr "Ordigante..."
+
+#: src/dupe.c:2196
+msgid "Select group _1 duplicates"
+msgstr "Elektu duplikatojn de grupo _1"
+
+#: src/dupe.c:2198
+msgid "Select group _2 duplicates"
+msgstr "Elektu duplikatojn de grupo _2"
+
+#: src/dupe.c:2205 src/search.c:983
+msgid "Add to new collection"
+msgstr "Aldonu al nova kolekto"
+
+#: src/dupe.c:2221 src/dupe.c:2509 src/search.c:999
+msgid "C_lear"
+msgstr "Vak_igu"
+
+#: src/dupe.c:2224 src/dupe.c:2512
+msgid "Close _window"
+msgstr "fermu _fenestron"
+
+#: src/dupe.c:2382
+#, c-format
+msgid "%d files (set 2)"
+msgstr "%d dosieroj (grupo 2)"
+
+#: src/dupe.c:2590 src/dupe.c:3113 src/preferences.c:982 src/print.c:3209
+#: src/search.c:2745 src/view_file_list.c:1656
+msgid "Size"
+msgstr "Grandeco"
+
+#: src/dupe.c:2591 src/dupe.c:3114 src/exif.c:296 src/exif.c:417
+#: src/print.c:3207 src/search.c:2746 src/view_file_list.c:1657
+msgid "Date"
+msgstr "Dato"
+
+#: src/dupe.c:2592 src/dupe.c:3115 src/print.c:3211 src/search.c:2747
+msgid "Dimensions"
+msgstr "Dimensioj"
+
+#: src/dupe.c:2593
+msgid "Checksum"
+msgstr "Kontrolsumo"
+
+#: src/dupe.c:2594 src/dupe.c:3116 src/search.c:2748 src/ui_pathsel.c:1106
+msgid "Path"
+msgstr "Raŭto"
+
+#: src/dupe.c:2595
+msgid "Similarity (high)"
+msgstr "Simileco (alta)"
+
+#: src/dupe.c:2596
+msgid "Similarity"
+msgstr "Simileco"
+
+#: src/dupe.c:2597
+msgid "Similarity (low)"
+msgstr "Simileco (basa)"
+
+#: src/dupe.c:2598
+msgid "Similarity (custom)"
+msgstr "Simileco (personigita)"
+
+#: src/dupe.c:3076
+msgid "Find duplicates - GQview"
+msgstr "Trovu duplikatojn - GQview"
+
+#: src/dupe.c:3148
+msgid "Compare to:"
+msgstr "Komparu kun:"
+
+#: src/dupe.c:3161
+msgid "Compare by:"
+msgstr "Komparu per:"
+
+#: src/dupe.c:3169 src/preferences.c:870 src/search.c:2761
+msgid "Thumbnails"
+msgstr "Miniaturoj"
+
+#: src/dupe.c:3176
+msgid "Compare two file sets"
+msgstr "Komparu du dosiergrupojn"
+
+#: src/editors.c:50
+msgid "The Gimp"
+msgstr "Gimpo"
+
+#: src/editors.c:51
+msgid "XV"
+msgstr "Xv"
+
+#: src/editors.c:52
+msgid "Xpaint"
+msgstr "Xpaint"
+
+#: src/editors.c:58
+msgid "Rotate jpeg clockwise"
+msgstr "Turnu JPEG bildon dekstroĝire"
+
+#: src/editors.c:59
+msgid "Rotate jpeg counterclockwise"
+msgstr "Turnu JPEG bildon kontraŭmontrile"
+
+#: src/editors.c:104
+msgid "stopping..."
+msgstr "fermante..."
+
+#: src/editors.c:131
+msgid "Edit command results"
+msgstr "redaktu komandajn rezultojn"
+
+#: src/editors.c:134
+#, c-format
+msgid "Output of %s"
+msgstr "Eligo de %s"
+
+#: src/editors.c:303
+#, c-format
+msgid ""
+"Failed to run command:\n"
+"%s\n"
+msgstr ""
+"Lanĉo de komando malsukcesis:\n"
+"%s\n"
+
+#: src/editors.c:441
+msgid "stopped by user"
+msgstr "estis fermita de la uzanto"
+
+#: src/exif.c:111 src/exif.c:124 src/exif.c:138 src/exif.c:163 src/exif.c:572
+#: src/exif.c:1626 src/exif.c:1629 src/exif.c:1694
+msgid "unknown"
+msgstr "nekonata"
+
+#: src/exif.c:112
+msgid "top left"
+msgstr "supra-maldekstre"
+
+#: src/exif.c:113
+msgid "top right"
+msgstr "supra-dekstre"
+
+#: src/exif.c:114
+msgid "bottom right"
+msgstr "suba-dekstre"
+
+#: src/exif.c:115
+msgid "bottom left"
+msgstr "suba-maldekstre"
+
+#: src/exif.c:116
+msgid "left top"
+msgstr "maldekstra-supre"
+
+#: src/exif.c:117
+msgid "right top"
+msgstr "dekstra-supre"
+
+#: src/exif.c:118
+msgid "right bottom"
+msgstr "dekstra-sube"
+
+#: src/exif.c:119
+msgid "left bottom"
+msgstr "maldekstra-sube"
+
+#: src/exif.c:126
+msgid "inch"
+msgstr "colo"
+
+#: src/exif.c:127
+msgid "centimeter"
+msgstr "centimetro"
+
+#: src/exif.c:139
+msgid "average"
+msgstr "averaĝo"
+
+#: src/exif.c:140
+msgid "center weighted"
+msgstr "pondita centro"
+
+#: src/exif.c:141
+msgid "spot"
+msgstr "makulo"
+
+#: src/exif.c:142
+msgid "multi-spot"
+msgstr "plur-makulo"
+
+#: src/exif.c:143
+msgid "multi-segment"
+msgstr "plur-segmento"
+
+#: src/exif.c:144
+msgid "partial"
+msgstr "parta"
+
+#: src/exif.c:145 src/exif.c:183
+msgid "other"
+msgstr "alio"
+
+#: src/exif.c:150
+msgid "not defined"
+msgstr "nedifinita"
+
+#: src/exif.c:151
+msgid "manual"
+msgstr "mane"
+
+#: src/exif.c:152
+msgid "normal"
+msgstr "normale"
+
+#: src/exif.c:153
+msgid "aperture"
+msgstr "aperturo"
+
+#: src/exif.c:154
+msgid "shutter"
+msgstr "obturatoro"
+
+#: src/exif.c:155
+msgid "creative"
+msgstr "krea"
+
+#: src/exif.c:156
+msgid "action"
+msgstr "ago"
+
+#: src/exif.c:157
+msgid "portrait"
+msgstr "portreta"
+
+#: src/exif.c:158
+msgid "landscape"
+msgstr "panorama"
+
+#: src/exif.c:164
+msgid "daylight"
+msgstr "tagluma"
+
+#: src/exif.c:165
+msgid "fluorescent"
+msgstr "fluoreska"
+
+#: src/exif.c:166
+msgid "tungsten (incandescent)"
+msgstr "tungsteno (inkandeska)"
+
+#: src/exif.c:167
+msgid "flash"
+msgstr "fulmo"
+
+#: src/exif.c:188 src/exif.c:1649 src/info.c:232
+msgid "no"
+msgstr "ne"
+
+#. flash fired (bit 0)
+#: src/exif.c:189 src/exif.c:1649 src/info.c:232
+msgid "yes"
+msgstr "jes"
+
+#: src/exif.c:190
+msgid "yes, not detected by strobe"
+msgstr "jes, ne rekonita far strobo"
+
+#: src/exif.c:191
+msgid "yes, detected by strobe"
+msgstr "jes, rekonita far strobo"
+
+#: src/exif.c:288
+msgid "Image description"
+msgstr "Bilda priskribo"
+
+#: src/exif.c:291
+msgid "Orientation"
+msgstr "Orientado"
+
+#: src/exif.c:302
+msgid "Copyright"
+msgstr "Kopirajto"
+
+#: src/exif.c:307
+msgid "Exposure program"
+msgstr "Programo por Ekspono"
+
+#: src/exif.c:309 src/exif.c:345 src/exif.c:421
+msgid "ISO sensitivity"
+msgstr "ISO sentiveco"
+
+#: src/exif.c:312
+msgid "Date original"
+msgstr "Origina dato"
+
+#: src/exif.c:313
+msgid "Date digitized"
+msgstr "Diĝitigita dato"
+
+#: src/exif.c:316 src/exif.c:418
+msgid "Shutter speed"
+msgstr "Obturatora rapideco"
+
+#: src/exif.c:317 src/exif.c:419
+msgid "Aperture"
+msgstr "Aperturo"
+
+#: src/exif.c:319 src/exif.c:420
+msgid "Exposure bias"
+msgstr "Ekspona erareto"
+
+#: src/exif.c:321 src/exif.c:423
+msgid "Subject distance"
+msgstr "Distanco de subjekto"
+
+#: src/exif.c:322
+msgid "Metering mode"
+msgstr "Mezurada maniero"
+
+#: src/exif.c:323
+msgid "Light source"
+msgstr "Lumfonto"
+
+#: src/exif.c:324 src/exif.c:424
+msgid "Flash"
+msgstr "Fulmo"
+
+#: src/exif.c:325 src/exif.c:422
+msgid "Focal length"
+msgstr "Fokuslongo"
+
+#. ExifImageWidth, ExifImageHeight can also be unsigned short
+#: src/exif.c:335
+msgid "Width"
+msgstr "Larĝo"
+
+#: src/exif.c:336
+msgid "Height"
+msgstr "Alto"
+
+#: src/exif.c:416
+msgid "Camera"
+msgstr "Fotoaparato"
+
+#: src/exif.c:425
+msgid "Resolution"
+msgstr "Difino"
+
+#: src/exif.c:1625
+msgid "infinity"
+msgstr "senfino"
+
+#: src/exif.c:1653
+msgid "mode:"
+msgstr "maniero:"
+
+#: src/exif.c:1657 src/utilops.c:1300
+msgid "on"
+msgstr "kondukta pos."
+
+#: src/exif.c:1660 src/utilops.c:1300
+msgid "off"
+msgstr "elkluda pos."
+
+#: src/exif.c:1663
+msgid "auto"
+msgstr "aŭtomate"
+
+#: src/exif.c:1669
+msgid "not detected by strobe"
+msgstr "ne rekonita far strobo"
+
+#: src/exif.c:1670
+msgid "detected by strobe"
+msgstr "rekonita far strobo"
+
+#. we ignore flash function (bit 5)
+#. red-eye (bit 6)
+#: src/exif.c:1675
+msgid "red-eye reduction"
+msgstr "ruĝokula redukto"
+
+#: src/exif.c:1694
+msgid "dot"
+msgstr "punkto"
+
+#: src/filelist.c:523
+#, c-format
+msgid "%d bytes"
+msgstr "%d bajtoj"
+
+#: src/filelist.c:527
+#, c-format
+msgid "%.1f K"
+msgstr "%.1f K "
+
+#: src/filelist.c:531
+#, c-format
+msgid "%.1f MB"
+msgstr "%.1f MB "
+
+#: src/filelist.c:536
+#, c-format
+msgid "%.1f GB"
+msgstr "%.1f GB "
+
+#: src/fullscreen.c:267
+msgid "GQview full screen"
+msgstr "GQview plenekrane"
+
+#: src/fullscreen.c:397
+msgid "Full size"
+msgstr "Plengrandecon"
+
+#: src/fullscreen.c:402
+msgid "Monitor"
+msgstr "Monitoro"
+
+#: src/fullscreen.c:407 src/layout.c:452
+msgid "Screen"
+msgstr "Ekrano"
+
+#: src/fullscreen.c:644
+msgid "Stay above other windows"
+msgstr "Restu supre aliaj fenestroj"
+
+#: src/fullscreen.c:651
+msgid "Determined by Window Manager"
+msgstr "Decidita far Fenestra Manaĝilo"
+
+#: src/fullscreen.c:652
+msgid "Active screen"
+msgstr "Aktiva ekrano"
+
+#: src/fullscreen.c:654
+msgid "Active monitor"
+msgstr "Aktiva monitoro"
+
+#: src/img-view.c:1237 src/layout_image.c:719 src/layout_util.c:822
+#: src/pan-view.c:2774
+msgid "Zoom _in"
+msgstr "Zomu"
+
+#: src/img-view.c:1238 src/layout_image.c:720 src/layout_util.c:823
+#: src/pan-view.c:2776
+msgid "Zoom _out"
+msgstr "Malzomu"
+
+#: src/img-view.c:1239 src/layout_image.c:721 src/layout_util.c:824
+#: src/pan-view.c:2778
+msgid "Zoom _1:1"
+msgstr "Zomo je _1:1"
+
+#: src/img-view.c:1240 src/layout_image.c:722
+msgid "Fit image to _window"
+msgstr "Alĝustigu bildon al _fenestro"
+
+#: src/img-view.c:1245 src/layout_image.c:728 src/layout_util.c:820
+msgid "Set as _wallpaper"
+msgstr "Agordu kiel _Fono"
+
+#: src/img-view.c:1263 src/layout_image.c:753
+msgid "_Stop slideshow"
+msgstr "_Fermu diapozitivan strion"
+
+#: src/img-view.c:1266 src/layout_image.c:756
+msgid "Continue slides_how"
+msgstr "_Daŭru diapozitivan strion"
+
+#: src/img-view.c:1271 src/img-view.c:1279 src/layout_image.c:761
+#: src/layout_image.c:768
+msgid "Pause slides_how"
+msgstr "Pa_ŭzu diapozitivan strion"
+
+#: src/img-view.c:1277 src/layout_image.c:767
+msgid "_Start slideshow"
+msgstr "_Startu diapozitivan strion"
+
+#: src/img-view.c:1285 src/layout_image.c:778 src/pan-view.c:2844
+msgid "Exit _full screen"
+msgstr "_Fermu plenekranon"
+
+#: src/img-view.c:1289 src/layout_image.c:774 src/pan-view.c:2848
+msgid "_Full screen"
+msgstr "_Plena ekrano"
+
+#: src/img-view.c:1293 src/layout_util.c:796 src/pan-view.c:2852
+msgid "C_lose window"
+msgstr "Fe_rmu fenestron"
+
+#: src/info.c:367
+msgid "File size:"
+msgstr "Dosiergrando:"
+
+#: src/info.c:369
+msgid "Dimensions:"
+msgstr "Dimensioj:"
+
+#: src/info.c:370
+msgid "Transparent:"
+msgstr "Diafana:"
+
+#: src/info.c:371 src/print.c:3386
+msgid "Image size:"
+msgstr "Bildgrando:"
+
+#: src/info.c:373
+msgid "Compress ratio:"
+msgstr "Kunprema grado:"
+
+#: src/info.c:374
+msgid "File type:"
+msgstr "Dosierspeco:"
+
+#: src/info.c:376
+msgid "Owner:"
+msgstr "Proprietulo:"
+
+#: src/info.c:377
+msgid "Group:"
+msgstr "Grupo:"
+
+#: src/info.c:380 src/preferences.c:851
+msgid "General"
+msgstr "Ĝenerala"
+
+#: src/info.c:461
+#, c-format
+msgid "Image %d of %d"
+msgstr "Bildo %d el %d"
+
+#: src/info.c:684
+msgid "Image properties - GQview"
+msgstr "Bildaj ecoj - GQview"
+
+#: src/layout.c:274 src/view_file_icon.c:305 src/view_file_list.c:416
+msgid "Ascending"
+msgstr "Ascendante"
+
+#: src/layout.c:399
+#, fuzzy
+msgid "Color profiles not supported"
+msgstr "Nesubtenita dosierujo"
+
+#: src/layout.c:400
+msgid ""
+"This installation of GQview was not built with support for color profiles."
+msgstr ""
+
+#: src/layout.c:410
+msgid "Use _color profiles"
+msgstr ""
+
+#: src/layout.c:415
+msgid "Use profile from _image"
+msgstr ""
+
+#: src/layout.c:419 src/layout.c:436
+#, c-format
+msgid "Input _%d:"
+msgstr ""
+
+#: src/layout.c:461
+msgid "_Screen profile"
+msgstr ""
+
+#: src/layout.c:528
+msgid " Slideshow"
+msgstr "Diapozitiva Strio"
+
+#: src/layout.c:532
+msgid " Paused"
+msgstr "Paŭze"
+
+#: src/layout.c:549
+#, c-format
+msgid "%s, %d files (%s, %d)%s"
+msgstr "%s, %d dosieroj (%s, %d)%s"
+
+#: src/layout.c:556
+#, c-format
+msgid "%s, %d files%s"
+msgstr "%s, %d dosieroj%s"
+
+#: src/layout.c:561
+#, c-format
+msgid "%d files%s"
+msgstr "%d dosiero%s"
+
+#: src/layout.c:590
+#, c-format
+msgid "(no read permission) %s bytes"
+msgstr "(neniu rajtigo por lego) %s bajtoj"
+
+#: src/layout.c:594
+#, c-format
+msgid "( ? x ? ) %s bytes"
+msgstr "( ? x ? ) %s bajtoj"
+
+#: src/layout.c:602
+#, c-format
+msgid "( %d x %d ) %s bytes"
+msgstr "( %d x %d ) %s bajtoj"
+
+#: src/layout.c:1304
+msgid "GQview Tools"
+msgstr "GQview Iloj"
+
+#: src/layout.c:1934
+#, fuzzy
+msgid "Invalid geometry\n"
+msgstr "Nevalida dosierujo"
+
+#: src/layout_config.c:57
+msgid "Tools"
+msgstr "Iloj"
+
+#: src/layout_config.c:57 src/ui_pathsel.c:1174
+msgid "Files"
+msgstr "Dosieroj"
+
+#: src/layout_config.c:57 src/preferences.c:916 src/print.c:114
+msgid "Image"
+msgstr "Bildo"
+
+#: src/layout_config.c:363
+msgid "(drag to change order)"
+msgstr "(trenu por ŝanĝi ordon)"
+
+#: src/layout_image.c:783
+msgid "Hide file _list"
+msgstr "Kaŝu dosier_liston"
+
+#: src/layout_util.c:654 src/menu.c:74
+#, c-format
+msgid "in %s..."
+msgstr "en  %s..."
+
+#: src/layout_util.c:658 src/menu.c:76
+msgid "in (unknown)..."
+msgstr "en (nekonata)..."
+
+#: src/layout_util.c:666
+msgid "empty"
+msgstr "malplena"
+
+#: src/layout_util.c:777
+msgid "_File"
+msgstr "_Dosiero"
+
+#: src/layout_util.c:778 src/menu.c:91
+msgid "_Edit"
+msgstr "R_edaktu"
+
+#: src/layout_util.c:779 src/menu.c:259
+msgid "_Adjust"
+msgstr "_Aranĝu"
+
+#: src/layout_util.c:781
+msgid "_Help"
+msgstr "_Helpo"
+
+#: src/layout_util.c:783
+msgid "New _window"
+msgstr "_Nova fenestro"
+
+#: src/layout_util.c:784
+msgid "_New collection"
+msgstr "Nova _kolekto"
+
+#: src/layout_util.c:785
+msgid "_Open collection..."
+msgstr "Malfermu k_olekton..."
+
+#: src/layout_util.c:786
+msgid "Open _recent"
+msgstr "Malfermu _freŝdataĵon"
+
+#: src/layout_util.c:787
+msgid "_Search..."
+msgstr "_Serĉu..."
+
+#: src/layout_util.c:789
+msgid "Pan _view"
+msgstr "Larĝ_vido"
+
+#: src/layout_util.c:790
+msgid "_Print..."
+msgstr "_Presu..."
+
+#: src/layout_util.c:791
+msgid "N_ew folder..."
+msgstr "N_ova dosierujo..."
+
+#: src/layout_util.c:797
+msgid "_Quit"
+msgstr "_Eliro"
+
+#: src/layout_util.c:809 src/menu.c:201
+msgid "_Rotate clockwise"
+msgstr "_Turnu dektrogire"
+
+#: src/layout_util.c:810 src/menu.c:204
+msgid "Rotate _counterclockwise"
+msgstr "Turnu kontraŭ_montrile"
+
+#: src/layout_util.c:811
+msgid "Rotate 1_80"
+msgstr "Ruota je 1_80 gradoj"
+
+#: src/layout_util.c:812 src/menu.c:210
+msgid "_Mirror"
+msgstr "_Spegule"
+
+#: src/layout_util.c:813 src/menu.c:213
+msgid "_Flip"
+msgstr "_Inversigite"
+
+#: src/layout_util.c:814 src/menu.c:216
+msgid "_Grayscale"
+msgstr ""
+
+#: src/layout_util.c:816
+msgid "Select _all"
+msgstr "Elektu _ĉion"
+
+#: src/layout_util.c:817
+msgid "Select _none"
+msgstr "Elektu _nenion"
+
+#: src/layout_util.c:818
+msgid "P_references..."
+msgstr "_Agordoj..."
+
+#: src/layout_util.c:819
+msgid "_Thumbnail maintenance..."
+msgstr "_Miniatura bontenado..."
+
+#: src/layout_util.c:825
+msgid "_Zoom to fit"
+msgstr "_Zomu por alĝustigi"
+
+#: src/layout_util.c:826
+msgid "F_ull screen"
+msgstr "_Plena ekrano"
+
+#: src/layout_util.c:827
+msgid "_Hide file list"
+msgstr "Ka_ŝu dosierliston"
+
+#: src/layout_util.c:828
+msgid "Toggle _slideshow"
+msgstr "Butonumu diapozitivan _strion"
+
+#: src/layout_util.c:829
+msgid "_Refresh"
+msgstr "Ĝis_datigu"
+
+#: src/layout_util.c:831
+msgid "_Contents"
+msgstr "_Enhavoj"
+
+#: src/layout_util.c:832
+msgid "_Keyboard shortcuts"
+msgstr "_Klavarkurtvojoj"
+
+#: src/layout_util.c:833
+msgid "_Release notes"
+msgstr "Notoj pri versio"
+
+#: src/layout_util.c:834
+msgid "_About"
+msgstr "_Pri"
+
+#: src/layout_util.c:838 src/layout_util.c:1086
+msgid "_Thumbnails"
+msgstr "An_taŭmontroj"
+
+#: src/layout_util.c:839
+msgid "Tr_ee"
+msgstr "Ar_bumo"
+
+#: src/layout_util.c:840
+msgid "_Float file list"
+msgstr "_Flosanta dosierlisto"
+
+#: src/layout_util.c:841
+msgid "Hide tool_bar"
+msgstr "Kaŝu ilo_stangon"
+
+#: src/layout_util.c:842
+msgid "_Keywords"
+msgstr "_Ŝlosilvortoj"
+
+#: src/layout_util.c:843
+msgid "E_xif data"
+msgstr "E_xif datumoj"
+
+#: src/layout_util.c:844
+msgid "Sort _manager"
+msgstr "Or_digilo"
+
+#: src/layout_util.c:848
+msgid "_List"
+msgstr "_Listo"
+
+#: src/layout_util.c:849
+msgid "I_cons"
+msgstr "_Ikonoj"
+
+#: src/layout_util.c:1087
+msgid "Show thumbnails"
+msgstr "Montru miniaturojn"
+
+#: src/layout_util.c:1092
+msgid "Change to home folder"
+msgstr "Al Hejmo"
+
+#: src/layout_util.c:1094
+msgid "Refresh file list"
+msgstr "Ĝisdatigu dosierliston"
+
+#: src/layout_util.c:1096
+msgid "Zoom in"
+msgstr "Zomu"
+
+#: src/layout_util.c:1098
+msgid "Zoom out"
+msgstr "Malzomu"
+
+#: src/layout_util.c:1100 src/preferences.c:945
+msgid "Fit image to window"
+msgstr "Alĝustigu bildon al _fenestro"
+
+#: src/layout_util.c:1102
+msgid "Set zoom 1:1"
+msgstr "Agordu zomon je 1:1"
+
+#: src/layout_util.c:1104
+msgid "Configure options"
+msgstr "Agordaj opcioj"
+
+#: src/layout_util.c:1105
+msgid "_Float"
+msgstr "_Flosanta"
+
+#: src/layout_util.c:1106
+msgid "Float Controls"
+msgstr "Flosantaj Regoj"
+
+#: src/main.c:237
+msgid "Help - GQview"
+msgstr "Helpo - GQview"
+
+#: src/main.c:460 src/main.c:1376
+msgid "Command line"
+msgstr "Komandlinio"
+
+#. short, long                  callback,               extra, prefer,description
+#: src/main.c:498
+msgid "next image"
+msgstr "sekva bildo"
+
+#: src/main.c:499
+msgid "previous image"
+msgstr "antaŭa bildo"
+
+#: src/main.c:500
+msgid "first image"
+msgstr "unua bildo"
+
+#: src/main.c:501
+msgid "last image"
+msgstr "lasta bildo"
+
+#: src/main.c:502
+msgid "toggle full screen"
+msgstr "butonigu plenan ekranon"
+
+#: src/main.c:503
+msgid "start full screen"
+msgstr "startu plenan ekranon"
+
+#: src/main.c:504
+msgid "stop full screen"
+msgstr "fermu plenan ekranon"
+
+#: src/main.c:505
+msgid "toggle slide show"
+msgstr "butonigu diapozitivan strion"
+
+#: src/main.c:506
+msgid "start slide show"
+msgstr "startu diapozitivan strion"
+
+#: src/main.c:507
+msgid "stop slide show"
+msgstr "fermu diapozitivan strion"
+
+#: src/main.c:508
+msgid "start recursive slide show"
+msgstr "startu diapozitivan strion ripete"
+
+#: src/main.c:509
+msgid "set slide show delay in seconds"
+msgstr "agordu malfruon por diapozitivaj en sekundoj"
+
+#: src/main.c:510
+msgid "show tools"
+msgstr "montru ilojn"
+
+#: src/main.c:511
+msgid "hide tools"
+msgstr "kaŝu ilojn"
+
+#: src/main.c:512
+msgid "quit"
+msgstr "eliro"
+
+#: src/main.c:513
+msgid "open file"
+msgstr "malfermu dosieron"
+
+#: src/main.c:514
+msgid "open file in new window"
+msgstr "malfermu dosieron en nova fenestro"
+
+#: src/main.c:580
+msgid "Remote command list:\n"
+msgstr "Listo de malproksimaj komandoj:\n"
+
+#: src/main.c:638
+msgid "Remote GQview not running, starting..."
+msgstr "Malproksima GQview ne funkcias, startante..."
+
+#: src/main.c:773
+msgid "Remote not available\n"
+msgstr "Malproksima maniero ne estas disponebla\n"
+
+#: src/main.c:991
+msgid ""
+"Usage: gqview [options] [path]\n"
+"\n"
+msgstr ""
+"Uzo: gqview [opcioj] [raŭto]\n"
+"\n"
+
+#: src/main.c:992
+msgid "valid options are:\n"
+msgstr "validaj opcioj estas:\n"
+
+#: src/main.c:993
+msgid "  +t, --with-tools           force show of tools\n"
+msgstr "  +t, --with-tools           devigu montro de iloj\n"
+
+#: src/main.c:994
+msgid "  -t, --without-tools        force hide of tools\n"
+msgstr "  -t, --without-tools        devigu kaŝon de iloj\n"
+
+#: src/main.c:995
+msgid "  -f, --fullscreen           start in full screen mode\n"
+msgstr "  -f, --fullscreen       startu per plena ekrano\n"
+
+#: src/main.c:996
+msgid "  -s, --slideshow            start in slideshow mode\n"
+msgstr "  -s, --slidehosw        startu per diapozitiva strio\n"
+
+#: src/main.c:997
+msgid "  -l, --list                 open collection window for command line\n"
+msgstr ""
+"  -l, --list                  malfermu fenestron de kolekto per komandlinio\n"
+
+#: src/main.c:998
+msgid "      --geometry=GEOMETRY    set main window location\n"
+msgstr ""
+
+#: src/main.c:999
+msgid "  -r, --remote               send following commands to open window\n"
+msgstr ""
+"  -r, --remote               sendu ĉi komandoj por malfermi fenestron \n"
+
+#: src/main.c:1000
+msgid "  -rh,--remote-help          print remote command list\n"
+msgstr "  -rh,--remote-help          presu listo pri foraj komandoj\n"
+
+#: src/main.c:1001
+msgid "  --debug                    turn on debug output\n"
+msgstr " --debug                 taŭgigu eligon de cimokorektado\n"
+
+#: src/main.c:1002
+msgid "  -v, --version              print version info\n"
+msgstr "  -v, --version                presu informojn pri versio\n"
+
+#: src/main.c:1003
+msgid ""
+"  -h, --help                 show this message\n"
+"\n"
+msgstr ""
+"  -h, --help             montru ĉi mesaĝon\n"
+"\n"
+
+#: src/main.c:1017
+#, c-format
+msgid ""
+"invalid or ignored: %s\n"
+"Use --help for options\n"
+msgstr ""
+"ne valida aŭ preterlasito: %s\n"
+"Uzu --help por opcioj\n"
+
+#: src/main.c:1093
+#, c-format
+msgid "Creating GQview dir:%s\n"
+msgstr "Kreante GQview dosierujon: %s\n"
+
+#: src/main.c:1099
+#, c-format
+msgid "Could not create dir:%s\n"
+msgstr "Estas neeble krei dosierujon: %s\n"
+
+#: src/main.c:1120 src/ui_bookmark.c:858 src/ui_pathsel.c:1042
+msgid "Home"
+msgstr "Hejmo"
+
+#: src/main.c:1122 src/ui_bookmark.c:865
+msgid "Desktop"
+msgstr "Tabulo"
+
+#: src/main.c:1222
+msgid "GQview - exit"
+msgstr "GQview - eliro"
+
+#: src/main.c:1226
+msgid "Quit GQview"
+msgstr "Fermu GQview"
+
+#: src/main.c:1226
+msgid "Collections have been modified. Quit anyway?"
+msgstr "Kolektoj estis modifitaj. Ĉu oni eliras ĉiukaze?"
+
+#: src/menu.c:115
+msgid "Sort by size"
+msgstr "Ordigu laŭ grandeco"
+
+#: src/menu.c:118
+msgid "Sort by date"
+msgstr "Ordinu laŭ dato"
+
+#: src/menu.c:121
+msgid "Unsorted"
+msgstr "Ne ordigita"
+
+#: src/menu.c:124
+msgid "Sort by path"
+msgstr "Ordigu laŭ raŭto"
+
+#: src/menu.c:127
+msgid "Sort by number"
+msgstr "Ordigu laŭ nombro"
+
+#: src/menu.c:131
+msgid "Sort by name"
+msgstr "Ordigu laŭ nomo"
+
+#: src/menu.c:182
+msgid "Sort"
+msgstr "Ordigu"
+
+#: src/menu.c:207
+msgid "Rotate _180"
+msgstr "Turnu je _180 gradoj"
+
+#: src/pan-view.c:467
+#, c-format
+msgid "%d images, %s"
+msgstr "%d bildoj, %s"
+
+#: src/pan-view.c:477
+#, c-format
+msgid "The pan view does not support the folder \"%s\"."
+msgstr "La larĝvido ne subtenas la dosierujon \"%s\"."
+
+#: src/pan-view.c:478
+msgid "Folder not supported"
+msgstr "Nesubtenita dosierujo"
+
+#: src/pan-view.c:1070 src/pan-view.c:1086
+msgid "Reading image data..."
+msgstr "Legante bildajn datumojn..."
+
+#: src/pan-view.c:1145
+msgid "Sorting images..."
+msgstr "Ordigante bildojn..."
+
+#: src/pan-view.c:1525 src/pan-view.c:1891
+msgid "Date:"
+msgstr "Dato:"
+
+#: src/pan-view.c:1527 src/preferences.c:873 src/print.c:3216 src/print.c:3423
+msgid "Size:"
+msgstr "Grandeco:"
+
+#: src/pan-view.c:1629
+msgid "path found"
+msgstr "raŭto estis trovita"
+
+#: src/pan-view.c:1629
+msgid "filename found"
+msgstr "dosiernomo estis trovita"
+
+#: src/pan-view.c:1677
+msgid "partial match"
+msgstr "parta respondo"
+
+#: src/pan-view.c:1888 src/pan-view.c:1921
+msgid "no match"
+msgstr "neniu respondo"
+
+#: src/pan-view.c:2247 src/search.c:2131
+msgid "Folder not found"
+msgstr "Dosierujo ne estis trovita"
+
+#: src/pan-view.c:2248
+msgid "The entered path is not a folder"
+msgstr "La enigita raŭto ne estas dosierujo"
+
+#: src/pan-view.c:2354
+#, fuzzy
+msgid "Pan View - GQview"
+msgstr "Larĝvido - GQview"
+
+#: src/pan-view.c:2376
+msgid "Timeline"
+msgstr "Templinio"
+
+#: src/pan-view.c:2377
+msgid "Calendar"
+msgstr "Kalendaro"
+
+#: src/pan-view.c:2379
+msgid "Folders (flower)"
+msgstr "Dosierujoj (floro)"
+
+#: src/pan-view.c:2380
+msgid "Grid"
+msgstr "Krado"
+
+#: src/pan-view.c:2389
+msgid "Dots"
+msgstr "Punktoj"
+
+#: src/pan-view.c:2390
+msgid "No Images"
+msgstr "Neniu bildo"
+
+#: src/pan-view.c:2391
+msgid "Small Thumbnails"
+msgstr "Miniaturetoj"
+
+#: src/pan-view.c:2392
+msgid "Normal Thumbnails"
+msgstr "Miniaturoj"
+
+#: src/pan-view.c:2393
+msgid "Large Thumbnails"
+msgstr "Miniaturegoj"
+
+#: src/pan-view.c:2394 src/pan-view.c:2834
+msgid "1:10 (10%)"
+msgstr "1:10 (10%)"
+
+#: src/pan-view.c:2395 src/pan-view.c:2830
+msgid "1:4 (25%)"
+msgstr "1:4 (25%)"
+
+#: src/pan-view.c:2396 src/pan-view.c:2826
+msgid "1:3 (33%)"
+msgstr "1:3 (33%)"
+
+#: src/pan-view.c:2397 src/pan-view.c:2822
+msgid "1:2 (50%)"
+msgstr "1:2 (50%)"
+
+#: src/pan-view.c:2398
+msgid "1:1 (100%)"
+msgstr "1:1 (100%)"
+
+#: src/pan-view.c:2446
+msgid "Find:"
+msgstr "Trovu:"
+
+#: src/pan-view.c:2489
+msgid "Use Exif date"
+msgstr "Uzu Exif daton"
+
+#: src/pan-view.c:2502
+msgid "Find"
+msgstr "Trovu"
+
+#: src/pan-view.c:2569
+msgid "Pan View Performance"
+msgstr "Performanco de Larĝvido"
+
+#: src/pan-view.c:2576
+msgid "Pan view performance may be poor."
+msgstr "Performanco de larĝvido povus esti malaltkvalita."
+
+#: src/pan-view.c:2577
+msgid ""
+"To improve performance of thumbnails in the pan view the following options "
+"can be enabled. Note that both options must be enabled to notice a change in "
+"performance."
+msgstr ""
+"La aktivigo de sekvantaj opcioj povus plibonigi perfomancon de larĝvidaj "
+"miniaturoj. Notu: por rimarkebla efiko, ambaŭ opcioj estas aktivigendaj."
+
+#: src/pan-view.c:2585 src/preferences.c:876
+msgid "Cache thumbnails"
+msgstr "Memoru miniaturojn"
+
+#: src/pan-view.c:2587 src/preferences.c:882
+msgid "Use shared thumbnail cache"
+msgstr "Uzu komunan kaŝmemoron por miniaturoj"
+
+#: src/pan-view.c:2593
+msgid "Do not show this dialog again"
+msgstr "Ne montru ĉi dialogon ankoraŭ"
+
+#: src/pan-view.c:2802
+msgid "Sort by E_xif date"
+msgstr "Ordigu laŭ E_xif dato"
+
+#: src/pan-view.c:2808
+msgid "_Show Exif information"
+msgstr ""
+
+#: src/pan-view.c:2810
+#, fuzzy
+msgid "Show im_age"
+msgstr "Montru kaŝitajn dosierojn"
+
+#: src/pan-view.c:2814
+#, fuzzy
+msgid "_None"
+msgstr "Nenio"
+
+#: src/pan-view.c:2818
+#, fuzzy
+msgid "_Full size"
+msgstr "Plengrandecon"
+
+#: src/preferences.c:414
+msgid "Nearest (worst, but fastest)"
+msgstr "Proksimega (pli aĉe, sed pli rapide)"
+
+#: src/preferences.c:416
+msgid "Tiles"
+msgstr "Kaheloj"
+
+#: src/preferences.c:418
+msgid "Bilinear"
+msgstr "Bilineara"
+
+#: src/preferences.c:420
+msgid "Hyper (best, but slowest)"
+msgstr "Ultra (pli bone, sed pli lante)"
+
+#: src/preferences.c:448
+msgid "None"
+msgstr "Nenio"
+
+#: src/preferences.c:449
+msgid "Normal"
+msgstr "Normala"
+
+#: src/preferences.c:450
+msgid "Best"
+msgstr "Bonega"
+
+#: src/preferences.c:528 src/print.c:369
+msgid "Custom"
+msgstr "Personigita"
+
+#: src/preferences.c:692 src/preferences.c:695
+msgid "Reset filters"
+msgstr "Resetu filtrilojn"
+
+#: src/preferences.c:696
+msgid ""
+"This will reset the file filters to the defaults.\n"
+"Continue?"
+msgstr ""
+"Ĉi tiu resetos dosierajn filtrilojn per defaŭltaj tiuj.\n"
+"Ĉu vi volas daŭrigi?"
+
+#: src/preferences.c:729 src/preferences.c:732
+msgid "Reset editors"
+msgstr "Resetu redaktilojn"
+
+#: src/preferences.c:733
+msgid ""
+"This will reset the edit commands to the defaults.\n"
+"Continue?"
+msgstr ""
+"Ĉi tiu resetos redaktkomandojn per defaŭltaj tiuj.\n"
+"Ĉu vi volas daŭrigi?"
+
+#: src/preferences.c:757 src/preferences.c:760
+msgid "Clear trash"
+msgstr "Vakigu rubujon"
+
+#: src/preferences.c:761
+msgid "This will remove the trash contents."
+msgstr "Ĉi tiu formovos rubujan entenon."
+
+#: src/preferences.c:800
+msgid "GQview Preferences"
+msgstr "GQview Agordoj"
+
+#: src/preferences.c:854
+msgid "Startup"
+msgstr "Preparado"
+
+#: src/preferences.c:856
+msgid "Change to folder:"
+msgstr "Al dosierujo:"
+
+#: src/preferences.c:867
+msgid "Use current"
+msgstr "Uzu nuna dosierujo"
+
+#: src/preferences.c:874 src/preferences.c:925
+msgid "Quality:"
+msgstr "Kvalito:"
+
+#: src/preferences.c:888
+msgid "Cache thumbnails into .thumbnails"
+msgstr "Kaŝmemorigu miniaturojn en .thumbnails"
+
+#: src/preferences.c:892
+msgid "Use xvpics thumbnails when found (read only)"
+msgstr "Uzu Xvpic miniaturojn se ili ekzistas (nur legeble)"
+
+#: src/preferences.c:896
+msgid "Faster jpeg thumbnailing (may reduce quality)"
+msgstr "Rapida JPEG-miniaturigo (ĉi tiu povus malpliigas kvaliton)"
+
+#: src/preferences.c:899
+msgid "Slide show"
+msgstr "Diapozitiva strio"
+
+#: src/preferences.c:902
+msgid "Delay between image change:"
+msgstr "Malfruo de bilda ŝanĝo:"
+
+#: src/preferences.c:902
+msgid "seconds"
+msgstr "sekondoj"
+
+#: src/preferences.c:908
+msgid "Random"
+msgstr "Hazarda"
+
+#: src/preferences.c:909
+msgid "Repeat"
+msgstr "Ripetu"
+
+#: src/preferences.c:919
+msgid "Zoom"
+msgstr "Zomo"
+
+#: src/preferences.c:922
+msgid "Dithering method:"
+msgstr "Punktisma maniero:"
+
+#: src/preferences.c:927
+msgid "Two pass zooming"
+msgstr "Zomo per duobla transiro"
+
+#: src/preferences.c:930
+msgid "Allow enlargement of image for zoom to fit"
+msgstr "Taŭgigu bildan plilarĝigon por adapti al zomo"
+
+#: src/preferences.c:934
+msgid "Zoom increment:"
+msgstr "Zoma pliigo:"
+
+#: src/preferences.c:939
+msgid "When new image is selected:"
+msgstr "Kiam nova bildo estas elektita:"
+
+#: src/preferences.c:942
+msgid "Zoom to original size"
+msgstr "Zomu al origina grandeco"
+
+#: src/preferences.c:948
+msgid "Leave Zoom at previous setting"
+msgstr "Lasu zomon kun antaŭa argordo"
+
+#: src/preferences.c:952
+msgid "Appearance"
+msgstr "Aspekto"
+
+#: src/preferences.c:954
+msgid "Black background"
+msgstr "Nigra fono"
+
+#: src/preferences.c:957
+msgid "Convenience"
+msgstr "Taŭgeco"
+
+#: src/preferences.c:959
+msgid "Refresh on file change"
+msgstr "Ĝisdatigu kiam dosiero sanĝiĝas"
+
+#: src/preferences.c:961
+msgid "Preload next image"
+msgstr "Antaŭŝargu sekvan bildon"
+
+#: src/preferences.c:963
+msgid "Auto rotate image using Exif information"
+msgstr "Aŭtomate turnu bildon per Exif informoj"
+
+#: src/preferences.c:972
+msgid "Windows"
+msgstr "Fenestroj"
+
+#: src/preferences.c:975
+msgid "State"
+msgstr "Stato"
+
+#: src/preferences.c:977
+msgid "Remember window positions"
+msgstr "Memori fenestrajn lokadojn"
+
+#: src/preferences.c:979
+msgid "Remember tool state (float/hidden)"
+msgstr "Memori ilon staton (flosanta aŭ kaŝita)"
+
+#: src/preferences.c:984
+msgid "Fit window to image when tools are hidden/floating"
+msgstr "Adaptu bildon al fenestro kiam la iloj estas kaŝitaj aŭ flosantaj"
+
+#: src/preferences.c:988
+msgid "Limit size when auto-sizing window (%):"
+msgstr "Grandolimo por fenestro kiam ĝi aŭtomate adaptiĝis (%):"
+
+#: src/preferences.c:995 src/print.c:3371 src/print.c:3378
+msgid "Layout"
+msgstr "Dismeto"
+
+#: src/preferences.c:1008
+msgid "Filtering"
+msgstr "Filtrado"
+
+#: src/preferences.c:1013
+msgid "Show entries that begin with a dot"
+msgstr "Montru enigojn kiuj ekas per punkto"
+
+#: src/preferences.c:1015
+msgid "Case sensitive sort"
+msgstr "Ordigu per majusklo-minusklo"
+
+#: src/preferences.c:1018
+msgid "Disable File Filtering"
+msgstr "Malaktivigu Dosierajn Filtrilojn"
+
+#: src/preferences.c:1021
+msgid "File types"
+msgstr "Dosierspecoj"
+
+#: src/preferences.c:1043
+msgid "Filter"
+msgstr "Filtrilo"
+
+#: src/preferences.c:1080 src/preferences.c:1144
+msgid "Defaults"
+msgstr "Defaŭltoj"
+
+#: src/preferences.c:1101
+msgid "Editors"
+msgstr "Redaktiloj"
+
+#: src/preferences.c:1107
+msgid "#"
+msgstr "# "
+
+#: src/preferences.c:1110 src/preferences.c:1264
+msgid "Menu name"
+msgstr "Menunomo"
+
+#: src/preferences.c:1113
+msgid "Command Line"
+msgstr "Komandlinio"
+
+#: src/preferences.c:1160
+msgid "Advanced"
+msgstr "Avana"
+
+#: src/preferences.c:1173
+msgid "Full screen"
+msgstr "Plenekrano"
+
+#: src/preferences.c:1181
+msgid "Smooth image flip"
+msgstr "Stompu renversitan bildon"
+
+#: src/preferences.c:1183
+msgid "Disable screen saver"
+msgstr "Malaktivigu savekranon"
+
+#: src/preferences.c:1186
+msgid "Delete"
+msgstr "Forigu"
+
+#: src/preferences.c:1188
+msgid "Confirm file delete"
+msgstr "Konfirmu dosierforigon"
+
+#: src/preferences.c:1190
+msgid "Enable Delete key"
+msgstr "Taŭgigu Forigo-klavon"
+
+#: src/preferences.c:1193
+msgid "Safe delete"
+msgstr "Sendanĝera forigo"
+
+#: src/preferences.c:1211
+msgid "Maximum size:"
+msgstr "Maksimuma grando:"
+
+#: src/preferences.c:1211
+msgid "MB"
+msgstr "MB"
+
+#: src/preferences.c:1214
+msgid "View"
+msgstr "Videbligo"
+
+#: src/preferences.c:1224
+msgid "Behavior"
+msgstr "Agmaniero"
+
+#: src/preferences.c:1226
+msgid "Rectangular selection in icon view"
+msgstr "Rektangula elekto por ikona videbligo"
+
+#: src/preferences.c:1229
+msgid "Descend folders in tree view"
+msgstr "Ordigu dosierujojn per arbuma vido"
+
+#: src/preferences.c:1232
+msgid "In place renaming"
+msgstr "Renomu surloke"
+
+#: src/preferences.c:1235
+msgid "Navigation"
+msgstr "Navigado"
+
+#: src/preferences.c:1237
+msgid "Progressive keyboard scrolling"
+msgstr "Rulumo per klavaro"
+
+#: src/preferences.c:1239
+msgid "Mouse wheel scrolls image"
+msgstr "Bilda rulumo per musradeto"
+
+#: src/preferences.c:1242
+msgid "Miscellaneous"
+msgstr "Diversaĵoj"
+
+#: src/preferences.c:1244
+msgid "Store keywords and comments local to source images"
+msgstr "Storu ŝlosilvortojn kaj komentojn kun fontaj bildoj"
+
+#: src/preferences.c:1247
+msgid "Custom similarity threshold:"
+msgstr "Personigita sojlo de simileco:"
+
+#: src/preferences.c:1250
+msgid "Offscreen cache size (Mb per image):"
+msgstr "Grando de elekrana kaŝmemoro (MB laŭ bildo) :"
+
+#: src/preferences.c:1253
+#, fuzzy
+msgid "Color profiles"
+msgstr "Ĉiuj dosieroj"
+
+#: src/preferences.c:1261
+msgid "Type"
+msgstr ""
+
+#: src/preferences.c:1267
+#, fuzzy
+msgid "File"
+msgstr "Dosiero:"
+
+#: src/preferences.c:1289 src/preferences.c:1300
+#, fuzzy
+msgid "Select color profile"
+msgstr "Elektu dosierujon"
+
+#: src/preferences.c:1297
+#, fuzzy
+msgid "Screen:"
+msgstr "Ekrano"
+
+#: src/preferences.c:1380
+msgid "About - GQview"
+msgstr "Pri GQview"
+
+#: src/preferences.c:1393
+#, c-format
+msgid ""
+"GQview %s\n"
+"\n"
+"Copyright (c) %s John Ellis\n"
+"website: %s\n"
+"email: %s\n"
+"\n"
+"Released under the GNU General Public License"
+msgstr ""
+"GQview %s\n"
+"\n"
+"Copirajto (c) %s John Ellis\n"
+"Retpaĝaro: %s\n"
+"Retpoŝto: %s\n"
+"\n"
+"Ĉi programo estis koncesiita per GNU General Public License"
+
+#: src/preferences.c:1411
+msgid "Credits..."
+msgstr "Dankoj..."
+
+#: src/print.c:115
+msgid "Selection"
+msgstr "Elekto"
+
+#: src/print.c:116
+msgid "All"
+msgstr "Tute"
+
+#: src/print.c:127
+msgid "One image per page"
+msgstr "Po unu bildo ĉiupaĝe"
+
+#: src/print.c:128
+msgid "Proof sheet"
+msgstr "Elprovu paperon"
+
+#: src/print.c:141
+msgid "Default printer"
+msgstr "Defaŭlta printilo"
+
+#: src/print.c:142
+msgid "Custom printer"
+msgstr "Personigita printilo"
+
+#: src/print.c:143
+msgid "PostScript file"
+msgstr "Postskripta dosiero"
+
+#: src/print.c:144
+msgid "Image file"
+msgstr "Bildodosiero"
+
+#: src/print.c:158
+msgid "jpeg, low quality"
+msgstr "JPEG, malaltkvalita"
+
+#: src/print.c:159
+msgid "jpeg, normal quality"
+msgstr "JPEG, ordinara kvalita"
+
+#: src/print.c:160
+msgid "jpeg, high quality"
+msgstr "JPEG, altkvalita"
+
+#: src/print.c:354 src/print.c:3216
+msgid "points"
+msgstr "punktoj"
+
+#: src/print.c:355
+msgid "millimeters"
+msgstr "milimetroj"
+
+#: src/print.c:356
+msgid "centimeters"
+msgstr "centimetroj"
+
+#: src/print.c:357
+msgid "inches"
+msgstr "coloj"
+
+#: src/print.c:358
+msgid "picas"
+msgstr "pikoj"
+
+#: src/print.c:363
+msgid "Portrait"
+msgstr "Portreta"
+
+#: src/print.c:364
+msgid "Landscape"
+msgstr "Panorama"
+
+#: src/print.c:370
+msgid "Letter"
+msgstr "Leterformato"
+
+#. in 8.5 x 11
+#: src/print.c:371
+msgid "Legal"
+msgstr "Jura"
+
+#. in 8.5 x 14
+#: src/print.c:372
+msgid "Executive"
+msgstr "Executive"
+
+#. in 7.25x 10.5
+#. mm 841 x 1189
+#. mm 594 x 841
+#. mm 420 x 594
+#. mm 297 x 420
+#. mm 210 x 297
+#. mm 148 x 210
+#. mm 105 x 148
+#. mm 353 x 500
+#. mm 250 x 353
+#. mm 176 x 250
+#. mm 125 x 176
+#: src/print.c:384
+msgid "Envelope #10"
+msgstr "Koverto #10"
+
+#. in 4.125 x 9.5
+#: src/print.c:385
+msgid "Envelope #9"
+msgstr "Koverto #9"
+
+#. in 3.875 x 8.875
+#: src/print.c:386
+msgid "Envelope C4"
+msgstr "Koverto C4"
+
+#. mm 229 x 324
+#: src/print.c:387
+msgid "Envelope C5"
+msgstr "Koverto C5"
+
+#. mm 162 x 229
+#: src/print.c:388
+msgid "Envelope C6"
+msgstr "Koverto C6"
+
+#. mm 114 x 162
+#: src/print.c:389
+msgid "Photo 6x4"
+msgstr "Foto 6x4"
+
+#. in 6   x 4
+#: src/print.c:390
+msgid "Photo 8x10"
+msgstr "Foto 8x10"
+
+#. in 8   x 10
+#: src/print.c:391
+msgid "Postcard"
+msgstr "Poŝtkarto"
+
+#. mm 100 x 148
+#: src/print.c:392
+msgid "Tabloid"
+msgstr "Etformata Gazeto"
+
+#: src/print.c:548
+#, c-format
+msgid "page %d of %d"
+msgstr "paĝo %d el %d"
+
+#: src/print.c:740 src/utilops.c:2287
+msgid "Preview"
+msgstr "Antaŭmontro"
+
+#: src/print.c:1048
+#, c-format
+msgid ""
+"Unable to open pipe for writing.\n"
+"\"%s\""
+msgstr ""
+"Estas neeble malfermi ligon por skribo.\n"
+"\"%s\""
+
+#: src/print.c:1063 src/print.c:1503 src/ui_pathsel.c:423
+#: src/view_file_list.c:456
+#, c-format
+msgid "A file with name %s already exists."
+msgstr "Jam ekzistas dosiero nomiĝita %s."
+
+#: src/print.c:1078 src/print.c:1558
+#, c-format
+msgid "Failure writing to file %s"
+msgstr "Malsukcesis skribo de dosiero %s"
+
+#: src/print.c:1132 src/print.c:1169 src/print.c:1205 src/print.c:1322
+#: src/print.c:1413 src/print.c:1444
+msgid "SIGPIPE error writing to printer."
+msgstr "SIGPIPE eraro dum printila skribo."
+
+#: src/print.c:1979
+#, c-format
+msgid "Page %d"
+msgstr "Paĝo %d"
+
+#: src/print.c:2001 src/print.c:2006
+msgid "Printing error"
+msgstr "Presanta eraro"
+
+#: src/print.c:2005
+#, c-format
+msgid "An error occured printing to %s."
+msgstr "Eraro dum preso de %s."
+
+#: src/print.c:2009
+msgid "Details"
+msgstr "Detaloj"
+
+#: src/print.c:2602 src/print.c:3347
+msgid "Print - GQview"
+msgstr "Presu - GQview"
+
+#: src/print.c:2606
+#, c-format
+msgid "Printing %d pages to %s."
+msgstr "Presante %d paĝoj de %s"
+
+#: src/print.c:2706
+msgid "Format:"
+msgstr "Formato:"
+
+#: src/print.c:2781
+msgid "Units:"
+msgstr "Unito:"
+
+#: src/print.c:2825
+msgid "Orientation:"
+msgstr "Orientado:"
+
+#: src/print.c:2957
+msgid "Destination:"
+msgstr "Destinado:"
+
+#: src/print.c:3005
+msgid "<printer name>"
+msgstr "<printila nomo>"
+
+#: src/print.c:3094
+msgid "Unlimited"
+msgstr "Senlima"
+
+#: src/print.c:3203
+msgid "Show"
+msgstr "Montru"
+
+#: src/print.c:3214
+msgid "Font"
+msgstr "Tiparo"
+
+#: src/print.c:3374
+msgid "Source"
+msgstr "Fonto"
+
+#: src/print.c:3390
+msgid "Proof size:"
+msgstr "Elprovu grandecon:"
+
+#: src/print.c:3406
+msgid "Text"
+msgstr "Teksto"
+
+#: src/print.c:3416
+msgid "Paper"
+msgstr "Papero"
+
+#: src/print.c:3439
+msgid "Margins"
+msgstr "Marĝenoj"
+
+#: src/print.c:3441
+msgid "Left:"
+msgstr "Maldekstra:"
+
+#: src/print.c:3444
+msgid "Right:"
+msgstr "Dekstra:"
+
+#: src/print.c:3447
+msgid "Top:"
+msgstr "Supra:"
+
+#: src/print.c:3450
+msgid "Bottom:"
+msgstr "Suba:"
+
+#: src/print.c:3459
+msgid "Printer"
+msgstr "Printilo"
+
+#: src/print.c:3465
+msgid "Custom printer:"
+msgstr "Personogita printilo:"
+
+#: src/print.c:3474
+msgid "File:"
+msgstr "Dosiero:"
+
+#: src/print.c:3483
+msgid "File format:"
+msgstr "Dosierformato:"
+
+#: src/print.c:3488
+msgid "DPI:"
+msgstr "DPI:"
+
+#: src/print.c:3496
+msgid "Remember print settings"
+msgstr "Memoru printilajn agordojn"
+
+#: src/rcfile.c:185
+#, c-format
+msgid "error saving config file: %s\n"
+msgstr "eraro dum konservo de agordodosiero: %s\n"
+
+#: src/search.c:200
+msgid "folder"
+msgstr "dosierujo"
+
+#: src/search.c:201
+msgid "comments"
+msgstr "komentoj"
+
+#: src/search.c:202
+msgid "results"
+msgstr "rezultoj"
+
+#: src/search.c:206
+msgid "contains"
+msgstr "enteno"
+
+#: src/search.c:207
+msgid "is"
+msgstr "estas"
+
+#: src/search.c:211 src/search.c:218
+msgid "equal to"
+msgstr "egala al"
+
+#: src/search.c:212
+msgid "less than"
+msgstr "malpli granda ol"
+
+#: src/search.c:213
+msgid "greater than"
+msgstr "pli granda ol"
+
+#: src/search.c:214 src/search.c:221
+msgid "between"
+msgstr "inter"
+
+#: src/search.c:219
+msgid "before"
+msgstr "antaŭ"
+
+#: src/search.c:220
+msgid "after"
+msgstr "post"
+
+#: src/search.c:225
+msgid "match all"
+msgstr "plena respondo"
+
+#: src/search.c:226
+msgid "match any"
+msgstr "neniu respondo"
+
+#: src/search.c:227
+msgid "exclude"
+msgstr "ekskludu"
+
+#: src/search.c:277
+#, c-format
+msgid "%s, %d files (%s, %d)"
+msgstr "%s, %d dosieroj (%s, %d)"
+
+#: src/search.c:284
+#, c-format
+msgid "%s, %d files"
+msgstr "%s, %d dosieroj"
+
+#: src/search.c:301
+msgid "Searching..."
+msgstr "Serĉante..."
+
+#: src/search.c:2084
+msgid "File not found"
+msgstr "Netrovita dosiero"
+
+#: src/search.c:2085
+msgid "Please enter an existing file for image content."
+msgstr "Bonvolu, enigu ekzistantan dosieron kiel bilda enteno."
+
+#: src/search.c:2132
+msgid "Please enter an existing folder to search."
+msgstr "Bonvolu, enigu ekzistantan dosierujon por serĉi."
+
+#: src/search.c:2561
+msgid "Image search - GQview"
+msgstr "Serĉu bildon - GQview"
+
+#: src/search.c:2590
+msgid "Search:"
+msgstr "Serĉu:"
+
+#: src/search.c:2604
+msgid "Recurse"
+msgstr "Ripete"
+
+#: src/search.c:2608
+msgid "File name"
+msgstr "Dosiernomo"
+
+#: src/search.c:2614
+msgid "Match case"
+msgstr "Majuskla-minuskla komparo"
+
+#: src/search.c:2618
+msgid "File size is"
+msgstr "Dosiergrando estas"
+
+#: src/search.c:2625 src/search.c:2640 src/search.c:2658
+msgid "and"
+msgstr "kaj"
+
+#: src/search.c:2630
+msgid "File date is"
+msgstr "Dosierdato estas"
+
+#: src/search.c:2647
+msgid "Image dimensions are"
+msgstr "Bildaj dimensioj estas"
+
+#: src/search.c:2667
+msgid "Image content is"
+msgstr "Bilda enteno estas"
+
+#: src/search.c:2673
+#, no-c-format
+msgid "% similar to"
+msgstr "% estas simila al"
+
+#: src/search.c:2742
+msgid "Rank"
+msgstr "Rango"
+
+#: src/thumb.c:379
+msgid "Thumbnail image in cache failed to load, trying to recreate.\n"
+msgstr "Ŝargo de miniaturoj en kaŝmemoro malsukcesis: provante rekrei ilin.\n"
+
+#: src/ui_bookmark.c:148
+#, c-format
+msgid "Unable to write history lists to: %s\n"
+msgstr "Estas neeble skribi historion en: %s\n"
+
+#: src/ui_bookmark.c:445 src/ui_bookmark.c:508
+msgid "New Bookmark"
+msgstr "Nova Legosigno"
+
+#: src/ui_bookmark.c:591 src/ui_bookmark.c:597
+msgid "Edit Bookmark"
+msgstr "Redaktu Legosignon"
+
+#: src/ui_bookmark.c:612
+msgid "Path:"
+msgstr "Raŭto:"
+
+#: src/ui_bookmark.c:621
+msgid "Icon:"
+msgstr "Ikono:"
+
+#: src/ui_bookmark.c:627
+msgid "Select icon"
+msgstr "Elektu ikonon"
+
+#: src/ui_bookmark.c:718
+msgid "_Properties..."
+msgstr "_Ecoj..."
+
+#: src/ui_bookmark.c:720
+msgid "Move _up"
+msgstr "Movu s_upren"
+
+#: src/ui_bookmark.c:722
+msgid "Move _down"
+msgstr "Movu _suben"
+
+#: src/ui_bookmark.c:724
+msgid "_Remove"
+msgstr "_Formovu"
+
+#: src/ui_help.c:111
+#, c-format
+msgid ""
+"Unable to load:\n"
+"%s"
+msgstr ""
+"Estas neeble ŝargi:\n"
+"%s"
+
+#: src/ui_pathsel.c:429 src/utilops.c:2675
+#, c-format
+msgid "Failed to rename %s to %s."
+msgstr "Estas neeble renomi %s per %s."
+
+#: src/ui_pathsel.c:485 src/utilops.c:1354 src/utilops.c:1527
+#, c-format
+msgid ""
+"Unable to delete file:\n"
+"%s"
+msgstr ""
+"Estas neeble forigi dosieron:\n"
+"%s"
+
+#: src/ui_pathsel.c:486 src/utilops.c:1528
+msgid "File deletion failed"
+msgstr "Dosierforigo malsukcesis"
+
+#: src/ui_pathsel.c:528 src/ui_pathsel.c:536
+msgid "Delete file"
+msgstr "Forigu dosierojn"
+
+#: src/ui_pathsel.c:534
+#, c-format
+msgid ""
+"About to delete the file:\n"
+" %s"
+msgstr ""
+"Pri dosierforigo:\n"
+"%s"
+
+#: src/ui_pathsel.c:625 src/ui_pathsel.c:633 src/utilops.c:2253
+#: src/utilops.c:2509
+msgid "_Rename"
+msgstr "_Renomu"
+
+#: src/ui_pathsel.c:627 src/ui_pathsel.c:637
+msgid "Add _Bookmark"
+msgstr "Aldonu _Legosignon"
+
+#: src/ui_pathsel.c:635
+msgid "_Delete"
+msgstr "_Forigu"
+
+#: src/ui_pathsel.c:739 src/ui_pathsel.c:1044
+msgid "New folder"
+msgstr "Nova dosierujo"
+
+#: src/ui_pathsel.c:749 src/utilops.c:2581 src/view_dir_list.c:330
+#: src/view_dir_tree.c:426
+#, c-format
+msgid ""
+"Unable to create folder:\n"
+"%s"
+msgstr ""
+"Estas neeble krei dosierujon:\n"
+"%s"
+
+#: src/ui_pathsel.c:750 src/utilops.c:2582 src/view_dir_list.c:331
+#: src/view_dir_tree.c:427
+msgid "Error creating folder"
+msgstr "Eraro dum kreo de dosierujo"
+
+#: src/ui_pathsel.c:971
+msgid "All Files"
+msgstr "Ĉiuj Dosieroj"
+
+#: src/ui_pathsel.c:1047
+msgid "Show hidden"
+msgstr "Montru kaŝitajn dosierojn"
+
+#: src/ui_pathsel.c:1131
+msgid "Filter:"
+msgstr "Filtrilo:"
+
+#: src/ui_tabcomp.c:857
+msgid "Select path"
+msgstr "Elektu raŭton"
+
+#: src/ui_tabcomp.c:873
+msgid "All files"
+msgstr "Ĉiuj dosieroj"
+
+#: src/utilops.c:505 src/utilops.c:826 src/utilops.c:1716 src/utilops.c:2438
+msgid "Overwrite file"
+msgstr "Surskribu dosieron"
+
+#: src/utilops.c:510 src/utilops.c:831 src/utilops.c:1721 src/utilops.c:2443
+msgid "Overwrite file?"
+msgstr "Ĉu vi volas surskribi dosieron?"
+
+#: src/utilops.c:511 src/utilops.c:832
+msgid "Replace existing file with new file."
+msgstr "Anstataŭu ekzistantan dosieron per nova dosiero."
+
+#: src/utilops.c:515
+msgid "Overwrite _all"
+msgstr "Surskribu _ĉion"
+
+#: src/utilops.c:517
+msgid "S_kip all"
+msgstr "Pre_terlasu ĉion"
+
+#: src/utilops.c:518
+msgid "_Skip"
+msgstr "_Preterlasu"
+
+#: src/utilops.c:519 src/utilops.c:836 src/utilops.c:1727 src/utilops.c:2449
+msgid "Existing file"
+msgstr "Dosiero jam ekzistas"
+
+#: src/utilops.c:519 src/utilops.c:836 src/utilops.c:1728 src/utilops.c:2450
+msgid "New file"
+msgstr "Nova dosiero"
+
+#: src/utilops.c:529 src/utilops.c:845 src/utilops.c:1862 src/utilops.c:1918
+#: src/utilops.c:1994 src/utilops.c:2326
+msgid "Auto rename"
+msgstr "Aŭtomate renomu"
+
+#: src/utilops.c:537 src/utilops.c:853
+msgid "Rename"
+msgstr "Renomu"
+
+#: src/utilops.c:578
+msgid "Source to copy matches destination"
+msgstr "Kopienda fonto koincidas al celpunkto"
+
+#: src/utilops.c:579
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to itself."
+msgstr ""
+"Estas neeble kopii dosieron:\n"
+"%s\n"
+"sur ĝi mem."
+
+#: src/utilops.c:583
+msgid "Source to move matches destination"
+msgstr "Movenda fonto koincidas al celpunkto"
+
+#: src/utilops.c:584
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to itself."
+msgstr ""
+"Estas neeble movi dosieron:\n"
+"%s\n"
+"sur ĝi mem.."
+
+#: src/utilops.c:592 src/utilops.c:679 src/utilops.c:1346
+msgid "Co_ntinue"
+msgstr "Da_ŭrigu"
+
+#: src/utilops.c:665 src/utilops.c:893
+msgid "Error copying file"
+msgstr "Eraro dum dosiera kopiado"
+
+#: src/utilops.c:666
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to:\n"
+"%s\n"
+"during multiple file copy."
+msgstr ""
+"Estas neeble kopii dosieron:\n"
+"%s in:\n"
+"%s\n"
+"dum kopiado de pluraj dosieroj."
+
+#: src/utilops.c:670 src/utilops.c:898
+msgid "Error moving file"
+msgstr "Eraro dum dosiera movado"
+
+#: src/utilops.c:671
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to:\n"
+"%s\n"
+"during multiple file move."
+msgstr ""
+"Estas neeble movi dosieron:\n"
+"%s\n"
+"en:\n"
+"%s\n"
+"dum delokado de pluraj dosieroj."
+
+#: src/utilops.c:817
+msgid "Source matches destination"
+msgstr "Fonto koincidas al celpunkto"
+
+#: src/utilops.c:818
+msgid "Source and destination are the same, operation cancelled."
+msgstr "Fonto kaj celpunkto estas samaj: do ĉi ago estis nuligita."
+
+#: src/utilops.c:894
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Estas neeble kopii dosieron:\n"
+"%s\n"
+"en:\n"
+"%s"
+
+#: src/utilops.c:899
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Estas neeble movi dosieron:\n"
+"%s\n"
+"en:\n"
+"%s"
+
+#: src/utilops.c:947
+msgid "Invalid destination"
+msgstr "Nevalida celpunkto"
+
+#: src/utilops.c:948
+msgid ""
+"When operating with multiple files, please select\n"
+"a folder, not a file."
+msgstr ""
+"Bonvolu, elektu dosierujon kaj ne dosieron,\n"
+"se vi volas labori super pluraj dosieroj."
+
+#: src/utilops.c:953
+msgid "Please select an existing folder."
+msgstr "Bonvolu, elektu ekzistantan dosierujon."
+
+#: src/utilops.c:1022
+msgid "Copy - GQview"
+msgstr "Kopiu - GQview"
+
+#: src/utilops.c:1023 src/view_dir_list.c:209 src/view_dir_tree.c:301
+msgid "_Copy"
+msgstr "_Kopiu"
+
+#: src/utilops.c:1026
+msgid "Copy file"
+msgstr "Kopiu dosieron"
+
+#: src/utilops.c:1030
+msgid "Copy multiple files"
+msgstr "Kopiu plurajn dosierojn"
+
+#: src/utilops.c:1036
+msgid "Move - GQview"
+msgstr "Movu - GQview"
+
+#: src/utilops.c:1037 src/view_dir_list.c:211 src/view_dir_tree.c:303
+msgid "_Move"
+msgstr "_Movu"
+
+#: src/utilops.c:1040
+msgid "Move file"
+msgstr "Movu dosieron"
+
+#: src/utilops.c:1044
+msgid "Move multiple files"
+msgstr "Movu plurajn dosierojn"
+
+#: src/utilops.c:1058 src/utilops.c:1568
+msgid "File name:"
+msgstr "Dosiernomo:"
+
+#: src/utilops.c:1062
+msgid "Choose the destination folder."
+msgstr "Elektu celpunktan dosierujon."
+
+#: src/utilops.c:1189 src/utilops.c:1338 src/utilops.c:1355 src/utilops.c:2902
+#: src/utilops.c:2953 src/utilops.c:3041 src/utilops.c:3052
+msgid "Delete failed"
+msgstr "Forigo malsukcesis"
+
+#: src/utilops.c:1190
+msgid "Unable to remove old file from trash folder"
+msgstr "Estas neeble forigi malnovaj dosierojn el rubujo"
+
+#: src/utilops.c:1246 src/utilops.c:2574
+msgid "Could not create folder"
+msgstr "Estas neeble krei dosierujon"
+
+#: src/utilops.c:1268
+msgid "Permission denied"
+msgstr "Rifuzita permeso"
+
+#: src/utilops.c:1278
+#, c-format
+msgid ""
+"Unable to access or create the trash folder.\n"
+"\"%s\""
+msgstr ""
+"Estas neeble aliri aŭ krei la rubujon.\n"
+"\"%s\""
+
+#: src/utilops.c:1282
+msgid "Turn off safe delete"
+msgstr "Malaktivigu sendanĝeran forigon"
+
+#: src/utilops.c:1300
+#, c-format
+msgid "Safe delete: %s"
+msgstr "Sendanĝera forigo: %s"
+
+#: src/utilops.c:1342
+#, c-format
+msgid ""
+"Unable to delete file:\n"
+" %s\n"
+" Continue multiple delete operation?"
+msgstr ""
+"Estas neeble forigi dosieron:\n"
+"%s\n"
+"Ĉu vi volas daŭrigas la forigon?"
+
+#: src/utilops.c:1413
+#, c-format
+msgid "File %d of %d"
+msgstr "Dosiero %d el %d"
+
+#: src/utilops.c:1482
+msgid "Delete files - GQview"
+msgstr "Forigu dosierojn - GQview"
+
+#: src/utilops.c:1486
+msgid "Delete multiple files"
+msgstr "Forigu plurajn dosierojn"
+
+#: src/utilops.c:1504
+#, c-format
+msgid "Review %d files"
+msgstr "Revidu %d dosierojn"
+
+#: src/utilops.c:1560
+msgid "Delete file - GQview"
+msgstr "Forigu dosieron - GQview"
+
+#: src/utilops.c:1564
+msgid "Delete file?"
+msgstr "Ĉu vi volas forigi la dosieron?"
+
+#: src/utilops.c:1722 src/utilops.c:2444
+msgid "Replace existing file by renaming new file."
+msgstr "Anstataŭu ekzistatan dosieron per renomita nova dosiero."
+
+#: src/utilops.c:1739
+#, c-format
+msgid ""
+"Unable to rename file:\n"
+"%s\n"
+" to:\n"
+"%s"
+msgstr ""
+"Estas neeble renomi dosieron:\n"
+"%s\n"
+"en:\n"
+"%s"
+
+#: src/utilops.c:1742 src/utilops.c:2461 src/view_file_list.c:451
+#: src/view_file_list.c:457 src/view_file_list.c:463
+msgid "Error renaming file"
+msgstr "Eraro dum renomado de dosiero"
+
+#: src/utilops.c:1863
+msgid "Format must include at least one of the symbol characters '*' or '#'.\n"
+msgstr "Formato devas enteni almenaŭ unu el signoj '*' aŭ '#'.\n"
+
+#: src/utilops.c:1919
+msgid ""
+"Can not auto rename with the selected\n"
+"number set, one or more files exist that\n"
+"match the resulting name list.\n"
+msgstr ""
+"Estas neeble renomi aŭtomate per agordo de\n"
+"elektita nombro: unu aŭ pluraj dosieroj kongruas\n"
+"al rezultita listnomo.\n"
+
+#: src/utilops.c:1993
+#, c-format
+msgid ""
+"Failed to rename\n"
+"%s\n"
+"The number was %d."
+msgstr ""
+"Renomo malsukcesis\n"
+"%s\n"
+"La nombro estis %d."
+
+#: src/utilops.c:2249 src/utilops.c:2503
+msgid "Rename - GQview"
+msgstr "Renomu - GQview"
+
+#: src/utilops.c:2252
+msgid "Rename multiple files"
+msgstr "Renomu multoblajn dosierojn"
+
+#: src/utilops.c:2286
+msgid "Original Name"
+msgstr "Originala Nomo"
+
+#: src/utilops.c:2324
+#, fuzzy
+msgid "Manual rename"
+msgstr "Renomu mane"
+
+#: src/utilops.c:2325
+msgid "Formatted rename"
+msgstr "Renomu formate"
+
+#: src/utilops.c:2338 src/utilops.c:2516
+msgid "Original name:"
+msgstr "Originala nomo:"
+
+#: src/utilops.c:2341 src/utilops.c:2519
+msgid "New name:"
+msgstr "Nova nomo:"
+
+#: src/utilops.c:2359
+msgid "Begin text"
+msgstr "Teksta komenco"
+
+#: src/utilops.c:2367 src/utilops.c:2399
+msgid "Start #"
+msgstr "Startu #"
+
+#: src/utilops.c:2373
+msgid "End text"
+msgstr "Teksta fino"
+
+#: src/utilops.c:2381
+msgid "Padding:"
+msgstr "Plenigo:"
+
+#: src/utilops.c:2391
+msgid "Format (* = original name, ## = numbers)"
+msgstr "Formato (* = originala nomo, ## = nombroj)"
+
+#: src/utilops.c:2460 src/view_file_list.c:462
+#, c-format
+msgid ""
+"Unable to rename file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Estas neeble renomi dosieron:\n"
+"%s\n"
+"en:\n"
+"%s"
+
+#: src/utilops.c:2506
+msgid "Rename file"
+msgstr "Renomu dosieron"
+
+#: src/utilops.c:2567 src/utilops.c:2657
+#, c-format
+msgid ""
+"The folder:\n"
+"%s\n"
+"already exists."
+msgstr ""
+"Dosierujo:\n"
+"%s\n"
+"jam ekzistas."
+
+#: src/utilops.c:2568 src/utilops.c:2658
+msgid "Folder exists"
+msgstr "Dosierujo jam ekzistas"
+
+#: src/utilops.c:2573 src/utilops.c:2666
+#, c-format
+msgid ""
+"The path:\n"
+"%s\n"
+"already exists as a file."
+msgstr ""
+"Raŭto:\n"
+"%s\n"
+"jam estis dosiero."
+
+#: src/utilops.c:2625
+msgid "New folder - GQview"
+msgstr "Nova dosierujo - GQview"
+
+#: src/utilops.c:2628
+#, c-format
+msgid ""
+"Create folder in:\n"
+"%s\n"
+"named:"
+msgstr ""
+"Kreu dosierujon en:\n"
+"%s\n"
+"nomiĝitan:"
+
+#: src/utilops.c:2667 src/utilops.c:2676
+msgid "Rename failed"
+msgstr "Renomo malsukcesis"
+
+#: src/utilops.c:2775
+#, fuzzy
+msgid "Location"
+msgstr "Lokado:"
+
+#: src/utilops.c:2952
+#, fuzzy, c-format
+msgid ""
+"Unable to delete folder:\n"
+"\n"
+"%s"
+msgstr ""
+"Estas neeble forigi dosieron:\n"
+"%s"
+
+#: src/utilops.c:2959
+#, c-format
+msgid ""
+"Removal of folder contents failed at this file:\n"
+"\n"
+"%s"
+msgstr ""
+
+#: src/utilops.c:3016 src/utilops.c:3100
+#, fuzzy
+msgid "Delete folder"
+msgstr "Elektu dosierujon"
+
+#: src/utilops.c:3020
+#, c-format
+msgid ""
+"This will delete the symbolic link:\n"
+"\n"
+"%s\n"
+"\n"
+"The folder this link points to will not be deleted."
+msgstr ""
+
+#: src/utilops.c:3024
+msgid "Delete symbolic link to folder?"
+msgstr ""
+
+#: src/utilops.c:3039
+#, fuzzy, c-format
+msgid ""
+"Unable to remove folder %s\n"
+"Permissions do not allow writing to the folder."
+msgstr "Estas neeble forigi malnovaj dosierojn el rubujo"
+
+#: src/utilops.c:3051
+#, fuzzy, c-format
+msgid "Unable to list contents of folder %s"
+msgstr ""
+"Estas neeble krei dosierujon:\n"
+"%s"
+
+#: src/utilops.c:3065 src/utilops.c:3073
+#, fuzzy
+msgid "Folder contains subfolders"
+msgstr "Inkluzivigu subdosierujojn"
+
+#: src/utilops.c:3069
+#, c-format
+msgid ""
+"Unable to delete the folder:\n"
+"\n"
+"%s\n"
+"\n"
+"This folder contains subfolders which must be moved before it can be deleted."
+msgstr ""
+
+#: src/utilops.c:3077
+#, fuzzy
+msgid "Subfolders:"
+msgstr "dosierujo"
+
+#: src/utilops.c:3104
+#, c-format
+msgid ""
+"This will delete the folder:\n"
+"\n"
+"%s\n"
+"\n"
+"The contents of this folder will also be deleted."
+msgstr ""
+
+#: src/utilops.c:3108
+#, fuzzy
+msgid "Delete folder?"
+msgstr "Ĉu vi volas forigi la dosieron?"
+
+#: src/utilops.c:3112
+#, fuzzy
+msgid "Contents:"
+msgstr "_Enhavoj"
+
+#: src/view_dir_list.c:321 src/view_dir_tree.c:417
+msgid "new_folder"
+msgstr "nova _dosierujo"
+
+#: src/view_dir_list.c:387 src/view_dir_tree.c:491
+msgid "_Up to parent"
+msgstr "_Supren ĝis origina dosierujo"
+
+#: src/view_dir_list.c:392 src/view_dir_tree.c:496
+msgid "_Slideshow"
+msgstr "Diapo_zitiva strio"
+
+#: src/view_dir_list.c:394 src/view_dir_tree.c:498
+msgid "Slideshow recursive"
+msgstr "Diapozitiva strio ripete"
+
+#: src/view_dir_list.c:398 src/view_dir_tree.c:502
+msgid "Find _duplicates..."
+msgstr "Trovu _duplikatojn..."
+
+#: src/view_dir_list.c:400 src/view_dir_tree.c:504
+msgid "Find duplicates recursive..."
+msgstr "Trovu duplikatojn ripete..."
+
+#: src/view_dir_list.c:407 src/view_dir_tree.c:511
+msgid "_New folder..."
+msgstr "_Nova dosierujo..."
+
+#: src/view_dir_list.c:421 src/view_dir_tree.c:520
+msgid "View as _tree"
+msgstr "Videbligu kiel _arbumo"
+
+#: src/view_dir_list.c:423 src/view_dir_tree.c:522 src/view_file_icon.c:315
+#: src/view_file_list.c:426
+msgid "Re_fresh"
+msgstr "Ĝis_datigu"
+
+#: src/view_file_icon.c:308 src/view_file_list.c:419
+msgid "_Sort"
+msgstr "_Ordigu"
+
+#: src/view_file_icon.c:311 src/view_file_list.c:422
+msgid "View as _icons"
+msgstr "Montru kiel _ikonoj"
+
+#: src/view_file_list.c:424
+msgid "Show _thumbnails"
+msgstr "Montru _miniaturojn"
+
+#: src/view_file_list.c:450
+#, c-format
+msgid ""
+"Invalid file name:\n"
+"%s"
+msgstr ""
+"Nevalida dosiernomo:\n"
+"%s"

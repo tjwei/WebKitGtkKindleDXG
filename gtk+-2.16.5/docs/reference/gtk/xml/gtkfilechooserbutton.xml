@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkFileChooserButton">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkFileChooserButton.top_of_page">GtkFileChooserButton</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkFileChooserButton</refname>
+<refpurpose>A button to launch a file selection dialog</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkFileChooserButton.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkFileChooserButton-struct">GtkFileChooserButton</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-file-chooser-button-new">gtk_file_chooser_button_new</link>         (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkFileChooserAction">GtkFileChooserAction</link> action);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-file-chooser-button-new-with-backend">gtk_file_chooser_button_new_with_backend</link>
+                                                        (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkFileChooserAction">GtkFileChooserAction</link> action,
+                                                         const <link linkend="gchar">gchar</link> *backend);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-file-chooser-button-new-with-dialog">gtk_file_chooser_button_new_with_dialog</link>
+                                                        (<link linkend="GtkWidget">GtkWidget</link> *dialog);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-file-chooser-button-get-title">gtk_file_chooser_button_get_title</link>   (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button);
+<link linkend="void">void</link>                <link linkend="gtk-file-chooser-button-set-title">gtk_file_chooser_button_set_title</link>   (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button,
+                                                         const <link linkend="gchar">gchar</link> *title);
+<link linkend="gint">gint</link>                <link linkend="gtk-file-chooser-button-get-width-chars">gtk_file_chooser_button_get_width_chars</link>
+                                                        (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button);
+<link linkend="void">void</link>                <link linkend="gtk-file-chooser-button-set-width-chars">gtk_file_chooser_button_set_width_chars</link>
+                                                        (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button,
+                                                         <link linkend="gint">gint</link> n_chars);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-file-chooser-button-get-focus-on-click">gtk_file_chooser_button_get_focus_on_click</link>
+                                                        (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button);
+<link linkend="void">void</link>                <link linkend="gtk-file-chooser-button-set-focus-on-click">gtk_file_chooser_button_set_focus_on_click</link>
+                                                        (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button,
+                                                         <link linkend="gboolean">gboolean</link> focus_on_click);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkFileChooserButton.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBox">GtkBox</link>
+                                 +----<link linkend="GtkHBox">GtkHBox</link>
+                                       +----GtkFileChooserButton
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkFileChooserButton.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkFileChooserButton implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link>,  <link linkend="GtkOrientable">GtkOrientable</link> and  <link linkend="GtkFileChooser">GtkFileChooser</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkFileChooserButton.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkFileChooserButton--dialog">dialog</link>&quot;                   <link linkend="GtkFileChooser">GtkFileChooser</link>*       : Write / Construct Only
+  &quot;<link linkend="GtkFileChooserButton--focus-on-click">focus-on-click</link>&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkFileChooserButton--title">title</link>&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkFileChooserButton--width-chars">width-chars</link>&quot;              <link linkend="gint">gint</link>                  : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkFileChooserButton.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkFileChooserButton-file-set">file-set</link>&quot;                                       : Run First
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkFileChooserButton.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkFileChooserButton"><type>GtkFileChooserButton</type></link> is a widget that lets the user select a
+file.  It implements the <link linkend="GtkFileChooser"><type>GtkFileChooser</type></link> interface.  Visually, it is a
+file name with a button to bring up a <link linkend="GtkFileChooserDialog"><type>GtkFileChooserDialog</type></link>.
+The user can then use that dialog to change the file associated with
+that button.  This widget does not support setting the "select-multiple"
+property to <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>.
+</para>
+<example>
+<title>Create a button to let the user select a file in /etc</title>
+<programlisting>
+{
+  GtkWidget *button;
+  button = gtk_file_chooser_button_new (_("Select a file"),
+                                        GTK_FILE_CHOOSER_ACTION_OPEN);
+  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (button),
+                                       "/etc");
+}
+</programlisting>
+</example>
+<para>
+The <link linkend="GtkFileChooserButton"><type>GtkFileChooserButton</type></link> supports the <link linkend="GtkFileChooserAction"><type>GtkFileChooserAction</type></link><!--
+-->s <link linkend="GTK-FILE-CHOOSER-ACTION-OPEN--CAPS"><literal>GTK_FILE_CHOOSER_ACTION_OPEN</literal></link> and <link linkend="GTK-FILE-CHOOSER-ACTION-SELECT-FOLDER--CAPS"><literal>GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER</literal></link>.
+</para>
+<important>
+<para>
+The <link linkend="GtkFileChooserButton"><type>GtkFileChooserButton</type></link> will ellipsize the label,
+and thus will thus request little horizontal space.  To give the button
+more space, you should call <link linkend="gtk-widget-size-request"><function>gtk_widget_size_request()</function></link>,
+<link linkend="gtk-file-chooser-button-set-width-chars"><function>gtk_file_chooser_button_set_width_chars()</function></link>, or pack the button in
+such a way that other interface elements give space to the widget.
+</para>
+</important>
+</refsect1>
+
+<refsect1 id="GtkFileChooserButton.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkFileChooserButton-struct" role="struct">
+<title>GtkFileChooserButton</title>
+<indexterm zone="GtkFileChooserButton-struct"><primary sortas="FileChooserButton">GtkFileChooserButton</primary></indexterm><programlisting>typedef struct _GtkFileChooserButton GtkFileChooserButton;</programlisting>
+<para>
+This should not be accessed directly.  Use the accessor functions below.
+</para></refsect2>
+<refsect2 id="gtk-file-chooser-button-new" role="function" condition="since:2.6">
+<title>gtk_file_chooser_button_new ()</title>
+<indexterm zone="gtk-file-chooser-button-new" role="2.6"><primary sortas="file_chooser_button_new">gtk_file_chooser_button_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_file_chooser_button_new         (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkFileChooserAction">GtkFileChooserAction</link> action);</programlisting>
+<para>
+Creates a new file-selecting button widget.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> the title of the browse dialog.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the open mode for the widget.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new button widget.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-file-chooser-button-new-with-backend" role="function" condition="deprecated:2.14: Use gtk_file_chooser_button_new() instead.|since:2.6">
+<title>gtk_file_chooser_button_new_with_backend ()</title>
+<indexterm zone="gtk-file-chooser-button-new-with-backend" role="deprecated"><primary sortas="file_chooser_button_new_with_backend">gtk_file_chooser_button_new_with_backend</primary></indexterm><indexterm zone="gtk-file-chooser-button-new-with-backend" role="2.6"><primary sortas="file_chooser_button_new_with_backend">gtk_file_chooser_button_new_with_backend</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_file_chooser_button_new_with_backend
+                                                        (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkFileChooserAction">GtkFileChooserAction</link> action,
+                                                         const <link linkend="gchar">gchar</link> *backend);</programlisting>
+<warning><para><literal>gtk_file_chooser_button_new_with_backend</literal> has been deprecated since version 2.14 and should not be used in newly-written code. Use <link linkend="gtk-file-chooser-button-new"><function>gtk_file_chooser_button_new()</function></link> instead.</para></warning>
+<para>
+Creates a new file-selecting button widget using <parameter>backend</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> the title of the browse dialog.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the open mode for the widget.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>backend</parameter>&#160;:</term>
+<listitem><simpara> the name of the <link linkend="GtkFileSystem"><type>GtkFileSystem</type></link> backend to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new button widget.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-file-chooser-button-new-with-dialog" role="function" condition="since:2.6">
+<title>gtk_file_chooser_button_new_with_dialog ()</title>
+<indexterm zone="gtk-file-chooser-button-new-with-dialog" role="2.6"><primary sortas="file_chooser_button_new_with_dialog">gtk_file_chooser_button_new_with_dialog</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_file_chooser_button_new_with_dialog
+                                                        (<link linkend="GtkWidget">GtkWidget</link> *dialog);</programlisting>
+<para>
+Creates a <link linkend="GtkFileChooserButton"><type>GtkFileChooserButton</type></link> widget which uses <parameter>dialog</parameter> as its
+file-picking window.
+</para>
+<para>
+Note that <parameter>dialog</parameter> must be a <link linkend="GtkDialog"><type>GtkDialog</type></link> (or subclass) which
+implements the <link linkend="GtkFileChooser"><type>GtkFileChooser</type></link> interface and must not have
+<link linkend="GTK-DIALOG-DESTROY-WITH-PARENT--CAPS"><literal>GTK_DIALOG_DESTROY_WITH_PARENT</literal></link> set.
+</para>
+<para>
+Also note that the dialog needs to have its confirmative button
+added with response <link linkend="GTK-RESPONSE-ACCEPT--CAPS"><literal>GTK_RESPONSE_ACCEPT</literal></link> or <link linkend="GTK-RESPONSE-OK--CAPS"><literal>GTK_RESPONSE_OK</literal></link> in
+order for the button to take over the file selected in the dialog.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> the widget to use as dialog
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new button widget.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-file-chooser-button-get-title" role="function" condition="since:2.6">
+<title>gtk_file_chooser_button_get_title ()</title>
+<indexterm zone="gtk-file-chooser-button-get-title" role="2.6"><primary sortas="file_chooser_button_get_title">gtk_file_chooser_button_get_title</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_file_chooser_button_get_title   (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button);</programlisting>
+<para>
+Retrieves the title of the browse dialog used by <parameter>button</parameter>. The returned value
+should not be modified or freed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> the button widget to examine.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a pointer to the browse dialog's title.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-file-chooser-button-set-title" role="function" condition="since:2.6">
+<title>gtk_file_chooser_button_set_title ()</title>
+<indexterm zone="gtk-file-chooser-button-set-title" role="2.6"><primary sortas="file_chooser_button_set_title">gtk_file_chooser_button_set_title</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_file_chooser_button_set_title   (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button,
+                                                         const <link linkend="gchar">gchar</link> *title);</programlisting>
+<para>
+Modifies the <parameter>title</parameter> of the browse dialog used by <parameter>button</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> the button widget to modify.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> the new browse dialog title.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-file-chooser-button-get-width-chars" role="function" condition="since:2.6">
+<title>gtk_file_chooser_button_get_width_chars ()</title>
+<indexterm zone="gtk-file-chooser-button-get-width-chars" role="2.6"><primary sortas="file_chooser_button_get_width_chars">gtk_file_chooser_button_get_width_chars</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_file_chooser_button_get_width_chars
+                                                        (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button);</programlisting>
+<para>
+Retrieves the width in characters of the <parameter>button</parameter> widget's entry and/or label.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> the button widget to examine.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an integer width (in characters) that the button will use to size itself.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-file-chooser-button-set-width-chars" role="function" condition="since:2.6">
+<title>gtk_file_chooser_button_set_width_chars ()</title>
+<indexterm zone="gtk-file-chooser-button-set-width-chars" role="2.6"><primary sortas="file_chooser_button_set_width_chars">gtk_file_chooser_button_set_width_chars</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_file_chooser_button_set_width_chars
+                                                        (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button,
+                                                         <link linkend="gint">gint</link> n_chars);</programlisting>
+<para>
+Sets the width (in characters) that <parameter>button</parameter> will use to <parameter>n_chars</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> the button widget to examine.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_chars</parameter>&#160;:</term>
+<listitem><simpara> the new width, in characters.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-file-chooser-button-get-focus-on-click" role="function" condition="since:2.10">
+<title>gtk_file_chooser_button_get_focus_on_click ()</title>
+<indexterm zone="gtk-file-chooser-button-get-focus-on-click" role="2.10"><primary sortas="file_chooser_button_get_focus_on_click">gtk_file_chooser_button_get_focus_on_click</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_file_chooser_button_get_focus_on_click
+                                                        (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button);</programlisting>
+<para>
+Returns whether the button grabs focus when it is clicked with the mouse.
+See <link linkend="gtk-file-chooser-button-set-focus-on-click"><function>gtk_file_chooser_button_set_focus_on_click()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFileChooserButton"><type>GtkFileChooserButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the button grabs focus when it is clicked with
+              the mouse.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-file-chooser-button-set-focus-on-click" role="function" condition="since:2.10">
+<title>gtk_file_chooser_button_set_focus_on_click ()</title>
+<indexterm zone="gtk-file-chooser-button-set-focus-on-click" role="2.10"><primary sortas="file_chooser_button_set_focus_on_click">gtk_file_chooser_button_set_focus_on_click</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_file_chooser_button_set_focus_on_click
+                                                        (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *button,
+                                                         <link linkend="gboolean">gboolean</link> focus_on_click);</programlisting>
+<para>
+Sets whether the button will grab focus when it is clicked with the mouse.
+Making mouse clicks not grab focus is useful in places like toolbars where
+you don't want the keyboard focus removed from the main area of the
+application.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFileChooserButton"><type>GtkFileChooserButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>focus_on_click</parameter>&#160;:</term>
+<listitem><simpara> whether the button grabs focus when clicked with the mouse
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkFileChooserButton.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkFileChooserButton--dialog" role="property"><title>The <literal>&quot;dialog&quot;</literal> property</title>
+<indexterm zone="GtkFileChooserButton--dialog" role="2.6"><primary sortas="FileChooserButton:dialog">GtkFileChooserButton:dialog</primary></indexterm><programlisting>  &quot;dialog&quot;                   <link linkend="GtkFileChooser">GtkFileChooser</link>*       : Write / Construct Only</programlisting>
+<para>
+Instance of the <link linkend="GtkFileChooserDialog"><type>GtkFileChooserDialog</type></link> associated with the button.</para>
+<para>
+</para><para>Since 2.6</para>
+</refsect2>
+<refsect2 id="GtkFileChooserButton--focus-on-click" role="property"><title>The <literal>&quot;focus-on-click&quot;</literal> property</title>
+<indexterm zone="GtkFileChooserButton--focus-on-click" role="2.10"><primary sortas="FileChooserButton:focus-on-click">GtkFileChooserButton:focus-on-click</primary></indexterm><programlisting>  &quot;focus-on-click&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether the <link linkend="GtkFileChooserButton"><type>GtkFileChooserButton</type></link> button grabs focus when it is clicked
+with the mouse.</para>
+<para>
+</para><para>Default value: TRUE</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkFileChooserButton--title" role="property"><title>The <literal>&quot;title&quot;</literal> property</title>
+<indexterm zone="GtkFileChooserButton--title" role="2.6"><primary sortas="FileChooserButton:title">GtkFileChooserButton:title</primary></indexterm><programlisting>  &quot;title&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+Title to put on the <link linkend="GtkFileChooserDialog"><type>GtkFileChooserDialog</type></link> associated with the button.</para>
+<para>
+</para><para>Default value: "Select A File"</para>
+<para>Since 2.6</para>
+</refsect2>
+<refsect2 id="GtkFileChooserButton--width-chars" role="property"><title>The <literal>&quot;width-chars&quot;</literal> property</title>
+<indexterm zone="GtkFileChooserButton--width-chars" role="2.6"><primary sortas="FileChooserButton:width-chars">GtkFileChooserButton:width-chars</primary></indexterm><programlisting>  &quot;width-chars&quot;              <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+The width of the entry and label inside the button, in characters.</para>
+<para>
+</para><para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+<para>Since 2.6</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkFileChooserButton.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkFileChooserButton-file-set" role="signal"><title>The <literal>&quot;file-set&quot;</literal> signal</title>
+<indexterm zone="GtkFileChooserButton-file-set" role="2.12"><primary sortas="FileChooserButton::file-set">GtkFileChooserButton::file-set</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkFileChooserButton">GtkFileChooserButton</link> *widget,
+                                                        <link linkend="gpointer">gpointer</link>              user_data)      : Run First</programlisting>
+<para>
+The ::file-set signal is emitted when the user selects a file.
+</para>
+<para>
+Note that this signal is only emitted when the <emphasis>user</emphasis>
+changes the file.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.12</para></refsect2>
+</refsect1>
+
+
+<refsect1 id="GtkFileChooserButton.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkFileChooserDialog"><type>GtkFileChooserDialog</type></link>
+</para>
+</refsect1>
+
+</refentry>

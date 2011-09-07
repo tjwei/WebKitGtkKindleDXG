@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkCellRendererCombo">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkCellRendererCombo.top_of_page">GtkCellRendererCombo</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkCellRendererCombo</refname>
+<refpurpose>Renders a combobox in a cell</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkCellRendererCombo.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkCellRendererCombo-struct">GtkCellRendererCombo</link>;
+<link linkend="GtkCellRenderer">GtkCellRenderer</link> *   <link linkend="gtk-cell-renderer-combo-new">gtk_cell_renderer_combo_new</link>         (void);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkCellRendererCombo.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkCellRenderer">GtkCellRenderer</link>
+                     +----<link linkend="GtkCellRendererText">GtkCellRendererText</link>
+                           +----GtkCellRendererCombo
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkCellRendererCombo.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkCellRendererCombo--has-entry">has-entry</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkCellRendererCombo--model">model</link>&quot;                    <link linkend="GtkTreeModel">GtkTreeModel</link>*         : Read / Write
+  &quot;<link linkend="GtkCellRendererCombo--text-column">text-column</link>&quot;              <link linkend="gint">gint</link>                  : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkCellRendererCombo.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkCellRendererCombo-changed">changed</link>&quot;                                        : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkCellRendererCombo.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkCellRendererCombo"><type>GtkCellRendererCombo</type></link> renders text in a cell like <link linkend="GtkCellRendererText"><type>GtkCellRendererText</type></link> from
+which it is derived. But while <link linkend="GtkCellRendererText"><type>GtkCellRendererText</type></link> offers a simple entry to
+edit the text, <link linkend="GtkCellRendererCombo"><type>GtkCellRendererCombo</type></link> offers a <link linkend="GtkComboBox"><type>GtkComboBox</type></link> or <link linkend="GtkComboBoxEntry"><type>GtkComboBoxEntry</type></link>
+widget to edit the text. The values to display in the combo box are taken from
+the tree model specified in the
+<link linkend="GtkCellRendererCombo--model">model</link> property.
+</para>
+<para>
+The combo cell renderer takes care of adding a text cell renderer to the combo
+box and sets it to display the column specified by its
+<link linkend="GtkCellRendererCombo--text-column">text-column</link>
+property. Further properties of the comnbo box can be set in a handler for the
+editing-started signal.
+</para>
+<para>
+The <link linkend="GtkCellRendererCombo"><type>GtkCellRendererCombo</type></link> cell renderer was added in GTK+ 2.6.
+</para>
+</refsect1>
+
+<refsect1 id="GtkCellRendererCombo.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkCellRendererCombo-struct" role="struct">
+<title>GtkCellRendererCombo</title>
+<indexterm zone="GtkCellRendererCombo-struct"><primary sortas="CellRendererCombo">GtkCellRendererCombo</primary></indexterm><programlisting>typedef struct _GtkCellRendererCombo GtkCellRendererCombo;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-cell-renderer-combo-new" role="function" condition="since:2.6">
+<title>gtk_cell_renderer_combo_new ()</title>
+<indexterm zone="gtk-cell-renderer-combo-new" role="2.6"><primary sortas="cell_renderer_combo_new">gtk_cell_renderer_combo_new</primary></indexterm><programlisting><link linkend="GtkCellRenderer">GtkCellRenderer</link> *   gtk_cell_renderer_combo_new         (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkCellRendererCombo"><type>GtkCellRendererCombo</type></link>. 
+Adjust how text is drawn using object properties. 
+Object properties can be set globally (with <link linkend="g-object-set"><function>g_object_set()</function></link>). 
+Also, with <link linkend="GtkTreeViewColumn"><type>GtkTreeViewColumn</type></link>, you can bind a property to a value 
+in a <link linkend="GtkTreeModel"><type>GtkTreeModel</type></link>. For example, you can bind the "text" property 
+on the cell renderer to a string value in the model, thus rendering 
+a different string in each row of the <link linkend="GtkTreeView"><type>GtkTreeView</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new cell renderer
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkCellRendererCombo.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkCellRendererCombo--has-entry" role="property"><title>The <literal>&quot;has-entry&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererCombo--has-entry" role="2.6"><primary sortas="CellRendererCombo:has-entry">GtkCellRendererCombo:has-entry</primary></indexterm><programlisting>  &quot;has-entry&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+If <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, the cell renderer will include an entry and allow to enter
+values other than the ones in the popup list.</para>
+<para>
+</para><para>Default value: TRUE</para>
+<para>Since 2.6</para>
+</refsect2>
+<refsect2 id="GtkCellRendererCombo--model" role="property"><title>The <literal>&quot;model&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererCombo--model" role="2.6"><primary sortas="CellRendererCombo:model">GtkCellRendererCombo:model</primary></indexterm><programlisting>  &quot;model&quot;                    <link linkend="GtkTreeModel">GtkTreeModel</link>*         : Read / Write</programlisting>
+<para>
+Holds a tree model containing the possible values for the combo box. 
+Use the text_column property to specify the column holding the values.</para>
+<para>
+</para><para>Since 2.6</para>
+</refsect2>
+<refsect2 id="GtkCellRendererCombo--text-column" role="property"><title>The <literal>&quot;text-column&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererCombo--text-column" role="2.6"><primary sortas="CellRendererCombo:text-column">GtkCellRendererCombo:text-column</primary></indexterm><programlisting>  &quot;text-column&quot;              <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+Specifies the model column which holds the possible values for the 
+combo box. 
+</para>
+<para>
+Note that this refers to the model specified in the model property, 
+<emphasis>not</emphasis> the model backing the tree view to which 
+this cell renderer is attached.
+</para>
+<para>
+<link linkend="GtkCellRendererCombo"><type>GtkCellRendererCombo</type></link> automatically adds a text cell renderer for 
+this column to its combo box.</para>
+<para>
+</para><para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+<para>Since 2.6</para>
+</refsect2>
+
+</refsect1>
+
+<refsect1 id="GtkCellRendererCombo.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkCellRendererCombo-changed" role="signal"><title>The <literal>&quot;changed&quot;</literal> signal</title>
+<indexterm zone="GtkCellRendererCombo-changed" role="2.14"><primary sortas="CellRendererCombo::changed">GtkCellRendererCombo::changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkCellRendererCombo">GtkCellRendererCombo</link> *combo,
+                                                        <link linkend="gchar">gchar</link>                *path_string,
+                                                        <link linkend="GtkTreeIter">GtkTreeIter</link>          *new_iter,
+                                                        <link linkend="gpointer">gpointer</link>              user_data)        : Run Last</programlisting>
+<para>
+This signal is emitted each time after the user selected an item in
+the combo box, either by using the mouse or the arrow keys.  Contrary
+to GtkComboBox, GtkCellRendererCombo::changed is not emitted for
+changes made to a selected item in the entry.  The argument <parameter>new_iter</parameter>
+corresponds to the newly selected item in the combo box and it is relative
+to the GtkTreeModel set via the model property on GtkCellRendererCombo.
+</para>
+<para>
+Note that as soon as you change the model displayed in the tree view,
+the tree view will immediately cease the editing operating.  This
+means that you most probably want to refrain from changing the model
+until the combo cell renderer emits the edited or editing_canceled signal.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>combo</parameter>&#160;:</term>
+<listitem><simpara> the object on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>path_string</parameter>&#160;:</term>
+<listitem><simpara> a string of the path identifying the edited cell
+              (relative to the tree view model)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>new_iter</parameter>&#160;:</term>
+<listitem><simpara> the new iter selected in the combo box
+           (relative to the combo box model)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.14</para></refsect2>
+</refsect1>
+
+
+
+</refentry>

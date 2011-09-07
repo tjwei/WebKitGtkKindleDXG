@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ `uname -m` = "arm" ]
+then
+	echo "update kindle /usr/local"
+	tar -C /usr/local -cf - .|ssh root@kindle tar -C /usr/local/ -xvf -
+else
+	echo "not arm"
+fi

@@ -1,0 +1,39 @@
+Kindle 3 source release back port to Kindle DXG
+
+for more information see (in traditional Chinese)
+	http://weijr-note.blogspot.com/2011/09/webkit-for-kindle-dx-binary-files.html
+and 
+	http://weijr-note.blogspot.com/2011/08/kindle-webkit-backport-to-kindle-dx.html
+(or google translated version in English
+	http://0rz.tw/CMU8q   (Binary release note)
+and
+	http://0rz.tw/aNt4h   (Some Remarks)
+)
+
+INSTALL
+
+1 Install scratchbox at default location /scratchbox
+  I use scratchbox-core-1.0.26-i386 (hathor)
+  with perl, svn, git, qemu and 
+and 
+  toolchain-cs2007q3-glibc2.5-arm6-1.0.12-8-i386
+  (from stable release).
+  Do not use toolchain-cs2007q3-glibc2.5-arm6-1.0.12-9-i386.
+  1.0.12-9 tool chain contains eventfd patch. So it is more like glibc2.7 than glibc2.5.
+
+2 I have not figure out a good way to compile icu under scratchbox, so ssh is used to cross comile icu. In order to do that put the source code of at ~/WebKitGtkKindleDXG in your scratchbox and ln -s to the same location in your linux machine. Set up sshd so that you can ssh localhost to your linux machine from scratchbox.
+3 Default compile and configuration options and other default actions are hard coded in buildtool shell script:
+	do_make(){      do_ "make" "$1" "make -j12" ;}
+	do_clean(){	do_ "clean" "$1" "make clean";}
+	do_install(){	do_ "install" "$1"  "make -j12 install DESTDIR=\"$DESTDIR\"";}
+	do_automake(){	do_ "automake" "$1" ". $MYCONFDIR/preset/aaaa";}
+	do_uninstall(){	do_ "uninstall" "$1" "make uninstall";}
+	do_configure(){ do_ "configure" "$1" 'autoconfigure --prefix=/usr/local --disable-static';}
+  You may want to change -j12 to another number or remove --disable-static.
+4 Custom building options can be found under conf/ directory.
+5 Run SRCDIRS=autotools/* ./mycmi to build autoconf, automake, pkg-config, libtool, gettext.
+  cmi stands for configure, make, install.
+6 Run ./buildall to build python, DirectFB, glib, gtk+, WebKit.
+7 Run SRCDIRS="GTK1/* GTKAPP/*" ./mycmi to build vte, lefpad, gtkterm2, gqview
+8 To build a single package, cd to the package root and run myconfigure, mymake and myinstall scripts.  
+9 Copy /usr/local to your kindle and set LD_LIBRARY_PATH=/usr/local/lib.

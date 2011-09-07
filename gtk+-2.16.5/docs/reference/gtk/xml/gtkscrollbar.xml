@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkScrollbar">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkScrollbar.top_of_page">GtkScrollbar</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkScrollbar</refname>
+<refpurpose>Base class for GtkHScrollbar and GtkVScrollbar</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkScrollbar.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkScrollbar-struct">GtkScrollbar</link>;
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkScrollbar.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkRange">GtkRange</link>
+                           +----GtkScrollbar
+                                 +----<link linkend="GtkHScrollbar">GtkHScrollbar</link>
+                                 +----<link linkend="GtkVScrollbar">GtkVScrollbar</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkScrollbar.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkScrollbar implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkScrollbar.style-properties" role="style_properties">
+<title role="style_properties.title">Style Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkScrollbar--s-fixed-slider-length">fixed-slider-length</link>&quot;      <link linkend="gboolean">gboolean</link>              : Read
+  &quot;<link linkend="GtkScrollbar--s-has-backward-stepper">has-backward-stepper</link>&quot;     <link linkend="gboolean">gboolean</link>              : Read
+  &quot;<link linkend="GtkScrollbar--s-has-forward-stepper">has-forward-stepper</link>&quot;      <link linkend="gboolean">gboolean</link>              : Read
+  &quot;<link linkend="GtkScrollbar--s-has-secondary-backward-stepper">has-secondary-backward-stepper</link>&quot; <link linkend="gboolean">gboolean</link>              : Read
+  &quot;<link linkend="GtkScrollbar--s-has-secondary-forward-stepper">has-secondary-forward-stepper</link>&quot; <link linkend="gboolean">gboolean</link>              : Read
+  &quot;<link linkend="GtkScrollbar--s-min-slider-length">min-slider-length</link>&quot;        <link linkend="gint">gint</link>                  : Read
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkScrollbar.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkScrollbar"><type>GtkScrollbar</type></link> widget is an abstract base class for <link linkend="GtkHScrollbar"><type>GtkHScrollbar</type></link> and
+<link linkend="GtkVScrollbar"><type>GtkVScrollbar</type></link>. It is not very useful in itself.
+</para>
+<para>
+The position of the thumb in a scrollbar is controlled by the scroll
+adjustments. See <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link> for the fields in an adjustment - for
+<link linkend="GtkScrollbar"><type>GtkScrollbar</type></link>, the "value" field represents the position of the
+scrollbar, which must be between the "lower" field and "upper -
+page_size." The "page_size" field represents the size of the visible
+scrollable area. The "step_increment" and "page_increment" fields are
+used when the user asks to step down (using the small stepper arrows)
+or page down (using for example the PageDown key).
+</para>
+</refsect1>
+
+<refsect1 id="GtkScrollbar.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkScrollbar-struct" role="struct">
+<title>GtkScrollbar</title>
+<indexterm zone="GtkScrollbar-struct"><primary sortas="Scrollbar">GtkScrollbar</primary></indexterm><programlisting>typedef struct _GtkScrollbar GtkScrollbar;</programlisting>
+<para>
+The <link linkend="GtkScrollbar"><type>GtkScrollbar</type></link> struct does not contain any public data.
+</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkScrollbar.style-property-details" role="style_properties_details">
+<title role="style_properties_details.title">Style Property Details</title>
+<refsect2 id="GtkScrollbar--s-fixed-slider-length" role="property"><title>The <literal>&quot;fixed-slider-length&quot;</literal> style property</title>
+<indexterm zone="GtkScrollbar--s-fixed-slider-length"><primary sortas="Scrollbar:fixed-slider-length">GtkScrollbar:fixed-slider-length</primary></indexterm><programlisting>  &quot;fixed-slider-length&quot;      <link linkend="gboolean">gboolean</link>              : Read</programlisting>
+<para>Don't change slider size, just lock it to the minimum length.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkScrollbar--s-has-backward-stepper" role="property"><title>The <literal>&quot;has-backward-stepper&quot;</literal> style property</title>
+<indexterm zone="GtkScrollbar--s-has-backward-stepper"><primary sortas="Scrollbar:has-backward-stepper">GtkScrollbar:has-backward-stepper</primary></indexterm><programlisting>  &quot;has-backward-stepper&quot;     <link linkend="gboolean">gboolean</link>              : Read</programlisting>
+<para>Display the standard backward arrow button.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkScrollbar--s-has-forward-stepper" role="property"><title>The <literal>&quot;has-forward-stepper&quot;</literal> style property</title>
+<indexterm zone="GtkScrollbar--s-has-forward-stepper"><primary sortas="Scrollbar:has-forward-stepper">GtkScrollbar:has-forward-stepper</primary></indexterm><programlisting>  &quot;has-forward-stepper&quot;      <link linkend="gboolean">gboolean</link>              : Read</programlisting>
+<para>Display the standard forward arrow button.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkScrollbar--s-has-secondary-backward-stepper" role="property"><title>The <literal>&quot;has-secondary-backward-stepper&quot;</literal> style property</title>
+<indexterm zone="GtkScrollbar--s-has-secondary-backward-stepper"><primary sortas="Scrollbar:has-secondary-backward-stepper">GtkScrollbar:has-secondary-backward-stepper</primary></indexterm><programlisting>  &quot;has-secondary-backward-stepper&quot; <link linkend="gboolean">gboolean</link>              : Read</programlisting>
+<para>Display a second backward arrow button on the opposite end of the scrollbar.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkScrollbar--s-has-secondary-forward-stepper" role="property"><title>The <literal>&quot;has-secondary-forward-stepper&quot;</literal> style property</title>
+<indexterm zone="GtkScrollbar--s-has-secondary-forward-stepper"><primary sortas="Scrollbar:has-secondary-forward-stepper">GtkScrollbar:has-secondary-forward-stepper</primary></indexterm><programlisting>  &quot;has-secondary-forward-stepper&quot; <link linkend="gboolean">gboolean</link>              : Read</programlisting>
+<para>Display a second forward arrow button on the opposite end of the scrollbar.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkScrollbar--s-min-slider-length" role="property"><title>The <literal>&quot;min-slider-length&quot;</literal> style property</title>
+<indexterm zone="GtkScrollbar--s-min-slider-length"><primary sortas="Scrollbar:min-slider-length">GtkScrollbar:min-slider-length</primary></indexterm><programlisting>  &quot;min-slider-length&quot;        <link linkend="gint">gint</link>                  : Read</programlisting>
+<para>Minimum length of scrollbar slider.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 21</para>
+</refsect2>
+</refsect1>
+
+
+
+<refsect1 id="GtkScrollbar.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="GtkHScrollbar"><type>GtkHScrollbar</type></link></term>
+<listitem><para>a horizontal scrollbar.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkVScrollbar"><type>GtkVScrollbar</type></link></term>
+<listitem><para>a vertical scrollbar.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkAdjustment"><type>GtkAdjustment</type></link></term>
+<listitem><para>connects scrollbars to the widget being scrolled.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkScrolledWindow"><type>GtkScrolledWindow</type></link></term>
+<listitem><para>convenient widget for setting up scrolling.</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

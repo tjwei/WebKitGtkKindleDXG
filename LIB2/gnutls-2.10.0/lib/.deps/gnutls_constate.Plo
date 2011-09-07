@@ -1,0 +1,250 @@
+gnutls_constate.lo: gnutls_constate.c gnutls_int.h config.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h \
+  gl/string.h /usr/include/string.h /usr/include/features.h \
+  /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /usr/include/xlocale.h /usr/include/bits/string.h \
+  /usr/include/bits/string2.h gl/stdlib.h /usr/include/stdlib.h \
+  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+  /usr/include/endian.h /usr/include/bits/endian.h \
+  /usr/include/sys/types.h /usr/include/bits/types.h \
+  /usr/include/bits/typesizes.h gl/time.h /usr/include/time.h \
+  /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+  gl/alloca.h gl/stdio.h /usr/include/stdio.h /usr/include/libio.h \
+  /usr/include/_G_config.h gl/wchar.h /usr/include/wchar.h \
+  /usr/include/bits/wchar.h /usr/include/gconv.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+  /usr/include/bits/stdio.h /usr/include/ctype.h /usr/include/limits.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h \
+  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/xopen_lim.h gl/stdint.h /usr/include/stdint.h \
+  /usr/include/inttypes.h gl/unistd.h /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h /usr/include/getopt.h gl/sys/stat.h \
+  /usr/include/sys/stat.h /usr/include/bits/stat.h gl/sys/socket.h \
+  /usr/include/sys/socket.h /usr/include/sys/uio.h \
+  /usr/include/bits/uio.h /usr/include/bits/socket.h \
+  /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+  /usr/include/asm/sockios.h includes/gnutls/gnutls.h \
+  includes/gnutls/compat.h gnutls_mem.h gnutls_mpi.h \
+  includes/gnutls/crypto.h gnutls_str.h gnutls_hash_int.h crypto.h \
+  gnutls_cipher_int.h gnutls_compress.h /usr/local/include/zlib.h \
+  /usr/local/include/zconf.h gnutls_cert.h gnutls_pk.h x509/x509_int.h \
+  includes/gnutls/x509.h minitasn1/libtasn1.h includes/gnutls/pkcs12.h \
+  includes/gnutls/openpgp.h gnutls_constate.h gnutls_errors.h \
+  gnutls_global.h gnutls_kx.h gnutls_algorithms.h gnutls_auth.h \
+  gnutls_num.h gl/minmax.h /usr/include/sys/param.h \
+  /usr/include/linux/param.h /usr/include/asm/param.h gnutls_datum.h \
+  gnutls_state.h gnutls_auth.h
+
+gnutls_int.h:
+
+config.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:
+
+gl/string.h:
+
+/usr/include/string.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+gl/stdlib.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+gl/time.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+gl/alloca.h:
+
+gl/stdio.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+gl/wchar.h:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/gconv.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/ctype.h:
+
+/usr/include/limits.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+gl/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/inttypes.h:
+
+gl/unistd.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+gl/sys/stat.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/bits/stat.h:
+
+gl/sys/socket.h:
+
+/usr/include/sys/socket.h:
+
+/usr/include/sys/uio.h:
+
+/usr/include/bits/uio.h:
+
+/usr/include/bits/socket.h:
+
+/usr/include/bits/sockaddr.h:
+
+/usr/include/asm/socket.h:
+
+/usr/include/asm/sockios.h:
+
+includes/gnutls/gnutls.h:
+
+includes/gnutls/compat.h:
+
+gnutls_mem.h:
+
+gnutls_mpi.h:
+
+includes/gnutls/crypto.h:
+
+gnutls_str.h:
+
+gnutls_hash_int.h:
+
+crypto.h:
+
+gnutls_cipher_int.h:
+
+gnutls_compress.h:
+
+/usr/local/include/zlib.h:
+
+/usr/local/include/zconf.h:
+
+gnutls_cert.h:
+
+gnutls_pk.h:
+
+x509/x509_int.h:
+
+includes/gnutls/x509.h:
+
+minitasn1/libtasn1.h:
+
+includes/gnutls/pkcs12.h:
+
+includes/gnutls/openpgp.h:
+
+gnutls_constate.h:
+
+gnutls_errors.h:
+
+gnutls_global.h:
+
+gnutls_kx.h:
+
+gnutls_algorithms.h:
+
+gnutls_auth.h:
+
+gnutls_num.h:
+
+gl/minmax.h:
+
+/usr/include/sys/param.h:
+
+/usr/include/linux/param.h:
+
+/usr/include/asm/param.h:
+
+gnutls_datum.h:
+
+gnutls_state.h:
+
+gnutls_auth.h:

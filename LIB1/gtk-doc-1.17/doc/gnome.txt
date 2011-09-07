@@ -1,0 +1,84 @@
+Note
+====
+
+There is now a user manual which can be read using yelp and can be found under
+'development'. Please refer to this documentation for up-to-date information.
+
+
+HowTo
+=====
+
+These are the comment blocks used in Gnome source files to document
+functions (and macros, signals and properties, if you want).
+
+/**
+ * function_name:
+ * @par1:  description of parameter 1. These can extend over more than
+ * one line.
+ * @par2:  description of parameter 2
+ *
+ * The function description goes here. You can use @par1 to refer to parameters
+ * so that they are highlighted in the output. You can also use %constant
+ * for constants, function_name2() for functions and #GtkWidget for links to
+ * other declarations (which may be documented elsewhere).
+ * 
+ * Returns: an integer.
+ */
+
+The block starts with '/**'.
+Each line starts with ' * '.
+
+The second line is the function name, optionally followed by a ':'. In
+order to document signals in inline comments, use a name of the form 
+class::signal, e.g. GtkWidget::notify-child. For properties, use a
+name of the form class:property, e.g. GtkAlignment:top-padding. Note
+that gtk-doc expects the signal and property names to be spelled with
+hyphens, not underlines.
+
+Following the function name are the parameters, e.g. '@par1:' above.
+
+A blank line MUST be used to separate parameter descriptions from the main
+description (otherwise it is assumed to be a continuation of the parameter
+description.)
+
+After the main description is a 'Returns:' line to describe the
+returned value of the function (if it is not void).
+
+Text inside the descriptions can use these special characters (they
+will be expanded into appropriate DocBook tags):
+
+   @name   a parameter.
+   %name   a constant.
+   name()  reference to a function, or a macro which works like a function
+	   (this will be turned into a hypertext link if the function is
+	   documented anywhere).
+   #name   reference to any other type of declaration, e.g. a struct, enum,
+	   union, or macro (this will also be turned into a link if possible).
+
+To avoid problems, the characters '<', '>' and '&' in the descriptions are
+converted into the SGML entities &lt; &gt; and &amp;.
+This means that you can't use Docbook SGML tags, unless specify the --sgml-mode
+option for gtkdoc-mkdb, which suppresses the escaping of '<', '>' and
+'&' and allows Docbook markup in inline comments.
+
+If you are using markup in inline comments, you must be careful to to
+not run into problems with the automatic splitting of the comment in
+paragraphs at empty lines. A line counts as empty for this purpose, if
+it is empty after the removal of the initial ' * ' prefix. Thus you
+can work around this problem by adding some trailing whitespace to
+lines which should appear as empty, but not end a paragraph. This is 
+especially relevant in code examples, which often contain empty lines.
+
+Some more hints regarding examples: Hyperlinks in the formatted examples
+are confusing, therefore you should suppress the gtk-doc markup by using
+function(<!-- -->) instead of function(). Use character entities to refer
+to the characters %, &, < or #, e.g. 
+
+   if (a < b && verbose)
+      printf ("bla %s %#x", bla, a);
+
+would become 
+
+   if (a &lt; b &amp;&amp; verbose)
+      printf ("bla &percnt;s &percnt;&num;x", bla, a);
+

@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>Image Pane - GQview User Manual</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040805;23590500">
+	<META NAME="CHANGED" CONTENT="20041222;16353200">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="2_5_folder_pane.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER>Image Pane - Main Window</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="2_7_status_bar.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</CENTER>
+<HR>
+<H1>2.6 Image Pane</H1>
+<P>The image pane is the region of the main window that displays the
+selected image. The image pane allows adjustment of display size and
+orientation; it also provides several methods to manipulate the image
+with the mouse and keyboard.</P>
+<P><BR><BR>
+</P>
+<P><U>Image display</U></P>
+<P>The image is drawn to the screen as it is decoded from disk. The
+image can be panned and zoomed while it is still loading. Image
+adjustment operations for rotation, mirror, and flip will delay until
+the image is completed. The adjustment queue will remember one
+operation and will retain the most recently requested function, which
+will be performed once the image has finished loading.</P>
+<P>The quality of the image, especially when using the zoom feature,
+is dependent on the settings that are available on the <A HREF="10_2_image.html">Image
+tab</A> of the preferences dialog.</P>
+<P>To increase the speed of loading the next image when navigating
+the image list in sequence, enable the <A HREF="10_2_image.html">Preload
+next image</A> option.</P>
+<P><BR><BR>
+</P>
+<P><U>Image panning and manipulation</U></P>
+<P STYLE="text-decoration: none">When the image size is larger than
+the image pane, the visible region can be changed with the keyboard
+or mouse. The keyboard can also be used to adjust the orientation of
+the image.</P>
+<P STYLE="margin-left: 0.79in"><SPAN STYLE="text-decoration: none"><B>Keyboard</B>:
+Use the arrow keys to pan the image in the desired direction, to
+increase the panning speed hold down the Shift key while pressing an
+arrow key.</SPAN> Press Control and an arrow key to move to the
+respective edge of the image. The image can only be panned with the
+keyboard when the image has the focus, indicated by a dotted line
+surrounding the image pane.</P>
+<P STYLE="margin-left: 0.79in">To scale the image size, use the [+]
+or [=] key to zoom in and the [-] key to zoom out. The [X] or keypad
+[*] key will scale the image to fit the available display area, the
+[Z] or keypad [/] key will reset the zoom to original image size.
+There are also keys to select a preset zoom factor: [1] = 1:1, [2] =
+2:1, [3] =3:1, [4] = 4:1, [7] = 1:4, [8] = 1:3, and [9] = 1:2.</P>
+<P STYLE="margin-left: 0.79in">To rotate the image clockwise 90
+degrees press the &ldquo;]&rdquo; key, to rotate counterclockwise 90
+degrees press the &ldquo;[&ldquo; key. To rotate the image 180
+degrees use [Shift] + [R], the image can also be flipped horizontally
+or vertically with the respective [Shift] + [M] (mirror) and [Shift]
++ [F] (flip) keys.</P>
+<P STYLE="margin-left: 1.58in"><I>Note: The rotation, mirror, and
+flip functions will not change the image file on disk.</I></P>
+<P STYLE="margin-left: 0.79in"><SPAN STYLE="text-decoration: none"><B>Mouse</B>:</SPAN>
+Press the primary mouse button on the image and hold it, then move
+the mouse to pan the image in the desired direction. Releasing the
+mouse button will stop the panning operation. The mouse wheel can
+also be used to scroll the image when holding down the [Shift] key
+(*).</P>
+<P STYLE="margin-left: 0.79in">To scale the image size hold down the
+[Control] key and scroll the mouse wheel up to zoom in, or down to
+zoom out.</P>
+<P STYLE="margin-left: 0.79in"><B>Smooth Scroll:</B> To start the
+smooth scroll function hold down the [Shift] key and click the
+primary mouse button. An icon will appear at the location of the
+mouse pointer, the mouse can then be positioned to pan the image. The
+image will pan in the direction of the mouse pointer relative to the
+icon. The pan speed will increase in proportion to the distance that
+the pointer is from the center of the icon. To end the smooth scroll
+function click the primary mouse button within the image pane.</P>
+<P><BR><BR>
+</P>
+<P><U>Navigation</U></P>
+<P STYLE="font-weight: medium">The displayed image can be changed to
+the next or previous image using the keyboard or mouse.</P>
+<P STYLE="margin-left: 0.79in"><B>Keyboard</B>: The Page Down and
+Page Up keys will change the image to the next or previous image,
+respectively, in the list. The Home and End keys will jump to the
+first and last image, respectively. When the image has the focus, the
+Space and Back Space keys can also be used to change the image.</P>
+<P STYLE="margin-left: 0.79in"><B>Mouse</B>: To change to the next
+image in the list click the left mouse button, click the middle mouse
+button to change to the previous image. The mouse wheel can also be
+used to change the current image (*).</P>
+<P><BR><BR>
+</P>
+<P><U>Context menu</U></P>
+<P>Right clicking the mouse or pressing the menu key while the image
+has the focus will display a menu. The menu functions will perform
+the same as those that match the window's <A HREF="2_2_menus.html">menu
+bar</A>, however a few functions are unique to the context menu:</P>
+<P STYLE="margin-left: 0.79in"><B>View in new window:</B> Opens a new
+window containing a second copy of the current image.</P>
+<P STYLE="margin-left: 0.79in"><B>Pause slide show</B>, <B>Continue
+slide show</B>: Controls the pause state of an active slide show, the
+text of the menu will change to reflect the action that will be
+performed.</P>
+<P><BR><BR>
+</P>
+<P><U>Drag and Drop</U></P>
+<P STYLE="margin-left: 0.79in">Files and folders can be dropped onto
+the image pane, dropping a file will display the file and dropping a
+folder will change the main window to display the contents of the
+folder. When dropping multiple items on the image pane, only the
+first item in the list will be used, all additional items will be
+ignored.</P>
+<P STYLE="margin-left: 0.79in">A drag and drop operation can be
+initiated from the image pane with the middle mouse button, the
+dragged item will contain the file path of the displayed image.</P>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<P>(*) Note: The mouse wheel behavior for scrolling and image step
+can be swapped with the <U>Mouse wheel scrolls image</U> option
+located on the <A HREF="10_6_advanced.html">Advanced tab</A> of the
+preferences dialog.</P>
+<P><BR><BR>
+</P>
+<HR>
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="2_5_folder_pane.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><A HREF="index.html">Contents</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="2_7_status_bar.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT>GQview User Manual</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>

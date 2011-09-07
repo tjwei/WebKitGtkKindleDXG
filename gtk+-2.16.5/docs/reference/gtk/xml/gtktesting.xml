@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="gtk-Testing">
+<refmeta>
+<refentrytitle role="top_of_page" id="gtk-Testing.top_of_page">Testing</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Testing</refname>
+<refpurpose>Utilities for testing GTK+ applications</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gtk-Testing.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-test-create-simple-window">gtk_test_create_simple_window</link>       (const <link linkend="gchar">gchar</link> *window_title,
+                                                         const <link linkend="gchar">gchar</link> *dialog_text);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-test-create-widget">gtk_test_create_widget</link>              (<link linkend="GType">GType</link> widget_type,
+                                                         const <link linkend="gchar">gchar</link> *first_property_name,
+                                                         ...);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-test-display-button-window">gtk_test_display_button_window</link>      (const <link linkend="gchar">gchar</link> *window_title,
+                                                         const <link linkend="gchar">gchar</link> *dialog_text,
+                                                         ...);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-test-find-label">gtk_test_find_label</link>                 (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         const <link linkend="gchar">gchar</link> *label_pattern);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-test-find-sibling">gtk_test_find_sibling</link>               (<link linkend="GtkWidget">GtkWidget</link> *base_widget,
+                                                         <link linkend="GType">GType</link> widget_type);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-test-find-widget">gtk_test_find_widget</link>                (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         const <link linkend="gchar">gchar</link> *label_pattern,
+                                                         <link linkend="GType">GType</link> widget_type);
+<link linkend="void">void</link>                <link linkend="gtk-test-init">gtk_test_init</link>                       (<link linkend="int">int</link> *argcp,
+                                                         <link linkend="char">char</link> ***argvp,
+                                                         ...);
+const <link linkend="GType">GType</link>*        <link linkend="gtk-test-list-all-types">gtk_test_list_all_types</link>             (<link linkend="guint">guint</link> *n_types);
+<link linkend="void">void</link>                <link linkend="gtk-test-register-all-types">gtk_test_register_all_types</link>         (void);
+<link linkend="double">double</link>              <link linkend="gtk-test-slider-get-value">gtk_test_slider_get_value</link>           (<link linkend="GtkWidget">GtkWidget</link> *widget);
+<link linkend="void">void</link>                <link linkend="gtk-test-slider-set-perc">gtk_test_slider_set_perc</link>            (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="double">double</link> percentage);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-test-spin-button-click">gtk_test_spin_button_click</link>          (<link linkend="GtkSpinButton">GtkSpinButton</link> *spinner,
+                                                         <link linkend="guint">guint</link> button,
+                                                         <link linkend="gboolean">gboolean</link> upwards);
+<link linkend="gchar">gchar</link>*              <link linkend="gtk-test-text-get">gtk_test_text_get</link>                   (<link linkend="GtkWidget">GtkWidget</link> *widget);
+<link linkend="void">void</link>                <link linkend="gtk-test-text-set">gtk_test_text_set</link>                   (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         const <link linkend="gchar">gchar</link> *string);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-test-widget-click">gtk_test_widget_click</link>               (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="guint">guint</link> button,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-test-widget-send-key">gtk_test_widget_send_key</link>            (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gtk-Testing.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="gtk-Testing.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="gtk-test-create-simple-window" role="function" condition="since:2.14">
+<title>gtk_test_create_simple_window ()</title>
+<indexterm zone="gtk-test-create-simple-window" role="2.14"><primary sortas="test_create_simple_window">gtk_test_create_simple_window</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_test_create_simple_window       (const <link linkend="gchar">gchar</link> *window_title,
+                                                         const <link linkend="gchar">gchar</link> *dialog_text);</programlisting>
+<para>
+Create a simple window with window title <parameter>window_title</parameter> and
+text contents <parameter>dialog_text</parameter>.
+The window will quit any running <link linkend="gtk-main"><function>gtk_main()</function></link>-loop when destroyed, and it
+will automatically be destroyed upon test function teardown.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>window_title</parameter>&#160;:</term>
+<listitem><simpara>       Title of the window to be displayed.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dialog_text</parameter>&#160;:</term>
+<listitem><simpara>        Text inside the window to be displayed.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a widget pointer to the newly created GtkWindow.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-create-widget" role="function" condition="since:2.14">
+<title>gtk_test_create_widget ()</title>
+<indexterm zone="gtk-test-create-widget" role="2.14"><primary sortas="test_create_widget">gtk_test_create_widget</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_test_create_widget              (<link linkend="GType">GType</link> widget_type,
+                                                         const <link linkend="gchar">gchar</link> *first_property_name,
+                                                         ...);</programlisting>
+<para>
+This function wraps <link linkend="g-object-new"><function>g_object_new()</function></link> for widget types.
+It'll automatically show all created non window widgets, also
+<link linkend="g-object-ref-sink"><function>g_object_ref_sink()</function></link> them (to keep them alive across a running test)
+and set them up for destruction during the next test teardown phase.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget_type</parameter>&#160;:</term>
+<listitem><simpara> a valid widget type.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>first_property_name</parameter>&#160;:</term>
+<listitem><simpara> Name of first property to set or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> value to set the first property to, followed by more
+   name-value pairs, terminated by <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly created widget.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-display-button-window" role="function" condition="since:2.14">
+<title>gtk_test_display_button_window ()</title>
+<indexterm zone="gtk-test-display-button-window" role="2.14"><primary sortas="test_display_button_window">gtk_test_display_button_window</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_test_display_button_window      (const <link linkend="gchar">gchar</link> *window_title,
+                                                         const <link linkend="gchar">gchar</link> *dialog_text,
+                                                         ...);</programlisting>
+<para>
+Create a window with window title <parameter>window_title</parameter>, text contents <parameter>dialog_text</parameter>,
+and a number of buttons, according to the paired argument list given
+as @... parameters.
+Each button is created with a <parameter>label</parameter> and a ::clicked signal handler that
+incremrents the integer stored in <parameter>nump</parameter>.
+The window will be automatically shown with <link linkend="gtk-widget-show-now"><function>gtk_widget_show_now()</function></link> after
+creation, so when this function returns it has already been mapped,
+resized and positioned on screen.
+The window will quit any running <link linkend="gtk-main"><function>gtk_main()</function></link>-loop when destroyed, and it
+will automatically be destroyed upon test function teardown.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>window_title</parameter>&#160;:</term>
+<listitem><simpara>       Title of the window to be displayed.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dialog_text</parameter>&#160;:</term>
+<listitem><simpara>        Text inside the window to be displayed.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara>                <link linkend="NULL--CAPS"><literal>NULL</literal></link> terminated list of (const char *label, int *nump) pairs.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a widget pointer to the newly created GtkWindow.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-find-label" role="function" condition="since:2.14">
+<title>gtk_test_find_label ()</title>
+<indexterm zone="gtk-test-find-label" role="2.14"><primary sortas="test_find_label">gtk_test_find_label</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_test_find_label                 (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         const <link linkend="gchar">gchar</link> *label_pattern);</programlisting>
+<para>
+This function will search <parameter>widget</parameter> and all its descendants for a GtkLabel
+widget with a text string matching <parameter>label_pattern</parameter>.
+The <parameter>label_pattern</parameter> may contain asterisks '*' and question marks '?' as
+placeholders, <link linkend="g-pattern-match"><function>g_pattern_match()</function></link> is used for the matching.
+Note that locales other than "C" tend to alter (translate" label strings,
+so this function is genrally only useful in test programs with
+predetermined locales, see <link linkend="gtk-test-init"><function>gtk_test_init()</function></link> for more details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>        Valid label or container widget.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label_pattern</parameter>&#160;:</term>
+<listitem><simpara> Shell-glob pattern to match a label string.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a GtkLabel widget if any is found.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-find-sibling" role="function" condition="since:2.14">
+<title>gtk_test_find_sibling ()</title>
+<indexterm zone="gtk-test-find-sibling" role="2.14"><primary sortas="test_find_sibling">gtk_test_find_sibling</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_test_find_sibling               (<link linkend="GtkWidget">GtkWidget</link> *base_widget,
+                                                         <link linkend="GType">GType</link> widget_type);</programlisting>
+<para>
+This function will search siblings of <parameter>base_widget</parameter> and siblings of its
+ancestors for all widgets matching <parameter>widget_type</parameter>.
+Of the matching widgets, the one that is geometrically closest to
+<parameter>base_widget</parameter> will be returned.
+The general purpose of this function is to find the most likely "action"
+widget, relative to another labeling widget. Such as finding a
+button or text entry widget, given it's corresponding label widget.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>base_widget</parameter>&#160;:</term>
+<listitem><simpara>        Valid widget, part of a widget hierarchy
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget_type</parameter>&#160;:</term>
+<listitem><simpara>        Type of a aearched for sibling widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a widget of type <parameter>widget_type</parameter> if any is found.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-find-widget" role="function" condition="since:2.14">
+<title>gtk_test_find_widget ()</title>
+<indexterm zone="gtk-test-find-widget" role="2.14"><primary sortas="test_find_widget">gtk_test_find_widget</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_test_find_widget                (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         const <link linkend="gchar">gchar</link> *label_pattern,
+                                                         <link linkend="GType">GType</link> widget_type);</programlisting>
+<para>
+This function will search the descendants of <parameter>widget</parameter> for a widget
+of type <parameter>widget_type</parameter> that has a label matching <parameter>label_pattern</parameter> next
+to it. This is most useful for automated GUI testing, e.g. to find
+the "OK" button in a dialog and synthesize clicks on it.
+However see <link linkend="gtk-test-find-label"><function>gtk_test_find_label()</function></link>, <link linkend="gtk-test-find-sibling"><function>gtk_test_find_sibling()</function></link> and
+<link linkend="gtk-test-widget-click"><function>gtk_test_widget_click()</function></link> for possible caveats involving the search of
+such widgets and synthesizing widget events.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>        Container widget, usually a GtkWindow.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label_pattern</parameter>&#160;:</term>
+<listitem><simpara> Shell-glob pattern to match a label string.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget_type</parameter>&#160;:</term>
+<listitem><simpara>   Type of a aearched for label sibling widget.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a valid widget if any is found or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-init" role="function" condition="since:2.14">
+<title>gtk_test_init ()</title>
+<indexterm zone="gtk-test-init" role="2.14"><primary sortas="test_init">gtk_test_init</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_test_init                       (<link linkend="int">int</link> *argcp,
+                                                         <link linkend="char">char</link> ***argvp,
+                                                         ...);</programlisting>
+<para>
+This function is used to initialize a GTK+ test program.
+</para>
+<para>
+It will in turn call <link linkend="g-test-init"><function>g_test_init()</function></link> and <link linkend="gtk-init"><function>gtk_init()</function></link> to properly
+initialize the testing framework and graphical toolkit. It'll 
+also set the program's locale to "C" and prevent loading of rc 
+files and Gtk+ modules. This is done to make tets program
+environments as deterministic as possible.
+</para>
+<para>
+Like <link linkend="gtk-init"><function>gtk_init()</function></link> and <link linkend="g-test-init"><function>g_test_init()</function></link>, any known arguments will be
+processed and stripped from <parameter>argc</parameter> and <parameter>argv</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>argcp</parameter>&#160;:</term>
+<listitem><simpara> Address of the <parameter>argc</parameter> parameter of the
+       <link linkend="main"><function>main()</function></link> function. Changed if any arguments were handled.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>argvp</parameter>&#160;:</term>
+<listitem><simpara> Address of the <parameter>argv</parameter> parameter of <link linkend="main"><function>main()</function></link>.
+       Any parameters understood by <link linkend="g-test-init"><function>g_test_init()</function></link> or <link linkend="gtk-init"><function>gtk_init()</function></link> are
+       stripped before return.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> currently unused
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-list-all-types" role="function" condition="since:2.14">
+<title>gtk_test_list_all_types ()</title>
+<indexterm zone="gtk-test-list-all-types" role="2.14"><primary sortas="test_list_all_types">gtk_test_list_all_types</primary></indexterm><programlisting>const <link linkend="GType">GType</link>*        gtk_test_list_all_types             (<link linkend="guint">guint</link> *n_types);</programlisting>
+<para>
+Return the type ids that have been registered after
+calling <link linkend="gtk-test-register-all-types"><function>gtk_test_register_all_types()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>n_types</parameter>&#160;:</term>
+<listitem><simpara> location to store number of types
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> 0-terminated array of type ids
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-register-all-types" role="function" condition="since:2.14">
+<title>gtk_test_register_all_types ()</title>
+<indexterm zone="gtk-test-register-all-types" role="2.14"><primary sortas="test_register_all_types">gtk_test_register_all_types</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_test_register_all_types         (void);</programlisting>
+<para>
+Force registration of all core Gtk+ and Gdk object types.
+This allowes to refer to any of those object types via
+<link linkend="g-type-from-name"><function>g_type_from_name()</function></link> after calling this function.</para>
+<para>
+</para><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-slider-get-value" role="function" condition="since:2.14">
+<title>gtk_test_slider_get_value ()</title>
+<indexterm zone="gtk-test-slider-get-value" role="2.14"><primary sortas="test_slider_get_value">gtk_test_slider_get_value</primary></indexterm><programlisting><link linkend="double">double</link>              gtk_test_slider_get_value           (<link linkend="GtkWidget">GtkWidget</link> *widget);</programlisting>
+<para>
+Retrive the literal adjustment value for GtkRange based
+widgets and spin buttons. Note that the value returned by
+this function is anything between the lower and upper bounds
+of the adjustment belonging to <parameter>widget</parameter>, and is not a percentage
+as passed in to <link linkend="gtk-test-slider-set-perc"><function>gtk_test_slider_set_perc()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>     valid widget pointer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> adjustment->value for an adjustment belonging to <parameter>widget</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-slider-set-perc" role="function" condition="since:2.14">
+<title>gtk_test_slider_set_perc ()</title>
+<indexterm zone="gtk-test-slider-set-perc" role="2.14"><primary sortas="test_slider_set_perc">gtk_test_slider_set_perc</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_test_slider_set_perc            (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="double">double</link> percentage);</programlisting>
+<para>
+This function will adjust the slider position of all GtkRange
+based widgets, such as scrollbars or scales, it'll also adjust
+spin buttons. The adjustment value of these widgets is set to
+a value between the lower and upper limits, according to the
+<parameter>percentage</parameter> argument.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>     valid widget pointer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>percentage</parameter>&#160;:</term>
+<listitem><simpara> value between 0 and 100.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-spin-button-click" role="function" condition="since:2.14">
+<title>gtk_test_spin_button_click ()</title>
+<indexterm zone="gtk-test-spin-button-click" role="2.14"><primary sortas="test_spin_button_click">gtk_test_spin_button_click</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_test_spin_button_click          (<link linkend="GtkSpinButton">GtkSpinButton</link> *spinner,
+                                                         <link linkend="guint">guint</link> button,
+                                                         <link linkend="gboolean">gboolean</link> upwards);</programlisting>
+<para>
+This function will generate a <parameter>button</parameter> click in the upwards or downwards
+spin button arrow areas, usually leading to an increase or decrease of
+spin button's value.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>spinner</parameter>&#160;:</term>
+<listitem><simpara> valid GtkSpinButton widget.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara>  Number of the pointer button for the event, usually 1, 2 or 3.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>upwards</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> for upwards arrow click, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> for downwards arrow click.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> wether all actions neccessary for the button click simulation were carried out successfully.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-text-get" role="function" condition="since:2.14">
+<title>gtk_test_text_get ()</title>
+<indexterm zone="gtk-test-text-get" role="2.14"><primary sortas="test_text_get">gtk_test_text_get</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              gtk_test_text_get                   (<link linkend="GtkWidget">GtkWidget</link> *widget);</programlisting>
+<para>
+Retrive the text string of <parameter>widget</parameter> if it is a GtkLabel,
+GtkEditable (entry and text widgets) or GtkTextView.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>     valid widget pointer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> new 0-terminated C string, needs to be released with <link linkend="g-free"><function>g_free()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-text-set" role="function" condition="since:2.14">
+<title>gtk_test_text_set ()</title>
+<indexterm zone="gtk-test-text-set" role="2.14"><primary sortas="test_text_set">gtk_test_text_set</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_test_text_set                   (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         const <link linkend="gchar">gchar</link> *string);</programlisting>
+<para>
+Set the text string of <parameter>widget</parameter> to <parameter>string</parameter> if it is a GtkLabel,
+GtkEditable (entry and text widgets) or GtkTextView.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>     valid widget pointer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>string</parameter>&#160;:</term>
+<listitem><simpara>     a 0-terminated C string
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-widget-click" role="function" condition="since:2.14">
+<title>gtk_test_widget_click ()</title>
+<indexterm zone="gtk-test-widget-click" role="2.14"><primary sortas="test_widget_click">gtk_test_widget_click</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_test_widget_click               (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="guint">guint</link> button,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);</programlisting>
+<para>
+This function will generate a <parameter>button</parameter> click (button press and button
+release event) in the middle of the first GdkWindow found that belongs
+to <parameter>widget</parameter>.
+For <link linkend="GTK-NO-WINDOW--CAPS"><literal>GTK_NO_WINDOW</literal></link> widgets like GtkButton, this will often be an
+input-only event window. For other widgets, this is usually widget->window.
+Certain caveats should be considered when using this function, in
+particular because the mouse pointer is warped to the button click
+location, see <link linkend="gdk-test-simulate-button"><function>gdk_test_simulate_button()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> Widget to generate a button click on.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> Number of the pointer button for the event, usually 1, 2 or 3.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara> Keyboard modifiers the event is setup with.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> wether all actions neccessary for the button click simulation were carried out successfully.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-test-widget-send-key" role="function" condition="since:2.14">
+<title>gtk_test_widget_send_key ()</title>
+<indexterm zone="gtk-test-widget-send-key" role="2.14"><primary sortas="test_widget_send_key">gtk_test_widget_send_key</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_test_widget_send_key            (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);</programlisting>
+<para>
+This function will generate keyboard press and release events in
+the middle of the first GdkWindow found that belongs to <parameter>widget</parameter>.
+For <link linkend="GTK-NO-WINDOW--CAPS"><literal>GTK_NO_WINDOW</literal></link> widgets like GtkButton, this will often be an
+input-only event window. For other widgets, this is usually widget->window.
+Certain caveats should be considered when using this function, in
+particular because the mouse pointer is warped to the key press
+location, see <link linkend="gdk-test-simulate-key"><function>gdk_test_simulate_key()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> Widget to generate a key press and release on.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyval</parameter>&#160;:</term>
+<listitem><simpara> A Gdk keyboard value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara> Keyboard modifiers the event is setup with.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> wether all actions neccessary for the key event simulation were carried out successfully.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

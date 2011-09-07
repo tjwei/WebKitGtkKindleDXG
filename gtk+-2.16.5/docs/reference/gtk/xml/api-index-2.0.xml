@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="GtkPaned-accept-position"><link linkend="GtkPaned-accept-position">GtkPaned::accept-position</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkPaned-cancel-position"><link linkend="GtkPaned-cancel-position">GtkPaned::cancel-position</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkPaned-cycle-child-focus"><link linkend="GtkPaned-cycle-child-focus">GtkPaned::cycle-child-focus</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkPaned-cycle-handle-focus"><link linkend="GtkPaned-cycle-handle-focus">GtkPaned::cycle-handle-focus</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkPaned-move-handle"><link linkend="GtkPaned-move-handle">GtkPaned::move-handle</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkPaned-toggle-handle-focus"><link linkend="GtkPaned-toggle-handle-focus">GtkPaned::toggle-handle-focus</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

@@ -1,0 +1,4010 @@
+# translation of ro.po to Romanian
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Harald Ersch <hersch@romatsa.ro>,2002.
+# Harald Ersch <harald@ersch.ro>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-02 20:43-0500\n"
+"PO-Revision-Date: 2004-04-28 16:07-0400\n"
+"Last-Translator: Harald Ersch <harald@ersch.ro>\n"
+"Language-Team: Romanian <rtfs-project@sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#: src/bar_info.c:30
+msgid "Favorite"
+msgstr ""
+
+#: src/bar_info.c:31
+#, fuzzy
+msgid "Todo"
+msgstr "Unelte"
+
+#: src/bar_info.c:32
+msgid "People"
+msgstr ""
+
+#: src/bar_info.c:33
+msgid "Places"
+msgstr ""
+
+#: src/bar_info.c:34
+msgid "Art"
+msgstr ""
+
+#: src/bar_info.c:35
+#, fuzzy
+msgid "Nature"
+msgstr "deschidere diafragmã"
+
+#: src/bar_info.c:36
+msgid "Possessions"
+msgstr ""
+
+#: src/bar_info.c:505
+msgid "Keyword Presets"
+msgstr ""
+
+#: src/bar_info.c:508
+msgid "Favorite keywords list"
+msgstr ""
+
+#: src/bar_info.c:992 src/info.c:167 src/search.c:2683
+msgid "Keywords"
+msgstr ""
+
+#: src/bar_info.c:1006 src/info.c:722 src/pan-view.c:1521 src/print.c:2614
+msgid "Filename:"
+msgstr "Nume fiºier:"
+
+#: src/bar_info.c:1007 src/info.c:366
+msgid "File date:"
+msgstr "Datã fiºier:"
+
+#: src/bar_info.c:1027
+msgid "Keywords:"
+msgstr ""
+
+#: src/bar_info.c:1095
+#, fuzzy
+msgid "Comment:"
+msgstr "Comparã cu:"
+
+#: src/bar_info.c:1119
+msgid "Edit favorite keywords list."
+msgstr ""
+
+#: src/bar_info.c:1123
+msgid "Add keywords to selected files"
+msgstr ""
+
+#: src/bar_info.c:1126
+msgid "Add keywords to selected files, replacing the existing ones."
+msgstr ""
+
+#: src/bar_info.c:1130
+#, fuzzy
+msgid "Save comment now"
+msgstr "Salveazã colecþia"
+
+#: src/bar_exif.c:436
+msgid "Tag"
+msgstr "Etichetã"
+
+#: src/bar_exif.c:437 src/dupe.c:2589 src/dupe.c:3112 src/print.c:3205
+#: src/search.c:2744 src/utilops.c:2779 src/view_file_list.c:1655
+msgid "Name"
+msgstr "Nume"
+
+#: src/bar_exif.c:438
+msgid "Value"
+msgstr "Valoare"
+
+#: src/bar_exif.c:439
+msgid "Format"
+msgstr "Format"
+
+#: src/bar_exif.c:440
+msgid "Elements"
+msgstr "Elemente"
+
+#: src/bar_exif.c:441 src/preferences.c:1063
+msgid "Description"
+msgstr "Descriere"
+
+#: src/bar_exif.c:562 src/info.c:106
+msgid "Exif"
+msgstr "EXIF"
+
+#: src/bar_exif.c:635
+msgid "Advanced view"
+msgstr "Vizualizare avansatã"
+
+#: src/bar_sort.c:217
+#, fuzzy, c-format
+msgid ""
+"Unable to remove symbolic link:\n"
+"%s"
+msgstr ""
+"Nu pot muta fiºierul:\n"
+"%s\n"
+"în:\n"
+"%s"
+
+#: src/bar_sort.c:218
+#, fuzzy
+msgid "Unlink failed"
+msgstr "Nu am putut ºterge"
+
+#: src/bar_sort.c:297
+#, fuzzy, c-format
+msgid ""
+"Unable to create symbolic link:\n"
+"%s"
+msgstr ""
+"Nu pot creea directorul:\n"
+"%s"
+
+#: src/bar_sort.c:298
+msgid "Link failed"
+msgstr ""
+
+#: src/bar_sort.c:435
+#, fuzzy, c-format
+msgid ""
+"The collection:\n"
+"%s\n"
+"already exists."
+msgstr ""
+"Directorul: \n"
+"%s\n"
+"existã deja."
+
+#: src/bar_sort.c:436
+#, fuzzy
+msgid "Collection exists"
+msgstr "Colecþie goalã"
+
+#: src/bar_sort.c:450 src/collect.c:1057 src/collect-dlg.c:84
+#, c-format
+msgid ""
+"Failed to save the collection:\n"
+"%s"
+msgstr ""
+"Nu am putut salva colecþia:\n"
+"%s"
+
+#: src/bar_sort.c:451 src/collect.c:1058 src/collect-dlg.c:85
+msgid "Save Failed"
+msgstr "Nu am putut salva datele!"
+
+#: src/bar_sort.c:485 src/bar_sort.c:611
+msgid "Add Bookmark"
+msgstr "Adaugã semn de carte"
+
+#: src/bar_sort.c:489
+#, fuzzy
+msgid "Add Collection"
+msgstr "Colecþii"
+
+#: src/bar_sort.c:506 src/ui_bookmark.c:603
+msgid "Name:"
+msgstr "Nume:"
+
+#: src/bar_sort.c:568
+msgid "Sort Manager"
+msgstr "Gestionar de sortare"
+
+#: src/bar_sort.c:577 src/pan-view.c:2378 src/ui_pathsel.c:1094
+msgid "Folders"
+msgstr "Dosare"
+
+#: src/bar_sort.c:578 src/main.c:1125
+msgid "Collections"
+msgstr "Colecþii"
+
+#: src/bar_sort.c:586
+msgid "Copy"
+msgstr "Copiazã"
+
+#: src/bar_sort.c:589
+msgid "Move"
+msgstr "Mutã"
+
+#: src/bar_sort.c:592
+msgid "Link"
+msgstr ""
+
+#: src/bar_sort.c:598
+#, fuzzy
+msgid "Add image"
+msgstr "%d imagini"
+
+#: src/bar_sort.c:601
+#, fuzzy
+msgid "Add selection"
+msgstr "Nu selecta nimic"
+
+#: src/bar_sort.c:614
+msgid "Undo last image"
+msgstr "Des-face ultima imagine"
+
+#: src/cache_maint.c:126 src/cache_maint.c:680 src/cache_maint.c:893
+#: src/editors.c:437
+msgid "done"
+msgstr "terminat"
+
+#: src/cache_maint.c:303
+#, fuzzy
+msgid "Removing old metadata..."
+msgstr "Citesc datele de similaritate..."
+
+#: src/cache_maint.c:307
+#, fuzzy
+msgid "Clearing cached thumbnails..."
+msgstr "ªterg miniaturile..."
+
+#: src/cache_maint.c:311 src/cache_maint.c:1047
+#, fuzzy
+msgid "Removing old thumbnails..."
+msgstr "ªterg miniaturile vechi..."
+
+#: src/cache_maint.c:314 src/cache_maint.c:1050
+msgid "Maintenance"
+msgstr ""
+
+#: src/cache_maint.c:791 src/utilops.c:952
+#, fuzzy
+msgid "Invalid folder"
+msgstr "Nume fiºier incorect"
+
+#: src/cache_maint.c:792
+msgid "The specified folder can not be found."
+msgstr ""
+
+#: src/cache_maint.c:820 src/cache_maint.c:834 src/cache_maint.c:1215
+#, fuzzy
+msgid "Create thumbnails"
+msgstr "Pune miniaturile în memoria tampon"
+
+#: src/cache_maint.c:828 src/cache_maint.c:1057
+#, fuzzy
+msgid "S_tart"
+msgstr "Start #"
+
+#: src/cache_maint.c:841 src/preferences.c:1200
+msgid "Folder:"
+msgstr "Dosar:"
+
+#: src/cache_maint.c:844
+#, fuzzy
+msgid "Select folder"
+msgstr "Nu selecta nimic"
+
+#: src/cache_maint.c:848
+#, fuzzy
+msgid "Include subfolders"
+msgstr "Nume fiºier incorect"
+
+#: src/cache_maint.c:849
+msgid "Store thumbnails local to source images"
+msgstr ""
+
+#: src/cache_maint.c:858 src/cache_maint.c:1066
+msgid "click start to begin"
+msgstr ""
+
+#: src/cache_maint.c:996 src/editors.c:585
+msgid "running..."
+msgstr "ruleazã..."
+
+#: src/cache_maint.c:1042
+msgid "Clearing thumbnails..."
+msgstr "ªterg miniaturile..."
+
+#: src/cache_maint.c:1108 src/cache_maint.c:1111 src/cache_maint.c:1190
+#: src/cache_maint.c:1210
+msgid "Clear cache"
+msgstr "ªterge memoria tampon"
+
+#: src/cache_maint.c:1112
+msgid ""
+"This will remove all thumbnails that have\n"
+"been saved to disk, continue?"
+msgstr ""
+"Doriþi sã ºtergeþi toate miniaturile\n"
+"salvate pe disc?"
+
+#: src/cache_maint.c:1162
+#, fuzzy
+msgid "Cache Maintenance - GQview"
+msgstr "Proprietãþi imagine - GQview"
+
+#: src/cache_maint.c:1172
+msgid "Cache and Data Maintenance"
+msgstr ""
+
+#: src/cache_maint.c:1176
+#, fuzzy
+msgid "GQview thumbnail cache"
+msgstr "GQview tot ecranul"
+
+#: src/cache_maint.c:1178 src/cache_maint.c:1198 src/cache_maint.c:1226
+#: src/pan-view.c:1523 src/pan-view.c:2367 src/preferences.c:1177
+#: src/utilops.c:1571
+#, fuzzy
+msgid "Location:"
+msgstr "acþiune"
+
+#: src/cache_maint.c:1185 src/cache_maint.c:1205 src/cache_maint.c:1233
+#, fuzzy
+msgid "Clean up"
+msgstr "ªterge"
+
+#: src/cache_maint.c:1188 src/cache_maint.c:1208
+msgid "Remove orphaned or outdated thumbnails."
+msgstr ""
+
+#: src/cache_maint.c:1193 src/cache_maint.c:1213
+#, fuzzy
+msgid "Delete all cached thumbnails."
+msgstr "Pune miniaturile în memoria tampon"
+
+#: src/cache_maint.c:1196
+#, fuzzy
+msgid "Shared thumbnail cache"
+msgstr "Afiºeazã miniaturile"
+
+#: src/cache_maint.c:1219
+#, fuzzy
+msgid "Render"
+msgstr "Redenumeºte"
+
+#: src/cache_maint.c:1222
+msgid "Render thumbnails for a specific folder."
+msgstr ""
+
+#: src/cache_maint.c:1224
+msgid "Metadata"
+msgstr ""
+
+#: src/cache_maint.c:1236
+msgid "Remove orphaned keywords and comments."
+msgstr ""
+
+#: src/collect.c:350 src/image.c:151 src/image-overlay.c:110
+#: src/image-overlay.c:152
+#, c-format
+msgid "Untitled"
+msgstr "Fãrã_titlu"
+
+#: src/collect.c:354
+#, c-format
+msgid "Untitled (%d)"
+msgstr "Fãra titlu (%d)"
+
+#: src/collect.c:976
+#, c-format
+msgid "%s - GQview Collection"
+msgstr "%s - Colecþie GQview"
+
+#: src/collect.c:1094 src/collect.c:1098
+msgid "Close collection"
+msgstr "Închide colecþia"
+
+#: src/collect.c:1099
+msgid ""
+"Collection has been modified.\n"
+"Save first?"
+msgstr ""
+"Colecþia a fost modificatã!\n"
+"Doriþi sã o salvaþi?"
+
+#: src/collect.c:1102
+msgid "_Discard"
+msgstr ""
+
+#: src/collect-dlg.c:58
+#, fuzzy, c-format
+msgid ""
+"Specified path:\n"
+"%s\n"
+"is a folder, collections are files"
+msgstr ""
+"Calea specificatã:\n"
+"%s\n"
+"este un director, colecþiile sunt fiºiere"
+
+#: src/collect-dlg.c:59
+msgid "Invalid filename"
+msgstr "Nume fiºier incorect"
+
+#: src/collect-dlg.c:68
+msgid "Overwrite File"
+msgstr "Suprascrie Fiºier"
+
+#: src/collect-dlg.c:73
+#, fuzzy
+msgid "Overwrite existing file?"
+msgstr "Suprascriere fiºier"
+
+#: src/collect-dlg.c:75 src/utilops.c:514 src/utilops.c:835 src/utilops.c:1725
+#: src/utilops.c:2447
+#, fuzzy
+msgid "_Overwrite"
+msgstr "Suprascrie"
+
+#: src/collect-dlg.c:169
+msgid "Save collection"
+msgstr "Salveazã colecþia"
+
+#: src/collect-dlg.c:176
+msgid "Open collection"
+msgstr "Deschide colecþia"
+
+#: src/collect-dlg.c:184
+msgid "Append collection"
+msgstr "Adaugã colecþia"
+
+#: src/collect-dlg.c:185
+#, fuzzy
+msgid "_Append"
+msgstr "Adaugã"
+
+#: src/collect-dlg.c:203
+msgid "Collection Files"
+msgstr "Fiºiere colecþie"
+
+#: src/collect-dlg.c:221
+msgid "Collection empty"
+msgstr "Colecþie goalã"
+
+#: src/collect-dlg.c:222
+msgid "The current collection is empty, save aborted."
+msgstr "Colecþia curentã este goalã, nu am ce salva"
+
+#: src/collect-table.c:164 src/layout.c:372 src/layout_util.c:737
+msgid "Empty"
+msgstr "Gol"
+
+#: src/collect-table.c:168
+#, c-format
+msgid "%d images (%d)"
+msgstr "%d imagini (%d)"
+
+#: src/collect-table.c:172
+#, c-format
+msgid "%d images"
+msgstr "%d imagini"
+
+#: src/collect-table.c:186 src/dupe.c:1296 src/search.c:303
+#: src/view_file_icon.c:1776 src/view_file_icon.c:1891
+#: src/view_file_list.c:916 src/view_file_list.c:1021
+msgid "Loading thumbs..."
+msgstr "Încarc miniaturile..."
+
+#: src/collect-table.c:773 src/dupe.c:2187 src/dupe.c:2497
+#: src/layout_util.c:780 src/search.c:969
+msgid "_View"
+msgstr "_Vizualizare"
+
+#: src/collect-table.c:775 src/dupe.c:2189 src/dupe.c:2499 src/img-view.c:1251
+#: src/layout_image.c:735 src/pan-view.c:2788 src/search.c:971
+#: src/view_file_icon.c:287 src/view_file_list.c:398
+msgid "View in _new window"
+msgstr "Vizualizeazã în fereastrã _nouã"
+
+#: src/collect-table.c:778 src/dupe.c:2219 src/dupe.c:2507 src/search.c:997
+msgid "Rem_ove"
+msgstr "_ªterge"
+
+#: src/collect-table.c:781
+msgid "Append from file list"
+msgstr "Adaugã din lista de fiºiere"
+
+#: src/collect-table.c:783
+msgid "Append from collection..."
+msgstr "Adaugã din colecþie"
+
+#: src/collect-table.c:786 src/dupe.c:2192 src/dupe.c:2502 src/search.c:974
+msgid "Select all"
+msgstr "Selecteazã tot"
+
+#: src/collect-table.c:788 src/dupe.c:2194 src/dupe.c:2504 src/search.c:976
+msgid "Select none"
+msgstr "Nu selecta nimic"
+
+#: src/collect-table.c:796 src/dupe.c:2203 src/img-view.c:1249
+#: src/layout_image.c:732 src/layout_util.c:815 src/pan-view.c:2785
+#: src/search.c:981 src/view_file_icon.c:284 src/view_file_list.c:396
+msgid "_Properties"
+msgstr "_Proprietãþi"
+
+#: src/collect-table.c:799 src/dupe.c:2210 src/img-view.c:1254
+#: src/layout_image.c:740 src/layout_util.c:792 src/pan-view.c:2792
+#: src/search.c:988 src/view_file_icon.c:291 src/view_file_list.c:402
+msgid "_Copy..."
+msgstr "_Copiere..."
+
+#: src/collect-table.c:801 src/dupe.c:2212 src/img-view.c:1255
+#: src/layout_image.c:742 src/layout_util.c:793 src/pan-view.c:2794
+#: src/search.c:990 src/view_file_icon.c:293 src/view_file_list.c:404
+msgid "_Move..."
+msgstr "_Mutare..."
+
+#: src/collect-table.c:803 src/dupe.c:2214 src/img-view.c:1256
+#: src/layout_image.c:744 src/layout_util.c:794 src/pan-view.c:2796
+#: src/search.c:992 src/view_dir_list.c:415 src/view_dir_tree.c:514
+#: src/view_file_icon.c:295 src/view_file_list.c:406
+msgid "_Rename..."
+msgstr "_Redenumire..."
+
+#: src/collect-table.c:805 src/dupe.c:2216 src/img-view.c:1257
+#: src/layout_image.c:746 src/layout_util.c:795 src/pan-view.c:2798
+#: src/search.c:994 src/view_dir_list.c:417 src/view_dir_tree.c:516
+#: src/view_file_icon.c:297 src/view_file_list.c:408
+msgid "_Delete..."
+msgstr "_ªtergere..."
+
+#: src/collect-table.c:810 src/view_file_icon.c:313
+msgid "Show filename _text"
+msgstr "Afiºeazã numele fiºierelor"
+
+#: src/collect-table.c:813
+msgid "_Save collection"
+msgstr "_Salveazã colecþia"
+
+#: src/collect-table.c:815
+msgid "Save collection _as..."
+msgstr "Salveazã colecþia c_a..."
+
+#: src/collect-table.c:818 src/layout_util.c:788
+msgid "_Find duplicates..."
+msgstr "_Cautã duplicatele..."
+
+#: src/collect-table.c:820 src/dupe.c:2207 src/search.c:985
+#, fuzzy
+msgid "Print..."
+msgstr "/Fiºier/_Redenumeºte"
+
+#: src/collect-table.c:1972 src/dupe.c:3300 src/img-view.c:1411
+#, fuzzy
+msgid "Dropped list includes folders."
+msgstr "Lista conþinea directoare."
+
+#: src/collect-table.c:1974 src/dupe.c:3302 src/img-view.c:1413
+msgid "_Add contents"
+msgstr "_Adaugã conþinut"
+
+#: src/collect-table.c:1976 src/dupe.c:3303 src/img-view.c:1414
+msgid "Add contents _recursive"
+msgstr "Adaugã conþinut în mod _recursiv"
+
+#: src/collect-table.c:1978 src/dupe.c:3304 src/img-view.c:1415
+#, fuzzy
+msgid "_Skip folders"
+msgstr "_Sãri directoarele"
+
+#: src/collect-table.c:1981 src/dupe.c:3306 src/img-view.c:1417
+#: src/view_dir_list.c:214 src/view_dir_tree.c:306
+msgid "Cancel"
+msgstr "Renunþã"
+
+#: src/dupe.c:96
+msgid "Drop files to compare them."
+msgstr "Renunþã la fiºiere pentru a le compara."
+
+#: src/dupe.c:100
+#, c-format
+msgid "%d files"
+msgstr "%d fiºiere"
+
+#: src/dupe.c:104
+#, c-format
+msgid "%d matches found in %d files"
+msgstr "%d potriviri gãsite în%d fiºiere"
+
+#: src/dupe.c:109
+msgid "[set 1]"
+msgstr "[set 1]"
+
+#: src/dupe.c:1422
+msgid "Reading checksums..."
+msgstr "Citesc sumele de control..."
+
+#: src/dupe.c:1455
+msgid "Reading dimensions..."
+msgstr "Citesc dimensiunile..."
+
+#: src/dupe.c:1489
+msgid "Reading similarity data..."
+msgstr "Citesc datele de similaritate..."
+
+#: src/dupe.c:1524 src/dupe.c:1555
+msgid "Comparing..."
+msgstr "Compar..."
+
+#: src/dupe.c:1535 src/pan-view.c:1080
+msgid "Sorting..."
+msgstr "Sortez..."
+
+#: src/dupe.c:2196
+msgid "Select group _1 duplicates"
+msgstr "Selecþie duplicate-grup _1"
+
+#: src/dupe.c:2198
+msgid "Select group _2 duplicates"
+msgstr "Selecþie duplicate-grup _1"
+
+#: src/dupe.c:2205 src/search.c:983
+msgid "Add to new collection"
+msgstr "Adaugã la colecþia nouã"
+
+#: src/dupe.c:2221 src/dupe.c:2509 src/search.c:999
+msgid "C_lear"
+msgstr "_ªterge"
+
+#: src/dupe.c:2224 src/dupe.c:2512
+msgid "Close _window"
+msgstr "Închide _fereastra"
+
+#: src/dupe.c:2382
+#, c-format
+msgid "%d files (set 2)"
+msgstr "%d fiºiere (set 2)"
+
+#: src/dupe.c:2590 src/dupe.c:3113 src/preferences.c:982 src/print.c:3209
+#: src/search.c:2745 src/view_file_list.c:1656
+msgid "Size"
+msgstr "Mãrime"
+
+#: src/dupe.c:2591 src/dupe.c:3114 src/exif.c:296 src/exif.c:417
+#: src/print.c:3207 src/search.c:2746 src/view_file_list.c:1657
+msgid "Date"
+msgstr "Data"
+
+#: src/dupe.c:2592 src/dupe.c:3115 src/print.c:3211 src/search.c:2747
+msgid "Dimensions"
+msgstr "Dimensiuni"
+
+#: src/dupe.c:2593
+msgid "Checksum"
+msgstr "Sumã de control"
+
+#: src/dupe.c:2594 src/dupe.c:3116 src/search.c:2748 src/ui_pathsel.c:1106
+msgid "Path"
+msgstr "Cale"
+
+#: src/dupe.c:2595
+msgid "Similarity (high)"
+msgstr "Similaritate (mare)"
+
+#: src/dupe.c:2596
+msgid "Similarity"
+msgstr "Similaritate"
+
+#: src/dupe.c:2597
+msgid "Similarity (low)"
+msgstr "Similaritate (micã)"
+
+#: src/dupe.c:2598
+msgid "Similarity (custom)"
+msgstr "Similaritate (personalizatã)"
+
+#: src/dupe.c:3076
+msgid "Find duplicates - GQview"
+msgstr "Cautã duplicatele - GQview"
+
+#: src/dupe.c:3148
+msgid "Compare to:"
+msgstr "Comparã cu:"
+
+#: src/dupe.c:3161
+msgid "Compare by:"
+msgstr "Comparare dupã:"
+
+#: src/dupe.c:3169 src/preferences.c:870 src/search.c:2761
+msgid "Thumbnails"
+msgstr "Miniaturi"
+
+#: src/dupe.c:3176
+msgid "Compare two file sets"
+msgstr "Comparã 2 seturi de fiºiere"
+
+#: src/editors.c:50
+msgid "The Gimp"
+msgstr "The Gimp"
+
+#: src/editors.c:51
+msgid "XV"
+msgstr "XV"
+
+#: src/editors.c:52
+msgid "Xpaint"
+msgstr "Xpaint"
+
+#: src/editors.c:58
+msgid "Rotate jpeg clockwise"
+msgstr "Rotire jpeg în sens orar"
+
+#: src/editors.c:59
+msgid "Rotate jpeg counterclockwise"
+msgstr "Rotire jpeg în sens antiorar"
+
+#: src/editors.c:104
+msgid "stopping..."
+msgstr "opresc..."
+
+#: src/editors.c:131
+msgid "Edit command results"
+msgstr "Editare rezultate comandã"
+
+#: src/editors.c:134
+#, c-format
+msgid "Output of %s"
+msgstr "Ieºirea %s"
+
+#: src/editors.c:303
+#, c-format
+msgid ""
+"Failed to run command:\n"
+"%s\n"
+msgstr ""
+"Nu pot executa comanda:\n"
+"%s\n"
+
+#: src/editors.c:441
+msgid "stopped by user"
+msgstr "oprit de cãtre utilizator"
+
+#: src/exif.c:111 src/exif.c:124 src/exif.c:138 src/exif.c:163 src/exif.c:572
+#: src/exif.c:1626 src/exif.c:1629 src/exif.c:1694
+msgid "unknown"
+msgstr "necunoscut"
+
+#: src/exif.c:112
+msgid "top left"
+msgstr "stânga sus"
+
+#: src/exif.c:113
+msgid "top right"
+msgstr "dreapta sus"
+
+#: src/exif.c:114
+msgid "bottom right"
+msgstr "dreapta jos"
+
+#: src/exif.c:115
+msgid "bottom left"
+msgstr "stânga jos"
+
+#: src/exif.c:116
+msgid "left top"
+msgstr "stânga sus"
+
+#: src/exif.c:117
+msgid "right top"
+msgstr "dreapta sus"
+
+#: src/exif.c:118
+msgid "right bottom"
+msgstr "dreapta jos"
+
+#: src/exif.c:119
+msgid "left bottom"
+msgstr "stânga jos"
+
+#: src/exif.c:126
+msgid "inch"
+msgstr "inci"
+
+#: src/exif.c:127
+msgid "centimeter"
+msgstr "centimetri"
+
+#: src/exif.c:139
+msgid "average"
+msgstr "medie"
+
+#: src/exif.c:140
+msgid "center weighted"
+msgstr "media din centru"
+
+#: src/exif.c:141
+msgid "spot"
+msgstr "spot"
+
+#: src/exif.c:142
+msgid "multi-spot"
+msgstr "multi-spot"
+
+#: src/exif.c:143
+msgid "multi-segment"
+msgstr "multi-segment"
+
+#: src/exif.c:144
+msgid "partial"
+msgstr "parþial(e)"
+
+#: src/exif.c:145 src/exif.c:183
+msgid "other"
+msgstr "alta"
+
+#: src/exif.c:150
+msgid "not defined"
+msgstr "nedefinit(e)"
+
+#: src/exif.c:151
+msgid "manual"
+msgstr "manual(e)"
+
+#: src/exif.c:152
+msgid "normal"
+msgstr "normal(ã)"
+
+#: src/exif.c:153
+msgid "aperture"
+msgstr "deschidere diafragmã"
+
+#: src/exif.c:154
+msgid "shutter"
+msgstr "timp de expunere"
+
+#: src/exif.c:155
+msgid "creative"
+msgstr "creativ(e)"
+
+#: src/exif.c:156
+msgid "action"
+msgstr "acþiune"
+
+#: src/exif.c:157
+msgid "portrait"
+msgstr "portret"
+
+#: src/exif.c:158
+msgid "landscape"
+msgstr "peisaj"
+
+#: src/exif.c:164
+msgid "daylight"
+msgstr "lumina zilei"
+
+#: src/exif.c:165
+msgid "fluorescent"
+msgstr "fluorescent"
+
+#: src/exif.c:166
+msgid "tungsten (incandescent)"
+msgstr "tungsten (incandescent)"
+
+#: src/exif.c:167
+msgid "flash"
+msgstr "flash(blitz)"
+
+#: src/exif.c:188 src/exif.c:1649 src/info.c:232
+msgid "no"
+msgstr "nu"
+
+#. flash fired (bit 0)
+#: src/exif.c:189 src/exif.c:1649 src/info.c:232
+msgid "yes"
+msgstr "da"
+
+#: src/exif.c:190
+msgid "yes, not detected by strobe"
+msgstr "da, NEdetectate de strobe"
+
+#: src/exif.c:191
+msgid "yes, detected by strobe"
+msgstr "da, detectate de strobe"
+
+#: src/exif.c:288
+msgid "Image description"
+msgstr "Descriere imagine"
+
+#: src/exif.c:291
+msgid "Orientation"
+msgstr "Orientare"
+
+#: src/exif.c:302
+msgid "Copyright"
+msgstr "Drept de autor"
+
+#: src/exif.c:307
+msgid "Exposure program"
+msgstr "Program de expunere"
+
+#: src/exif.c:309 src/exif.c:345 src/exif.c:421
+msgid "ISO sensitivity"
+msgstr "Sensibilitate ISO"
+
+#: src/exif.c:312
+msgid "Date original"
+msgstr "Data originalã"
+
+#: src/exif.c:313
+msgid "Date digitized"
+msgstr "Data digitizãrii"
+
+#: src/exif.c:316 src/exif.c:418
+msgid "Shutter speed"
+msgstr "Vitezã obturator"
+
+#: src/exif.c:317 src/exif.c:419
+msgid "Aperture"
+msgstr "Deschidere diafragmã"
+
+#: src/exif.c:319 src/exif.c:420
+msgid "Exposure bias"
+msgstr "Decalaj expunere"
+
+#: src/exif.c:321 src/exif.c:423
+msgid "Subject distance"
+msgstr "Distanþa de la subiect"
+
+#: src/exif.c:322
+msgid "Metering mode"
+msgstr "Mod de mãsurare"
+
+#: src/exif.c:323
+msgid "Light source"
+msgstr "Sursa de luminã"
+
+#: src/exif.c:324 src/exif.c:424
+msgid "Flash"
+msgstr "Flash"
+
+#: src/exif.c:325 src/exif.c:422
+msgid "Focal length"
+msgstr "Distanþa focalã"
+
+#. ExifImageWidth, ExifImageHeight can also be unsigned short
+#: src/exif.c:335
+msgid "Width"
+msgstr "Lãþime"
+
+#: src/exif.c:336
+msgid "Height"
+msgstr "Înãlþime"
+
+#: src/exif.c:416
+msgid "Camera"
+msgstr "Aparat"
+
+#: src/exif.c:425
+msgid "Resolution"
+msgstr "Rezoluþie"
+
+#: src/exif.c:1625
+msgid "infinity"
+msgstr "infinit(ã)"
+
+#: src/exif.c:1653
+msgid "mode:"
+msgstr "mod:"
+
+#: src/exif.c:1657 src/utilops.c:1300
+msgid "on"
+msgstr "pornit"
+
+#: src/exif.c:1660 src/utilops.c:1300
+msgid "off"
+msgstr "oprit"
+
+#: src/exif.c:1663
+msgid "auto"
+msgstr "auto"
+
+#: src/exif.c:1669
+msgid "not detected by strobe"
+msgstr "nedetectate de strobe"
+
+#: src/exif.c:1670
+msgid "detected by strobe"
+msgstr "detectate de strobe"
+
+#. we ignore flash function (bit 5)
+#. red-eye (bit 6)
+#: src/exif.c:1675
+msgid "red-eye reduction"
+msgstr "reducere efect ochi roºii"
+
+#: src/exif.c:1694
+msgid "dot"
+msgstr "punct"
+
+#: src/filelist.c:523
+#, c-format
+msgid "%d bytes"
+msgstr "%d bytes"
+
+#: src/filelist.c:527
+#, c-format
+msgid "%.1f K"
+msgstr "%.1f K"
+
+#: src/filelist.c:531
+#, c-format
+msgid "%.1f MB"
+msgstr "%.1f MB"
+
+#: src/filelist.c:536
+#, c-format
+msgid "%.1f GB"
+msgstr "%.1f GB"
+
+#: src/fullscreen.c:267
+msgid "GQview full screen"
+msgstr "GQview tot ecranul"
+
+#: src/fullscreen.c:397
+#, fuzzy
+msgid "Full size"
+msgstr "Mãrime fiºier:"
+
+#: src/fullscreen.c:402
+msgid "Monitor"
+msgstr ""
+
+#: src/fullscreen.c:407 src/layout.c:452
+msgid "Screen"
+msgstr ""
+
+#: src/fullscreen.c:644
+#, fuzzy
+msgid "Stay above other windows"
+msgstr "Umple fereastra cu imaginea"
+
+#: src/fullscreen.c:651
+msgid "Determined by Window Manager"
+msgstr ""
+
+#: src/fullscreen.c:652
+msgid "Active screen"
+msgstr ""
+
+#: src/fullscreen.c:654
+msgid "Active monitor"
+msgstr ""
+
+#: src/img-view.c:1237 src/layout_image.c:719 src/layout_util.c:822
+#: src/pan-view.c:2774
+msgid "Zoom _in"
+msgstr "Mãr_ire"
+
+#: src/img-view.c:1238 src/layout_image.c:720 src/layout_util.c:823
+#: src/pan-view.c:2776
+msgid "Zoom _out"
+msgstr "Micº_orare"
+
+#: src/img-view.c:1239 src/layout_image.c:721 src/layout_util.c:824
+#: src/pan-view.c:2778
+msgid "Zoom _1:1"
+msgstr "Scara _1:1"
+
+#: src/img-view.c:1240 src/layout_image.c:722
+msgid "Fit image to _window"
+msgstr "Umple _fereastra cu imaginea"
+
+#: src/img-view.c:1245 src/layout_image.c:728 src/layout_util.c:820
+msgid "Set as _wallpaper"
+msgstr "Pune drept fundal (_wallpaper)"
+
+#: src/img-view.c:1263 src/layout_image.c:753
+msgid "_Stop slideshow"
+msgstr "_Opreºte prezentarea de imagini"
+
+#: src/img-view.c:1266 src/layout_image.c:756
+msgid "Continue slides_how"
+msgstr "_Continuã prezentarea de imagini"
+
+#: src/img-view.c:1271 src/img-view.c:1279 src/layout_image.c:761
+#: src/layout_image.c:768
+msgid "Pause slides_how"
+msgstr "_Întrerupe prezentarea de imagini"
+
+#: src/img-view.c:1277 src/layout_image.c:767
+msgid "_Start slideshow"
+msgstr "_Porneºte prezentarea de imagini"
+
+#: src/img-view.c:1285 src/layout_image.c:778 src/pan-view.c:2844
+msgid "Exit _full screen"
+msgstr "_Ieºire din mod tot ecranul"
+
+#: src/img-view.c:1289 src/layout_image.c:774 src/pan-view.c:2848
+msgid "_Full screen"
+msgstr "_Tot ecranul"
+
+#: src/img-view.c:1293 src/layout_util.c:796 src/pan-view.c:2852
+msgid "C_lose window"
+msgstr "Î_nchide fereastra"
+
+#: src/info.c:367
+msgid "File size:"
+msgstr "Mãrime fiºier:"
+
+#: src/info.c:369
+msgid "Dimensions:"
+msgstr "Dimensiuni:"
+
+#: src/info.c:370
+msgid "Transparent:"
+msgstr "Transparent:"
+
+#: src/info.c:371 src/print.c:3386
+msgid "Image size:"
+msgstr "Mãrime imagine:"
+
+#: src/info.c:373
+msgid "Compress ratio:"
+msgstr "Ratã de compresie:"
+
+#: src/info.c:374
+#, fuzzy
+msgid "File type:"
+msgstr "Datã fiºier:"
+
+#: src/info.c:376
+msgid "Owner:"
+msgstr "Proprietar:"
+
+#: src/info.c:377
+msgid "Group:"
+msgstr "Grup:"
+
+#: src/info.c:380 src/preferences.c:851
+msgid "General"
+msgstr "General"
+
+#: src/info.c:461
+#, c-format
+msgid "Image %d of %d"
+msgstr "Imaginea %d din %d"
+
+#: src/info.c:684
+msgid "Image properties - GQview"
+msgstr "Proprietãþi imagine - GQview"
+
+#: src/layout.c:274 src/view_file_icon.c:305 src/view_file_list.c:416
+msgid "Ascending"
+msgstr "Ascendentã"
+
+#: src/layout.c:399
+msgid "Color profiles not supported"
+msgstr ""
+
+#: src/layout.c:400
+msgid ""
+"This installation of GQview was not built with support for color profiles."
+msgstr ""
+
+#: src/layout.c:410
+msgid "Use _color profiles"
+msgstr ""
+
+#: src/layout.c:415
+msgid "Use profile from _image"
+msgstr ""
+
+#: src/layout.c:419 src/layout.c:436
+#, c-format
+msgid "Input _%d:"
+msgstr ""
+
+#: src/layout.c:461
+msgid "_Screen profile"
+msgstr ""
+
+#: src/layout.c:528
+msgid " Slideshow"
+msgstr " Prezentare de imagini"
+
+#: src/layout.c:532
+msgid " Paused"
+msgstr "Întrerupt"
+
+#: src/layout.c:549
+#, c-format
+msgid "%s, %d files (%s, %d)%s"
+msgstr "%s, %d fiºiere (%s,%d)%s"
+
+#: src/layout.c:556
+#, c-format
+msgid "%s, %d files%s"
+msgstr "%s,%d fiºiere%s"
+
+#: src/layout.c:561
+#, c-format
+msgid "%d files%s"
+msgstr "%d fiºiere%s"
+
+#: src/layout.c:590
+#, c-format
+msgid "(no read permission) %s bytes"
+msgstr "(fãrã permisiune de citire) %s bytes"
+
+#: src/layout.c:594
+#, c-format
+msgid "( ? x ? ) %s bytes"
+msgstr "( ? x ? ) %s bytes"
+
+#: src/layout.c:602
+#, c-format
+msgid "( %d x %d ) %s bytes"
+msgstr "( %d x %d ) %s bytes"
+
+#: src/layout.c:1304
+msgid "GQview Tools"
+msgstr "GQview - Unelte"
+
+#: src/layout.c:1934
+#, fuzzy
+msgid "Invalid geometry\n"
+msgstr "Nume fiºier incorect"
+
+#: src/layout_config.c:57
+msgid "Tools"
+msgstr "Unelte"
+
+#: src/layout_config.c:57 src/ui_pathsel.c:1174
+msgid "Files"
+msgstr "Fiºiere"
+
+#: src/layout_config.c:57 src/preferences.c:916 src/print.c:114
+msgid "Image"
+msgstr "Imagine"
+
+#: src/layout_config.c:363
+msgid "(drag to change order)"
+msgstr "(trageþi pentru schimbare ordine)"
+
+#: src/layout_image.c:783
+msgid "Hide file _list"
+msgstr "Ascunde _listã fiºiere"
+
+#: src/layout_util.c:654 src/menu.c:74
+#, c-format
+msgid "in %s..."
+msgstr "în %s..."
+
+#: src/layout_util.c:658 src/menu.c:76
+msgid "in (unknown)..."
+msgstr "în (necunoscut)..."
+
+#: src/layout_util.c:666
+#, fuzzy
+msgid "empty"
+msgstr "Gol"
+
+#: src/layout_util.c:777
+#, fuzzy
+msgid "_File"
+msgstr "/_Fiºier"
+
+#: src/layout_util.c:778 src/menu.c:91
+msgid "_Edit"
+msgstr "_Editare"
+
+#: src/layout_util.c:779 src/menu.c:259
+msgid "_Adjust"
+msgstr "_Ajustare"
+
+#: src/layout_util.c:781
+#, fuzzy
+msgid "_Help"
+msgstr "/_Ajutor"
+
+#: src/layout_util.c:783
+#, fuzzy
+msgid "New _window"
+msgstr "/Fiºier/Fereastrã _nouã"
+
+#: src/layout_util.c:784
+#, fuzzy
+msgid "_New collection"
+msgstr "_Salveazã colecþia"
+
+#: src/layout_util.c:785
+#, fuzzy
+msgid "_Open collection..."
+msgstr "Deschide colecþia"
+
+#: src/layout_util.c:786
+#, fuzzy
+msgid "Open _recent"
+msgstr "/Fiºier/Deschide _recente"
+
+#: src/layout_util.c:787
+#, fuzzy
+msgid "_Search..."
+msgstr "Sortez..."
+
+#: src/layout_util.c:789
+#, fuzzy
+msgid "Pan _view"
+msgstr "Vizualizare avansatã"
+
+#: src/layout_util.c:790
+#, fuzzy
+msgid "_Print..."
+msgstr "/Fiºier/_Redenumeºte"
+
+#: src/layout_util.c:791
+#, fuzzy
+msgid "N_ew folder..."
+msgstr "Dosar _nou..."
+
+#: src/layout_util.c:797
+#, fuzzy
+msgid "_Quit"
+msgstr "Calitate"
+
+#: src/layout_util.c:809 src/menu.c:201
+msgid "_Rotate clockwise"
+msgstr "Rotire în sens _orar"
+
+#: src/layout_util.c:810 src/menu.c:204
+msgid "Rotate _counterclockwise"
+msgstr "Rotire în sens _antiorar"
+
+#: src/layout_util.c:811
+#, fuzzy
+msgid "Rotate 1_80"
+msgstr "Rotire _180"
+
+#: src/layout_util.c:812 src/menu.c:210
+msgid "_Mirror"
+msgstr "_Oglindire"
+
+#: src/layout_util.c:813 src/menu.c:213
+msgid "_Flip"
+msgstr "_Rãsturnare"
+
+#: src/layout_util.c:814 src/menu.c:216
+msgid "_Grayscale"
+msgstr ""
+
+#: src/layout_util.c:816
+#, fuzzy
+msgid "Select _all"
+msgstr "Selecteazã tot"
+
+#: src/layout_util.c:817
+#, fuzzy
+msgid "Select _none"
+msgstr "Nu selecta nimic"
+
+#: src/layout_util.c:818
+#, fuzzy
+msgid "P_references..."
+msgstr "_Proprietãþi..."
+
+#: src/layout_util.c:819
+msgid "_Thumbnail maintenance..."
+msgstr ""
+
+#: src/layout_util.c:825
+#, fuzzy
+msgid "_Zoom to fit"
+msgstr "/Vizualizare/_Sã încapã"
+
+#: src/layout_util.c:826
+#, fuzzy
+msgid "F_ull screen"
+msgstr "_Tot ecranul"
+
+#: src/layout_util.c:827
+#, fuzzy
+msgid "_Hide file list"
+msgstr "Ascunde _listã fiºiere"
+
+#: src/layout_util.c:828
+#, fuzzy
+msgid "Toggle _slideshow"
+msgstr "_Opreºte prezentarea de imagini"
+
+#: src/layout_util.c:829
+#, fuzzy
+msgid "_Refresh"
+msgstr "Actualizeazã"
+
+#: src/layout_util.c:831
+#, fuzzy
+msgid "_Contents"
+msgstr "/Ajutor/_Despre..."
+
+#: src/layout_util.c:832
+#, fuzzy
+msgid "_Keyboard shortcuts"
+msgstr "/Ajutor/Scurtãturi tastaturã"
+
+#: src/layout_util.c:833
+#, fuzzy
+msgid "_Release notes"
+msgstr "/Ajutor/Note de distribui_re"
+
+#: src/layout_util.c:834
+#, fuzzy
+msgid "_About"
+msgstr "/Ajutor/_Despre..."
+
+#: src/layout_util.c:838 src/layout_util.c:1086
+#, fuzzy
+msgid "_Thumbnails"
+msgstr "Miniaturi"
+
+#: src/layout_util.c:839
+#, fuzzy
+msgid "Tr_ee"
+msgstr "/Vizualizare/A_rborescent"
+
+#: src/layout_util.c:840
+#, fuzzy
+msgid "_Float file list"
+msgstr "/Vizualizare/Activare listã _flotantã"
+
+#: src/layout_util.c:841
+#, fuzzy
+msgid "Hide tool_bar"
+msgstr "/Vizualizare/Ascunde barã unelte"
+
+#: src/layout_util.c:842
+#, fuzzy
+msgid "_Keywords"
+msgstr "/Vizualizare/_Iconuri"
+
+#: src/layout_util.c:843
+#, fuzzy
+msgid "E_xif data"
+msgstr "/Vizualizare/Info _EXIF"
+
+#: src/layout_util.c:844
+#, fuzzy
+msgid "Sort _manager"
+msgstr "Gestionar de sortare"
+
+#: src/layout_util.c:848
+#, fuzzy
+msgid "_List"
+msgstr "/Vizualizare/_Listã"
+
+#: src/layout_util.c:849
+#, fuzzy
+msgid "I_cons"
+msgstr "Icon:"
+
+#: src/layout_util.c:1087
+msgid "Show thumbnails"
+msgstr "Afiºeazã miniaturile"
+
+#: src/layout_util.c:1092
+#, fuzzy
+msgid "Change to home folder"
+msgstr "Du-te în directorul Acasã"
+
+#: src/layout_util.c:1094
+msgid "Refresh file list"
+msgstr "Actualizare listã fiºiere"
+
+#: src/layout_util.c:1096
+msgid "Zoom in"
+msgstr "Mãrire"
+
+#: src/layout_util.c:1098
+msgid "Zoom out"
+msgstr "Micºorare"
+
+#: src/layout_util.c:1100 src/preferences.c:945
+msgid "Fit image to window"
+msgstr "Umple fereastra cu imaginea"
+
+#: src/layout_util.c:1102
+msgid "Set zoom 1:1"
+msgstr "Pune mãrirea la 1:1"
+
+#: src/layout_util.c:1104
+msgid "Configure options"
+msgstr "Configurare opþiuni"
+
+#: src/layout_util.c:1105
+#, fuzzy
+msgid "_Float"
+msgstr "Format"
+
+#: src/layout_util.c:1106
+msgid "Float Controls"
+msgstr "Controale flotante"
+
+#: src/main.c:237
+msgid "Help - GQview"
+msgstr "Ajutor - GQview"
+
+#: src/main.c:460 src/main.c:1376
+msgid "Command line"
+msgstr "Linia de comandã"
+
+#. short, long                  callback,               extra, prefer,description
+#: src/main.c:498
+#, fuzzy
+msgid "next image"
+msgstr "Preîncarcã urmãtoarea imagine"
+
+#: src/main.c:499
+msgid "previous image"
+msgstr ""
+
+#: src/main.c:500
+#, fuzzy
+msgid "first image"
+msgstr "Des-face ultima imagine"
+
+#: src/main.c:501
+#, fuzzy
+msgid "last image"
+msgstr "Des-face ultima imagine"
+
+#: src/main.c:502
+#, fuzzy
+msgid "toggle full screen"
+msgstr "_Ieºire din mod tot ecranul"
+
+#: src/main.c:503
+#, fuzzy
+msgid "start full screen"
+msgstr "_Ieºire din mod tot ecranul"
+
+#: src/main.c:504
+#, fuzzy
+msgid "stop full screen"
+msgstr "_Ieºire din mod tot ecranul"
+
+#: src/main.c:505
+#, fuzzy
+msgid "toggle slide show"
+msgstr "_Opreºte prezentarea de imagini"
+
+#: src/main.c:506
+#, fuzzy
+msgid "start slide show"
+msgstr "_Porneºte prezentarea de imagini"
+
+#: src/main.c:507
+#, fuzzy
+msgid "stop slide show"
+msgstr "_Opreºte prezentarea de imagini"
+
+#: src/main.c:508
+#, fuzzy
+msgid "start recursive slide show"
+msgstr "_Porneºte prezentarea de imagini"
+
+#: src/main.c:509
+msgid "set slide show delay in seconds"
+msgstr ""
+
+#: src/main.c:510
+msgid "show tools"
+msgstr ""
+
+#: src/main.c:511
+#, fuzzy
+msgid "hide tools"
+msgstr "GQview - Unelte"
+
+#: src/main.c:512
+msgid "quit"
+msgstr ""
+
+#: src/main.c:513
+#, fuzzy
+msgid "open file"
+msgstr "Redenumire  fiºier:"
+
+#: src/main.c:514
+#, fuzzy
+msgid "open file in new window"
+msgstr "Vizualizeazã în fereastrã _nouã"
+
+#: src/main.c:580
+msgid "Remote command list:\n"
+msgstr ""
+
+#: src/main.c:638
+msgid "Remote GQview not running, starting..."
+msgstr ""
+
+#: src/main.c:773
+msgid "Remote not available\n"
+msgstr ""
+
+#: src/main.c:991
+msgid ""
+"Usage: gqview [options] [path]\n"
+"\n"
+msgstr ""
+"Folosire: gqview [opþiuni] [cale]\n"
+"\n"
+
+#: src/main.c:992
+msgid "valid options are:\n"
+msgstr "opþiunile corecte sunt:\n"
+
+#: src/main.c:993
+msgid "  +t, --with-tools           force show of tools\n"
+msgstr "  +t, --with-tools           forþeazã afiºarea barei de unelte\n"
+
+#: src/main.c:994
+msgid "  -t, --without-tools        force hide of tools\n"
+msgstr "  +t, --with-tools           forþeazã ascunderea barei de unelte\n"
+
+#: src/main.c:995
+msgid "  -f, --fullscreen           start in full screen mode\n"
+msgstr "  -f, --fullscreen           pornire în modul tot ecranul\n"
+
+#: src/main.c:996
+msgid "  -s, --slideshow            start in slideshow mode\n"
+msgstr "  -s, --slideshow            pornire în modul prezentare de imagini\n"
+
+#: src/main.c:997
+msgid "  -l, --list                 open collection window for command line\n"
+msgstr ""
+"  -l, --list                 deschide fereastra colecþii pentru linia de "
+"comandã\n"
+
+#: src/main.c:998
+msgid "      --geometry=GEOMETRY    set main window location\n"
+msgstr ""
+
+#: src/main.c:999
+#, fuzzy
+msgid "  -r, --remote               send following commands to open window\n"
+msgstr ""
+"  -l, --list                 deschide fereastra colecþii pentru linia de "
+"comandã\n"
+
+#: src/main.c:1000
+msgid "  -rh,--remote-help          print remote command list\n"
+msgstr ""
+
+#: src/main.c:1001
+msgid "  --debug                    turn on debug output\n"
+msgstr "  --debug                    activeazã mesajele de depanare\n"
+
+#: src/main.c:1002
+msgid "  -v, --version              print version info\n"
+msgstr "  -v, --version              afiºeazã informaþii despre versiune\n"
+
+#: src/main.c:1003
+msgid ""
+"  -h, --help                 show this message\n"
+"\n"
+msgstr ""
+"  -h, --help                 afiºeazã acest mesaj\n"
+"\n"
+
+#: src/main.c:1017
+#, c-format
+msgid ""
+"invalid or ignored: %s\n"
+"Use --help for options\n"
+msgstr ""
+"incorect sau ignorat: %s\n"
+"Folosiþi --help pentru opþiuni\n"
+
+#: src/main.c:1093
+#, c-format
+msgid "Creating GQview dir:%s\n"
+msgstr "Creez directorul GQView: %s\n"
+
+#: src/main.c:1099
+#, c-format
+msgid "Could not create dir:%s\n"
+msgstr "Nu pot creea directorul: %s\n"
+
+#: src/main.c:1120 src/ui_bookmark.c:858 src/ui_pathsel.c:1042
+msgid "Home"
+msgstr "Acasã"
+
+#: src/main.c:1122 src/ui_bookmark.c:865
+msgid "Desktop"
+msgstr "Ecran"
+
+#: src/main.c:1222
+msgid "GQview - exit"
+msgstr "GQview - ieºire"
+
+#: src/main.c:1226
+#, fuzzy
+msgid "Quit GQview"
+msgstr "Despre - GQview"
+
+#: src/main.c:1226
+#, fuzzy
+msgid "Collections have been modified. Quit anyway?"
+msgstr ""
+"Colecþiile au fost modificate.\n"
+"Totuºi doriþi sã ieºiþi?"
+
+#: src/menu.c:115
+msgid "Sort by size"
+msgstr "Sortare dupã mãrime"
+
+#: src/menu.c:118
+msgid "Sort by date"
+msgstr "Sortare dupã datã"
+
+#: src/menu.c:121
+msgid "Unsorted"
+msgstr "Nesortate"
+
+#: src/menu.c:124
+msgid "Sort by path"
+msgstr "Sortare dupã cale"
+
+#: src/menu.c:127
+msgid "Sort by number"
+msgstr "Sortare dupã numãr"
+
+#: src/menu.c:131
+msgid "Sort by name"
+msgstr "Sortare dupã nume"
+
+#: src/menu.c:182
+msgid "Sort"
+msgstr "Sortare"
+
+#: src/menu.c:207
+msgid "Rotate _180"
+msgstr "Rotire _180"
+
+#: src/pan-view.c:467
+#, fuzzy, c-format
+msgid "%d images, %s"
+msgstr "%d imagini"
+
+#: src/pan-view.c:477
+#, c-format
+msgid "The pan view does not support the folder \"%s\"."
+msgstr ""
+
+#: src/pan-view.c:478
+msgid "Folder not supported"
+msgstr ""
+
+#: src/pan-view.c:1070 src/pan-view.c:1086
+#, fuzzy
+msgid "Reading image data..."
+msgstr "Citesc datele de similaritate..."
+
+#: src/pan-view.c:1145
+#, fuzzy
+msgid "Sorting images..."
+msgstr "Sortez..."
+
+#: src/pan-view.c:1525 src/pan-view.c:1891
+#, fuzzy
+msgid "Date:"
+msgstr "Data"
+
+#: src/pan-view.c:1527 src/preferences.c:873 src/print.c:3216 src/print.c:3423
+msgid "Size:"
+msgstr "Mãrime:"
+
+#: src/pan-view.c:1629
+msgid "path found"
+msgstr ""
+
+#: src/pan-view.c:1629
+#, fuzzy
+msgid "filename found"
+msgstr "Nume fiºier:"
+
+#: src/pan-view.c:1677
+#, fuzzy
+msgid "partial match"
+msgstr "parþial(e)"
+
+#: src/pan-view.c:1888 src/pan-view.c:1921
+msgid "no match"
+msgstr ""
+
+#: src/pan-view.c:2247 src/search.c:2131
+msgid "Folder not found"
+msgstr ""
+
+#: src/pan-view.c:2248
+msgid "The entered path is not a folder"
+msgstr ""
+
+#: src/pan-view.c:2354
+#, fuzzy
+msgid "Pan View - GQview"
+msgstr "Despre - GQview"
+
+#: src/pan-view.c:2376
+#, fuzzy
+msgid "Timeline"
+msgstr "Bilinearã"
+
+#: src/pan-view.c:2377
+#, fuzzy
+msgid "Calendar"
+msgstr "_ªterge"
+
+#: src/pan-view.c:2379
+#, fuzzy
+msgid "Folders (flower)"
+msgstr "Dosare"
+
+#: src/pan-view.c:2380
+msgid "Grid"
+msgstr ""
+
+#: src/pan-view.c:2389
+#, fuzzy
+msgid "Dots"
+msgstr "Xpaint"
+
+#: src/pan-view.c:2390
+#, fuzzy
+msgid "No Images"
+msgstr "Imagine"
+
+#: src/pan-view.c:2391
+#, fuzzy
+msgid "Small Thumbnails"
+msgstr "Miniaturi"
+
+#: src/pan-view.c:2392
+#, fuzzy
+msgid "Normal Thumbnails"
+msgstr "Miniaturi"
+
+#: src/pan-view.c:2393
+#, fuzzy
+msgid "Large Thumbnails"
+msgstr "ªterge miniaturile"
+
+#: src/pan-view.c:2394 src/pan-view.c:2834
+msgid "1:10 (10%)"
+msgstr ""
+
+#: src/pan-view.c:2395 src/pan-view.c:2830
+msgid "1:4 (25%)"
+msgstr ""
+
+#: src/pan-view.c:2396 src/pan-view.c:2826
+msgid "1:3 (33%)"
+msgstr ""
+
+#: src/pan-view.c:2397 src/pan-view.c:2822
+msgid "1:2 (50%)"
+msgstr ""
+
+#: src/pan-view.c:2398
+msgid "1:1 (100%)"
+msgstr ""
+
+#: src/pan-view.c:2446
+#, fuzzy
+msgid "Find:"
+msgstr "Filtru:"
+
+#: src/pan-view.c:2489
+#, fuzzy
+msgid "Use Exif date"
+msgstr "/Vizualizare/Info _EXIF"
+
+#: src/pan-view.c:2502
+msgid "Find"
+msgstr ""
+
+#: src/pan-view.c:2569
+msgid "Pan View Performance"
+msgstr ""
+
+#: src/pan-view.c:2576
+msgid "Pan view performance may be poor."
+msgstr ""
+
+#: src/pan-view.c:2577
+msgid ""
+"To improve performance of thumbnails in the pan view the following options "
+"can be enabled. Note that both options must be enabled to notice a change in "
+"performance."
+msgstr ""
+
+#: src/pan-view.c:2585 src/preferences.c:876
+msgid "Cache thumbnails"
+msgstr "Pune miniaturile în memoria tampon"
+
+#: src/pan-view.c:2587 src/preferences.c:882
+msgid "Use shared thumbnail cache"
+msgstr ""
+
+#: src/pan-view.c:2593
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/pan-view.c:2802
+#, fuzzy
+msgid "Sort by E_xif date"
+msgstr "Sortare dupã datã"
+
+#: src/pan-view.c:2808
+msgid "_Show Exif information"
+msgstr ""
+
+#: src/pan-view.c:2810
+#, fuzzy
+msgid "Show im_age"
+msgstr "Afiºeazã fiºierele ascunse"
+
+#: src/pan-view.c:2814
+#, fuzzy
+msgid "_None"
+msgstr "Nimic"
+
+#: src/pan-view.c:2818
+#, fuzzy
+msgid "_Full size"
+msgstr "Mãrime fiºier:"
+
+#: src/preferences.c:414
+msgid "Nearest (worst, but fastest)"
+msgstr "Cea mai apropiatã(cea mai rea, dar cea mai rapidã)"
+
+#: src/preferences.c:416
+msgid "Tiles"
+msgstr "Pavaj"
+
+#: src/preferences.c:418
+msgid "Bilinear"
+msgstr "Bilinearã"
+
+#: src/preferences.c:420
+msgid "Hyper (best, but slowest)"
+msgstr "Super (Cea mai bunã, dar cea mai lentã)"
+
+#: src/preferences.c:448
+msgid "None"
+msgstr "Nimic"
+
+#: src/preferences.c:449
+msgid "Normal"
+msgstr "Normalã"
+
+#: src/preferences.c:450
+msgid "Best"
+msgstr "Cea mai bunã"
+
+#: src/preferences.c:528 src/print.c:369
+#, fuzzy
+msgid "Custom"
+msgstr "auto"
+
+#: src/preferences.c:692 src/preferences.c:695
+msgid "Reset filters"
+msgstr "Reiniþializare filtre"
+
+#: src/preferences.c:696
+msgid ""
+"This will reset the file filters to the defaults.\n"
+"Continue?"
+msgstr ""
+"Se vor reinitializa filtrele de fiºiere cu valorile implicite.\n"
+"Doriþi sã continuaþi?"
+
+#: src/preferences.c:729 src/preferences.c:732
+msgid "Reset editors"
+msgstr "Reiniþializare editoare"
+
+#: src/preferences.c:733
+msgid ""
+"This will reset the edit commands to the defaults.\n"
+"Continue?"
+msgstr ""
+"Se vor reinitializa comenzile de editare cu valorile implicite.\n"
+"Doriþi sã continuaþi?"
+
+#: src/preferences.c:757 src/preferences.c:760
+msgid "Clear trash"
+msgstr "ªterge gunoi"
+
+#: src/preferences.c:761
+msgid "This will remove the trash contents."
+msgstr "Se va goli conþinutul gunoiului"
+
+#: src/preferences.c:800
+#, fuzzy
+msgid "GQview Preferences"
+msgstr "GQview - redenumire"
+
+#: src/preferences.c:854
+#, fuzzy
+msgid "Startup"
+msgstr "Start #"
+
+#: src/preferences.c:856
+#, fuzzy
+msgid "Change to folder:"
+msgstr "Du-te în directorul Acasã"
+
+#: src/preferences.c:867
+msgid "Use current"
+msgstr "Foloseºte directorul curent"
+
+#: src/preferences.c:874 src/preferences.c:925
+msgid "Quality:"
+msgstr "Calitate:"
+
+#: src/preferences.c:888
+msgid "Cache thumbnails into .thumbnails"
+msgstr "Pãstreazã miniaturile în .thumbnails"
+
+#: src/preferences.c:892
+msgid "Use xvpics thumbnails when found (read only)"
+msgstr "Foloseºte miniaturile xvpics disponibile (numai pt. citire)"
+
+#: src/preferences.c:896
+msgid "Faster jpeg thumbnailing (may reduce quality)"
+msgstr ""
+
+#: src/preferences.c:899
+msgid "Slide show"
+msgstr "Prezentare de imagini"
+
+#: src/preferences.c:902
+#, fuzzy
+msgid "Delay between image change:"
+msgstr "Timp de afiºare a imaginii (secunde):"
+
+#: src/preferences.c:902
+msgid "seconds"
+msgstr ""
+
+#: src/preferences.c:908
+msgid "Random"
+msgstr "Aleator"
+
+#: src/preferences.c:909
+msgid "Repeat"
+msgstr "Repetare"
+
+#: src/preferences.c:919
+#, fuzzy
+msgid "Zoom"
+msgstr "Mãrire"
+
+#: src/preferences.c:922
+msgid "Dithering method:"
+msgstr "Metoda de dithering:"
+
+#: src/preferences.c:927
+msgid "Two pass zooming"
+msgstr "Mãrire în doi paºi"
+
+#: src/preferences.c:930
+msgid "Allow enlargement of image for zoom to fit"
+msgstr "Mãreºte imaginea pânã la umplere"
+
+#: src/preferences.c:934
+msgid "Zoom increment:"
+msgstr "Incrementul mãririi"
+
+#: src/preferences.c:939
+msgid "When new image is selected:"
+msgstr "La selectarea unei imagini noi:"
+
+#: src/preferences.c:942
+msgid "Zoom to original size"
+msgstr "Mãreºte la dimensiunea iniþialã"
+
+#: src/preferences.c:948
+msgid "Leave Zoom at previous setting"
+msgstr "Pãstreazã valoarea anterioarã a mãririi"
+
+#: src/preferences.c:952
+#, fuzzy
+msgid "Appearance"
+msgstr "Adaugã"
+
+#: src/preferences.c:954
+msgid "Black background"
+msgstr "Fundal negru"
+
+#: src/preferences.c:957
+#, fuzzy
+msgid "Convenience"
+msgstr "Continuã"
+
+#: src/preferences.c:959
+msgid "Refresh on file change"
+msgstr "Actualizare la modificare fiºiere"
+
+#: src/preferences.c:961
+msgid "Preload next image"
+msgstr "Preîncarcã urmãtoarea imagine"
+
+#: src/preferences.c:963
+msgid "Auto rotate image using Exif information"
+msgstr "Autorotire imagine folosind informaþiile EXIF"
+
+#: src/preferences.c:972
+msgid "Windows"
+msgstr "Ferestre"
+
+#: src/preferences.c:975
+#, fuzzy
+msgid "State"
+msgstr "Start #"
+
+#: src/preferences.c:977
+msgid "Remember window positions"
+msgstr "Memoreazã poziþia ferestrelor"
+
+#: src/preferences.c:979
+msgid "Remember tool state (float/hidden)"
+msgstr "Memoreazã starea uneltelor (flotante, ascunse)"
+
+#: src/preferences.c:984
+msgid "Fit window to image when tools are hidden/floating"
+msgstr "Ajusteazã fereastra la imagine când uneltele sunt flotante/ascunse"
+
+#: src/preferences.c:988
+msgid "Limit size when auto-sizing window (%):"
+msgstr "Limitare mãrime la redimensionarea automatã a ferestrei"
+
+#: src/preferences.c:995 src/print.c:3371 src/print.c:3378
+msgid "Layout"
+msgstr "Aranjare"
+
+#: src/preferences.c:1008
+msgid "Filtering"
+msgstr "Filtrare"
+
+#: src/preferences.c:1013
+msgid "Show entries that begin with a dot"
+msgstr "Aratã intrãrile ce încep cu un punct"
+
+#: src/preferences.c:1015
+msgid "Case sensitive sort"
+msgstr "Sortare case-sensitive"
+
+#: src/preferences.c:1018
+msgid "Disable File Filtering"
+msgstr "Dezactiveazã filtrarea fiºierelor"
+
+#: src/preferences.c:1021
+#, fuzzy
+msgid "File types"
+msgstr "Datã fiºier:"
+
+#: src/preferences.c:1043
+msgid "Filter"
+msgstr "Filtru"
+
+#: src/preferences.c:1080 src/preferences.c:1144
+msgid "Defaults"
+msgstr "Implicite"
+
+#: src/preferences.c:1101
+msgid "Editors"
+msgstr "Editoare"
+
+#: src/preferences.c:1107
+msgid "#"
+msgstr "#"
+
+#: src/preferences.c:1110 src/preferences.c:1264
+msgid "Menu name"
+msgstr "Nume meniu"
+
+#: src/preferences.c:1113
+msgid "Command Line"
+msgstr "Linia de comandã"
+
+#: src/preferences.c:1160
+msgid "Advanced"
+msgstr "Avansate"
+
+#: src/preferences.c:1173
+#, fuzzy
+msgid "Full screen"
+msgstr "_Tot ecranul"
+
+#: src/preferences.c:1181
+#, fuzzy
+msgid "Smooth image flip"
+msgstr "Mãrime imagine:"
+
+#: src/preferences.c:1183
+msgid "Disable screen saver"
+msgstr ""
+
+#: src/preferences.c:1186
+msgid "Delete"
+msgstr "ªterge"
+
+#: src/preferences.c:1188
+msgid "Confirm file delete"
+msgstr "Confirmare pentru ºtergerea fiºierelor"
+
+#: src/preferences.c:1190
+msgid "Enable Delete key"
+msgstr "Activare tasta Delete"
+
+#: src/preferences.c:1193
+msgid "Safe delete"
+msgstr "ªtergere sigurã"
+
+#: src/preferences.c:1211
+#, fuzzy
+msgid "Maximum size:"
+msgstr "Mãrime maximã (MB)"
+
+#: src/preferences.c:1211
+msgid "MB"
+msgstr ""
+
+#: src/preferences.c:1214
+msgid "View"
+msgstr "Vizualizare"
+
+#: src/preferences.c:1224
+msgid "Behavior"
+msgstr ""
+
+#: src/preferences.c:1226
+#, fuzzy
+msgid "Rectangular selection in icon view"
+msgstr "Selectare dreptunghiularã"
+
+#: src/preferences.c:1229
+msgid "Descend folders in tree view"
+msgstr "Coboarã dosarele în arborescenþã"
+
+#: src/preferences.c:1232
+msgid "In place renaming"
+msgstr "Cu redenumire"
+
+#: src/preferences.c:1235
+#, fuzzy
+msgid "Navigation"
+msgstr "acþiune"
+
+#: src/preferences.c:1237
+msgid "Progressive keyboard scrolling"
+msgstr "Deplasare progresivã cu tastatura"
+
+#: src/preferences.c:1239
+msgid "Mouse wheel scrolls image"
+msgstr "Rotiþa mouse-ului defileazã imaginea"
+
+#: src/preferences.c:1242
+msgid "Miscellaneous"
+msgstr ""
+
+#: src/preferences.c:1244
+msgid "Store keywords and comments local to source images"
+msgstr ""
+
+#: src/preferences.c:1247
+msgid "Custom similarity threshold:"
+msgstr "Prag similaritate utilizator:"
+
+#: src/preferences.c:1250
+msgid "Offscreen cache size (Mb per image):"
+msgstr "Memorie tampon în afara ecranului (Mb/imagine):"
+
+#: src/preferences.c:1253
+#, fuzzy
+msgid "Color profiles"
+msgstr "Toate fiºierele"
+
+#: src/preferences.c:1261
+msgid "Type"
+msgstr ""
+
+#: src/preferences.c:1267
+#, fuzzy
+msgid "File"
+msgstr "Filtru:"
+
+#: src/preferences.c:1289 src/preferences.c:1300
+#, fuzzy
+msgid "Select color profile"
+msgstr "Nu selecta nimic"
+
+#: src/preferences.c:1297
+msgid "Screen:"
+msgstr ""
+
+#: src/preferences.c:1380
+msgid "About - GQview"
+msgstr "Despre - GQview"
+
+#: src/preferences.c:1393
+#, c-format
+msgid ""
+"GQview %s\n"
+"\n"
+"Copyright (c) %s John Ellis\n"
+"website: %s\n"
+"email: %s\n"
+"\n"
+"Released under the GNU General Public License"
+msgstr ""
+"GQview %s\n"
+"\n"
+"Copyright (c) %s John Ellis\n"
+"website: %s\n"
+"email: %s \n"
+"\n"
+"Distribuit sub GNU GPL"
+
+#: src/preferences.c:1411
+msgid "Credits..."
+msgstr "Mulþumiri..."
+
+#: src/print.c:115
+#, fuzzy
+msgid "Selection"
+msgstr "Nu selecta nimic"
+
+#: src/print.c:116
+msgid "All"
+msgstr ""
+
+#: src/print.c:127
+msgid "One image per page"
+msgstr ""
+
+#: src/print.c:128
+msgid "Proof sheet"
+msgstr ""
+
+#: src/print.c:141
+#, fuzzy
+msgid "Default printer"
+msgstr "Implicite"
+
+#: src/print.c:142
+#, fuzzy
+msgid "Custom printer"
+msgstr "Tipuri fiºiere utilizator:"
+
+#: src/print.c:143
+msgid "PostScript file"
+msgstr ""
+
+#: src/print.c:144
+#, fuzzy
+msgid "Image file"
+msgstr "Mãrime imagine:"
+
+#: src/print.c:158
+msgid "jpeg, low quality"
+msgstr ""
+
+#: src/print.c:159
+msgid "jpeg, normal quality"
+msgstr ""
+
+#: src/print.c:160
+msgid "jpeg, high quality"
+msgstr ""
+
+#: src/print.c:354 src/print.c:3216
+#, fuzzy
+msgid "points"
+msgstr "Xpaint"
+
+#: src/print.c:355
+msgid "millimeters"
+msgstr ""
+
+#: src/print.c:356
+#, fuzzy
+msgid "centimeters"
+msgstr "centimetri"
+
+#: src/print.c:357
+#, fuzzy
+msgid "inches"
+msgstr "inci"
+
+#: src/print.c:358
+msgid "picas"
+msgstr ""
+
+#: src/print.c:363
+#, fuzzy
+msgid "Portrait"
+msgstr "portret"
+
+#: src/print.c:364
+#, fuzzy
+msgid "Landscape"
+msgstr "peisaj"
+
+#: src/print.c:370
+#, fuzzy
+msgid "Letter"
+msgstr "centimetri"
+
+#. in 8.5 x 11
+#: src/print.c:371
+msgid "Legal"
+msgstr ""
+
+#. in 8.5 x 14
+#: src/print.c:372
+msgid "Executive"
+msgstr ""
+
+#. in 7.25x 10.5
+#. mm 841 x 1189
+#. mm 594 x 841
+#. mm 420 x 594
+#. mm 297 x 420
+#. mm 210 x 297
+#. mm 148 x 210
+#. mm 105 x 148
+#. mm 353 x 500
+#. mm 250 x 353
+#. mm 176 x 250
+#. mm 125 x 176
+#: src/print.c:384
+msgid "Envelope #10"
+msgstr ""
+
+#. in 4.125 x 9.5
+#: src/print.c:385
+msgid "Envelope #9"
+msgstr ""
+
+#. in 3.875 x 8.875
+#: src/print.c:386
+msgid "Envelope C4"
+msgstr ""
+
+#. mm 229 x 324
+#: src/print.c:387
+msgid "Envelope C5"
+msgstr ""
+
+#. mm 162 x 229
+#: src/print.c:388
+msgid "Envelope C6"
+msgstr ""
+
+#. mm 114 x 162
+#: src/print.c:389
+msgid "Photo 6x4"
+msgstr ""
+
+#. in 6   x 4
+#: src/print.c:390
+msgid "Photo 8x10"
+msgstr ""
+
+#. in 8   x 10
+#: src/print.c:391
+msgid "Postcard"
+msgstr ""
+
+#. mm 100 x 148
+#: src/print.c:392
+msgid "Tabloid"
+msgstr ""
+
+#: src/print.c:548
+#, fuzzy, c-format
+msgid "page %d of %d"
+msgstr "Imaginea %d din %d"
+
+#: src/print.c:740 src/utilops.c:2287
+msgid "Preview"
+msgstr "Previzualizare"
+
+#: src/print.c:1048
+#, c-format
+msgid ""
+"Unable to open pipe for writing.\n"
+"\"%s\""
+msgstr ""
+
+#: src/print.c:1063 src/print.c:1503 src/ui_pathsel.c:423
+#: src/view_file_list.c:456
+#, c-format
+msgid "A file with name %s already exists."
+msgstr "Fiºierul cu numele %s existã deja."
+
+#: src/print.c:1078 src/print.c:1558
+#, c-format
+msgid "Failure writing to file %s"
+msgstr ""
+
+#: src/print.c:1132 src/print.c:1169 src/print.c:1205 src/print.c:1322
+#: src/print.c:1413 src/print.c:1444
+msgid "SIGPIPE error writing to printer."
+msgstr ""
+
+#: src/print.c:1979
+#, c-format
+msgid "Page %d"
+msgstr ""
+
+#: src/print.c:2001 src/print.c:2006
+#, fuzzy
+msgid "Printing error"
+msgstr "Filtru"
+
+#: src/print.c:2005
+#, c-format
+msgid "An error occured printing to %s."
+msgstr ""
+
+#: src/print.c:2009
+#, fuzzy
+msgid "Details"
+msgstr "Implicite"
+
+#: src/print.c:2602 src/print.c:3347
+#, fuzzy
+msgid "Print - GQview"
+msgstr "Despre - GQview"
+
+#: src/print.c:2606
+#, c-format
+msgid "Printing %d pages to %s."
+msgstr ""
+
+#: src/print.c:2706
+#, fuzzy
+msgid "Format:"
+msgstr "Format"
+
+#: src/print.c:2781
+msgid "Units:"
+msgstr ""
+
+#: src/print.c:2825
+#, fuzzy
+msgid "Orientation:"
+msgstr "Orientare"
+
+#: src/print.c:2957
+#, fuzzy
+msgid "Destination:"
+msgstr "Descriere"
+
+#: src/print.c:3005
+#, fuzzy
+msgid "<printer name>"
+msgstr "Nume fiºier:"
+
+#: src/print.c:3094
+#, fuzzy
+msgid "Unlimited"
+msgstr "Fãrã_titlu"
+
+#: src/print.c:3203
+msgid "Show"
+msgstr ""
+
+#: src/print.c:3214
+#, fuzzy
+msgid "Font"
+msgstr "pornit"
+
+#: src/print.c:3374
+#, fuzzy
+msgid "Source"
+msgstr "Sortare"
+
+#: src/print.c:3390
+#, fuzzy
+msgid "Proof size:"
+msgstr "Mãrime imagine:"
+
+#: src/print.c:3406
+msgid "Text"
+msgstr ""
+
+#: src/print.c:3416
+#, fuzzy
+msgid "Paper"
+msgstr "deschidere diafragmã"
+
+#: src/print.c:3439
+msgid "Margins"
+msgstr ""
+
+#: src/print.c:3441
+msgid "Left:"
+msgstr ""
+
+#: src/print.c:3444
+#, fuzzy
+msgid "Right:"
+msgstr "Înãlþime"
+
+#: src/print.c:3447
+#, fuzzy
+msgid "Top:"
+msgstr "Grup:"
+
+#: src/print.c:3450
+#, fuzzy
+msgid "Bottom:"
+msgstr "în:"
+
+#: src/print.c:3459
+#, fuzzy
+msgid "Printer"
+msgstr "Filtru"
+
+#: src/print.c:3465
+#, fuzzy
+msgid "Custom printer:"
+msgstr "Tipuri fiºiere utilizator:"
+
+#: src/print.c:3474
+#, fuzzy
+msgid "File:"
+msgstr "Filtru:"
+
+#: src/print.c:3483
+#, fuzzy
+msgid "File format:"
+msgstr "Datã fiºier:"
+
+#: src/print.c:3488
+msgid "DPI:"
+msgstr ""
+
+#: src/print.c:3496
+#, fuzzy
+msgid "Remember print settings"
+msgstr "Memoreazã poziþia ferestrelor"
+
+#: src/rcfile.c:185
+#, c-format
+msgid "error saving config file: %s\n"
+msgstr "Nu pot salva fiºierul de configurare: %s\n"
+
+#: src/search.c:200
+#, fuzzy
+msgid "folder"
+msgstr "Dosar:"
+
+#: src/search.c:201
+#, fuzzy
+msgid "comments"
+msgstr "Elemente"
+
+#: src/search.c:202
+#, fuzzy
+msgid "results"
+msgstr "Implicite"
+
+#: src/search.c:206
+#, fuzzy
+msgid "contains"
+msgstr "Continuã"
+
+#: src/search.c:207
+msgid "is"
+msgstr ""
+
+#: src/search.c:211 src/search.c:218
+msgid "equal to"
+msgstr ""
+
+#: src/search.c:212
+msgid "less than"
+msgstr ""
+
+#: src/search.c:213
+msgid "greater than"
+msgstr ""
+
+#: src/search.c:214 src/search.c:221
+msgid "between"
+msgstr ""
+
+#: src/search.c:219
+msgid "before"
+msgstr ""
+
+#: src/search.c:220
+#, fuzzy
+msgid "after"
+msgstr "Filtru:"
+
+#: src/search.c:225
+msgid "match all"
+msgstr ""
+
+#: src/search.c:226
+msgid "match any"
+msgstr ""
+
+#: src/search.c:227
+msgid "exclude"
+msgstr ""
+
+#: src/search.c:277
+#, fuzzy, c-format
+msgid "%s, %d files (%s, %d)"
+msgstr "%s, %d fiºiere (%s,%d)%s"
+
+#: src/search.c:284
+#, fuzzy, c-format
+msgid "%s, %d files"
+msgstr "%s,%d fiºiere%s"
+
+#: src/search.c:301
+#, fuzzy
+msgid "Searching..."
+msgstr "Sortez..."
+
+#: src/search.c:2084
+msgid "File not found"
+msgstr ""
+
+#: src/search.c:2085
+#, fuzzy
+msgid "Please enter an existing file for image content."
+msgstr "Selectaþi un director existent"
+
+#: src/search.c:2132
+#, fuzzy
+msgid "Please enter an existing folder to search."
+msgstr "Selectaþi un director existent"
+
+#: src/search.c:2561
+#, fuzzy
+msgid "Image search - GQview"
+msgstr "Proprietãþi imagine - GQview"
+
+#: src/search.c:2590
+#, fuzzy
+msgid "Search:"
+msgstr "Sortez..."
+
+#: src/search.c:2604
+msgid "Recurse"
+msgstr ""
+
+#: src/search.c:2608
+#, fuzzy
+msgid "File name"
+msgstr "Nume fiºier:"
+
+#: src/search.c:2614
+msgid "Match case"
+msgstr ""
+
+#: src/search.c:2618
+#, fuzzy
+msgid "File size is"
+msgstr "Mãrime fiºier:"
+
+#: src/search.c:2625 src/search.c:2640 src/search.c:2658
+#, fuzzy
+msgid "and"
+msgstr "Aleator"
+
+#: src/search.c:2630
+#, fuzzy
+msgid "File date is"
+msgstr "Datã fiºier:"
+
+#: src/search.c:2647
+#, fuzzy
+msgid "Image dimensions are"
+msgstr "Descriere imagine"
+
+#: src/search.c:2667
+#, fuzzy
+msgid "Image content is"
+msgstr "Adaugã conþinut"
+
+#: src/search.c:2673
+#, fuzzy, no-c-format
+msgid "% similar to"
+msgstr "Similaritate"
+
+#: src/search.c:2742
+#, fuzzy
+msgid "Rank"
+msgstr "Aleator"
+
+#: src/thumb.c:379
+msgid "Thumbnail image in cache failed to load, trying to recreate.\n"
+msgstr "Nu pot încãrca miniaturile din cache, încerc actualizarea lor.\n"
+
+#: src/ui_bookmark.c:148
+#, c-format
+msgid "Unable to write history lists to: %s\n"
+msgstr "Nu pot scrie istoricul în: %s\n"
+
+#: src/ui_bookmark.c:445 src/ui_bookmark.c:508
+msgid "New Bookmark"
+msgstr "Semn de carte nou"
+
+#: src/ui_bookmark.c:591 src/ui_bookmark.c:597
+msgid "Edit Bookmark"
+msgstr "Editare semn de carte"
+
+#: src/ui_bookmark.c:612
+msgid "Path:"
+msgstr "Cale:"
+
+#: src/ui_bookmark.c:621
+msgid "Icon:"
+msgstr "Icon:"
+
+#: src/ui_bookmark.c:627
+#, fuzzy
+msgid "Select icon"
+msgstr "Nu selecta nimic"
+
+#: src/ui_bookmark.c:718
+msgid "_Properties..."
+msgstr "_Proprietãþi..."
+
+#: src/ui_bookmark.c:720
+msgid "Move _up"
+msgstr "Mutã s_us"
+
+#: src/ui_bookmark.c:722
+msgid "Move _down"
+msgstr "Mutã _jos"
+
+#: src/ui_bookmark.c:724
+msgid "_Remove"
+msgstr "_ªterge"
+
+#: src/ui_help.c:111
+#, c-format
+msgid ""
+"Unable to load:\n"
+"%s"
+msgstr ""
+"Nu pot încãrca:\n"
+"%s"
+
+#: src/ui_pathsel.c:429 src/utilops.c:2675
+#, c-format
+msgid "Failed to rename %s to %s."
+msgstr "Nu pot redenumi %s în %s."
+
+#: src/ui_pathsel.c:485 src/utilops.c:1354 src/utilops.c:1527
+#, c-format
+msgid ""
+"Unable to delete file:\n"
+"%s"
+msgstr ""
+"Nu pot ºterge fiºierul:\n"
+"%s"
+
+#: src/ui_pathsel.c:486 src/utilops.c:1528
+msgid "File deletion failed"
+msgstr "Nu am putut ºterge!"
+
+#: src/ui_pathsel.c:528 src/ui_pathsel.c:536
+msgid "Delete file"
+msgstr "ªtergere fiºiere"
+
+#: src/ui_pathsel.c:534
+#, c-format
+msgid ""
+"About to delete the file:\n"
+" %s"
+msgstr ""
+"Voi ºterge fiºierul:\n"
+"%s"
+
+#: src/ui_pathsel.c:625 src/ui_pathsel.c:633 src/utilops.c:2253
+#: src/utilops.c:2509
+msgid "_Rename"
+msgstr "_Redenumeºte"
+
+#: src/ui_pathsel.c:627 src/ui_pathsel.c:637
+msgid "Add _Bookmark"
+msgstr "Adaugã _semn de carte"
+
+#: src/ui_pathsel.c:635
+msgid "_Delete"
+msgstr "_ªterge"
+
+#: src/ui_pathsel.c:739 src/ui_pathsel.c:1044
+#, fuzzy
+msgid "New folder"
+msgstr "Dosar _nou..."
+
+#: src/ui_pathsel.c:749 src/utilops.c:2581 src/view_dir_list.c:330
+#: src/view_dir_tree.c:426
+#, fuzzy, c-format
+msgid ""
+"Unable to create folder:\n"
+"%s"
+msgstr ""
+"Nu pot creea directorul:\n"
+"%s"
+
+#: src/ui_pathsel.c:750 src/utilops.c:2582 src/view_dir_list.c:331
+#: src/view_dir_tree.c:427
+#, fuzzy
+msgid "Error creating folder"
+msgstr "Eroare la crearea directorului"
+
+#: src/ui_pathsel.c:971
+msgid "All Files"
+msgstr "Toate fiºierele"
+
+#: src/ui_pathsel.c:1047
+msgid "Show hidden"
+msgstr "Afiºeazã fiºierele ascunse"
+
+#: src/ui_pathsel.c:1131
+msgid "Filter:"
+msgstr "Filtru:"
+
+#: src/ui_tabcomp.c:857
+#, fuzzy
+msgid "Select path"
+msgstr "Selecteazã tot"
+
+#: src/ui_tabcomp.c:873
+#, fuzzy
+msgid "All files"
+msgstr "Toate fiºierele"
+
+#: src/utilops.c:505 src/utilops.c:826 src/utilops.c:1716 src/utilops.c:2438
+msgid "Overwrite file"
+msgstr "Suprascriere fiºier"
+
+#: src/utilops.c:510 src/utilops.c:831 src/utilops.c:1721 src/utilops.c:2443
+#, fuzzy
+msgid "Overwrite file?"
+msgstr "Suprascriere fiºier"
+
+#: src/utilops.c:511 src/utilops.c:832
+msgid "Replace existing file with new file."
+msgstr ""
+
+#: src/utilops.c:515
+#, fuzzy
+msgid "Overwrite _all"
+msgstr "Suprascriere fiºier"
+
+#: src/utilops.c:517
+#, fuzzy
+msgid "S_kip all"
+msgstr "Sar toate"
+
+#: src/utilops.c:518
+#, fuzzy
+msgid "_Skip"
+msgstr "Sare"
+
+#: src/utilops.c:519 src/utilops.c:836 src/utilops.c:1727 src/utilops.c:2449
+#, fuzzy
+msgid "Existing file"
+msgstr "Eroare la mutare fiºier"
+
+#: src/utilops.c:519 src/utilops.c:836 src/utilops.c:1728 src/utilops.c:2450
+#, fuzzy
+msgid "New file"
+msgstr "Dosar _nou..."
+
+#: src/utilops.c:529 src/utilops.c:845 src/utilops.c:1862 src/utilops.c:1918
+#: src/utilops.c:1994 src/utilops.c:2326
+msgid "Auto rename"
+msgstr "Autoredenumire"
+
+#: src/utilops.c:537 src/utilops.c:853
+msgid "Rename"
+msgstr "Redenumeºte"
+
+#: src/utilops.c:578
+msgid "Source to copy matches destination"
+msgstr "Sursa copierii se suprapune cu destinaþia"
+
+#: src/utilops.c:579
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to itself."
+msgstr ""
+"Nu pot copia fiºierul:\n"
+"%s\n"
+"peste el însuºi."
+
+#: src/utilops.c:583
+msgid "Source to move matches destination"
+msgstr "Sursa mutãrii se suprapune cu destinaþia"
+
+#: src/utilops.c:584
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to itself."
+msgstr ""
+"Nu pot muta fiºierul:\n"
+"%s\n"
+"peste el însuºi."
+
+#: src/utilops.c:592 src/utilops.c:679 src/utilops.c:1346
+#, fuzzy
+msgid "Co_ntinue"
+msgstr "Continuã"
+
+#: src/utilops.c:665 src/utilops.c:893
+msgid "Error copying file"
+msgstr "Eroare la copiere fiºier"
+
+#: src/utilops.c:666
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to:\n"
+"%s\n"
+"during multiple file copy."
+msgstr ""
+"Nu pot copia fiºierul:\n"
+"%sîn\n"
+"%s\n"
+"în timpul copierii multiple."
+
+#: src/utilops.c:670 src/utilops.c:898
+msgid "Error moving file"
+msgstr "Eroare la mutare fiºier"
+
+#: src/utilops.c:671
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to:\n"
+"%s\n"
+"during multiple file move."
+msgstr ""
+"Nu pot muta fiºierul:\n"
+"%sîn\n"
+"%s\n"
+"în timpul mutãrii multiple."
+
+#: src/utilops.c:817
+msgid "Source matches destination"
+msgstr "Sursa se suprapune cu destinaþia"
+
+#: src/utilops.c:818
+msgid "Source and destination are the same, operation cancelled."
+msgstr "Operaþiune anulatã, sursa se suprapune cu destinaþia"
+
+#: src/utilops.c:894
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Nu pot copia fiºierul:\n"
+"%s\n"
+"în:\n"
+"%s"
+
+#: src/utilops.c:899
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Nu pot muta fiºierul:\n"
+"%s\n"
+"în:\n"
+"%s"
+
+#: src/utilops.c:947
+msgid "Invalid destination"
+msgstr "Destinaþie incorectã"
+
+#: src/utilops.c:948
+#, fuzzy
+msgid ""
+"When operating with multiple files, please select\n"
+"a folder, not a file."
+msgstr ""
+"La manipularea fiºierelor multiple\n"
+"selectaþi un director, nu un fiºier!"
+
+#: src/utilops.c:953
+#, fuzzy
+msgid "Please select an existing folder."
+msgstr "Selectaþi un director existent"
+
+#: src/utilops.c:1022
+#, fuzzy
+msgid "Copy - GQview"
+msgstr "Ajutor - GQview"
+
+#: src/utilops.c:1023 src/view_dir_list.c:209 src/view_dir_tree.c:301
+msgid "_Copy"
+msgstr "_Copiazã"
+
+#: src/utilops.c:1026
+#, fuzzy
+msgid "Copy file"
+msgstr "Redenumire  fiºier:"
+
+#: src/utilops.c:1030
+#, fuzzy
+msgid "Copy multiple files"
+msgstr "Copiazã mai multe fiºiere în:"
+
+#: src/utilops.c:1036
+#, fuzzy
+msgid "Move - GQview"
+msgstr "Ajutor - GQview"
+
+#: src/utilops.c:1037 src/view_dir_list.c:211 src/view_dir_tree.c:303
+msgid "_Move"
+msgstr "_Mutã"
+
+#: src/utilops.c:1040
+#, fuzzy
+msgid "Move file"
+msgstr "Redenumire  fiºier:"
+
+#: src/utilops.c:1044
+#, fuzzy
+msgid "Move multiple files"
+msgstr "Mutã mai multe fiºiere în:"
+
+#: src/utilops.c:1058 src/utilops.c:1568
+#, fuzzy
+msgid "File name:"
+msgstr "Nume fiºier:"
+
+#: src/utilops.c:1062
+#, fuzzy
+msgid "Choose the destination folder."
+msgstr "Sursa se suprapune cu destinaþia"
+
+#: src/utilops.c:1189 src/utilops.c:1338 src/utilops.c:1355 src/utilops.c:2902
+#: src/utilops.c:2953 src/utilops.c:3041 src/utilops.c:3052
+msgid "Delete failed"
+msgstr "Nu am putut ºterge"
+
+#: src/utilops.c:1190
+msgid "Unable to remove old file from trash folder"
+msgstr "Nu pot ºterge vechiul fiºier din dosarul de gunoi"
+
+#: src/utilops.c:1246 src/utilops.c:2574
+#, fuzzy
+msgid "Could not create folder"
+msgstr "Nu pot creea directorul"
+
+#: src/utilops.c:1268
+msgid "Permission denied"
+msgstr "Acces interzis"
+
+#: src/utilops.c:1278
+#, c-format
+msgid ""
+"Unable to access or create the trash folder.\n"
+"\"%s\""
+msgstr ""
+"Nu pot accesa sau creea directoru de gunoi:\n"
+"\"%s\""
+
+#: src/utilops.c:1282
+msgid "Turn off safe delete"
+msgstr "Dezactiveazã ºtergerea sigurã"
+
+#: src/utilops.c:1300
+#, c-format
+msgid "Safe delete: %s"
+msgstr "ªtergere sigurã: %s"
+
+#: src/utilops.c:1342
+#, c-format
+msgid ""
+"Unable to delete file:\n"
+" %s\n"
+" Continue multiple delete operation?"
+msgstr ""
+"Nu pot ºterge fiºierul:\n"
+"%s\n"
+"Doriþi continuarea operaþiilor de ºtergere?"
+
+#: src/utilops.c:1413
+#, c-format
+msgid "File %d of %d"
+msgstr "Fiºierul %d din %d"
+
+#: src/utilops.c:1482
+#, fuzzy
+msgid "Delete files - GQview"
+msgstr "ªterge fiºiere"
+
+#: src/utilops.c:1486
+#, fuzzy
+msgid "Delete multiple files"
+msgstr "Redenumire multiplã de fiºiere:"
+
+#: src/utilops.c:1504
+#, c-format
+msgid "Review %d files"
+msgstr "Revedere %d fiºiere"
+
+#: src/utilops.c:1560
+#, fuzzy
+msgid "Delete file - GQview"
+msgstr "ªtergere fiºiere"
+
+#: src/utilops.c:1564
+#, fuzzy
+msgid "Delete file?"
+msgstr "ªtergere fiºiere"
+
+#: src/utilops.c:1722 src/utilops.c:2444
+msgid "Replace existing file by renaming new file."
+msgstr ""
+
+#: src/utilops.c:1739
+#, c-format
+msgid ""
+"Unable to rename file:\n"
+"%s\n"
+" to:\n"
+"%s"
+msgstr ""
+"Nu pot redenumi fiºierul:\n"
+"%s\n"
+"în:\n"
+"%s"
+
+#: src/utilops.c:1742 src/utilops.c:2461 src/view_file_list.c:451
+#: src/view_file_list.c:457 src/view_file_list.c:463
+msgid "Error renaming file"
+msgstr "Nu pot redenumi fiºierul"
+
+#: src/utilops.c:1863
+msgid "Format must include at least one of the symbol characters '*' or '#'.\n"
+msgstr ""
+
+#: src/utilops.c:1919
+msgid ""
+"Can not auto rename with the selected\n"
+"number set, one or more files exist that\n"
+"match the resulting name list.\n"
+msgstr ""
+"Nu pot redenumi cu numele rezultat \n"
+"din numãrul selectat, existã unul sau mai multe fiºiere cu numele identic.\n"
+
+#: src/utilops.c:1993
+#, c-format
+msgid ""
+"Failed to rename\n"
+"%s\n"
+"The number was %d."
+msgstr ""
+"Nu pot redenumi\n"
+" %s \n"
+"Numãrul a fost %d."
+
+#: src/utilops.c:2249 src/utilops.c:2503
+#, fuzzy
+msgid "Rename - GQview"
+msgstr "Ajutor - GQview"
+
+#: src/utilops.c:2252
+#, fuzzy
+msgid "Rename multiple files"
+msgstr "Redenumire multiplã de fiºiere:"
+
+#: src/utilops.c:2286
+msgid "Original Name"
+msgstr "Nume original"
+
+#: src/utilops.c:2324
+#, fuzzy
+msgid "Manual rename"
+msgstr "Nume meniu"
+
+#: src/utilops.c:2325
+msgid "Formatted rename"
+msgstr ""
+
+#: src/utilops.c:2338 src/utilops.c:2516
+#, fuzzy
+msgid "Original name:"
+msgstr "Nume original"
+
+#: src/utilops.c:2341 src/utilops.c:2519
+#, fuzzy
+msgid "New name:"
+msgstr "Redenumeºte:"
+
+#: src/utilops.c:2359
+msgid "Begin text"
+msgstr "Text de început"
+
+#: src/utilops.c:2367 src/utilops.c:2399
+msgid "Start #"
+msgstr "Start #"
+
+#: src/utilops.c:2373
+msgid "End text"
+msgstr "Text de sfârºit"
+
+#: src/utilops.c:2381
+msgid "Padding:"
+msgstr "Umplere:"
+
+#: src/utilops.c:2391
+msgid "Format (* = original name, ## = numbers)"
+msgstr ""
+
+#: src/utilops.c:2460 src/view_file_list.c:462
+#, c-format
+msgid ""
+"Unable to rename file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Nu pot redenumi fiºierul:\n"
+"%s\n"
+"în:\n"
+"%s"
+
+#: src/utilops.c:2506
+#, fuzzy
+msgid "Rename file"
+msgstr "Redenumire  fiºier:"
+
+#: src/utilops.c:2567 src/utilops.c:2657
+#, fuzzy, c-format
+msgid ""
+"The folder:\n"
+"%s\n"
+"already exists."
+msgstr ""
+"Directorul: \n"
+"%s\n"
+"existã deja."
+
+#: src/utilops.c:2568 src/utilops.c:2658
+#, fuzzy
+msgid "Folder exists"
+msgstr "Dosare"
+
+#: src/utilops.c:2573 src/utilops.c:2666
+#, c-format
+msgid ""
+"The path:\n"
+"%s\n"
+"already exists as a file."
+msgstr ""
+"Calea:\n"
+"%s\n"
+"existã deja ca fiºier."
+
+#: src/utilops.c:2625
+#, fuzzy
+msgid "New folder - GQview"
+msgstr "Ajutor - GQview"
+
+#: src/utilops.c:2628
+#, fuzzy, c-format
+msgid ""
+"Create folder in:\n"
+"%s\n"
+"named:"
+msgstr ""
+"Creeazã directorul în:\n"
+"%s\n"
+"cu numele:"
+
+#: src/utilops.c:2667 src/utilops.c:2676
+#, fuzzy
+msgid "Rename failed"
+msgstr "Redenumire  fiºier:"
+
+#: src/utilops.c:2775
+#, fuzzy
+msgid "Location"
+msgstr "acþiune"
+
+#: src/utilops.c:2952
+#, fuzzy, c-format
+msgid ""
+"Unable to delete folder:\n"
+"\n"
+"%s"
+msgstr ""
+"Nu pot ºterge fiºierul:\n"
+"%s"
+
+#: src/utilops.c:2959
+#, c-format
+msgid ""
+"Removal of folder contents failed at this file:\n"
+"\n"
+"%s"
+msgstr ""
+
+#: src/utilops.c:3016 src/utilops.c:3100
+#, fuzzy
+msgid "Delete folder"
+msgstr "Nu selecta nimic"
+
+#: src/utilops.c:3020
+#, c-format
+msgid ""
+"This will delete the symbolic link:\n"
+"\n"
+"%s\n"
+"\n"
+"The folder this link points to will not be deleted."
+msgstr ""
+
+#: src/utilops.c:3024
+msgid "Delete symbolic link to folder?"
+msgstr ""
+
+#: src/utilops.c:3039
+#, fuzzy, c-format
+msgid ""
+"Unable to remove folder %s\n"
+"Permissions do not allow writing to the folder."
+msgstr "Nu pot ºterge vechiul fiºier din dosarul de gunoi"
+
+#: src/utilops.c:3051
+#, fuzzy, c-format
+msgid "Unable to list contents of folder %s"
+msgstr ""
+"Nu pot creea directorul:\n"
+"%s"
+
+#: src/utilops.c:3065 src/utilops.c:3073
+#, fuzzy
+msgid "Folder contains subfolders"
+msgstr "Nume fiºier incorect"
+
+#: src/utilops.c:3069
+#, c-format
+msgid ""
+"Unable to delete the folder:\n"
+"\n"
+"%s\n"
+"\n"
+"This folder contains subfolders which must be moved before it can be deleted."
+msgstr ""
+
+#: src/utilops.c:3077
+#, fuzzy
+msgid "Subfolders:"
+msgstr "Dosar:"
+
+#: src/utilops.c:3104
+#, c-format
+msgid ""
+"This will delete the folder:\n"
+"\n"
+"%s\n"
+"\n"
+"The contents of this folder will also be deleted."
+msgstr ""
+
+#: src/utilops.c:3108
+#, fuzzy
+msgid "Delete folder?"
+msgstr "ªtergere fiºiere"
+
+#: src/utilops.c:3112
+#, fuzzy
+msgid "Contents:"
+msgstr "/Ajutor/_Despre..."
+
+#: src/view_dir_list.c:321 src/view_dir_tree.c:417
+msgid "new_folder"
+msgstr "Dosar_nou"
+
+#: src/view_dir_list.c:387 src/view_dir_tree.c:491
+msgid "_Up to parent"
+msgstr "S_us pânã la pãrinte"
+
+#: src/view_dir_list.c:392 src/view_dir_tree.c:496
+msgid "_Slideshow"
+msgstr "_Prezentare de imagini"
+
+#: src/view_dir_list.c:394 src/view_dir_tree.c:498
+msgid "Slideshow recursive"
+msgstr "Prezentare de imagini recursivã"
+
+#: src/view_dir_list.c:398 src/view_dir_tree.c:502
+msgid "Find _duplicates..."
+msgstr "Cautã _duplicatele..."
+
+#: src/view_dir_list.c:400 src/view_dir_tree.c:504
+msgid "Find duplicates recursive..."
+msgstr "Cãutare recursivã a duplicatelor"
+
+#: src/view_dir_list.c:407 src/view_dir_tree.c:511
+msgid "_New folder..."
+msgstr "Dosar _nou..."
+
+#: src/view_dir_list.c:421 src/view_dir_tree.c:520
+msgid "View as _tree"
+msgstr "Arborescen_tã"
+
+#: src/view_dir_list.c:423 src/view_dir_tree.c:522 src/view_file_icon.c:315
+#: src/view_file_list.c:426
+msgid "Re_fresh"
+msgstr "Actualizeazã"
+
+#: src/view_file_icon.c:308 src/view_file_list.c:419
+msgid "_Sort"
+msgstr "_Sortare"
+
+#: src/view_file_icon.c:311 src/view_file_list.c:422
+msgid "View as _icons"
+msgstr "Vizualizare ca _iconuri"
+
+#: src/view_file_list.c:424
+msgid "Show _thumbnails"
+msgstr "Afiºare miniaturi"
+
+#: src/view_file_list.c:450
+#, c-format
+msgid ""
+"Invalid file name:\n"
+"%s"
+msgstr ""
+"Nume fiºier incorect:\n"
+"%s"
+
+#~ msgid "/File/tear1"
+#~ msgstr "/Fiºier/tear1"
+
+#~ msgid "/File/_New collection"
+#~ msgstr "/Fiºier/Colecþie _nouã"
+
+#~ msgid "/File/_Open collection..."
+#~ msgstr "/Fiºier/Deschide c_olecþie"
+
+#~ msgid "/File/sep1"
+#~ msgstr "/Fiºier/sep1"
+
+#, fuzzy
+#~ msgid "/File/_Search..."
+#~ msgstr "/Fiºier/_Redenumeºte"
+
+#~ msgid "/File/_Find duplicates..."
+#~ msgstr "/Fiºier/Cautã duplicatele"
+
+#~ msgid "/File/sep2"
+#~ msgstr "/Fiºier/sep2"
+
+#, fuzzy
+#~ msgid "/File/_Print..."
+#~ msgstr "/Fiºier/_Redenumeºte"
+
+#~ msgid "/File/N_ew folder..."
+#~ msgstr "/Fiºier/Dosar _nou..."
+
+#~ msgid "/File/sep3"
+#~ msgstr "/Fiºier/sep3"
+
+#~ msgid "/File/_Copy..."
+#~ msgstr "/Fiºier/_Copiazã"
+
+#~ msgid "/File/_Move..."
+#~ msgstr "/Fiºier/_Mutã"
+
+#~ msgid "/File/_Rename..."
+#~ msgstr "/Fiºier/_Redenumeºte"
+
+#~ msgid "/File/_Delete..."
+#~ msgstr "/Fiºier/_ªterge..."
+
+#~ msgid "/File/sep4"
+#~ msgstr "/Fiºier/sep4"
+
+#~ msgid "/File/C_lose window"
+#~ msgstr "/Fiºier/Închide fereastra"
+
+#, fuzzy
+#~ msgid "/File/_Quit"
+#~ msgstr "/Fiºier/I_eºire"
+
+#~ msgid "/_Edit"
+#~ msgstr "/_Editare"
+
+#~ msgid "/Edit/tear1"
+#~ msgstr "/Editare/tear1"
+
+#~ msgid "/Edit/editor1"
+#~ msgstr "/Editare/editor1"
+
+#~ msgid "/Edit/editor2"
+#~ msgstr "/Editare/editor2"
+
+#~ msgid "/Edit/editor3"
+#~ msgstr "/Editare/editor3"
+
+#~ msgid "/Edit/editor4"
+#~ msgstr "/Editare/editor4"
+
+#~ msgid "/Edit/editor5"
+#~ msgstr "/Editare/editor5"
+
+#~ msgid "/Edit/editor6"
+#~ msgstr "/Editare/editor6"
+
+#~ msgid "/Edit/editor7"
+#~ msgstr "/Editare/editor7"
+
+#~ msgid "/Edit/editor8"
+#~ msgstr "/Editare/editor8"
+
+#~ msgid "/Edit/editor9"
+#~ msgstr "/Editare/editor9"
+
+#~ msgid "/Edit/editor0"
+#~ msgstr "/Editare/editor0"
+
+#~ msgid "/Edit/sep1"
+#~ msgstr "/Editare/sep1"
+
+#~ msgid "/Edit/_Adjust"
+#~ msgstr "/Editare/_Ajustare"
+
+#~ msgid "/Edit/_Properties"
+#~ msgstr "/Editare/_Proprietãþi"
+
+#~ msgid "/Edit/Adjust/tear1"
+#~ msgstr "/Editare/Ajustare/tear1"
+
+#~ msgid "/Edit/Adjust/_Rotate clockwise"
+#~ msgstr "/Editare/Ajustare/Roteºte orar"
+
+#~ msgid "/Edit/Adjust/Rotate _counterclockwise"
+#~ msgstr "/Editare/Ajustare/Roteºte antiorar"
+
+#~ msgid "/Edit/Adjust/Rotate 1_80"
+#~ msgstr "/Editare/Ajustare/Roteºte 180"
+
+#~ msgid "/Edit/Adjust/_Mirror"
+#~ msgstr "/Editare/Ajustare/_Oglindire"
+
+#~ msgid "/Edit/Adjust/_Flip"
+#~ msgstr "/Editare/Ajustare/_Rãsturnare"
+
+#~ msgid "/Edit/sep2"
+#~ msgstr "/Editare/sep2"
+
+#~ msgid "/Edit/Select _all"
+#~ msgstr "/Editare/Selecteazã tot"
+
+#~ msgid "/Edit/Select _none"
+#~ msgstr "/Edit/Deselecteazã tot"
+
+#~ msgid "/Edit/sep3"
+#~ msgstr "/Editare/sep3"
+
+#~ msgid "/Edit/_Options..."
+#~ msgstr "/Editare/_Opþiuni..."
+
+#~ msgid "/Edit/sep4"
+#~ msgstr "/Editare/sep4"
+
+#~ msgid "/Edit/Set as _wallpaper"
+#~ msgstr "/Edit/Pune imaginea drept fundal"
+
+#~ msgid "/_View"
+#~ msgstr "/_Vizualizare"
+
+#~ msgid "/View/tear1"
+#~ msgstr "/Vizualizare/tear1"
+
+#~ msgid "/View/Zoom _in"
+#~ msgstr "/Vizualizare/Mãrire"
+
+#~ msgid "/View/Zoom _out"
+#~ msgstr "/Vizualizare/Micºorare"
+
+#~ msgid "/View/Zoom _1:1"
+#~ msgstr "/Vizualizare/Scara 1:1"
+
+#~ msgid "/View/sep1"
+#~ msgstr "/Vizualizare/sep1"
+
+#~ msgid "/View/_Thumbnails"
+#~ msgstr "/Vizualizare/Minia_turi"
+
+#~ msgid "/View/I_cons"
+#~ msgstr "/Vizualizare/_Iconuri"
+
+#~ msgid "/View/sep2"
+#~ msgstr "/Vizualizare/sep2"
+
+#~ msgid "/View/F_ull screen"
+#~ msgstr "/Vizualizare/Umple tot ecran_ul"
+
+#~ msgid "/View/sep3"
+#~ msgstr "/Vizualizare/sep3"
+
+#~ msgid "/View/_Hide file list"
+#~ msgstr "/Vizualizare/Ascunde lista fiºierelor"
+
+#~ msgid "/View/sep4"
+#~ msgstr "/Vizualizare/sep4"
+
+#~ msgid "/View/Sort _manager"
+#~ msgstr "/Vizualizare/Gestionar _sortare"
+
+#~ msgid "/View/sep5"
+#~ msgstr "/Vizualizare/sep5"
+
+#~ msgid "/View/Toggle _slideshow"
+#~ msgstr "/Vizualizare/Prezentare de imagini"
+
+#~ msgid "/View/_Refresh Lists"
+#~ msgstr "/View/Actualiza_re listã"
+
+#~ msgid "/Help/tear1"
+#~ msgstr "/Ajutor/tear1"
+
+#~ msgid "/Help/sep1"
+#~ msgstr "/Ajutor/sep1"
+
+#~ msgid "GQview configuration"
+#~ msgstr "Configurare GQview"
+
+#~ msgid "/Edit/_Remove old thumbnails"
+#~ msgstr "/Editare/_ªterge miniaturile vechi"
+
+#, fuzzy
+#~ msgid "path"
+#~ msgstr "Cale"
+
+#~ msgid "Save"
+#~ msgstr "Salveazã"
+
+#~ msgid "Close"
+#~ msgstr "Închide"
+
+#~ msgid ""
+#~ "Overwrite collection file:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Suprascrie fiºierul colecþie:\n"
+#~ "%s"
+
+#~ msgid "Save collection as:"
+#~ msgstr "Salveazã colecþia ca:"
+
+#~ msgid "Open collection from:"
+#~ msgstr "Deschide colecþia din:"
+
+#~ msgid "Open"
+#~ msgstr "Deschide"
+
+#~ msgid "Append collection from:"
+#~ msgstr "Adugã colecþia din:"
+
+#, fuzzy
+#~ msgid "exit"
+#~ msgstr "Ieºire"
+
+#~ msgid "Exit"
+#~ msgstr "Ieºire"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#, fuzzy
+#~ msgid "Initial folder"
+#~ msgstr "Nume fiºier incorect"
+
+#, fuzzy
+#~ msgid "On startup, change to this folder:"
+#~ msgstr "La pornire, schimbã în acest director:"
+
+#~ msgid "Zoom (scaling):"
+#~ msgstr "Mãrire (scarã):"
+
+#~ msgid "Place dialogs under mouse"
+#~ msgstr "Pune dialogurile sub mouse"
+
+#~ msgid "Include files of type:"
+#~ msgstr "Include fiºierele de tip:"
+
+#~ msgid "Remove"
+#~ msgstr "ªterge"
+
+#~ msgid "Add"
+#~ msgstr "Adaugã"
+
+#~ msgid "Help"
+#~ msgstr "Ajutor"
+
+#, fuzzy
+#~ msgid "Full screen size:"
+#~ msgstr "_Tot ecranul"
+
+#, fuzzy
+#~ msgid "Point size:"
+#~ msgstr "Mãrime fiºier:"
+
+#, fuzzy
+#~ msgid "Width:"
+#~ msgstr "Lãþime"
+
+#, fuzzy
+#~ msgid "Height:"
+#~ msgstr "Înãlþime"
+
+#~ msgid ""
+#~ "Overwrite file:\n"
+#~ " %s\n"
+#~ " with:\n"
+#~ " %s"
+#~ msgstr ""
+#~ "Suprascrie fiºierul:\n"
+#~ "%s\n"
+#~ "cu:\n"
+#~ "%s"
+
+#~ msgid "Yes"
+#~ msgstr "Da"
+
+#~ msgid "Yes to all"
+#~ msgstr "Da, pentru toate"
+
+#~ msgid ""
+#~ "Overwrite file:\n"
+#~ "%s\n"
+#~ " with:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Suprascrie fiºierul:\n"
+#~ "%s\n"
+#~ "cu:\n"
+#~ "%s"
+
+#~ msgid ""
+#~ "Copy file:\n"
+#~ "%s\n"
+#~ "to:"
+#~ msgstr ""
+#~ "Copiazã fiºierul:\n"
+#~ "%s\n"
+#~ "în:"
+
+#~ msgid ""
+#~ "Move file:\n"
+#~ "%s\n"
+#~ "to:"
+#~ msgstr ""
+#~ "Mutã fiºierul:\n"
+#~ "%s\n"
+#~ "în:"
+
+#~ msgid "About to delete multiple files..."
+#~ msgstr "Voi ºterge mai multe fiºiere..."
+
+#~ msgid ""
+#~ "Overwrite file:\n"
+#~ "%s\n"
+#~ "by renaming:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Suprascriere fiºier:\n"
+#~ "%s\n"
+#~ "prin redenumire:\n"
+#~ "%s"
+
+#~ msgid "to:"
+#~ msgstr "în:"
+
+#~ msgid "Create"
+#~ msgstr "Creeazã"
+
+#~ msgid "Initial directory"
+#~ msgstr "Director iniþial"
+
+#~ msgid "New Directory"
+#~ msgstr "Director nou"
+
+#~ msgid ""
+#~ "Unable to create directory:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Nu pot creea directorul:\n"
+#~ "%s"
+
+#~ msgid "Error creating directory"
+#~ msgstr "Eroare la crearea directorului"
+
+#, fuzzy
+#~ msgid "Image details"
+#~ msgstr "Descriere imagine"
+
+#, fuzzy
+#~ msgid "/View/Image _details"
+#~ msgstr "/Vizualizare/Prezentare de imagini"
+
+#~ msgid "Misc."
+#~ msgstr "Diverse"
+
+#~ msgid "Invalid directory"
+#~ msgstr "Director incorect"
+
+#~ msgid "GQview - copy"
+#~ msgstr "GQview - copiere"
+
+#~ msgid "GQview - move"
+#~ msgstr "GQview - mutare"
+
+#~ msgid "Directory exists"
+#~ msgstr "Directorul existã"
+
+#~ msgid "GQview - new directory"
+#~ msgstr "GQview - director nou"
+
+#~ msgid "Add contents recursive"
+#~ msgstr "Adaugã conþinut în mod recursiv"
+
+#~ msgid "Skip directories"
+#~ msgstr "Sãri directoarele"
+
+#~ msgid "/File/Create _Dir..."
+#~ msgstr "/Fiºier/Creare _Director"
+
+#~ msgid "Edit"
+#~ msgstr "Editare"
+
+#~ msgid "Insert file drops at pointer location"
+#~ msgstr "Inserare fiºier la poziþia cursorului"
+
+#~ msgid "File named %s already exists."
+#~ msgstr "Fiºierul cu numele %s existã deja."
+
+#, fuzzy
+#~ msgid "top"
+#~ msgstr "în:"
+
+#~ msgid "GQview running: %s\n"
+#~ msgstr "GQview ruleazã: %s\n"
+
+#~ msgid "Electric Eyes"
+#~ msgstr "Electric Eyes"
+
+#~ msgid "Apply"
+#~ msgstr "Aplicã"
+
+#~ msgid "format: [.foo;.bar]"
+#~ msgstr "format: [.foo;.bar]"

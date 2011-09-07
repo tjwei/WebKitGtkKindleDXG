@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="gail-libgail-util-GailMisc">
+<refmeta>
+<refentrytitle role="top_of_page" id="gail-libgail-util-GailMisc.top_of_page">GailMisc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GAIL-LIBGAIL-UTIL Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GailMisc</refname>
+<refpurpose>GailMisc is a set of utility functions which may be useful to implementors of
+Atk interfaces for custom widgets.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gail-libgail-util-GailMisc.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+<link linkend="AtkAttributeSet">AtkAttributeSet</link>*    <link linkend="gail-misc-add-attribute">gail_misc_add_attribute</link>             (<link linkend="AtkAttributeSet">AtkAttributeSet</link> *attrib_set,
+                                                         <link linkend="AtkTextAttribute">AtkTextAttribute</link> attr,
+                                                         <link linkend="gchar">gchar</link> *value);
+<link linkend="AtkAttributeSet">AtkAttributeSet</link> *   <link linkend="gail-misc-layout-get-run-attributes">gail_misc_layout_get_run_attributes</link> (<link linkend="AtkAttributeSet">AtkAttributeSet</link> *attrib_set,
+                                                         <link linkend="PangoLayout">PangoLayout</link> *layout,
+                                                         <link linkend="gchar">gchar</link> *text,
+                                                         <link linkend="gint">gint</link> offset,
+                                                         <link linkend="gint">gint</link> *start_offset,
+                                                         <link linkend="gint">gint</link> *end_offset);
+<link linkend="AtkAttributeSet">AtkAttributeSet</link>*    <link linkend="gail-misc-get-default-attributes">gail_misc_get_default_attributes</link>    (<link linkend="AtkAttributeSet">AtkAttributeSet</link> *attrib_set,
+                                                         <link linkend="PangoLayout">PangoLayout</link> *layout,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *widget);
+<link linkend="void">void</link>                <link linkend="gail-misc-get-extents-from-pango-rectangle">gail_misc_get_extents_from_pango_rectangle</link>
+                                                        (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="PangoRectangle">PangoRectangle</link> *char_rect,
+                                                         <link linkend="gint">gint</link> x_layout,
+                                                         <link linkend="gint">gint</link> y_layout,
+                                                         <link linkend="gint">gint</link> *x,
+                                                         <link linkend="gint">gint</link> *y,
+                                                         <link linkend="gint">gint</link> *width,
+                                                         <link linkend="gint">gint</link> *height,
+                                                         <link linkend="AtkCoordType">AtkCoordType</link> coords);
+<link linkend="gint">gint</link>                <link linkend="gail-misc-get-index-at-point-in-layout">gail_misc_get_index_at_point_in_layout</link>
+                                                        (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="PangoLayout">PangoLayout</link> *layout,
+                                                         <link linkend="gint">gint</link> x_layout,
+                                                         <link linkend="gint">gint</link> y_layout,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y,
+                                                         <link linkend="AtkCoordType">AtkCoordType</link> coords);
+<link linkend="void">void</link>                <link linkend="gail-misc-get-origins">gail_misc_get_origins</link>               (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="gint">gint</link> *x_window,
+                                                         <link linkend="gint">gint</link> *y_window,
+                                                         <link linkend="gint">gint</link> *x_toplevel,
+                                                         <link linkend="gint">gint</link> *y_toplevel);
+<link linkend="AtkAttributeSet">AtkAttributeSet</link>*    <link linkend="gail-misc-add-to-attr-set">gail_misc_add_to_attr_set</link>           (<link linkend="AtkAttributeSet">AtkAttributeSet</link> *attrib_set,
+                                                         <link linkend="GtkTextAttributes">GtkTextAttributes</link> *attrs,
+                                                         <link linkend="AtkTextAttribute">AtkTextAttribute</link> attr);
+<link linkend="AtkAttributeSet">AtkAttributeSet</link> *   <link linkend="gail-misc-buffer-get-run-attributes">gail_misc_buffer_get_run_attributes</link> (<link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer,
+                                                         <link linkend="gint">gint</link> offset,
+                                                         <link linkend="gint">gint</link> *start_offset,
+                                                         <link linkend="gint">gint</link> *end_offset);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gail-libgail-util-GailMisc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+GailMisc is a set of utility function which are used in the implemementation
+of Atk interfaces for Gtk widgets. They may be useful to implementors of
+Atk interfaces for custom widgets.
+</para>
+</refsect1>
+
+<refsect1 id="gail-libgail-util-GailMisc.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="gail-misc-add-attribute" role="function">
+<title>gail_misc_add_attribute ()</title>
+<indexterm zone="gail-misc-add-attribute"><primary sortas="gail_misc_add_attribute">gail_misc_add_attribute</primary></indexterm><programlisting><link linkend="AtkAttributeSet">AtkAttributeSet</link>*    gail_misc_add_attribute             (<link linkend="AtkAttributeSet">AtkAttributeSet</link> *attrib_set,
+                                                         <link linkend="AtkTextAttribute">AtkTextAttribute</link> attr,
+                                                         <link linkend="gchar">gchar</link> *value);</programlisting>
+<para>
+Creates an <link linkend="AtkAttribute"><type>AtkAttribute</type></link> from <parameter>attr</parameter> and <parameter>value</parameter>, and adds it
+to <parameter>attrib_set</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>attrib_set</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="AtkAttributeSet"><type>AtkAttributeSet</type></link> to add the attribute to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>attr</parameter>&#160;:</term>
+<listitem><simpara> The AtkTextAttrribute which identifies the attribute to be added
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> The attribute value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A pointer to the new <link linkend="AtkAttributeSet"><type>AtkAttributeSet</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gail-misc-layout-get-run-attributes" role="function">
+<title>gail_misc_layout_get_run_attributes ()</title>
+<indexterm zone="gail-misc-layout-get-run-attributes"><primary sortas="gail_misc_layout_get_run_attributes">gail_misc_layout_get_run_attributes</primary></indexterm><programlisting><link linkend="AtkAttributeSet">AtkAttributeSet</link> *   gail_misc_layout_get_run_attributes (<link linkend="AtkAttributeSet">AtkAttributeSet</link> *attrib_set,
+                                                         <link linkend="PangoLayout">PangoLayout</link> *layout,
+                                                         <link linkend="gchar">gchar</link> *text,
+                                                         <link linkend="gint">gint</link> offset,
+                                                         <link linkend="gint">gint</link> *start_offset,
+                                                         <link linkend="gint">gint</link> *end_offset);</programlisting>
+<para>
+Adds the attributes for the run starting at offset to the specified
+attribute set.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>attrib_set</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="AtkAttributeSet"><type>AtkAttributeSet</type></link> to add the attribute to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>layout</parameter>&#160;:</term>
+<listitem><simpara> The PangoLayout from which the attributes will be obtained
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> The text 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>offset</parameter>&#160;:</term>
+<listitem><simpara> The offset at which the attributes are required
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>start_offset</parameter>&#160;:</term>
+<listitem><simpara> The start offset of the current run
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>end_offset</parameter>&#160;:</term>
+<listitem><simpara> The end offset of the current run
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A pointer to the <link linkend="AtkAttributeSet"><type>AtkAttributeSet</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gail-misc-get-default-attributes" role="function">
+<title>gail_misc_get_default_attributes ()</title>
+<indexterm zone="gail-misc-get-default-attributes"><primary sortas="gail_misc_get_default_attributes">gail_misc_get_default_attributes</primary></indexterm><programlisting><link linkend="AtkAttributeSet">AtkAttributeSet</link>*    gail_misc_get_default_attributes    (<link linkend="AtkAttributeSet">AtkAttributeSet</link> *attrib_set,
+                                                         <link linkend="PangoLayout">PangoLayout</link> *layout,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *widget);</programlisting>
+<para>
+Adds the default attributes to the specified attribute set.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>attrib_set</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="AtkAttributeSet"><type>AtkAttributeSet</type></link> to add the attribute to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>layout</parameter>&#160;:</term>
+<listitem><simpara> The PangoLayout from which the attributes will be obtained
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> The GtkWidget for which the default attributes are required.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A pointer to the <link linkend="AtkAttributeSet"><type>AtkAttributeSet</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gail-misc-get-extents-from-pango-rectangle" role="function">
+<title>gail_misc_get_extents_from_pango_rectangle ()</title>
+<indexterm zone="gail-misc-get-extents-from-pango-rectangle"><primary sortas="gail_misc_get_extents_from_pango_rectangle">gail_misc_get_extents_from_pango_rectangle</primary></indexterm><programlisting><link linkend="void">void</link>                gail_misc_get_extents_from_pango_rectangle
+                                                        (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="PangoRectangle">PangoRectangle</link> *char_rect,
+                                                         <link linkend="gint">gint</link> x_layout,
+                                                         <link linkend="gint">gint</link> y_layout,
+                                                         <link linkend="gint">gint</link> *x,
+                                                         <link linkend="gint">gint</link> *y,
+                                                         <link linkend="gint">gint</link> *width,
+                                                         <link linkend="gint">gint</link> *height,
+                                                         <link linkend="AtkCoordType">AtkCoordType</link> coords);</programlisting>
+<para>
+Gets the extents of <parameter>char_rect</parameter> in device coordinates,
+relative to either top-level window or screen coordinates as
+specified by <parameter>coords</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> The widget that contains the PangoLayout, that contains
+  the PangoRectangle
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>char_rect</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="PangoRectangle"><type>PangoRectangle</type></link> from which to calculate extents
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x_layout</parameter>&#160;:</term>
+<listitem><simpara> The x-offset at which the widget displays the
+  PangoLayout that contains the PangoRectangle, relative to <parameter>widget</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y_layout</parameter>&#160;:</term>
+<listitem><simpara> The y-offset at which the widget displays the
+  PangoLayout that contains the PangoRectangle, relative to <parameter>widget</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> The x-position of the <link linkend="PangoRectangle"><type>PangoRectangle</type></link> relative to <parameter>coords</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> The y-position of the <link linkend="PangoRectangle"><type>PangoRectangle</type></link> relative to <parameter>coords</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> The width of the <link linkend="PangoRectangle"><type>PangoRectangle</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> The  height of the <link linkend="PangoRectangle"><type>PangoRectangle</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>coords</parameter>&#160;:</term>
+<listitem><simpara> An <link linkend="AtkCoordType"><type>AtkCoordType</type></link> enumeration
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gail-misc-get-index-at-point-in-layout" role="function">
+<title>gail_misc_get_index_at_point_in_layout ()</title>
+<indexterm zone="gail-misc-get-index-at-point-in-layout"><primary sortas="gail_misc_get_index_at_point_in_layout">gail_misc_get_index_at_point_in_layout</primary></indexterm><programlisting><link linkend="gint">gint</link>                gail_misc_get_index_at_point_in_layout
+                                                        (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="PangoLayout">PangoLayout</link> *layout,
+                                                         <link linkend="gint">gint</link> x_layout,
+                                                         <link linkend="gint">gint</link> y_layout,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y,
+                                                         <link linkend="AtkCoordType">AtkCoordType</link> coords);</programlisting>
+<para>
+Gets the byte offset at the specified <parameter>x</parameter> and <parameter>y</parameter> in a <link linkend="PangoLayout"><type>PangoLayout</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GtkWidget"><type>GtkWidget</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>layout</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="PangoLayout"><type>PangoLayout</type></link> from which to get the index at the
+  specified point.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x_layout</parameter>&#160;:</term>
+<listitem><simpara> The x-offset at which the widget displays the
+  <link linkend="PangoLayout"><type>PangoLayout</type></link>, relative to <parameter>widget</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y_layout</parameter>&#160;:</term>
+<listitem><simpara> The y-offset at which the widget displays the
+  <link linkend="PangoLayout"><type>PangoLayout</type></link>, relative to <parameter>widget</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> The x-coordinate relative to <parameter>coords</parameter> at which to
+  calculate the index
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> The y-coordinate relative to <parameter>coords</parameter> at which to
+  calculate the index
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>coords</parameter>&#160;:</term>
+<listitem><simpara> An <link linkend="AtkCoordType"><type>AtkCoordType</type></link> enumeration
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the byte offset at the specified <parameter>x</parameter> and <parameter>y</parameter> in a
+  <link linkend="PangoLayout"><type>PangoLayout</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gail-misc-get-origins" role="function">
+<title>gail_misc_get_origins ()</title>
+<indexterm zone="gail-misc-get-origins"><primary sortas="gail_misc_get_origins">gail_misc_get_origins</primary></indexterm><programlisting><link linkend="void">void</link>                gail_misc_get_origins               (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="gint">gint</link> *x_window,
+                                                         <link linkend="gint">gint</link> *y_window,
+                                                         <link linkend="gint">gint</link> *x_toplevel,
+                                                         <link linkend="gint">gint</link> *y_toplevel);</programlisting>
+<para>
+Gets the origin of the widget window, and the origin of the
+widgets top-level window.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkWidget"><type>GtkWidget</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x_window</parameter>&#160;:</term>
+<listitem><simpara> the x-origin of the widget-&gt;window
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y_window</parameter>&#160;:</term>
+<listitem><simpara> the y-origin of the widget-&gt;window
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x_toplevel</parameter>&#160;:</term>
+<listitem><simpara> the x-origin of the toplevel window for widget-&gt;window
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y_toplevel</parameter>&#160;:</term>
+<listitem><simpara> the y-origin of the toplevel window for widget-&gt;window
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gail-misc-add-to-attr-set" role="function">
+<title>gail_misc_add_to_attr_set ()</title>
+<indexterm zone="gail-misc-add-to-attr-set"><primary sortas="gail_misc_add_to_attr_set">gail_misc_add_to_attr_set</primary></indexterm><programlisting><link linkend="AtkAttributeSet">AtkAttributeSet</link>*    gail_misc_add_to_attr_set           (<link linkend="AtkAttributeSet">AtkAttributeSet</link> *attrib_set,
+                                                         <link linkend="GtkTextAttributes">GtkTextAttributes</link> *attrs,
+                                                         <link linkend="AtkTextAttribute">AtkTextAttribute</link> attr);</programlisting>
+<para>
+Gets the value for the AtkTextAttribute from the GtkTextAttributes
+and adds it to the AttributeSet.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>attrib_set</parameter>&#160;:</term>
+<listitem><simpara> An <link linkend="AtkAttributeSet"><type>AtkAttributeSet</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>attrs</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link> containing the attribute value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>attr</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="AtkTextAttribute"><type>AtkTextAttribute</type></link> to be added
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A pointer to the updated <link linkend="AtkAttributeSet"><type>AtkAttributeSet</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gail-misc-buffer-get-run-attributes" role="function">
+<title>gail_misc_buffer_get_run_attributes ()</title>
+<indexterm zone="gail-misc-buffer-get-run-attributes"><primary sortas="gail_misc_buffer_get_run_attributes">gail_misc_buffer_get_run_attributes</primary></indexterm><programlisting><link linkend="AtkAttributeSet">AtkAttributeSet</link> *   gail_misc_buffer_get_run_attributes (<link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer,
+                                                         <link linkend="gint">gint</link> offset,
+                                                         <link linkend="gint">gint</link> *start_offset,
+                                                         <link linkend="gint">gint</link> *end_offset);</programlisting>
+<para>
+Creates an AtkAttributeSet which contains the attributes for the 
+run starting at offset.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> The <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link> for which the attributes will be obtained
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>offset</parameter>&#160;:</term>
+<listitem><simpara> The offset at which the attributes are required
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>start_offset</parameter>&#160;:</term>
+<listitem><simpara> The start offset of the current run
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>end_offset</parameter>&#160;:</term>
+<listitem><simpara> The end offset of the current run
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A pointer to the <link linkend="AtkAttributeSet"><type>AtkAttributeSet</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

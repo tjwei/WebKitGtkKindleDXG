@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="gdk-cursor-new-from-pixbuf"><link linkend="gdk-cursor-new-from-pixbuf">gdk_cursor_new_from_pixbuf</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="gdk-display-flush"><link linkend="gdk-display-flush">gdk_display_flush</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-default-cursor-size"><link linkend="gdk-display-get-default-cursor-size">gdk_display_get_default_cursor_size</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-default-group"><link linkend="gdk-display-get-default-group">gdk_display_get_default_group</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-get-maximal-cursor-size"><link linkend="gdk-display-get-maximal-cursor-size">gdk_display_get_maximal_cursor_size</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-set-double-click-distance"><link linkend="gdk-display-set-double-click-distance">gdk_display_set_double_click_distance</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-supports-cursor-alpha"><link linkend="gdk-display-supports-cursor-alpha">gdk_display_supports_cursor_alpha</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-supports-cursor-color"><link linkend="gdk-display-supports-cursor-color">gdk_display_supports_cursor_color</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drawable-copy-to-image"><link linkend="gdk-drawable-copy-to-image">gdk_drawable_copy_to_image</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="gdk-spawn-command-line-on-screen"><link linkend="gdk-spawn-command-line-on-screen">gdk_spawn_command_line_on_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-spawn-on-screen"><link linkend="gdk-spawn-on-screen">gdk_spawn_on_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-spawn-on-screen-with-pipes"><link linkend="gdk-spawn-on-screen-with-pipes">gdk_spawn_on_screen_with_pipes</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="gdk-threads-set-lock-functions"><link linkend="gdk-threads-set-lock-functions">gdk_threads_set_lock_functions</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="gdk-window-get-group"><link linkend="gdk-window-get-group">gdk_window_get_group</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-accept-focus"><link linkend="gdk-window-set-accept-focus">gdk_window_set_accept_focus</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-keep-above"><link linkend="gdk-window-set-keep-above">gdk_window_set_keep_above</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-keep-below"><link linkend="gdk-window-set-keep-below">gdk_window_set_keep_below</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>X</title>
+<indexentry><primaryie linkends="gdk-x11-register-standard-event-type"><link linkend="gdk-x11-register-standard-event-type">gdk_x11_register_standard_event_type</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

@@ -1,0 +1,294 @@
+idirectfbimageprovider_gif.lo: idirectfbimageprovider_gif.c \
+  ../../config.h /usr/include/stdio.h /usr/include/features.h \
+  /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h \
+  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+  /usr/include/bits/wchar.h /usr/include/gconv.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+  /usr/include/bits/stdio.h /usr/include/stdlib.h \
+  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+  /usr/include/endian.h /usr/include/bits/endian.h /usr/include/xlocale.h \
+  /usr/include/sys/types.h /usr/include/time.h /usr/include/sys/select.h \
+  /usr/include/bits/select.h /usr/include/bits/sigset.h \
+  /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
+  /usr/include/bits/pthreadtypes.h /usr/include/alloca.h \
+  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h /usr/include/bits/confname.h \
+  /usr/include/getopt.h /usr/include/string.h /usr/include/bits/string.h \
+  /usr/include/bits/string2.h /usr/include/errno.h \
+  /usr/include/bits/errno.h /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h ../../include/directfb.h \
+  ../../include/dfb_types.h ../../lib/direct/types.h \
+  ../../lib/direct/build.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdbool.h \
+  /usr/include/stdint.h /usr/include/sys/time.h \
+  ../../include/directfb_keyboard.h ../../lib/direct/interface.h \
+  ../../lib/direct/debug.h ../../lib/direct/clock.h \
+  ../../lib/direct/conf.h ../../lib/direct/messages.h \
+  /usr/include/sys/signal.h /usr/include/signal.h \
+  /usr/include/bits/signum.h /usr/include/bits/siginfo.h \
+  /usr/include/bits/sigaction.h /usr/include/bits/sigcontext.h \
+  /usr/include/asm/sigcontext.h /usr/include/bits/sigstack.h \
+  /usr/include/sys/ucontext.h /usr/include/sys/procfs.h \
+  /usr/include/sys/user.h /usr/include/bits/sigthread.h \
+  ../../lib/direct/log.h ../../lib/direct/system.h \
+  ../../lib/direct/thread.h ../../lib/direct/trace.h \
+  ../../lib/direct/mem.h ../../src/display/idirectfbsurface.h \
+  ../../lib/fusion/reactor.h ../../lib/direct/list.h \
+  ../../lib/fusion/types.h ../../lib/fusion/build.h \
+  ../../lib/fusion/call.h ../../lib/fusion/lock.h /usr/include/pthread.h \
+  /usr/include/sched.h /usr/include/bits/sched.h \
+  /usr/include/bits/setjmp.h ../../lib/direct/util.h \
+  ../../src/core/coretypes.h ../../src/core/state.h \
+  ../../lib/direct/serial.h ../../src/core/coredefs.h \
+  ../../src/core/gfxcard.h ../../lib/direct/modules.h \
+  ../../src/core/surface_buffer.h ../../lib/fusion/vector.h \
+  /usr/include/limits.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h \
+  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/xopen_lim.h ../../src/core/surface.h \
+  ../../lib/fusion/object.h ../../lib/fusion/ref.h \
+  ../../src/gfx/generic/generic.h ../../src/misc/conf.h \
+  ../../src/misc/util.h ../../include/directfb_util.h \
+  ../../src/media/idirectfbimageprovider.h ../../src/core/layers.h \
+  ../../src/misc/gfx_util.h ../../lib/direct/memcpy.h \
+  ../../lib/direct/interface_implementation.h
+
+../../config.h:
+
+/usr/include/stdio.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/gconv.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/include/errno.h:
+
+/usr/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+../../include/directfb.h:
+
+../../include/dfb_types.h:
+
+../../lib/direct/types.h:
+
+../../lib/direct/build.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdbool.h:
+
+/usr/include/stdint.h:
+
+/usr/include/sys/time.h:
+
+../../include/directfb_keyboard.h:
+
+../../lib/direct/interface.h:
+
+../../lib/direct/debug.h:
+
+../../lib/direct/clock.h:
+
+../../lib/direct/conf.h:
+
+../../lib/direct/messages.h:
+
+/usr/include/sys/signal.h:
+
+/usr/include/signal.h:
+
+/usr/include/bits/signum.h:
+
+/usr/include/bits/siginfo.h:
+
+/usr/include/bits/sigaction.h:
+
+/usr/include/bits/sigcontext.h:
+
+/usr/include/asm/sigcontext.h:
+
+/usr/include/bits/sigstack.h:
+
+/usr/include/sys/ucontext.h:
+
+/usr/include/sys/procfs.h:
+
+/usr/include/sys/user.h:
+
+/usr/include/bits/sigthread.h:
+
+../../lib/direct/log.h:
+
+../../lib/direct/system.h:
+
+../../lib/direct/thread.h:
+
+../../lib/direct/trace.h:
+
+../../lib/direct/mem.h:
+
+../../src/display/idirectfbsurface.h:
+
+../../lib/fusion/reactor.h:
+
+../../lib/direct/list.h:
+
+../../lib/fusion/types.h:
+
+../../lib/fusion/build.h:
+
+../../lib/fusion/call.h:
+
+../../lib/fusion/lock.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sched.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/bits/setjmp.h:
+
+../../lib/direct/util.h:
+
+../../src/core/coretypes.h:
+
+../../src/core/state.h:
+
+../../lib/direct/serial.h:
+
+../../src/core/coredefs.h:
+
+../../src/core/gfxcard.h:
+
+../../lib/direct/modules.h:
+
+../../src/core/surface_buffer.h:
+
+../../lib/fusion/vector.h:
+
+/usr/include/limits.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+../../src/core/surface.h:
+
+../../lib/fusion/object.h:
+
+../../lib/fusion/ref.h:
+
+../../src/gfx/generic/generic.h:
+
+../../src/misc/conf.h:
+
+../../src/misc/util.h:
+
+../../include/directfb_util.h:
+
+../../src/media/idirectfbimageprovider.h:
+
+../../src/core/layers.h:
+
+../../src/misc/gfx_util.h:
+
+../../lib/direct/memcpy.h:
+
+../../lib/direct/interface_implementation.h:

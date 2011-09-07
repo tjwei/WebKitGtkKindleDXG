@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkSeparator">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkSeparator.top_of_page">GtkSeparator</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkSeparator</refname>
+<refpurpose>Base class for GtkHSeparator and GtkVSeparator</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkSeparator.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkSeparator-struct">GtkSeparator</link>;
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkSeparator.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----GtkSeparator
+                           +----<link linkend="GtkHSeparator">GtkHSeparator</link>
+                           +----<link linkend="GtkVSeparator">GtkVSeparator</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkSeparator.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkSeparator implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkSeparator.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkSeparator"><type>GtkSeparator</type></link> widget is an abstract class, used only for deriving the
+subclasses <link linkend="GtkHSeparator"><type>GtkHSeparator</type></link> and <link linkend="GtkVSeparator"><type>GtkVSeparator</type></link>.
+</para>
+</refsect1>
+
+<refsect1 id="GtkSeparator.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkSeparator-struct" role="struct">
+<title>GtkSeparator</title>
+<indexterm zone="GtkSeparator-struct"><primary sortas="Separator">GtkSeparator</primary></indexterm><programlisting>typedef struct _GtkSeparator GtkSeparator;</programlisting>
+<para>
+The <link linkend="GtkSeparator-struct"><type>GtkSeparator</type></link> struct contains private data only.
+</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

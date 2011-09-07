@@ -1,0 +1,1971 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkTextView">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkTextView.top_of_page">GtkTextView</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkTextView</refname>
+<refpurpose>Widget that displays a GtkTextBuffer</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkTextView.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+<anchor id="GtkTextChildAnchor"/>
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkTextView-struct">GtkTextView</link>;
+enum                <link linkend="GtkTextWindowType">GtkTextWindowType</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-text-view-new">gtk_text_view_new</link>                   (void);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-text-view-new-with-buffer">gtk_text_view_new_with_buffer</link>       (<link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-buffer">gtk_text_view_set_buffer</link>            (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer);
+<link linkend="GtkTextBuffer">GtkTextBuffer</link> *     <link linkend="gtk-text-view-get-buffer">gtk_text_view_get_buffer</link>            (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-scroll-to-mark">gtk_text_view_scroll_to_mark</link>        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextMark">GtkTextMark</link> *mark,
+                                                         <link linkend="gdouble">gdouble</link> within_margin,
+                                                         <link linkend="gboolean">gboolean</link> use_align,
+                                                         <link linkend="gdouble">gdouble</link> xalign,
+                                                         <link linkend="gdouble">gdouble</link> yalign);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-scroll-to-iter">gtk_text_view_scroll_to_iter</link>        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="gdouble">gdouble</link> within_margin,
+                                                         <link linkend="gboolean">gboolean</link> use_align,
+                                                         <link linkend="gdouble">gdouble</link> xalign,
+                                                         <link linkend="gdouble">gdouble</link> yalign);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-scroll-mark-onscreen">gtk_text_view_scroll_mark_onscreen</link>  (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextMark">GtkTextMark</link> *mark);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-move-mark-onscreen">gtk_text_view_move_mark_onscreen</link>    (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextMark">GtkTextMark</link> *mark);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-place-cursor-onscreen">gtk_text_view_place_cursor_onscreen</link> (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-get-visible-rect">gtk_text_view_get_visible_rect</link>      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> *visible_rect);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-get-iter-location">gtk_text_view_get_iter_location</link>     (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         const <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> *location);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-get-line-at-y">gtk_text_view_get_line_at_y</link>         (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *target_iter,
+                                                         <link linkend="gint">gint</link> y,
+                                                         <link linkend="gint">gint</link> *line_top);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-get-line-yrange">gtk_text_view_get_line_yrange</link>       (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         const <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="gint">gint</link> *y,
+                                                         <link linkend="gint">gint</link> *height);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-get-iter-at-location">gtk_text_view_get_iter_at_location</link>  (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-get-iter-at-position">gtk_text_view_get_iter_at_position</link>  (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="gint">gint</link> *trailing,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-buffer-to-window-coords">gtk_text_view_buffer_to_window_coords</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> win,
+                                                         <link linkend="gint">gint</link> buffer_x,
+                                                         <link linkend="gint">gint</link> buffer_y,
+                                                         <link linkend="gint">gint</link> *window_x,
+                                                         <link linkend="gint">gint</link> *window_y);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-window-to-buffer-coords">gtk_text_view_window_to_buffer_coords</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> win,
+                                                         <link linkend="gint">gint</link> window_x,
+                                                         <link linkend="gint">gint</link> window_y,
+                                                         <link linkend="gint">gint</link> *buffer_x,
+                                                         <link linkend="gint">gint</link> *buffer_y);
+<link linkend="GdkWindow">GdkWindow</link>*          <link linkend="gtk-text-view-get-window">gtk_text_view_get_window</link>            (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> win);
+<link linkend="GtkTextWindowType">GtkTextWindowType</link>   <link linkend="gtk-text-view-get-window-type">gtk_text_view_get_window_type</link>       (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GdkWindow">GdkWindow</link> *window);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-border-window-size">gtk_text_view_set_border_window_size</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> type,
+                                                         <link linkend="gint">gint</link> size);
+<link linkend="gint">gint</link>                <link linkend="gtk-text-view-get-border-window-size">gtk_text_view_get_border_window_size</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> type);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-forward-display-line">gtk_text_view_forward_display_line</link>  (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-backward-display-line">gtk_text_view_backward_display_line</link> (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-forward-display-line-end">gtk_text_view_forward_display_line_end</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-backward-display-line-start">gtk_text_view_backward_display_line_start</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-starts-display-line">gtk_text_view_starts_display_line</link>   (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         const <link linkend="GtkTextIter">GtkTextIter</link> *iter);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-move-visually">gtk_text_view_move_visually</link>         (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="gint">gint</link> count);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-add-child-at-anchor">gtk_text_view_add_child_at_anchor</link>   (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="GtkTextChildAnchor">GtkTextChildAnchor</link> *anchor);
+                    <link linkend="GtkTextChildAnchor-struct">GtkTextChildAnchor</link>;
+<link linkend="GtkTextChildAnchor">GtkTextChildAnchor</link>* <link linkend="gtk-text-child-anchor-new">gtk_text_child_anchor_new</link>           (void);
+<link linkend="GList">GList</link>*              <link linkend="gtk-text-child-anchor-get-widgets">gtk_text_child_anchor_get_widgets</link>   (<link linkend="GtkTextChildAnchor">GtkTextChildAnchor</link> *anchor);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-child-anchor-get-deleted">gtk_text_child_anchor_get_deleted</link>   (<link linkend="GtkTextChildAnchor">GtkTextChildAnchor</link> *anchor);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-add-child-in-window">gtk_text_view_add_child_in_window</link>   (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> which_window,
+                                                         <link linkend="gint">gint</link> xpos,
+                                                         <link linkend="gint">gint</link> ypos);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-move-child">gtk_text_view_move_child</link>            (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gint">gint</link> xpos,
+                                                         <link linkend="gint">gint</link> ypos);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-wrap-mode">gtk_text_view_set_wrap_mode</link>         (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkWrapMode">GtkWrapMode</link> wrap_mode);
+<link linkend="GtkWrapMode">GtkWrapMode</link>         <link linkend="gtk-text-view-get-wrap-mode">gtk_text_view_get_wrap_mode</link>         (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-editable">gtk_text_view_set_editable</link>          (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gboolean">gboolean</link> setting);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-get-editable">gtk_text_view_get_editable</link>          (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-cursor-visible">gtk_text_view_set_cursor_visible</link>    (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gboolean">gboolean</link> setting);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-get-cursor-visible">gtk_text_view_get_cursor_visible</link>    (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-overwrite">gtk_text_view_set_overwrite</link>         (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gboolean">gboolean</link> overwrite);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-get-overwrite">gtk_text_view_get_overwrite</link>         (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-pixels-above-lines">gtk_text_view_set_pixels_above_lines</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> pixels_above_lines);
+<link linkend="gint">gint</link>                <link linkend="gtk-text-view-get-pixels-above-lines">gtk_text_view_get_pixels_above_lines</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-pixels-below-lines">gtk_text_view_set_pixels_below_lines</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> pixels_below_lines);
+<link linkend="gint">gint</link>                <link linkend="gtk-text-view-get-pixels-below-lines">gtk_text_view_get_pixels_below_lines</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-pixels-inside-wrap">gtk_text_view_set_pixels_inside_wrap</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> pixels_inside_wrap);
+<link linkend="gint">gint</link>                <link linkend="gtk-text-view-get-pixels-inside-wrap">gtk_text_view_get_pixels_inside_wrap</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-justification">gtk_text_view_set_justification</link>     (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkJustification">GtkJustification</link> justification);
+<link linkend="GtkJustification">GtkJustification</link>    <link linkend="gtk-text-view-get-justification">gtk_text_view_get_justification</link>     (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-left-margin">gtk_text_view_set_left_margin</link>       (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> left_margin);
+<link linkend="gint">gint</link>                <link linkend="gtk-text-view-get-left-margin">gtk_text_view_get_left_margin</link>       (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-right-margin">gtk_text_view_set_right_margin</link>      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> right_margin);
+<link linkend="gint">gint</link>                <link linkend="gtk-text-view-get-right-margin">gtk_text_view_get_right_margin</link>      (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-indent">gtk_text_view_set_indent</link>            (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> indent);
+<link linkend="gint">gint</link>                <link linkend="gtk-text-view-get-indent">gtk_text_view_get_indent</link>            (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-tabs">gtk_text_view_set_tabs</link>              (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="PangoTabArray">PangoTabArray</link> *tabs);
+<link linkend="PangoTabArray">PangoTabArray</link>*      <link linkend="gtk-text-view-get-tabs">gtk_text_view_get_tabs</link>              (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="void">void</link>                <link linkend="gtk-text-view-set-accepts-tab">gtk_text_view_set_accepts_tab</link>       (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gboolean">gboolean</link> accepts_tab);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-view-get-accepts-tab">gtk_text_view_get_accepts_tab</link>       (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+<link linkend="GtkTextAttributes">GtkTextAttributes</link>*  <link linkend="gtk-text-view-get-default-attributes">gtk_text_view_get_default_attributes</link>
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view);
+#define             <link linkend="GTK-TEXT-VIEW-PRIORITY-VALIDATE--CAPS">GTK_TEXT_VIEW_PRIORITY_VALIDATE</link>
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkTextView.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----GtkTextView
+</synopsis>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkTextChildAnchor
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkTextView.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkTextView implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkTextView.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkTextView--accepts-tab">accepts-tab</link>&quot;              <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextView--buffer">buffer</link>&quot;                   <link linkend="GtkTextBuffer">GtkTextBuffer</link>*        : Read / Write
+  &quot;<link linkend="GtkTextView--cursor-visible">cursor-visible</link>&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextView--editable">editable</link>&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextView--im-module">im-module</link>&quot;                <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkTextView--indent">indent</link>&quot;                   <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextView--justification">justification</link>&quot;            <link linkend="GtkJustification">GtkJustification</link>      : Read / Write
+  &quot;<link linkend="GtkTextView--left-margin">left-margin</link>&quot;              <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextView--overwrite">overwrite</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextView--pixels-above-lines">pixels-above-lines</link>&quot;       <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextView--pixels-below-lines">pixels-below-lines</link>&quot;       <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextView--pixels-inside-wrap">pixels-inside-wrap</link>&quot;       <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextView--right-margin">right-margin</link>&quot;             <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextView--tabs">tabs</link>&quot;                     <link linkend="PangoTabArray">PangoTabArray</link>*        : Read / Write
+  &quot;<link linkend="GtkTextView--wrap-mode">wrap-mode</link>&quot;                <link linkend="GtkWrapMode">GtkWrapMode</link>           : Read / Write
+</synopsis>
+</refsect1>
+<refsect1 id="GtkTextView.style-properties" role="style_properties">
+<title role="style_properties.title">Style Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkTextView--s-error-underline-color">error-underline-color</link>&quot;    <link linkend="GdkColor">GdkColor</link>*             : Read
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkTextView.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkTextView-backspace">backspace</link>&quot;                                      : Run Last / Action
+  &quot;<link linkend="GtkTextView-copy-clipboard">copy-clipboard</link>&quot;                                 : Run Last / Action
+  &quot;<link linkend="GtkTextView-cut-clipboard">cut-clipboard</link>&quot;                                  : Run Last / Action
+  &quot;<link linkend="GtkTextView-delete-from-cursor">delete-from-cursor</link>&quot;                             : Run Last / Action
+  &quot;<link linkend="GtkTextView-insert-at-cursor">insert-at-cursor</link>&quot;                               : Run Last / Action
+  &quot;<link linkend="GtkTextView-move-cursor">move-cursor</link>&quot;                                    : Run Last / Action
+  &quot;<link linkend="GtkTextView-move-viewport">move-viewport</link>&quot;                                  : Run Last / Action
+  &quot;<link linkend="GtkTextView-page-horizontally">page-horizontally</link>&quot;                              : Run Last / Action
+  &quot;<link linkend="GtkTextView-paste-clipboard">paste-clipboard</link>&quot;                                : Run Last / Action
+  &quot;<link linkend="GtkTextView-populate-popup">populate-popup</link>&quot;                                 : Run Last
+  &quot;<link linkend="GtkTextView-select-all">select-all</link>&quot;                                     : Run Last / Action
+  &quot;<link linkend="GtkTextView-set-anchor">set-anchor</link>&quot;                                     : Run Last / Action
+  &quot;<link linkend="GtkTextView-set-scroll-adjustments">set-scroll-adjustments</link>&quot;                         : Run Last / Action
+  &quot;<link linkend="GtkTextView-toggle-cursor-visible">toggle-cursor-visible</link>&quot;                          : Run Last / Action
+  &quot;<link linkend="GtkTextView-toggle-overwrite">toggle-overwrite</link>&quot;                               : Run Last / Action
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkTextView.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+You may wish to begin by reading the <link linkend="TextWidget">text widget
+conceptual overview</link> which gives an overview of all the objects and data
+types related to the text widget and how they work together.
+</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GtkTextView.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkTextView-struct" role="struct">
+<title>GtkTextView</title>
+<indexterm zone="GtkTextView-struct"><primary sortas="TextView">GtkTextView</primary></indexterm><programlisting>typedef struct _GtkTextView GtkTextView;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkTextWindowType" role="enum">
+<title>enum GtkTextWindowType</title>
+<indexterm zone="GtkTextWindowType"><primary sortas="TextWindowType">GtkTextWindowType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_TEXT_WINDOW_PRIVATE,
+  GTK_TEXT_WINDOW_WIDGET,
+  GTK_TEXT_WINDOW_TEXT,
+  GTK_TEXT_WINDOW_LEFT,
+  GTK_TEXT_WINDOW_RIGHT,
+  GTK_TEXT_WINDOW_TOP,
+  GTK_TEXT_WINDOW_BOTTOM
+} GtkTextWindowType;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-text-view-new" role="function">
+<title>gtk_text_view_new ()</title>
+<indexterm zone="gtk-text-view-new"><primary sortas="text_view_new">gtk_text_view_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_text_view_new                   (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkTextView"><type>GtkTextView</type></link>. If you don't call <link linkend="gtk-text-view-set-buffer"><function>gtk_text_view_set_buffer()</function></link>
+before using the text view, an empty default buffer will be created
+for you. Get the buffer with <link linkend="gtk-text-view-get-buffer"><function>gtk_text_view_get_buffer()</function></link>. If you want
+to specify your own buffer, consider <link linkend="gtk-text-view-new-with-buffer"><function>gtk_text_view_new_with_buffer()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-new-with-buffer" role="function">
+<title>gtk_text_view_new_with_buffer ()</title>
+<indexterm zone="gtk-text-view-new-with-buffer"><primary sortas="text_view_new_with_buffer">gtk_text_view_new_with_buffer</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_text_view_new_with_buffer       (<link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer);</programlisting>
+<para>
+Creates a new <link linkend="GtkTextView"><type>GtkTextView</type></link> widget displaying the buffer
+<parameter>buffer</parameter>. One buffer can be shared among many widgets.
+<parameter>buffer</parameter> may be <link linkend="NULL--CAPS"><literal>NULL</literal></link> to create a default buffer, in which case
+this function is equivalent to <link linkend="gtk-text-view-new"><function>gtk_text_view_new()</function></link>. The
+text view adds its own reference count to the buffer; it does not
+take over an existing reference.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkTextView"><type>GtkTextView</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-buffer" role="function">
+<title>gtk_text_view_set_buffer ()</title>
+<indexterm zone="gtk-text-view-set-buffer"><primary sortas="text_view_set_buffer">gtk_text_view_set_buffer</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_buffer            (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer);</programlisting>
+<para>
+Sets <parameter>buffer</parameter> as the buffer being displayed by <parameter>text_view</parameter>. The previous
+buffer displayed by the text view is unreferenced, and a reference is
+added to <parameter>buffer</parameter>. If you owned a reference to <parameter>buffer</parameter> before passing it
+to this function, you must remove that reference yourself; <link linkend="GtkTextView"><type>GtkTextView</type></link>
+will not "adopt" it.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-buffer" role="function">
+<title>gtk_text_view_get_buffer ()</title>
+<indexterm zone="gtk-text-view-get-buffer"><primary sortas="text_view_get_buffer">gtk_text_view_get_buffer</primary></indexterm><programlisting><link linkend="GtkTextBuffer">GtkTextBuffer</link> *     gtk_text_view_get_buffer            (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Returns the <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link> being displayed by this text view.
+The reference count on the buffer is not incremented; the caller
+of this function won't own a new reference.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-scroll-to-mark" role="function">
+<title>gtk_text_view_scroll_to_mark ()</title>
+<indexterm zone="gtk-text-view-scroll-to-mark"><primary sortas="text_view_scroll_to_mark">gtk_text_view_scroll_to_mark</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_scroll_to_mark        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextMark">GtkTextMark</link> *mark,
+                                                         <link linkend="gdouble">gdouble</link> within_margin,
+                                                         <link linkend="gboolean">gboolean</link> use_align,
+                                                         <link linkend="gdouble">gdouble</link> xalign,
+                                                         <link linkend="gdouble">gdouble</link> yalign);</programlisting>
+<para>
+Scrolls <parameter>text_view</parameter> so that <parameter>mark</parameter> is on the screen in the position
+indicated by <parameter>xalign</parameter> and <parameter>yalign</parameter>. An alignment of 0.0 indicates
+left or top, 1.0 indicates right or bottom, 0.5 means center. 
+If <parameter>use_align</parameter> is <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, the text scrolls the minimal distance to 
+get the mark onscreen, possibly not scrolling at all. The effective 
+screen for purposes of this function is reduced by a margin of size 
+<parameter>within_margin</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mark</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextMark"><type>GtkTextMark</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>within_margin</parameter>&#160;:</term>
+<listitem><simpara> margin as a [0.0,0.5) fraction of screen size
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>use_align</parameter>&#160;:</term>
+<listitem><simpara> whether to use alignment arguments (if <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, just 
+   get the mark onscreen)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xalign</parameter>&#160;:</term>
+<listitem><simpara> horizontal alignment of mark within visible area
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>yalign</parameter>&#160;:</term>
+<listitem><simpara> vertical alignment of mark within visible area
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-scroll-to-iter" role="function">
+<title>gtk_text_view_scroll_to_iter ()</title>
+<indexterm zone="gtk-text-view-scroll-to-iter"><primary sortas="text_view_scroll_to_iter">gtk_text_view_scroll_to_iter</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_scroll_to_iter        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="gdouble">gdouble</link> within_margin,
+                                                         <link linkend="gboolean">gboolean</link> use_align,
+                                                         <link linkend="gdouble">gdouble</link> xalign,
+                                                         <link linkend="gdouble">gdouble</link> yalign);</programlisting>
+<para>
+Scrolls <parameter>text_view</parameter> so that <parameter>iter</parameter> is on the screen in the position
+indicated by <parameter>xalign</parameter> and <parameter>yalign</parameter>. An alignment of 0.0 indicates
+left or top, 1.0 indicates right or bottom, 0.5 means center. 
+If <parameter>use_align</parameter> is <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, the text scrolls the minimal distance to 
+get the mark onscreen, possibly not scrolling at all. The effective 
+screen for purposes of this function is reduced by a margin of size 
+<parameter>within_margin</parameter>.
+</para>
+<para>
+Note that this function uses the currently-computed height of the
+lines in the text buffer. Line heights are computed in an idle 
+handler; so this function may not have the desired effect if it's 
+called before the height computations. To avoid oddness, consider 
+using <link linkend="gtk-text-view-scroll-to-mark"><function>gtk_text_view_scroll_to_mark()</function></link> which saves a point to be 
+scrolled to after line validation.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>within_margin</parameter>&#160;:</term>
+<listitem><simpara> margin as a [0.0,0.5) fraction of screen size
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>use_align</parameter>&#160;:</term>
+<listitem><simpara> whether to use alignment arguments (if <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, 
+   just get the mark onscreen)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xalign</parameter>&#160;:</term>
+<listitem><simpara> horizontal alignment of mark within visible area
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>yalign</parameter>&#160;:</term>
+<listitem><simpara> vertical alignment of mark within visible area
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if scrolling occurred
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-scroll-mark-onscreen" role="function">
+<title>gtk_text_view_scroll_mark_onscreen ()</title>
+<indexterm zone="gtk-text-view-scroll-mark-onscreen"><primary sortas="text_view_scroll_mark_onscreen">gtk_text_view_scroll_mark_onscreen</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_scroll_mark_onscreen  (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextMark">GtkTextMark</link> *mark);</programlisting>
+<para>
+Scrolls <parameter>text_view</parameter> the minimum distance such that <parameter>mark</parameter> is contained
+within the visible area of the widget.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mark</parameter>&#160;:</term>
+<listitem><simpara> a mark in the buffer for <parameter>text_view</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-move-mark-onscreen" role="function">
+<title>gtk_text_view_move_mark_onscreen ()</title>
+<indexterm zone="gtk-text-view-move-mark-onscreen"><primary sortas="text_view_move_mark_onscreen">gtk_text_view_move_mark_onscreen</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_move_mark_onscreen    (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextMark">GtkTextMark</link> *mark);</programlisting>
+<para>
+Moves a mark within the buffer so that it's
+located within the currently-visible text area.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mark</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextMark"><type>GtkTextMark</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the mark moved (wasn't already onscreen)
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-place-cursor-onscreen" role="function">
+<title>gtk_text_view_place_cursor_onscreen ()</title>
+<indexterm zone="gtk-text-view-place-cursor-onscreen"><primary sortas="text_view_place_cursor_onscreen">gtk_text_view_place_cursor_onscreen</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_place_cursor_onscreen (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Moves the cursor to the currently visible region of the
+buffer, it it isn't there already.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the cursor had to be moved.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-visible-rect" role="function">
+<title>gtk_text_view_get_visible_rect ()</title>
+<indexterm zone="gtk-text-view-get-visible-rect"><primary sortas="text_view_get_visible_rect">gtk_text_view_get_visible_rect</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_get_visible_rect      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> *visible_rect);</programlisting>
+<para>
+Fills <parameter>visible_rect</parameter> with the currently-visible
+region of the buffer, in buffer coordinates. Convert to window coordinates
+with <link linkend="gtk-text-view-buffer-to-window-coords"><function>gtk_text_view_buffer_to_window_coords()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>visible_rect</parameter>&#160;:</term>
+<listitem><simpara> rectangle to fill
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-iter-location" role="function">
+<title>gtk_text_view_get_iter_location ()</title>
+<indexterm zone="gtk-text-view-get-iter-location"><primary sortas="text_view_get_iter_location">gtk_text_view_get_iter_location</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_get_iter_location     (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         const <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="GdkRectangle">GdkRectangle</link> *location);</programlisting>
+<para>
+Gets a rectangle which roughly contains the character at <parameter>iter</parameter>.
+The rectangle position is in buffer coordinates; use
+<link linkend="gtk-text-view-buffer-to-window-coords"><function>gtk_text_view_buffer_to_window_coords()</function></link> to convert these
+coordinates to coordinates for one of the windows in the text view.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>location</parameter>&#160;:</term>
+<listitem><simpara> bounds of the character at <parameter>iter</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-line-at-y" role="function">
+<title>gtk_text_view_get_line_at_y ()</title>
+<indexterm zone="gtk-text-view-get-line-at-y"><primary sortas="text_view_get_line_at_y">gtk_text_view_get_line_at_y</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_get_line_at_y         (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *target_iter,
+                                                         <link linkend="gint">gint</link> y,
+                                                         <link linkend="gint">gint</link> *line_top);</programlisting>
+<para>
+Gets the <link linkend="GtkTextIter"><type>GtkTextIter</type></link> at the start of the line containing
+the coordinate <parameter>y</parameter>. <parameter>y</parameter> is in buffer coordinates, convert from
+window coordinates with <link linkend="gtk-text-view-window-to-buffer-coords"><function>gtk_text_view_window_to_buffer_coords()</function></link>.
+If non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, <parameter>line_top</parameter> will be filled with the coordinate of the top
+edge of the line.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>target_iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> a y coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>line_top</parameter>&#160;:</term>
+<listitem><simpara> return location for top coordinate of the line
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-line-yrange" role="function">
+<title>gtk_text_view_get_line_yrange ()</title>
+<indexterm zone="gtk-text-view-get-line-yrange"><primary sortas="text_view_get_line_yrange">gtk_text_view_get_line_yrange</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_get_line_yrange       (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         const <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="gint">gint</link> *y,
+                                                         <link linkend="gint">gint</link> *height);</programlisting>
+<para>
+Gets the y coordinate of the top of the line containing <parameter>iter</parameter>,
+and the height of the line. The coordinate is a buffer coordinate;
+convert to window coordinates with <link linkend="gtk-text-view-buffer-to-window-coords"><function>gtk_text_view_buffer_to_window_coords()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> return location for a y coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> return location for a height
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-iter-at-location" role="function">
+<title>gtk_text_view_get_iter_at_location ()</title>
+<indexterm zone="gtk-text-view-get-iter-at-location"><primary sortas="text_view_get_iter_at_location">gtk_text_view_get_iter_at_location</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_get_iter_at_location  (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y);</programlisting>
+<para>
+Retrieves the iterator at buffer coordinates <parameter>x</parameter> and <parameter>y</parameter>. Buffer
+coordinates are coordinates for the entire buffer, not just the
+currently-displayed portion.  If you have coordinates from an
+event, you have to convert those to buffer coordinates with
+<link linkend="gtk-text-view-window-to-buffer-coords"><function>gtk_text_view_window_to_buffer_coords()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> x position, in buffer coordinates
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> y position, in buffer coordinates
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-iter-at-position" role="function" condition="since:2.6">
+<title>gtk_text_view_get_iter_at_position ()</title>
+<indexterm zone="gtk-text-view-get-iter-at-position" role="2.6"><primary sortas="text_view_get_iter_at_position">gtk_text_view_get_iter_at_position</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_get_iter_at_position  (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="gint">gint</link> *trailing,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y);</programlisting>
+<para>
+Retrieves the iterator pointing to the character at buffer 
+coordinates <parameter>x</parameter> and <parameter>y</parameter>. Buffer coordinates are coordinates for 
+the entire buffer, not just the currently-displayed portion.  
+If you have coordinates from an event, you have to convert 
+those to buffer coordinates with 
+<link linkend="gtk-text-view-window-to-buffer-coords"><function>gtk_text_view_window_to_buffer_coords()</function></link>.
+</para>
+<para>
+Note that this is different from <link linkend="gtk-text-view-get-iter-at-location"><function>gtk_text_view_get_iter_at_location()</function></link>,
+which returns cursor locations, i.e. positions <emphasis>between</emphasis>
+characters.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>trailing</parameter>&#160;:</term>
+<listitem><simpara> if non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, location to store an integer indicating where
+   in the grapheme the user clicked. It will either be
+   zero, or the number of characters in the grapheme. 
+   0 represents the trailing edge of the grapheme.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> x position, in buffer coordinates
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> y position, in buffer coordinates
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-text-view-buffer-to-window-coords" role="function">
+<title>gtk_text_view_buffer_to_window_coords ()</title>
+<indexterm zone="gtk-text-view-buffer-to-window-coords"><primary sortas="text_view_buffer_to_window_coords">gtk_text_view_buffer_to_window_coords</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_buffer_to_window_coords
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> win,
+                                                         <link linkend="gint">gint</link> buffer_x,
+                                                         <link linkend="gint">gint</link> buffer_y,
+                                                         <link linkend="gint">gint</link> *window_x,
+                                                         <link linkend="gint">gint</link> *window_y);</programlisting>
+<para>
+Converts coordinate (<parameter>buffer_x</parameter>, <parameter>buffer_y</parameter>) to coordinates for the window
+<parameter>win</parameter>, and stores the result in (<parameter>window_x</parameter>, <parameter>window_y</parameter>). 
+</para>
+<para>
+Note that you can't convert coordinates for a nonexisting window (see 
+<link linkend="gtk-text-view-set-border-window-size"><function>gtk_text_view_set_border_window_size()</function></link>).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>win</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextWindowType"><type>GtkTextWindowType</type></link> except <link linkend="GTK-TEXT-WINDOW-PRIVATE--CAPS"><type>GTK_TEXT_WINDOW_PRIVATE</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer_x</parameter>&#160;:</term>
+<listitem><simpara> buffer x coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer_y</parameter>&#160;:</term>
+<listitem><simpara> buffer y coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>window_x</parameter>&#160;:</term>
+<listitem><simpara> window x coordinate return location
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>window_y</parameter>&#160;:</term>
+<listitem><simpara> window y coordinate return location
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-window-to-buffer-coords" role="function">
+<title>gtk_text_view_window_to_buffer_coords ()</title>
+<indexterm zone="gtk-text-view-window-to-buffer-coords"><primary sortas="text_view_window_to_buffer_coords">gtk_text_view_window_to_buffer_coords</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_window_to_buffer_coords
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> win,
+                                                         <link linkend="gint">gint</link> window_x,
+                                                         <link linkend="gint">gint</link> window_y,
+                                                         <link linkend="gint">gint</link> *buffer_x,
+                                                         <link linkend="gint">gint</link> *buffer_y);</programlisting>
+<para>
+Converts coordinates on the window identified by <parameter>win</parameter> to buffer
+coordinates, storing the result in (<parameter>buffer_x</parameter>,<parameter>buffer_y</parameter>).
+</para>
+<para>
+Note that you can't convert coordinates for a nonexisting window (see 
+<link linkend="gtk-text-view-set-border-window-size"><function>gtk_text_view_set_border_window_size()</function></link>).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>win</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextWindowType"><type>GtkTextWindowType</type></link> except <link linkend="GTK-TEXT-WINDOW-PRIVATE--CAPS"><type>GTK_TEXT_WINDOW_PRIVATE</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>window_x</parameter>&#160;:</term>
+<listitem><simpara> window x coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>window_y</parameter>&#160;:</term>
+<listitem><simpara> window y coordinate
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer_x</parameter>&#160;:</term>
+<listitem><simpara> buffer x coordinate return location
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer_y</parameter>&#160;:</term>
+<listitem><simpara> buffer y coordinate return location
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-window" role="function">
+<title>gtk_text_view_get_window ()</title>
+<indexterm zone="gtk-text-view-get-window"><primary sortas="text_view_get_window">gtk_text_view_get_window</primary></indexterm><programlisting><link linkend="GdkWindow">GdkWindow</link>*          gtk_text_view_get_window            (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> win);</programlisting>
+<para>
+Retrieves the <link linkend="GdkWindow"><type>GdkWindow</type></link> corresponding to an area of the text view;
+possible windows include the overall widget window, child windows
+on the left, right, top, bottom, and the window that displays the
+text buffer. Windows are <link linkend="NULL--CAPS"><literal>NULL</literal></link> and nonexistent if their width or
+height is 0, and are nonexistent before the widget has been
+realized.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>win</parameter>&#160;:</term>
+<listitem><simpara> window to get
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GdkWindow"><type>GdkWindow</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-window-type" role="function">
+<title>gtk_text_view_get_window_type ()</title>
+<indexterm zone="gtk-text-view-get-window-type"><primary sortas="text_view_get_window_type">gtk_text_view_get_window_type</primary></indexterm><programlisting><link linkend="GtkTextWindowType">GtkTextWindowType</link>   gtk_text_view_get_window_type       (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GdkWindow">GdkWindow</link> *window);</programlisting>
+<para>
+Usually used to find out which window an event corresponds to.
+If you connect to an event signal on <parameter>text_view</parameter>, this function
+should be called on <literal>event-&gt;window</literal> to
+see which window it was.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>window</parameter>&#160;:</term>
+<listitem><simpara> a window type
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the window type.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-border-window-size" role="function">
+<title>gtk_text_view_set_border_window_size ()</title>
+<indexterm zone="gtk-text-view-set-border-window-size"><primary sortas="text_view_set_border_window_size">gtk_text_view_set_border_window_size</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_border_window_size
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> type,
+                                                         <link linkend="gint">gint</link> size);</programlisting>
+<para>
+Sets the width of <link linkend="GTK-TEXT-WINDOW-LEFT--CAPS"><literal>GTK_TEXT_WINDOW_LEFT</literal></link> or <link linkend="GTK-TEXT-WINDOW-RIGHT--CAPS"><literal>GTK_TEXT_WINDOW_RIGHT</literal></link>,
+or the height of <link linkend="GTK-TEXT-WINDOW-TOP--CAPS"><literal>GTK_TEXT_WINDOW_TOP</literal></link> or <link linkend="GTK-TEXT-WINDOW-BOTTOM--CAPS"><literal>GTK_TEXT_WINDOW_BOTTOM</literal></link>.
+Automatically destroys the corresponding window if the size is set
+to 0, and creates the window if the size is set to non-zero.  This
+function can only be used for the "border windows," it doesn't work
+with <link linkend="GTK-TEXT-WINDOW-WIDGET--CAPS"><type>GTK_TEXT_WINDOW_WIDGET</type></link>, <link linkend="GTK-TEXT-WINDOW-TEXT--CAPS"><type>GTK_TEXT_WINDOW_TEXT</type></link>, or
+<link linkend="GTK-TEXT-WINDOW-PRIVATE--CAPS"><type>GTK_TEXT_WINDOW_PRIVATE</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> window to affect
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> width or height of the window
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-border-window-size" role="function">
+<title>gtk_text_view_get_border_window_size ()</title>
+<indexterm zone="gtk-text-view-get-border-window-size"><primary sortas="text_view_get_border_window_size">gtk_text_view_get_border_window_size</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_text_view_get_border_window_size
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> type);</programlisting>
+<para>
+Gets the width of the specified border window. See
+<link linkend="gtk-text-view-set-border-window-size"><function>gtk_text_view_set_border_window_size()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> window to return size from
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> width of window
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-forward-display-line" role="function">
+<title>gtk_text_view_forward_display_line ()</title>
+<indexterm zone="gtk-text-view-forward-display-line"><primary sortas="text_view_forward_display_line">gtk_text_view_forward_display_line</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_forward_display_line  (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter);</programlisting>
+<para>
+Moves the given <parameter>iter</parameter> forward by one display (wrapped) line.
+A display line is different from a paragraph. Paragraphs are
+separated by newlines or other paragraph separator characters.
+Display lines are created by line-wrapping a paragraph. If
+wrapping is turned off, display lines and paragraphs will be the
+same. Display lines are divided differently for each view, since
+they depend on the view's width; paragraphs are the same in all
+views, since they depend on the contents of the <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>iter</parameter> was moved and is not on the end iterator
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-backward-display-line" role="function">
+<title>gtk_text_view_backward_display_line ()</title>
+<indexterm zone="gtk-text-view-backward-display-line"><primary sortas="text_view_backward_display_line">gtk_text_view_backward_display_line</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_backward_display_line (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter);</programlisting>
+<para>
+Moves the given <parameter>iter</parameter> backward by one display (wrapped) line.
+A display line is different from a paragraph. Paragraphs are
+separated by newlines or other paragraph separator characters.
+Display lines are created by line-wrapping a paragraph. If
+wrapping is turned off, display lines and paragraphs will be the
+same. Display lines are divided differently for each view, since
+they depend on the view's width; paragraphs are the same in all
+views, since they depend on the contents of the <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>iter</parameter> was moved and is not on the end iterator
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-forward-display-line-end" role="function">
+<title>gtk_text_view_forward_display_line_end ()</title>
+<indexterm zone="gtk-text-view-forward-display-line-end"><primary sortas="text_view_forward_display_line_end">gtk_text_view_forward_display_line_end</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_forward_display_line_end
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter);</programlisting>
+<para>
+Moves the given <parameter>iter</parameter> forward to the next display line end.
+A display line is different from a paragraph. Paragraphs are
+separated by newlines or other paragraph separator characters.
+Display lines are created by line-wrapping a paragraph. If
+wrapping is turned off, display lines and paragraphs will be the
+same. Display lines are divided differently for each view, since
+they depend on the view's width; paragraphs are the same in all
+views, since they depend on the contents of the <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>iter</parameter> was moved and is not on the end iterator
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-backward-display-line-start" role="function">
+<title>gtk_text_view_backward_display_line_start ()</title>
+<indexterm zone="gtk-text-view-backward-display-line-start"><primary sortas="text_view_backward_display_line_start">gtk_text_view_backward_display_line_start</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_backward_display_line_start
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter);</programlisting>
+<para>
+Moves the given <parameter>iter</parameter> backward to the next display line start.
+A display line is different from a paragraph. Paragraphs are
+separated by newlines or other paragraph separator characters.
+Display lines are created by line-wrapping a paragraph. If
+wrapping is turned off, display lines and paragraphs will be the
+same. Display lines are divided differently for each view, since
+they depend on the view's width; paragraphs are the same in all
+views, since they depend on the contents of the <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>iter</parameter> was moved and is not on the end iterator
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-starts-display-line" role="function">
+<title>gtk_text_view_starts_display_line ()</title>
+<indexterm zone="gtk-text-view-starts-display-line"><primary sortas="text_view_starts_display_line">gtk_text_view_starts_display_line</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_starts_display_line   (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         const <link linkend="GtkTextIter">GtkTextIter</link> *iter);</programlisting>
+<para>
+Determines whether <parameter>iter</parameter> is at the start of a display line.
+See <link linkend="gtk-text-view-forward-display-line"><function>gtk_text_view_forward_display_line()</function></link> for an explanation of
+display lines vs. paragraphs.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>iter</parameter> begins a wrapped line
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-move-visually" role="function">
+<title>gtk_text_view_move_visually ()</title>
+<indexterm zone="gtk-text-view-move-visually"><primary sortas="text_view_move_visually">gtk_text_view_move_visually</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_move_visually         (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                         <link linkend="gint">gint</link> count);</programlisting>
+<para>
+Move the iterator a given number of characters visually, treating
+it as the strong cursor position. If <parameter>count</parameter> is positive, then the
+new strong cursor position will be <parameter>count</parameter> positions to the right of
+the old cursor position. If <parameter>count</parameter> is negative then the new strong
+cursor position will be <parameter>count</parameter> positions to the left of the old
+cursor position.
+</para>
+<para>
+In the presence of bi-directional text, the correspondence
+between logical and visual order will depend on the direction
+of the current run, and there may be jumps when the cursor
+is moved off of the end of a run.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>count</parameter>&#160;:</term>
+<listitem><simpara> number of characters to move (negative moves left, 
+   positive moves right)
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>iter</parameter> moved and is not on the end iterator
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-add-child-at-anchor" role="function">
+<title>gtk_text_view_add_child_at_anchor ()</title>
+<indexterm zone="gtk-text-view-add-child-at-anchor"><primary sortas="text_view_add_child_at_anchor">gtk_text_view_add_child_at_anchor</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_add_child_at_anchor   (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="GtkTextChildAnchor">GtkTextChildAnchor</link> *anchor);</programlisting>
+<para>
+Adds a child widget in the text buffer, at the given <parameter>anchor</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkWidget"><type>GtkWidget</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>anchor</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextChildAnchor"><type>GtkTextChildAnchor</type></link> in the <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link> for <parameter>text_view</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkTextChildAnchor-struct" role="struct">
+<title>GtkTextChildAnchor</title>
+<indexterm zone="GtkTextChildAnchor-struct"><primary sortas="TextChildAnchor">GtkTextChildAnchor</primary></indexterm><programlisting>typedef struct _GtkTextChildAnchor GtkTextChildAnchor;</programlisting>
+<para>
+A <structname>GtkTextChildAnchor</structname> is a spot in the buffer
+where child widgets can be "anchored" (inserted inline, as if they were
+characters). The anchor can have multiple widgets anchored, to allow for
+multiple views.
+</para></refsect2>
+<refsect2 id="gtk-text-child-anchor-new" role="function">
+<title>gtk_text_child_anchor_new ()</title>
+<indexterm zone="gtk-text-child-anchor-new"><primary sortas="text_child_anchor_new">gtk_text_child_anchor_new</primary></indexterm><programlisting><link linkend="GtkTextChildAnchor">GtkTextChildAnchor</link>* gtk_text_child_anchor_new           (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkTextChildAnchor"><type>GtkTextChildAnchor</type></link>. Usually you would then insert
+it into a <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link> with <link linkend="gtk-text-buffer-insert-child-anchor"><function>gtk_text_buffer_insert_child_anchor()</function></link>.
+To perform the creation and insertion in one step, use the
+convenience function <link linkend="gtk-text-buffer-create-child-anchor"><function>gtk_text_buffer_create_child_anchor()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkTextChildAnchor"><type>GtkTextChildAnchor</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-child-anchor-get-widgets" role="function">
+<title>gtk_text_child_anchor_get_widgets ()</title>
+<indexterm zone="gtk-text-child-anchor-get-widgets"><primary sortas="text_child_anchor_get_widgets">gtk_text_child_anchor_get_widgets</primary></indexterm><programlisting><link linkend="GList">GList</link>*              gtk_text_child_anchor_get_widgets   (<link linkend="GtkTextChildAnchor">GtkTextChildAnchor</link> *anchor);</programlisting>
+<para>
+Gets a list of all widgets anchored at this child anchor.
+The returned list should be freed with <link linkend="g-list-free"><function>g_list_free()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>anchor</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextChildAnchor"><type>GtkTextChildAnchor</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> list of widgets anchored at <parameter>anchor</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-child-anchor-get-deleted" role="function">
+<title>gtk_text_child_anchor_get_deleted ()</title>
+<indexterm zone="gtk-text-child-anchor-get-deleted"><primary sortas="text_child_anchor_get_deleted">gtk_text_child_anchor_get_deleted</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_child_anchor_get_deleted   (<link linkend="GtkTextChildAnchor">GtkTextChildAnchor</link> *anchor);</programlisting>
+<para>
+Determines whether a child anchor has been deleted from
+the buffer. Keep in mind that the child anchor will be
+unreferenced when removed from the buffer, so you need to
+hold your own reference (with <link linkend="g-object-ref"><function>g_object_ref()</function></link>) if you plan
+to use this function &mdash; otherwise all deleted child anchors
+will also be finalized.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>anchor</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextChildAnchor"><type>GtkTextChildAnchor</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the child anchor has been deleted from its buffer
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-add-child-in-window" role="function">
+<title>gtk_text_view_add_child_in_window ()</title>
+<indexterm zone="gtk-text-view-add-child-in-window"><primary sortas="text_view_add_child_in_window">gtk_text_view_add_child_in_window</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_add_child_in_window   (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="GtkTextWindowType">GtkTextWindowType</link> which_window,
+                                                         <link linkend="gint">gint</link> xpos,
+                                                         <link linkend="gint">gint</link> ypos);</programlisting>
+<para>
+Adds a child at fixed coordinates in one of the text widget's
+windows. The window must have nonzero size (see
+<link linkend="gtk-text-view-set-border-window-size"><function>gtk_text_view_set_border_window_size()</function></link>). Note that the child
+coordinates are given relative to the <link linkend="GdkWindow"><type>GdkWindow</type></link> in question, and
+that these coordinates have no sane relationship to scrolling. When
+placing a child in <link linkend="GTK-TEXT-WINDOW-WIDGET--CAPS"><type>GTK_TEXT_WINDOW_WIDGET</type></link>, scrolling is
+irrelevant, the child floats above all scrollable areas. But when
+placing a child in one of the scrollable windows (border windows or
+text window), you'll need to compute the child's correct position
+in buffer coordinates any time scrolling occurs or buffer changes
+occur, and then call <link linkend="gtk-text-view-move-child"><function>gtk_text_view_move_child()</function></link> to update the
+child's position. Unfortunately there's no good way to detect that
+scrolling has occurred, using the current API; a possible hack
+would be to update all child positions when the scroll adjustments
+change or the text buffer changes. See bug 64518 on
+bugzilla.gnome.org for status of fixing this issue.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkWidget"><type>GtkWidget</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>which_window</parameter>&#160;:</term>
+<listitem><simpara> which window the child should appear in
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xpos</parameter>&#160;:</term>
+<listitem><simpara> X position of child in window coordinates
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ypos</parameter>&#160;:</term>
+<listitem><simpara> Y position of child in window coordinates
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-move-child" role="function">
+<title>gtk_text_view_move_child ()</title>
+<indexterm zone="gtk-text-view-move-child"><primary sortas="text_view_move_child">gtk_text_view_move_child</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_move_child            (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gint">gint</link> xpos,
+                                                         <link linkend="gint">gint</link> ypos);</programlisting>
+<para>
+Updates the position of a child, as for <link linkend="gtk-text-view-add-child-in-window"><function>gtk_text_view_add_child_in_window()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> child widget already added to the text view
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xpos</parameter>&#160;:</term>
+<listitem><simpara> new X position in window coordinates
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ypos</parameter>&#160;:</term>
+<listitem><simpara> new Y position in window coordinates
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-wrap-mode" role="function">
+<title>gtk_text_view_set_wrap_mode ()</title>
+<indexterm zone="gtk-text-view-set-wrap-mode"><primary sortas="text_view_set_wrap_mode">gtk_text_view_set_wrap_mode</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_wrap_mode         (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkWrapMode">GtkWrapMode</link> wrap_mode);</programlisting>
+<para>
+Sets the line wrapping for the view.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>wrap_mode</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkWrapMode"><type>GtkWrapMode</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-wrap-mode" role="function">
+<title>gtk_text_view_get_wrap_mode ()</title>
+<indexterm zone="gtk-text-view-get-wrap-mode"><primary sortas="text_view_get_wrap_mode">gtk_text_view_get_wrap_mode</primary></indexterm><programlisting><link linkend="GtkWrapMode">GtkWrapMode</link>         gtk_text_view_get_wrap_mode         (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Gets the line wrapping for the view.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the line wrap setting
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-editable" role="function">
+<title>gtk_text_view_set_editable ()</title>
+<indexterm zone="gtk-text-view-set-editable"><primary sortas="text_view_set_editable">gtk_text_view_set_editable</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_editable          (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gboolean">gboolean</link> setting);</programlisting>
+<para>
+Sets the default editability of the <link linkend="GtkTextView"><type>GtkTextView</type></link>. You can override
+this default setting with tags in the buffer, using the "editable"
+attribute of tags.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>setting</parameter>&#160;:</term>
+<listitem><simpara> whether it's editable
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-editable" role="function">
+<title>gtk_text_view_get_editable ()</title>
+<indexterm zone="gtk-text-view-get-editable"><primary sortas="text_view_get_editable">gtk_text_view_get_editable</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_get_editable          (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Returns the default editability of the <link linkend="GtkTextView"><type>GtkTextView</type></link>. Tags in the
+buffer may override this setting for some ranges of text.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether text is editable by default
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-cursor-visible" role="function">
+<title>gtk_text_view_set_cursor_visible ()</title>
+<indexterm zone="gtk-text-view-set-cursor-visible"><primary sortas="text_view_set_cursor_visible">gtk_text_view_set_cursor_visible</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_cursor_visible    (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gboolean">gboolean</link> setting);</programlisting>
+<para>
+Toggles whether the insertion point is displayed. A buffer with no editable
+text probably shouldn't have a visible cursor, so you may want to turn
+the cursor off.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>setting</parameter>&#160;:</term>
+<listitem><simpara> whether to show the insertion cursor
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-cursor-visible" role="function">
+<title>gtk_text_view_get_cursor_visible ()</title>
+<indexterm zone="gtk-text-view-get-cursor-visible"><primary sortas="text_view_get_cursor_visible">gtk_text_view_get_cursor_visible</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_get_cursor_visible    (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Find out whether the cursor is being displayed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether the insertion mark is visible
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-overwrite" role="function" condition="since:2.4">
+<title>gtk_text_view_set_overwrite ()</title>
+<indexterm zone="gtk-text-view-set-overwrite" role="2.4"><primary sortas="text_view_set_overwrite">gtk_text_view_set_overwrite</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_overwrite         (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gboolean">gboolean</link> overwrite);</programlisting>
+<para>
+Changes the <link linkend="GtkTextView"><type>GtkTextView</type></link> overwrite mode.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>overwrite</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> to turn on overwrite mode, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> to turn it off
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-text-view-get-overwrite" role="function" condition="since:2.4">
+<title>gtk_text_view_get_overwrite ()</title>
+<indexterm zone="gtk-text-view-get-overwrite" role="2.4"><primary sortas="text_view_get_overwrite">gtk_text_view_get_overwrite</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_get_overwrite         (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Returns whether the <link linkend="GtkTextView"><type>GtkTextView</type></link> is in overwrite mode or not.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether <parameter>text_view</parameter> is in overwrite mode or not.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-text-view-set-pixels-above-lines" role="function">
+<title>gtk_text_view_set_pixels_above_lines ()</title>
+<indexterm zone="gtk-text-view-set-pixels-above-lines"><primary sortas="text_view_set_pixels_above_lines">gtk_text_view_set_pixels_above_lines</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_pixels_above_lines
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> pixels_above_lines);</programlisting>
+<para>
+Sets the default number of blank pixels above paragraphs in <parameter>text_view</parameter>.
+Tags in the buffer for <parameter>text_view</parameter> may override the defaults.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pixels_above_lines</parameter>&#160;:</term>
+<listitem><simpara> pixels above paragraphs
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-pixels-above-lines" role="function">
+<title>gtk_text_view_get_pixels_above_lines ()</title>
+<indexterm zone="gtk-text-view-get-pixels-above-lines"><primary sortas="text_view_get_pixels_above_lines">gtk_text_view_get_pixels_above_lines</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_text_view_get_pixels_above_lines
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Gets the default number of pixels to put above paragraphs.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> default number of pixels above paragraphs
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-pixels-below-lines" role="function">
+<title>gtk_text_view_set_pixels_below_lines ()</title>
+<indexterm zone="gtk-text-view-set-pixels-below-lines"><primary sortas="text_view_set_pixels_below_lines">gtk_text_view_set_pixels_below_lines</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_pixels_below_lines
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> pixels_below_lines);</programlisting>
+<para>
+Sets the default number of pixels of blank space
+to put below paragraphs in <parameter>text_view</parameter>. May be overridden
+by tags applied to <parameter>text_view</parameter>'s buffer.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pixels_below_lines</parameter>&#160;:</term>
+<listitem><simpara> pixels below paragraphs 
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-pixels-below-lines" role="function">
+<title>gtk_text_view_get_pixels_below_lines ()</title>
+<indexterm zone="gtk-text-view-get-pixels-below-lines"><primary sortas="text_view_get_pixels_below_lines">gtk_text_view_get_pixels_below_lines</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_text_view_get_pixels_below_lines
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Gets the value set by <link linkend="gtk-text-view-set-pixels-below-lines"><function>gtk_text_view_set_pixels_below_lines()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> default number of blank pixels below paragraphs
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-pixels-inside-wrap" role="function">
+<title>gtk_text_view_set_pixels_inside_wrap ()</title>
+<indexterm zone="gtk-text-view-set-pixels-inside-wrap"><primary sortas="text_view_set_pixels_inside_wrap">gtk_text_view_set_pixels_inside_wrap</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_pixels_inside_wrap
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> pixels_inside_wrap);</programlisting>
+<para>
+Sets the default number of pixels of blank space to leave between
+display/wrapped lines within a paragraph. May be overridden by
+tags in <parameter>text_view</parameter>'s buffer.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pixels_inside_wrap</parameter>&#160;:</term>
+<listitem><simpara> default number of pixels between wrapped lines
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-pixels-inside-wrap" role="function">
+<title>gtk_text_view_get_pixels_inside_wrap ()</title>
+<indexterm zone="gtk-text-view-get-pixels-inside-wrap"><primary sortas="text_view_get_pixels_inside_wrap">gtk_text_view_get_pixels_inside_wrap</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_text_view_get_pixels_inside_wrap
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Gets the value set by <link linkend="gtk-text-view-set-pixels-inside-wrap"><function>gtk_text_view_set_pixels_inside_wrap()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> default number of pixels of blank space between wrapped lines
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-justification" role="function">
+<title>gtk_text_view_set_justification ()</title>
+<indexterm zone="gtk-text-view-set-justification"><primary sortas="text_view_set_justification">gtk_text_view_set_justification</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_justification     (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="GtkJustification">GtkJustification</link> justification);</programlisting>
+<para>
+Sets the default justification of text in <parameter>text_view</parameter>.
+Tags in the view's buffer may override the default.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>justification</parameter>&#160;:</term>
+<listitem><simpara> justification
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-justification" role="function">
+<title>gtk_text_view_get_justification ()</title>
+<indexterm zone="gtk-text-view-get-justification"><primary sortas="text_view_get_justification">gtk_text_view_get_justification</primary></indexterm><programlisting><link linkend="GtkJustification">GtkJustification</link>    gtk_text_view_get_justification     (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Gets the default justification of paragraphs in <parameter>text_view</parameter>.
+Tags in the buffer may override the default.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> default justification
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-left-margin" role="function">
+<title>gtk_text_view_set_left_margin ()</title>
+<indexterm zone="gtk-text-view-set-left-margin"><primary sortas="text_view_set_left_margin">gtk_text_view_set_left_margin</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_left_margin       (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> left_margin);</programlisting>
+<para>
+Sets the default left margin for text in <parameter>text_view</parameter>.
+Tags in the buffer may override the default.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>left_margin</parameter>&#160;:</term>
+<listitem><simpara> left margin in pixels
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-left-margin" role="function">
+<title>gtk_text_view_get_left_margin ()</title>
+<indexterm zone="gtk-text-view-get-left-margin"><primary sortas="text_view_get_left_margin">gtk_text_view_get_left_margin</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_text_view_get_left_margin       (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Gets the default left margin size of paragraphs in the <parameter>text_view</parameter>.
+Tags in the buffer may override the default.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> left margin in pixels
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-right-margin" role="function">
+<title>gtk_text_view_set_right_margin ()</title>
+<indexterm zone="gtk-text-view-set-right-margin"><primary sortas="text_view_set_right_margin">gtk_text_view_set_right_margin</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_right_margin      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> right_margin);</programlisting>
+<para>
+Sets the default right margin for text in the text view.
+Tags in the buffer may override the default.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>right_margin</parameter>&#160;:</term>
+<listitem><simpara> right margin in pixels
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-right-margin" role="function">
+<title>gtk_text_view_get_right_margin ()</title>
+<indexterm zone="gtk-text-view-get-right-margin"><primary sortas="text_view_get_right_margin">gtk_text_view_get_right_margin</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_text_view_get_right_margin      (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Gets the default right margin for text in <parameter>text_view</parameter>. Tags
+in the buffer may override the default.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> right margin in pixels
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-indent" role="function">
+<title>gtk_text_view_set_indent ()</title>
+<indexterm zone="gtk-text-view-set-indent"><primary sortas="text_view_set_indent">gtk_text_view_set_indent</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_indent            (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gint">gint</link> indent);</programlisting>
+<para>
+Sets the default indentation for paragraphs in <parameter>text_view</parameter>.
+Tags in the buffer may override the default.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>indent</parameter>&#160;:</term>
+<listitem><simpara> indentation in pixels
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-indent" role="function">
+<title>gtk_text_view_get_indent ()</title>
+<indexterm zone="gtk-text-view-get-indent"><primary sortas="text_view_get_indent">gtk_text_view_get_indent</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_text_view_get_indent            (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Gets the default indentation of paragraphs in <parameter>text_view</parameter>.
+Tags in the view's buffer may override the default.
+The indentation may be negative.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> number of pixels of indentation
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-tabs" role="function">
+<title>gtk_text_view_set_tabs ()</title>
+<indexterm zone="gtk-text-view-set-tabs"><primary sortas="text_view_set_tabs">gtk_text_view_set_tabs</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_tabs              (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="PangoTabArray">PangoTabArray</link> *tabs);</programlisting>
+<para>
+Sets the default tab stops for paragraphs in <parameter>text_view</parameter>.
+Tags in the buffer may override the default.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tabs</parameter>&#160;:</term>
+<listitem><simpara> tabs as a <link linkend="PangoTabArray"><type>PangoTabArray</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-get-tabs" role="function">
+<title>gtk_text_view_get_tabs ()</title>
+<indexterm zone="gtk-text-view-get-tabs"><primary sortas="text_view_get_tabs">gtk_text_view_get_tabs</primary></indexterm><programlisting><link linkend="PangoTabArray">PangoTabArray</link>*      gtk_text_view_get_tabs              (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Gets the default tabs for <parameter>text_view</parameter>. Tags in the buffer may
+override the defaults. The returned array will be <link linkend="NULL--CAPS"><literal>NULL</literal></link> if
+"standard" (8-space) tabs are used. Free the return value
+with <link linkend="pango-tab-array-free"><function>pango_tab_array_free()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> copy of default tab array, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if "standard" 
+   tabs are used; must be freed with <link linkend="pango-tab-array-free"><function>pango_tab_array_free()</function></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-view-set-accepts-tab" role="function" condition="since:2.4">
+<title>gtk_text_view_set_accepts_tab ()</title>
+<indexterm zone="gtk-text-view-set-accepts-tab" role="2.4"><primary sortas="text_view_set_accepts_tab">gtk_text_view_set_accepts_tab</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_view_set_accepts_tab       (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                         <link linkend="gboolean">gboolean</link> accepts_tab);</programlisting>
+<para>
+Sets the behavior of the text widget when the Tab key is pressed. 
+If <parameter>accepts_tab</parameter> is <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, a tab character is inserted. If <parameter>accepts_tab</parameter> 
+is <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> the keyboard focus is moved to the next widget in the focus 
+chain.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>accepts_tab</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if pressing the Tab key should insert a tab 
+   character, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, if pressing the Tab key should move the 
+   keyboard focus.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-text-view-get-accepts-tab" role="function" condition="since:2.4">
+<title>gtk_text_view_get_accepts_tab ()</title>
+<indexterm zone="gtk-text-view-get-accepts-tab" role="2.4"><primary sortas="text_view_get_accepts_tab">gtk_text_view_get_accepts_tab</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_view_get_accepts_tab       (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Returns whether pressing the Tab key inserts a tab characters.
+<link linkend="gtk-text-view-set-accepts-tab"><function>gtk_text_view_set_accepts_tab()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if pressing the Tab key inserts a tab character, 
+  <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if pressing the Tab key moves the keyboard focus.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-text-view-get-default-attributes" role="function">
+<title>gtk_text_view_get_default_attributes ()</title>
+<indexterm zone="gtk-text-view-get-default-attributes"><primary sortas="text_view_get_default_attributes">gtk_text_view_get_default_attributes</primary></indexterm><programlisting><link linkend="GtkTextAttributes">GtkTextAttributes</link>*  gtk_text_view_get_default_attributes
+                                                        (<link linkend="GtkTextView">GtkTextView</link> *text_view);</programlisting>
+<para>
+Obtains a copy of the default text attributes. These are the
+attributes used for text unless a tag overrides them.
+You'd typically pass the default attributes in to
+<link linkend="gtk-text-iter-get-attributes"><function>gtk_text_iter_get_attributes()</function></link> in order to get the
+attributes in effect at a given text position.
+</para>
+<para>
+The return value is a copy owned by the caller of this function,
+and should be freed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextView"><type>GtkTextView</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GTK-TEXT-VIEW-PRIORITY-VALIDATE--CAPS" role="macro">
+<title>GTK_TEXT_VIEW_PRIORITY_VALIDATE</title>
+<indexterm zone="GTK-TEXT-VIEW-PRIORITY-VALIDATE--CAPS"><primary sortas="TEXT_VIEW_PRIORITY_VALIDATE">GTK_TEXT_VIEW_PRIORITY_VALIDATE</primary></indexterm><programlisting>#define GTK_TEXT_VIEW_PRIORITY_VALIDATE (GDK_PRIORITY_REDRAW + 5)
+</programlisting>
+<para>
+The priority at which the text view validates onscreen lines
+in an idle job in the background.
+</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkTextView.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkTextView--accepts-tab" role="property"><title>The <literal>&quot;accepts-tab&quot;</literal> property</title>
+<indexterm zone="GtkTextView--accepts-tab"><primary sortas="TextView:accepts-tab">GtkTextView:accepts-tab</primary></indexterm><programlisting>  &quot;accepts-tab&quot;              <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether Tab will result in a tab character being entered.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkTextView--buffer" role="property"><title>The <literal>&quot;buffer&quot;</literal> property</title>
+<indexterm zone="GtkTextView--buffer"><primary sortas="TextView:buffer">GtkTextView:buffer</primary></indexterm><programlisting>  &quot;buffer&quot;                   <link linkend="GtkTextBuffer">GtkTextBuffer</link>*        : Read / Write</programlisting>
+<para>The buffer which is displayed.</para></refsect2>
+<refsect2 id="GtkTextView--cursor-visible" role="property"><title>The <literal>&quot;cursor-visible&quot;</literal> property</title>
+<indexterm zone="GtkTextView--cursor-visible"><primary sortas="TextView:cursor-visible">GtkTextView:cursor-visible</primary></indexterm><programlisting>  &quot;cursor-visible&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>If the insertion cursor is shown.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkTextView--editable" role="property"><title>The <literal>&quot;editable&quot;</literal> property</title>
+<indexterm zone="GtkTextView--editable"><primary sortas="TextView:editable">GtkTextView:editable</primary></indexterm><programlisting>  &quot;editable&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the text can be modified by the user.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkTextView--im-module" role="property"><title>The <literal>&quot;im-module&quot;</literal> property</title>
+<indexterm zone="GtkTextView--im-module" role="2.16"><primary sortas="TextView:im-module">GtkTextView:im-module</primary></indexterm><programlisting>  &quot;im-module&quot;                <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+Which IM (input method) module should be used for this entry.
+See <link linkend="GtkIMContext"><type>GtkIMContext</type></link>.
+</para>
+<para>
+Setting this to a non-<link linkend="NULL--CAPS"><literal>NULL</literal></link> value overrides the
+system-wide IM module setting. See the GtkSettings 
+<link linkend="GtkSettings--gtk-im-module"><type>"gtk-im-module"</type></link> property.</para>
+<para>
+</para><para>Default value: NULL</para>
+<para>Since 2.16</para>
+</refsect2>
+<refsect2 id="GtkTextView--indent" role="property"><title>The <literal>&quot;indent&quot;</literal> property</title>
+<indexterm zone="GtkTextView--indent"><primary sortas="TextView:indent">GtkTextView:indent</primary></indexterm><programlisting>  &quot;indent&quot;                   <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Amount to indent the paragraph, in pixels.</para><para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextView--justification" role="property"><title>The <literal>&quot;justification&quot;</literal> property</title>
+<indexterm zone="GtkTextView--justification"><primary sortas="TextView:justification">GtkTextView:justification</primary></indexterm><programlisting>  &quot;justification&quot;            <link linkend="GtkJustification">GtkJustification</link>      : Read / Write</programlisting>
+<para>Left, right, or center justification.</para><para>Default value: GTK_JUSTIFY_LEFT</para>
+</refsect2>
+<refsect2 id="GtkTextView--left-margin" role="property"><title>The <literal>&quot;left-margin&quot;</literal> property</title>
+<indexterm zone="GtkTextView--left-margin"><primary sortas="TextView:left-margin">GtkTextView:left-margin</primary></indexterm><programlisting>  &quot;left-margin&quot;              <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Width of the left margin in pixels.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextView--overwrite" role="property"><title>The <literal>&quot;overwrite&quot;</literal> property</title>
+<indexterm zone="GtkTextView--overwrite"><primary sortas="TextView:overwrite">GtkTextView:overwrite</primary></indexterm><programlisting>  &quot;overwrite&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether entered text overwrites existing contents.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextView--pixels-above-lines" role="property"><title>The <literal>&quot;pixels-above-lines&quot;</literal> property</title>
+<indexterm zone="GtkTextView--pixels-above-lines"><primary sortas="TextView:pixels-above-lines">GtkTextView:pixels-above-lines</primary></indexterm><programlisting>  &quot;pixels-above-lines&quot;       <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Pixels of blank space above paragraphs.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextView--pixels-below-lines" role="property"><title>The <literal>&quot;pixels-below-lines&quot;</literal> property</title>
+<indexterm zone="GtkTextView--pixels-below-lines"><primary sortas="TextView:pixels-below-lines">GtkTextView:pixels-below-lines</primary></indexterm><programlisting>  &quot;pixels-below-lines&quot;       <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Pixels of blank space below paragraphs.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextView--pixels-inside-wrap" role="property"><title>The <literal>&quot;pixels-inside-wrap&quot;</literal> property</title>
+<indexterm zone="GtkTextView--pixels-inside-wrap"><primary sortas="TextView:pixels-inside-wrap">GtkTextView:pixels-inside-wrap</primary></indexterm><programlisting>  &quot;pixels-inside-wrap&quot;       <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Pixels of blank space between wrapped lines in a paragraph.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextView--right-margin" role="property"><title>The <literal>&quot;right-margin&quot;</literal> property</title>
+<indexterm zone="GtkTextView--right-margin"><primary sortas="TextView:right-margin">GtkTextView:right-margin</primary></indexterm><programlisting>  &quot;right-margin&quot;             <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Width of the right margin in pixels.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextView--tabs" role="property"><title>The <literal>&quot;tabs&quot;</literal> property</title>
+<indexterm zone="GtkTextView--tabs"><primary sortas="TextView:tabs">GtkTextView:tabs</primary></indexterm><programlisting>  &quot;tabs&quot;                     <link linkend="PangoTabArray">PangoTabArray</link>*        : Read / Write</programlisting>
+<para>Custom tabs for this text.</para></refsect2>
+<refsect2 id="GtkTextView--wrap-mode" role="property"><title>The <literal>&quot;wrap-mode&quot;</literal> property</title>
+<indexterm zone="GtkTextView--wrap-mode"><primary sortas="TextView:wrap-mode">GtkTextView:wrap-mode</primary></indexterm><programlisting>  &quot;wrap-mode&quot;                <link linkend="GtkWrapMode">GtkWrapMode</link>           : Read / Write</programlisting>
+<para>Whether to wrap lines never, at word boundaries, or at character boundaries.</para><para>Default value: GTK_WRAP_NONE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GtkTextView.style-property-details" role="style_properties_details">
+<title role="style_properties_details.title">Style Property Details</title>
+<refsect2 id="GtkTextView--s-error-underline-color" role="property"><title>The <literal>&quot;error-underline-color&quot;</literal> style property</title>
+<indexterm zone="GtkTextView--s-error-underline-color"><primary sortas="TextView:error-underline-color">GtkTextView:error-underline-color</primary></indexterm><programlisting>  &quot;error-underline-color&quot;    <link linkend="GdkColor">GdkColor</link>*             : Read</programlisting>
+<para>Color with which to draw error-indication underlines.</para></refsect2>
+</refsect1>
+
+<refsect1 id="GtkTextView.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkTextView-backspace" role="signal"><title>The <literal>&quot;backspace&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-backspace"><primary sortas="TextView::backspace">GtkTextView::backspace</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / Action</programlisting>
+<para>
+The ::backspace signal is a
+<link linkend="keybinding-signals">keybinding signal</link> 
+which gets emitted when the user asks for it.
+</para>
+<para>
+The default bindings for this signal are
+Backspace and Shift-Backspace.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-copy-clipboard" role="signal"><title>The <literal>&quot;copy-clipboard&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-copy-clipboard"><primary sortas="TextView::copy-clipboard">GtkTextView::copy-clipboard</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / Action</programlisting>
+<para>
+The ::copy-clipboard signal is a 
+<link linkend="keybinding-signals">keybinding signal</link> 
+which gets emitted to copy the selection to the clipboard.
+</para>
+<para>
+The default bindings for this signal are
+Ctrl-c and Ctrl-Insert.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-cut-clipboard" role="signal"><title>The <literal>&quot;cut-clipboard&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-cut-clipboard"><primary sortas="TextView::cut-clipboard">GtkTextView::cut-clipboard</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / Action</programlisting>
+<para>
+The ::cut-clipboard signal is a 
+<link linkend="keybinding-signals">keybinding signal</link> 
+which gets emitted to cut the selection to the clipboard.
+</para>
+<para>
+The default bindings for this signal are
+Ctrl-x and Shift-Delete.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-delete-from-cursor" role="signal"><title>The <literal>&quot;delete-from-cursor&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-delete-from-cursor"><primary sortas="TextView::delete-from-cursor">GtkTextView::delete-from-cursor</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link>  *text_view,
+                                                        <link linkend="GtkDeleteType">GtkDeleteType</link> type,
+                                                        <link linkend="gint">gint</link>          count,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run Last / Action</programlisting>
+<para>
+The ::delete-from-cursor signal is a 
+<link linkend="keybinding-signals">keybinding signal</link> 
+which gets emitted when the user initiates a text deletion.
+</para>
+<para>
+If the <parameter>type</parameter> is <link linkend="GTK-DELETE-CHARS--CAPS"><literal>GTK_DELETE_CHARS</literal></link>, GTK+ deletes the selection
+if there is one, otherwise it deletes the requested number
+of characters.
+</para>
+<para>
+The default bindings for this signal are
+Delete for deleting a character, Ctrl-Delete for 
+deleting a word and Ctrl-Backspace for deleting a word 
+backwords.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> the granularity of the deletion, as a <link linkend="GtkDeleteType"><type>GtkDeleteType</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>count</parameter>&#160;:</term>
+<listitem><simpara> the number of <parameter>type</parameter> units to delete
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-insert-at-cursor" role="signal"><title>The <literal>&quot;insert-at-cursor&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-insert-at-cursor"><primary sortas="TextView::insert-at-cursor">GtkTextView::insert-at-cursor</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                        <link linkend="gchar">gchar</link>       *string,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / Action</programlisting>
+<para>
+The ::insert-at-cursor signal is a
+<link linkend="keybinding-signals">keybinding signal</link>
+which gets emitted when the user initiates the insertion of a 
+fixed string at the cursor.
+</para>
+<para>
+This signal has no default bindings.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>string</parameter>&#160;:</term>
+<listitem><simpara> the string to insert
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-move-cursor" role="signal"><title>The <literal>&quot;move-cursor&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-move-cursor"><primary sortas="TextView::move-cursor">GtkTextView::move-cursor</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link>    *text_view,
+                                                        <link linkend="GtkMovementStep">GtkMovementStep</link> step,
+                                                        <link linkend="gint">gint</link>            count,
+                                                        <link linkend="gboolean">gboolean</link>        extend_selection,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)             : Run Last / Action</programlisting>
+<para>
+The ::move-cursor signal is a 
+<link linkend="keybinding-signals">keybinding signal</link> 
+which gets emitted when the user initiates a cursor movement. 
+If the cursor is not visible in <parameter>text_view</parameter>, this signal causes
+the viewport to be moved instead.
+</para>
+<para>
+Applications should not connect to it, but may emit it with 
+<link linkend="g-signal-emit-by-name"><function>g_signal_emit_by_name()</function></link> if they need to control the cursor
+programmatically.
+</para>
+<para>
+The default bindings for this signal come in two variants,
+the variant with the Shift modifier extends the selection,
+the variant without the Shift modifer does not.
+There are too many key combinations to list them all here.
+<itemizedlist>
+<listitem>Arrow keys move by individual characters/lines</listitem>
+<listitem>Ctrl-arrow key combinations move by words/paragraphs</listitem>
+<listitem>Home/End keys move to the ends of the buffer</listitem>
+<listitem>PageUp/PageDown keys move vertically by pages</listitem>
+<listitem>Ctrl-PageUp/PageDown keys move horizontally by pages</listitem>
+</itemizedlist></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>step</parameter>&#160;:</term>
+<listitem><simpara> the granularity of the move, as a <link linkend="GtkMovementStep"><type>GtkMovementStep</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>count</parameter>&#160;:</term>
+<listitem><simpara> the number of <parameter>step</parameter> units to move
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>extend_selection</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the move should extend the selection
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-move-viewport" role="signal"><title>The <literal>&quot;move-viewport&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-move-viewport"><primary sortas="TextView::move-viewport">GtkTextView::move-viewport</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link>  *text_view,
+                                                        <link linkend="GtkScrollStep">GtkScrollStep</link> step,
+                                                        <link linkend="gint">gint</link>          count,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run Last / Action</programlisting>
+<para>
+The ::move-viewport signal is a 
+<link linkend="keybinding-signals">keybinding signal</link> 
+which can be bound to key combinations to allow the user
+to move the viewport, i.e. change what part of the text view
+is visible in a containing scrolled window.
+</para>
+<para>
+There are no default bindings for this signal.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>step</parameter>&#160;:</term>
+<listitem><simpara> the granularity of the move, as a <link linkend="GtkMovementStep"><type>GtkMovementStep</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>count</parameter>&#160;:</term>
+<listitem><simpara> the number of <parameter>step</parameter> units to move
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-page-horizontally" role="signal"><title>The <literal>&quot;page-horizontally&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-page-horizontally"><primary sortas="TextView::page-horizontally">GtkTextView::page-horizontally</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                        <link linkend="gint">gint</link>         count,
+                                                        <link linkend="gboolean">gboolean</link>     extend_selection,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)             : Run Last / Action</programlisting>
+<para>
+The ::page-horizontally signal is a 
+<link linkend="keybinding-signals">keybinding signal</link> 
+which can be bound to key combinations to allow the user
+to initiate horizontal cursor movement by pages.  
+</para>
+<para>
+This signal should not be used anymore, instead use the
+<link linkend="GtkTextview-move-cursor"><type>"move-cursor"</type></link> signal with the <link linkend="GTK-MOVEMENT-HORIZONTAL-PAGES--CAPS"><type>GTK_MOVEMENT_HORIZONTAL_PAGES</type></link>
+granularity.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>count</parameter>&#160;:</term>
+<listitem><simpara> the number of <parameter>step</parameter> units to move
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>extend_selection</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the move should extend the selection
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-paste-clipboard" role="signal"><title>The <literal>&quot;paste-clipboard&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-paste-clipboard"><primary sortas="TextView::paste-clipboard">GtkTextView::paste-clipboard</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / Action</programlisting>
+<para>
+The ::paste-clipboard signal is a 
+<link linkend="keybinding-signals">keybinding signal</link> 
+which gets emitted to paste the contents of the clipboard 
+into the text view.
+</para>
+<para>
+The default bindings for this signal are
+Ctrl-v and Shift-Insert.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-populate-popup" role="signal"><title>The <literal>&quot;populate-popup&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-populate-popup"><primary sortas="TextView::populate-popup">GtkTextView::populate-popup</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *entry,
+                                                        <link linkend="GtkMenu">GtkMenu</link>     *menu,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last</programlisting>
+<para>
+The ::populate-popup signal gets emitted before showing the 
+context menu of the text view.
+</para>
+<para>
+If you need to add items to the context menu, connect
+to this signal and append your menuitems to the <parameter>menu</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>entry</parameter>&#160;:</term>
+<listitem><simpara> The text view on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>menu</parameter>&#160;:</term>
+<listitem><simpara> the menu that is being populated
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-select-all" role="signal"><title>The <literal>&quot;select-all&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-select-all"><primary sortas="TextView::select-all">GtkTextView::select-all</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                        <link linkend="gboolean">gboolean</link>     select,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / Action</programlisting>
+<para>
+The ::select-all signal is a 
+<link linkend="keybinding-signals">keybinding signal</link> 
+which gets emitted to select or unselect the complete
+contents of the text view.
+</para>
+<para>
+The default bindings for this signal are Ctrl-a and Ctrl-/ 
+for selecting and Shift-Ctrl-a and Ctrl-\ for unselecting.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>select</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> to select, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> to unselect
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-set-anchor" role="signal"><title>The <literal>&quot;set-anchor&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-set-anchor"><primary sortas="TextView::set-anchor">GtkTextView::set-anchor</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / Action</programlisting>
+<para>
+The ::set-anchor signal is a
+<link linkend="keybinding-signals">keybinding signal</link>
+which gets emitted when the user initiates setting the "anchor" 
+mark. The "anchor" mark gets placed at the same position as the
+"insert" mark.
+</para>
+<para>
+This signal has no default bindings.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-set-scroll-adjustments" role="signal"><title>The <literal>&quot;set-scroll-adjustments&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-set-scroll-adjustments"><primary sortas="TextView::set-scroll-adjustments">GtkTextView::set-scroll-adjustments</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link>   *horizontal,
+                                                        <link linkend="GtkAdjustment">GtkAdjustment</link> *vertical,
+                                                        <link linkend="GtkAdjustment">GtkAdjustment</link> *arg2,
+                                                        <link linkend="gpointer">gpointer</link>       user_data)       : Run Last / Action</programlisting>
+<para>
+Set the scroll adjustments for the text view. Usually scrolled containers
+like <link linkend="GtkScrolledWindow"><type>GtkScrolledWindow</type></link> will emit this signal to connect two instances
+of <link linkend="GtkScrollbar"><type>GtkScrollbar</type></link> to the scroll directions of the <link linkend="GtkTextView"><type>GtkTextView</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>horizontal</parameter>&#160;:</term>
+<listitem><simpara> the horizontal <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>vertical</parameter>&#160;:</term>
+<listitem><simpara> the vertical <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-toggle-cursor-visible" role="signal"><title>The <literal>&quot;toggle-cursor-visible&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-toggle-cursor-visible"><primary sortas="TextView::toggle-cursor-visible">GtkTextView::toggle-cursor-visible</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / Action</programlisting>
+<para>
+The ::toggle-cursor-visible signal is a 
+<link linkend="keybinding-signals">keybinding signal</link> 
+which gets emitted to toggle the visibility of the cursor.
+</para>
+<para>
+The default binding for this signal is F7.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTextView-toggle-overwrite" role="signal"><title>The <literal>&quot;toggle-overwrite&quot;</literal> signal</title>
+<indexterm zone="GtkTextView-toggle-overwrite"><primary sortas="TextView::toggle-overwrite">GtkTextView::toggle-overwrite</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTextView">GtkTextView</link> *text_view,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / Action</programlisting>
+<para>
+The ::toggle-overwrite signal is a 
+<link linkend="keybinding-signals">keybinding signal</link> 
+which gets emitted to toggle the overwrite mode of the text view.
+</para>
+<para>
+The default bindings for this signal is Insert.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>text_view</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+<refsect1 id="GtkTextView.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>, <link linkend="GtkTextIter"><type>GtkTextIter</type></link>
+</para>
+</refsect1>
+
+</refentry>

@@ -1,0 +1,3882 @@
+commit 0012d67ab1e342d5abad9f16618bdcc00be9ce44
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sat Jul 18 00:23:10 2009 -0400
+
+    Remove accidentally merged use of new api
+
+ gtk/gtkfilechooserdefault.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 1656c82f77c5870fa9fbf56e78f881414cd51575
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sat Jul 18 00:10:00 2009 -0400
+
+    Updates
+
+ NEWS |   10 ++++++++++
+ 1 files changed, 10 insertions(+), 0 deletions(-)
+
+commit 6e73d995f27e60655fc3a8245d71949ce83223f4
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Fri Jul 17 13:29:07 2009 -0400
+
+    Fix DND onto an empty icon view
+
+    This did not work due to a copy and paste bug from the time when
+    the treeview DND code was turned into iconview DND code. Fixes
+    bug 599484.
+
+ gtk/gtkiconview.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit af51f88055ca11e249aec26b91bc51f90627b3cc
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Thu Jul 16 22:06:40 2009 -0400
+
+    Make suitable GtkAssistant buttons default
+
+    We grab the default to the apply, forward or close buttons, as
+    appropriate. Also, make sure that the logic for setting the focus
+    to the best place on page change is applied to the initial page.
+
+ gtk/gtkassistant.c |   31 ++++++++++++++++---------------
+ 1 files changed, 16 insertions(+), 15 deletions(-)
+
+commit 7e602acc8d96421fa528f5a12102faa6db6e2825
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Wed Jul 15 19:17:36 2009 -0400
+
+    Add a tooltip to the save folder combo
+
+    Add a tooltip that shows the full path of the current folder, to avoid
+    ambiguity. We only show the tooltip when the expander is collapsed to
+    avoid cluttering the full file chooser.
+
+ gtk/gtkfilechooserdefault.c |   36 ++++++++++++++++++++++++++++++++++++
+ 1 files changed, 36 insertions(+), 0 deletions(-)
+
+commit 2c341455d81f911aea127c50a01cdcb006b111f5
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jul 13 14:48:10 2009 -0400
+
+    Fix some problems with prelighting of icons in entries
+
+ gtk/gtkentry.c |    9 +++++++++
+ 1 files changed, 9 insertions(+), 0 deletions(-)
+
+commit a1650aa27372f2957cd22acc188147be2b3f514b
+Author: Sweta Kothari <swkothar@redhat.com>
+Date:   Wed Jul 15 05:41:22 2009 -0400
+
+    Updated Gujarati Translations
+
+ po-properties/gu.po |  192
+ ++++++++++++++++++--------------------------------
+ 1 files changed, 69 insertions(+), 123 deletions(-)
+
+commit 7340c486b68a8d67c6840ac3deed39dabe5dd726
+Author: Rajesh Ranjan <rranjan@rranjan.csb>
+Date:   Fri Jul 10 15:06:28 2009 +0530
+
+    hindi update to remove one error in translation
+
+ po/hi.po | 2108
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1053 insertions(+), 1055 deletions(-)
+
+commit 0bbe2ab4cb18c1a2ad6819f47babd86183f5aa77
+Author: Tristan Van Berkom <vantr@TheBully.local>
+Date:   Thu Jun 18 15:46:02 2009 -0400
+
+    Accelerators failed for submenus (GNOME bug 582025)
+
+    gtk/gtkmenuitem.c: Override custom_tag_finished() for "accelerator"
+    and search
+    the correct toplevel GtkWindow to attach accelerators to menu items.
+
+    gtk/gtkwidget.[ch]: Added _gtk_widget_buildable_finish_accelerator()
+    to allow
+    subclasses to specify a toplevel window to associate with when
+    parsing <accelerator>
+    tags
+
+ gtk/gtkmenuitem.c |   46 +++++++++++++++++++++++++++++++++++++++
+ gtk/gtkwidget.c   |   62
+ ++++++++++++++++++++++++++++++++++------------------
+ gtk/gtkwidget.h   |    4 +++
+ 3 files changed, 90 insertions(+), 22 deletions(-)
+
+commit ca665810ec16e981404fa4b230bb0d6b1cb2341b
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Wed Jul 1 18:32:17 2009 -0400
+
+    Bump version
+
+ configure.in |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 927e7209a5b6115b22ba8880495b53c147424112
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Wed Jul 1 18:30:04 2009 -0400
+
+    2.16.4
+
+ po-properties/af.po          |   10 +++++-----
+ po-properties/am.po          |    2 +-
+ po-properties/ang.po         |    2 +-
+ po-properties/ar.po          |    2 +-
+ po-properties/as.po          |    2 +-
+ po-properties/ast.po         |    2 +-
+ po-properties/az.po          |    2 +-
+ po-properties/az_IR.po       |    2 +-
+ po-properties/be.po          |    2 +-
+ po-properties/be@latin.po    |    2 +-
+ po-properties/bg.po          |    2 +-
+ po-properties/bn.po          |    2 +-
+ po-properties/bn_IN.po       |    2 +-
+ po-properties/br.po          |    2 +-
+ po-properties/bs.po          |    2 +-
+ po-properties/ca.po          |    2 +-
+ po-properties/ca@valencia.po |    2 +-
+ po-properties/crh.po         |    2 +-
+ po-properties/cs.po          |    2 +-
+ po-properties/cy.po          |    2 +-
+ po-properties/da.po          |    2 +-
+ po-properties/de.po          |    2 +-
+ po-properties/dz.po          |    2 +-
+ po-properties/el.po          |    2 +-
+ po-properties/en_CA.po       |    2 +-
+ po-properties/en_GB.po       |    2 +-
+ po-properties/eo.po          |    2 +-
+ po-properties/es.po          |    2 +-
+ po-properties/et.po          |    2 +-
+ po-properties/eu.po          |    2 +-
+ po-properties/fa.po          |    2 +-
+ po-properties/fi.po          |    2 +-
+ po-properties/fr.po          |    2 +-
+ po-properties/ga.po          |    2 +-
+ po-properties/gl.po          |    2 +-
+ po-properties/gu.po          |    2 +-
+ po-properties/he.po          |    2 +-
+ po-properties/hi.po          |    2 +-
+ po-properties/hr.po          |    2 +-
+ po-properties/hu.po          |    2 +-
+ po-properties/hy.po          |    2 +-
+ po-properties/ia.po          |    2 +-
+ po-properties/id.po          |    2 +-
+ po-properties/io.po          |    2 +-
+ po-properties/is.po          |    2 +-
+ po-properties/it.po          |    2 +-
+ po-properties/ja.po          |    2 +-
+ po-properties/ka.po          |    2 +-
+ po-properties/kn.po          |    2 +-
+ po-properties/ko.po          |    2 +-
+ po-properties/ku.po          |    2 +-
+ po-properties/li.po          |    2 +-
+ po-properties/lt.po          |    2 +-
+ po-properties/lv.po          |    2 +-
+ po-properties/mai.po         |    2 +-
+ po-properties/mi.po          |    2 +-
+ po-properties/mk.po          |    2 +-
+ po-properties/ml.po          |    2 +-
+ po-properties/mn.po          |    2 +-
+ po-properties/mr.po          |    2 +-
+ po-properties/ms.po          |    2 +-
+ po-properties/nb.po          |    2 +-
+ po-properties/ne.po          |    2 +-
+ po-properties/nl.po          |    2 +-
+ po-properties/nn.po          |    2 +-
+ po-properties/nso.po         |    2 +-
+ po-properties/oc.po          |    2 +-
+ po-properties/or.po          |    2 +-
+ po-properties/pa.po          |    2 +-
+ po-properties/pl.po          |    2 +-
+ po-properties/ps.po          |    2 +-
+ po-properties/pt.po          |    2 +-
+ po-properties/pt_BR.po       |    2 +-
+ po-properties/ro.po          |    2 +-
+ po-properties/ru.po          |    2 +-
+ po-properties/rw.po          |    2 +-
+ po-properties/si.po          |    2 +-
+ po-properties/sk.po          |    2 +-
+ po-properties/sl.po          |    2 +-
+ po-properties/sq.po          |    2 +-
+ po-properties/sr.po          |    2 +-
+ po-properties/sr@ije.po      |    2 +-
+ po-properties/sr@latin.po    |    2 +-
+ po-properties/sv.po          |    2 +-
+ po-properties/ta.po          |    2 +-
+ po-properties/te.po          |    2 +-
+ po-properties/th.po          |    2 +-
+ po-properties/tk.po          |    2 +-
+ po-properties/tr.po          |    2 +-
+ po-properties/tt.po          |    2 +-
+ po-properties/uk.po          |    2 +-
+ po-properties/ur.po          |    2 +-
+ po-properties/uz.po          |    2 +-
+ po-properties/uz@cyrillic.po |    2 +-
+ po-properties/vi.po          |    2 +-
+ po-properties/wa.po          |    2 +-
+ po-properties/xh.po          |    2 +-
+ po-properties/yi.po          |    2 +-
+ po-properties/zh_CN.po       |    2 +-
+ po-properties/zh_HK.po       |    2 +-
+ po-properties/zh_TW.po       |    2 +-
+ po/af.po                     |    2 +-
+ po/am.po                     |    2 +-
+ po/ang.po                    |    2 +-
+ po/ar.po                     |    2 +-
+ po/as.po                     |    2 +-
+ po/ast.po                    |    2 +-
+ po/az.po                     |    2 +-
+ po/az_IR.po                  |    2 +-
+ po/be.po                     |    2 +-
+ po/be@latin.po               |    2 +-
+ po/bg.po                     |    2 +-
+ po/bn.po                     |    2 +-
+ po/bn_IN.po                  |    2 +-
+ po/br.po                     |    2 +-
+ po/bs.po                     |    2 +-
+ po/ca.po                     |    2 +-
+ po/ca@valencia.po            |    2 +-
+ po/crh.po                    |    2 +-
+ po/cs.po                     |    2 +-
+ po/cy.po                     |    2 +-
+ po/da.po                     |    2 +-
+ po/de.po                     |    2 +-
+ po/dz.po                     |    2 +-
+ po/el.po                     |    2 +-
+ po/en_CA.po                  |    2 +-
+ po/en_GB.po                  |    2 +-
+ po/eo.po                     |    2 +-
+ po/es.po                     |    2 +-
+ po/et.po                     |    2 +-
+ po/eu.po                     |    2 +-
+ po/fa.po                     |    2 +-
+ po/fi.po                     |    2 +-
+ po/fr.po                     |    2 +-
+ po/ga.po                     |    2 +-
+ po/gl.po                     |    2 +-
+ po/gu.po                     |    2 +-
+ po/he.po                     |    2 +-
+ po/hi.po                     |    2 +-
+ po/hr.po                     |    2 +-
+ po/hu.po                     |    2 +-
+ po/hy.po                     |    2 +-
+ po/ia.po                     |    2 +-
+ po/id.po                     |    2 +-
+ po/io.po                     |    2 +-
+ po/is.po                     |    2 +-
+ po/it.po                     |    2 +-
+ po/ja.po                     |    2 +-
+ po/ka.po                     |    2 +-
+ po/kn.po                     |    2 +-
+ po/ko.po                     |    2 +-
+ po/ku.po                     |    2 +-
+ po/li.po                     |    2 +-
+ po/lt.po                     |    2 +-
+ po/lv.po                     |    2 +-
+ po/mai.po                    |    2 +-
+ po/mi.po                     |    2 +-
+ po/mk.po                     |    2 +-
+ po/ml.po                     |    2 +-
+ po/mn.po                     |    2 +-
+ po/mr.po                     |    2 +-
+ po/ms.po                     |    2 +-
+ po/nb.po                     |    2 +-
+ po/ne.po                     |    2 +-
+ po/nl.po                     |    2 +-
+ po/nn.po                     |    2 +-
+ po/nso.po                    |    2 +-
+ po/oc.po                     |    2 +-
+ po/or.po                     |    2 +-
+ po/pa.po                     |    2 +-
+ po/pl.po                     |    2 +-
+ po/ps.po                     |    2 +-
+ po/pt.po                     |    2 +-
+ po/pt_BR.po                  |    2 +-
+ po/ro.po                     |    2 +-
+ po/ru.po                     |    2 +-
+ po/rw.po                     |    2 +-
+ po/si.po                     |    2 +-
+ po/sk.po                     |    2 +-
+ po/sl.po                     |    2 +-
+ po/sq.po                     |    2 +-
+ po/sr.po                     |    2 +-
+ po/sr@ije.po                 |    2 +-
+ po/sr@latin.po               |    2 +-
+ po/sv.po                     |    2 +-
+ po/ta.po                     |    2 +-
+ po/te.po                     |    2 +-
+ po/th.po                     |    2 +-
+ po/tk.po                     |    2 +-
+ po/tr.po                     |    2 +-
+ po/tt.po                     |    2 +-
+ po/uk.po                     |    2 +-
+ po/ur.po                     |    2 +-
+ po/uz.po                     |    2 +-
+ po/uz@cyrillic.po            |    2 +-
+ po/vi.po                     |    2 +-
+ po/wa.po                     |    2 +-
+ po/xh.po                     |    2 +-
+ po/yi.po                     |    2 +-
+ po/zh_CN.po                  |    2 +-
+ po/zh_HK.po                  |    2 +-
+ po/zh_TW.po                  |    2 +-
+ 202 files changed, 206 insertions(+), 206 deletions(-)
+
+commit 41e79523a08918481fea1397aea6603cbf094b4e
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Wed Jul 1 16:57:35 2009 -0400
+
+    Updates
+
+ NEWS |    7 +++++++
+ 1 files changed, 7 insertions(+), 0 deletions(-)
+
+commit b89b6f9c8324c6411f4ed04fed52ae2c5d7097de
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Wed Jul 1 15:11:03 2009 -0400
+
+    Make stock buttons have mnemonics again
+
+    We used to treat stock buttons as having an implicit use-underline.
+    A recent but fix lost that.
+
+ gtk/gtkbutton.c |   26 +++++++++++++-------------
+ 1 files changed, 13 insertions(+), 13 deletions(-)
+
+commit 00a5221cee03509cb025eacbc4401130ef843a86
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun Jun 28 01:13:12 2009 -0400
+
+    Bump version
+
+ configure.in |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 2d7c26133a8118acc0676c1accf98fbe10a03a63
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun Jun 28 01:08:12 2009 -0400
+
+    2.16.3
+
+ po-properties/af.po          |  148 +-
+ po-properties/am.po          |  148 +-
+ po-properties/ang.po         |  148 +-
+ po-properties/ar.po          |  148 +-
+ po-properties/as.po          |  148 +-
+ po-properties/ast.po         |  148 +-
+ po-properties/az.po          |  148 +-
+ po-properties/az_IR.po       |  148 +-
+ po-properties/be.po          |  148 +-
+ po-properties/be@latin.po    |  148 +-
+ po-properties/bg.po          |  148 +-
+ po-properties/bn.po          |  148 +-
+ po-properties/bn_IN.po       |  148 +-
+ po-properties/br.po          |  148 +-
+ po-properties/bs.po          |  148 +-
+ po-properties/ca.po          |  148 +-
+ po-properties/ca@valencia.po |  148 +-
+ po-properties/crh.po         |  148 +-
+ po-properties/cs.po          |  148 +-
+ po-properties/cy.po          |  148 +-
+ po-properties/da.po          |  148 +-
+ po-properties/de.po          |  148 +-
+ po-properties/dz.po          |  148 +-
+ po-properties/el.po          |  148 +-
+ po-properties/en_CA.po       |  148 +-
+ po-properties/en_GB.po       |  148 +-
+ po-properties/eo.po          |  148 +-
+ po-properties/es.po          |  148 +-
+ po-properties/et.po          |  148 +-
+ po-properties/eu.po          |  148 +-
+ po-properties/fa.po          |  148 +-
+ po-properties/fi.po          |  148 +-
+ po-properties/fr.po          |  148 +-
+ po-properties/ga.po          |  148 +-
+ po-properties/gl.po          |  148 +-
+ po-properties/gu.po          |  148 +-
+ po-properties/he.po          |  148 +-
+ po-properties/hi.po          |  148 +-
+ po-properties/hr.po          |  148 +-
+ po-properties/hu.po          |  148 +-
+ po-properties/hy.po          |  148 +-
+ po-properties/ia.po          |  148 +-
+ po-properties/id.po          |  148 +-
+ po-properties/io.po          |  148 +-
+ po-properties/is.po          |  148 +-
+ po-properties/it.po          |  148 +-
+ po-properties/ja.po          |  148 +-
+ po-properties/ka.po          |  148 +-
+ po-properties/kn.po          |  148 +-
+ po-properties/ko.po          |  148 +-
+ po-properties/ku.po          |  148 +-
+ po-properties/li.po          |  148 +-
+ po-properties/lt.po          |  148 +-
+ po-properties/lv.po          |  148 +-
+ po-properties/mai.po         |  148 +-
+ po-properties/mi.po          |  148 +-
+ po-properties/mk.po          |  148 +-
+ po-properties/ml.po          |  148 +-
+ po-properties/mn.po          |  148 +-
+ po-properties/mr.po          |  148 +-
+ po-properties/ms.po          |  148 +-
+ po-properties/nb.po          |  148 +-
+ po-properties/ne.po          |  148 +-
+ po-properties/nl.po          |  148 +-
+ po-properties/nn.po          |  148 +-
+ po-properties/nso.po         |  148 +-
+ po-properties/oc.po          |  148 +-
+ po-properties/or.po          | 3640
+ +++++++++++++++++++++---------------------
+ po-properties/pa.po          | 3566
+ +++++++++++++++++++++--------------------
+ po-properties/pl.po          |  148 +-
+ po-properties/ps.po          |  148 +-
+ po-properties/pt.po          |  148 +-
+ po-properties/pt_BR.po       |  148 +-
+ po-properties/ro.po          |  148 +-
+ po-properties/ru.po          |  148 +-
+ po-properties/rw.po          |  148 +-
+ po-properties/si.po          |  148 +-
+ po-properties/sk.po          |  148 +-
+ po-properties/sl.po          |  148 +-
+ po-properties/sq.po          |  148 +-
+ po-properties/sr.po          |  148 +-
+ po-properties/sr@ije.po      |  148 +-
+ po-properties/sr@latin.po    |  148 +-
+ po-properties/sv.po          |  148 +-
+ po-properties/ta.po          |  148 +-
+ po-properties/te.po          |  148 +-
+ po-properties/th.po          |  148 +-
+ po-properties/tk.po          |  148 +-
+ po-properties/tr.po          |  148 +-
+ po-properties/tt.po          |  148 +-
+ po-properties/uk.po          |  148 +-
+ po-properties/ur.po          |  148 +-
+ po-properties/uz.po          |  148 +-
+ po-properties/uz@cyrillic.po |  148 +-
+ po-properties/vi.po          |  148 +-
+ po-properties/wa.po          |  148 +-
+ po-properties/xh.po          |  148 +-
+ po-properties/yi.po          |  148 +-
+ po-properties/zh_CN.po       |  148 +-
+ po-properties/zh_HK.po       |  148 +-
+ po-properties/zh_TW.po       |  148 +-
+ po/af.po                     |   62 +-
+ po/am.po                     |   62 +-
+ po/ang.po                    |   62 +-
+ po/ar.po                     |   62 +-
+ po/as.po                     |   62 +-
+ po/ast.po                    |   62 +-
+ po/az.po                     |   62 +-
+ po/az_IR.po                  |   62 +-
+ po/be.po                     |   62 +-
+ po/be@latin.po               |   62 +-
+ po/bg.po                     |   62 +-
+ po/bn.po                     |   62 +-
+ po/bn_IN.po                  |   62 +-
+ po/br.po                     |   62 +-
+ po/bs.po                     |   62 +-
+ po/ca.po                     |   62 +-
+ po/ca@valencia.po            |   62 +-
+ po/crh.po                    |   62 +-
+ po/cs.po                     |   62 +-
+ po/cy.po                     |   62 +-
+ po/da.po                     |   62 +-
+ po/de.po                     |   62 +-
+ po/dz.po                     |   62 +-
+ po/el.po                     |   62 +-
+ po/en_CA.po                  |   62 +-
+ po/en_GB.po                  |   62 +-
+ po/eo.po                     |   62 +-
+ po/es.po                     |   62 +-
+ po/et.po                     |   62 +-
+ po/eu.po                     |   62 +-
+ po/fa.po                     |   62 +-
+ po/fi.po                     |   62 +-
+ po/fr.po                     |   62 +-
+ po/ga.po                     |   62 +-
+ po/gl.po                     |   62 +-
+ po/gu.po                     |   62 +-
+ po/he.po                     |   62 +-
+ po/hi.po                     | 2105 ++++++++++++------------
+ po/hr.po                     |   62 +-
+ po/hu.po                     |   62 +-
+ po/hy.po                     |   62 +-
+ po/ia.po                     |   62 +-
+ po/id.po                     |   62 +-
+ po/io.po                     |   62 +-
+ po/is.po                     |   62 +-
+ po/it.po                     |   62 +-
+ po/ja.po                     | 2069 ++++++++++++------------
+ po/ka.po                     |   62 +-
+ po/kn.po                     |   62 +-
+ po/ko.po                     |   62 +-
+ po/ku.po                     |   62 +-
+ po/li.po                     |   62 +-
+ po/lt.po                     |   62 +-
+ po/lv.po                     |   62 +-
+ po/mai.po                    |   62 +-
+ po/mi.po                     |   62 +-
+ po/mk.po                     |   62 +-
+ po/ml.po                     |   62 +-
+ po/mn.po                     |   62 +-
+ po/mr.po                     |   62 +-
+ po/ms.po                     |   62 +-
+ po/nb.po                     |   62 +-
+ po/ne.po                     |   62 +-
+ po/nl.po                     |   62 +-
+ po/nn.po                     |   62 +-
+ po/nso.po                    |   62 +-
+ po/oc.po                     |   62 +-
+ po/or.po                     |   62 +-
+ po/pa.po                     | 2100 ++++++++++++------------
+ po/pl.po                     |   62 +-
+ po/ps.po                     |   62 +-
+ po/pt.po                     |   62 +-
+ po/pt_BR.po                  |   62 +-
+ po/ro.po                     |   62 +-
+ po/ru.po                     |   62 +-
+ po/rw.po                     |   62 +-
+ po/si.po                     |   62 +-
+ po/sk.po                     |   62 +-
+ po/sl.po                     |   62 +-
+ po/sq.po                     |   62 +-
+ po/sr.po                     |   62 +-
+ po/sr@ije.po                 |   62 +-
+ po/sr@latin.po               |   62 +-
+ po/sv.po                     | 2673 +++++++++++++++++--------------
+ po/ta.po                     |   62 +-
+ po/te.po                     |   62 +-
+ po/th.po                     |   62 +-
+ po/tk.po                     |   62 +-
+ po/tr.po                     |   62 +-
+ po/tt.po                     |   62 +-
+ po/uk.po                     |   62 +-
+ po/ur.po                     |   62 +-
+ po/uz.po                     |   62 +-
+ po/uz@cyrillic.po            |   62 +-
+ po/vi.po                     |   62 +-
+ po/wa.po                     |   62 +-
+ po/xh.po                     |   62 +-
+ po/yi.po                     |   62 +-
+ po/zh_CN.po                  |   62 +-
+ po/zh_HK.po                  |   62 +-
+ po/zh_TW.po                  |   62 +-
+ 202 files changed, 18564 insertions(+), 18255 deletions(-)
+
+commit a00b21d2e4d72e1167a81f780afe4b41220a4250
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sat Jun 27 23:31:50 2009 -0400
+
+    Update for 2.16.3
+
+ NEWS |   24 ++++++++++++++++++++++++
+ 1 files changed, 24 insertions(+), 0 deletions(-)
+
+commit 47b3f983404ce06a2ee327dd8db428e63f52d1f7
+Author: Marco Túlio Gontijo e Silva <marcot@holoscopio.com>
+Date:   Mon Jun 22 10:18:44 2009 -0300
+
+    Updated Brazilian Portuguese translation
+
+ po-properties/pt_BR.po |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit bc27497020de7287c74a012b8f6a49c9f30c35b8
+Author: Stanislav Brabec <sbrabec@suse.cz>
+Date:   Tue Jun 23 14:05:32 2009 -0500
+
+    bgo#529908 - Sanitize handling of motion events in GtkNotebook
+
+    GtkNotebook used gdk_window_get_pointer() incorrectly, as it already
+    had coordinates from various GdkEvents.  Using get_pointer() means
+    that you get pointer positions *after* the event has happened, which
+    leads to visual out-of-sync results, or inadvertently detached tabs if
+    you click on them while your machine is being slow.
+
+    Signed-off-by: Federico Mena Quintero <federico@novell.com>
+
+ gtk/gtknotebook.c |   19 +++++++++++--------
+ 1 files changed, 11 insertions(+), 8 deletions(-)
+
+commit 072ddd923d23956d48acaa5fed8e26ca89e57f18
+Author: Bastien Nocera <hadess@hadess.net>
+Date:   Mon Jun 22 17:19:21 2009 +0100
+
+    Bug 461944 – pressing the volume icon in full screen shuts down
+    the sound
+
+    Don't pass the click on the button through to the scale when the
+    dock popup will be moved, otherwise we could end up changing the
+    sound in unexcepted ways (to zero for vertical popups at the bottom
+    of the screen for example).
+
+ gtk/gtkscalebutton.c |   21 ++++++++++++++++-----
+ 1 files changed, 16 insertions(+), 5 deletions(-)
+
+commit c216fcc16d3f3f27a9e50fed0162f70f55d0866b
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jun 22 12:19:52 2009 -0400
+
+    Remove extra padding from comboboxes
+
+    We do want to have consistent padding in menus in menubars and context
+    menus, but the menus used in comboboxes don't need the extra padding.
+    Add private GtkMenu API for turning this off. Bug 564063
+
+ gtk/gtkcombobox.c |    3 +++
+ gtk/gtkmenu.c     |   34 +++++++++++++++++++++++++---------
+ gtk/gtkmenu.h     |    6 ++++++
+ 3 files changed, 34 insertions(+), 9 deletions(-)
+
+commit c4aae6a41106e6d8e2bccb89fd95a52dd23345e6
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun Jun 21 23:30:27 2009 -0400
+
+    Fix 'Add to bookmarks' initial sensitivity
+
+    Make sure that we always call bookmarks_check_add_sensitivity() at
+    least once before popping up a newly created menu. Fixes bug 585858.
+
+ gtk/gtkfilechooserdefault.c |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit 5268657befe2653b243369cf3bd2469c9ddd78da
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sat Jun 20 20:51:37 2009 -0400
+
+    Update some links in the tutorial
+
+    This fixes bug 585953.
+
+ docs/tutorial/gtk-tut.sgml |   10 +++++-----
+ 1 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 8d41fc7ef16b8498a6adc809ca3deeeb855d34ac
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sat Jun 20 13:54:33 2009 -0400
+
+    Reduce roundtrips
+
+    Setting a tooltip on a widget unfortunately triggers several
+    roundtrips
+    to the X server. We reduce this overhead by only doing it if the
+    widget is visible, and by deferring to an idle. See bug 585626.
+
+ gtk/gtkwidget.c |   49 +++++++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 41 insertions(+), 8 deletions(-)
+
+commit 1b4d4628b94f9aff0af63aebfbc2e3ed73eed56b
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Thu Jun 18 22:08:31 2009 -0400
+
+    Fix an oversight in mnemonic handling
+
+    In some situations, GtkButton would ignore the use-underline
+    property. This was reported in bug 586330.
+
+ gtk/gtkbutton.c |   11 ++++++++---
+ 1 files changed, 8 insertions(+), 3 deletions(-)
+
+commit e227a8b0d7a55388bf504169731d977d45920a02
+Author: Federico Mena Quintero <federico@novell.com>
+Date:   Thu Jun 18 21:29:54 2009 -0500
+
+    bgo#586315 - gtk_file_chooser_list_shortcut_folders() was crashing
+
+    The virtual method list_shortcut_folders returns a GSList * of
+    GFile *.
+    In turn, gtk_file_chooser_list_shortcut_folders() converts those
+    to strings.
+
+    However, the delegate in gtkfilechooserutils.c was calling
+    gtk_file_chooser_list_shortcut_folders() every time, so we were trying
+    to convert invalid data.
+
+    Now we have an internal function that deals with GFile *.  That
+    function is called by the delegate, and the conversion is done only
+    once by the API entry points.
+
+    Signed-off-by: Federico Mena Quintero <federico@novell.com>
+
+ gtk/gtkfilechooser.c        |   11 +++++++++--
+ gtk/gtkfilechooserprivate.h |    1 +
+ gtk/gtkfilechooserutils.c   |    2 +-
+ 3 files changed, 11 insertions(+), 3 deletions(-)
+
+commit b12515cf2beedddec69adf940572c849f6c64bc5
+Author: A S Alam <aalam@users.sf.net>
+Date:   Thu Jun 18 06:45:45 2009 +0530
+
+    updating Punjabi Translation for branch
+
+ po-properties/pa.po | 3586
+ +++++++++++++++++++++++++--------------------------
+ po/pa.po            | 2142 +++++++++++++++---------------
+ 2 files changed, 2859 insertions(+), 2869 deletions(-)
+
+commit 97b64d80370fb284cd8461effca01eb5dd8449ed
+Author: Daniel Elstner <daniel.kitta@gmail.com>
+Date:   Sun Jun 14 01:14:00 2009 +0200
+
+    Terminate case with break in switch statement
+
+    * gtk/gtkstatusicon.c (gtk_status_icon_set_property): Add missing
+    break statements to unterminated case blocks inside switch.
+
+ gtk/gtkstatusicon.c |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit cdca87d715691def2789b8aab4bc121a4e717d80
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jun 15 21:10:34 2009 +0200
+
+    Bug 565317 - Resulting image of GtkCellRendererPixbuf depends on
+    order of set properties
+
+    (gtk_cell_renderer_pixbuf_set_property): add back evil code that makes
+    sure that the current image is only unset if the new image was created
+    from the same property or the new property is not NULL.
+
+ gtk/gtkcellrendererpixbuf.c |  155
+ ++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 117 insertions(+), 38 deletions(-)
+
+commit 523ddd573ed376b2f2dd8b757dcebe764addd38e
+Author: Daniel Nylander <po@danielnylander.se>
+Date:   Sun Jun 14 22:12:48 2009 +0200
+
+    Updated Swedish translation
+
+ po/sv.po | 2686
+ ++++++++++++++++++++++++++++----------------------------------
+ 1 files changed, 1213 insertions(+), 1473 deletions(-)
+
+commit 7d6991b80ba860559388dba5289738338683a147
+Author: Manoj Kumar Giri <mgiri@mgiri.csb>
+Date:   Wed Jun 10 19:46:30 2009 +0530
+
+    Added entries for Hindi Translation updated by Rajesh Ranjan
+
+ po/ChangeLog |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit 32dae07600b93683b60e46eeb67c89da02473a80
+Author: Manoj Kumar Giri <mgiri@mgiri.csb>
+Date:   Wed Jun 10 19:44:57 2009 +0530
+
+    Updated Hindi Translation on behalf of Rajesh Ranjan
+
+ po/hi.po | 2126
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1062 insertions(+), 1064 deletions(-)
+
+commit a7c59cfe53e3bef1afe7b661de95a6ee61825b59
+Author: Runa Bhattacharjee <runab@redhat.com>
+Date:   Tue Jun 9 10:28:29 2009 +0530
+
+    Updated Bengali India Translations
+
+ po/bn_IN.po |   75
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++----
+ 1 files changed, 69 insertions(+), 6 deletions(-)
+
+commit 4163c21667f68ded82f6c97e58c7b4eaacbdb0b5
+Author: Manoj Kumar Giri <mgiri@mgiri.csb>
+Date:   Mon Jun 8 19:22:20 2009 +0530
+
+    Updated Oriya Translation
+
+ po-properties/or.po |    9 +++++----
+ 1 files changed, 5 insertions(+), 4 deletions(-)
+
+commit abea8a81765e517c3df78336f4bc86b22ee54e30
+Author: Manoj Kumar Giri <mgiri@mgiri.csb>
+Date:   Mon Jun 8 19:17:59 2009 +0530
+
+    Added entries for Oriya Translation
+
+ po-properties/ChangeLog |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit dc11d389ed00127afaabb10ce1d6f989240be741
+Author: Manoj Kumar Giri <mgiri@mgiri.csb>
+Date:   Mon Jun 8 19:16:14 2009 +0530
+
+    Updated Oriya Translation
+
+ po-properties/or.po | 3840
+ +++++++++++++++++++++++++--------------------------
+ 1 files changed, 1893 insertions(+), 1947 deletions(-)
+
+commit ed9e9fc4e4c53ad79151e8e6153a46247f289afb
+Author: Takeshi AIHANA <takeshi.aihana@gmail.com>
+Date:   Sun May 31 16:52:30 2009 +0900
+
+    Updated Japanese translation.
+
+ po/ja.po | 2082
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1045 insertions(+), 1037 deletions(-)
+
+commit ba08850ab0eafb70594f61fe0fa16d4eb29db83e
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 31 01:11:38 2009 -0400
+
+    Bump version to 2.16.3
+
+ configure.in |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 06175da87c6b071b0022a181d0d8c12c9a27351d
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 31 01:06:45 2009 -0400
+
+    2.16.2
+
+ modules/printbackends/Makefile.am |    2 +-
+ po-properties/af.po               |    2 +-
+ po-properties/am.po               |    2 +-
+ po-properties/ang.po              |    2 +-
+ po-properties/ar.po               |    2 +-
+ po-properties/as.po               |    2 +-
+ po-properties/ast.po              |    2 +-
+ po-properties/az.po               |    2 +-
+ po-properties/az_IR.po            |    2 +-
+ po-properties/be.po               |    2 +-
+ po-properties/be@latin.po         |    2 +-
+ po-properties/bg.po               |    2 +-
+ po-properties/bn.po               |    2 +-
+ po-properties/bn_IN.po            |    2 +-
+ po-properties/br.po               |    2 +-
+ po-properties/bs.po               |    2 +-
+ po-properties/ca.po               |    2 +-
+ po-properties/ca@valencia.po      |    2 +-
+ po-properties/crh.po              |    2 +-
+ po-properties/cs.po               |    2 +-
+ po-properties/cy.po               |    2 +-
+ po-properties/da.po               |    2 +-
+ po-properties/de.po               |    2 +-
+ po-properties/dz.po               |    2 +-
+ po-properties/el.po               |    2 +-
+ po-properties/en_CA.po            |    2 +-
+ po-properties/en_GB.po            |    2 +-
+ po-properties/eo.po               |    2 +-
+ po-properties/es.po               |    2 +-
+ po-properties/et.po               |    2 +-
+ po-properties/eu.po               |    2 +-
+ po-properties/fa.po               |    2 +-
+ po-properties/fi.po               |    2 +-
+ po-properties/fr.po               |    2 +-
+ po-properties/ga.po               |    2 +-
+ po-properties/gl.po               |    2 +-
+ po-properties/gu.po               |    2 +-
+ po-properties/he.po               |    2 +-
+ po-properties/hi.po               |    2 +-
+ po-properties/hr.po               |    2 +-
+ po-properties/hu.po               |    2 +-
+ po-properties/hy.po               |    2 +-
+ po-properties/ia.po               |    2 +-
+ po-properties/id.po               |    2 +-
+ po-properties/io.po               |    2 +-
+ po-properties/is.po               |    2 +-
+ po-properties/it.po               |    2 +-
+ po-properties/ja.po               |    2 +-
+ po-properties/ka.po               |    2 +-
+ po-properties/kn.po               |    2 +-
+ po-properties/ko.po               |    2 +-
+ po-properties/ku.po               |    2 +-
+ po-properties/li.po               |    2 +-
+ po-properties/lt.po               |    2 +-
+ po-properties/lv.po               |    2 +-
+ po-properties/mai.po              |    2 +-
+ po-properties/mi.po               |    2 +-
+ po-properties/mk.po               |    2 +-
+ po-properties/ml.po               |    2 +-
+ po-properties/mn.po               |    2 +-
+ po-properties/mr.po               |    2 +-
+ po-properties/ms.po               |    2 +-
+ po-properties/nb.po               |    2 +-
+ po-properties/ne.po               |    2 +-
+ po-properties/nl.po               |    2 +-
+ po-properties/nn.po               |    2 +-
+ po-properties/nso.po              |    2 +-
+ po-properties/oc.po               |    2 +-
+ po-properties/or.po               | 3551
+ +++++++++++++++++++------------------
+ po-properties/pa.po               |    2 +-
+ po-properties/pl.po               |    2 +-
+ po-properties/ps.po               |    2 +-
+ po-properties/pt.po               |    2 +-
+ po-properties/pt_BR.po            |    2 +-
+ po-properties/ro.po               |    2 +-
+ po-properties/ru.po               |    2 +-
+ po-properties/rw.po               |    2 +-
+ po-properties/si.po               |    2 +-
+ po-properties/sk.po               |    2 +-
+ po-properties/sl.po               |    2 +-
+ po-properties/sq.po               |    2 +-
+ po-properties/sr.po               |    2 +-
+ po-properties/sr@ije.po           |    2 +-
+ po-properties/sr@latin.po         |    2 +-
+ po-properties/sv.po               |    2 +-
+ po-properties/ta.po               |    2 +-
+ po-properties/te.po               |    2 +-
+ po-properties/th.po               |    2 +-
+ po-properties/tk.po               |    2 +-
+ po-properties/tr.po               |    2 +-
+ po-properties/tt.po               |    2 +-
+ po-properties/uk.po               | 3392
+ ++++++++++++++++++------------------
+ po-properties/ur.po               |    2 +-
+ po-properties/uz.po               |    2 +-
+ po-properties/uz@cyrillic.po      |    2 +-
+ po-properties/vi.po               |    2 +-
+ po-properties/wa.po               |    2 +-
+ po-properties/xh.po               |    2 +-
+ po-properties/yi.po               |    2 +-
+ po-properties/zh_CN.po            |    2 +-
+ po-properties/zh_HK.po            |    2 +-
+ po-properties/zh_TW.po            |    2 +-
+ po/af.po                          |   82 +-
+ po/am.po                          |   82 +-
+ po/ang.po                         |   82 +-
+ po/ar.po                          | 2069 +++++++++++-----------
+ po/as.po                          |   82 +-
+ po/ast.po                         |   82 +-
+ po/az.po                          |   82 +-
+ po/az_IR.po                       |   82 +-
+ po/be.po                          |   82 +-
+ po/be@latin.po                    |   82 +-
+ po/bg.po                          | 2069 +++++++++++-----------
+ po/bn.po                          |   82 +-
+ po/bn_IN.po                       |   82 +-
+ po/br.po                          |   82 +-
+ po/bs.po                          |   82 +-
+ po/ca.po                          | 2069 +++++++++++-----------
+ po/ca@valencia.po                 |   82 +-
+ po/crh.po                         |   82 +-
+ po/cs.po                          | 2069 +++++++++++-----------
+ po/cy.po                          |   82 +-
+ po/da.po                          | 2069 +++++++++++-----------
+ po/de.po                          | 2072 +++++++++++-----------
+ po/dz.po                          |   82 +-
+ po/el.po                          | 2069 +++++++++++-----------
+ po/en_CA.po                       |   82 +-
+ po/en_GB.po                       | 2072 +++++++++++-----------
+ po/eo.po                          |   82 +-
+ po/es.po                          | 2072 +++++++++++-----------
+ po/et.po                          | 2072 +++++++++++-----------
+ po/eu.po                          |   82 +-
+ po/fa.po                          |   82 +-
+ po/fi.po                          |   82 +-
+ po/fr.po                          |   82 +-
+ po/ga.po                          | 2069 +++++++++++-----------
+ po/gl.po                          |   82 +-
+ po/gu.po                          |  128 +-
+ po/he.po                          |   82 +-
+ po/hi.po                          |   82 +-
+ po/hr.po                          |   82 +-
+ po/hu.po                          | 2111 +++++++++++-----------
+ po/hy.po                          |   82 +-
+ po/ia.po                          |   82 +-
+ po/id.po                          |   82 +-
+ po/io.po                          |   82 +-
+ po/is.po                          |   82 +-
+ po/it.po                          | 2072 +++++++++++-----------
+ po/ja.po                          |   82 +-
+ po/ka.po                          |   82 +-
+ po/kn.po                          | 2117 +++++++++++-----------
+ po/ko.po                          |   82 +-
+ po/ku.po                          |   82 +-
+ po/li.po                          |   82 +-
+ po/lt.po                          |   82 +-
+ po/lv.po                          |   82 +-
+ po/mai.po                         |   82 +-
+ po/mi.po                          |   82 +-
+ po/mk.po                          |   82 +-
+ po/ml.po                          |   82 +-
+ po/mn.po                          |   82 +-
+ po/mr.po                          |   82 +-
+ po/ms.po                          |   82 +-
+ po/nb.po                          |   82 +-
+ po/ne.po                          |   82 +-
+ po/nl.po                          |   82 +-
+ po/nn.po                          |   82 +-
+ po/nso.po                         |   82 +-
+ po/oc.po                          |   82 +-
+ po/or.po                          |  119 +-
+ po/pa.po                          |   82 +-
+ po/pl.po                          |   82 +-
+ po/ps.po                          |   82 +-
+ po/pt.po                          |   82 +-
+ po/pt_BR.po                       | 2072 +++++++++++-----------
+ po/ro.po                          |   82 +-
+ po/ru.po                          |   82 +-
+ po/rw.po                          |   82 +-
+ po/si.po                          |   82 +-
+ po/sk.po                          |   82 +-
+ po/sl.po                          | 2069 +++++++++++-----------
+ po/sq.po                          |   82 +-
+ po/sr.po                          | 2069 +++++++++++-----------
+ po/sr@ije.po                      |   82 +-
+ po/sr@latin.po                    | 2097 +++++++++++-----------
+ po/sv.po                          |   82 +-
+ po/ta.po                          |   82 +-
+ po/te.po                          |   82 +-
+ po/th.po                          |   82 +-
+ po/tk.po                          |   82 +-
+ po/tr.po                          |   82 +-
+ po/tt.po                          |   82 +-
+ po/uk.po                          | 2069 +++++++++++-----------
+ po/ur.po                          |   82 +-
+ po/uz.po                          |   82 +-
+ po/uz@cyrillic.po                 |   82 +-
+ po/vi.po                          |   82 +-
+ po/wa.po                          |   82 +-
+ po/xh.po                          |   82 +-
+ po/yi.po                          |   82 +-
+ po/zh_CN.po                       | 2072 +++++++++++-----------
+ po/zh_HK.po                       |   82 +-
+ po/zh_TW.po                       |   82 +-
+ 203 files changed, 27647 insertions(+), 27740 deletions(-)
+
+commit 52ea5ae34f88f7995b2804482ae629f8c2f1b6eb
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sat May 30 23:46:55 2009 -0400
+
+    Some more updates
+
+ NEWS |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit ce698bb822215200d09620f51d78c5e52946527d
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sat May 30 02:14:03 2009 -0400
+
+    Avoid assertions due to invalid page sequence
+
+    It is much nicer to handle this gracefully in
+    compute_last_button_state.
+    Fixes bug 584125.
+
+ gtk/gtkassistant.c |   34 ++++++++++++++++------------------
+ 1 files changed, 16 insertions(+), 18 deletions(-)
+
+commit 3cf9c3107fbd09a98aab9a938e2ec03986f748d5
+Author: Cody Russell <bratsche@gnome.org>
+Date:   Sat May 30 00:10:14 2009 -0400
+
+    Improve GtkEntry handling of invalid stock ids
+
+    Instead of silently showing no icon, show a "missing image"
+    icon, like GtkImage does in the same situation. Fixes bug 579590.
+
+ gtk/gtkentry.c |    5 +++++
+ 1 files changed, 5 insertions(+), 0 deletions(-)
+
+commit 1b79defed1ee122f38b72cb74b18f0fda008b1c8
+Author: Caolan McNamara <caolanm@redhat.com>
+Date:   Sat May 30 00:05:35 2009 -0400
+
+    Plug a memory leak in Xrandr code
+
+ gdk/x11/gdkscreen-x11.c |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit 74c15a542a852923144137691fab22bfa92a644d
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Fri May 29 23:42:23 2009 -0400
+
+    Make spinbutton test pass
+
+ gtk/tests/builder.c |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 5986130b0462a0b04a7a51ddb23119b41d64c9a2
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Fri May 29 23:06:35 2009 -0400
+
+    Update for 2.16.2
+
+ NEWS |   45 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 45 insertions(+), 0 deletions(-)
+
+commit 5b00aeb33ae7740d9e2a1f0dab3089c6aa4bca37
+Author: James Andrewartha <trs80@ucc.gu.uwa.edu.au>
+Date:   Thu May 21 13:48:46 2009 +0800
+
+    add missing include $(top_srcdir)/git.mk to modules/papi/Makefile.am
+
+    Signed-off-by: Davyd Madeley <davyd@madeley.id.au>
+
+ modules/printbackends/papi/Makefile.am |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 62edcd72e0817512b252c54223a765cb89c8db2f
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 24 00:30:58 2009 -0400
+
+    Avoid another case of treating None as an atom
+
+ gdk/x11/gdkdnd-x11.c |    7 ++++++-
+ 1 files changed, 6 insertions(+), 1 deletions(-)
+
+commit 68c87c6f9c39689e11dc56de52d81788a82b8dc4
+Author: mark@ecs.vuw.ac.nz <mark@ecs.vuw.ac.nz>
+Date:   Tue May 19 16:08:21 2009 +0200
+
+    Signalize that CUPS connection is available when EISCONN occurs
+
+    Add test for EISCONN error when testing whether a connection to
+    CUPS server
+    is available (#576678 - patch by mark@ecs.vuw.ac.nz).
+
+    Signed-off-by: Marek Kasik <mkasik@redhat.com>
+
+ modules/printbackends/cups/gtkcupsutils.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 13530e502467913ef34b43fc5dc6184595cd9471
+Author: Eitan Isaacson <eitan@ascender.com>
+Date:   Fri May 29 12:50:00 2009 +0200
+
+    Fix GtkAssistant's accessible children. Fixes bug #575319.
+
+ gtk/gtkassistant.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit af8588b738c631314721da4d91ba79877ba06c61
+Author: Seán de Búrca <leftmostcat@gmail.com>
+Date:   Mon May 25 19:48:15 2009 +0100
+
+    Updated Irish translation
+
+ po/ga.po |   70
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 35 insertions(+), 35 deletions(-)
+
+commit 9b414669974c973a09b95d8ceb3ab57e05161589
+Author: Seán de Búrca <leftmostcat@gmail.com>
+Date:   Mon May 25 00:21:59 2009 +0100
+
+    Updated Irish translation
+
+ po/ga.po | 3181
+ ++++++++++++++++++++++++--------------------------------------
+ 1 files changed, 1229 insertions(+), 1952 deletions(-)
+
+commit 35b692722b937841afa6e2ae8788e73d1c927f18
+Author: Alexander Shopov <ash@contact.bg>
+Date:   Tue May 19 07:52:21 2009 +0300
+
+    Updated Bulgarian translation
+
+ po/bg.po | 2083
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1045 insertions(+), 1038 deletions(-)
+
+commit 277b4ea327a37b8e6192cf0c8e2e0e27f0728b9a
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 17 23:43:26 2009 -0400
+
+    Improve GtkNotbook behaviour with too little space
+
+    This fixes bug 582488. The patch was provided by Morten Welinder.
+
+ gtk/gtknotebook.c |   35 +++++++++++++++++++----------------
+ 1 files changed, 19 insertions(+), 16 deletions(-)
+
+commit fce593032fff777968311c97e4a58ab1e97eb23d
+Author: Davyd Madeley <davyd@madeley.id.au>
+Date:   Mon May 18 10:46:42 2009 +0800
+
+    Fix broken compile: s/gtk_selection_atom/gtk_selection_atoms
+
+    Introduced in 94b63ec9b7791036b0b09d4c2059059a1d7e9695
+
+ gtk/gtkselection.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit ae4294b60bb57ee9f632f6cd57b1eab1435fe0a3
+Author: Ask H. Larsen <asklarsen@gmail.com>
+Date:   Mon May 18 01:54:51 2009 +0200
+
+    Updated Danish translation
+
+ po/da.po |   78
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 39 insertions(+), 39 deletions(-)
+
+commit 6af37e80bf5adfd9f9c5e866a93f8af8f26be682
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 17 18:35:51 2009 -0400
+
+    Avoid a warning when persisting clipboards
+
+    Correctly handle conversion to SAVE_TARGETS as a side-effect target
+    with no side-effect, by returning a zero-sized property of type NULL.
+    See section 2.6.3 of the ICCCM.
+
+ gtk/gtkselection.c |   12 ++++++++++--
+ 1 files changed, 10 insertions(+), 2 deletions(-)
+
+commit af59a97a3a92f417cc4c5d647d676d9ef0d60850
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 17 18:34:21 2009 -0400
+
+    Avoid warnings when handling SelectionNotify
+
+    The property field in SelectionNotify events may be None instead
+    of an atom.
+
+ gdk/x11/gdkevents-x11.c |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit 35ab9b798387419d68a71fb9b5e476a5e4a83120
+Author: Martin Nordholts <martinn@src.gnome.org>
+Date:   Fri May 15 21:29:25 2009 +0200
+
+    Avoid memory corruption on complicated confirm-overwrite logic
+
+    Dup the file chooser entry string because the string may be modified
+    depending on what clients do in the confirm-overwrite signal and this
+    corrupts the pointer.
+
+ gtk/gtkfilechooserdefault.c |    9 +++++++--
+ 1 files changed, 7 insertions(+), 2 deletions(-)
+
+commit 503282dad218b4b2cbf7773a8cb5fd00acf593be
+Author: gheet <ghee.teo@sun.com>
+Date:   Wed May 13 20:11:59 2009 +0100
+
+    Adding a new PAPI print backend module details see
+    GNOME#382676. (gheet)
+
+ configure.in                                     |   23 +
+ gtk/Makefile.am                                  |    8 +
+ modules/printbackends/Makefile.am                |    4 +
+ modules/printbackends/papi/Makefile.am           |   32 +
+ modules/printbackends/papi/gtkprintbackendpapi.c |  862
+ ++++++++++++++++++++++
+ modules/printbackends/papi/gtkprintbackendpapi.h |   44 ++
+ modules/printbackends/papi/gtkprinterpapi.c      |  116 +++
+ modules/printbackends/papi/gtkprinterpapi.h      |   61 ++
+ 8 files changed, 1150 insertions(+), 0 deletions(-)
+
+commit 67e0a44100a288fd3374f932ba976c64e744474f
+Author: Federico Mena Quintero <federico@novell.com>
+Date:   Tue May 12 19:12:55 2009 -0500
+
+    bgo#315462 - Make GtkLabel deal with too-small height allocations
+    gracefully
+
+    Previously we would always align the top of the text with the label's
+    allocation-plus-padding.
+    However, this makes a single-line label inside a GtkButton look
+    badly clipped when the button
+    has a smaller allocation than its requisition.  So, for single-line
+    labels we respect the
+    alignment even if it doesn't fit within the label's allocation.
+    But for multi-line labels, we
+    give preference to showing the first line, to give the user some
+    context.
+
+    Signed-off-by: Federico Mena Quintero <federico@novell.com>
+
+ gtk/gtklabel.c |   23 ++++++++++++++++++++---
+ 1 files changed, 20 insertions(+), 3 deletions(-)
+
+commit e2bce0d630c6f424664e81ee95352c4cbc41fc27
+Author: Federico Mena Quintero <federico@novell.com>
+Date:   Tue May 12 13:44:04 2009 -0500
+
+    bgo#463773 - Handle a NULL display in gtk_clipboard_get_for_display()
+    so Flash won't hang
+
+ gtk/gtkclipboard.c |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 52325ccd669ebd24de873bb0949d68d6dad17fb0
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 10 02:08:41 2009 -0400
+
+    Avoid unintended side-effect in gdk_window_get_events
+
+    Calling gdk_window_get_events() had the side-effect of letting
+    property change notification through to the application, which
+    was not intended. Now we keep StructureNotify and PropertyNotify
+    filtered out when they were before. Reported in bug 582003.
+
+ gdk/x11/gdkwindow-x11.c |   10 ++++++----
+ 1 files changed, 6 insertions(+), 4 deletions(-)
+
+commit 5d8a4f78aba64aea32d3bad8a3a8a1e1fd2bf361
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 10 01:54:43 2009 -0400
+
+    Don't enforce property change events on the root window
+
+    The code in gdk_x11_window_set_events is only meant to enforce
+    property change events on child windows. Pointed out in bug 531490.
+
+ gdk/x11/gdkwindow-x11.c |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 2e9385efe2e3f2c5b4711ad51cdfa9f601762a8f
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon May 11 12:02:06 2009 -0400
+
+    Make gtk-update-icon-cache not fall over leftover temp files
+
+    When called with the --force option, try to remove the
+    .icon-theme.cache
+    file before giving up. This fixes rh#500163.
+
+ gtk/updateiconcache.c |   10 +++++++++-
+ 1 files changed, 9 insertions(+), 1 deletions(-)
+
+commit 7cfda03395318ed7a00a00c371feb5c838ca1113
+Author: Marios Zindilis <m.zindilis@dmajor.org>
+Date:   Sat May 9 14:16:28 2009 +0100
+
+    Updated Greek translation
+
+ po/el.po | 2129
+ ++++++++++++++++++++++++++++++++------------------------------
+ 1 files changed, 1094 insertions(+), 1035 deletions(-)
+
+commit e4d97d9652f3974aca8e3729b7cfb77c446b95ee
+Author: Ivar Smolin <okul@linux.ee>
+Date:   Fri May 8 20:17:25 2009 +0300
+
+    Updating Estonian translation
+
+ po/et.po | 2683
+ ++++++++++++++++++++++++--------------------------------------
+ 1 files changed, 1049 insertions(+), 1634 deletions(-)
+
+commit 556fb4dd5f4c6745d6df2aedda7008fc548b604f
+Author: Christian Kirbach <Christian.Kirbach@googlemail.com>
+Date:   Wed May 6 13:33:31 2009 +0200
+
+    Updated German translation.
+
+ po/de.po |    3 +--
+ 1 files changed, 1 insertions(+), 2 deletions(-)
+
+commit 9426ba2735c94c5046072e09eca3b69519840519
+Author: Christian Kirbach <Christian.Kirbach@googlemail.com>
+Date:   Wed May 6 13:06:32 2009 +0200
+
+    Updated German translation.
+
+ po/de.po | 2123
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1066 insertions(+), 1057 deletions(-)
+
+commit 339298b638ae76c546717f2136970b93438295a9
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Tue May 5 19:29:05 2009 -0400
+
+    Add diagnostics for XID collisions
+
+    This should help with diagnosing crashes caused by over-eager XID
+    reuse in Xlib, see bug 581526.
+
+ gdk/x11/gdkxid.c |   13 ++++++++-----
+ 1 files changed, 8 insertions(+), 5 deletions(-)
+
+commit 00524901e1393618e469dd9a8f224401b8ba7e35
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 3 22:27:12 2009 -0400
+
+    Make GtkHandleBox work on multiple displays
+
+ gtk/gtkhandlebox.c |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit d183f44748a8da7e6e2eff04d41810de4b3b9ab0
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 3 21:38:54 2009 -0400
+
+    Fix handling of GDK_NONE
+
+    Don't intern "NONE" and warn if GDK_NONE is converted to an
+    X atom. Problem pointed out in bug 580511.
+
+ gdk/x11/gdkproperty-x11.c  |   16 +++++++++-------
+ gdk/x11/gdkselection-x11.c |    5 ++++-
+ 2 files changed, 13 insertions(+), 8 deletions(-)
+
+commit 832be659b7baf41191a50ef825f3099137bea7a0
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 3 12:59:00 2009 -0400
+
+    Fix whitespace
+
+ README.in |   12 ++++++------
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 1fe0b8e9064309e8694959bb4412719eaa34c290
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Tue Sep 23 22:23:09 2008 +0000
+
+    Warn if the adjustment has nonzero page size.
+
+    2008-09-23  Matthias Clasen  <mclasen@redhat.com>
+
+            * gtk/gtkspinbutton.c: Warn if the adjustment has nonzero
+            page size.
+
+    svn path=/branches/gtk-2-14/; revision=21500
+
+ gtk/gtkspinbutton.c |    9 +++++++++
+ 1 files changed, 9 insertions(+), 0 deletions(-)
+
+commit 5325959fe2054491d7dcfe6ea3a1333d0465ae7e
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun May 3 12:45:54 2009 -0400
+
+    Update to explain the situation.
+
+    2008-09-23  Matthias Clasen  <mclasen@redhat.com>
+
+            * README.in: Update to explain the situation.
+
+            * gtk/gtkadjustment.c: Revert to the old behaviour of allowing
+            values in the range [lower, upper]. Relying on the possibility
+            to set values in the [upper - page_size, upper] subrange is
+            considered deprecated, though, and will trigger a warning.
+
+            * gtk/gtkcombobox.c:
+            * gtk/gtkiconview.c:
+            * gtk/gtkrange.c:
+            * gtk/gtkscrolledwindow.c:
+            * gtk/gtktreeview.c: Add the CLAMPing back that was removed
+            after
+            the GtkAdjustment behaviour change.
+
+    svn path=/branches/gtk-2-14/; revision=21499
+
+    Conflicts:
+
+	ChangeLog.pre-2-14
+
+ README.in		 |   14 ++++++++----
+ gtk/gtkadjustment.c	 |    6 +----
+ gtk/gtkcombobox.c	 |    8 +++---
+ gtk/gtkiconview.c	 |   52
+ ++++++++++++++++++++++++++++++----------------
+ gtk/gtkrange.c		 |    6 +++++
+ gtk/gtkscrolledwindow.c |    8 +++++-
+ gtk/gtktreeview.c	 |   22 +++++++++++++------
+ 7 files changed, 75 insertions(+), 41 deletions(-)
+
+commit 49e1700bb27bda87292af36f318a48a33852ccc9
+Author: Petr Kovar <pknbe@volny.cz>
+Date:	Sun May 3 18:46:22 2009 +0200
+
+    Updated Czech translation
+
+ po/cs.po | 2082
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1044 insertions(+), 1038 deletions(-)
+
+commit 01946b51209f97625bdb7106da833c7e74da844d
+Author: Jorge Gonzalez <jorgegonz@svn.gnome.org>
+Date:	Sat May 2 12:49:28 2009 +0200
+
+    Updated Spanish translation
+
+ po/es.po |   10 +++++-----
+ 1 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 098a5b0500b5738fb6eb5fbe6b3cee7f988f186c
+Author: Jorge Gonzalez <jorgegonz@svn.gnome.org>
+Date:	Fri May 1 20:26:29 2009 +0200
+
+    Updated Spanish translation
+
+ po/es.po |   24 ++++++++++++------------
+ 1 files changed, 12 insertions(+), 12 deletions(-)
+
+commit 637252af65b632c2ae4c03100c6e8e2790ab97d3
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Wed Apr 22 11:57:39 2009 -0400
+
+    Avoid double browser windows from the about dialog.
+
+ gtk/gtkaboutdialog.c |    2 --
+ 1 files changed, 0 insertions(+), 2 deletions(-)
+
+commit 70d0129f48fbc4dac8a134c8c206a4630a2c66e8
+Author: Shankar Prasad <svenkate@redhat.com>
+Date:	Tue Apr 28 13:52:01 2009 +0530
+
+    Updated Kannada transltion
+
+ po/kn.po | 2134
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1063 insertions(+), 1071 deletions(-)
+
+commit 2266d161488c66ec66839d6922635246cdc64bc3
+Author: Gabor Kelemen <kelemeng@gnome.hu>
+Date:	Mon Apr 27 12:26:40 2009 +0200
+
+    Updated Hungarian translation
+
+ po/hu.po | 2124
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1060 insertions(+), 1064 deletions(-)
+
+commit b0b636ca8541a983bbcdf9d022a970ea253ce02c
+Author: Maxim V. Dziumanenko <dziumanenko@gmail.com>
+Date:	Mon Apr 27 01:02:02 2009 +0300
+
+    Updated Ukrainian translation
+
+ po-properties/uk.po | 3582
+ +++++++++++++++++++++++++--------------------------
+ po/uk.po	     | 2759 +++++++++++++++++++---------------------
+ 2 files changed, 3100 insertions(+), 3241 deletions(-)
+
+commit f43a78a892981b220ecbb90245da3c8370cab2fe
+Author: Brian Cameron <Brian.Cameron@sun.com>
+Date:	Fri Apr 24 18:16:15 2009 -0500
+
+    Fix casting problem in gmodule code.
+
+    This fixes bug 579884.  Previously the return value of
+    g_slist_find_custom was
+    being recasted as type (GtkModuleInfo *).  This patch sets the
+    return value
+    to a temporary variable of type (GSList *), and sets info to
+    temp->data.  This
+    avoids a crashing problem.
+
+ gtk/gtkmodules.c |   11 +++++++++--
+ 1 files changed, 9 insertions(+), 2 deletions(-)
+
+commit 28a6068eb9bb748c49e8c1efde7cb881e46e02f5
+Author: Vladimir Melo <vmelo@gnome.org>
+Date:	Wed Apr 22 20:49:58 2009 -0300
+
+    Updated Brazilian Portuguese translation.
+
+ po/pt_BR.po | 2089
+ ++++++++++++++++++++++++++++++-----------------------------
+ 1 files changed, 1049 insertions(+), 1040 deletions(-)
+
+commit b33db85956135619b73d030a3af219cab97745c5
+Author: Matej Urban <matej.urban@gmail.com>
+Date:	Wed Apr 22 12:07:53 2009 +0200
+
+    Updated Slovenian translation
+
+ po/sl.po | 2082
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1044 insertions(+), 1038 deletions(-)
+
+commit f1bb36c9d764fd3ce97a4c99fd07d4bca2230a38
+Author: Christian Persch <chpe@gnome.org>
+Date:	Mon Apr 20 14:53:51 2009 +0200
+
+    Allow unsetting the icon title set with gdk_window_set_icon_name
+
+    Change gdk_window_set_icon_name to allow using NULL to unset a
+    previously set icon title, so that the icon title tracks the normal
+    title again. Bug #535557.
+
+ gdk/x11/gdkwindow-x11.c |   41 +++++++++++++++++++++++++++++------------
+ 1 files changed, 29 insertions(+), 12 deletions(-)
+
+commit 3c625fed0718fe769d72b5ec2114f08516d5d85f
+Author: Tobias Mueller <tobiasmue@gnome.org>
+Date:	Mon Apr 20 01:45:10 2009 +0200
+
+    Remove a deprecated call to gtk_status_icon_set_tooltip
+
+    This fixes bug 574386.
+
+ tests/teststatusicon.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 39eb2c618e8dd07dde0954fae4072ad61afecc56
+Author: Khaled Hosny <khaledhosny@eglug.org>
+Date:	Sun Apr 19 20:00:33 2009 +0200
+
+    Updated Arabic translation
+
+ po/ar.po |  129
+ ++++++++++++++++++++++++++++----------------------------------
+ 1 files changed, 58 insertions(+), 71 deletions(-)
+
+commit 61af0859389fd310dbd99f1b174105de0415ddd3
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Sat Apr 18 15:18:10 2009 -0400
+
+    Point to better place for git documentation
+
+ HACKING |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 11adc5a0d38b2355349fa14d84d06a066084566b
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Sat Apr 18 14:52:04 2009 -0400
+
+    Don't leak RequiresInfo when parsing GtkBuilder files
+
+    This fixes bug 579366.
+
+ gtk/gtkbuilderparser.c |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit c28fabe3f6bb42ed348e832469a8d10c0f64078a
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Sat Apr 18 14:42:43 2009 -0400
+
+    Make GtkAssistant keep its padding when built with GtkBuilder
+
+ gtk/gtkassistant.c |	 6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 553523048a1c01bc9dbc829aaa75fe0f5734baa2
+Author: Luca Ferretti <elle.uca@libero.it>
+Date:	Sat Apr 18 17:32:24 2009 +0200
+
+    Updated Italian translation
+
+    Completed Italian translation for 2.16
+
+ po/it.po | 2076
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1042 insertions(+), 1034 deletions(-)
+
+commit db1e13895250ff7934a4741abbd5bc7a46067a4a
+Author: Philip Withnall <philip@tecnocode.co.uk>
+Date:	Sat Apr 18 16:28:43 2009 +0100
+
+    Updated British English translation
+
+ po/en_GB.po | 2085
+ ++++++++++++++++++++++++++++++-----------------------------
+ 1 files changed, 1046 insertions(+), 1039 deletions(-)
+
+commit ec0dd9f1ab3072c86c958b04d194c7def00ab88e
+Author: David Planella <david.planella@gmail.com>
+Date:	Sat Apr 18 11:45:56 2009 +0200
+
+    Updated Catalan translation
+
+ po/ca.po | 2082
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1045 insertions(+), 1037 deletions(-)
+
+commit fbfea09f37d4569e2d6542d701a4def859213908
+Author: Deng Xiyue <manphiz@gmail.com>
+Date:	Sat Apr 18 07:44:44 2009 +0200
+
+    Updated zh_CN translation
+
+ po/zh_CN.po | 2087
+ ++++++++++++++++++++++++++++++-----------------------------
+ 1 files changed, 1047 insertions(+), 1040 deletions(-)
+
+commit dfbc1199d42de55467fa7a7e80c9b316a423ab95
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Thu Apr 16 00:50:46 2009 -0400
+
+    Fix a resizing problem with marks on scales
+
+    Queue a resize when marks are added to or removed from GtkScale
+    widgets. This fixes a visual glitch with the 100% mark in
+    gnome-volume-control.
+
+ gtk/gtkscale.c |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit 663bf3db0efde02f96e34bc08846356be3240f7f
+Author: Stefan Kost <ensonic@users.sf.net>
+Date:	Wed Apr 15 18:13:20 2009 +0300
+
+    build: fix the build when not making man-pages
+
+ docs/reference/gdk-pixbuf/Makefile.am |    8 ++++----
+ docs/reference/gtk/Makefile.am        |    8 ++++----
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+commit 2bac62984b4f3ab91060d367a4e940c16a10c656
+Author: Milos Popovic <gpopac@gmail.com>
+Date:	Wed Apr 15 10:47:49 2009 +0200
+
+    Updated Serbian translation
+
+ po/sr.po	| 2645
+ +++++++++++++++++++++++++++-----------------------------
+ po/sr@latin.po | 2649
+ +++++++++++++++++++++++++++-----------------------------
+ 2 files changed, 2554 insertions(+), 2740 deletions(-)
+
+commit 647db715075b4174d3867bbf352a1c129fd89834
+Author: Manoj Kumar Giri <mgiri@mgiri.csb>
+Date:	Tue Apr 14 15:20:48 2009 +0530
+
+    Upadated Oriya Translation
+
+ po-properties/or.po | 3713
+ +++++++++++++++++++++++++--------------------------
+ 1 files changed, 1833 insertions(+), 1880 deletions(-)
+
+commit 73fff08dfbe070f929c4f15e833548e24ba59fb3
+Author: Manoj Kumar Giri <mgiri@mgiri.csb>
+Date:	Tue Apr 14 12:05:23 2009 +0530
+
+    Updated Oriya Translation
+
+ po/or.po |    7 ++++---
+ 1 files changed, 4 insertions(+), 3 deletions(-)
+
+commit ee3734e935ca10f3b7f17a38f06e809c710df8cf
+Author: Manoj Kumar Giri <mgiri@mgiri.csb>
+Date:	Tue Apr 14 12:01:09 2009 +0530
+
+    Updated Oriya Translation
+
+ po/or.po |   46 ++++++++++++++++++----------------------------
+ 1 files changed, 18 insertions(+), 28 deletions(-)
+
+commit 2bcaf6c2afd8239122735dbc906d15c7934919f5
+Author: Khaled Hosny <khaledhosny@eglug.org>
+Date:	Tue Apr 14 01:21:50 2009 +0200
+
+    Updated Arabic translation
+
+ po/ar.po | 2653
+ +++++++++++++++++++++++++++++---------------------------------
+ 1 files changed, 1247 insertions(+), 1406 deletions(-)
+
+commit 82ba15b349eb94ae1d43018032ec313ccf3fbde2
+Author: Ankitkumar Patel <ankit@redhat.com>
+Date:	Mon Apr 13 17:24:21 2009 +0530
+
+    Updated Gujarati Translations
+
+ po/gu.po |   62
+ ++++++++++++++++++++++++--------------------------------------
+ 1 files changed, 24 insertions(+), 38 deletions(-)
+
+commit 85f6ac2ab21d1a8403759f14da13feed184d8805
+Author: Kenneth Nielsen <k.nielsen81@gmail.com>
+Date:	Sun Apr 12 17:03:04 2009 +0200
+
+    Updated Danish translation\n\nUpdated Danish translation by Kenneth
+    Nielsen
+
+ po/da.po |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit bf641cd46199160a74324631b1152071d66d3dc6
+Author: Jorge González <aloriel@fobos.(none)>
+Date:	Sun Apr 12 16:49:25 2009 +0200
+
+    Updated Spanish translation
+
+ po/es.po | 2081
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1044 insertions(+), 1037 deletions(-)
+
+commit 419686f7169109d19dd67d0d976b481185284c3d
+Author: Kenneth Nielsen <k.nielsen81@gmail.com>
+Date:	Sun Apr 12 15:10:16 2009 +0200
+
+    Updated Danish translation\n\nUpdated Danish translation by Kenneth
+    Nielsen
+
+ po/da.po | 2086
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1046 insertions(+), 1040 deletions(-)
+
+commit fd9ee5539ff5cb5b8a996c045e5f60b255f6b995
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Sat Apr 11 18:09:33 2009 -0400
+
+    Bump version
+
+ configure.in |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 035be761f4df2d41bb1684bba77cb87758af9c05
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Sat Apr 11 18:05:34 2009 -0400
+
+    Release 2.16.1
+
+ Makefile.am			     |	  5 +
+ docs/reference/gtk/tmpl/gtkhsv.sgml |	 16 +-
+ po-properties/af.po		     |	186 +-
+ po-properties/am.po		     |	186 +-
+ po-properties/ang.po		     |	186 +-
+ po-properties/ar.po		     |	186 +-
+ po-properties/as.po		     |	580 +++--
+ po-properties/ast.po		     |	186 +-
+ po-properties/az.po		     |	186 +-
+ po-properties/az_IR.po		     |	186 +-
+ po-properties/be.po		     |	186 +-
+ po-properties/be@latin.po	     |	186 +-
+ po-properties/bg.po		     | 3392 +++++++++++++-------------
+ po-properties/bn.po		     |	186 +-
+ po-properties/bn_IN.po		     |	186 +-
+ po-properties/br.po		     |	186 +-
+ po-properties/bs.po		     |	186 +-
+ po-properties/ca.po		     |	186 +-
+ po-properties/ca@valencia.po	     |	186 +-
+ po-properties/crh.po		     | 3720 +++++++++++++++--------------
+ po-properties/cs.po		     |	186 +-
+ po-properties/cy.po		     |	186 +-
+ po-properties/da.po		     | 3392 +++++++++++++-------------
+ po-properties/de.po		     | 3392 +++++++++++++-------------
+ po-properties/dz.po		     |	186 +-
+ po-properties/el.po		     | 3392 +++++++++++++-------------
+ po-properties/en_CA.po		     |	186 +-
+ po-properties/en_GB.po		     |	186 +-
+ po-properties/eo.po		     |	186 +-
+ po-properties/es.po		     |	186 +-
+ po-properties/et.po		     |	186 +-
+ po-properties/eu.po		     | 3723 +++++++++++++++--------------
+ po-properties/fa.po		     |	186 +-
+ po-properties/fi.po		     |	186 +-
+ po-properties/fr.po		     |	186 +-
+ po-properties/ga.po		     |	186 +-
+ po-properties/gl.po		     | 3392 +++++++++++++-------------
+ po-properties/gu.po		     | 3567 ++++++++++++++--------------
+ po-properties/he.po		     |	186 +-
+ po-properties/hi.po		     |	186 +-
+ po-properties/hr.po		     |	186 +-
+ po-properties/hu.po		     |	186 +-
+ po-properties/hy.po		     |	186 +-
+ po-properties/ia.po		     |	186 +-
+ po-properties/id.po		     |	186 +-
+ po-properties/io.po		     |	186 +-
+ po-properties/is.po		     |	186 +-
+ po-properties/it.po		     |	186 +-
+ po-properties/ja.po		     | 3392 +++++++++++++-------------
+ po-properties/ka.po		     |	186 +-
+ po-properties/kn.po		     | 3937 ++++++++++++++++--------------
+ po-properties/ko.po		     |	186 +-
+ po-properties/ku.po		     |	186 +-
+ po-properties/li.po		     |	186 +-
+ po-properties/lt.po		     |	186 +-
+ po-properties/lv.po		     |	186 +-
+ po-properties/mai.po		     |	186 +-
+ po-properties/mi.po		     |	186 +-
+ po-properties/mk.po		     |	186 +-
+ po-properties/ml.po		     |	186 +-
+ po-properties/mn.po		     |	186 +-
+ po-properties/mr.po		     | 3579 ++++++++++++++--------------
+ po-properties/ms.po		     |	186 +-
+ po-properties/nb.po		     |	186 +-
+ po-properties/ne.po		     |	186 +-
+ po-properties/nl.po		     |	186 +-
+ po-properties/nn.po		     |	186 +-
+ po-properties/nso.po		     |	186 +-
+ po-properties/oc.po		     |	186 +-
+ po-properties/or.po		     | 3567 ++++++++++++++--------------
+ po-properties/pa.po		     | 3395 +++++++++++++-------------
+ po-properties/pl.po		     |	186 +-
+ po-properties/ps.po		     |	186 +-
+ po-properties/pt.po		     |	186 +-
+ po-properties/pt_BR.po		     |	186 +-
+ po-properties/ro.po		     |	186 +-
+ po-properties/ru.po		     | 3470 +++++++++++++-------------
+ po-properties/rw.po		     |	186 +-
+ po-properties/si.po		     |	186 +-
+ po-properties/sk.po		     |	186 +-
+ po-properties/sl.po		     | 4601
+ ++++++++++++++++++-----------------
+ po-properties/sq.po		     |	186 +-
+ po-properties/sr.po		     |	186 +-
+ po-properties/sr@ije.po	     |	186 +-
+ po-properties/sr@latin.po	     |	186 +-
+ po-properties/sv.po		     |	186 +-
+ po-properties/ta.po		     | 4477
+ +++++++++++++++++-----------------
+ po-properties/te.po		     |	251 +-
+ po-properties/th.po		     |	186 +-
+ po-properties/tk.po		     |	186 +-
+ po-properties/tr.po		     | 3392 +++++++++++++-------------
+ po-properties/tt.po		     |	186 +-
+ po-properties/uk.po		     |	186 +-
+ po-properties/ur.po		     |	186 +-
+ po-properties/uz.po		     |	186 +-
+ po-properties/uz@cyrillic.po	     |	186 +-
+ po-properties/vi.po		     |	186 +-
+ po-properties/wa.po		     |	186 +-
+ po-properties/xh.po		     |	186 +-
+ po-properties/yi.po		     |	186 +-
+ po-properties/zh_CN.po		     | 3395 +++++++++++++-------------
+ po-properties/zh_HK.po		     |	186 +-
+ po-properties/zh_TW.po		     |	186 +-
+ po/af.po			     |	191 +-
+ po/am.po			     |	191 +-
+ po/ang.po			     |	191 +-
+ po/ar.po			     | 2087 ++++++++--------
+ po/as.po			     |	193 +-
+ po/ast.po			     |	193 +-
+ po/az.po			     |	191 +-
+ po/az_IR.po			     |	190 +-
+ po/be.po			     |	191 +-
+ po/be@latin.po			     |	193 +-
+ po/bg.po			     |	193 +-
+ po/bn.po			     |	191 +-
+ po/bn_IN.po			     |	193 +-
+ po/br.po			     |	191 +-
+ po/bs.po			     |	191 +-
+ po/ca.po			     |	193 +-
+ po/ca@valencia.po		     |	193 +-
+ po/crh.po			     | 2141 ++++++++--------
+ po/cs.po			     |	193 +-
+ po/cy.po			     |	191 +-
+ po/da.po			     | 2084 ++++++++--------
+ po/de.po			     | 2087 ++++++++--------
+ po/dz.po			     |	191 +-
+ po/el.po			     | 2069 ++++++++--------
+ po/en_CA.po			     |	193 +-
+ po/en_GB.po			     |	193 +-
+ po/eo.po			     |	191 +-
+ po/es.po			     | 2081 ++++++++--------
+ po/et.po			     |	193 +-
+ po/eu.po			     |	193 +-
+ po/fa.po			     |	191 +-
+ po/fi.po			     |	193 +-
+ po/fr.po			     | 2069 ++++++++--------
+ po/ga.po			     |	193 +-
+ po/gl.po			     | 2084 ++++++++--------
+ po/gu.po			     |	193 +-
+ po/he.po			     |	193 +-
+ po/hi.po			     |	193 +-
+ po/hr.po			     |	191 +-
+ po/hu.po			     |	193 +-
+ po/hy.po			     |	191 +-
+ po/ia.po			     |	191 +-
+ po/id.po			     |	193 +-
+ po/io.po			     |	191 +-
+ po/is.po			     |	191 +-
+ po/it.po			     | 2079 ++++++++--------
+ po/ja.po			     |	193 +-
+ po/ka.po			     |	193 +-
+ po/kn.po			     |	193 +-
+ po/ko.po			     |	193 +-
+ po/ku.po			     |	193 +-
+ po/li.po			     |	191 +-
+ po/lt.po			     |	193 +-
+ po/lv.po			     |	193 +-
+ po/mai.po			     |	193 +-
+ po/mi.po			     |	191 +-
+ po/mk.po			     |	193 +-
+ po/ml.po			     |	274 ++-
+ po/mn.po			     |	192 +-
+ po/mr.po			     | 2137 ++++++++--------
+ po/ms.po			     |	191 +-
+ po/nb.po			     |	193 +-
+ po/ne.po			     |	191 +-
+ po/nl.po			     |	193 +-
+ po/nn.po			     |	194 +-
+ po/nso.po			     |	191 +-
+ po/oc.po			     |	191 +-
+ po/or.po			     |	193 +-
+ po/pa.po			     |	193 +-
+ po/pl.po			     |	193 +-
+ po/ps.po			     | 2085 ++++++++--------
+ po/pt.po			     |	193 +-
+ po/pt_BR.po			     |	193 +-
+ po/ro.po			     |	193 +-
+ po/ru.po			     | 2103 ++++++++--------
+ po/rw.po			     |	192 +-
+ po/si.po			     |	191 +-
+ po/sk.po			     |	193 +-
+ po/sl.po			     |	193 +-
+ po/sq.po			     |	193 +-
+ po/sr.po			     |	193 +-
+ po/sr@ije.po			     |	191 +-
+ po/sr@latin.po			     |	193 +-
+ po/sv.po			     |	193 +-
+ po/ta.po			     |	193 +-
+ po/te.po			     |	193 +-
+ po/th.po			     |	193 +-
+ po/tk.po			     |	191 +-
+ po/tr.po			     | 2084 ++++++++--------
+ po/tt.po			     |	191 +-
+ po/uk.po			     |	193 +-
+ po/ur.po			     |	190 +-
+ po/uz.po			     |	191 +-
+ po/uz@cyrillic.po		     |	191 +-
+ po/vi.po			     |	193 +-
+ po/wa.po			     |	191 +-
+ po/xh.po			     |	191 +-
+ po/yi.po			     |	191 +-
+ po/zh_CN.po			     | 2087 ++++++++--------
+ po/zh_HK.po			     |	193 +-
+ po/zh_TW.po			     |	193 +-
+ 204 files changed, 64545 insertions(+), 62626 deletions(-)
+
+commit 33857adc7dbf01f056a9c38d639194a4f4ba1498
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Sat Apr 11 15:54:33 2009 -0400
+
+    Remove generated files
+
+ docs/reference/gdk-pixbuf/gdk-pixbuf-csource.1     |  138
+ --------------------
+ .../gdk-pixbuf/gdk-pixbuf-query-loaders.1	    |	50 -------
+ docs/reference/gtk/gtk-builder-convert.1	    |	51 -------
+ docs/reference/gtk/gtk-query-immodules-2.0.1	    |	43 ------
+ docs/reference/gtk/gtk-update-icon-cache.1	    |	77 -----------
+ 5 files changed, 0 insertions(+), 359 deletions(-)
+
+commit bfb8eed29231468daa2db17dd3d3099aa9334901
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Sat Apr 11 15:52:28 2009 -0400
+
+    Update for 2.16.1
+
+ NEWS |   68
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 68 insertions(+), 0 deletions(-)
+
+commit b07c6616f88847f07dc4c441d2e93e6769462c69
+Author: Michael J. Chudobiak <mjc@avtechpulse.com>
+Date:	Sat Apr 11 13:42:14 2009 -0400
+
+    Minor file descriptor leak in testgtk
+
+    Added a missing fclose. Bug #578366.
+
+ demos/testgtk/main.c |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 2c6db0bae2af32420a2cc97fda23fb33117051c1
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Sat Apr 11 11:40:30 2009 -0400
+
+    Remove generated files
+
+ docs/reference/gdk-pixbuf/gdk-pixbuf-csource.1     |	 6 +-
+ .../gdk-pixbuf/gdk-pixbuf-query-loaders.1	    |	 6 +-
+ docs/reference/gtk/gtk-builder-convert.1	    |	 6 +-
+ docs/reference/gtk/gtk-query-immodules-2.0.1	    |	 6 +-
+ docs/reference/gtk/gtk-update-icon-cache.1	    |	78
+ +++++++++++++-------
+ 5 files changed, 64 insertions(+), 38 deletions(-)
+
+commit db7d72c82fb33debd200c2ce2576048473e6f3bf
+Author: Christian Persch <chpe@gnome.org>
+Date:	Sat Apr 11 01:53:32 2009 -0400
+
+    Display localised accelerator keys also in OTHER mode
+
+    This fixes bug 572797.
+
+ gtk/gtkcellrendereraccel.c |	 5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit f07613bb121ee57717ea106b1d0bbba0a6a1242a
+Author: Michael Chudobiak <mjc@avtechpulse.com>
+Date:	Sat Apr 11 01:47:29 2009 -0400
+
+    Fix a small leak in GtkFileSelector
+
+ gtk/gtkfilesel.c |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit 7b2bda7c846404ee23cdfa076504b6b220f67d91
+Author: Bruce Cowan <bugs@bcowan.fastmail.co.uk>
+Date:	Sat Apr 11 01:44:35 2009 -0400
+
+    Add GtkHSV in gtk.types to fix documentation
+
+ docs/reference/gtk/gtk.types |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit e5af8c67a1dd210a5c31fe0625a689b1bd654895
+Author: Christian Dywan <christian@lanedo.com>
+Date:	Sat Apr 11 01:42:07 2009 -0400
+
+    Correct tutorial url in faq
+
+ docs/faq/gtk-faq.sgml |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit d8da8dd4ffede861d53af88fa5034aab6d7d2beb
+Author: MOROHOSHI Akihiko <moro@remus.dti.ne.jp>
+Date:	Sat Apr 11 01:34:22 2009 -0400
+
+    Improve dialog handling in gtk-builder-convert
+
+    Make gtk-builder-convert handle response ids in GtkFileChooserDialog
+    correctly. (#557629)
+
+ gtk/gtk-builder-convert |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 8066cc1555fd4f27707f270e44eeea7ad7579630
+Author: Simos Xenitellis <simos@gnome.org>
+Date:	Fri Apr 10 23:29:14 2009 +0100
+
+    Updated Greek translation
+
+ po/el.po |   15 +++++++++------
+ 1 files changed, 9 insertions(+), 6 deletions(-)
+
+commit fd513c3e1a653eb8dbe0b1a588c3ae21acc328e6
+Author: Claude Paroz <claude@2xlibre.net>
+Date:	Fri Apr 10 22:12:35 2009 +0200
+
+    Updated French translation
+
+ po/fr.po |  172
+ +++++++++++++++++++++++++++++++++-----------------------------
+ 1 files changed, 91 insertions(+), 81 deletions(-)
+
+commit 67d8ed9ed331faf9de20555b158cbba8cb4ff2da
+Author: Carlos Garcia Campos <carlosgc@gnome.org>
+Date:	Tue Apr 7 19:02:48 2009 +0200
+
+    Send the print job title to the previewer
+
+    The previewer should know the print job title too, it could be
+    included
+    in the print settings file. Fixes bug #561345
+
+ gtk/gtkprintoperation-unix.c |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit d77156952dd117a11d80b1f1a8ee7dd7ec09b126
+Author: Carlos Garcia Campos <carlosgc@gnome.org>
+Date:	Tue Apr 7 18:45:11 2009 +0200
+
+    Save PageSetup into print settings file used by the print previewer
+
+    Fixes bug #578271
+
+ gtk/gtkprintoperation-unix.c |   23 +++++++++++++++++++++--
+ 1 files changed, 21 insertions(+), 2 deletions(-)
+
+commit 5261d14d6fe77972b8dde6b647486437715fb353
+Author: Carlos Garcia Campos <carlosgc@gnome.org>
+Date:	Fri Apr 10 00:14:23 2009 -0400
+
+    Fix memory leak in gdkscreen-x11
+
+    When RandR 1.2 X driver doesn't return any usable multihead data the
+    monitors array is freed, without freeing the memory allocated by
+    the array
+    elements before. Fixes bug #578354
+
+ gdk/x11/gdkscreen-x11.c |   36 ++++++++++++++++++++----------------
+ 1 files changed, 20 insertions(+), 16 deletions(-)
+
+commit f0b4779d56fa331bf1b4ebb9b1d1400be77be4a3
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Fri Apr 10 00:09:27 2009 -0400
+
+    Improve accessible name
+
+    Change the accessible name of an entry in the print dialog from "At"
+    to "Time of print". String addition. (#577964)
+
+ gtk/gtkprintunixdialog.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 1f1db4f28861aafe3c8611b7b0d1269f6259e8a0
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Thu Apr 9 23:42:44 2009 -0400
+
+    Expand GtkBuilder migration guide
+
+ docs/reference/gtk/migrating-GtkBuilder.sgml |   79
+ +++++++++++++++++++++----
+ 1 files changed, 66 insertions(+), 13 deletions(-)
+
+commit af56f63561b3d4439a68d5709a25ca782516086f
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Thu Apr 9 19:38:55 2009 -0400
+
+    Update release instructions for git
+
+ docs/RELEASE-HOWTO |	81
+ +++++++++++++++++++++++++++-------------------------
+ 1 files changed, 42 insertions(+), 39 deletions(-)
+
+commit 24a9dadfe945619360a87297e6c4f07d76be938a
+Author: Jorge González <aloriel@fobos.(none)>
+Date:	Thu Apr 9 17:04:17 2009 +0200
+
+    Updated Spanish translation
+
+ po/es.po |   21 ++++++++++++++-------
+ 1 files changed, 14 insertions(+), 7 deletions(-)
+
+commit de64faabebc37a12fd171c618f826c501abf0c1b
+Author: Sven Neumann <s.neumann@phase-zero.de>
+Date:	Thu Apr 9 16:50:25 2009 +0200
+
+    Fix compilation with DirectFB 1.0
+
+    The code used a field introduced with DirectFB 1.2. Added a
+    compile-time version check to make it work with DirectFB 1.0.
+
+ gdk/directfb/gdktestutils-directfb.c |   12 ++++++++++--
+ 1 files changed, 10 insertions(+), 2 deletions(-)
+
+commit 3f41896abed9beb86fc06814cb6560fd14bab1a4
+Author: Reşat SABIQ <tilde.birlik@gmail.com>
+Date:	Thu Apr 9 04:37:32 2009 -0500
+
+    Updated Crimean Tatar (Crimean Turkish) translation
+
+    Updated crh.po.
+
+ po-properties/crh.po |  633
+ +++++++++++++++++++++-----------------------------
+ 1 files changed, 264 insertions(+), 369 deletions(-)
+
+commit f702e212d80cb5f44acd2e84f33947ac73c27f34
+Author: Reşat SABIQ <rsa@umut.(none)>
+Date:	Thu Apr 9 03:56:37 2009 -0500
+
+    Updated Crimean Tatar (Crimean Turkish) translation
+
+    Updated crh.po.
+
+ po/crh.po |  185
+ +++++++++++++++----------------------------------------------
+ 1 files changed, 46 insertions(+), 139 deletions(-)
+
+commit fbbbf7a936f891dfc0d7f0e4b78aeefe972d6825
+Merge: d2bea91 8bc711b
+Author: Simos Xenitellis <simos@gnome.org>
+Date:	Thu Apr 9 00:28:42 2009 +0100
+
+    Merge branch 'master' of ssh://simos@git.gnome.org/git/gtk+
+
+commit d2bea918b9539390255d1912ac81e39c6a2fabea
+Author: Simos Xenitellis <simos@gnome.org>
+Date:	Thu Apr 9 00:28:18 2009 +0100
+
+    Updated Greek translation
+
+ po/el.po |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 8bc711b43b3bb0a95844384a410e452ac30603fb
+Author: Luca Ferretti <elle.uca@libero.it>
+Date:	Wed Apr 8 23:33:27 2009 +0200
+
+    Updated Italian translation
+
+    Updated Italian translation by Luca Ferretti
+
+    Signed-off-by: Milo Casagrande <milo@ubuntu.com>
+
+ po/it.po | 2090
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1056 insertions(+), 1034 deletions(-)
+
+commit 543ac9298f6ebd903430bb1d6ad0aedf8f0f83e7
+Author: Simos Xenitellis <simos@gnome.org>
+Date:	Wed Apr 8 20:25:19 2009 +0100
+
+    Updated Greek translation
+
+ po/el.po |  165
+ +++++++++++++++++++++++++++++++++-----------------------------
+ 1 files changed, 88 insertions(+), 77 deletions(-)
+
+commit 84a9e65ca3bf407807dbe60c549169810c631601
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Wed Apr 8 10:02:52 2009 -0400
+
+    Allow empty passwords in GtkMountOperation
+
+    Allow empty passwords, since there are situations where the
+    backend doesn't need the password.	(#578365)
+
+ gtk/gtkmountoperation.c |    9 +++++++--
+ 1 files changed, 7 insertions(+), 2 deletions(-)
+
+commit a15b14032eeda8d23808a842abffe3a198bd735d
+Author: Michael J. Chudobiak <mjc@avtechpulse.com>
+Date:	Wed Apr 8 10:50:30 2009 -0400
+
+    Fixed memory leak in jasper loader
+
+    Bug 578290. The "data" block was allocated but not used
+    and not freed.
+
+ gdk-pixbuf/io-jasper.c |   10 ++++------
+ 1 files changed, 4 insertions(+), 6 deletions(-)
+
+commit ea866c635b2c95067ef32b0b9a1aa90814f0b87c
+Author: Dr. Michael J. Chudobiak <mjc@xena.(none)>
+Date:	Wed Apr 8 10:33:08 2009 -0400
+
+    Fixed minor memory leak on error
+
+    Bug 578290. Fixed a minor memory leak that occurs after a
+    memory allocation error. Found it using cppcheck.
+
+ gdk-pixbuf/io-jpeg.c |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 9eaa76e70d23e81d74d2798969e8988ac2fa0b8b
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Wed Apr 8 00:52:38 2009 -0400
+
+    Support links in licenses
+
+    Apply the same linkification to the license that we do for credits
+    in about dialogs. E.g. GTK3 contains a link.  (#577789)
+
+ gtk/gtkaboutdialog.c |  155
+ ++++++++++++++++++++++++--------------------------
+ 1 files changed, 74 insertions(+), 81 deletions(-)
+
+commit b037b39886ae032ad690b38f14141a14e9a7a930
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Wed Apr 8 00:39:22 2009 -0400
+
+    Remove a non-effective style-set handler
+
+    The style-set handler was supposed to set the background color of
+    the text views in the credits dialog, but due to a thinko it never
+    had any effect, unless a theme change happened while the dialog
+    was open. Seems best to keep the current appearance now and remove
+    the handler. (#577868)
+
+ gtk/gtkaboutdialog.c |   11 -----------
+ 1 files changed, 0 insertions(+), 11 deletions(-)
+
+commit b9355968fc7bc4984fa59d7c283031deb49b3cc5
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Wed Apr 8 00:12:54 2009 -0400
+
+    Improve accessibility of the print dialog
+
+    Add accessible name and description to the "Pages" and "At" entries,
+    and improve focus handling.  (#577964)
+
+ gtk/gtkprintunixdialog.c |   62
+ +++++++++++++++++++++++-----------------------
+ 1 files changed, 31 insertions(+), 31 deletions(-)
+
+commit 45ac4f252315da812125f450e9004decfed21e92
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Tue Apr 7 23:51:52 2009 -0400
+
+    Improve focus handling in the print dialog
+
+    Move the focus to the range entry when selecting the "Pages".
+
+ gtk/gtkprintunixdialog.c |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit 954552a4cf5b0445ecc860ee1523df915c769f1e
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Tue Apr 7 23:38:07 2009 -0400
+
+    Fix --help output of gtk-builder-convert
+
+ gtk/gtk-builder-convert |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit d89c9911f08111024cb9e32890c342c19e754b6e
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Tue Apr 7 19:28:29 2009 -0400
+
+    Avoid warnings when unrealizing a text view
+
+    For some reason, input methods can emit preedit-changed when a
+    text view is unrealized, at which point the layout has already
+    been cleared. (#578221)
+
+ gtk/gtktextview.c |   23 ++++++++++++-----------
+ 1 files changed, 12 insertions(+), 11 deletions(-)
+
+commit d79a25a0dbb6b9078bb3e963178aa749d0d113c4
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Tue Apr 7 19:20:53 2009 -0400
+
+    Mention writable git location, too
+
+ HACKING |    5 +++++
+ 1 files changed, 5 insertions(+), 0 deletions(-)
+
+commit 7e6cd2b31c08a2ab746beeacd86bb0435f1d7342
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Tue Apr 7 19:09:28 2009 -0400
+
+    Fix a memory leak in GtkAccelGroup
+
+    Unref closures in accel group finalization (#577824).
+
+ gtk/gtkaccelgroup.c |	  3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit fbe7ba55ce82a9db49132a54b6d0023782b80dc2
+Author: Johan Dahlin <jdahlin@litl.com>
+Date:	Tue Apr 7 18:04:05 2009 -0300
+
+    Convert GtkComboBox items propertly
+
+    If the last character is a newline, just ignore it.
+    This is what glade normally writes, fixes #578276.
+
+ gtk/gtk-builder-convert |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 4ecd6a0f89f405841f93cd75ffdece231f5edaa1
+Merge: 5e0bd0c 3fb6fbd
+Author: Alexander Larsson <alexl@redhat.com>
+Date:	Tue Apr 7 19:29:19 2009 +0200
+
+    Merge branch 'master' of ssh://alexl@git.gnome.org/git/gtk+
+
+commit 3fb6fbd801f6101fea746c6c21f943777e99e9e6
+Author: Björn Lindqvist <bjourne@gmail.com>
+Date:	Tue Apr 7 12:54:15 2009 -0400
+
+    clarify bugfix in 2.14 for gtk_expander_get_label
+
+    Updated documentation for gtk_expander_get_label to clarify that
+    it was changed in 2.14.
+
+ gtk/gtkexpander.c |	6 ++++++
+ 1 files changed, 6 insertions(+), 0 deletions(-)
+
+commit dec55c311b8511a9538953a349d8784a2108045b
+Author: Simos Xenitellis <simos@gnome.org>
+Date:	Tue Apr 7 14:50:57 2009 +0100
+
+    Updated Greek translation
+
+ po/el.po |   17 +++++++++++------
+ 1 files changed, 11 insertions(+), 6 deletions(-)
+
+commit 5e0bd0c9bed0398f12a311ecd57a4bb36a1bbbf6
+Author: Alexander Larsson <alexl@redhat.com>
+Date:	Tue Apr 7 15:39:00 2009 +0200
+
+    Set user_time from startup_id if window realized
+
+    For non-realized windows we set the user_time from the startup id on
+    realization. However, if the window is already realized when the
+    startup_id is not set we currently don't, but we should. (#573922)
+
+ gtk/gtkwindow.c |   17 ++++++++++-------
+ 1 files changed, 10 insertions(+), 7 deletions(-)
+
+commit 87459ff86c88469a752a09314db44526264de2f2
+Author: Alexander Larsson <alexl@redhat.com>
+Date:	Tue Apr 7 15:37:40 2009 +0200
+
+    Don't move global user time backwards
+
+    When setting the user_time on a specific app to something, make sure
+    we're not moving the global per-display user time backwards.
+
+ gdk/x11/gdkwindow-x11.c |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit bb093cf44c96cdf0076712b509e7e305cf57bdaa
+Author: Alexander Larsson <alexl@redhat.com>
+Date:	Tue Apr 7 15:32:16 2009 +0200
+
+    Set errno to 0 before calling strtoul
+
+    We check errno for failure, so ensure its cleared first. (#573922)
+
+ gtk/gtkwindow.c |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit b5116d8eab30a04db6a961b629d055e1f9178916
+Author: Claude Paroz <claude@2xlibre.net>
+Date:	Tue Apr 7 08:36:42 2009 +0200
+
+    Updated French translation
+
+ po/fr.po | 2080
+ +++++++++++++++++++++++++++++++-------------------------------
+ 1 files changed, 1043 insertions(+), 1037 deletions(-)
+
+commit 45894c9fad16886bd9c97adca150dd693ba0c806
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Mon Apr 6 20:55:26 2009 -0400
+
+    Fix a GtkBuilder crash
+
+    Always set an error when returning FALSE from
+    gtk_builder_value_from_string.
+    This fixes the crash reported in bug 532858.
+
+ gtk/gtkbuilder.c |    9 ++++++++-
+ 1 files changed, 8 insertions(+), 1 deletions(-)
+
+commit eeb3223802efcc43a7881406bbae24858b590917
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Mon Apr 6 20:45:11 2009 -0400
+
+    Trivial formatting fix
+
+ gtk/gtkbuilderparser.c |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 209af946f37d2eae9f62d16ee817f4368758ef8f
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Mon Apr 6 20:21:04 2009 -0400
+
+    Improve gtk-builder-convert error reporting
+
+    Make gtk-builder-convert warn when it meets duplicate ids, since
+    those will not work with GtkBuilder.
+
+ gtk/gtk-builder-convert |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 1a312bfa3e32414065a87d7376a9bff8c61f0560
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Mon Apr 6 20:13:35 2009 -0400
+
+    Improve GtkBuilder error reporting
+
+    Make GtkBuilder report an error when it encounters a duplicate id,
+    instead of segfaulting later on
+
+ docs/reference/gtk/tmpl/gtkbuilder.sgml |    1 +
+ gtk/gtkbuilder.h			 |    3 +-
+ gtk/gtkbuilderparser.c			 |   36
+ +++++++++++++++++++++++-------
+ gtk/gtkbuilderprivate.h		 |    2 +
+ 4 files changed, 32 insertions(+), 10 deletions(-)
+
+commit 779deb2b9dd441568c7be7035de27f218796e5d5
+Author: Jennie Petoumenou <epetoumenou@gmail.com>
+Date:	Mon Apr 6 22:00:42 2009 +0100
+
+    Updated Greek translation
+
+ po/el.po | 4358
+ +++++++++++++++++++++++++-------------------------------------
+ 1 files changed, 1741 insertions(+), 2617 deletions(-)
+
+commit 1ad8bfb69afabb0e30f43bb27e6e1154b8f94300
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Mon Apr 6 12:12:08 2009 -0400
+
+    Better i18n support in GtkBuilder
+
+    Let descriptions of accessible actions be translated, by specifying
+    the description as content of the <action> element, and allowing
+    "translatable", "context" and "comment" as attributes. (#518642)
+
+ docs/reference/gtk/tmpl/gtkwidget.sgml |    2 +-
+ gtk/gtkwidget.c			|  147
+ +++++++++++++++++++++-----------
+ gtk/tests/builder.c			|   11 ++-
+ 3 files changed, 107 insertions(+), 53 deletions(-)
+
+commit c338228a865a73b7ab1f2ad55abcb24ae4ce3014
+Author: Tor Lillqvist <tml@iki.fi>
+Date:	Mon Apr 6 15:10:35 2009 +0300
+
+    Bug 578094 - ProcessIdToSessionId needs to be declared as WINAPI
+
+    Patch by  Shixin Zeng.
+
+ gdk/win32/gdkdisplay-win32.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 8ab5f5673bfdb207f15c9477077c85ede8f73aae
+Author: Christian Dywan <christian@twotoasts.de>
+Date:	Sat Apr 4 13:32:09 2009 +0200
+
+    Move G_END_DECLS before the #endif in gtkitemfactory.h
+
+    Bug 577650 – gtkitemfactory.h fails to compile
+
+    Place G_END_DECLS inside conditionals, otherwise C++ compilers
+    will see a closing curly bracket when including the file for
+    the second time.
+
+ gtk/gtkitemfactory.h |    5 ++---
+ 1 files changed, 2 insertions(+), 3 deletions(-)
+
+commit 4774d9c1fd46aca800add140c30ece5bf7a12d3a
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Fri Apr 3 02:00:48 2009 -0400
+
+    Add a rule to generate ChangeLog
+
+    We use the same rule pango uses to create a ChangeLog file with
+    the help of git-log. The format is somewhat different from traditional
+    ChangeLog, but it contains the relevant information.
+
+ Makefile.am |	 19 ++++++++++++++++++-
+ 1 files changed, 18 insertions(+), 1 deletions(-)
+
+commit e7b496719e54536b0c5403d16fea4da27d9c25e2
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Fri Apr 3 01:49:24 2009 -0400
+
+    Remove generated files
+
+    README and INSTALL are generated files, no need to keep them
+    under source control.
+
+ INSTALL |   41 -------
+ README  |  401
+ ---------------------------------------------------------------
+ 2 files changed, 0 insertions(+), 442 deletions(-)
+
+commit de0c9503ba2f1c64f86429848b67721fe34fd00c
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Fri Apr 3 01:48:22 2009 -0400
+
+    Rename ChangeLog to ChangeLog.pre-2-20
+
+    Rename ChangeLog to prevent old habits from luring me into adding
+    entries there. Also, this makes room for autogenerating a ChangeLog
+    at make dist.
+
+ ChangeLog	    | 3959
+ ----------------------------------------------------
+ ChangeLog.pre-2-16 | 3959
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3959 insertions(+), 3959 deletions(-)
+
+commit b25cfb78fc625e17bdada7b9f1e96953479e9e5f
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Thu Apr 2 10:17:23 2009 -0400
+
+    fix slist/list confusion
+
+    Don't use g_list_find on a GSList in _gtk_window_set_is_toplevel
+    (rh#492767).
+
+ gtk/gtkwindow.c |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 923b126f1c4404c1438978fb07ebd8f182a6a881
+Author: John Brown <john.brown3@hp.com>
+Date:	Tue Mar 31 17:31:28 2009 -0600
+
+    bgo#571374 - Add 30-bit visuals to the list of supported depths
+
+    Signed-off-by: Federico Mena Quintero <federico@novell.com>
+
+ gdk/x11/gdkvisual-x11.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 5ef4c2b9bdf6df0711b62502c2cff68be2daef54
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Tue Mar 31 18:49:48 2009 -0400
+
+    Update README files to refer to git
+
+    Update various README files to refer to git instead of svn.
+    Also discontinue ChangeLog files.
+
+ README.commits |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 0dd7155f79407630755764b91bf1baaf7cdf5806
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:	Tue Mar 31 18:49:48 2009 -0400
+
+    Update README files to refer to git
+
+    Update various README files to refer to git instead of svn.
+    Also discontinue ChangeLog files.
+
+ ChangeLog			   |	6 ++
+ HACKING			   |   36 ++++++------
+ README				   |  118
+ ++++++++++++++++++------------------
+ README.commits			   |   60 ++++++++++++-------
+ contrib/gdk-pixbuf-xlib/ChangeLog |	6 ++
+ docs/reference/ChangeLog	   |	6 ++
+ gdk-pixbuf/ChangeLog		   |	6 ++
+ modules/engines/pixbuf/ChangeLog  |	6 ++
+ modules/other/gail/ChangeLog	   |	6 ++
+ po-properties/ChangeLog	   |	6 ++
+ po/ChangeLog			   |	6 ++
+ 11 files changed, 164 insertions(+), 98 deletions(-)
+
+commit a33934f5d7559e3077748889417deb891e68a940
+Author: Manoj Kumar Giri <mgiri@src.gnome.org>
+Date:	Mon Mar 30 13:13:16 2009 +0000
+
+    Added entries for Oriya language Translation updation.
+
+    svn path=/trunk/; revision=22596
+
+ po-properties/ChangeLog |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit eb982b2f3e0e53d4f0f857cee17d413a36ee5a72
+Author: Manoj Kumar Giri <mgiri@src.gnome.org>
+Date:	Mon Mar 30 13:12:11 2009 +0000
+
+    Updated Oriya Translation.
+
+    svn path=/trunk/; revision=22595
+
+ po-properties/or.po | 4592
+ ++++++++++++++++++++++++++-------------------------
+ 1 files changed, 2302 insertions(+), 2290 deletions(-)
+
+commit 3b437b016cb9dd8a3c798d210967b1fd0a5a2db8
+Author: Christian Persch <chpe@gnome.org>
+Date:	Sun Mar 29 21:25:13 2009 +0000
+
+    Bug 577224 – crash when setting new icon after setting icon in
+
+    2009-03-29	Christian Persch  <chpe@gnome.org>
+
+	Bug 577224 – crash when setting new icon after setting icon in
+	gtkstatusicon
+
+	* gtk/gtkstatusicon.c: (gtk_status_icon_reset_image_data),
+	(gtk_status_icon_set_from_gicon): Retain a reference when setting
+	from a GIcon, and use g_object_unref on GIcon, not g_free.
+
+    svn path=/trunk/; revision=22594
+
+ ChangeLog	     |	  9 +++++++++
+ gtk/gtkstatusicon.c |	  6 +++++-
+ 2 files changed, 14 insertions(+), 1 deletions(-)
+
+commit 94129a4e2b82f8dfe93ae38cd217a017a6a4beb4
+Author: Jorge Gonzalez Gonzalez <jorgegonz@src.gnome.org>
+Date:	Sat Mar 28 14:41:58 2009 +0000
+
+    Fixed wrog string translation
+
+    svn path=/trunk/; revision=22593
+
+ po/ChangeLog |    4 +
+ po/es.po     | 2070
+ +++++++++++++++++++++++++++++-----------------------------
+ 2 files changed, 1043 insertions(+), 1031 deletions(-)
+
+commit d21f55fe9add35bb708d260841ce047c2458a7ca
+Author: Behdad Esfahbod <behdad@gnome.org>
+Date:	Fri Mar 27 16:54:10 2009 +0000
+
+    Bug 437533 – Implement draw_shape PangoRenderer method
+
+    2009-03-27	Behdad Esfahbod  <behdad@gnome.org>
+
+	    Bug 437533 – Implement draw_shape PangoRenderer method
+
+	    * gdk/gdkpango.c (gdk_pango_renderer_draw_shape),
+	    (gdk_pango_renderer_class_init): Implement draw_shape
+
+	    * demos/gtk-demo/rotated_text.c (fancy_shape_renderer),
+	    (create_fancy_attr_list_for_layout),
+	    (rotated_text_expose_event),
+	    (do_rotated_text):
+	    1) Port to pangocairo
+	    2) Also show a rotated label
+	    3) Install a custom shape renderer on both.  The second
+	    one goes
+	    through gdkpango and hence tests the patch above.
+	    It's working.
+
+
+    svn path=/trunk/; revision=22592
+
+ ChangeLog		       |   15 +++
+ demos/gtk-demo/rotated_text.c |  219
+ +++++++++++++++++++++++++++++------------
+ gdk/gdkpango.c		       |   47 +++++++++
+ 3 files changed, 219 insertions(+), 62 deletions(-)
+
+commit 4d520f241d45ba8fedad21325caad8ab5a182e9f
+Author: Simos Xenitellis <simos@src.gnome.org>
+Date:	Fri Mar 27 11:02:30 2009 +0000
+
+    Updated Greek translation (Marios Zindilis)
+
+    svn path=/trunk/; revision=22590
+
+ po-properties/ChangeLog |    4 +
+ po-properties/el.po	 |  532
+ ++++++++++++++++++++++++++++++----------------
+ 2 files changed, 351 insertions(+), 185 deletions(-)
+
+commit de60fd8cfd3e7e36db22a359e3d75d353f582cb9
+Author: Stefan Walter <stefw@src.gnome.org>
+Date:	Fri Mar 27 05:22:23 2009 +0000
+
+    Use gtk_entry_xxx functions rather than using GtkEntry structure
+    directly.
+
+    See bug #576801
+
+    svn path=/trunk/; revision=22589
+
+ ChangeLog			|   16 ++++++++++++++++
+ gtk/gtkfilechooserentry.c	|   12 ++++++------
+ gtk/gtkspinbutton.c		|   10 ++++++----
+ modules/other/gail/gailentry.c |   27 +++++++++++++++------------
+ 4 files changed, 43 insertions(+), 22 deletions(-)
+
+commit e5110c50b67acc86b8007ada306f303edf74a0ce
+Author: Christian Dywan <cdywan@src.gnome.org>
+Date:	Wed Mar 25 22:54:10 2009 +0000
+
+    Typo correction, s/hilding/holding
+
+    svn path=/trunk/; revision=22588
+
+ ChangeLog	    |	 4 ++++
+ gtk/gtkselection.c |	 2 +-
+ 2 files changed, 5 insertions(+), 1 deletions(-)
+
+commit d7f5c0de0e33bc666379142b95434ac607c4ece2
+Author: Paul Bolle <pebolle@tiscali.nl>
+Date:	Wed Mar 25 20:21:30 2009 +0000
+
+    Bug 562863 - GtkVscrollbar is hardly documented
+
+    2009-03-25	 Paul Bolle <pebolle@tiscali.nl>
+
+	Bug 562863 - GtkVscrollbar is hardly documented
+
+	* gtk/tmpl/gtkvscrollbar.sgml:
+	* gtk/tmpl/gtkhscrollbar.sgml: Minor tweaks.
+
+
+    svn path=/trunk/; revision=22587
+
+ docs/reference/ChangeLog		    |	 7 +++++++
+ docs/reference/gtk/tmpl/gtkhscrollbar.sgml |	 3 ++-
+ docs/reference/gtk/tmpl/gtkvscrollbar.sgml |	 5 +++--
+ 3 files changed, 12 insertions(+), 3 deletions(-)
+
+commit d8ea13216c0a647ffd02dc29449327aa151b6f1e
+Author: Tor Lillqvist <tml@novell.com>
+Date:	Wed Mar 25 07:18:58 2009 +0000
+
+    Bug 575644 - Cygwin gail build patch
+
+    2009-03-25	Tor Lillqvist  <tml@novell.com>
+
+	Bug 575644 - Cygwin gail build patch
+
+	* modules/other/gail/Makefile.am
+	* modules/other/gail/libgail-util/Makefile.am
+	* modules/other/gail/tests/Makefile.am: Use -no-undefined also on
+	Cygwin. Patch from "Cygwin ports maintainer".
+
+
+    svn path=/trunk/; revision=22586
+
+ modules/other/gail/ChangeLog		     |	  9 +++++++++
+ modules/other/gail/Makefile.am		     |	  2 +-
+ modules/other/gail/libgail-util/Makefile.am |	  4 +++-
+ modules/other/gail/tests/Makefile.am	     |	  2 +-
+ 4 files changed, 14 insertions(+), 3 deletions(-)
+
+commit b6cba0b5424195979ba3c0005120707f91a170d4
+Author: Matthias Clasen <matthiasc@src.gnome.org>
+Date:	Wed Mar 25 03:47:15 2009 +0000
+
+    Remove a misleading sentence
+
+    svn path=/trunk/; revision=22585
+
+ docs/reference/ChangeLog	      |    7 +++++++
+ docs/reference/gtk/tmpl/gtkmenu.sgml |    5 +----
+ 2 files changed, 8 insertions(+), 4 deletions(-)
+
+commit 7cfac711e2acb9e5cfbf53992bf234bad21d5208
+Author: Sven Neumann <sven@gimp.org>
+Date:	Wed Mar 25 00:07:12 2009 +0000
+
+    compile fix for build with DIRECT_ENABLE_DEBUG.
+
+    2009-03-25	Sven Neumann  <sven@gimp.org>
+
+	* gdk/directfb/gdkwindow-directfb.c
+	(gdk_window_directfb_process_all_updates): compile fix for build
+	with DIRECT_ENABLE_DEBUG.
+
+
+    svn path=/trunk/; revision=22583
+
+ ChangeLog			   |	6 ++
+ gdk/directfb/gdkwindow-directfb.c |   95
+ +++++++++++++++++++------------------
+ 2 files changed, 55 insertions(+), 46 deletions(-)
+
+commit 7dfb01937d119c17c160fff912f99fb53fbf8de3
+Author: Matthias Clasen <matthiasc@src.gnome.org>
+Date:	Tue Mar 24 05:57:53 2009 +0000
+
+    Fix get_nearest_monitor
+
+    svn path=/trunk/; revision=22582
+
+ ChangeLog	 |    8 ++++++++
+ gdk/gdkscreen.c |    9 +++++----
+ 2 files changed, 13 insertions(+), 4 deletions(-)
+
+commit e0045d59c7fb7bc6df3606b90f72ebc340700db4
+Author: Claudio Saavedra <csaavedra@igalia.com>
+Date:	Mon Mar 23 08:57:30 2009 +0000
+
+    Fix typos and document the GdkPixbufSimpleAnim structure.
+
+    2009-03-23	Claudio Saavedra  <csaavedra@igalia.com>
+
+	* gdk-pixbuf/tmpl/animation.sgml: Fix typos and document the
+	GdkPixbufSimpleAnim structure.
+
+
+    svn path=/trunk/; revision=22581
+
+ docs/reference/ChangeLog		       |    5 +++++
+ docs/reference/gdk-pixbuf/tmpl/animation.sgml |    6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit cd96bd02093f10908253e94ff9cebc919600ef0d
+Author: Hiroyuki Ikezoe <poincare@ikezoe.net>
+Date:	Sun Mar 22 23:09:54 2009 +0000
+
+    Bug 576254 - <object> requires attribute "id"
+
+    2009-03-23	Hiroyuki Ikezoe  <poincare@ikezoe.net>
+
+	Bug 576254 - <object> requires attribute "id"
+
+	* docs/reference/gtk/tmpl/gtkdialog.sgml: Add id attribute to
+	GtkBuilder UI sample.
+
+
+    svn path=/trunk/; revision=22580
+
+ ChangeLog				|    7 +++++++
+ docs/reference/gtk/tmpl/gtkdialog.sgml |    4 ++--
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+
+commit 6b41d44670f0bf9e24cf57b7a6fd60a7213eb524
+Author: Nickolay V. Shmyrev <nshmyrev@yandex.ru>
+Date:	Sun Mar 22 07:31:12 2009 +0000
+
+    Updated Russian translation.
+
+    2008-03-22	Nickolay V. Shmyrev  <nshmyrev@yandex.ru>
+
+	* ru.po: Updated Russian translation.
+
+
+    svn path=/trunk/; revision=22579
+
+ po-properties/ChangeLog |    4 +
+ po-properties/ru.po	 | 3753
+ +++++++++++++++++++++++------------------------
+ 2 files changed, 1861 insertions(+), 1896 deletions(-)
+
+commit b2d263cd9920ea8a0bcdc7c44de1e2733e49ef19
+Author: Nickolay V. Shmyrev <nshmyrev@yandex.ru>
+Date:	Sun Mar 22 06:31:16 2009 +0000
+
+    Updated Russian translation.
+
+    2009-03-22	Nickolay V. Shmyrev <nshmyrev@yandex.ru>
+
+	* ru.po: Updated Russian translation.
+
+
+    svn path=/trunk/; revision=22578
+
+ po/ChangeLog |    4 +
+ po/ru.po     | 2185
+ +++++++++++++++++++++++++++++-----------------------------
+ 2 files changed, 1082 insertions(+), 1107 deletions(-)
+
+commit b48e4b070fe67dc6f6c2d10f76744c3b1b501c10
+Author: Cody Russell <bratsche@gnome.org>
+Date:	Sat Mar 21 13:58:12 2009 +0000
+
+    Bug 538840 – [Win32] GTK menu theming could be improved
+
+    2009-03-21	Cody Russell  <bratsche@gnome.org>
+
+	    Bug 538840 – [Win32] GTK menu theming could be improved
+
+	    * modules/engines/ms-windows/xp_theme.c
+	    * modules/engines/ms-windows/msw_style.c: Use newer
+	    menu styling API.  This makes gtk+ look much better on
+	    Windows Vista.
+
+
+    svn path=/trunk/; revision=22577
+
+ ChangeLog				|    9 +++++
+ modules/engines/ms-windows/msw_style.c |   58
+ +++++++++++++++++++++----------
+ modules/engines/ms-windows/xp_theme.c	|   22 ++++++++++--
+ 3 files changed, 66 insertions(+), 23 deletions(-)
+
+commit 4bf41bbf53bcdeb40ce06d53554070666cdfb0cf
+Author: Aron Xu <aronxu@src.gnome.org>
+Date:	Sat Mar 21 08:56:20 2009 +0000
+
+    Updated simplified Chinese translations by Xiyue Deng <manphiz at
+    gmail dot com>
+
+    svn path=/trunk/; revision=22576
+
+ po/zh_CN.po | 2170
+ +++++++++++++++++++++++++++++------------------------------
+ 1 files changed, 1080 insertions(+), 1090 deletions(-)
+
+commit 584bd9cbc6c38b1599f34b92af5b736b94f760f6
+Author: Claudio Saavedra <csaavedra@igalia.com>
+Date:	Thu Mar 19 07:47:23 2009 +0000
+
+    Bug 574283 – unused assignment and dead code in
+
+    2009-03-19	Claudio Saavedra  <csaavedra@igalia.com>
+
+	Bug 574283 – unused assignment and dead code in
+	gtk_widget_set_tooltip_window()
+
+	* gtk/gtkwidget.c: (gtk_widget_set_tooltip_window): Remove
+	an unused assignment, improving checks, and clean up method.
+
+
+    svn path=/trunk/; revision=22575
+
+ ChangeLog	 |    8 ++++++++
+ gtk/gtkwidget.c |   16 ++++++----------
+ 2 files changed, 14 insertions(+), 10 deletions(-)
+
+commit 576ef4d6eae5b67f9029a86bfb56e06fb3a87f71
+Author: Michael Natterer <mitch@gimp.org>
+Date:	Wed Mar 18 21:19:07 2009 +0000
+
+    add static function gtk_scale_button_set_orientation_private()
+    and use it
+
+    2009-03-18	Michael Natterer  <mitch@gimp.org>
+
+	* gtk/gtkscalebutton.c: add static function
+	gtk_scale_button_set_orientation_private() and use it instead of
+	the public but deprecated gtk_scale_button_set_orientation().
+
+
+    svn path=/trunk/; revision=22574
+
+ ChangeLog	      |    6 +++
+ gtk/gtkscalebutton.c |  101
+ ++++++++++++++++++++++++++-----------------------
+ 2 files changed, 60 insertions(+), 47 deletions(-)
+
+commit 6a14ed9b6448fd7c82dd78e2e50b3c39adb4a2c1
+Author: Kostas Papadimas <pkst@src.gnome.org>
+Date:	Wed Mar 18 15:53:51 2009 +0000
+
+    Updated Greek Translation by Jennie Petoumenou.
+
+    svn path=/trunk/; revision=22573
+
+ po-properties/ChangeLog |    4 +
+ po-properties/el.po	 | 4605
+ ++++++++++++++++++++++-------------------------
+ 2 files changed, 2184 insertions(+), 2425 deletions(-)
+
+commit 0b0b56833f1c2baeab7afc30a11d93924e511eee
+Author: Jorge Gonzalez Gonzalez <jorgegonz@src.gnome.org>
+Date:	Wed Mar 18 14:45:46 2009 +0000
+
+    Updated Pashto translation by Zabeeh Khan
+
+    svn path=/trunk/; revision=22572
+
+ po/ChangeLog |    4 +
+ po/ps.po     | 2410
+ +++++++++++++++++++++++++++-------------------------------
+ 2 files changed, 1144 insertions(+), 1270 deletions(-)
+
+commit b414832f259dde0b8e0c126bdfbca4249761c653
+Author: Djihed Afifi <djihed@src.gnome.org>
+Date:	Wed Mar 18 09:22:49 2009 +0000
+
+    Updated Arabic translation
+
+    svn path=/trunk/; revision=22571
+
+ po/ChangeLog |    4 +
+ po/ar.po     | 2066
+ +++++++++++++++++++++++++++++-----------------------------
+ 2 files changed, 1041 insertions(+), 1029 deletions(-)
+
+commit c3879d400c816f15a53110898bf0b2c34cab0c7d
+Author: Tor Lillqvist <tml@novell.com>
+Date:	Tue Mar 17 18:26:28 2009 +0000
+
+    Bug 575700 - Crash when moving a GtkWindow
+
+    2009-03-17	Tor Lillqvist  <tml@novell.com>
+
+	Bug 575700 - Crash when moving a GtkWindow
+
+	* gdk/win32/gdkevents-win32.c (gdk_event_translate): Fix
+	embarrassing crasher bug introduced on 2009-03-11. A variable was
+	assigned a value only inside a GDK_NOTE but still used outside
+	that.
+
+
+    svn path=/trunk/; revision=22568
+
+ ChangeLog		     |	  9 +++++++++
+ gdk/win32/gdkevents-win32.c |	 20 ++++++++++----------
+ 2 files changed, 19 insertions(+), 10 deletions(-)
+
+commit 25deb501adfeb3cd80131a8e078c1cbcff200e2b
+Author: Matej Urbančič <mateju@src.gnome.org>
+Date:	Tue Mar 17 16:55:07 2009 +0000
+
+    Updated Slovenian translation
+
+    svn path=/trunk/; revision=22567
+
+ po-properties/sl.po |	 16 ++++++----------
+ 1 files changed, 6 insertions(+), 10 deletions(-)
+
+commit f33917628548979ff915610a4d6b3768091027a2
+Author: Matej Urbančič <mateju@src.gnome.org>
+Date:	Tue Mar 17 16:35:58 2009 +0000
+
+    Updated Slovenian translation
+
+    svn path=/trunk/; revision=22566
+
+ po-properties/sl.po | 4647
+ +++++++++++++++++++++++++--------------------------
+ 1 files changed, 2232 insertions(+), 2415 deletions(-)
+
+commit f48419708fb90ea3a34753024bdeea5e174bc9e7
+Author: Ani Peter <anipeter@src.gnome.org>
+Date:	Tue Mar 17 15:37:08 2009 +0000
+
+    Updated Malayalam Translation
+
+    svn path=/trunk/; revision=22565
+
+ po/ChangeLog |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit 73625e3f872adf1ba1eac41c9c566212d590a90b
+Author: Ani Peter <anipeter@src.gnome.org>
+Date:	Tue Mar 17 15:36:58 2009 +0000
+
+    Updated Malayalam Translation
+
+    svn path=/trunk/; revision=22564
+
+ po/ml.po |  146
+ +++++++++++++++++++++++++++++++++-----------------------------
+ 1 files changed, 78 insertions(+), 68 deletions(-)
+
+commit c7049ff5a07ae4fbe3d33aaee03d2ba9b2a40884
+Author: Ani Peter <anipeter@src.gnome.org>
+Date:	Tue Mar 17 15:09:53 2009 +0000
+
+    Updated Malayalam Translations
+
+    svn path=/trunk/; revision=22563
+
+ po-properties/ml.po |	689
+ ++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 382 insertions(+), 307 deletions(-)
+
+commit d0314558e696e37db2c37d0a1dd75de54fa9d505
+Author: Ani Peter <anipeter@src.gnome.org>
+Date:	Tue Mar 17 15:06:02 2009 +0000
+
+    Updated Malayalam Translation
+
+    svn path=/trunk/; revision=22562
+
+ po-properties/ChangeLog |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit f3bcc940a6caed0970ab8847012fe9600cd0628a
+Author: Tor Lillqvist <tml@novell.com>
+Date:	Tue Mar 17 12:58:40 2009 +0000
+
+    Newer mingw-w64 uses an underscore-prefixed identification macro.
+
+    2009-03-17	Tor Lillqvist  <tml@novell.com>
+
+	* gtk/gtkprintoperation-win32.c: Newer mingw-w64 uses an
+	underscore-prefixed identification macro.
+
+
+    svn path=/trunk/; revision=22561
+
+ ChangeLog		       |    5 +++++
+ gtk/gtkprintoperation-win32.c |    2 +-
+ 2 files changed, 6 insertions(+), 1 deletions(-)
+
+commit e944e671305f64ab05c09851698e397b4fb79ef9
+Author: Andre Klapper <a9016009@gmx.de>
+Date:	Mon Mar 16 22:30:32 2009 +0000
+
+    Updated Crimean Tatar translation by Reşat SABIQ.
+
+    2009-03-16	Andre Klapper  <a9016009@gmx.de>
+
+	* crh.po: Updated Crimean Tatar translation by Reşat SABIQ.
+
+
+    svn path=/trunk/; revision=22560
+
+ po-properties/ChangeLog |    4 +
+ po-properties/crh.po	 | 3593
+ ++++++++++++++++++++++++-----------------------
+ 2 files changed, 1816 insertions(+), 1781 deletions(-)
+
+commit 5af318021231296eb3e87f4377f45485e6256f4f
+Author: Andre Klapper <a9016009@gmx.de>
+Date:	Mon Mar 16 22:28:43 2009 +0000
+
+    Updated Crimean Tatar translation by Reşat SABIQ.
+
+    2009-03-16	Andre Klapper  <a9016009@gmx.de>
+
+	* crh.po: Updated Crimean Tatar translation by Reşat SABIQ.
+
+
+    svn path=/trunk/; revision=22559
+
+ po/ChangeLog |    4 +
+ po/crh.po    | 2260
+ ++++++++++++++++++++++++++++++----------------------------
+ 2 files changed, 1158 insertions(+), 1106 deletions(-)
+
+commit 6da2eb3805b4fad607a0e9c4f5b72816d302529f
+Author: Baris Cicek <bcicek@src.gnome.org>
+Date:	Mon Mar 16 19:21:53 2009 +0000
+
+    Updated Turkish Translation
+
+    svn path=/trunk/; revision=22558
+
+ po-properties/ChangeLog |    4 +
+ po-properties/tr.po	 | 3572
+ +++++++++++++++++++++++------------------------
+ 2 files changed, 1780 insertions(+), 1796 deletions(-)
+
+commit 0e5777ad6124401dc622e8e1961ea6ed84d0def3
+Author: Baris Cicek <bcicek@src.gnome.org>
+Date:	Mon Mar 16 19:20:27 2009 +0000
+
+    Updated Turkish Translation
+
+    svn path=/trunk/; revision=22557
+
+ po/ChangeLog |    4 +
+ po/tr.po     | 2701
+ +++++++++++++++++++++++++++-------------------------------
+ 2 files changed, 1268 insertions(+), 1437 deletions(-)
+
+commit 3ea3fe9f4040fbaa56aa33a8b95bf86f4f73b71b
+Author: Ignacio Casal Quinteiro <icq@src.gnome.org>
+Date:	Mon Mar 16 17:29:49 2009 +0000
+
+    Updated Galician translation by Suso Baleato.
+
+    svn path=/trunk/; revision=22556
+
+ po-properties/ChangeLog |    4 +
+ po-properties/gl.po	 |12174
+ ++++++++++++++++++++++++++---------------------
+ 2 files changed, 6720 insertions(+), 5458 deletions(-)
+
+commit f096b3228345fd30a89956298410e34b6a88e145
+Author: Amitakhya Phukan <amitakhya@src.gnome.org>
+Date:	Mon Mar 16 12:22:28 2009 +0000
+
+    Updated assamese translations
+
+    svn path=/trunk/; revision=22555
+
+ po-properties/ChangeLog |    4 +
+ po-properties/as.po	 |  320
+ ++++++++++++++++++++++++----------------------
+ 2 files changed, 171 insertions(+), 153 deletions(-)
+
+commit 5fcd7c66ae9050e530fc12e3855b83928834c98b
+Author: Amitakhya Phukan <amitakhya@src.gnome.org>
+Date:	Mon Mar 16 12:02:07 2009 +0000
+
+    Updated assamese translations
+
+    svn path=/trunk/; revision=22554
+
+ po-properties/ChangeLog |    4 +
+ po-properties/as.po	 |  437
+ +++++++++++++++++++++--------------------------
+ 2 files changed, 199 insertions(+), 242 deletions(-)
+
+commit 7a8ade9c32f9ba13c6ff88f46d1ed6d38221ef4b
+Author: Alexander Shopov <ash@contact.bg>
+Date:	Mon Mar 16 11:18:19 2009 +0000
+
+    Updated Bulgarian translation by Alexander Shopov <ash@contact.bg>
+
+    2009-03-16	Alexander Shopov  <ash@contact.bg>
+
+	* bg.po: Updated Bulgarian translation by
+	Alexander Shopov <ash@contact.bg>
+
+    svn path=/trunk/; revision=22553
+
+ po-properties/ChangeLog |    5 +
+ po-properties/bg.po	 | 3400
+ ++++++++++++++++++++++++-----------------------
+ 2 files changed, 1717 insertions(+), 1688 deletions(-)
+
+commit 91afe20d7a77454f3d5a95dcdb3e3b9c51d1ae53
+Author: Inaki Larranaga Murgoitio <dooteo@euskalgnu.org>
+Date:	Mon Mar 16 10:44:12 2009 +0000
+
+    Updated Basque translation.
+
+    2009-03-16	Inaki Larranaga Murgoitio  <dooteo@euskalgnu.org>
+
+	* eu.po: Updated Basque translation.
+
+
+    svn path=/trunk/; revision=22552
+
+ po-properties/ChangeLog |    4 +
+ po-properties/eu.po	 | 3731
+ +++++++++++++++++++++++------------------------
+ 2 files changed, 1827 insertions(+), 1908 deletions(-)
+
+commit 42ae70adb638338378d0e22f5f73a330f8bf5b53
+Author: Amanpreet Singh Alam <aman@src.gnome.org>
+Date:	Mon Mar 16 02:36:42 2009 +0000
+
+    updating for Gnome Punjabi Translation by A S Alam
+
+    svn path=/trunk/; revision=22551
+
+ po-properties/pa.po | 3398
+ ++++++++++++++++++++++++++-------------------------
+ 1 files changed, 1712 insertions(+), 1686 deletions(-)
+
+commit 4bc09e5dae34af252a6d5755966ffcde852a94ad
+Author: Takeshi AIHANA <takeshi.aihana@gmail.com>
+Date:	Sun Mar 15 23:19:49 2009 +0000
+
+    Fixed wrong translations.
+
+    2009-03-16	Takeshi AIHANA <takeshi.aihana@gmail.com>
+
+	* ja.po: Fixed wrong translations.
+
+    svn path=/trunk/; revision=22550
+
+ po-properties/ChangeLog |    4 +
+ po-properties/ja.po	 | 3442
+ ++++++++++++++++++++++++-----------------------
+ 2 files changed, 1738 insertions(+), 1708 deletions(-)
+
+commit 7ef7ff7a5f4ebe5a43b8f42486d958d115d9753f
+Author: Hendrik Richter <hendrikr@gnome.org>
+Date:	Sun Mar 15 18:07:04 2009 +0000
+
+    Updated German translation, by Christian Kirbach
+
+    2009-03-15	Hendrik Richter  <hendrikr@gnome.org>
+
+	* de.po: Updated German translation, by
+		 Christian Kirbach
+
+    svn path=/trunk/; revision=22548
+
+ po/ChangeLog |    5 +
+ po/de.po     | 2095
+ +++++++++++++++++++++++++++++-----------------------------
+ 2 files changed, 1056 insertions(+), 1044 deletions(-)
+
+commit a486e1c54a82beaf05a5d6bce51781857cdb679d
+Author: Shankar Prasad <sprasad@src.gnome.org>
+Date:	Sun Mar 15 14:42:29 2009 +0000
+
+    updated kn.po
+
+    svn path=/trunk/; revision=22547
+
+ po-properties/ChangeLog |    4 ++
+ po-properties/kn.po	 |   88
+ +++++++++++++++++++++--------------------------
+ 2 files changed, 43 insertions(+), 49 deletions(-)
+
+commit 5bd99d1ac1ff0016f6a21d3bcae295b0b01396bd
+Author: Krishnababu Krothapalli <kkrothap@src.gnome.org>
+Date:	Sun Mar 15 14:02:50 2009 +0000
+
+    Updated Telugu translations
+
+    svn path=/trunk/; revision=22546
+
+ po-properties/te.po |	926
+ +++++++++++++++++++++++++--------------------------
+ 1 files changed, 457 insertions(+), 469 deletions(-)
+
+commit f2e6ff9ee2b43d48104b59f8178f90b3f01985b1
+Author: Krishnababu Krothapalli <kkrothap@src.gnome.org>
+Date:	Sun Mar 15 13:57:09 2009 +0000
+
+    Updated Changelog entry
+
+    svn path=/trunk/; revision=22545
+
+ po/ChangeLog |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit 2bb143a36949acad6a9a9b44bcf3c15adcf18b84
+Author: Felix I <ifelix@src.gnome.org>
+Date:	Sun Mar 15 13:38:22 2009 +0000
+
+    tamil translation updated
+
+    svn path=/trunk/; revision=22544
+
+ po-properties/ChangeLog |    4 +
+ po-properties/ta.po	 | 6133
+ +++++++++++++++++++++++------------------------
+ 2 files changed, 2999 insertions(+), 3138 deletions(-)
+
+commit fad2a3a005552987d0fdfa780faac4aedf3cf22d
+Author: Sandeep Shedmake <sandeeps@src.gnome.org>
+Date:	Sun Mar 15 11:50:41 2009 +0000
+
+    Updated Marathi Translations
+
+    svn path=/trunk/; revision=22543
+
+ po-properties/ChangeLog |    4 +
+ po-properties/mr.po	 | 3800
+ +++++++++++++++++++++++------------------------
+ 2 files changed, 1861 insertions(+), 1943 deletions(-)
+
+commit 9fc0c78c8a0ad8bed4f442859bb1914dd7cbc483
+Author: Sandeep Shedmake <sandeeps@src.gnome.org>
+Date:	Sun Mar 15 11:40:36 2009 +0000
+
+    Updated Marathi Translations
+
+    svn path=/trunk/; revision=22542
+
+ po/ChangeLog |    4 +
+ po/mr.po     | 3620
+ +++++++++++++++++++++++-----------------------------------
+ 2 files changed, 1428 insertions(+), 2196 deletions(-)
+
+commit 4215486cc58f389e6d2925c1e543f6a64cabd0c2
+Author: Ankitkumar Rameshchandra Patel <ankitp@src.gnome.org>
+Date:	Sun Mar 15 04:53:17 2009 +0000
+
+    Updated Gujarati Translations
+
+    svn path=/trunk/; revision=22541
+
+ po-properties/ChangeLog |   20 +-
+ po-properties/gu.po	 | 3605
+ +++++++++++++++++++++++------------------------
+ 2 files changed, 1796 insertions(+), 1829 deletions(-)
+
+commit 4ea77c86f4834bae98a23c6aa747116d5849279f
+Author: Aron Xu <aronxu@src.gnome.org>
+Date:	Sat Mar 14 11:45:07 2009 +0000
+
+    Updated Simplified Chinese translations by Deng Xiyue
+    <manphiz@gmail.com>
+
+    svn path=/trunk/; revision=22540
+
+ po-properties/zh_CN.po | 3450
+ ++++++++++++++++++++++++------------------------
+ 1 files changed, 1729 insertions(+), 1721 deletions(-)
+
+commit 3ece05f028abd9caa76409c21294dccadf2a9cda
+Author: Shankar Prasad <sprasad@src.gnome.org>
+Date:	Sat Mar 14 10:43:14 2009 +0000
+
+    updated kn.po
+
+    svn path=/trunk/; revision=22539
+
+ po-properties/ChangeLog |    4 +
+ po-properties/kn.po	 | 4817
+ +++++++++++++++++++++--------------------------
+ 2 files changed, 2190 insertions(+), 2631 deletions(-)
+
+commit f346c8267356914fd668650478881e8884ec8bca
+Author: Kenneth Nielsen <kennethn@src.gnome.org>
+Date:	Sat Mar 14 04:03:19 2009 +0000
+
+    Updated Danish translations
+
+    svn path=/trunk/; revision=22538
+
+ po-properties/ChangeLog |    4 +
+ po-properties/da.po	 | 3401
+ ++++++++++++++++++++++++-----------------------
+ po/ChangeLog		 |    4 +
+ po/da.po		 | 2085 +++++++++++++++---------------
+ 4 files changed, 2765 insertions(+), 2729 deletions(-)
+
+commit 89437c9f5f448d9949706313282c8fbc6a1e0ec6
+Author: Shankar Prasad <sprasad@src.gnome.org>
+Date:	Sat Mar 14 03:19:26 2009 +0000
+
+    updated kn.po
+
+    svn path=/trunk/; revision=22537
+
+ po-properties/ChangeLog |    4 +
+ po-properties/kn.po	 |  675
+ +++++++++++++++++------------------------------
+ 2 files changed, 245 insertions(+), 434 deletions(-)
+
+commit 7c8847a8d86faad06b4e89a6c49fbaeeb01d6c0e
+Author: Ignacio Casal Quinteiro <icq@src.gnome.org>
+Date:	Fri Mar 13 18:43:23 2009 +0000
+
+    Updated Galician translation
+
+    svn path=/trunk/; revision=22536
+
+ po/ChangeLog |    4 +
+ po/gl.po     | 4043
+ +++++++++++++++++++++++++++++++---------------------------
+ 2 files changed, 2169 insertions(+), 1878 deletions(-)
+
+commit 360ad81b58f435fda612b28cc82aee53303d448f
+Author: Ignacio Casal Quinteiro <icq@src.gnome.org>
+Date:	Fri Mar 13 18:36:38 2009 +0000
+
+    Updated Galician translation
+
+    svn path=/trunk/; revision=22535
+
+ po-properties/ChangeLog |    4 +
+ po-properties/gl.po	 |12183
+ +++++++++++++++++++++--------------------------
+ 2 files changed, 5467 insertions(+), 6720 deletions(-)
+
+commit 0405f7372223f05e509d0461e869f221493ebc30
+Author: Matthias Clasen <matthiasc@src.gnome.org>
+Date:	Fri Mar 13 16:27:55 2009 +0000
+
+    Late release notes
+
+    svn path=/trunk/; revision=22534
+
+ ChangeLog |	4 ++++
+ README.in |   21 +++++++++++++++++++++
+ 2 files changed, 25 insertions(+), 0 deletions(-)
+
+commit 5a7d00bcc7536eee7ac126f34a85f4ec7063bffc
+Author: Hendrik Richter <hendrikr@gnome.org>
+Date:	Fri Mar 13 15:54:39 2009 +0000
+
+    Updated German translation.
+
+    2009-03-13	Hendrik Richter  <hendrikr@gnome.org>
+
+	* de.po: Updated German translation.
+
+    svn path=/trunk/; revision=22533
+
+ po-properties/ChangeLog |    4 +
+ po-properties/de.po	 | 3402
+ ++++++++++++++++++++++++-----------------------
+ 2 files changed, 1718 insertions(+), 1688 deletions(-)
+
+commit 6a3f590d9fc2f4dc79e3a115c0c5f5ff69010ea6
+Author: Matthias Clasen <matthiasc@src.gnome.org>
+Date:	Fri Mar 13 15:09:54 2009 +0000
+
+    Bump version
+
+    svn path=/trunk/; revision=22532
+
+ ChangeLog    |    4 ++++
+ configure.in |    4 ++--
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+commit ba150f5ecc627c0d8d0d7e5e0d71f8f2798b0670
+Author: Matthias Clasen <matthiasc@src.gnome.org>
+Date:	Fri Mar 13 15:06:47 2009 +0000
+
+    2.16.0
+
+    svn path=/trunk/; revision=22530
+
+ ChangeLog					    |	 4 +
+ INSTALL					    |	 6 +-
+ README						    |	 2 +-
+ contrib/gdk-pixbuf-xlib/ChangeLog		    |	 4 +
+ docs/reference/ChangeLog			    |	 4 +
+ .../gdk-pixbuf/gdk-pixbuf-query-loaders.1	    |	73 +-
+ docs/reference/gtk/gtk-builder-convert.1	    |	38 +-
+ docs/reference/gtk/gtk-query-immodules-2.0.1	    |	64 +-
+ docs/reference/gtk/tmpl/gtk-unused.sgml	    |	10 +
+ docs/reference/gtk/tmpl/gtkenums.sgml		    |	 4 +-
+ docs/reference/gtk/tmpl/gtkstyle.sgml		    |	 2 +-
+ gdk-pixbuf/ChangeLog				    |	 4 +
+ modules/engines/pixbuf/ChangeLog		    |	 4 +
+ modules/other/gail/ChangeLog			    |	 4 +
+ po-properties/ChangeLog			    |	 4 +
+ po-properties/af.po				    |	 2 +-
+ po-properties/am.po				    |	 2 +-
+ po-properties/ang.po				    |	 2 +-
+ po-properties/ar.po				    |	 2 +-
+ po-properties/as.po				    |	 2 +-
+ po-properties/ast.po				    |	 2 +-
+ po-properties/az.po				    |	 2 +-
+ po-properties/az_IR.po				    |	 2 +-
+ po-properties/be.po				    |	 2 +-
+ po-properties/be@latin.po			    |	 2 +-
+ po-properties/bg.po				    |	 2 +-
+ po-properties/bn.po				    |	 2 +-
+ po-properties/bn_IN.po				    | 3572
+ ++++++++--------
+ po-properties/br.po				    |	 2 +-
+ po-properties/bs.po				    |	 2 +-
+ po-properties/ca.po				    | 3392 +++++++-------
+ po-properties/ca@valencia.po			    |	 2 +-
+ po-properties/crh.po				    |	 2 +-
+ po-properties/cs.po				    | 3392 +++++++-------
+ po-properties/cy.po				    |	 2 +-
+ po-properties/da.po				    |	 2 +-
+ po-properties/de.po				    |	 2 +-
+ po-properties/dz.po				    |	 2 +-
+ po-properties/el.po				    |	 2 +-
+ po-properties/en_CA.po				    |	 2 +-
+ po-properties/en_GB.po				    | 3392 +++++++-------
+ po-properties/eo.po				    |	 2 +-
+ po-properties/es.po				    | 3395 +++++++-------
+ po-properties/et.po				    | 2315 +++++++++-
+ po-properties/eu.po				    |	 2 +-
+ po-properties/fa.po				    |	 2 +-
+ po-properties/fi.po				    | 3392 +++++++-------
+ po-properties/fr.po				    | 3392 +++++++-------
+ po-properties/ga.po				    |	 2 +-
+ po-properties/gl.po				    |	 2 +-
+ po-properties/gu.po				    |	 2 +-
+ po-properties/he.po				    | 3395 +++++++-------
+ po-properties/hi.po				    | 3606
+ ++++++++--------
+ po-properties/hr.po				    |	 2 +-
+ po-properties/hu.po				    | 3662
+ ++++++++--------
+ po-properties/hy.po				    |	 2 +-
+ po-properties/ia.po				    |	 2 +-
+ po-properties/id.po				    |	 2 +-
+ po-properties/io.po				    |	 2 +-
+ po-properties/is.po				    |	 2 +-
+ po-properties/it.po				    | 3395 +++++++-------
+ po-properties/ja.po				    | 3392 +++++++-------
+ po-properties/ka.po				    |	 2 +-
+ po-properties/kn.po				    | 3706
+ ++++++++--------
+ po-properties/ko.po				    | 3392 +++++++-------
+ po-properties/ku.po				    |	 2 +-
+ po-properties/li.po				    |	 2 +-
+ po-properties/lt.po				    | 3392 +++++++-------
+ po-properties/lv.po				    |	 2 +-
+ po-properties/mai.po				    |	 2 +-
+ po-properties/mi.po				    |	 2 +-
+ po-properties/mk.po				    |	 2 +-
+ po-properties/ml.po				    | 3529
+ ++++++++--------
+ po-properties/mn.po				    |	 2 +-
+ po-properties/mr.po				    |	 2 +-
+ po-properties/ms.po				    |	 2 +-
+ po-properties/nb.po				    | 3392 +++++++-------
+ po-properties/ne.po				    |	 2 +-
+ po-properties/nl.po				    |	 2 +-
+ po-properties/nn.po				    |	 2 +-
+ po-properties/nso.po				    |	 2 +-
+ po-properties/oc.po				    |	 2 +-
+ po-properties/or.po				    | 3549
+ ++++++++--------
+ po-properties/pa.po				    | 3559
+ ++++++++--------
+ po-properties/pl.po				    | 3392 +++++++-------
+ po-properties/ps.po				    |	 2 +-
+ po-properties/pt.po				    | 3395 +++++++-------
+ po-properties/pt_BR.po				    | 3392 +++++++-------
+ po-properties/ro.po				    | 3397 +++++++-------
+ po-properties/ru.po				    |	 2 +-
+ po-properties/rw.po				    |	 2 +-
+ po-properties/si.po				    |	 2 +-
+ po-properties/sk.po				    |	 2 +-
+ po-properties/sl.po				    | 4597
+ ++++++++++---------
+ po-properties/sq.po				    |	 2 +-
+ po-properties/sr.po				    |	 2 +-
+ po-properties/sr@ije.po			    |	 2 +-
+ po-properties/sr@latin.po			    |	 2 +-
+ po-properties/sv.po				    | 4682
+ ++++++++++----------
+ po-properties/ta.po				    |	 2 +-
+ po-properties/te.po				    | 3539
+ ++++++++--------
+ po-properties/th.po				    |	 2 +-
+ po-properties/tk.po				    |	 2 +-
+ po-properties/tr.po				    |	 2 +-
+ po-properties/tt.po				    |	 2 +-
+ po-properties/uk.po				    |	 2 +-
+ po-properties/ur.po				    |	 2 +-
+ po-properties/uz.po				    |	 2 +-
+ po-properties/uz@cyrillic.po			    |	 2 +-
+ po-properties/vi.po				    |	 2 +-
+ po-properties/wa.po				    |	 2 +-
+ po-properties/xh.po				    |	 2 +-
+ po-properties/yi.po				    |	 2 +-
+ po-properties/zh_CN.po				    |	 2 +-
+ po-properties/zh_HK.po				    |	 2 +-
+ po-properties/zh_TW.po				    |	 2 +-
+ po/ChangeLog					    |	 4 +
+ po/af.po					    |	24 +-
+ po/am.po					    |	24 +-
+ po/ang.po					    |	24 +-
+ po/ar.po					    |	24 +-
+ po/as.po					    |	75 +-
+ po/ast.po					    |	24 +-
+ po/az.po					    |	24 +-
+ po/az_IR.po					    |	24 +-
+ po/be.po					    |	24 +-
+ po/be@latin.po					    |	24 +-
+ po/bg.po					    |	24 +-
+ po/bn.po					    |	24 +-
+ po/bn_IN.po					    | 2102 +++++-----
+ po/br.po					    |	24 +-
+ po/bs.po					    |	24 +-
+ po/ca.po					    |	24 +-
+ po/ca@valencia.po				    |	24 +-
+ po/crh.po					    |	24 +-
+ po/cs.po					    | 2063 +++++-----
+ po/cy.po					    |	24 +-
+ po/da.po					    |	24 +-
+ po/de.po					    |	24 +-
+ po/dz.po					    |	24 +-
+ po/el.po					    |	24 +-
+ po/en_CA.po					    |	24 +-
+ po/en_GB.po					    |	24 +-
+ po/eo.po					    |	24 +-
+ po/es.po					    |	24 +-
+ po/et.po					    |	24 +-
+ po/eu.po					    |	24 +-
+ po/fa.po					    |	24 +-
+ po/fi.po					    |	24 +-
+ po/fr.po					    |	24 +-
+ po/ga.po					    |	24 +-
+ po/gl.po					    |	24 +-
+ po/gu.po					    | 2111 +++++-----
+ po/he.po					    |	24 +-
+ po/hi.po					    | 2107 +++++-----
+ po/hr.po					    |	24 +-
+ po/hu.po					    |	24 +-
+ po/hy.po					    |	24 +-
+ po/ia.po					    |	24 +-
+ po/id.po					    |	24 +-
+ po/io.po					    |	24 +-
+ po/is.po					    |	24 +-
+ po/it.po					    |	24 +-
+ po/ja.po					    | 2063 +++++-----
+ po/ka.po					    |	24 +-
+ po/kn.po					    | 2111 +++++-----
+ po/ko.po					    |	24 +-
+ po/ku.po					    |	24 +-
+ po/li.po					    |	24 +-
+ po/lt.po					    | 2063 +++++-----
+ po/lv.po					    |	24 +-
+ po/mai.po					    |	24 +-
+ po/mi.po					    |	24 +-
+ po/mk.po					    |	24 +-
+ po/ml.po					    | 2119 +++++-----
+ po/mn.po					    |	24 +-
+ po/mr.po					    |	24 +-
+ po/ms.po					    |	24 +-
+ po/nb.po					    |	24 +-
+ po/ne.po					    |	24 +-
+ po/nl.po					    |	24 +-
+ po/nn.po					    |	24 +-
+ po/nso.po					    |	24 +-
+ po/oc.po					    |	24 +-
+ po/or.po					    |	24 +-
+ po/pa.po					    | 2093 +++++-----
+ po/pl.po					    | 2063 +++++-----
+ po/ps.po					    |	24 +-
+ po/pt.po					    |	24 +-
+ po/pt_BR.po					    |	24 +-
+ po/ro.po					    | 4437
+ ++++++++++---------
+ po/ru.po					    |	24 +-
+ po/rw.po					    |	24 +-
+ po/si.po					    |	24 +-
+ po/sk.po					    |	24 +-
+ po/sl.po					    | 2635 ++++++-----
+ po/sq.po					    |	24 +-
+ po/sr.po					    |	24 +-
+ po/sr@ije.po					    |	24 +-
+ po/sr@latin.po					    |	24 +-
+ po/sv.po					    |	24 +-
+ po/ta.po					    | 2109 +++++-----
+ po/te.po					    |	75 +-
+ po/th.po					    |	24 +-
+ po/tk.po					    |	24 +-
+ po/tr.po					    |	24 +-
+ po/tt.po					    |	24 +-
+ po/uk.po					    |	24 +-
+ po/ur.po					    |	24 +-
+ po/uz.po					    |	24 +-
+ po/uz@cyrillic.po				    |	24 +-
+ po/vi.po					    |	24 +-
+ po/wa.po					    |	24 +-
+ po/xh.po					    |	24 +-
+ po/yi.po					    |	24 +-
+ po/zh_CN.po					    |	24 +-
+ po/zh_HK.po					    |	24 +-
+ po/zh_TW.po					    |	24 +-
+ 218 files changed, 65133 insertions(+), 62141 deletions(-)
+
+commit 0137fe06d7672173083ffdffa10b798b2ed86e43
+Author: Matthias Clasen <matthiasc@src.gnome.org>
+Date:	Fri Mar 13 14:26:50 2009 +0000
+
+    Updates
+
+    svn path=/trunk/; revision=22529
+
+ ChangeLog |	2 ++
+ NEWS	   |   31 +++++++++++++++++++++++++++++++
+ 2 files changed, 33 insertions(+), 0 deletions(-)

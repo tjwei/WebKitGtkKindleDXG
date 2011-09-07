@@ -1,0 +1,1226 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="gtk-Stock-Items">
+<refmeta>
+<refentrytitle role="top_of_page" id="gtk-Stock-Items.top_of_page">Stock Items</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Stock Items</refname>
+<refpurpose>Prebuilt common menu/toolbar items and corresponding icons</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gtk-Stock-Items.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkStockItem">GtkStockItem</link>;
+<link linkend="void">void</link>                <link linkend="gtk-stock-add">gtk_stock_add</link>                       (const <link linkend="GtkStockItem">GtkStockItem</link> *items,
+                                                         <link linkend="guint">guint</link> n_items);
+<link linkend="void">void</link>                <link linkend="gtk-stock-add-static">gtk_stock_add_static</link>                (const <link linkend="GtkStockItem">GtkStockItem</link> *items,
+                                                         <link linkend="guint">guint</link> n_items);
+<link linkend="GtkStockItem">GtkStockItem</link> *      <link linkend="gtk-stock-item-copy">gtk_stock_item_copy</link>                 (const <link linkend="GtkStockItem">GtkStockItem</link> *item);
+<link linkend="void">void</link>                <link linkend="gtk-stock-item-free">gtk_stock_item_free</link>                 (<link linkend="GtkStockItem">GtkStockItem</link> *item);
+<link linkend="GSList">GSList</link>*             <link linkend="gtk-stock-list-ids">gtk_stock_list_ids</link>                  (void);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-stock-lookup">gtk_stock_lookup</link>                    (const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkStockItem">GtkStockItem</link> *item);
+<link linkend="void">void</link>                <link linkend="gtk-stock-set-translate-func">gtk_stock_set_translate_func</link>        (const <link linkend="gchar">gchar</link> *domain,
+                                                         <link linkend="GtkTranslateFunc">GtkTranslateFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> notify);
+
+#define             <link linkend="GTK-STOCK-ABOUT--CAPS">GTK_STOCK_ABOUT</link>
+#define             <link linkend="GTK-STOCK-ADD--CAPS">GTK_STOCK_ADD</link>
+#define             <link linkend="GTK-STOCK-APPLY--CAPS">GTK_STOCK_APPLY</link>
+#define             <link linkend="GTK-STOCK-BOLD--CAPS">GTK_STOCK_BOLD</link>
+#define             <link linkend="GTK-STOCK-CANCEL--CAPS">GTK_STOCK_CANCEL</link>
+#define             <link linkend="GTK-STOCK-CAPS-LOCK-WARNING--CAPS">GTK_STOCK_CAPS_LOCK_WARNING</link>
+#define             <link linkend="GTK-STOCK-CDROM--CAPS">GTK_STOCK_CDROM</link>
+#define             <link linkend="GTK-STOCK-CLEAR--CAPS">GTK_STOCK_CLEAR</link>
+#define             <link linkend="GTK-STOCK-CLOSE--CAPS">GTK_STOCK_CLOSE</link>
+#define             <link linkend="GTK-STOCK-COLOR-PICKER--CAPS">GTK_STOCK_COLOR_PICKER</link>
+#define             <link linkend="GTK-STOCK-CONVERT--CAPS">GTK_STOCK_CONVERT</link>
+#define             <link linkend="GTK-STOCK-CONNECT--CAPS">GTK_STOCK_CONNECT</link>
+#define             <link linkend="GTK-STOCK-COPY--CAPS">GTK_STOCK_COPY</link>
+#define             <link linkend="GTK-STOCK-CUT--CAPS">GTK_STOCK_CUT</link>
+#define             <link linkend="GTK-STOCK-DELETE--CAPS">GTK_STOCK_DELETE</link>
+#define             <link linkend="GTK-STOCK-DIALOG-AUTHENTICATION--CAPS">GTK_STOCK_DIALOG_AUTHENTICATION</link>
+#define             <link linkend="GTK-STOCK-DIALOG-ERROR--CAPS">GTK_STOCK_DIALOG_ERROR</link>
+#define             <link linkend="GTK-STOCK-DIALOG-INFO--CAPS">GTK_STOCK_DIALOG_INFO</link>
+#define             <link linkend="GTK-STOCK-DIALOG-QUESTION--CAPS">GTK_STOCK_DIALOG_QUESTION</link>
+#define             <link linkend="GTK-STOCK-DIALOG-WARNING--CAPS">GTK_STOCK_DIALOG_WARNING</link>
+#define             <link linkend="GTK-STOCK-DIRECTORY--CAPS">GTK_STOCK_DIRECTORY</link>
+#define             <link linkend="GTK-STOCK-DISCARD--CAPS">GTK_STOCK_DISCARD</link>
+#define             <link linkend="GTK-STOCK-DISCONNECT--CAPS">GTK_STOCK_DISCONNECT</link>
+#define             <link linkend="GTK-STOCK-DND--CAPS">GTK_STOCK_DND</link>
+#define             <link linkend="GTK-STOCK-DND-MULTIPLE--CAPS">GTK_STOCK_DND_MULTIPLE</link>
+#define             <link linkend="GTK-STOCK-EDIT--CAPS">GTK_STOCK_EDIT</link>
+#define             <link linkend="GTK-STOCK-EXECUTE--CAPS">GTK_STOCK_EXECUTE</link>
+#define             <link linkend="GTK-STOCK-FILE--CAPS">GTK_STOCK_FILE</link>
+#define             <link linkend="GTK-STOCK-FIND--CAPS">GTK_STOCK_FIND</link>
+#define             <link linkend="GTK-STOCK-FIND-AND-REPLACE--CAPS">GTK_STOCK_FIND_AND_REPLACE</link>
+#define             <link linkend="GTK-STOCK-FLOPPY--CAPS">GTK_STOCK_FLOPPY</link>
+#define             <link linkend="GTK-STOCK-FULLSCREEN--CAPS">GTK_STOCK_FULLSCREEN</link>
+#define             <link linkend="GTK-STOCK-GOTO-BOTTOM--CAPS">GTK_STOCK_GOTO_BOTTOM</link>
+#define             <link linkend="GTK-STOCK-GOTO-FIRST--CAPS">GTK_STOCK_GOTO_FIRST</link>
+#define             <link linkend="GTK-STOCK-GOTO-LAST--CAPS">GTK_STOCK_GOTO_LAST</link>
+#define             <link linkend="GTK-STOCK-GOTO-TOP--CAPS">GTK_STOCK_GOTO_TOP</link>
+#define             <link linkend="GTK-STOCK-GO-BACK--CAPS">GTK_STOCK_GO_BACK</link>
+#define             <link linkend="GTK-STOCK-GO-DOWN--CAPS">GTK_STOCK_GO_DOWN</link>
+#define             <link linkend="GTK-STOCK-GO-FORWARD--CAPS">GTK_STOCK_GO_FORWARD</link>
+#define             <link linkend="GTK-STOCK-GO-UP--CAPS">GTK_STOCK_GO_UP</link>
+#define             <link linkend="GTK-STOCK-HARDDISK--CAPS">GTK_STOCK_HARDDISK</link>
+#define             <link linkend="GTK-STOCK-HELP--CAPS">GTK_STOCK_HELP</link>
+#define             <link linkend="GTK-STOCK-HOME--CAPS">GTK_STOCK_HOME</link>
+#define             <link linkend="GTK-STOCK-INDENT--CAPS">GTK_STOCK_INDENT</link>
+#define             <link linkend="GTK-STOCK-INDEX--CAPS">GTK_STOCK_INDEX</link>
+#define             <link linkend="GTK-STOCK-INFO--CAPS">GTK_STOCK_INFO</link>
+#define             <link linkend="GTK-STOCK-ITALIC--CAPS">GTK_STOCK_ITALIC</link>
+#define             <link linkend="GTK-STOCK-JUMP-TO--CAPS">GTK_STOCK_JUMP_TO</link>
+#define             <link linkend="GTK-STOCK-JUSTIFY-CENTER--CAPS">GTK_STOCK_JUSTIFY_CENTER</link>
+#define             <link linkend="GTK-STOCK-JUSTIFY-FILL--CAPS">GTK_STOCK_JUSTIFY_FILL</link>
+#define             <link linkend="GTK-STOCK-JUSTIFY-LEFT--CAPS">GTK_STOCK_JUSTIFY_LEFT</link>
+#define             <link linkend="GTK-STOCK-JUSTIFY-RIGHT--CAPS">GTK_STOCK_JUSTIFY_RIGHT</link>
+#define             <link linkend="GTK-STOCK-LEAVE-FULLSCREEN--CAPS">GTK_STOCK_LEAVE_FULLSCREEN</link>
+#define             <link linkend="GTK-STOCK-MEDIA-FORWARD--CAPS">GTK_STOCK_MEDIA_FORWARD</link>
+#define             <link linkend="GTK-STOCK-MEDIA-NEXT--CAPS">GTK_STOCK_MEDIA_NEXT</link>
+#define             <link linkend="GTK-STOCK-MEDIA-PAUSE--CAPS">GTK_STOCK_MEDIA_PAUSE</link>
+#define             <link linkend="GTK-STOCK-MEDIA-PLAY--CAPS">GTK_STOCK_MEDIA_PLAY</link>
+#define             <link linkend="GTK-STOCK-MEDIA-PREVIOUS--CAPS">GTK_STOCK_MEDIA_PREVIOUS</link>
+#define             <link linkend="GTK-STOCK-MEDIA-RECORD--CAPS">GTK_STOCK_MEDIA_RECORD</link>
+#define             <link linkend="GTK-STOCK-MEDIA-REWIND--CAPS">GTK_STOCK_MEDIA_REWIND</link>
+#define             <link linkend="GTK-STOCK-MEDIA-STOP--CAPS">GTK_STOCK_MEDIA_STOP</link>
+#define             <link linkend="GTK-STOCK-MISSING-IMAGE--CAPS">GTK_STOCK_MISSING_IMAGE</link>
+#define             <link linkend="GTK-STOCK-NETWORK--CAPS">GTK_STOCK_NETWORK</link>
+#define             <link linkend="GTK-STOCK-NEW--CAPS">GTK_STOCK_NEW</link>
+#define             <link linkend="GTK-STOCK-NO--CAPS">GTK_STOCK_NO</link>
+#define             <link linkend="GTK-STOCK-OK--CAPS">GTK_STOCK_OK</link>
+#define             <link linkend="GTK-STOCK-OPEN--CAPS">GTK_STOCK_OPEN</link>
+#define             <link linkend="GTK-STOCK-ORIENTATION-LANDSCAPE--CAPS">GTK_STOCK_ORIENTATION_LANDSCAPE</link>
+#define             <link linkend="GTK-STOCK-ORIENTATION-PORTRAIT--CAPS">GTK_STOCK_ORIENTATION_PORTRAIT</link>
+#define             <link linkend="GTK-STOCK-ORIENTATION-REVERSE-LANDSCAPE--CAPS">GTK_STOCK_ORIENTATION_REVERSE_LANDSCAPE</link>
+#define             <link linkend="GTK-STOCK-ORIENTATION-REVERSE-PORTRAIT--CAPS">GTK_STOCK_ORIENTATION_REVERSE_PORTRAIT</link>
+#define             <link linkend="GTK-STOCK-PAGE-SETUP--CAPS">GTK_STOCK_PAGE_SETUP</link>
+#define             <link linkend="GTK-STOCK-PASTE--CAPS">GTK_STOCK_PASTE</link>
+#define             <link linkend="GTK-STOCK-PREFERENCES--CAPS">GTK_STOCK_PREFERENCES</link>
+#define             <link linkend="GTK-STOCK-PRINT--CAPS">GTK_STOCK_PRINT</link>
+#define             <link linkend="GTK-STOCK-PRINT-ERROR--CAPS">GTK_STOCK_PRINT_ERROR</link>
+#define             <link linkend="GTK-STOCK-PRINT-PAUSED--CAPS">GTK_STOCK_PRINT_PAUSED</link>
+#define             <link linkend="GTK-STOCK-PRINT-PREVIEW--CAPS">GTK_STOCK_PRINT_PREVIEW</link>
+#define             <link linkend="GTK-STOCK-PRINT-REPORT--CAPS">GTK_STOCK_PRINT_REPORT</link>
+#define             <link linkend="GTK-STOCK-PRINT-WARNING--CAPS">GTK_STOCK_PRINT_WARNING</link>
+#define             <link linkend="GTK-STOCK-PROPERTIES--CAPS">GTK_STOCK_PROPERTIES</link>
+#define             <link linkend="GTK-STOCK-QUIT--CAPS">GTK_STOCK_QUIT</link>
+#define             <link linkend="GTK-STOCK-REDO--CAPS">GTK_STOCK_REDO</link>
+#define             <link linkend="GTK-STOCK-REFRESH--CAPS">GTK_STOCK_REFRESH</link>
+#define             <link linkend="GTK-STOCK-REMOVE--CAPS">GTK_STOCK_REMOVE</link>
+#define             <link linkend="GTK-STOCK-REVERT-TO-SAVED--CAPS">GTK_STOCK_REVERT_TO_SAVED</link>
+#define             <link linkend="GTK-STOCK-SAVE--CAPS">GTK_STOCK_SAVE</link>
+#define             <link linkend="GTK-STOCK-SAVE-AS--CAPS">GTK_STOCK_SAVE_AS</link>
+#define             <link linkend="GTK-STOCK-SELECT-ALL--CAPS">GTK_STOCK_SELECT_ALL</link>
+#define             <link linkend="GTK-STOCK-SELECT-COLOR--CAPS">GTK_STOCK_SELECT_COLOR</link>
+#define             <link linkend="GTK-STOCK-SELECT-FONT--CAPS">GTK_STOCK_SELECT_FONT</link>
+#define             <link linkend="GTK-STOCK-SORT-ASCENDING--CAPS">GTK_STOCK_SORT_ASCENDING</link>
+#define             <link linkend="GTK-STOCK-SORT-DESCENDING--CAPS">GTK_STOCK_SORT_DESCENDING</link>
+#define             <link linkend="GTK-STOCK-SPELL-CHECK--CAPS">GTK_STOCK_SPELL_CHECK</link>
+#define             <link linkend="GTK-STOCK-STOP--CAPS">GTK_STOCK_STOP</link>
+#define             <link linkend="GTK-STOCK-STRIKETHROUGH--CAPS">GTK_STOCK_STRIKETHROUGH</link>
+#define             <link linkend="GTK-STOCK-UNDELETE--CAPS">GTK_STOCK_UNDELETE</link>
+#define             <link linkend="GTK-STOCK-UNDERLINE--CAPS">GTK_STOCK_UNDERLINE</link>
+#define             <link linkend="GTK-STOCK-UNDO--CAPS">GTK_STOCK_UNDO</link>
+#define             <link linkend="GTK-STOCK-UNINDENT--CAPS">GTK_STOCK_UNINDENT</link>
+#define             <link linkend="GTK-STOCK-YES--CAPS">GTK_STOCK_YES</link>
+#define             <link linkend="GTK-STOCK-ZOOM-100--CAPS">GTK_STOCK_ZOOM_100</link>
+#define             <link linkend="GTK-STOCK-ZOOM-FIT--CAPS">GTK_STOCK_ZOOM_FIT</link>
+#define             <link linkend="GTK-STOCK-ZOOM-IN--CAPS">GTK_STOCK_ZOOM_IN</link>
+#define             <link linkend="GTK-STOCK-ZOOM-OUT--CAPS">GTK_STOCK_ZOOM_OUT</link>
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gtk-Stock-Items.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+Stock items represent commonly-used menu or toolbar items such as
+"Open" or "Exit". Each stock item is identified by a stock ID;
+stock IDs are just strings, but macros such as <link linkend="GTK-STOCK-OPEN--CAPS"><type>GTK_STOCK_OPEN</type></link> are
+provided to avoid typing mistakes in the strings.
+Applications can register their own stock items in addition to those
+built-in to GTK+.
+</para>
+<para>
+Each stock ID can be associated with a <link linkend="GtkStockItem"><type>GtkStockItem</type></link>, which contains
+the user-visible label, keyboard accelerator, and translation domain
+of the menu or toolbar item; and/or with an icon stored in a
+<link linkend="GtkIconFactory"><type>GtkIconFactory</type></link>. See <link
+linkend="gtk-Themeable-Stock-Images">GtkIconFactory</link> for
+more information on stock icons. The connection between a
+<link linkend="GtkStockItem"><type>GtkStockItem</type></link> and stock icons is purely conventional (by virtue of
+using the same stock ID); it's possible to register a stock item but
+no icon, and vice versa. Stock icons may have a RTL variant which gets
+used for right-to-left locales.
+</para>
+</refsect1>
+
+<refsect1 id="gtk-Stock-Items.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkStockItem" role="struct">
+<title>GtkStockItem</title>
+<indexterm zone="GtkStockItem"><primary sortas="StockItem">GtkStockItem</primary></indexterm><programlisting>typedef struct {
+  gchar *stock_id;
+  gchar *label;
+  GdkModifierType modifier;
+  guint keyval;
+  gchar *translation_domain;
+} GtkStockItem;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-stock-add" role="function">
+<title>gtk_stock_add ()</title>
+<indexterm zone="gtk-stock-add"><primary sortas="stock_add">gtk_stock_add</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_stock_add                       (const <link linkend="GtkStockItem">GtkStockItem</link> *items,
+                                                         <link linkend="guint">guint</link> n_items);</programlisting>
+<para>
+Registers each of the stock items in <parameter>items</parameter>. If an item already
+exists with the same stock ID as one of the <parameter>items</parameter>, the old item
+gets replaced. The stock items are copied, so GTK+ does not hold
+any pointer into <parameter>items</parameter> and <parameter>items</parameter> can be freed. Use
+<link linkend="gtk-stock-add-static"><function>gtk_stock_add_static()</function></link> if <parameter>items</parameter> is persistent and GTK+ need not
+copy the array.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>items</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkStockItem"><type>GtkStockItem</type></link> or array of items
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_items</parameter>&#160;:</term>
+<listitem><simpara> number of <link linkend="GtkStockItem"><type>GtkStockItem</type></link> in <parameter>items</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-stock-add-static" role="function">
+<title>gtk_stock_add_static ()</title>
+<indexterm zone="gtk-stock-add-static"><primary sortas="stock_add_static">gtk_stock_add_static</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_stock_add_static                (const <link linkend="GtkStockItem">GtkStockItem</link> *items,
+                                                         <link linkend="guint">guint</link> n_items);</programlisting>
+<para>
+Same as <link linkend="gtk-stock-add"><function>gtk_stock_add()</function></link>, but doesn't copy <parameter>items</parameter>, so
+<parameter>items</parameter> must persist until application exit.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>items</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkStockItem"><type>GtkStockItem</type></link> or array of <link linkend="GtkStockItem"><type>GtkStockItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_items</parameter>&#160;:</term>
+<listitem><simpara> number of items
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-stock-item-copy" role="function">
+<title>gtk_stock_item_copy ()</title>
+<indexterm zone="gtk-stock-item-copy"><primary sortas="stock_item_copy">gtk_stock_item_copy</primary></indexterm><programlisting><link linkend="GtkStockItem">GtkStockItem</link> *      gtk_stock_item_copy                 (const <link linkend="GtkStockItem">GtkStockItem</link> *item);</programlisting>
+<para>
+Copies a stock item, mostly useful for language bindings and not in applications.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkStockItem"><type>GtkStockItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkStockItem"><type>GtkStockItem</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-stock-item-free" role="function">
+<title>gtk_stock_item_free ()</title>
+<indexterm zone="gtk-stock-item-free"><primary sortas="stock_item_free">gtk_stock_item_free</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_stock_item_free                 (<link linkend="GtkStockItem">GtkStockItem</link> *item);</programlisting>
+<para>
+Frees a stock item allocated on the heap, such as one returned by
+<link linkend="gtk-stock-item-copy"><function>gtk_stock_item_copy()</function></link>. Also frees the fields inside the stock item,
+if they are not <link linkend="NULL--CAPS"><literal>NULL</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkStockItem"><type>GtkStockItem</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-stock-list-ids" role="function">
+<title>gtk_stock_list_ids ()</title>
+<indexterm zone="gtk-stock-list-ids"><primary sortas="stock_list_ids">gtk_stock_list_ids</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             gtk_stock_list_ids                  (void);</programlisting>
+<para>
+Retrieves a list of all known stock IDs added to a <link linkend="GtkIconFactory"><type>GtkIconFactory</type></link>
+or registered with <link linkend="gtk-stock-add"><function>gtk_stock_add()</function></link>. The list must be freed with <link linkend="g-slist-free"><function>g_slist_free()</function></link>,
+and each string in the list must be freed with <link linkend="g-free"><function>g_free()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a list of known stock IDs
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-stock-lookup" role="function">
+<title>gtk_stock_lookup ()</title>
+<indexterm zone="gtk-stock-lookup"><primary sortas="stock_lookup">gtk_stock_lookup</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_stock_lookup                    (const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkStockItem">GtkStockItem</link> *item);</programlisting>
+<para>
+Fills <parameter>item</parameter> with the registered values for <parameter>stock_id</parameter>, returning <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>
+if <parameter>stock_id</parameter> was known.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> a stock item name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>item</parameter>&#160;:</term>
+<listitem><simpara> stock item to initialize with values
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>item</parameter> was initialized
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-stock-set-translate-func" role="function" condition="since:2.8">
+<title>gtk_stock_set_translate_func ()</title>
+<indexterm zone="gtk-stock-set-translate-func" role="2.8"><primary sortas="stock_set_translate_func">gtk_stock_set_translate_func</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_stock_set_translate_func        (const <link linkend="gchar">gchar</link> *domain,
+                                                         <link linkend="GtkTranslateFunc">GtkTranslateFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> notify);</programlisting>
+<para>
+Sets a function to be used for translating the <parameter>label</parameter> of 
+a stock item.
+</para>
+<para>
+If no function is registered for a translation domain,
+<link linkend="g-dgettext"><function>g_dgettext()</function></link> is used.
+</para>
+<para>
+The function is used for all stock items whose
+<parameter>translation_domain</parameter> matches <parameter>domain</parameter>. Note that it is possible
+to use strings different from the actual gettext translation domain
+of your application for this, as long as your <link linkend="GtkTranslateFunc"><type>GtkTranslateFunc</type></link> uses
+the correct domain when calling <link linkend="dgettext"><function>dgettext()</function></link>. This can be useful, e.g.
+when dealing with message contexts:
+</para>
+<para>
+<informalexample><programlisting>
+GtkStockItem items[] = { 
+ { MY_ITEM1, NC_("odd items", "Item 1"), 0, 0, "odd-item-domain" },
+ { MY_ITEM2, NC_("even items", "Item 2"), 0, 0, "even-item-domain" },
+};
+
+gchar *
+my_translate_func (const gchar *msgid,
+                   gpointer     data)
+{
+  gchar *msgctxt = data;
+
+  return (gchar*)g_dpgettext2 (GETTEXT_PACKAGE, msgctxt, msgid);
+}
+
+/&ast; ... &amp;ast/
+
+gtk_stock_add (items, G_N_ELEMENTS (items));
+gtk_stock_set_translate_func ("odd-item-domain", my_translate_func, "odd items"); 
+gtk_stock_set_translate_func ("even-item-domain", my_translate_func, "even items"); 
+</programlisting></informalexample></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>domain</parameter>&#160;:</term>
+<listitem><simpara> the translation domain for which <parameter>func</parameter> shall be used
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTranslateFunc"><type>GtkTranslateFunc</type></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to <parameter>func</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>notify</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GDestroyNotify"><type>GDestroyNotify</type></link> that is called when <parameter>data</parameter> is
+  no longer needed
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.8</para></refsect2>
+<refsect2 id="GTK-STOCK-ABOUT--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_ABOUT</title>
+<indexterm zone="GTK-STOCK-ABOUT--CAPS" role="2.6"><primary sortas="STOCK_ABOUT">GTK_STOCK_ABOUT</primary></indexterm><programlisting>#define GTK_STOCK_ABOUT            "gtk-about"
+</programlisting>
+<para>
+The "About" item.
+<inlinegraphic fileref="gtk-about.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-ADD--CAPS" role="macro">
+<title>GTK_STOCK_ADD</title>
+<indexterm zone="GTK-STOCK-ADD--CAPS"><primary sortas="STOCK_ADD">GTK_STOCK_ADD</primary></indexterm><programlisting>#define GTK_STOCK_ADD              "gtk-add"
+</programlisting>
+<para>
+The "Add" item.
+<inlinegraphic fileref="gtk-add.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-APPLY--CAPS" role="macro">
+<title>GTK_STOCK_APPLY</title>
+<indexterm zone="GTK-STOCK-APPLY--CAPS"><primary sortas="STOCK_APPLY">GTK_STOCK_APPLY</primary></indexterm><programlisting>#define GTK_STOCK_APPLY            "gtk-apply"
+</programlisting>
+<para>
+The "Apply" item.
+<inlinegraphic fileref="gtk-apply.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-BOLD--CAPS" role="macro">
+<title>GTK_STOCK_BOLD</title>
+<indexterm zone="GTK-STOCK-BOLD--CAPS"><primary sortas="STOCK_BOLD">GTK_STOCK_BOLD</primary></indexterm><programlisting>#define GTK_STOCK_BOLD             "gtk-bold"
+</programlisting>
+<para>
+The "Bold" item.
+<inlinegraphic fileref="gtk-bold.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-CANCEL--CAPS" role="macro">
+<title>GTK_STOCK_CANCEL</title>
+<indexterm zone="GTK-STOCK-CANCEL--CAPS"><primary sortas="STOCK_CANCEL">GTK_STOCK_CANCEL</primary></indexterm><programlisting>#define GTK_STOCK_CANCEL           "gtk-cancel"
+</programlisting>
+<para>
+The "Cancel" item.
+<inlinegraphic fileref="gtk-cancel.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-CAPS-LOCK-WARNING--CAPS" role="macro" condition="since:2.16">
+<title>GTK_STOCK_CAPS_LOCK_WARNING</title>
+<indexterm zone="GTK-STOCK-CAPS-LOCK-WARNING--CAPS" role="2.16"><primary sortas="STOCK_CAPS_LOCK_WARNING">GTK_STOCK_CAPS_LOCK_WARNING</primary></indexterm><programlisting>#define GTK_STOCK_CAPS_LOCK_WARNING "gtk-caps-lock-warning"
+</programlisting>
+<para>
+The "Caps Lock Warning" icon.
+<inlinegraphic fileref="gtk-caps-lock-warning.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="GTK-STOCK-CDROM--CAPS" role="macro">
+<title>GTK_STOCK_CDROM</title>
+<indexterm zone="GTK-STOCK-CDROM--CAPS"><primary sortas="STOCK_CDROM">GTK_STOCK_CDROM</primary></indexterm><programlisting>#define GTK_STOCK_CDROM            "gtk-cdrom"
+</programlisting>
+<para>
+The "CD-Rom" item.
+<inlinegraphic fileref="gtk-cdrom.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-CLEAR--CAPS" role="macro">
+<title>GTK_STOCK_CLEAR</title>
+<indexterm zone="GTK-STOCK-CLEAR--CAPS"><primary sortas="STOCK_CLEAR">GTK_STOCK_CLEAR</primary></indexterm><programlisting>#define GTK_STOCK_CLEAR            "gtk-clear"
+</programlisting>
+<para>
+The "Clear" item.
+<inlinegraphic fileref="gtk-clear.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-CLOSE--CAPS" role="macro">
+<title>GTK_STOCK_CLOSE</title>
+<indexterm zone="GTK-STOCK-CLOSE--CAPS"><primary sortas="STOCK_CLOSE">GTK_STOCK_CLOSE</primary></indexterm><programlisting>#define GTK_STOCK_CLOSE            "gtk-close"
+</programlisting>
+<para>
+The "Close" item.
+<inlinegraphic fileref="gtk-close.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-COLOR-PICKER--CAPS" role="macro" condition="since:2.2">
+<title>GTK_STOCK_COLOR_PICKER</title>
+<indexterm zone="GTK-STOCK-COLOR-PICKER--CAPS" role="2.2"><primary sortas="STOCK_COLOR_PICKER">GTK_STOCK_COLOR_PICKER</primary></indexterm><programlisting>#define GTK_STOCK_COLOR_PICKER     "gtk-color-picker"
+</programlisting>
+<para>
+The "Color Picker" item.
+<inlinegraphic fileref="gtk-color-picker.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GTK-STOCK-CONVERT--CAPS" role="macro">
+<title>GTK_STOCK_CONVERT</title>
+<indexterm zone="GTK-STOCK-CONVERT--CAPS"><primary sortas="STOCK_CONVERT">GTK_STOCK_CONVERT</primary></indexterm><programlisting>#define GTK_STOCK_CONVERT          "gtk-convert"
+</programlisting>
+<para>
+The "Convert" item.
+<inlinegraphic fileref="gtk-convert.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-CONNECT--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_CONNECT</title>
+<indexterm zone="GTK-STOCK-CONNECT--CAPS" role="2.6"><primary sortas="STOCK_CONNECT">GTK_STOCK_CONNECT</primary></indexterm><programlisting>#define GTK_STOCK_CONNECT          "gtk-connect"
+</programlisting>
+<para>
+The "Connect" icon.
+<inlinegraphic fileref="gtk-connect.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-COPY--CAPS" role="macro">
+<title>GTK_STOCK_COPY</title>
+<indexterm zone="GTK-STOCK-COPY--CAPS"><primary sortas="STOCK_COPY">GTK_STOCK_COPY</primary></indexterm><programlisting>#define GTK_STOCK_COPY             "gtk-copy"
+</programlisting>
+<para>
+The "Copy" item.
+<inlinegraphic fileref="gtk-copy.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-CUT--CAPS" role="macro">
+<title>GTK_STOCK_CUT</title>
+<indexterm zone="GTK-STOCK-CUT--CAPS"><primary sortas="STOCK_CUT">GTK_STOCK_CUT</primary></indexterm><programlisting>#define GTK_STOCK_CUT              "gtk-cut"
+</programlisting>
+<para>
+The "Cut" item.
+<inlinegraphic fileref="gtk-cut.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-DELETE--CAPS" role="macro">
+<title>GTK_STOCK_DELETE</title>
+<indexterm zone="GTK-STOCK-DELETE--CAPS"><primary sortas="STOCK_DELETE">GTK_STOCK_DELETE</primary></indexterm><programlisting>#define GTK_STOCK_DELETE           "gtk-delete"
+</programlisting>
+<para>
+The "Delete" item.
+<inlinegraphic fileref="gtk-delete.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-DIALOG-AUTHENTICATION--CAPS" role="macro" condition="since:2.4">
+<title>GTK_STOCK_DIALOG_AUTHENTICATION</title>
+<indexterm zone="GTK-STOCK-DIALOG-AUTHENTICATION--CAPS" role="2.4"><primary sortas="STOCK_DIALOG_AUTHENTICATION">GTK_STOCK_DIALOG_AUTHENTICATION</primary></indexterm><programlisting>#define             GTK_STOCK_DIALOG_AUTHENTICATION</programlisting>
+<para>
+The "Authentication" item.
+<inlinegraphic fileref="gtk-dialog-authentication.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="GTK-STOCK-DIALOG-ERROR--CAPS" role="macro">
+<title>GTK_STOCK_DIALOG_ERROR</title>
+<indexterm zone="GTK-STOCK-DIALOG-ERROR--CAPS"><primary sortas="STOCK_DIALOG_ERROR">GTK_STOCK_DIALOG_ERROR</primary></indexterm><programlisting>#define GTK_STOCK_DIALOG_ERROR     "gtk-dialog-error"
+</programlisting>
+<para>
+The "Error" item.
+<inlinegraphic fileref="gtk-dialog-error.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-DIALOG-INFO--CAPS" role="macro">
+<title>GTK_STOCK_DIALOG_INFO</title>
+<indexterm zone="GTK-STOCK-DIALOG-INFO--CAPS"><primary sortas="STOCK_DIALOG_INFO">GTK_STOCK_DIALOG_INFO</primary></indexterm><programlisting>#define GTK_STOCK_DIALOG_INFO      "gtk-dialog-info"
+</programlisting>
+<para>
+The "Information" item.
+<inlinegraphic fileref="gtk-dialog-info.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-DIALOG-QUESTION--CAPS" role="macro">
+<title>GTK_STOCK_DIALOG_QUESTION</title>
+<indexterm zone="GTK-STOCK-DIALOG-QUESTION--CAPS"><primary sortas="STOCK_DIALOG_QUESTION">GTK_STOCK_DIALOG_QUESTION</primary></indexterm><programlisting>#define GTK_STOCK_DIALOG_QUESTION  "gtk-dialog-question"
+</programlisting>
+<para>
+The "Question" item.
+<inlinegraphic fileref="gtk-dialog-question.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-DIALOG-WARNING--CAPS" role="macro">
+<title>GTK_STOCK_DIALOG_WARNING</title>
+<indexterm zone="GTK-STOCK-DIALOG-WARNING--CAPS"><primary sortas="STOCK_DIALOG_WARNING">GTK_STOCK_DIALOG_WARNING</primary></indexterm><programlisting>#define GTK_STOCK_DIALOG_WARNING   "gtk-dialog-warning"
+</programlisting>
+<para>
+The "Warning" item.
+<inlinegraphic fileref="gtk-dialog-warning.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-DIRECTORY--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_DIRECTORY</title>
+<indexterm zone="GTK-STOCK-DIRECTORY--CAPS" role="2.6"><primary sortas="STOCK_DIRECTORY">GTK_STOCK_DIRECTORY</primary></indexterm><programlisting>#define GTK_STOCK_DIRECTORY        "gtk-directory"
+</programlisting>
+<para>
+The "Directory" icon.
+<inlinegraphic fileref="gtk-directory.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-DISCARD--CAPS" role="macro" condition="since:2.12">
+<title>GTK_STOCK_DISCARD</title>
+<indexterm zone="GTK-STOCK-DISCARD--CAPS" role="2.12"><primary sortas="STOCK_DISCARD">GTK_STOCK_DISCARD</primary></indexterm><programlisting>#define GTK_STOCK_DISCARD          "gtk-discard"
+</programlisting>
+<para>
+The "Discard" item.
+</para><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="GTK-STOCK-DISCONNECT--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_DISCONNECT</title>
+<indexterm zone="GTK-STOCK-DISCONNECT--CAPS" role="2.6"><primary sortas="STOCK_DISCONNECT">GTK_STOCK_DISCONNECT</primary></indexterm><programlisting>#define GTK_STOCK_DISCONNECT       "gtk-disconnect"
+</programlisting>
+<para>
+The "Disconnect" icon.
+<inlinegraphic fileref="gtk-disconnect.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-DND--CAPS" role="macro">
+<title>GTK_STOCK_DND</title>
+<indexterm zone="GTK-STOCK-DND--CAPS"><primary sortas="STOCK_DND">GTK_STOCK_DND</primary></indexterm><programlisting>#define GTK_STOCK_DND              "gtk-dnd"
+</programlisting>
+<para>
+The "Drag-And-Drop" icon.
+<inlinegraphic fileref="gtk-dnd.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-DND-MULTIPLE--CAPS" role="macro">
+<title>GTK_STOCK_DND_MULTIPLE</title>
+<indexterm zone="GTK-STOCK-DND-MULTIPLE--CAPS"><primary sortas="STOCK_DND_MULTIPLE">GTK_STOCK_DND_MULTIPLE</primary></indexterm><programlisting>#define GTK_STOCK_DND_MULTIPLE     "gtk-dnd-multiple"
+</programlisting>
+<para>
+The "Drag-And-Drop multiple" icon.
+<inlinegraphic fileref="gtk-dnd-multiple.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-EDIT--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_EDIT</title>
+<indexterm zone="GTK-STOCK-EDIT--CAPS" role="2.6"><primary sortas="STOCK_EDIT">GTK_STOCK_EDIT</primary></indexterm><programlisting>#define GTK_STOCK_EDIT             "gtk-edit"
+</programlisting>
+<para>
+The "Edit" item.
+<inlinegraphic fileref="gtk-edit.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-EXECUTE--CAPS" role="macro">
+<title>GTK_STOCK_EXECUTE</title>
+<indexterm zone="GTK-STOCK-EXECUTE--CAPS"><primary sortas="STOCK_EXECUTE">GTK_STOCK_EXECUTE</primary></indexterm><programlisting>#define GTK_STOCK_EXECUTE          "gtk-execute"
+</programlisting>
+<para>
+The "Execute" item.
+<inlinegraphic fileref="gtk-execute.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-FILE--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_FILE</title>
+<indexterm zone="GTK-STOCK-FILE--CAPS" role="2.6"><primary sortas="STOCK_FILE">GTK_STOCK_FILE</primary></indexterm><programlisting>#define GTK_STOCK_FILE             "gtk-file"
+</programlisting>
+<para>
+<para>
+The "File" icon.
+<inlinegraphic fileref="gtk-file.png" format="PNG"></inlinegraphic>
+</para>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-FIND--CAPS" role="macro">
+<title>GTK_STOCK_FIND</title>
+<indexterm zone="GTK-STOCK-FIND--CAPS"><primary sortas="STOCK_FIND">GTK_STOCK_FIND</primary></indexterm><programlisting>#define GTK_STOCK_FIND             "gtk-find"
+</programlisting>
+<para>
+The "Find" item.
+<inlinegraphic fileref="gtk-find.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-FIND-AND-REPLACE--CAPS" role="macro">
+<title>GTK_STOCK_FIND_AND_REPLACE</title>
+<indexterm zone="GTK-STOCK-FIND-AND-REPLACE--CAPS"><primary sortas="STOCK_FIND_AND_REPLACE">GTK_STOCK_FIND_AND_REPLACE</primary></indexterm><programlisting>#define GTK_STOCK_FIND_AND_REPLACE "gtk-find-and-replace"
+</programlisting>
+<para>
+The "Find and Replace" item.
+<inlinegraphic fileref="gtk-find-and-replace.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-FLOPPY--CAPS" role="macro">
+<title>GTK_STOCK_FLOPPY</title>
+<indexterm zone="GTK-STOCK-FLOPPY--CAPS"><primary sortas="STOCK_FLOPPY">GTK_STOCK_FLOPPY</primary></indexterm><programlisting>#define GTK_STOCK_FLOPPY           "gtk-floppy"
+</programlisting>
+<para>
+The "Floppy" item.
+<inlinegraphic fileref="gtk-floppy.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-FULLSCREEN--CAPS" role="macro" condition="since:2.8">
+<title>GTK_STOCK_FULLSCREEN</title>
+<indexterm zone="GTK-STOCK-FULLSCREEN--CAPS" role="2.8"><primary sortas="STOCK_FULLSCREEN">GTK_STOCK_FULLSCREEN</primary></indexterm><programlisting>#define GTK_STOCK_FULLSCREEN       "gtk-fullscreen"
+</programlisting>
+<para>
+The "Fullscreen" item.
+<inlinegraphic fileref="gtk-fullscreen.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.8</para></refsect2>
+<refsect2 id="GTK-STOCK-GOTO-BOTTOM--CAPS" role="macro">
+<title>GTK_STOCK_GOTO_BOTTOM</title>
+<indexterm zone="GTK-STOCK-GOTO-BOTTOM--CAPS"><primary sortas="STOCK_GOTO_BOTTOM">GTK_STOCK_GOTO_BOTTOM</primary></indexterm><programlisting>#define GTK_STOCK_GOTO_BOTTOM      "gtk-goto-bottom"
+</programlisting>
+<para>
+The "Bottom" item.
+<inlinegraphic fileref="gtk-goto-bottom.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-GOTO-FIRST--CAPS" role="macro">
+<title>GTK_STOCK_GOTO_FIRST</title>
+<indexterm zone="GTK-STOCK-GOTO-FIRST--CAPS"><primary sortas="STOCK_GOTO_FIRST">GTK_STOCK_GOTO_FIRST</primary></indexterm><programlisting>#define GTK_STOCK_GOTO_FIRST       "gtk-goto-first"
+</programlisting>
+<para>
+The "First" item.
+<inlinegraphic fileref="gtk-goto-first-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-goto-first-rtl.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-GOTO-LAST--CAPS" role="macro">
+<title>GTK_STOCK_GOTO_LAST</title>
+<indexterm zone="GTK-STOCK-GOTO-LAST--CAPS"><primary sortas="STOCK_GOTO_LAST">GTK_STOCK_GOTO_LAST</primary></indexterm><programlisting>#define GTK_STOCK_GOTO_LAST        "gtk-goto-last"
+</programlisting>
+<para>
+The "Last" item.
+<inlinegraphic fileref="gtk-goto-last-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-goto-last-rtl.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-GOTO-TOP--CAPS" role="macro">
+<title>GTK_STOCK_GOTO_TOP</title>
+<indexterm zone="GTK-STOCK-GOTO-TOP--CAPS"><primary sortas="STOCK_GOTO_TOP">GTK_STOCK_GOTO_TOP</primary></indexterm><programlisting>#define GTK_STOCK_GOTO_TOP         "gtk-goto-top"
+</programlisting>
+<para>
+The "Top" item.
+<inlinegraphic fileref="gtk-goto-top.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-GO-BACK--CAPS" role="macro">
+<title>GTK_STOCK_GO_BACK</title>
+<indexterm zone="GTK-STOCK-GO-BACK--CAPS"><primary sortas="STOCK_GO_BACK">GTK_STOCK_GO_BACK</primary></indexterm><programlisting>#define GTK_STOCK_GO_BACK          "gtk-go-back"
+</programlisting>
+<para>
+The "Back" item.
+<inlinegraphic fileref="gtk-go-back-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-go-back-rtl.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-GO-DOWN--CAPS" role="macro">
+<title>GTK_STOCK_GO_DOWN</title>
+<indexterm zone="GTK-STOCK-GO-DOWN--CAPS"><primary sortas="STOCK_GO_DOWN">GTK_STOCK_GO_DOWN</primary></indexterm><programlisting>#define GTK_STOCK_GO_DOWN          "gtk-go-down"
+</programlisting>
+<para>
+The "Down" item.
+<inlinegraphic fileref="gtk-go-down.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-GO-FORWARD--CAPS" role="macro">
+<title>GTK_STOCK_GO_FORWARD</title>
+<indexterm zone="GTK-STOCK-GO-FORWARD--CAPS"><primary sortas="STOCK_GO_FORWARD">GTK_STOCK_GO_FORWARD</primary></indexterm><programlisting>#define GTK_STOCK_GO_FORWARD       "gtk-go-forward"
+</programlisting>
+<para>
+The "Forward" item.
+<inlinegraphic fileref="gtk-go-forward-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-go-forward-rtl.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-GO-UP--CAPS" role="macro">
+<title>GTK_STOCK_GO_UP</title>
+<indexterm zone="GTK-STOCK-GO-UP--CAPS"><primary sortas="STOCK_GO_UP">GTK_STOCK_GO_UP</primary></indexterm><programlisting>#define GTK_STOCK_GO_UP            "gtk-go-up"
+</programlisting>
+<para>
+The "Up" item.
+<inlinegraphic fileref="gtk-go-up.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-HARDDISK--CAPS" role="macro" condition="since:2.4">
+<title>GTK_STOCK_HARDDISK</title>
+<indexterm zone="GTK-STOCK-HARDDISK--CAPS" role="2.4"><primary sortas="STOCK_HARDDISK">GTK_STOCK_HARDDISK</primary></indexterm><programlisting>#define GTK_STOCK_HARDDISK         "gtk-harddisk"
+</programlisting>
+<para>
+The "Harddisk" item.
+<inlinegraphic fileref="gtk-harddisk.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="GTK-STOCK-HELP--CAPS" role="macro">
+<title>GTK_STOCK_HELP</title>
+<indexterm zone="GTK-STOCK-HELP--CAPS"><primary sortas="STOCK_HELP">GTK_STOCK_HELP</primary></indexterm><programlisting>#define GTK_STOCK_HELP             "gtk-help"
+</programlisting>
+<para>
+The "Help" item.
+<inlinegraphic fileref="gtk-help.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-HOME--CAPS" role="macro">
+<title>GTK_STOCK_HOME</title>
+<indexterm zone="GTK-STOCK-HOME--CAPS"><primary sortas="STOCK_HOME">GTK_STOCK_HOME</primary></indexterm><programlisting>#define GTK_STOCK_HOME             "gtk-home"
+</programlisting>
+<para>
+The "Home" item.
+<inlinegraphic fileref="gtk-home.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-INDENT--CAPS" role="macro" condition="since:2.4">
+<title>GTK_STOCK_INDENT</title>
+<indexterm zone="GTK-STOCK-INDENT--CAPS" role="2.4"><primary sortas="STOCK_INDENT">GTK_STOCK_INDENT</primary></indexterm><programlisting>#define GTK_STOCK_INDENT           "gtk-indent"
+</programlisting>
+<para>
+The "Indent" item.
+<inlinegraphic fileref="gtk-indent-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-indent-rtl.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="GTK-STOCK-INDEX--CAPS" role="macro">
+<title>GTK_STOCK_INDEX</title>
+<indexterm zone="GTK-STOCK-INDEX--CAPS"><primary sortas="STOCK_INDEX">GTK_STOCK_INDEX</primary></indexterm><programlisting>#define GTK_STOCK_INDEX            "gtk-index"
+</programlisting>
+<para>
+The "Index" item.
+<inlinegraphic fileref="gtk-index.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-INFO--CAPS" role="macro" condition="since:2.8">
+<title>GTK_STOCK_INFO</title>
+<indexterm zone="GTK-STOCK-INFO--CAPS" role="2.8"><primary sortas="STOCK_INFO">GTK_STOCK_INFO</primary></indexterm><programlisting>#define GTK_STOCK_INFO             "gtk-info"
+</programlisting>
+<para>
+The "Info" item.
+<inlinegraphic fileref="gtk-info.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.8</para></refsect2>
+<refsect2 id="GTK-STOCK-ITALIC--CAPS" role="macro">
+<title>GTK_STOCK_ITALIC</title>
+<indexterm zone="GTK-STOCK-ITALIC--CAPS"><primary sortas="STOCK_ITALIC">GTK_STOCK_ITALIC</primary></indexterm><programlisting>#define GTK_STOCK_ITALIC           "gtk-italic"
+</programlisting>
+<para>
+The "Italic" item.
+<inlinegraphic fileref="gtk-italic.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-JUMP-TO--CAPS" role="macro">
+<title>GTK_STOCK_JUMP_TO</title>
+<indexterm zone="GTK-STOCK-JUMP-TO--CAPS"><primary sortas="STOCK_JUMP_TO">GTK_STOCK_JUMP_TO</primary></indexterm><programlisting>#define GTK_STOCK_JUMP_TO          "gtk-jump-to"
+</programlisting>
+<para>
+The "Jump to" item.
+<inlinegraphic fileref="gtk-jump-to-ltr.png" format="PNG"></inlinegraphic>
+RTL-variant
+<inlinegraphic fileref="gtk-jump-to-rtl.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-JUSTIFY-CENTER--CAPS" role="macro">
+<title>GTK_STOCK_JUSTIFY_CENTER</title>
+<indexterm zone="GTK-STOCK-JUSTIFY-CENTER--CAPS"><primary sortas="STOCK_JUSTIFY_CENTER">GTK_STOCK_JUSTIFY_CENTER</primary></indexterm><programlisting>#define GTK_STOCK_JUSTIFY_CENTER   "gtk-justify-center"
+</programlisting>
+<para>
+The "Center" item.
+<inlinegraphic fileref="gtk-justify-center.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-JUSTIFY-FILL--CAPS" role="macro">
+<title>GTK_STOCK_JUSTIFY_FILL</title>
+<indexterm zone="GTK-STOCK-JUSTIFY-FILL--CAPS"><primary sortas="STOCK_JUSTIFY_FILL">GTK_STOCK_JUSTIFY_FILL</primary></indexterm><programlisting>#define GTK_STOCK_JUSTIFY_FILL     "gtk-justify-fill"
+</programlisting>
+<para>
+The "Fill" item.
+<inlinegraphic fileref="gtk-justify-fill.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-JUSTIFY-LEFT--CAPS" role="macro">
+<title>GTK_STOCK_JUSTIFY_LEFT</title>
+<indexterm zone="GTK-STOCK-JUSTIFY-LEFT--CAPS"><primary sortas="STOCK_JUSTIFY_LEFT">GTK_STOCK_JUSTIFY_LEFT</primary></indexterm><programlisting>#define GTK_STOCK_JUSTIFY_LEFT     "gtk-justify-left"
+</programlisting>
+<para>
+The "Left" item.
+<inlinegraphic fileref="gtk-justify-left.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-JUSTIFY-RIGHT--CAPS" role="macro">
+<title>GTK_STOCK_JUSTIFY_RIGHT</title>
+<indexterm zone="GTK-STOCK-JUSTIFY-RIGHT--CAPS"><primary sortas="STOCK_JUSTIFY_RIGHT">GTK_STOCK_JUSTIFY_RIGHT</primary></indexterm><programlisting>#define GTK_STOCK_JUSTIFY_RIGHT    "gtk-justify-right"
+</programlisting>
+<para>
+The "Right" item.
+<inlinegraphic fileref="gtk-justify-right.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-LEAVE-FULLSCREEN--CAPS" role="macro" condition="since:2.8">
+<title>GTK_STOCK_LEAVE_FULLSCREEN</title>
+<indexterm zone="GTK-STOCK-LEAVE-FULLSCREEN--CAPS" role="2.8"><primary sortas="STOCK_LEAVE_FULLSCREEN">GTK_STOCK_LEAVE_FULLSCREEN</primary></indexterm><programlisting>#define GTK_STOCK_LEAVE_FULLSCREEN "gtk-leave-fullscreen"
+</programlisting>
+<para>
+The "Leave Fullscreen" item.
+<inlinegraphic fileref="gtk-leave-fullscreen.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.8</para></refsect2>
+<refsect2 id="GTK-STOCK-MEDIA-FORWARD--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_MEDIA_FORWARD</title>
+<indexterm zone="GTK-STOCK-MEDIA-FORWARD--CAPS" role="2.6"><primary sortas="STOCK_MEDIA_FORWARD">GTK_STOCK_MEDIA_FORWARD</primary></indexterm><programlisting>#define GTK_STOCK_MEDIA_FORWARD    "gtk-media-forward"
+</programlisting>
+<para>
+The "Media Forward" item.
+<inlinegraphic fileref="gtk-media-forward-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-media-forward-rtl.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-MEDIA-NEXT--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_MEDIA_NEXT</title>
+<indexterm zone="GTK-STOCK-MEDIA-NEXT--CAPS" role="2.6"><primary sortas="STOCK_MEDIA_NEXT">GTK_STOCK_MEDIA_NEXT</primary></indexterm><programlisting>#define GTK_STOCK_MEDIA_NEXT       "gtk-media-next"
+</programlisting>
+<para>
+The "Media Next" item.
+<inlinegraphic fileref="gtk-media-next-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-media-next-rtl.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-MEDIA-PAUSE--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_MEDIA_PAUSE</title>
+<indexterm zone="GTK-STOCK-MEDIA-PAUSE--CAPS" role="2.6"><primary sortas="STOCK_MEDIA_PAUSE">GTK_STOCK_MEDIA_PAUSE</primary></indexterm><programlisting>#define GTK_STOCK_MEDIA_PAUSE      "gtk-media-pause"
+</programlisting>
+<para>
+The "Media Pause" item.
+<inlinegraphic fileref="gtk-media-pause.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-MEDIA-PLAY--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_MEDIA_PLAY</title>
+<indexterm zone="GTK-STOCK-MEDIA-PLAY--CAPS" role="2.6"><primary sortas="STOCK_MEDIA_PLAY">GTK_STOCK_MEDIA_PLAY</primary></indexterm><programlisting>#define GTK_STOCK_MEDIA_PLAY       "gtk-media-play"
+</programlisting>
+<para>
+The "Media Play" item.
+<inlinegraphic fileref="gtk-media-play-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-media-play-rtl.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-MEDIA-PREVIOUS--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_MEDIA_PREVIOUS</title>
+<indexterm zone="GTK-STOCK-MEDIA-PREVIOUS--CAPS" role="2.6"><primary sortas="STOCK_MEDIA_PREVIOUS">GTK_STOCK_MEDIA_PREVIOUS</primary></indexterm><programlisting>#define GTK_STOCK_MEDIA_PREVIOUS   "gtk-media-previous"
+</programlisting>
+<para>
+The "Media Previous" item.
+<inlinegraphic fileref="gtk-media-previous-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-media-previous-rtl.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-MEDIA-RECORD--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_MEDIA_RECORD</title>
+<indexterm zone="GTK-STOCK-MEDIA-RECORD--CAPS" role="2.6"><primary sortas="STOCK_MEDIA_RECORD">GTK_STOCK_MEDIA_RECORD</primary></indexterm><programlisting>#define GTK_STOCK_MEDIA_RECORD     "gtk-media-record"
+</programlisting>
+<para>
+The "Media Record" item.
+<inlinegraphic fileref="gtk-media-record.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-MEDIA-REWIND--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_MEDIA_REWIND</title>
+<indexterm zone="GTK-STOCK-MEDIA-REWIND--CAPS" role="2.6"><primary sortas="STOCK_MEDIA_REWIND">GTK_STOCK_MEDIA_REWIND</primary></indexterm><programlisting>#define GTK_STOCK_MEDIA_REWIND     "gtk-media-rewind"
+</programlisting>
+<para>
+The "Media Rewind" item.
+<inlinegraphic fileref="gtk-media-rewind-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-media-rewind-rtl.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-MEDIA-STOP--CAPS" role="macro" condition="since:2.6">
+<title>GTK_STOCK_MEDIA_STOP</title>
+<indexterm zone="GTK-STOCK-MEDIA-STOP--CAPS" role="2.6"><primary sortas="STOCK_MEDIA_STOP">GTK_STOCK_MEDIA_STOP</primary></indexterm><programlisting>#define GTK_STOCK_MEDIA_STOP       "gtk-media-stop"
+</programlisting>
+<para>
+The "Media Stop" item.
+<inlinegraphic fileref="gtk-media-stop.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GTK-STOCK-MISSING-IMAGE--CAPS" role="macro">
+<title>GTK_STOCK_MISSING_IMAGE</title>
+<indexterm zone="GTK-STOCK-MISSING-IMAGE--CAPS"><primary sortas="STOCK_MISSING_IMAGE">GTK_STOCK_MISSING_IMAGE</primary></indexterm><programlisting>#define GTK_STOCK_MISSING_IMAGE    "gtk-missing-image"
+</programlisting>
+<para>
+The "Missing image" icon.
+<inlinegraphic fileref="gtk-missing-image.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-NETWORK--CAPS" role="macro" condition="since:2.4">
+<title>GTK_STOCK_NETWORK</title>
+<indexterm zone="GTK-STOCK-NETWORK--CAPS" role="2.4"><primary sortas="STOCK_NETWORK">GTK_STOCK_NETWORK</primary></indexterm><programlisting>#define GTK_STOCK_NETWORK          "gtk-network"
+</programlisting>
+<para>
+The "Network" item.
+<inlinegraphic fileref="gtk-network.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="GTK-STOCK-NEW--CAPS" role="macro">
+<title>GTK_STOCK_NEW</title>
+<indexterm zone="GTK-STOCK-NEW--CAPS"><primary sortas="STOCK_NEW">GTK_STOCK_NEW</primary></indexterm><programlisting>#define GTK_STOCK_NEW              "gtk-new"
+</programlisting>
+<para>
+The "New" item.
+<inlinegraphic fileref="gtk-new.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-NO--CAPS" role="macro">
+<title>GTK_STOCK_NO</title>
+<indexterm zone="GTK-STOCK-NO--CAPS"><primary sortas="STOCK_NO">GTK_STOCK_NO</primary></indexterm><programlisting>#define GTK_STOCK_NO               "gtk-no"
+</programlisting>
+<para>
+The "No" item.
+<inlinegraphic fileref="gtk-no.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-OK--CAPS" role="macro">
+<title>GTK_STOCK_OK</title>
+<indexterm zone="GTK-STOCK-OK--CAPS"><primary sortas="STOCK_OK">GTK_STOCK_OK</primary></indexterm><programlisting>#define GTK_STOCK_OK               "gtk-ok"
+</programlisting>
+<para>
+The "OK" item.
+<inlinegraphic fileref="gtk-ok.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-OPEN--CAPS" role="macro">
+<title>GTK_STOCK_OPEN</title>
+<indexterm zone="GTK-STOCK-OPEN--CAPS"><primary sortas="STOCK_OPEN">GTK_STOCK_OPEN</primary></indexterm><programlisting>#define GTK_STOCK_OPEN             "gtk-open"
+</programlisting>
+<para>
+The "Open" item.
+<inlinegraphic fileref="gtk-open.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-ORIENTATION-LANDSCAPE--CAPS" role="macro" condition="since:2.10">
+<title>GTK_STOCK_ORIENTATION_LANDSCAPE</title>
+<indexterm zone="GTK-STOCK-ORIENTATION-LANDSCAPE--CAPS" role="2.10"><primary sortas="STOCK_ORIENTATION_LANDSCAPE">GTK_STOCK_ORIENTATION_LANDSCAPE</primary></indexterm><programlisting>#define GTK_STOCK_ORIENTATION_LANDSCAPE "gtk-orientation-landscape"
+</programlisting>
+<para>
+The "Landscape Orientation" item.
+<inlinegraphic fileref="gtk-orientation-landscape.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-STOCK-ORIENTATION-PORTRAIT--CAPS" role="macro" condition="since:2.10">
+<title>GTK_STOCK_ORIENTATION_PORTRAIT</title>
+<indexterm zone="GTK-STOCK-ORIENTATION-PORTRAIT--CAPS" role="2.10"><primary sortas="STOCK_ORIENTATION_PORTRAIT">GTK_STOCK_ORIENTATION_PORTRAIT</primary></indexterm><programlisting>#define GTK_STOCK_ORIENTATION_PORTRAIT "gtk-orientation-portrait"
+</programlisting>
+<para>
+The "Portrait Orientation" item.
+<inlinegraphic fileref="gtk-orientation-portrait.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-STOCK-ORIENTATION-REVERSE-LANDSCAPE--CAPS" role="macro" condition="since:2.10">
+<title>GTK_STOCK_ORIENTATION_REVERSE_LANDSCAPE</title>
+<indexterm zone="GTK-STOCK-ORIENTATION-REVERSE-LANDSCAPE--CAPS" role="2.10"><primary sortas="STOCK_ORIENTATION_REVERSE_LANDSCAPE">GTK_STOCK_ORIENTATION_REVERSE_LANDSCAPE</primary></indexterm><programlisting>#define GTK_STOCK_ORIENTATION_REVERSE_LANDSCAPE "gtk-orientation-reverse-landscape"
+</programlisting>
+<para>
+The "Reverse Landscape Orientation" item.
+<inlinegraphic fileref="gtk-orientation-reverse-landscape.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-STOCK-ORIENTATION-REVERSE-PORTRAIT--CAPS" role="macro" condition="since:2.10">
+<title>GTK_STOCK_ORIENTATION_REVERSE_PORTRAIT</title>
+<indexterm zone="GTK-STOCK-ORIENTATION-REVERSE-PORTRAIT--CAPS" role="2.10"><primary sortas="STOCK_ORIENTATION_REVERSE_PORTRAIT">GTK_STOCK_ORIENTATION_REVERSE_PORTRAIT</primary></indexterm><programlisting>#define GTK_STOCK_ORIENTATION_REVERSE_PORTRAIT "gtk-orientation-reverse-portrait"
+</programlisting>
+<para>
+The "Reverse Portrait Orientation" item.
+<inlinegraphic fileref="gtk-orientation-reverse-portrait.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-STOCK-PAGE-SETUP--CAPS" role="macro" condition="since:2.14">
+<title>GTK_STOCK_PAGE_SETUP</title>
+<indexterm zone="GTK-STOCK-PAGE-SETUP--CAPS" role="2.14"><primary sortas="STOCK_PAGE_SETUP">GTK_STOCK_PAGE_SETUP</primary></indexterm><programlisting>#define GTK_STOCK_PAGE_SETUP       "gtk-page-setup"
+</programlisting>
+<para>
+The "Page Setup" item.
+<inlinegraphic fileref="gtk-page-setup.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="GTK-STOCK-PASTE--CAPS" role="macro">
+<title>GTK_STOCK_PASTE</title>
+<indexterm zone="GTK-STOCK-PASTE--CAPS"><primary sortas="STOCK_PASTE">GTK_STOCK_PASTE</primary></indexterm><programlisting>#define GTK_STOCK_PASTE            "gtk-paste"
+</programlisting>
+<para>
+The "Paste" item.
+<inlinegraphic fileref="gtk-paste.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-PREFERENCES--CAPS" role="macro">
+<title>GTK_STOCK_PREFERENCES</title>
+<indexterm zone="GTK-STOCK-PREFERENCES--CAPS"><primary sortas="STOCK_PREFERENCES">GTK_STOCK_PREFERENCES</primary></indexterm><programlisting>#define GTK_STOCK_PREFERENCES      "gtk-preferences"
+</programlisting>
+<para>
+The "Preferences" item.
+<inlinegraphic fileref="gtk-preferences.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-PRINT--CAPS" role="macro">
+<title>GTK_STOCK_PRINT</title>
+<indexterm zone="GTK-STOCK-PRINT--CAPS"><primary sortas="STOCK_PRINT">GTK_STOCK_PRINT</primary></indexterm><programlisting>#define GTK_STOCK_PRINT            "gtk-print"
+</programlisting>
+<para>
+The "Print" item.
+<inlinegraphic fileref="gtk-print.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-PRINT-ERROR--CAPS" role="macro" condition="since:2.14">
+<title>GTK_STOCK_PRINT_ERROR</title>
+<indexterm zone="GTK-STOCK-PRINT-ERROR--CAPS" role="2.14"><primary sortas="STOCK_PRINT_ERROR">GTK_STOCK_PRINT_ERROR</primary></indexterm><programlisting>#define GTK_STOCK_PRINT_ERROR      "gtk-print-error"
+</programlisting>
+<para>
+The "Print Error" icon.
+<inlinegraphic fileref="gtk-print-error.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="GTK-STOCK-PRINT-PAUSED--CAPS" role="macro" condition="since:2.14">
+<title>GTK_STOCK_PRINT_PAUSED</title>
+<indexterm zone="GTK-STOCK-PRINT-PAUSED--CAPS" role="2.14"><primary sortas="STOCK_PRINT_PAUSED">GTK_STOCK_PRINT_PAUSED</primary></indexterm><programlisting>#define GTK_STOCK_PRINT_PAUSED     "gtk-print-paused"
+</programlisting>
+<para>
+The "Print Paused" icon.
+<inlinegraphic fileref="gtk-print-paused.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="GTK-STOCK-PRINT-PREVIEW--CAPS" role="macro">
+<title>GTK_STOCK_PRINT_PREVIEW</title>
+<indexterm zone="GTK-STOCK-PRINT-PREVIEW--CAPS"><primary sortas="STOCK_PRINT_PREVIEW">GTK_STOCK_PRINT_PREVIEW</primary></indexterm><programlisting>#define GTK_STOCK_PRINT_PREVIEW    "gtk-print-preview"
+</programlisting>
+<para>
+The "Print Preview" item.
+<inlinegraphic fileref="gtk-print-preview.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-PRINT-REPORT--CAPS" role="macro" condition="since:2.14">
+<title>GTK_STOCK_PRINT_REPORT</title>
+<indexterm zone="GTK-STOCK-PRINT-REPORT--CAPS" role="2.14"><primary sortas="STOCK_PRINT_REPORT">GTK_STOCK_PRINT_REPORT</primary></indexterm><programlisting>#define GTK_STOCK_PRINT_REPORT     "gtk-print-report"
+</programlisting>
+<para>
+The "Print Report" icon.
+<inlinegraphic fileref="gtk-print-report.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="GTK-STOCK-PRINT-WARNING--CAPS" role="macro" condition="since:2.14">
+<title>GTK_STOCK_PRINT_WARNING</title>
+<indexterm zone="GTK-STOCK-PRINT-WARNING--CAPS" role="2.14"><primary sortas="STOCK_PRINT_WARNING">GTK_STOCK_PRINT_WARNING</primary></indexterm><programlisting>#define GTK_STOCK_PRINT_WARNING    "gtk-print-warning"
+</programlisting>
+<para>
+The "Print Warning" icon.
+<inlinegraphic fileref="gtk-print-warning.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="GTK-STOCK-PROPERTIES--CAPS" role="macro">
+<title>GTK_STOCK_PROPERTIES</title>
+<indexterm zone="GTK-STOCK-PROPERTIES--CAPS"><primary sortas="STOCK_PROPERTIES">GTK_STOCK_PROPERTIES</primary></indexterm><programlisting>#define GTK_STOCK_PROPERTIES       "gtk-properties"
+</programlisting>
+<para>
+The "Properties" item.
+<inlinegraphic fileref="gtk-properties.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-QUIT--CAPS" role="macro">
+<title>GTK_STOCK_QUIT</title>
+<indexterm zone="GTK-STOCK-QUIT--CAPS"><primary sortas="STOCK_QUIT">GTK_STOCK_QUIT</primary></indexterm><programlisting>#define GTK_STOCK_QUIT             "gtk-quit"
+</programlisting>
+<para>
+The "Quit" item.
+<inlinegraphic fileref="gtk-quit.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-REDO--CAPS" role="macro">
+<title>GTK_STOCK_REDO</title>
+<indexterm zone="GTK-STOCK-REDO--CAPS"><primary sortas="STOCK_REDO">GTK_STOCK_REDO</primary></indexterm><programlisting>#define GTK_STOCK_REDO             "gtk-redo"
+</programlisting>
+<para>
+The "Redo" item.
+<inlinegraphic fileref="gtk-redo-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-redo-rtl.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-REFRESH--CAPS" role="macro">
+<title>GTK_STOCK_REFRESH</title>
+<indexterm zone="GTK-STOCK-REFRESH--CAPS"><primary sortas="STOCK_REFRESH">GTK_STOCK_REFRESH</primary></indexterm><programlisting>#define GTK_STOCK_REFRESH          "gtk-refresh"
+</programlisting>
+<para>
+The "Refresh" item.
+<inlinegraphic fileref="gtk-refresh.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-REMOVE--CAPS" role="macro">
+<title>GTK_STOCK_REMOVE</title>
+<indexterm zone="GTK-STOCK-REMOVE--CAPS"><primary sortas="STOCK_REMOVE">GTK_STOCK_REMOVE</primary></indexterm><programlisting>#define GTK_STOCK_REMOVE           "gtk-remove"
+</programlisting>
+<para>
+The "Remove" item.
+<inlinegraphic fileref="gtk-remove.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-REVERT-TO-SAVED--CAPS" role="macro">
+<title>GTK_STOCK_REVERT_TO_SAVED</title>
+<indexterm zone="GTK-STOCK-REVERT-TO-SAVED--CAPS"><primary sortas="STOCK_REVERT_TO_SAVED">GTK_STOCK_REVERT_TO_SAVED</primary></indexterm><programlisting>#define GTK_STOCK_REVERT_TO_SAVED  "gtk-revert-to-saved"
+</programlisting>
+<para>
+The "Revert" item.
+<inlinegraphic fileref="gtk-revert-to-saved-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-revert-to-saved-rtl.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-SAVE--CAPS" role="macro">
+<title>GTK_STOCK_SAVE</title>
+<indexterm zone="GTK-STOCK-SAVE--CAPS"><primary sortas="STOCK_SAVE">GTK_STOCK_SAVE</primary></indexterm><programlisting>#define GTK_STOCK_SAVE             "gtk-save"
+</programlisting>
+<para>
+The "Save" item.
+<inlinegraphic fileref="gtk-save.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-SAVE-AS--CAPS" role="macro">
+<title>GTK_STOCK_SAVE_AS</title>
+<indexterm zone="GTK-STOCK-SAVE-AS--CAPS"><primary sortas="STOCK_SAVE_AS">GTK_STOCK_SAVE_AS</primary></indexterm><programlisting>#define GTK_STOCK_SAVE_AS          "gtk-save-as"
+</programlisting>
+<para>
+The "Save As" item.
+<inlinegraphic fileref="gtk-save-as.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-SELECT-ALL--CAPS" role="macro" condition="since:2.10">
+<title>GTK_STOCK_SELECT_ALL</title>
+<indexterm zone="GTK-STOCK-SELECT-ALL--CAPS" role="2.10"><primary sortas="STOCK_SELECT_ALL">GTK_STOCK_SELECT_ALL</primary></indexterm><programlisting>#define GTK_STOCK_SELECT_ALL       "gtk-select-all"
+</programlisting>
+<para>
+The "Select All" item.
+<inlinegraphic fileref="gtk-select-all.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-STOCK-SELECT-COLOR--CAPS" role="macro">
+<title>GTK_STOCK_SELECT_COLOR</title>
+<indexterm zone="GTK-STOCK-SELECT-COLOR--CAPS"><primary sortas="STOCK_SELECT_COLOR">GTK_STOCK_SELECT_COLOR</primary></indexterm><programlisting>#define GTK_STOCK_SELECT_COLOR     "gtk-select-color"
+</programlisting>
+<para>
+The "Color" item.
+<inlinegraphic fileref="gtk-select-color.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-SELECT-FONT--CAPS" role="macro">
+<title>GTK_STOCK_SELECT_FONT</title>
+<indexterm zone="GTK-STOCK-SELECT-FONT--CAPS"><primary sortas="STOCK_SELECT_FONT">GTK_STOCK_SELECT_FONT</primary></indexterm><programlisting>#define GTK_STOCK_SELECT_FONT      "gtk-select-font"
+</programlisting>
+<para>
+The "Font" item.
+<inlinegraphic fileref="gtk-font.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-SORT-ASCENDING--CAPS" role="macro">
+<title>GTK_STOCK_SORT_ASCENDING</title>
+<indexterm zone="GTK-STOCK-SORT-ASCENDING--CAPS"><primary sortas="STOCK_SORT_ASCENDING">GTK_STOCK_SORT_ASCENDING</primary></indexterm><programlisting>#define GTK_STOCK_SORT_ASCENDING   "gtk-sort-ascending"
+</programlisting>
+<para>
+The "Ascending" item.
+<inlinegraphic fileref="gtk-sort-ascending.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-SORT-DESCENDING--CAPS" role="macro">
+<title>GTK_STOCK_SORT_DESCENDING</title>
+<indexterm zone="GTK-STOCK-SORT-DESCENDING--CAPS"><primary sortas="STOCK_SORT_DESCENDING">GTK_STOCK_SORT_DESCENDING</primary></indexterm><programlisting>#define GTK_STOCK_SORT_DESCENDING  "gtk-sort-descending"
+</programlisting>
+<para>
+The "Descending" item.
+<inlinegraphic fileref="gtk-sort-descending.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-SPELL-CHECK--CAPS" role="macro">
+<title>GTK_STOCK_SPELL_CHECK</title>
+<indexterm zone="GTK-STOCK-SPELL-CHECK--CAPS"><primary sortas="STOCK_SPELL_CHECK">GTK_STOCK_SPELL_CHECK</primary></indexterm><programlisting>#define GTK_STOCK_SPELL_CHECK      "gtk-spell-check"
+</programlisting>
+<para>
+The "Spell Check" item.
+<inlinegraphic fileref="gtk-spell-check.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-STOP--CAPS" role="macro">
+<title>GTK_STOCK_STOP</title>
+<indexterm zone="GTK-STOCK-STOP--CAPS"><primary sortas="STOCK_STOP">GTK_STOCK_STOP</primary></indexterm><programlisting>#define GTK_STOCK_STOP             "gtk-stop"
+</programlisting>
+<para>
+The "Stop" item.
+<inlinegraphic fileref="gtk-stop.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-STRIKETHROUGH--CAPS" role="macro">
+<title>GTK_STOCK_STRIKETHROUGH</title>
+<indexterm zone="GTK-STOCK-STRIKETHROUGH--CAPS"><primary sortas="STOCK_STRIKETHROUGH">GTK_STOCK_STRIKETHROUGH</primary></indexterm><programlisting>#define GTK_STOCK_STRIKETHROUGH    "gtk-strikethrough"
+</programlisting>
+<para>
+The "Strikethrough" item.
+<inlinegraphic fileref="gtk-strikethrough.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-UNDELETE--CAPS" role="macro">
+<title>GTK_STOCK_UNDELETE</title>
+<indexterm zone="GTK-STOCK-UNDELETE--CAPS"><primary sortas="STOCK_UNDELETE">GTK_STOCK_UNDELETE</primary></indexterm><programlisting>#define GTK_STOCK_UNDELETE         "gtk-undelete"
+</programlisting>
+<para>
+The "Undelete" item.
+<inlinegraphic fileref="gtk-undelete-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-undelete-rtl.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-UNDERLINE--CAPS" role="macro">
+<title>GTK_STOCK_UNDERLINE</title>
+<indexterm zone="GTK-STOCK-UNDERLINE--CAPS"><primary sortas="STOCK_UNDERLINE">GTK_STOCK_UNDERLINE</primary></indexterm><programlisting>#define GTK_STOCK_UNDERLINE        "gtk-underline"
+</programlisting>
+<para>
+The "Underline" item.
+<inlinegraphic fileref="gtk-underline.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-UNDO--CAPS" role="macro">
+<title>GTK_STOCK_UNDO</title>
+<indexterm zone="GTK-STOCK-UNDO--CAPS"><primary sortas="STOCK_UNDO">GTK_STOCK_UNDO</primary></indexterm><programlisting>#define GTK_STOCK_UNDO             "gtk-undo"
+</programlisting>
+<para>
+The "Undo" item.
+<inlinegraphic fileref="gtk-undo-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-undo-rtl.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-UNINDENT--CAPS" role="macro" condition="since:2.4">
+<title>GTK_STOCK_UNINDENT</title>
+<indexterm zone="GTK-STOCK-UNINDENT--CAPS" role="2.4"><primary sortas="STOCK_UNINDENT">GTK_STOCK_UNINDENT</primary></indexterm><programlisting>#define GTK_STOCK_UNINDENT         "gtk-unindent"
+</programlisting>
+<para>
+The "Unindent" item.
+<inlinegraphic fileref="gtk-unindent-ltr.png" format="PNG"></inlinegraphic>
+RTL variant
+<inlinegraphic fileref="gtk-unindent-rtl.png" format="PNG"></inlinegraphic>
+</para><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="GTK-STOCK-YES--CAPS" role="macro">
+<title>GTK_STOCK_YES</title>
+<indexterm zone="GTK-STOCK-YES--CAPS"><primary sortas="STOCK_YES">GTK_STOCK_YES</primary></indexterm><programlisting>#define GTK_STOCK_YES              "gtk-yes"
+</programlisting>
+<para>
+The "Yes" item.
+<inlinegraphic fileref="gtk-yes.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-ZOOM-100--CAPS" role="macro">
+<title>GTK_STOCK_ZOOM_100</title>
+<indexterm zone="GTK-STOCK-ZOOM-100--CAPS"><primary sortas="STOCK_ZOOM_100">GTK_STOCK_ZOOM_100</primary></indexterm><programlisting>#define GTK_STOCK_ZOOM_100         "gtk-zoom-100"
+</programlisting>
+<para>
+The "Zoom 100%" item.
+<inlinegraphic fileref="gtk-zoom-100.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-ZOOM-FIT--CAPS" role="macro">
+<title>GTK_STOCK_ZOOM_FIT</title>
+<indexterm zone="GTK-STOCK-ZOOM-FIT--CAPS"><primary sortas="STOCK_ZOOM_FIT">GTK_STOCK_ZOOM_FIT</primary></indexterm><programlisting>#define GTK_STOCK_ZOOM_FIT         "gtk-zoom-fit"
+</programlisting>
+<para>
+The "Zoom to Fit" item.
+<inlinegraphic fileref="gtk-zoom-fit.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-ZOOM-IN--CAPS" role="macro">
+<title>GTK_STOCK_ZOOM_IN</title>
+<indexterm zone="GTK-STOCK-ZOOM-IN--CAPS"><primary sortas="STOCK_ZOOM_IN">GTK_STOCK_ZOOM_IN</primary></indexterm><programlisting>#define GTK_STOCK_ZOOM_IN          "gtk-zoom-in"
+</programlisting>
+<para>
+The "Zoom In" item.
+<inlinegraphic fileref="gtk-zoom-in.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+<refsect2 id="GTK-STOCK-ZOOM-OUT--CAPS" role="macro">
+<title>GTK_STOCK_ZOOM_OUT</title>
+<indexterm zone="GTK-STOCK-ZOOM-OUT--CAPS"><primary sortas="STOCK_ZOOM_OUT">GTK_STOCK_ZOOM_OUT</primary></indexterm><programlisting>#define GTK_STOCK_ZOOM_OUT         "gtk-zoom-out"
+</programlisting>
+<para>
+The "Zoom Out" item.
+<inlinegraphic fileref="gtk-zoom-out.png" format="PNG"></inlinegraphic>
+</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

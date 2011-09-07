@@ -1,0 +1,1036 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkImage">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkImage.top_of_page">GtkImage</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkImage</refname>
+<refpurpose>A widget displaying an image</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkImage.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkImage-struct">GtkImage</link>;
+enum                <link linkend="GtkImageType">GtkImageType</link>;
+<link linkend="void">void</link>                <link linkend="gtk-image-get-icon-set">gtk_image_get_icon_set</link>              (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GtkIconSet">GtkIconSet</link> **icon_set,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> *size);
+<link linkend="void">void</link>                <link linkend="gtk-image-get-image">gtk_image_get_image</link>                 (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkImage">GdkImage</link> **gdk_image,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> **mask);
+<link linkend="GdkPixbuf">GdkPixbuf</link>*          <link linkend="gtk-image-get-pixbuf">gtk_image_get_pixbuf</link>                (<link linkend="GtkImage">GtkImage</link> *image);
+<link linkend="void">void</link>                <link linkend="gtk-image-get-pixmap">gtk_image_get_pixmap</link>                (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkPixmap">GdkPixmap</link> **pixmap,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> **mask);
+<link linkend="void">void</link>                <link linkend="gtk-image-get-stock">gtk_image_get_stock</link>                 (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="gchar">gchar</link> **stock_id,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> *size);
+<link linkend="GdkPixbufAnimation">GdkPixbufAnimation</link>* <link linkend="gtk-image-get-animation">gtk_image_get_animation</link>             (<link linkend="GtkImage">GtkImage</link> *image);
+<link linkend="void">void</link>                <link linkend="gtk-image-get-icon-name">gtk_image_get_icon_name</link>             (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         G_CONST_RETURN <link linkend="gchar">gchar</link> **icon_name,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> *size);
+<link linkend="void">void</link>                <link linkend="gtk-image-get-gicon">gtk_image_get_gicon</link>                 (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GIcon">GIcon</link> **gicon,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> *size);
+<link linkend="GtkImageType">GtkImageType</link>        <link linkend="gtk-image-get-storage-type">gtk_image_get_storage_type</link>          (<link linkend="GtkImage">GtkImage</link> *image);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-new-from-file">gtk_image_new_from_file</link>             (const <link linkend="gchar">gchar</link> *filename);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-new-from-icon-set">gtk_image_new_from_icon_set</link>         (<link linkend="GtkIconSet">GtkIconSet</link> *icon_set,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-new-from-image">gtk_image_new_from_image</link>            (<link linkend="GdkImage">GdkImage</link> *image,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *mask);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-new-from-pixbuf">gtk_image_new_from_pixbuf</link>           (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-new-from-pixmap">gtk_image_new_from_pixmap</link>           (<link linkend="GdkPixmap">GdkPixmap</link> *pixmap,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *mask);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-new-from-stock">gtk_image_new_from_stock</link>            (const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-new-from-animation">gtk_image_new_from_animation</link>        (<link linkend="GdkPixbufAnimation">GdkPixbufAnimation</link> *animation);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-new-from-icon-name">gtk_image_new_from_icon_name</link>        (const <link linkend="gchar">gchar</link> *icon_name,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-new-from-gicon">gtk_image_new_from_gicon</link>            (<link linkend="GIcon">GIcon</link> *icon,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);
+<link linkend="void">void</link>                <link linkend="gtk-image-set-from-file">gtk_image_set_from_file</link>             (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         const <link linkend="gchar">gchar</link> *filename);
+<link linkend="void">void</link>                <link linkend="gtk-image-set-from-icon-set">gtk_image_set_from_icon_set</link>         (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GtkIconSet">GtkIconSet</link> *icon_set,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);
+<link linkend="void">void</link>                <link linkend="gtk-image-set-from-image">gtk_image_set_from_image</link>            (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkImage">GdkImage</link> *gdk_image,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *mask);
+<link linkend="void">void</link>                <link linkend="gtk-image-set-from-pixbuf">gtk_image_set_from_pixbuf</link>           (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="void">void</link>                <link linkend="gtk-image-set-from-pixmap">gtk_image_set_from_pixmap</link>           (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkPixmap">GdkPixmap</link> *pixmap,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *mask);
+<link linkend="void">void</link>                <link linkend="gtk-image-set-from-stock">gtk_image_set_from_stock</link>            (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);
+<link linkend="void">void</link>                <link linkend="gtk-image-set-from-animation">gtk_image_set_from_animation</link>        (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkPixbufAnimation">GdkPixbufAnimation</link> *animation);
+<link linkend="void">void</link>                <link linkend="gtk-image-set-from-icon-name">gtk_image_set_from_icon_name</link>        (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         const <link linkend="gchar">gchar</link> *icon_name,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);
+<link linkend="void">void</link>                <link linkend="gtk-image-set-from-gicon">gtk_image_set_from_gicon</link>            (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GIcon">GIcon</link> *icon,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);
+<link linkend="void">void</link>                <link linkend="gtk-image-clear">gtk_image_clear</link>                     (<link linkend="GtkImage">GtkImage</link> *image);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-new">gtk_image_new</link>                       (void);
+<link linkend="void">void</link>                <link linkend="gtk-image-set">gtk_image_set</link>                       (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkImage">GdkImage</link> *val,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *mask);
+<link linkend="void">void</link>                <link linkend="gtk-image-get">gtk_image_get</link>                       (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkImage">GdkImage</link> **val,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> **mask);
+<link linkend="void">void</link>                <link linkend="gtk-image-set-pixel-size">gtk_image_set_pixel_size</link>            (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="gint">gint</link> pixel_size);
+<link linkend="gint">gint</link>                <link linkend="gtk-image-get-pixel-size">gtk_image_get_pixel_size</link>            (<link linkend="GtkImage">GtkImage</link> *image);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkImage.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkMisc">GtkMisc</link>
+                           +----GtkImage
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkImage.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkImage implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkImage.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkImage--file">file</link>&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkImage--gicon">gicon</link>&quot;                    <link linkend="GIcon">GIcon</link>*                : Read / Write
+  &quot;<link linkend="GtkImage--icon-name">icon-name</link>&quot;                <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkImage--icon-set">icon-set</link>&quot;                 <link linkend="GtkIconSet">GtkIconSet</link>*           : Read / Write
+  &quot;<link linkend="GtkImage--icon-size">icon-size</link>&quot;                <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkImage--image">image</link>&quot;                    <link linkend="GdkImage">GdkImage</link>*             : Read / Write
+  &quot;<link linkend="GtkImage--mask">mask</link>&quot;                     <link linkend="GdkPixmap">GdkPixmap</link>*            : Read / Write
+  &quot;<link linkend="GtkImage--pixbuf">pixbuf</link>&quot;                   <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write
+  &quot;<link linkend="GtkImage--pixbuf-animation">pixbuf-animation</link>&quot;         <link linkend="GdkPixbufAnimation">GdkPixbufAnimation</link>*   : Read / Write
+  &quot;<link linkend="GtkImage--pixel-size">pixel-size</link>&quot;               <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkImage--pixmap">pixmap</link>&quot;                   <link linkend="GdkPixmap">GdkPixmap</link>*            : Read / Write
+  &quot;<link linkend="GtkImage--stock">stock</link>&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkImage--storage-type">storage-type</link>&quot;             <link linkend="GtkImageType">GtkImageType</link>          : Read
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkImage.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkImage"><type>GtkImage</type></link> widget displays an image. Various kinds of object
+can be displayed as an image; most typically, you would load a
+<link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> ("pixel buffer") from a file, and then display that.
+There's a convenience function to do this, <link linkend="gtk-image-new-from-file"><function>gtk_image_new_from_file()</function></link>,
+used as follows:
+<informalexample><programlisting>
+  GtkWidget *image;
+  image = gtk_image_new_from_file ("myfile.png");
+</programlisting></informalexample>
+If the file isn't loaded successfully, the image will contain a
+"broken image" icon similar to that used in many web browsers.
+If you want to handle errors in loading the file yourself,
+for example by displaying an error message, then load the image with
+<link linkend="gdk-pixbuf-new-from-file"><function>gdk_pixbuf_new_from_file()</function></link>, then create the <link linkend="GtkImage"><type>GtkImage</type></link> with
+<link linkend="gtk-image-new-from-pixbuf"><function>gtk_image_new_from_pixbuf()</function></link>.
+</para>
+<para>
+The image file may contain an animation, if so the <link linkend="GtkImage"><type>GtkImage</type></link> will
+display an animation (<link linkend="GdkPixbufAnimation"><type>GdkPixbufAnimation</type></link>) instead of a static image.
+</para>
+<para>
+<link linkend="GtkImage"><type>GtkImage</type></link> is a subclass of <link linkend="GtkMisc"><type>GtkMisc</type></link>, which implies that you can
+align it (center, left, right) and add padding to it, using
+<link linkend="GtkMisc"><type>GtkMisc</type></link> methods.
+</para>
+<para>
+<link linkend="GtkImage"><type>GtkImage</type></link> is a "no window" widget (has no <link linkend="GdkWindow"><type>GdkWindow</type></link> of its own),
+so by default does not receive events. If you want to receive events
+on the image, such as button clicks, place the image inside a
+<link linkend="GtkEventBox"><type>GtkEventBox</type></link>, then connect to the event signals on the event box.
+<example>
+<title>Handling button press events on a
+<structname>GtkImage</structname>.</title>
+<programlisting>
+  static gboolean
+  button_press_callback (GtkWidget      *event_box,
+                         GdkEventButton *event,
+                         gpointer        data)
+  {
+    g_print ("Event box clicked at coordinates &percnt;f,&percnt;f\n",
+             event->x, event->y);
+    /* Returning TRUE means we handled the event, so the signal
+     * emission should be stopped (don't call any further
+     * callbacks that may be connected). Return FALSE
+     * to continue invoking callbacks.
+     */
+    return TRUE;
+  }
+  static GtkWidget*
+  create_image (void)
+  {
+    GtkWidget *image;
+    GtkWidget *event_box;
+    image = gtk_image_new_from_file ("myfile.png");
+    event_box = gtk_event_box_new (<!-- -->);
+    gtk_container_add (GTK_CONTAINER (event_box), image);
+    g_signal_connect (G_OBJECT (event_box),
+                      "button_press_event",
+                      G_CALLBACK (button_press_callback),
+                      image);
+    return image;
+  }
+</programlisting>
+</example>
+</para>
+<para>
+When handling events on the event box, keep in mind that coordinates
+in the image may be different from event box coordinates due to
+the alignment and padding settings on the image (see <link linkend="GtkMisc"><type>GtkMisc</type></link>).
+The simplest way to solve this is to set the alignment to 0.0
+(left/top), and set the padding to zero. Then the origin of
+the image will be the same as the origin of the event box.
+</para>
+<para>
+Sometimes an application will want to avoid depending on external data
+files, such as image files. GTK+ comes with a program to avoid this,
+called <application>gdk-pixbuf-csource</application>. This program
+allows you to convert an image into a C variable declaration, which
+can then be loaded into a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> using
+<link linkend="gdk-pixbuf-new-from-inline"><function>gdk_pixbuf_new_from_inline()</function></link>.
+</para>
+</refsect1>
+
+<refsect1 id="GtkImage.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkImage-struct" role="struct">
+<title>GtkImage</title>
+<indexterm zone="GtkImage-struct"><primary sortas="Image">GtkImage</primary></indexterm><programlisting>typedef struct _GtkImage GtkImage;</programlisting>
+<para>
+This struct contain private data only and should be accessed by the functions
+below.
+</para></refsect2>
+<refsect2 id="GtkImageType" role="enum">
+<title>enum GtkImageType</title>
+<indexterm zone="GtkImageType"><primary sortas="ImageType">GtkImageType</primary></indexterm><programlisting>typedef enum
+{
+  GTK_IMAGE_EMPTY,
+  GTK_IMAGE_PIXMAP,
+  GTK_IMAGE_IMAGE,
+  GTK_IMAGE_PIXBUF,
+  GTK_IMAGE_STOCK,
+  GTK_IMAGE_ICON_SET,
+  GTK_IMAGE_ANIMATION,
+  GTK_IMAGE_ICON_NAME,
+  GTK_IMAGE_GICON
+} GtkImageType;
+</programlisting>
+<para>
+Describes the image data representation used by a <link linkend="GtkImage"><type>GtkImage</type></link>. If you
+want to get the image from the widget, you can only get the
+currently-stored representation. e.g.  if the
+<link linkend="gtk-image-get-storage-type"><function>gtk_image_get_storage_type()</function></link> returns <link linkend="GTK-IMAGE-PIXBUF--CAPS"><type>GTK_IMAGE_PIXBUF</type></link>, then you can
+call <link linkend="gtk-image-get-pixbuf"><function>gtk_image_get_pixbuf()</function></link> but not <link linkend="gtk-image-get-stock"><function>gtk_image_get_stock()</function></link>.  For empty
+images, you can request any storage type (call any of the "get"
+functions), but they will all return <link linkend="NULL--CAPS"><literal>NULL</literal></link> values.
+</para><variablelist role="enum">
+<varlistentry id="GTK-IMAGE-EMPTY--CAPS" role="constant">
+<term><literal>GTK_IMAGE_EMPTY</literal></term>
+<listitem><simpara>there is no image displayed by the widget
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-IMAGE-PIXMAP--CAPS" role="constant">
+<term><literal>GTK_IMAGE_PIXMAP</literal></term>
+<listitem><simpara>the widget contains a <link linkend="GdkPixmap"><type>GdkPixmap</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-IMAGE-IMAGE--CAPS" role="constant">
+<term><literal>GTK_IMAGE_IMAGE</literal></term>
+<listitem><simpara>the widget contains a <link linkend="GdkImage"><type>GdkImage</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-IMAGE-PIXBUF--CAPS" role="constant">
+<term><literal>GTK_IMAGE_PIXBUF</literal></term>
+<listitem><simpara>the widget contains a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-IMAGE-STOCK--CAPS" role="constant">
+<term><literal>GTK_IMAGE_STOCK</literal></term>
+<listitem><simpara>the widget contains a stock icon name (see <xref linkend="gtk-Stock-Items"/>)
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-IMAGE-ICON-SET--CAPS" role="constant">
+<term><literal>GTK_IMAGE_ICON_SET</literal></term>
+<listitem><simpara>the widget contains a <link linkend="GtkIconSet"><type>GtkIconSet</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-IMAGE-ANIMATION--CAPS" role="constant">
+<term><literal>GTK_IMAGE_ANIMATION</literal></term>
+<listitem><simpara>the widget contains a <link linkend="GdkPixbufAnimation"><type>GdkPixbufAnimation</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-IMAGE-ICON-NAME--CAPS" role="constant">
+<term><literal>GTK_IMAGE_ICON_NAME</literal></term>
+<listitem><simpara>the widget contains a named icon. 
+  This image type was added in GTK+ 2.6
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-IMAGE-GICON--CAPS" role="constant">
+<term><literal>GTK_IMAGE_GICON</literal></term>
+<listitem><simpara>the widgte contains a <link linkend="GIcon"><type>GIcon</type></link>.
+  This image type was added in GTK+ 2.14
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-get-icon-set" role="function">
+<title>gtk_image_get_icon_set ()</title>
+<indexterm zone="gtk-image-get-icon-set"><primary sortas="image_get_icon_set">gtk_image_get_icon_set</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_get_icon_set              (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GtkIconSet">GtkIconSet</link> **icon_set,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> *size);</programlisting>
+<para>
+Gets the icon set and size being displayed by the <link linkend="GtkImage"><type>GtkImage</type></link>.
+The storage type of the image must be <link linkend="GTK-IMAGE-EMPTY--CAPS"><literal>GTK_IMAGE_EMPTY</literal></link> or
+<link linkend="GTK-IMAGE-ICON-SET--CAPS"><literal>GTK_IMAGE_ICON_SET</literal></link> (see <link linkend="gtk-image-get-storage-type"><function>gtk_image_get_storage_type()</function></link>).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon_set</parameter>&#160;:</term>
+<listitem><simpara> location to store a <link linkend="GtkIconSet"><type>GtkIconSet</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> location to store a stock icon size, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-get-image" role="function">
+<title>gtk_image_get_image ()</title>
+<indexterm zone="gtk-image-get-image"><primary sortas="image_get_image">gtk_image_get_image</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_get_image                 (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkImage">GdkImage</link> **gdk_image,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> **mask);</programlisting>
+<para>
+Gets the <link linkend="GdkImage"><type>GdkImage</type></link> and mask being displayed by the <link linkend="GtkImage"><type>GtkImage</type></link>.
+The storage type of the image must be <link linkend="GTK-IMAGE-EMPTY--CAPS"><literal>GTK_IMAGE_EMPTY</literal></link> or
+<link linkend="GTK-IMAGE-IMAGE--CAPS"><literal>GTK_IMAGE_IMAGE</literal></link> (see <link linkend="gtk-image-get-storage-type"><function>gtk_image_get_storage_type()</function></link>).
+The caller of this function does not own a reference to the
+returned image and mask.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gdk_image</parameter>&#160;:</term>
+<listitem><simpara> return location for a <link linkend="GtkImage"><type>GtkImage</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mask</parameter>&#160;:</term>
+<listitem><simpara> return location for a <link linkend="GdkBitmap"><type>GdkBitmap</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-get-pixbuf" role="function">
+<title>gtk_image_get_pixbuf ()</title>
+<indexterm zone="gtk-image-get-pixbuf"><primary sortas="image_get_pixbuf">gtk_image_get_pixbuf</primary></indexterm><programlisting><link linkend="GdkPixbuf">GdkPixbuf</link>*          gtk_image_get_pixbuf                (<link linkend="GtkImage">GtkImage</link> *image);</programlisting>
+<para>
+Gets the <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> being displayed by the <link linkend="GtkImage"><type>GtkImage</type></link>.
+The storage type of the image must be <link linkend="GTK-IMAGE-EMPTY--CAPS"><literal>GTK_IMAGE_EMPTY</literal></link> or
+<link linkend="GTK-IMAGE-PIXBUF--CAPS"><literal>GTK_IMAGE_PIXBUF</literal></link> (see <link linkend="gtk-image-get-storage-type"><function>gtk_image_get_storage_type()</function></link>).
+The caller of this function does not own a reference to the
+returned pixbuf.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the displayed pixbuf, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if the image is empty
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-get-pixmap" role="function">
+<title>gtk_image_get_pixmap ()</title>
+<indexterm zone="gtk-image-get-pixmap"><primary sortas="image_get_pixmap">gtk_image_get_pixmap</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_get_pixmap                (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkPixmap">GdkPixmap</link> **pixmap,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> **mask);</programlisting>
+<para>
+Gets the pixmap and mask being displayed by the <link linkend="GtkImage"><type>GtkImage</type></link>.
+The storage type of the image must be <link linkend="GTK-IMAGE-EMPTY--CAPS"><literal>GTK_IMAGE_EMPTY</literal></link> or
+<link linkend="GTK-IMAGE-PIXMAP--CAPS"><literal>GTK_IMAGE_PIXMAP</literal></link> (see <link linkend="gtk-image-get-storage-type"><function>gtk_image_get_storage_type()</function></link>).
+The caller of this function does not own a reference to the
+returned pixmap and mask.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pixmap</parameter>&#160;:</term>
+<listitem><simpara> location to store the pixmap, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mask</parameter>&#160;:</term>
+<listitem><simpara> location to store the mask, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-get-stock" role="function">
+<title>gtk_image_get_stock ()</title>
+<indexterm zone="gtk-image-get-stock"><primary sortas="image_get_stock">gtk_image_get_stock</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_get_stock                 (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="gchar">gchar</link> **stock_id,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> *size);</programlisting>
+<para>
+Gets the stock icon name and size being displayed by the <link linkend="GtkImage"><type>GtkImage</type></link>.
+The storage type of the image must be <link linkend="GTK-IMAGE-EMPTY--CAPS"><literal>GTK_IMAGE_EMPTY</literal></link> or
+<link linkend="GTK-IMAGE-STOCK--CAPS"><literal>GTK_IMAGE_STOCK</literal></link> (see <link linkend="gtk-image-get-storage-type"><function>gtk_image_get_storage_type()</function></link>).
+The returned string is owned by the <link linkend="GtkImage"><type>GtkImage</type></link> and should not
+be freed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> place to store a stock icon name, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> place to store a stock icon size, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-get-animation" role="function">
+<title>gtk_image_get_animation ()</title>
+<indexterm zone="gtk-image-get-animation"><primary sortas="image_get_animation">gtk_image_get_animation</primary></indexterm><programlisting><link linkend="GdkPixbufAnimation">GdkPixbufAnimation</link>* gtk_image_get_animation             (<link linkend="GtkImage">GtkImage</link> *image);</programlisting>
+<para>
+Gets the <link linkend="GdkPixbufAnimation"><type>GdkPixbufAnimation</type></link> being displayed by the <link linkend="GtkImage"><type>GtkImage</type></link>.
+The storage type of the image must be <link linkend="GTK-IMAGE-EMPTY--CAPS"><literal>GTK_IMAGE_EMPTY</literal></link> or
+<link linkend="GTK-IMAGE-ANIMATION--CAPS"><literal>GTK_IMAGE_ANIMATION</literal></link> (see <link linkend="gtk-image-get-storage-type"><function>gtk_image_get_storage_type()</function></link>).
+The caller of this function does not own a reference to the
+returned animation.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the displayed animation, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if the image is empty
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-get-icon-name" role="function" condition="since:2.6">
+<title>gtk_image_get_icon_name ()</title>
+<indexterm zone="gtk-image-get-icon-name" role="2.6"><primary sortas="image_get_icon_name">gtk_image_get_icon_name</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_get_icon_name             (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         G_CONST_RETURN <link linkend="gchar">gchar</link> **icon_name,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> *size);</programlisting>
+<para>
+Gets the icon name and size being displayed by the <link linkend="GtkImage"><type>GtkImage</type></link>.
+The storage type of the image must be <link linkend="GTK-IMAGE-EMPTY--CAPS"><literal>GTK_IMAGE_EMPTY</literal></link> or
+<link linkend="GTK-IMAGE-ICON-NAME--CAPS"><literal>GTK_IMAGE_ICON_NAME</literal></link> (see <link linkend="gtk-image-get-storage-type"><function>gtk_image_get_storage_type()</function></link>).
+The returned string is owned by the <link linkend="GtkImage"><type>GtkImage</type></link> and should not
+be freed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon_name</parameter>&#160;:</term>
+<listitem><simpara> place to store an icon name, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> place to store an icon size, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-image-get-gicon" role="function" condition="since:2.14">
+<title>gtk_image_get_gicon ()</title>
+<indexterm zone="gtk-image-get-gicon" role="2.14"><primary sortas="image_get_gicon">gtk_image_get_gicon</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_get_gicon                 (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GIcon">GIcon</link> **gicon,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> *size);</programlisting>
+<para>
+Gets the <link linkend="GIcon"><type>GIcon</type></link> and size being displayed by the <link linkend="GtkImage"><type>GtkImage</type></link>.
+The storage type of the image must be <link linkend="GTK-IMAGE-EMPTY--CAPS"><literal>GTK_IMAGE_EMPTY</literal></link> or
+<link linkend="GTK-IMAGE-GICON--CAPS"><literal>GTK_IMAGE_GICON</literal></link> (see <link linkend="gtk-image-get-storage-type"><function>gtk_image_get_storage_type()</function></link>).
+The caller of this function does not own a reference to the
+returned <link linkend="GIcon"><type>GIcon</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gicon</parameter>&#160;:</term>
+<listitem><simpara> place to store a <link linkend="GIcon"><type>GIcon</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> place to store an icon size, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-image-get-storage-type" role="function">
+<title>gtk_image_get_storage_type ()</title>
+<indexterm zone="gtk-image-get-storage-type"><primary sortas="image_get_storage_type">gtk_image_get_storage_type</primary></indexterm><programlisting><link linkend="GtkImageType">GtkImageType</link>        gtk_image_get_storage_type          (<link linkend="GtkImage">GtkImage</link> *image);</programlisting>
+<para>
+Gets the type of representation being used by the <link linkend="GtkImage"><type>GtkImage</type></link>
+to store image data. If the <link linkend="GtkImage"><type>GtkImage</type></link> has no image data,
+the return value will be <link linkend="GTK-IMAGE-EMPTY--CAPS"><literal>GTK_IMAGE_EMPTY</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> image representation being used
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-new-from-file" role="function">
+<title>gtk_image_new_from_file ()</title>
+<indexterm zone="gtk-image-new-from-file"><primary sortas="image_new_from_file">gtk_image_new_from_file</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_new_from_file             (const <link linkend="gchar">gchar</link> *filename);</programlisting>
+<para>
+Creates a new <link linkend="GtkImage"><type>GtkImage</type></link> displaying the file <parameter>filename</parameter>. If the file
+isn't found or can't be loaded, the resulting <link linkend="GtkImage"><type>GtkImage</type></link> will
+display a "broken image" icon. This function never returns <link linkend="NULL--CAPS"><literal>NULL</literal></link>,
+it always returns a valid <link linkend="GtkImage"><type>GtkImage</type></link> widget.
+</para>
+<para>
+If the file contains an animation, the image will contain an
+animation.
+</para>
+<para>
+If you need to detect failures to load the file, use
+<link linkend="gdk-pixbuf-new-from-file"><function>gdk_pixbuf_new_from_file()</function></link> to load the file yourself, then create
+the <link linkend="GtkImage"><type>GtkImage</type></link> from the pixbuf. (Or for animations, use
+<link linkend="gdk-pixbuf-animation-new-from-file"><function>gdk_pixbuf_animation_new_from_file()</function></link>).
+</para>
+<para>
+The storage type (<link linkend="gtk-image-get-storage-type"><function>gtk_image_get_storage_type()</function></link>) of the returned
+image is not defined, it will be whatever is appropriate for
+displaying the file.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> a filename
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-new-from-icon-set" role="function">
+<title>gtk_image_new_from_icon_set ()</title>
+<indexterm zone="gtk-image-new-from-icon-set"><primary sortas="image_new_from_icon_set">gtk_image_new_from_icon_set</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_new_from_icon_set         (<link linkend="GtkIconSet">GtkIconSet</link> *icon_set,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);</programlisting>
+<para>
+Creates a <link linkend="GtkImage"><type>GtkImage</type></link> displaying an icon set. Sample stock sizes are
+<link linkend="GTK-ICON-SIZE-MENU--CAPS"><type>GTK_ICON_SIZE_MENU</type></link>, <link linkend="GTK-ICON-SIZE-SMALL-TOOLBAR--CAPS"><type>GTK_ICON_SIZE_SMALL_TOOLBAR</type></link>. Instead of using
+this function, usually it's better to create a <link linkend="GtkIconFactory"><type>GtkIconFactory</type></link>, put
+your icon sets in the icon factory, add the icon factory to the
+list of default factories with <link linkend="gtk-icon-factory-add-default"><function>gtk_icon_factory_add_default()</function></link>, and
+then use <link linkend="gtk-image-new-from-stock"><function>gtk_image_new_from_stock()</function></link>. This will allow themes to
+override the icon you ship with your application.
+</para>
+<para>
+The <link linkend="GtkImage"><type>GtkImage</type></link> does not assume a reference to the
+icon set; you still need to unref it if you own references.
+<link linkend="GtkImage"><type>GtkImage</type></link> will add its own reference rather than adopting yours.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icon_set</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIconSet"><type>GtkIconSet</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a stock icon size
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-new-from-image" role="function">
+<title>gtk_image_new_from_image ()</title>
+<indexterm zone="gtk-image-new-from-image"><primary sortas="image_new_from_image">gtk_image_new_from_image</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_new_from_image            (<link linkend="GdkImage">GdkImage</link> *image,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *mask);</programlisting>
+<para>
+Creates a <link linkend="GtkImage"><type>GtkImage</type></link> widget displaying a <parameter>image</parameter> with a <parameter>mask</parameter>.
+A <link linkend="GdkImage"><type>GdkImage</type></link> is a client-side image buffer in the pixel format of the
+current display. The <link linkend="GtkImage"><type>GtkImage</type></link> does not assume a reference to the
+image or mask; you still need to unref them if you own references.
+<link linkend="GtkImage"><type>GtkImage</type></link> will add its own reference rather than adopting yours.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkImage"><type>GdkImage</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mask</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkBitmap"><type>GdkBitmap</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-new-from-pixbuf" role="function">
+<title>gtk_image_new_from_pixbuf ()</title>
+<indexterm zone="gtk-image-new-from-pixbuf"><primary sortas="image_new_from_pixbuf">gtk_image_new_from_pixbuf</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_new_from_pixbuf           (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Creates a new <link linkend="GtkImage"><type>GtkImage</type></link> displaying <parameter>pixbuf</parameter>.
+The <link linkend="GtkImage"><type>GtkImage</type></link> does not assume a reference to the
+pixbuf; you still need to unref it if you own references.
+<link linkend="GtkImage"><type>GtkImage</type></link> will add its own reference rather than adopting yours.
+</para>
+<para>
+Note that this function just creates an <link linkend="GtkImage"><type>GtkImage</type></link> from the pixbuf. The
+<link linkend="GtkImage"><type>GtkImage</type></link> created will not react to state changes. Should you want that, 
+you should use <link linkend="gtk-image-new-from-icon-set"><function>gtk_image_new_from_icon_set()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-new-from-pixmap" role="function">
+<title>gtk_image_new_from_pixmap ()</title>
+<indexterm zone="gtk-image-new-from-pixmap"><primary sortas="image_new_from_pixmap">gtk_image_new_from_pixmap</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_new_from_pixmap           (<link linkend="GdkPixmap">GdkPixmap</link> *pixmap,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *mask);</programlisting>
+<para>
+Creates a <link linkend="GtkImage"><type>GtkImage</type></link> widget displaying <parameter>pixmap</parameter> with a <parameter>mask</parameter>.
+A <link linkend="GdkPixmap"><type>GdkPixmap</type></link> is a server-side image buffer in the pixel format of the
+current display. The <link linkend="GtkImage"><type>GtkImage</type></link> does not assume a reference to the
+pixmap or mask; you still need to unref them if you own references.
+<link linkend="GtkImage"><type>GtkImage</type></link> will add its own reference rather than adopting yours.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixmap</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixmap"><type>GdkPixmap</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mask</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkBitmap"><type>GdkBitmap</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-new-from-stock" role="function">
+<title>gtk_image_new_from_stock ()</title>
+<indexterm zone="gtk-image-new-from-stock"><primary sortas="image_new_from_stock">gtk_image_new_from_stock</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_new_from_stock            (const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);</programlisting>
+<para>
+Creates a <link linkend="GtkImage"><type>GtkImage</type></link> displaying a stock icon. Sample stock icon
+names are <link linkend="GTK-STOCK-OPEN--CAPS"><type>GTK_STOCK_OPEN</type></link>, <link linkend="GTK-STOCK-QUIT--CAPS"><type>GTK_STOCK_QUIT</type></link>. Sample stock sizes
+are <link linkend="GTK-ICON-SIZE-MENU--CAPS"><type>GTK_ICON_SIZE_MENU</type></link>, <link linkend="GTK-ICON-SIZE-SMALL-TOOLBAR--CAPS"><type>GTK_ICON_SIZE_SMALL_TOOLBAR</type></link>. If the stock
+icon name isn't known, the image will be empty.
+You can register your own stock icon names, see
+<link linkend="gtk-icon-factory-add-default"><function>gtk_icon_factory_add_default()</function></link> and <link linkend="gtk-icon-factory-add"><function>gtk_icon_factory_add()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> a stock icon name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a stock icon size
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImage"><type>GtkImage</type></link> displaying the stock icon
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-new-from-animation" role="function">
+<title>gtk_image_new_from_animation ()</title>
+<indexterm zone="gtk-image-new-from-animation"><primary sortas="image_new_from_animation">gtk_image_new_from_animation</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_new_from_animation        (<link linkend="GdkPixbufAnimation">GdkPixbufAnimation</link> *animation);</programlisting>
+<para>
+Creates a <link linkend="GtkImage"><type>GtkImage</type></link> displaying the given animation.
+The <link linkend="GtkImage"><type>GtkImage</type></link> does not assume a reference to the
+animation; you still need to unref it if you own references.
+<link linkend="GtkImage"><type>GtkImage</type></link> will add its own reference rather than adopting yours.
+</para>
+<para>
+Note that the animation frames are shown using a timeout with
+<link linkend="G-PRIORITY-DEFAULT--CAPS"><type>G_PRIORITY_DEFAULT</type></link>. When using animations to indicate busyness,
+keep in mind that the animation will only be shown if the main loop
+is not busy with something that has a higher priority.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>animation</parameter>&#160;:</term>
+<listitem><simpara> an animation
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImage"><type>GtkImage</type></link> widget
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-new-from-icon-name" role="function" condition="since:2.6">
+<title>gtk_image_new_from_icon_name ()</title>
+<indexterm zone="gtk-image-new-from-icon-name" role="2.6"><primary sortas="image_new_from_icon_name">gtk_image_new_from_icon_name</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_new_from_icon_name        (const <link linkend="gchar">gchar</link> *icon_name,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);</programlisting>
+<para>
+Creates a <link linkend="GtkImage"><type>GtkImage</type></link> displaying an icon from the current icon theme.
+If the icon name isn't known, a "broken image" icon will be
+displayed instead.  If the current icon theme is changed, the icon
+will be updated appropriately.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icon_name</parameter>&#160;:</term>
+<listitem><simpara> an icon name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a stock icon size
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImage"><type>GtkImage</type></link> displaying the themed icon
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-image-new-from-gicon" role="function" condition="since:2.14">
+<title>gtk_image_new_from_gicon ()</title>
+<indexterm zone="gtk-image-new-from-gicon" role="2.14"><primary sortas="image_new_from_gicon">gtk_image_new_from_gicon</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_new_from_gicon            (<link linkend="GIcon">GIcon</link> *icon,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);</programlisting>
+<para>
+Creates a <link linkend="GtkImage"><type>GtkImage</type></link> displaying an icon from the current icon theme.
+If the icon name isn't known, a "broken image" icon will be
+displayed instead.  If the current icon theme is changed, the icon
+will be updated appropriately.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icon</parameter>&#160;:</term>
+<listitem><simpara> an icon
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a stock icon size
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImage"><type>GtkImage</type></link> displaying the themed icon
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-image-set-from-file" role="function">
+<title>gtk_image_set_from_file ()</title>
+<indexterm zone="gtk-image-set-from-file"><primary sortas="image_set_from_file">gtk_image_set_from_file</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set_from_file             (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         const <link linkend="gchar">gchar</link> *filename);</programlisting>
+<para>
+See <link linkend="gtk-image-new-from-file"><function>gtk_image_new_from_file()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> a filename or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-set-from-icon-set" role="function">
+<title>gtk_image_set_from_icon_set ()</title>
+<indexterm zone="gtk-image-set-from-icon-set"><primary sortas="image_set_from_icon_set">gtk_image_set_from_icon_set</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set_from_icon_set         (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GtkIconSet">GtkIconSet</link> *icon_set,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);</programlisting>
+<para>
+See <link linkend="gtk-image-new-from-icon-set"><function>gtk_image_new_from_icon_set()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon_set</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIconSet"><type>GtkIconSet</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a stock icon size
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-set-from-image" role="function">
+<title>gtk_image_set_from_image ()</title>
+<indexterm zone="gtk-image-set-from-image"><primary sortas="image_set_from_image">gtk_image_set_from_image</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set_from_image            (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkImage">GdkImage</link> *gdk_image,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *mask);</programlisting>
+<para>
+See <link linkend="gtk-image-new-from-image"><function>gtk_image_new_from_image()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gdk_image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkImage"><type>GdkImage</type></link> or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mask</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkBitmap"><type>GdkBitmap</type></link> or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-set-from-pixbuf" role="function">
+<title>gtk_image_set_from_pixbuf ()</title>
+<indexterm zone="gtk-image-set-from-pixbuf"><primary sortas="image_set_from_pixbuf">gtk_image_set_from_pixbuf</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set_from_pixbuf           (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+See <link linkend="gtk-image-new-from-pixbuf"><function>gtk_image_new_from_pixbuf()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-set-from-pixmap" role="function">
+<title>gtk_image_set_from_pixmap ()</title>
+<indexterm zone="gtk-image-set-from-pixmap"><primary sortas="image_set_from_pixmap">gtk_image_set_from_pixmap</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set_from_pixmap           (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkPixmap">GdkPixmap</link> *pixmap,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *mask);</programlisting>
+<para>
+See <link linkend="gtk-image-new-from-pixmap"><function>gtk_image_new_from_pixmap()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pixmap</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixmap"><type>GdkPixmap</type></link> or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mask</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkBitmap"><type>GdkBitmap</type></link> or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-set-from-stock" role="function">
+<title>gtk_image_set_from_stock ()</title>
+<indexterm zone="gtk-image-set-from-stock"><primary sortas="image_set_from_stock">gtk_image_set_from_stock</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set_from_stock            (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);</programlisting>
+<para>
+See <link linkend="gtk-image-new-from-stock"><function>gtk_image_new_from_stock()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> a stock icon name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a stock icon size
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-set-from-animation" role="function">
+<title>gtk_image_set_from_animation ()</title>
+<indexterm zone="gtk-image-set-from-animation"><primary sortas="image_set_from_animation">gtk_image_set_from_animation</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set_from_animation        (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkPixbufAnimation">GdkPixbufAnimation</link> *animation);</programlisting>
+<para>
+Causes the <link linkend="GtkImage"><type>GtkImage</type></link> to display the given animation (or display
+nothing, if you set the animation to <link linkend="NULL--CAPS"><literal>NULL</literal></link>).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>animation</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GdkPixbufAnimation"><type>GdkPixbufAnimation</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-set-from-icon-name" role="function" condition="since:2.6">
+<title>gtk_image_set_from_icon_name ()</title>
+<indexterm zone="gtk-image-set-from-icon-name" role="2.6"><primary sortas="image_set_from_icon_name">gtk_image_set_from_icon_name</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set_from_icon_name        (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         const <link linkend="gchar">gchar</link> *icon_name,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);</programlisting>
+<para>
+See <link linkend="gtk-image-new-from-icon-name"><function>gtk_image_new_from_icon_name()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon_name</parameter>&#160;:</term>
+<listitem><simpara> an icon name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> an icon size
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-image-set-from-gicon" role="function" condition="since:2.14">
+<title>gtk_image_set_from_gicon ()</title>
+<indexterm zone="gtk-image-set-from-gicon" role="2.14"><primary sortas="image_set_from_gicon">gtk_image_set_from_gicon</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set_from_gicon            (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GIcon">GIcon</link> *icon,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);</programlisting>
+<para>
+See <link linkend="gtk-image-new-from-gicon"><function>gtk_image_new_from_gicon()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon</parameter>&#160;:</term>
+<listitem><simpara> an icon
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> an icon size
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-image-clear" role="function" condition="since:2.8">
+<title>gtk_image_clear ()</title>
+<indexterm zone="gtk-image-clear" role="2.8"><primary sortas="image_clear">gtk_image_clear</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_clear                     (<link linkend="GtkImage">GtkImage</link> *image);</programlisting>
+<para>
+Resets the image to be empty.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.8</para></refsect2>
+<refsect2 id="gtk-image-new" role="function">
+<title>gtk_image_new ()</title>
+<indexterm zone="gtk-image-new"><primary sortas="image_new">gtk_image_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_new                       (void);</programlisting>
+<para>
+Creates a new empty <link linkend="GtkImage"><type>GtkImage</type></link> widget.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly created <link linkend="GtkImage"><type>GtkImage</type></link> widget. 
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-set" role="function" condition="deprecated:">
+<title>gtk_image_set ()</title>
+<indexterm zone="gtk-image-set" role="deprecated"><primary sortas="image_set">gtk_image_set</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set                       (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkImage">GdkImage</link> *val,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> *mask);</programlisting>
+<warning><para><literal>gtk_image_set</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the <link linkend="GtkImage"><type>GtkImage</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>val</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GdkImage"><type>GdkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mask</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GdkBitmap"><type>GdkBitmap</type></link> that indicates which parts of the image should be transparent.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-get" role="function" condition="deprecated:">
+<title>gtk_image_get ()</title>
+<indexterm zone="gtk-image-get" role="deprecated"><primary sortas="image_get">gtk_image_get</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_get                       (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="GdkImage">GdkImage</link> **val,
+                                                         <link linkend="GdkBitmap">GdkBitmap</link> **mask);</programlisting>
+<warning><para><literal>gtk_image_get</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Gets the <link linkend="GtkImage"><type>GtkImage</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>val</parameter>&#160;:</term>
+<listitem><simpara>return location for a <link linkend="GdkImage"><type>GdkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mask</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GdkBitmap"><type>GdkBitmap</type></link> that indicates which parts of the image should be transparent.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-set-pixel-size" role="function" condition="since:2.6">
+<title>gtk_image_set_pixel_size ()</title>
+<indexterm zone="gtk-image-set-pixel-size" role="2.6"><primary sortas="image_set_pixel_size">gtk_image_set_pixel_size</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_set_pixel_size            (<link linkend="GtkImage">GtkImage</link> *image,
+                                                         <link linkend="gint">gint</link> pixel_size);</programlisting>
+<para>
+Sets the pixel size to use for named icons. If the pixel size is set
+to a value != -1, it is used instead of the icon size set by
+<link linkend="gtk-image-set-from-icon-name"><function>gtk_image_set_from_icon_name()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pixel_size</parameter>&#160;:</term>
+<listitem><simpara> the new pixel size
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-image-get-pixel-size" role="function" condition="since:2.6">
+<title>gtk_image_get_pixel_size ()</title>
+<indexterm zone="gtk-image-get-pixel-size" role="2.6"><primary sortas="image_get_pixel_size">gtk_image_get_pixel_size</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_image_get_pixel_size            (<link linkend="GtkImage">GtkImage</link> *image);</programlisting>
+<para>
+Gets the pixel size used for named icons.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImage"><type>GtkImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the pixel size used for named icons.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkImage.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkImage--file" role="property"><title>The <literal>&quot;file&quot;</literal> property</title>
+<indexterm zone="GtkImage--file"><primary sortas="Image:file">GtkImage:file</primary></indexterm><programlisting>  &quot;file&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Filename to load and display.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkImage--gicon" role="property"><title>The <literal>&quot;gicon&quot;</literal> property</title>
+<indexterm zone="GtkImage--gicon" role="2.14"><primary sortas="Image:gicon">GtkImage:gicon</primary></indexterm><programlisting>  &quot;gicon&quot;                    <link linkend="GIcon">GIcon</link>*                : Read / Write</programlisting>
+<para>
+The GIcon displayed in the GtkImage. For themed icons,
+If the icon theme is changed, the image will be updated
+automatically.</para>
+<para>
+</para><para>Since 2.14</para>
+</refsect2>
+<refsect2 id="GtkImage--icon-name" role="property"><title>The <literal>&quot;icon-name&quot;</literal> property</title>
+<indexterm zone="GtkImage--icon-name" role="2.6"><primary sortas="Image:icon-name">GtkImage:icon-name</primary></indexterm><programlisting>  &quot;icon-name&quot;                <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+The name of the icon in the icon theme. If the icon theme is
+changed, the image will be updated automatically.</para>
+<para>
+</para><para>Default value: NULL</para>
+<para>Since 2.6</para>
+</refsect2>
+<refsect2 id="GtkImage--icon-set" role="property"><title>The <literal>&quot;icon-set&quot;</literal> property</title>
+<indexterm zone="GtkImage--icon-set"><primary sortas="Image:icon-set">GtkImage:icon-set</primary></indexterm><programlisting>  &quot;icon-set&quot;                 <link linkend="GtkIconSet">GtkIconSet</link>*           : Read / Write</programlisting>
+<para>Icon set to display.</para></refsect2>
+<refsect2 id="GtkImage--icon-size" role="property"><title>The <literal>&quot;icon-size&quot;</literal> property</title>
+<indexterm zone="GtkImage--icon-size"><primary sortas="Image:icon-size">GtkImage:icon-size</primary></indexterm><programlisting>  &quot;icon-size&quot;                <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Symbolic size to use for stock icon, icon set or named icon.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 4</para>
+</refsect2>
+<refsect2 id="GtkImage--image" role="property"><title>The <literal>&quot;image&quot;</literal> property</title>
+<indexterm zone="GtkImage--image"><primary sortas="Image:image">GtkImage:image</primary></indexterm><programlisting>  &quot;image&quot;                    <link linkend="GdkImage">GdkImage</link>*             : Read / Write</programlisting>
+<para>A GdkImage to display.</para></refsect2>
+<refsect2 id="GtkImage--mask" role="property"><title>The <literal>&quot;mask&quot;</literal> property</title>
+<indexterm zone="GtkImage--mask"><primary sortas="Image:mask">GtkImage:mask</primary></indexterm><programlisting>  &quot;mask&quot;                     <link linkend="GdkPixmap">GdkPixmap</link>*            : Read / Write</programlisting>
+<para>Mask bitmap to use with GdkImage or GdkPixmap.</para></refsect2>
+<refsect2 id="GtkImage--pixbuf" role="property"><title>The <literal>&quot;pixbuf&quot;</literal> property</title>
+<indexterm zone="GtkImage--pixbuf"><primary sortas="Image:pixbuf">GtkImage:pixbuf</primary></indexterm><programlisting>  &quot;pixbuf&quot;                   <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write</programlisting>
+<para>A GdkPixbuf to display.</para></refsect2>
+<refsect2 id="GtkImage--pixbuf-animation" role="property"><title>The <literal>&quot;pixbuf-animation&quot;</literal> property</title>
+<indexterm zone="GtkImage--pixbuf-animation"><primary sortas="Image:pixbuf-animation">GtkImage:pixbuf-animation</primary></indexterm><programlisting>  &quot;pixbuf-animation&quot;         <link linkend="GdkPixbufAnimation">GdkPixbufAnimation</link>*   : Read / Write</programlisting>
+<para>GdkPixbufAnimation to display.</para></refsect2>
+<refsect2 id="GtkImage--pixel-size" role="property"><title>The <literal>&quot;pixel-size&quot;</literal> property</title>
+<indexterm zone="GtkImage--pixel-size" role="2.6"><primary sortas="Image:pixel-size">GtkImage:pixel-size</primary></indexterm><programlisting>  &quot;pixel-size&quot;               <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+The "pixel-size" property can be used to specify a fixed size
+overriding the <link linkend="GtkImage--icon-size"><type>"icon-size"</type></link> property for images of type
+<link linkend="GTK-IMAGE-ICON-NAME--CAPS"><literal>GTK_IMAGE_ICON_NAME</literal></link>.</para>
+<para>
+</para><para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+<para>Since 2.6</para>
+</refsect2>
+<refsect2 id="GtkImage--pixmap" role="property"><title>The <literal>&quot;pixmap&quot;</literal> property</title>
+<indexterm zone="GtkImage--pixmap"><primary sortas="Image:pixmap">GtkImage:pixmap</primary></indexterm><programlisting>  &quot;pixmap&quot;                   <link linkend="GdkPixmap">GdkPixmap</link>*            : Read / Write</programlisting>
+<para>A GdkPixmap to display.</para></refsect2>
+<refsect2 id="GtkImage--stock" role="property"><title>The <literal>&quot;stock&quot;</literal> property</title>
+<indexterm zone="GtkImage--stock"><primary sortas="Image:stock">GtkImage:stock</primary></indexterm><programlisting>  &quot;stock&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Stock ID for a stock image to display.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkImage--storage-type" role="property"><title>The <literal>&quot;storage-type&quot;</literal> property</title>
+<indexterm zone="GtkImage--storage-type"><primary sortas="Image:storage-type">GtkImage:storage-type</primary></indexterm><programlisting>  &quot;storage-type&quot;             <link linkend="GtkImageType">GtkImageType</link>          : Read</programlisting>
+<para>The representation being used for image data.</para><para>Default value: GTK_IMAGE_EMPTY</para>
+</refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkImage.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>
+</para>
+</refsect1>
+
+</refentry>

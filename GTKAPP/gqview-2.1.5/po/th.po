@@ -1,0 +1,4099 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gqview-1.1.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-02 20:43-0500\n"
+"PO-Revision-Date: 2002-02-25 20:55GMT\n"
+"Last-Translator: Phanumas Thanyaboon <maskung@hotmail.com>\n"
+"Language-Team: thai <th@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+
+#: src/bar_info.c:30
+msgid "Favorite"
+msgstr ""
+
+#: src/bar_info.c:31
+#, fuzzy
+msgid "Todo"
+msgstr "Tiles"
+
+#: src/bar_info.c:32
+msgid "People"
+msgstr ""
+
+#: src/bar_info.c:33
+msgid "Places"
+msgstr ""
+
+#: src/bar_info.c:34
+msgid "Art"
+msgstr ""
+
+#: src/bar_info.c:35
+#, fuzzy
+msgid "Nature"
+msgstr "วันที่"
+
+#: src/bar_info.c:36
+msgid "Possessions"
+msgstr ""
+
+#: src/bar_info.c:505
+msgid "Keyword Presets"
+msgstr ""
+
+#: src/bar_info.c:508
+msgid "Favorite keywords list"
+msgstr ""
+
+#: src/bar_info.c:992 src/info.c:167 src/search.c:2683
+msgid "Keywords"
+msgstr ""
+
+#: src/bar_info.c:1006 src/info.c:722 src/pan-view.c:1521 src/print.c:2614
+#, fuzzy
+msgid "Filename:"
+msgstr "เปลี่ยนชื่อ:"
+
+#: src/bar_info.c:1007 src/info.c:366
+#, fuzzy
+msgid "File date:"
+msgstr "ฟิลเตอร์:"
+
+#: src/bar_info.c:1027
+msgid "Keywords:"
+msgstr ""
+
+#: src/bar_info.c:1095
+#, fuzzy
+msgid "Comment:"
+msgstr "เปรียบเทียบกับ:"
+
+#: src/bar_info.c:1119
+msgid "Edit favorite keywords list."
+msgstr ""
+
+#: src/bar_info.c:1123
+msgid "Add keywords to selected files"
+msgstr ""
+
+#: src/bar_info.c:1126
+msgid "Add keywords to selected files, replacing the existing ones."
+msgstr ""
+
+#: src/bar_info.c:1130
+#, fuzzy
+msgid "Save comment now"
+msgstr "บันทึก collecion"
+
+#: src/bar_exif.c:436
+msgid "Tag"
+msgstr ""
+
+#: src/bar_exif.c:437 src/dupe.c:2589 src/dupe.c:3112 src/print.c:3205
+#: src/search.c:2744 src/utilops.c:2779 src/view_file_list.c:1655
+msgid "Name"
+msgstr "ชื่อ"
+
+#: src/bar_exif.c:438
+msgid "Value"
+msgstr ""
+
+#: src/bar_exif.c:439
+#, fuzzy
+msgid "Format"
+msgstr "ธรรมดา"
+
+#: src/bar_exif.c:440
+msgid "Elements"
+msgstr ""
+
+#: src/bar_exif.c:441 src/preferences.c:1063
+msgid "Description"
+msgstr ""
+
+#: src/bar_exif.c:562 src/info.c:106
+#, fuzzy
+msgid "Exif"
+msgstr "ออก"
+
+#: src/bar_exif.c:635
+msgid "Advanced view"
+msgstr ""
+
+#: src/bar_sort.c:217
+#, fuzzy, c-format
+msgid ""
+"Unable to remove symbolic link:\n"
+"%s"
+msgstr ""
+"ไม่สามารถย้ายแฟ้ม:\n"
+"%s\n"
+"สู่:\n"
+"%s"
+
+#: src/bar_sort.c:218
+#, fuzzy
+msgid "Unlink failed"
+msgstr "การลบล้มเหลว"
+
+#: src/bar_sort.c:297
+#, fuzzy, c-format
+msgid ""
+"Unable to create symbolic link:\n"
+"%s"
+msgstr ""
+"ไม่สามารถสร้างไดเรคทอรี\n"
+"%s"
+
+#: src/bar_sort.c:298
+msgid "Link failed"
+msgstr ""
+
+#: src/bar_sort.c:435
+#, fuzzy, c-format
+msgid ""
+"The collection:\n"
+"%s\n"
+"already exists."
+msgstr ""
+"ไดเรคทอรี:\n"
+"%s\n"
+"มีอยู่แล้ว"
+
+#: src/bar_sort.c:436
+#, fuzzy
+msgid "Collection exists"
+msgstr "collection ว่าง"
+
+#: src/bar_sort.c:450 src/collect.c:1057 src/collect-dlg.c:84
+#, c-format
+msgid ""
+"Failed to save the collection:\n"
+"%s"
+msgstr ""
+"เกิดความล้มเหลวในการเขียนแฟ้ม collecion:\n"
+"%s"
+
+#: src/bar_sort.c:451 src/collect.c:1058 src/collect-dlg.c:85
+msgid "Save Failed"
+msgstr "การบันทึกข้อมูลล้มเหลว"
+
+#: src/bar_sort.c:485 src/bar_sort.c:611
+msgid "Add Bookmark"
+msgstr ""
+
+#: src/bar_sort.c:489
+#, fuzzy
+msgid "Add Collection"
+msgstr "ต่อท้าย collection"
+
+#: src/bar_sort.c:506 src/ui_bookmark.c:603
+#, fuzzy
+msgid "Name:"
+msgstr "ชื่อ"
+
+#: src/bar_sort.c:568
+#, fuzzy
+msgid "Sort Manager"
+msgstr "เรียงตามชื่อ"
+
+#: src/bar_sort.c:577 src/pan-view.c:2378 src/ui_pathsel.c:1094
+#, fuzzy
+msgid "Folders"
+msgstr "Tiles"
+
+#: src/bar_sort.c:578 src/main.c:1125
+msgid "Collections"
+msgstr ""
+
+#: src/bar_sort.c:586
+msgid "Copy"
+msgstr "คัดลอก"
+
+#: src/bar_sort.c:589
+msgid "Move"
+msgstr "ย้าย"
+
+#: src/bar_sort.c:592
+msgid "Link"
+msgstr ""
+
+#: src/bar_sort.c:598
+#, fuzzy
+msgid "Add image"
+msgstr "%d ภาพ"
+
+#: src/bar_sort.c:601
+#, fuzzy
+msgid "Add selection"
+msgstr "ไม่เลือกสิ่งใด"
+
+#: src/bar_sort.c:614
+msgid "Undo last image"
+msgstr ""
+
+#: src/cache_maint.c:126 src/cache_maint.c:680 src/cache_maint.c:893
+#: src/editors.c:437
+#, fuzzy
+msgid "done"
+msgstr "ไม่มี"
+
+#: src/cache_maint.c:303
+#, fuzzy
+msgid "Removing old metadata..."
+msgstr "กำลังอ่านข้อมูลที่คล้ายกัน..."
+
+#: src/cache_maint.c:307
+#, fuzzy
+msgid "Clearing cached thumbnails..."
+msgstr "สร้างภาพเล็ก..."
+
+#: src/cache_maint.c:311 src/cache_maint.c:1047
+#, fuzzy
+msgid "Removing old thumbnails..."
+msgstr "ลบภาพเล็กเก่า..."
+
+#: src/cache_maint.c:314 src/cache_maint.c:1050
+msgid "Maintenance"
+msgstr ""
+
+#: src/cache_maint.c:791 src/utilops.c:952
+#, fuzzy
+msgid "Invalid folder"
+msgstr "ชื่อแฟ้มไม่ถูกต้อง"
+
+#: src/cache_maint.c:792
+msgid "The specified folder can not be found."
+msgstr ""
+
+#: src/cache_maint.c:820 src/cache_maint.c:834 src/cache_maint.c:1215
+#, fuzzy
+msgid "Create thumbnails"
+msgstr "แคชรูปเล็ก"
+
+#: src/cache_maint.c:828 src/cache_maint.c:1057
+#, fuzzy
+msgid "S_tart"
+msgstr "วันที่"
+
+#: src/cache_maint.c:841 src/preferences.c:1200
+#, fuzzy
+msgid "Folder:"
+msgstr "Tiles"
+
+#: src/cache_maint.c:844
+#, fuzzy
+msgid "Select folder"
+msgstr "ไม่เลือกสิ่งใด"
+
+#: src/cache_maint.c:848
+#, fuzzy
+msgid "Include subfolders"
+msgstr "ชื่อแฟ้มไม่ถูกต้อง"
+
+#: src/cache_maint.c:849
+msgid "Store thumbnails local to source images"
+msgstr ""
+
+#: src/cache_maint.c:858 src/cache_maint.c:1066
+msgid "click start to begin"
+msgstr ""
+
+#: src/cache_maint.c:996 src/editors.c:585
+#, fuzzy
+msgid "running..."
+msgstr "กำลังเปรียบเทียบ..."
+
+#: src/cache_maint.c:1042
+msgid "Clearing thumbnails..."
+msgstr "สร้างภาพเล็ก..."
+
+#: src/cache_maint.c:1108 src/cache_maint.c:1111 src/cache_maint.c:1190
+#: src/cache_maint.c:1210
+msgid "Clear cache"
+msgstr "ล้างแคช"
+
+#: src/cache_maint.c:1112
+msgid ""
+"This will remove all thumbnails that have\n"
+"been saved to disk, continue?"
+msgstr ""
+"จะทำการลบรูปเล็กทุกรูปที่มี\n"
+"ซึ่งถูกบันทึกลงดิสก์หรือไม่?"
+
+#: src/cache_maint.c:1162
+#, fuzzy
+msgid "Cache Maintenance - GQview"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/cache_maint.c:1172
+msgid "Cache and Data Maintenance"
+msgstr ""
+
+#: src/cache_maint.c:1176
+#, fuzzy
+msgid "GQview thumbnail cache"
+msgstr "GQview ดูภาพเต็มหน้าจอ"
+
+#: src/cache_maint.c:1178 src/cache_maint.c:1198 src/cache_maint.c:1226
+#: src/pan-view.c:1523 src/pan-view.c:2367 src/preferences.c:1177
+#: src/utilops.c:1571
+msgid "Location:"
+msgstr ""
+
+#: src/cache_maint.c:1185 src/cache_maint.c:1205 src/cache_maint.c:1233
+#, fuzzy
+msgid "Clean up"
+msgstr "ล้าง"
+
+#: src/cache_maint.c:1188 src/cache_maint.c:1208
+msgid "Remove orphaned or outdated thumbnails."
+msgstr ""
+
+#: src/cache_maint.c:1193 src/cache_maint.c:1213
+#, fuzzy
+msgid "Delete all cached thumbnails."
+msgstr "แคชรูปเล็ก"
+
+#: src/cache_maint.c:1196
+#, fuzzy
+msgid "Shared thumbnail cache"
+msgstr "แคชรูปเล็ก"
+
+#: src/cache_maint.c:1219
+#, fuzzy
+msgid "Render"
+msgstr "เปลี่ยนชื่อ"
+
+#: src/cache_maint.c:1222
+msgid "Render thumbnails for a specific folder."
+msgstr ""
+
+#: src/cache_maint.c:1224
+msgid "Metadata"
+msgstr ""
+
+#: src/cache_maint.c:1236
+msgid "Remove orphaned keywords and comments."
+msgstr ""
+
+#: src/collect.c:350 src/image.c:151 src/image-overlay.c:110
+#: src/image-overlay.c:152
+#, c-format
+msgid "Untitled"
+msgstr "ไม่มีชื่อ"
+
+#: src/collect.c:354
+#, c-format
+msgid "Untitled (%d)"
+msgstr "ไม่มีชื่อ (%d)"
+
+#: src/collect.c:976
+#, c-format
+msgid "%s - GQview Collection"
+msgstr "%s - GQview Collection"
+
+#: src/collect.c:1094 src/collect.c:1098
+msgid "Close collection"
+msgstr "ปิดcollection"
+
+#: src/collect.c:1099
+msgid ""
+"Collection has been modified.\n"
+"Save first?"
+msgstr ""
+"Collection ถูกแก้ไข \n"
+"บันทึกแฟ้มก่อนหรือไม่?"
+
+#: src/collect.c:1102
+msgid "_Discard"
+msgstr ""
+
+#: src/collect-dlg.c:58
+#, fuzzy, c-format
+msgid ""
+"Specified path:\n"
+"%s\n"
+"is a folder, collections are files"
+msgstr ""
+"กำหนดเส้นทาง:\n"
+"%s\n"
+"เป็นไดเรคทอรี,collection เป็นแฟ้ม"
+
+#: src/collect-dlg.c:59
+msgid "Invalid filename"
+msgstr "ชื่อแฟ้มไม่ถูกต้อง"
+
+#: src/collect-dlg.c:68
+#, fuzzy
+msgid "Overwrite File"
+msgstr "เขียนทับแฟ้ม"
+
+#: src/collect-dlg.c:73
+#, fuzzy
+msgid "Overwrite existing file?"
+msgstr "เขียนทับแฟ้ม"
+
+#: src/collect-dlg.c:75 src/utilops.c:514 src/utilops.c:835 src/utilops.c:1725
+#: src/utilops.c:2447
+#, fuzzy
+msgid "_Overwrite"
+msgstr "เขียนทับ"
+
+#: src/collect-dlg.c:169
+msgid "Save collection"
+msgstr "บันทึก collecion"
+
+#: src/collect-dlg.c:176
+msgid "Open collection"
+msgstr "เปิด collection"
+
+#: src/collect-dlg.c:184
+msgid "Append collection"
+msgstr "ต่อท้าย collection"
+
+#: src/collect-dlg.c:185
+#, fuzzy
+msgid "_Append"
+msgstr "ต่อท้าย"
+
+#: src/collect-dlg.c:203
+msgid "Collection Files"
+msgstr "แฟ้ม collection"
+
+#: src/collect-dlg.c:221
+msgid "Collection empty"
+msgstr "collection ว่าง"
+
+#: src/collect-dlg.c:222
+msgid "The current collection is empty, save aborted."
+msgstr "collection ปัจจุบันว่าง,การบันทึกถูกยกเลิก"
+
+#: src/collect-table.c:164 src/layout.c:372 src/layout_util.c:737
+msgid "Empty"
+msgstr "ว่าง"
+
+#: src/collect-table.c:168
+#, c-format
+msgid "%d images (%d)"
+msgstr "%d ภาพ (%d)"
+
+#: src/collect-table.c:172
+#, c-format
+msgid "%d images"
+msgstr "%d ภาพ"
+
+#: src/collect-table.c:186 src/dupe.c:1296 src/search.c:303
+#: src/view_file_icon.c:1776 src/view_file_icon.c:1891
+#: src/view_file_list.c:916 src/view_file_list.c:1021
+msgid "Loading thumbs..."
+msgstr "กำลังโหลดรูปเล็ก..."
+
+#: src/collect-table.c:773 src/dupe.c:2187 src/dupe.c:2497
+#: src/layout_util.c:780 src/search.c:969
+#, fuzzy
+msgid "_View"
+msgstr "/ดู"
+
+#: src/collect-table.c:775 src/dupe.c:2189 src/dupe.c:2499 src/img-view.c:1251
+#: src/layout_image.c:735 src/pan-view.c:2788 src/search.c:971
+#: src/view_file_icon.c:287 src/view_file_list.c:398
+#, fuzzy
+msgid "View in _new window"
+msgstr "มองในหน้าต่างใหม่"
+
+#: src/collect-table.c:778 src/dupe.c:2219 src/dupe.c:2507 src/search.c:997
+#, fuzzy
+msgid "Rem_ove"
+msgstr "ลบ"
+
+#: src/collect-table.c:781
+msgid "Append from file list"
+msgstr "ต่อท้ายจากแฟ้มรายการ"
+
+#: src/collect-table.c:783
+msgid "Append from collection..."
+msgstr "ต่อท้ายจาก collection..."
+
+#: src/collect-table.c:786 src/dupe.c:2192 src/dupe.c:2502 src/search.c:974
+msgid "Select all"
+msgstr "เลือกทั้งหมด"
+
+#: src/collect-table.c:788 src/dupe.c:2194 src/dupe.c:2504 src/search.c:976
+msgid "Select none"
+msgstr "ไม่เลือกสิ่งใด"
+
+#: src/collect-table.c:796 src/dupe.c:2203 src/img-view.c:1249
+#: src/layout_image.c:732 src/layout_util.c:815 src/pan-view.c:2785
+#: src/search.c:981 src/view_file_icon.c:284 src/view_file_list.c:396
+#, fuzzy
+msgid "_Properties"
+msgstr "/แกไข/ออพชัน..."
+
+#: src/collect-table.c:799 src/dupe.c:2210 src/img-view.c:1254
+#: src/layout_image.c:740 src/layout_util.c:792 src/pan-view.c:2792
+#: src/search.c:988 src/view_file_icon.c:291 src/view_file_list.c:402
+#, fuzzy
+msgid "_Copy..."
+msgstr "คัดลอก..."
+
+#: src/collect-table.c:801 src/dupe.c:2212 src/img-view.c:1255
+#: src/layout_image.c:742 src/layout_util.c:793 src/pan-view.c:2794
+#: src/search.c:990 src/view_file_icon.c:293 src/view_file_list.c:404
+#, fuzzy
+msgid "_Move..."
+msgstr "ย้าย..."
+
+#: src/collect-table.c:803 src/dupe.c:2214 src/img-view.c:1256
+#: src/layout_image.c:744 src/layout_util.c:794 src/pan-view.c:2796
+#: src/search.c:992 src/view_dir_list.c:415 src/view_dir_tree.c:514
+#: src/view_file_icon.c:295 src/view_file_list.c:406
+#, fuzzy
+msgid "_Rename..."
+msgstr "เปลี่ยนชื่อ..."
+
+#: src/collect-table.c:805 src/dupe.c:2216 src/img-view.c:1257
+#: src/layout_image.c:746 src/layout_util.c:795 src/pan-view.c:2798
+#: src/search.c:994 src/view_dir_list.c:417 src/view_dir_tree.c:516
+#: src/view_file_icon.c:297 src/view_file_list.c:408
+#, fuzzy
+msgid "_Delete..."
+msgstr "ลบ..."
+
+#: src/collect-table.c:810 src/view_file_icon.c:313
+#, fuzzy
+msgid "Show filename _text"
+msgstr "แสดงสิ่งที่ซ่อน"
+
+#: src/collect-table.c:813
+#, fuzzy
+msgid "_Save collection"
+msgstr "บันทึก collecion"
+
+#: src/collect-table.c:815
+#, fuzzy
+msgid "Save collection _as..."
+msgstr "บันทึก collection เป็น..."
+
+#: src/collect-table.c:818 src/layout_util.c:788
+#, fuzzy
+msgid "_Find duplicates..."
+msgstr "หาตัวซ้ำ..."
+
+#: src/collect-table.c:820 src/dupe.c:2207 src/search.c:985
+#, fuzzy
+msgid "Print..."
+msgstr "/แฟ้ม/เปลี่ยนชื่อ..."
+
+#: src/collect-table.c:1972 src/dupe.c:3300 src/img-view.c:1411
+#, fuzzy
+msgid "Dropped list includes folders."
+msgstr "ทิ้งรายการรวมทั้งไดเรคทอรี"
+
+#: src/collect-table.c:1974 src/dupe.c:3302 src/img-view.c:1413
+#, fuzzy
+msgid "_Add contents"
+msgstr "เพิ่มเนื้อหา"
+
+#: src/collect-table.c:1976 src/dupe.c:3303 src/img-view.c:1414
+#, fuzzy
+msgid "Add contents _recursive"
+msgstr "เพิ่มเนื้อหาแบบรีเคอซีฟ "
+
+#: src/collect-table.c:1978 src/dupe.c:3304 src/img-view.c:1415
+#, fuzzy
+msgid "_Skip folders"
+msgstr "ข้ามไดเรคทอรี"
+
+#: src/collect-table.c:1981 src/dupe.c:3306 src/img-view.c:1417
+#: src/view_dir_list.c:214 src/view_dir_tree.c:306
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: src/dupe.c:96
+msgid "Drop files to compare them."
+msgstr "ทิ้งแฟ้มลงไปเพื่อเปรียบเทียบ"
+
+#: src/dupe.c:100
+#, c-format
+msgid "%d files"
+msgstr "%d แฟ้ม"
+
+#: src/dupe.c:104
+#, c-format
+msgid "%d matches found in %d files"
+msgstr "%d เข้ากันได้ถูกพบใน %d แฟ้ม"
+
+#: src/dupe.c:109
+msgid "[set 1]"
+msgstr ""
+
+#: src/dupe.c:1422
+msgid "Reading checksums..."
+msgstr "กำลังอ่าน checksum..."
+
+#: src/dupe.c:1455
+msgid "Reading dimensions..."
+msgstr "กำลังอ่าน dimensions..."
+
+#: src/dupe.c:1489
+msgid "Reading similarity data..."
+msgstr "กำลังอ่านข้อมูลที่คล้ายกัน..."
+
+#: src/dupe.c:1524 src/dupe.c:1555
+msgid "Comparing..."
+msgstr "กำลังเปรียบเทียบ..."
+
+#: src/dupe.c:1535 src/pan-view.c:1080
+#, fuzzy
+msgid "Sorting..."
+msgstr "กำลังเปรียบเทียบ..."
+
+#: src/dupe.c:2196
+msgid "Select group _1 duplicates"
+msgstr ""
+
+#: src/dupe.c:2198
+msgid "Select group _2 duplicates"
+msgstr ""
+
+#: src/dupe.c:2205 src/search.c:983
+msgid "Add to new collection"
+msgstr "เพิ่มไปยัง collection ใหม่"
+
+#: src/dupe.c:2221 src/dupe.c:2509 src/search.c:999
+#, fuzzy
+msgid "C_lear"
+msgstr "ล้าง"
+
+#: src/dupe.c:2224 src/dupe.c:2512
+#, fuzzy
+msgid "Close _window"
+msgstr "ปิดหน้าต่าง"
+
+#: src/dupe.c:2382
+#, fuzzy, c-format
+msgid "%d files (set 2)"
+msgstr "%d แฟ้ม%s"
+
+#: src/dupe.c:2590 src/dupe.c:3113 src/preferences.c:982 src/print.c:3209
+#: src/search.c:2745 src/view_file_list.c:1656
+msgid "Size"
+msgstr "ขนาด"
+
+#: src/dupe.c:2591 src/dupe.c:3114 src/exif.c:296 src/exif.c:417
+#: src/print.c:3207 src/search.c:2746 src/view_file_list.c:1657
+msgid "Date"
+msgstr "วันที่"
+
+#: src/dupe.c:2592 src/dupe.c:3115 src/print.c:3211 src/search.c:2747
+msgid "Dimensions"
+msgstr "Dimensions"
+
+#: src/dupe.c:2593
+msgid "Checksum"
+msgstr "Checksum"
+
+#: src/dupe.c:2594 src/dupe.c:3116 src/search.c:2748 src/ui_pathsel.c:1106
+msgid "Path"
+msgstr "เส้นทาง"
+
+#: src/dupe.c:2595
+msgid "Similarity (high)"
+msgstr "ความคล้ายกัน (สูง)"
+
+#: src/dupe.c:2596
+msgid "Similarity"
+msgstr "ความคล้ายกัน"
+
+#: src/dupe.c:2597
+msgid "Similarity (low)"
+msgstr "ความคล้ายกัน (ต่ำ)"
+
+#: src/dupe.c:2598
+#, fuzzy
+msgid "Similarity (custom)"
+msgstr "ความคล้ายกัน (ต่ำ)"
+
+#: src/dupe.c:3076
+msgid "Find duplicates - GQview"
+msgstr "หาตัวซำ้ - GQview"
+
+#: src/dupe.c:3148
+msgid "Compare to:"
+msgstr "เปรียบเทียบกับ:"
+
+#: src/dupe.c:3161
+msgid "Compare by:"
+msgstr "เปรียบเทียบโดย"
+
+#: src/dupe.c:3169 src/preferences.c:870 src/search.c:2761
+msgid "Thumbnails"
+msgstr "รูปเล็ก"
+
+#: src/dupe.c:3176
+msgid "Compare two file sets"
+msgstr "เปรียบเทียบแฟ้ม 2 กลุ่ม"
+
+#: src/editors.c:50
+msgid "The Gimp"
+msgstr "The Gimp"
+
+#: src/editors.c:51
+msgid "XV"
+msgstr ""
+
+#: src/editors.c:52
+msgid "Xpaint"
+msgstr ""
+
+#: src/editors.c:58
+#, fuzzy
+msgid "Rotate jpeg clockwise"
+msgstr "หมุนตามเข็มนาฬิกา"
+
+#: src/editors.c:59
+#, fuzzy
+msgid "Rotate jpeg counterclockwise"
+msgstr "หมุนทวนเข็มนาฬิกา"
+
+#: src/editors.c:104
+#, fuzzy
+msgid "stopping..."
+msgstr "กำลังเปรียบเทียบ..."
+
+#: src/editors.c:131
+msgid "Edit command results"
+msgstr ""
+
+#: src/editors.c:134
+#, c-format
+msgid "Output of %s"
+msgstr ""
+
+#: src/editors.c:303
+#, fuzzy, c-format
+msgid ""
+"Failed to run command:\n"
+"%s\n"
+msgstr ""
+"ไม่สามารถโหลด:\n"
+"%s"
+
+#: src/editors.c:441
+#, fuzzy
+msgid "stopped by user"
+msgstr "เรียงตามหมายเลข"
+
+#: src/exif.c:111 src/exif.c:124 src/exif.c:138 src/exif.c:163 src/exif.c:572
+#: src/exif.c:1626 src/exif.c:1629 src/exif.c:1694
+#, fuzzy
+msgid "unknown"
+msgstr "ใน (ไม่รู้จัก)..."
+
+#: src/exif.c:112
+#, fuzzy
+msgid "top left"
+msgstr "ลบ"
+
+#: src/exif.c:113
+msgid "top right"
+msgstr ""
+
+#: src/exif.c:114
+msgid "bottom right"
+msgstr ""
+
+#: src/exif.c:115
+msgid "bottom left"
+msgstr ""
+
+#: src/exif.c:116
+#, fuzzy
+msgid "left top"
+msgstr "ลบ"
+
+#: src/exif.c:117
+msgid "right top"
+msgstr ""
+
+#: src/exif.c:118
+msgid "right bottom"
+msgstr ""
+
+#: src/exif.c:119
+msgid "left bottom"
+msgstr ""
+
+#: src/exif.c:126
+msgid "inch"
+msgstr ""
+
+#: src/exif.c:127
+msgid "centimeter"
+msgstr ""
+
+#: src/exif.c:139
+msgid "average"
+msgstr ""
+
+#: src/exif.c:140
+msgid "center weighted"
+msgstr ""
+
+#: src/exif.c:141
+msgid "spot"
+msgstr ""
+
+#: src/exif.c:142
+msgid "multi-spot"
+msgstr ""
+
+#: src/exif.c:143
+msgid "multi-segment"
+msgstr ""
+
+#: src/exif.c:144
+msgid "partial"
+msgstr ""
+
+#: src/exif.c:145 src/exif.c:183
+msgid "other"
+msgstr ""
+
+#: src/exif.c:150
+msgid "not defined"
+msgstr ""
+
+#: src/exif.c:151
+msgid "manual"
+msgstr ""
+
+#: src/exif.c:152
+#, fuzzy
+msgid "normal"
+msgstr "ธรรมดา"
+
+#: src/exif.c:153
+msgid "aperture"
+msgstr ""
+
+#: src/exif.c:154
+msgid "shutter"
+msgstr ""
+
+#: src/exif.c:155
+#, fuzzy
+msgid "creative"
+msgstr "สร้าง"
+
+#: src/exif.c:156
+msgid "action"
+msgstr ""
+
+#: src/exif.c:157
+msgid "portrait"
+msgstr ""
+
+#: src/exif.c:158
+msgid "landscape"
+msgstr ""
+
+#: src/exif.c:164
+msgid "daylight"
+msgstr ""
+
+#: src/exif.c:165
+msgid "fluorescent"
+msgstr ""
+
+#: src/exif.c:166
+msgid "tungsten (incandescent)"
+msgstr ""
+
+#: src/exif.c:167
+msgid "flash"
+msgstr ""
+
+#: src/exif.c:188 src/exif.c:1649 src/info.c:232
+msgid "no"
+msgstr ""
+
+#. flash fired (bit 0)
+#: src/exif.c:189 src/exif.c:1649 src/info.c:232
+#, fuzzy
+msgid "yes"
+msgstr "ใช่"
+
+#: src/exif.c:190
+msgid "yes, not detected by strobe"
+msgstr ""
+
+#: src/exif.c:191
+msgid "yes, detected by strobe"
+msgstr ""
+
+#: src/exif.c:288
+#, fuzzy
+msgid "Image description"
+msgstr "ปลายทางไม่ถูกต้อง"
+
+#: src/exif.c:291
+#, fuzzy
+msgid "Orientation"
+msgstr "Dimensions"
+
+#: src/exif.c:302
+#, fuzzy
+msgid "Copyright"
+msgstr "คัดลอก"
+
+#: src/exif.c:307
+msgid "Exposure program"
+msgstr ""
+
+#: src/exif.c:309 src/exif.c:345 src/exif.c:421
+msgid "ISO sensitivity"
+msgstr ""
+
+#: src/exif.c:312
+msgid "Date original"
+msgstr ""
+
+#: src/exif.c:313
+msgid "Date digitized"
+msgstr ""
+
+#: src/exif.c:316 src/exif.c:418
+msgid "Shutter speed"
+msgstr ""
+
+#: src/exif.c:317 src/exif.c:419
+msgid "Aperture"
+msgstr ""
+
+#: src/exif.c:319 src/exif.c:420
+msgid "Exposure bias"
+msgstr ""
+
+#: src/exif.c:321 src/exif.c:423
+msgid "Subject distance"
+msgstr ""
+
+#: src/exif.c:322
+#, fuzzy
+msgid "Metering mode"
+msgstr "ขั้นตอนวิธี Dithering:"
+
+#: src/exif.c:323
+msgid "Light source"
+msgstr ""
+
+#: src/exif.c:324 src/exif.c:424
+msgid "Flash"
+msgstr ""
+
+#: src/exif.c:325 src/exif.c:422
+msgid "Focal length"
+msgstr ""
+
+#. ExifImageWidth, ExifImageHeight can also be unsigned short
+#: src/exif.c:335
+msgid "Width"
+msgstr ""
+
+#: src/exif.c:336
+msgid "Height"
+msgstr ""
+
+#: src/exif.c:416
+msgid "Camera"
+msgstr ""
+
+#: src/exif.c:425
+msgid "Resolution"
+msgstr ""
+
+#: src/exif.c:1625
+msgid "infinity"
+msgstr ""
+
+#: src/exif.c:1653
+#, fuzzy
+msgid "mode:"
+msgstr "Tiles"
+
+#: src/exif.c:1657 src/utilops.c:1300
+#, fuzzy
+msgid "on"
+msgstr "ไม่มี"
+
+#: src/exif.c:1660 src/utilops.c:1300
+msgid "off"
+msgstr ""
+
+#: src/exif.c:1663
+msgid "auto"
+msgstr ""
+
+#: src/exif.c:1669
+msgid "not detected by strobe"
+msgstr ""
+
+#: src/exif.c:1670
+msgid "detected by strobe"
+msgstr ""
+
+#. we ignore flash function (bit 5)
+#. red-eye (bit 6)
+#: src/exif.c:1675
+msgid "red-eye reduction"
+msgstr ""
+
+#: src/exif.c:1694
+msgid "dot"
+msgstr ""
+
+#: src/filelist.c:523
+#, fuzzy, c-format
+msgid "%d bytes"
+msgstr "%d แฟ้ม"
+
+#: src/filelist.c:527
+#, c-format
+msgid "%.1f K"
+msgstr ""
+
+#: src/filelist.c:531
+#, c-format
+msgid "%.1f MB"
+msgstr ""
+
+#: src/filelist.c:536
+#, c-format
+msgid "%.1f GB"
+msgstr ""
+
+#: src/fullscreen.c:267
+msgid "GQview full screen"
+msgstr "GQview ดูภาพเต็มหน้าจอ"
+
+#: src/fullscreen.c:397
+#, fuzzy
+msgid "Full size"
+msgstr "Tiles"
+
+#: src/fullscreen.c:402
+msgid "Monitor"
+msgstr ""
+
+#: src/fullscreen.c:407 src/layout.c:452
+msgid "Screen"
+msgstr ""
+
+#: src/fullscreen.c:644
+#, fuzzy
+msgid "Stay above other windows"
+msgstr "ทำภาพให้พอดีหน้าต่าง"
+
+#: src/fullscreen.c:651
+msgid "Determined by Window Manager"
+msgstr ""
+
+#: src/fullscreen.c:652
+msgid "Active screen"
+msgstr ""
+
+#: src/fullscreen.c:654
+msgid "Active monitor"
+msgstr ""
+
+#: src/img-view.c:1237 src/layout_image.c:719 src/layout_util.c:822
+#: src/pan-view.c:2774
+#, fuzzy
+msgid "Zoom _in"
+msgstr "ซูมเข้า "
+
+#: src/img-view.c:1238 src/layout_image.c:720 src/layout_util.c:823
+#: src/pan-view.c:2776
+#, fuzzy
+msgid "Zoom _out"
+msgstr "ซูมออก"
+
+#: src/img-view.c:1239 src/layout_image.c:721 src/layout_util.c:824
+#: src/pan-view.c:2778
+#, fuzzy
+msgid "Zoom _1:1"
+msgstr "ซูม 1:1"
+
+#: src/img-view.c:1240 src/layout_image.c:722
+#, fuzzy
+msgid "Fit image to _window"
+msgstr "ทำภาพให้พอดีหน้าต่าง"
+
+#: src/img-view.c:1245 src/layout_image.c:728 src/layout_util.c:820
+#, fuzzy
+msgid "Set as _wallpaper"
+msgstr "กำหนดเป็นวอลล์เปเปอร์"
+
+#: src/img-view.c:1263 src/layout_image.c:753
+#, fuzzy
+msgid "_Stop slideshow"
+msgstr "หยุดการดูไสลด์"
+
+#: src/img-view.c:1266 src/layout_image.c:756
+#, fuzzy
+msgid "Continue slides_how"
+msgstr "ดูไสลด์ต่อไป"
+
+#: src/img-view.c:1271 src/img-view.c:1279 src/layout_image.c:761
+#: src/layout_image.c:768
+#, fuzzy
+msgid "Pause slides_how"
+msgstr "หยุดการดูไสลด์ชั่วคราว"
+
+#: src/img-view.c:1277 src/layout_image.c:767
+#, fuzzy
+msgid "_Start slideshow"
+msgstr "เริ่มต้นแสดงไสลด์"
+
+#: src/img-view.c:1285 src/layout_image.c:778 src/pan-view.c:2844
+#, fuzzy
+msgid "Exit _full screen"
+msgstr "ออกจากโหมดเต็มจอภาพ"
+
+#: src/img-view.c:1289 src/layout_image.c:774 src/pan-view.c:2848
+#, fuzzy
+msgid "_Full screen"
+msgstr "เต็มจอภาพ"
+
+#: src/img-view.c:1293 src/layout_util.c:796 src/pan-view.c:2852
+#, fuzzy
+msgid "C_lose window"
+msgstr "ปิดหน้าต่าง"
+
+#: src/info.c:367
+#, fuzzy
+msgid "File size:"
+msgstr "Tiles"
+
+#: src/info.c:369
+#, fuzzy
+msgid "Dimensions:"
+msgstr "Dimensions"
+
+#: src/info.c:370
+msgid "Transparent:"
+msgstr ""
+
+#: src/info.c:371 src/print.c:3386
+#, fuzzy
+msgid "Image size:"
+msgstr "รูป"
+
+#: src/info.c:373
+#, fuzzy
+msgid "Compress ratio:"
+msgstr "เปรียบเทียบกับ:"
+
+#: src/info.c:374
+#, fuzzy
+msgid "File type:"
+msgstr "ฟิลเตอร์:"
+
+#: src/info.c:376
+msgid "Owner:"
+msgstr ""
+
+#: src/info.c:377
+msgid "Group:"
+msgstr ""
+
+#: src/info.c:380 src/preferences.c:851
+msgid "General"
+msgstr "ทั่วไป"
+
+#: src/info.c:461
+#, c-format
+msgid "Image %d of %d"
+msgstr ""
+
+#: src/info.c:684
+msgid "Image properties - GQview"
+msgstr ""
+
+#: src/layout.c:274 src/view_file_icon.c:305 src/view_file_list.c:416
+msgid "Ascending"
+msgstr "มากไปน้อย"
+
+#: src/layout.c:399
+msgid "Color profiles not supported"
+msgstr ""
+
+#: src/layout.c:400
+msgid ""
+"This installation of GQview was not built with support for color profiles."
+msgstr ""
+
+#: src/layout.c:410
+msgid "Use _color profiles"
+msgstr ""
+
+#: src/layout.c:415
+msgid "Use profile from _image"
+msgstr ""
+
+#: src/layout.c:419 src/layout.c:436
+#, c-format
+msgid "Input _%d:"
+msgstr ""
+
+#: src/layout.c:461
+msgid "_Screen profile"
+msgstr ""
+
+#: src/layout.c:528
+msgid " Slideshow"
+msgstr "แสดงสไลด์"
+
+#: src/layout.c:532
+msgid " Paused"
+msgstr "หยุดชั่วคราว"
+
+#: src/layout.c:549
+#, fuzzy, c-format
+msgid "%s, %d files (%s, %d)%s"
+msgstr "%d แฟ้ม (%d)%s"
+
+#: src/layout.c:556
+#, fuzzy, c-format
+msgid "%s, %d files%s"
+msgstr "%d แฟ้ม%s"
+
+#: src/layout.c:561
+#, c-format
+msgid "%d files%s"
+msgstr "%d แฟ้ม%s"
+
+#: src/layout.c:590
+#, c-format
+msgid "(no read permission) %s bytes"
+msgstr ""
+
+#: src/layout.c:594
+#, c-format
+msgid "( ? x ? ) %s bytes"
+msgstr "( ? x ? ) %s ไบต์"
+
+#: src/layout.c:602
+#, c-format
+msgid "( %d x %d ) %s bytes"
+msgstr "( %d x %d ) %s ไบต์"
+
+#: src/layout.c:1304
+msgid "GQview Tools"
+msgstr "GQview - เครื่องมือ"
+
+#: src/layout.c:1934
+#, fuzzy
+msgid "Invalid geometry\n"
+msgstr "ชื่อแฟ้มไม่ถูกต้อง"
+
+#: src/layout_config.c:57
+#, fuzzy
+msgid "Tools"
+msgstr "Tiles"
+
+#: src/layout_config.c:57 src/ui_pathsel.c:1174
+#, fuzzy
+msgid "Files"
+msgstr "Tiles"
+
+#: src/layout_config.c:57 src/preferences.c:916 src/print.c:114
+msgid "Image"
+msgstr "รูป"
+
+#: src/layout_config.c:363
+msgid "(drag to change order)"
+msgstr ""
+
+#: src/layout_image.c:783
+#, fuzzy
+msgid "Hide file _list"
+msgstr "(ไม่)ซ่อนรายการแฟ้ม"
+
+#: src/layout_util.c:654 src/menu.c:74
+#, c-format
+msgid "in %s..."
+msgstr "ใน %s..."
+
+#: src/layout_util.c:658 src/menu.c:76
+msgid "in (unknown)..."
+msgstr "ใน (ไม่รู้จัก)..."
+
+#: src/layout_util.c:666
+#, fuzzy
+msgid "empty"
+msgstr "ว่าง"
+
+#: src/layout_util.c:777
+#, fuzzy
+msgid "_File"
+msgstr "/แฟ้ม"
+
+#: src/layout_util.c:778 src/menu.c:91
+#, fuzzy
+msgid "_Edit"
+msgstr "/แฟ้ม/แก้ไข"
+
+#: src/layout_util.c:779 src/menu.c:259
+#, fuzzy
+msgid "_Adjust"
+msgstr "ปรับเปลี่ยน"
+
+#: src/layout_util.c:781
+#, fuzzy
+msgid "_Help"
+msgstr "/ช่วยเหลือ"
+
+#: src/layout_util.c:783
+#, fuzzy
+msgid "New _window"
+msgstr "/แฟ้ม/collection ใหม"
+
+#: src/layout_util.c:784
+#, fuzzy
+msgid "_New collection"
+msgstr "บันทึก collecion"
+
+#: src/layout_util.c:785
+#, fuzzy
+msgid "_Open collection..."
+msgstr "เปิด collection"
+
+#: src/layout_util.c:786
+#, fuzzy
+msgid "Open _recent"
+msgstr "/แฟ้ม/เปิดครั้งล่าสุด"
+
+#: src/layout_util.c:787
+#, fuzzy
+msgid "_Search..."
+msgstr "กำลังเปรียบเทียบ..."
+
+#: src/layout_util.c:789
+#, fuzzy
+msgid "Pan _view"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/layout_util.c:790
+#, fuzzy
+msgid "_Print..."
+msgstr "/แฟ้ม/เปลี่ยนชื่อ..."
+
+#: src/layout_util.c:791
+#, fuzzy
+msgid "N_ew folder..."
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/layout_util.c:797
+#, fuzzy
+msgid "_Quit"
+msgstr "คุณภาพ"
+
+#: src/layout_util.c:809 src/menu.c:201
+#, fuzzy
+msgid "_Rotate clockwise"
+msgstr "หมุนตามเข็มนาฬิกา"
+
+#: src/layout_util.c:810 src/menu.c:204
+#, fuzzy
+msgid "Rotate _counterclockwise"
+msgstr "หมุนทวนเข็มนาฬิกา"
+
+#: src/layout_util.c:811
+#, fuzzy
+msgid "Rotate 1_80"
+msgstr "หมุน 180 องศา"
+
+#: src/layout_util.c:812 src/menu.c:210
+#, fuzzy
+msgid "_Mirror"
+msgstr "กระจก"
+
+#: src/layout_util.c:813 src/menu.c:213
+#, fuzzy
+msgid "_Flip"
+msgstr "พลิก"
+
+#: src/layout_util.c:814 src/menu.c:216
+msgid "_Grayscale"
+msgstr ""
+
+#: src/layout_util.c:816
+#, fuzzy
+msgid "Select _all"
+msgstr "เลือกทั้งหมด"
+
+#: src/layout_util.c:817
+#, fuzzy
+msgid "Select _none"
+msgstr "ไม่เลือกสิ่งใด"
+
+#: src/layout_util.c:818
+#, fuzzy
+msgid "P_references..."
+msgstr "/แกไข/ออพชัน..."
+
+#: src/layout_util.c:819
+msgid "_Thumbnail maintenance..."
+msgstr ""
+
+#: src/layout_util.c:825
+#, fuzzy
+msgid "_Zoom to fit"
+msgstr "/ดู/ซูมพอดีกรอบ"
+
+#: src/layout_util.c:826
+#, fuzzy
+msgid "F_ull screen"
+msgstr "เต็มจอภาพ"
+
+#: src/layout_util.c:827
+#, fuzzy
+msgid "_Hide file list"
+msgstr "(ไม่)ซ่อนรายการแฟ้ม"
+
+#: src/layout_util.c:828
+#, fuzzy
+msgid "Toggle _slideshow"
+msgstr "หยุดการดูไสลด์"
+
+#: src/layout_util.c:829
+#, fuzzy
+msgid "_Refresh"
+msgstr "รีเฟรช"
+
+#: src/layout_util.c:831
+#, fuzzy
+msgid "_Contents"
+msgstr "/ช่วยเหลือ/เกี่ยวกับ"
+
+#: src/layout_util.c:832
+#, fuzzy
+msgid "_Keyboard shortcuts"
+msgstr "/ช่วยเหลือ/คีย์ลัด"
+
+#: src/layout_util.c:833
+#, fuzzy
+msgid "_Release notes"
+msgstr "/ช่วยเหลือ/Release notes"
+
+#: src/layout_util.c:834
+#, fuzzy
+msgid "_About"
+msgstr "/ช่วยเหลือ/เกี่ยวกับ"
+
+#: src/layout_util.c:838 src/layout_util.c:1086
+#, fuzzy
+msgid "_Thumbnails"
+msgstr "รูปเล็ก"
+
+#: src/layout_util.c:839
+#, fuzzy
+msgid "Tr_ee"
+msgstr "/มุมมอง/sep3"
+
+#: src/layout_util.c:840
+#, fuzzy
+msgid "_Float file list"
+msgstr "/ดู/(ไม่)ลอยแฟ้มรายการ"
+
+#: src/layout_util.c:841
+#, fuzzy
+msgid "Hide tool_bar"
+msgstr "/ดู/tear1"
+
+#: src/layout_util.c:842
+#, fuzzy
+msgid "_Keywords"
+msgstr "/มุมมอง/sep3"
+
+#: src/layout_util.c:843
+#, fuzzy
+msgid "E_xif data"
+msgstr "/ดู/_รีเฟรชรายการ"
+
+#: src/layout_util.c:844
+#, fuzzy
+msgid "Sort _manager"
+msgstr "เรียงตามชื่อ"
+
+#: src/layout_util.c:848
+#, fuzzy
+msgid "_List"
+msgstr "/ดู/_รีเฟรชรายการ"
+
+#: src/layout_util.c:849
+#, fuzzy
+msgid "I_cons"
+msgstr "/มุมมอง/sep3"
+
+#: src/layout_util.c:1087
+#, fuzzy
+msgid "Show thumbnails"
+msgstr "แคชรูปเล็ก"
+
+#: src/layout_util.c:1092
+#, fuzzy
+msgid "Change to home folder"
+msgstr "เปลี่ยนไปยังโฮมไดเรคทอร"
+
+#: src/layout_util.c:1094
+msgid "Refresh file list"
+msgstr "รีเฟรชรายการแฟ้ม"
+
+#: src/layout_util.c:1096
+msgid "Zoom in"
+msgstr "ซูมเข้า "
+
+#: src/layout_util.c:1098
+msgid "Zoom out"
+msgstr "ซูมออก"
+
+#: src/layout_util.c:1100 src/preferences.c:945
+msgid "Fit image to window"
+msgstr "ทำภาพให้พอดีหน้าต่าง"
+
+#: src/layout_util.c:1102
+msgid "Set zoom 1:1"
+msgstr "กำหนดซูม1:1"
+
+#: src/layout_util.c:1104
+msgid "Configure options"
+msgstr "ปรับแต่งออพชั่น"
+
+#: src/layout_util.c:1105
+#, fuzzy
+msgid "_Float"
+msgstr "ธรรมดา"
+
+#: src/layout_util.c:1106
+msgid "Float Controls"
+msgstr "ควบคุมการลอย"
+
+#: src/main.c:237
+msgid "Help - GQview"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/main.c:460 src/main.c:1376
+msgid "Command line"
+msgstr ""
+
+#. short, long                  callback,               extra, prefer,description
+#: src/main.c:498
+#, fuzzy
+msgid "next image"
+msgstr "โหลดล่วงหน้ารูปต่อไป"
+
+#: src/main.c:499
+msgid "previous image"
+msgstr ""
+
+#: src/main.c:500
+#, fuzzy
+msgid "first image"
+msgstr "%d ภาพ"
+
+#: src/main.c:501
+#, fuzzy
+msgid "last image"
+msgstr "โหลดล่วงหน้ารูปต่อไป"
+
+#: src/main.c:502
+#, fuzzy
+msgid "toggle full screen"
+msgstr "ออกจากโหมดเต็มจอภาพ"
+
+#: src/main.c:503
+#, fuzzy
+msgid "start full screen"
+msgstr "ออกจากโหมดเต็มจอภาพ"
+
+#: src/main.c:504
+#, fuzzy
+msgid "stop full screen"
+msgstr "ออกจากโหมดเต็มจอภาพ"
+
+#: src/main.c:505
+#, fuzzy
+msgid "toggle slide show"
+msgstr "หยุดการดูไสลด์"
+
+#: src/main.c:506
+#, fuzzy
+msgid "start slide show"
+msgstr "เริ่มต้นแสดงไสลด์"
+
+#: src/main.c:507
+#, fuzzy
+msgid "stop slide show"
+msgstr "หยุดการดูไสลด์"
+
+#: src/main.c:508
+#, fuzzy
+msgid "start recursive slide show"
+msgstr "เริ่มต้นแสดงไสลด์"
+
+#: src/main.c:509
+msgid "set slide show delay in seconds"
+msgstr ""
+
+#: src/main.c:510
+msgid "show tools"
+msgstr ""
+
+#: src/main.c:511
+#, fuzzy
+msgid "hide tools"
+msgstr "GQview - เครื่องมือ"
+
+#: src/main.c:512
+msgid "quit"
+msgstr ""
+
+#: src/main.c:513
+#, fuzzy
+msgid "open file"
+msgstr ""
+"เปลี่ยนชื่อแฟ้ม:\n"
+"%s\n"
+"เป็น:"
+
+#: src/main.c:514
+#, fuzzy
+msgid "open file in new window"
+msgstr "มองในหน้าต่างใหม่"
+
+#: src/main.c:580
+msgid "Remote command list:\n"
+msgstr ""
+
+#: src/main.c:638
+msgid "Remote GQview not running, starting..."
+msgstr ""
+
+#: src/main.c:773
+msgid "Remote not available\n"
+msgstr ""
+
+#: src/main.c:991
+msgid ""
+"Usage: gqview [options] [path]\n"
+"\n"
+msgstr ""
+"Usage: gqview [options] [path]\n"
+"\n"
+
+#: src/main.c:992
+msgid "valid options are:\n"
+msgstr "valid options are:\n"
+
+#: src/main.c:993
+msgid "  +t, --with-tools           force show of tools\n"
+msgstr "  +t, --with-tools           force show of tools\n"
+
+#: src/main.c:994
+msgid "  -t, --without-tools        force hide of tools\n"
+msgstr "  -t, --without-tools        force hide of tools\n"
+
+#: src/main.c:995
+msgid "  -f, --fullscreen           start in full screen mode\n"
+msgstr "  -f, --fullscreen           start in full screen mode\n"
+
+#: src/main.c:996
+msgid "  -s, --slideshow            start in slideshow mode\n"
+msgstr "  -s, --slideshow            start in slideshow mode\n"
+
+#: src/main.c:997
+msgid "  -l, --list                 open collection window for command line\n"
+msgstr "  -l, --list                 open collection window for command line\n"
+
+#: src/main.c:998
+msgid "      --geometry=GEOMETRY    set main window location\n"
+msgstr ""
+
+#: src/main.c:999
+#, fuzzy
+msgid "  -r, --remote               send following commands to open window\n"
+msgstr "  -l, --list                 open collection window for command line\n"
+
+#: src/main.c:1000
+msgid "  -rh,--remote-help          print remote command list\n"
+msgstr ""
+
+#: src/main.c:1001
+msgid "  --debug                    turn on debug output\n"
+msgstr "  --debug                    turn on debug output\n"
+
+#: src/main.c:1002
+msgid "  -v, --version              print version info\n"
+msgstr "  -v, --version              print version info\n"
+
+#: src/main.c:1003
+msgid ""
+"  -h, --help                 show this message\n"
+"\n"
+msgstr ""
+"  -h, --help                 show this message\n"
+"\n"
+
+#: src/main.c:1017
+#, c-format
+msgid ""
+"invalid or ignored: %s\n"
+"Use --help for options\n"
+msgstr ""
+"invalid or ignored: %s\n"
+"Use --help for options\n"
+
+#: src/main.c:1093
+#, c-format
+msgid "Creating GQview dir:%s\n"
+msgstr "กำลังสร้าง GQview dir:%s\n"
+
+#: src/main.c:1099
+#, c-format
+msgid "Could not create dir:%s\n"
+msgstr "ไม่สามารถสร้าง GQview ไดเร็อทอรี:%s\n"
+
+#: src/main.c:1120 src/ui_bookmark.c:858 src/ui_pathsel.c:1042
+msgid "Home"
+msgstr "โฮม"
+
+#: src/main.c:1122 src/ui_bookmark.c:865
+#, fuzzy
+msgid "Desktop"
+msgstr "สู่:"
+
+#: src/main.c:1222
+msgid "GQview - exit"
+msgstr "GQview - ออก"
+
+#: src/main.c:1226
+#, fuzzy
+msgid "Quit GQview"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/main.c:1226
+#, fuzzy
+msgid "Collections have been modified. Quit anyway?"
+msgstr ""
+"Collection ถูกแก้ไข\n"
+"ต้องการออกหรือไม่?์"
+
+#: src/menu.c:115
+#, fuzzy
+msgid "Sort by size"
+msgstr "เรียงตามขนาด"
+
+#: src/menu.c:118
+#, fuzzy
+msgid "Sort by date"
+msgstr "เรียงตามวันที่"
+
+#: src/menu.c:121
+msgid "Unsorted"
+msgstr "ไม่เรียง"
+
+#: src/menu.c:124
+#, fuzzy
+msgid "Sort by path"
+msgstr "เรียงตามพาธ"
+
+#: src/menu.c:127
+#, fuzzy
+msgid "Sort by number"
+msgstr "เรียงตามหมายเลข"
+
+#: src/menu.c:131
+#, fuzzy
+msgid "Sort by name"
+msgstr "เรียงตามชื่อ"
+
+#: src/menu.c:182
+msgid "Sort"
+msgstr "เรียง"
+
+#: src/menu.c:207
+#, fuzzy
+msgid "Rotate _180"
+msgstr "หมุน 180 องศา"
+
+#: src/pan-view.c:467
+#, fuzzy, c-format
+msgid "%d images, %s"
+msgstr "%d ภาพ"
+
+#: src/pan-view.c:477
+#, c-format
+msgid "The pan view does not support the folder \"%s\"."
+msgstr ""
+
+#: src/pan-view.c:478
+msgid "Folder not supported"
+msgstr ""
+
+#: src/pan-view.c:1070 src/pan-view.c:1086
+#, fuzzy
+msgid "Reading image data..."
+msgstr "กำลังอ่านข้อมูลที่คล้ายกัน..."
+
+#: src/pan-view.c:1145
+#, fuzzy
+msgid "Sorting images..."
+msgstr "กำลังเปรียบเทียบ..."
+
+#: src/pan-view.c:1525 src/pan-view.c:1891
+#, fuzzy
+msgid "Date:"
+msgstr "วันที่"
+
+#: src/pan-view.c:1527 src/preferences.c:873 src/print.c:3216 src/print.c:3423
+msgid "Size:"
+msgstr "ขนาด:"
+
+#: src/pan-view.c:1629
+msgid "path found"
+msgstr ""
+
+#: src/pan-view.c:1629
+#, fuzzy
+msgid "filename found"
+msgstr "เปลี่ยนชื่อ:"
+
+#: src/pan-view.c:1677
+msgid "partial match"
+msgstr ""
+
+#: src/pan-view.c:1888 src/pan-view.c:1921
+msgid "no match"
+msgstr ""
+
+#: src/pan-view.c:2247 src/search.c:2131
+msgid "Folder not found"
+msgstr ""
+
+#: src/pan-view.c:2248
+msgid "The entered path is not a folder"
+msgstr ""
+
+#: src/pan-view.c:2354
+#, fuzzy
+msgid "Pan View - GQview"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/pan-view.c:2376
+#, fuzzy
+msgid "Timeline"
+msgstr "Bilinear"
+
+#: src/pan-view.c:2377
+#, fuzzy
+msgid "Calendar"
+msgstr "ล้าง"
+
+#: src/pan-view.c:2379
+#, fuzzy
+msgid "Folders (flower)"
+msgstr "Tiles"
+
+#: src/pan-view.c:2380
+msgid "Grid"
+msgstr ""
+
+#: src/pan-view.c:2389
+msgid "Dots"
+msgstr ""
+
+#: src/pan-view.c:2390
+#, fuzzy
+msgid "No Images"
+msgstr "รูป"
+
+#: src/pan-view.c:2391
+#, fuzzy
+msgid "Small Thumbnails"
+msgstr "รูปเล็ก"
+
+#: src/pan-view.c:2392
+#, fuzzy
+msgid "Normal Thumbnails"
+msgstr "รูปเล็ก"
+
+#: src/pan-view.c:2393
+#, fuzzy
+msgid "Large Thumbnails"
+msgstr "ลบภาพเล็ก"
+
+#: src/pan-view.c:2394 src/pan-view.c:2834
+msgid "1:10 (10%)"
+msgstr ""
+
+#: src/pan-view.c:2395 src/pan-view.c:2830
+msgid "1:4 (25%)"
+msgstr ""
+
+#: src/pan-view.c:2396 src/pan-view.c:2826
+msgid "1:3 (33%)"
+msgstr ""
+
+#: src/pan-view.c:2397 src/pan-view.c:2822
+msgid "1:2 (50%)"
+msgstr ""
+
+#: src/pan-view.c:2398
+msgid "1:1 (100%)"
+msgstr ""
+
+#: src/pan-view.c:2446
+#, fuzzy
+msgid "Find:"
+msgstr "ฟิลเตอร์:"
+
+#: src/pan-view.c:2489
+#, fuzzy
+msgid "Use Exif date"
+msgstr "/ดู/_รีเฟรชรายการ"
+
+#: src/pan-view.c:2502
+msgid "Find"
+msgstr ""
+
+#: src/pan-view.c:2569
+msgid "Pan View Performance"
+msgstr ""
+
+#: src/pan-view.c:2576
+msgid "Pan view performance may be poor."
+msgstr ""
+
+#: src/pan-view.c:2577
+msgid ""
+"To improve performance of thumbnails in the pan view the following options "
+"can be enabled. Note that both options must be enabled to notice a change in "
+"performance."
+msgstr ""
+
+#: src/pan-view.c:2585 src/preferences.c:876
+msgid "Cache thumbnails"
+msgstr "แคชรูปเล็ก"
+
+#: src/pan-view.c:2587 src/preferences.c:882
+msgid "Use shared thumbnail cache"
+msgstr ""
+
+#: src/pan-view.c:2593
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/pan-view.c:2802
+#, fuzzy
+msgid "Sort by E_xif date"
+msgstr "เรียงตามวันที่"
+
+#: src/pan-view.c:2808
+msgid "_Show Exif information"
+msgstr ""
+
+#: src/pan-view.c:2810
+#, fuzzy
+msgid "Show im_age"
+msgstr "แสดงสิ่งที่ซ่อน"
+
+#: src/pan-view.c:2814
+#, fuzzy
+msgid "_None"
+msgstr "ไม่มี"
+
+#: src/pan-view.c:2818
+#, fuzzy
+msgid "_Full size"
+msgstr "Tiles"
+
+#: src/preferences.c:414
+msgid "Nearest (worst, but fastest)"
+msgstr "Nearest (เลวที่สุด, แต่เร้วที่สุด)"
+
+#: src/preferences.c:416
+msgid "Tiles"
+msgstr "Tiles"
+
+#: src/preferences.c:418
+msgid "Bilinear"
+msgstr "Bilinear"
+
+#: src/preferences.c:420
+msgid "Hyper (best, but slowest)"
+msgstr "Hyper (ดีที่สุด, แต่ช้าที่สุด)"
+
+#: src/preferences.c:448
+msgid "None"
+msgstr "ไม่มี"
+
+#: src/preferences.c:449
+msgid "Normal"
+msgstr "ธรรมดา"
+
+#: src/preferences.c:450
+msgid "Best"
+msgstr "ดีที่สุด"
+
+#: src/preferences.c:528 src/print.c:369
+msgid "Custom"
+msgstr ""
+
+#: src/preferences.c:692 src/preferences.c:695
+#, fuzzy
+msgid "Reset filters"
+msgstr "ลบแฟ้ม"
+
+#: src/preferences.c:696
+msgid ""
+"This will reset the file filters to the defaults.\n"
+"Continue?"
+msgstr ""
+
+#: src/preferences.c:729 src/preferences.c:732
+#, fuzzy
+msgid "Reset editors"
+msgstr "ลบแฟ้ม"
+
+#: src/preferences.c:733
+msgid ""
+"This will reset the edit commands to the defaults.\n"
+"Continue?"
+msgstr ""
+
+#: src/preferences.c:757 src/preferences.c:760
+#, fuzzy
+msgid "Clear trash"
+msgstr "ล้างแคช"
+
+#: src/preferences.c:761
+msgid "This will remove the trash contents."
+msgstr ""
+
+#: src/preferences.c:800
+#, fuzzy
+msgid "GQview Preferences"
+msgstr "GQview - เปลี่ยนชื่อ"
+
+#: src/preferences.c:854
+msgid "Startup"
+msgstr ""
+
+#: src/preferences.c:856
+#, fuzzy
+msgid "Change to folder:"
+msgstr "เปลี่ยนไปยังโฮมไดเรคทอร"
+
+#: src/preferences.c:867
+msgid "Use current"
+msgstr "ใช้ขณะนี้"
+
+#: src/preferences.c:874 src/preferences.c:925
+msgid "Quality:"
+msgstr "คุณภาพ:"
+
+#: src/preferences.c:888
+msgid "Cache thumbnails into .thumbnails"
+msgstr "แคชรูปเล็กสู่รูปเล็ก"
+
+#: src/preferences.c:892
+msgid "Use xvpics thumbnails when found (read only)"
+msgstr "ใช้ รูปเล็กของ xvpics เมื่อถูกพบ (อ่านอย่างเดียว)"
+
+#: src/preferences.c:896
+msgid "Faster jpeg thumbnailing (may reduce quality)"
+msgstr ""
+
+#: src/preferences.c:899
+msgid "Slide show"
+msgstr "การแสดงไสลด์"
+
+#: src/preferences.c:902
+#, fuzzy
+msgid "Delay between image change:"
+msgstr "หน่วงเวลาก่อนเปลี่ยนรูป (วินาที):"
+
+#: src/preferences.c:902
+msgid "seconds"
+msgstr ""
+
+#: src/preferences.c:908
+msgid "Random"
+msgstr "สุ่ม"
+
+#: src/preferences.c:909
+msgid "Repeat"
+msgstr "ทำซ้ำ"
+
+#: src/preferences.c:919
+#, fuzzy
+msgid "Zoom"
+msgstr "ซูมเข้า "
+
+#: src/preferences.c:922
+msgid "Dithering method:"
+msgstr "ขั้นตอนวิธี Dithering:"
+
+#: src/preferences.c:927
+msgid "Two pass zooming"
+msgstr ""
+
+#: src/preferences.c:930
+#, fuzzy
+msgid "Allow enlargement of image for zoom to fit"
+msgstr "ขยายภาพเพื่อซูมพอดี"
+
+#: src/preferences.c:934
+msgid "Zoom increment:"
+msgstr "เพิ่มการซูม"
+
+#: src/preferences.c:939
+msgid "When new image is selected:"
+msgstr "เมื่อภาพใหม่ถูกเลือก:"
+
+#: src/preferences.c:942
+msgid "Zoom to original size"
+msgstr "ซูมยังขนาดเริ่มต้น"
+
+#: src/preferences.c:948
+msgid "Leave Zoom at previous setting"
+msgstr "ออกจากซูมไปค่าที่เซตไว้่ก่อนหน้า"
+
+#: src/preferences.c:952
+#, fuzzy
+msgid "Appearance"
+msgstr "ต่อท้าย"
+
+#: src/preferences.c:954
+msgid "Black background"
+msgstr ""
+
+#: src/preferences.c:957
+#, fuzzy
+msgid "Convenience"
+msgstr "ดำเนินการต่อ"
+
+#: src/preferences.c:959
+#, fuzzy
+msgid "Refresh on file change"
+msgstr "รีเฟรชรายการแฟ้ม"
+
+#: src/preferences.c:961
+msgid "Preload next image"
+msgstr "โหลดล่วงหน้ารูปต่อไป"
+
+#: src/preferences.c:963
+msgid "Auto rotate image using Exif information"
+msgstr ""
+
+#: src/preferences.c:972
+msgid "Windows"
+msgstr "หน้าต่าง"
+
+#: src/preferences.c:975
+#, fuzzy
+msgid "State"
+msgstr "วันที่"
+
+#: src/preferences.c:977
+msgid "Remember window positions"
+msgstr "จำตำแหน่งหน้าต่าง"
+
+#: src/preferences.c:979
+msgid "Remember tool state (float/hidden)"
+msgstr "จำสถานะเครื่องมือ (ลอย/ซ่อน)"
+
+#: src/preferences.c:984
+msgid "Fit window to image when tools are hidden/floating"
+msgstr "กำหนดหน้าต่างเท่ารูปภาพเมื่อเครื่องมือถูกซ่อน/แสดง"
+
+#: src/preferences.c:988
+msgid "Limit size when auto-sizing window (%):"
+msgstr "จำกัดขนาดเมื่อกำหนดขนาดหน้าต่างอัตโนมัติ (%)"
+
+#: src/preferences.c:995 src/print.c:3371 src/print.c:3378
+msgid "Layout"
+msgstr ""
+
+#: src/preferences.c:1008
+msgid "Filtering"
+msgstr "การกรอง"
+
+#: src/preferences.c:1013
+msgid "Show entries that begin with a dot"
+msgstr "แสดงข้อมูลที่เริ่มต้นด้วยจุด"
+
+#: src/preferences.c:1015
+msgid "Case sensitive sort"
+msgstr ""
+
+#: src/preferences.c:1018
+msgid "Disable File Filtering"
+msgstr "ยกเลิกการกรองแฟ้ม"
+
+#: src/preferences.c:1021
+#, fuzzy
+msgid "File types"
+msgstr "ฟิลเตอร์:"
+
+#: src/preferences.c:1043
+#, fuzzy
+msgid "Filter"
+msgstr "ฟิลเตอร์:"
+
+#: src/preferences.c:1080 src/preferences.c:1144
+msgid "Defaults"
+msgstr ""
+
+#: src/preferences.c:1101
+msgid "Editors"
+msgstr "อิดิเตอร์"
+
+#: src/preferences.c:1107
+msgid "#"
+msgstr ""
+
+#: src/preferences.c:1110 src/preferences.c:1264
+msgid "Menu name"
+msgstr "เมนู ชื่อ"
+
+#: src/preferences.c:1113
+msgid "Command Line"
+msgstr ""
+
+#: src/preferences.c:1160
+msgid "Advanced"
+msgstr ""
+
+#: src/preferences.c:1173
+#, fuzzy
+msgid "Full screen"
+msgstr "เต็มจอภาพ"
+
+#: src/preferences.c:1181
+#, fuzzy
+msgid "Smooth image flip"
+msgstr "รูป"
+
+#: src/preferences.c:1183
+msgid "Disable screen saver"
+msgstr ""
+
+#: src/preferences.c:1186
+msgid "Delete"
+msgstr "ลบ"
+
+#: src/preferences.c:1188
+msgid "Confirm file delete"
+msgstr "ยืนยันการลบ"
+
+#: src/preferences.c:1190
+msgid "Enable Delete key"
+msgstr "อนุญาตให้ใช้ปุ่ม Delete"
+
+#: src/preferences.c:1193
+#, fuzzy
+msgid "Safe delete"
+msgstr "ยืนยันการลบ"
+
+#: src/preferences.c:1211
+#, fuzzy
+msgid "Maximum size:"
+msgstr "Tiles"
+
+#: src/preferences.c:1211
+msgid "MB"
+msgstr ""
+
+#: src/preferences.c:1214
+msgid "View"
+msgstr "มอง"
+
+#: src/preferences.c:1224
+msgid "Behavior"
+msgstr ""
+
+#: src/preferences.c:1226
+#, fuzzy
+msgid "Rectangular selection in icon view"
+msgstr "การเลือกแบบสี่เหลี่ยม"
+
+#: src/preferences.c:1229
+msgid "Descend folders in tree view"
+msgstr ""
+
+#: src/preferences.c:1232
+msgid "In place renaming"
+msgstr "การเปลี่ยนชื่อแบบแทนที่"
+
+#: src/preferences.c:1235
+msgid "Navigation"
+msgstr ""
+
+#: src/preferences.c:1237
+msgid "Progressive keyboard scrolling"
+msgstr "ลักษณะคีย์บอร์ดใช้เลื่อนภาพ"
+
+#: src/preferences.c:1239
+msgid "Mouse wheel scrolls image"
+msgstr "เมาส์ลูกกลิ้งใช้เลื่อนภาพ"
+
+#: src/preferences.c:1242
+msgid "Miscellaneous"
+msgstr ""
+
+#: src/preferences.c:1244
+msgid "Store keywords and comments local to source images"
+msgstr ""
+
+#: src/preferences.c:1247
+#, fuzzy
+msgid "Custom similarity threshold:"
+msgstr "แฟ้มไม่ระบุชนิด"
+
+#: src/preferences.c:1250
+msgid "Offscreen cache size (Mb per image):"
+msgstr ""
+
+#: src/preferences.c:1253
+#, fuzzy
+msgid "Color profiles"
+msgstr "ทุกแฟ้ม"
+
+#: src/preferences.c:1261
+msgid "Type"
+msgstr ""
+
+#: src/preferences.c:1267
+#, fuzzy
+msgid "File"
+msgstr "ฟิลเตอร์:"
+
+#: src/preferences.c:1289 src/preferences.c:1300
+#, fuzzy
+msgid "Select color profile"
+msgstr "ไม่เลือกสิ่งใด"
+
+#: src/preferences.c:1297
+msgid "Screen:"
+msgstr ""
+
+#: src/preferences.c:1380
+#, fuzzy
+msgid "About - GQview"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/preferences.c:1393
+#, fuzzy, c-format
+msgid ""
+"GQview %s\n"
+"\n"
+"Copyright (c) %s John Ellis\n"
+"website: %s\n"
+"email: %s\n"
+"\n"
+"Released under the GNU General Public License"
+msgstr ""
+"GQview %s\n"
+"\n"
+"สงวนลิขสิทธิ์ (c) 2003 โดย John Ellis\n"
+"http://gqview.sourceforge.net\n"
+"gqview@users.sourceforge.net\n"
+"\n"
+"Released ภายใต้ the GNU General Public License"
+
+#: src/preferences.c:1411
+#, fuzzy
+msgid "Credits..."
+msgstr "/แกไข/ออพชัน..."
+
+#: src/print.c:115
+#, fuzzy
+msgid "Selection"
+msgstr "ไม่เลือกสิ่งใด"
+
+#: src/print.c:116
+msgid "All"
+msgstr ""
+
+#: src/print.c:127
+msgid "One image per page"
+msgstr ""
+
+#: src/print.c:128
+msgid "Proof sheet"
+msgstr ""
+
+#: src/print.c:141
+msgid "Default printer"
+msgstr ""
+
+#: src/print.c:142
+#, fuzzy
+msgid "Custom printer"
+msgstr "แฟ้มไม่ระบุชนิด"
+
+#: src/print.c:143
+msgid "PostScript file"
+msgstr ""
+
+#: src/print.c:144
+#, fuzzy
+msgid "Image file"
+msgstr "รูป"
+
+#: src/print.c:158
+msgid "jpeg, low quality"
+msgstr ""
+
+#: src/print.c:159
+msgid "jpeg, normal quality"
+msgstr ""
+
+#: src/print.c:160
+msgid "jpeg, high quality"
+msgstr ""
+
+#: src/print.c:354 src/print.c:3216
+msgid "points"
+msgstr ""
+
+#: src/print.c:355
+msgid "millimeters"
+msgstr ""
+
+#: src/print.c:356
+msgid "centimeters"
+msgstr ""
+
+#: src/print.c:357
+msgid "inches"
+msgstr ""
+
+#: src/print.c:358
+msgid "picas"
+msgstr ""
+
+#: src/print.c:363
+msgid "Portrait"
+msgstr ""
+
+#: src/print.c:364
+msgid "Landscape"
+msgstr ""
+
+#: src/print.c:370
+msgid "Letter"
+msgstr ""
+
+#. in 8.5 x 11
+#: src/print.c:371
+msgid "Legal"
+msgstr ""
+
+#. in 8.5 x 14
+#: src/print.c:372
+msgid "Executive"
+msgstr ""
+
+#. in 7.25x 10.5
+#. mm 841 x 1189
+#. mm 594 x 841
+#. mm 420 x 594
+#. mm 297 x 420
+#. mm 210 x 297
+#. mm 148 x 210
+#. mm 105 x 148
+#. mm 353 x 500
+#. mm 250 x 353
+#. mm 176 x 250
+#. mm 125 x 176
+#: src/print.c:384
+msgid "Envelope #10"
+msgstr ""
+
+#. in 4.125 x 9.5
+#: src/print.c:385
+msgid "Envelope #9"
+msgstr ""
+
+#. in 3.875 x 8.875
+#: src/print.c:386
+msgid "Envelope C4"
+msgstr ""
+
+#. mm 229 x 324
+#: src/print.c:387
+msgid "Envelope C5"
+msgstr ""
+
+#. mm 162 x 229
+#: src/print.c:388
+msgid "Envelope C6"
+msgstr ""
+
+#. mm 114 x 162
+#: src/print.c:389
+msgid "Photo 6x4"
+msgstr ""
+
+#. in 6   x 4
+#: src/print.c:390
+msgid "Photo 8x10"
+msgstr ""
+
+#. in 8   x 10
+#: src/print.c:391
+msgid "Postcard"
+msgstr ""
+
+#. mm 100 x 148
+#: src/print.c:392
+msgid "Tabloid"
+msgstr ""
+
+#: src/print.c:548
+#, c-format
+msgid "page %d of %d"
+msgstr ""
+
+#: src/print.c:740 src/utilops.c:2287
+msgid "Preview"
+msgstr ""
+
+#: src/print.c:1048
+#, c-format
+msgid ""
+"Unable to open pipe for writing.\n"
+"\"%s\""
+msgstr ""
+
+#: src/print.c:1063 src/print.c:1503 src/ui_pathsel.c:423
+#: src/view_file_list.c:456
+#, fuzzy, c-format
+msgid "A file with name %s already exists."
+msgstr "แฟม้ชื่อ %s มีอยู่แล้ว"
+
+#: src/print.c:1078 src/print.c:1558
+#, c-format
+msgid "Failure writing to file %s"
+msgstr ""
+
+#: src/print.c:1132 src/print.c:1169 src/print.c:1205 src/print.c:1322
+#: src/print.c:1413 src/print.c:1444
+msgid "SIGPIPE error writing to printer."
+msgstr ""
+
+#: src/print.c:1979
+#, c-format
+msgid "Page %d"
+msgstr ""
+
+#: src/print.c:2001 src/print.c:2006
+#, fuzzy
+msgid "Printing error"
+msgstr "ฟิลเตอร์:"
+
+#: src/print.c:2005
+#, c-format
+msgid "An error occured printing to %s."
+msgstr ""
+
+#: src/print.c:2009
+#, fuzzy
+msgid "Details"
+msgstr "ลบแฟ้ม"
+
+#: src/print.c:2602 src/print.c:3347
+#, fuzzy
+msgid "Print - GQview"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/print.c:2606
+#, c-format
+msgid "Printing %d pages to %s."
+msgstr ""
+
+#: src/print.c:2706
+#, fuzzy
+msgid "Format:"
+msgstr "ธรรมดา"
+
+#: src/print.c:2781
+msgid "Units:"
+msgstr ""
+
+#: src/print.c:2825
+#, fuzzy
+msgid "Orientation:"
+msgstr "Dimensions"
+
+#: src/print.c:2957
+#, fuzzy
+msgid "Destination:"
+msgstr "ปลายทางไม่ถูกต้อง"
+
+#: src/print.c:3005
+#, fuzzy
+msgid "<printer name>"
+msgstr "เปลี่ยนชื่อ:"
+
+#: src/print.c:3094
+#, fuzzy
+msgid "Unlimited"
+msgstr "ไม่มีชื่อ"
+
+#: src/print.c:3203
+msgid "Show"
+msgstr ""
+
+#: src/print.c:3214
+#, fuzzy
+msgid "Font"
+msgstr "ไม่มี"
+
+#: src/print.c:3374
+#, fuzzy
+msgid "Source"
+msgstr "เรียง"
+
+#: src/print.c:3390
+#, fuzzy
+msgid "Proof size:"
+msgstr "รูป"
+
+#: src/print.c:3406
+msgid "Text"
+msgstr ""
+
+#: src/print.c:3416
+#, fuzzy
+msgid "Paper"
+msgstr "ฟิลเตอร์:"
+
+#: src/print.c:3439
+msgid "Margins"
+msgstr ""
+
+#: src/print.c:3441
+msgid "Left:"
+msgstr ""
+
+#: src/print.c:3444
+msgid "Right:"
+msgstr ""
+
+#: src/print.c:3447
+msgid "Top:"
+msgstr ""
+
+#: src/print.c:3450
+#, fuzzy
+msgid "Bottom:"
+msgstr "สู่:"
+
+#: src/print.c:3459
+#, fuzzy
+msgid "Printer"
+msgstr "ฟิลเตอร์:"
+
+#: src/print.c:3465
+#, fuzzy
+msgid "Custom printer:"
+msgstr "แฟ้มไม่ระบุชนิด"
+
+#: src/print.c:3474
+#, fuzzy
+msgid "File:"
+msgstr "ฟิลเตอร์:"
+
+#: src/print.c:3483
+#, fuzzy
+msgid "File format:"
+msgstr "ฟิลเตอร์:"
+
+#: src/print.c:3488
+msgid "DPI:"
+msgstr ""
+
+#: src/print.c:3496
+#, fuzzy
+msgid "Remember print settings"
+msgstr "จำตำแหน่งหน้าต่าง"
+
+#: src/rcfile.c:185
+#, c-format
+msgid "error saving config file: %s\n"
+msgstr "เกิดความผิดพลาด์์ในการบันทึกแฟ้ม config:-%s\n"
+
+#: src/search.c:200
+#, fuzzy
+msgid "folder"
+msgstr "Tiles"
+
+#: src/search.c:201
+#, fuzzy
+msgid "comments"
+msgstr "เพิ่มเนื้อหา"
+
+#: src/search.c:202
+msgid "results"
+msgstr ""
+
+#: src/search.c:206
+#, fuzzy
+msgid "contains"
+msgstr "ดำเนินการต่อ"
+
+#: src/search.c:207
+msgid "is"
+msgstr ""
+
+#: src/search.c:211 src/search.c:218
+msgid "equal to"
+msgstr ""
+
+#: src/search.c:212
+msgid "less than"
+msgstr ""
+
+#: src/search.c:213
+#, fuzzy
+msgid "greater than"
+msgstr "สร้างรูปเล็ก"
+
+#: src/search.c:214 src/search.c:221
+msgid "between"
+msgstr ""
+
+#: src/search.c:219
+msgid "before"
+msgstr ""
+
+#: src/search.c:220
+#, fuzzy
+msgid "after"
+msgstr "ฟิลเตอร์:"
+
+#: src/search.c:225
+msgid "match all"
+msgstr ""
+
+#: src/search.c:226
+msgid "match any"
+msgstr ""
+
+#: src/search.c:227
+msgid "exclude"
+msgstr ""
+
+#: src/search.c:277
+#, fuzzy, c-format
+msgid "%s, %d files (%s, %d)"
+msgstr "%d แฟ้ม (%d)%s"
+
+#: src/search.c:284
+#, fuzzy, c-format
+msgid "%s, %d files"
+msgstr "%d แฟ้ม%s"
+
+#: src/search.c:301
+#, fuzzy
+msgid "Searching..."
+msgstr "กำลังเปรียบเทียบ..."
+
+#: src/search.c:2084
+msgid "File not found"
+msgstr ""
+
+#: src/search.c:2085
+#, fuzzy
+msgid "Please enter an existing file for image content."
+msgstr "โปรดเลือกได้เรคทอรีที่มีอยู่แล้ว"
+
+#: src/search.c:2132
+#, fuzzy
+msgid "Please enter an existing folder to search."
+msgstr "โปรดเลือกได้เรคทอรีที่มีอยู่แล้ว"
+
+#: src/search.c:2561
+msgid "Image search - GQview"
+msgstr ""
+
+#: src/search.c:2590
+#, fuzzy
+msgid "Search:"
+msgstr "กำลังเปรียบเทียบ..."
+
+#: src/search.c:2604
+msgid "Recurse"
+msgstr ""
+
+#: src/search.c:2608
+#, fuzzy
+msgid "File name"
+msgstr "เปลี่ยนชื่อ:"
+
+#: src/search.c:2614
+msgid "Match case"
+msgstr ""
+
+#: src/search.c:2618
+#, fuzzy
+msgid "File size is"
+msgstr "Tiles"
+
+#: src/search.c:2625 src/search.c:2640 src/search.c:2658
+#, fuzzy
+msgid "and"
+msgstr "สุ่ม"
+
+#: src/search.c:2630
+#, fuzzy
+msgid "File date is"
+msgstr "ฟิลเตอร์:"
+
+#: src/search.c:2647
+#, fuzzy
+msgid "Image dimensions are"
+msgstr "ปลายทางไม่ถูกต้อง"
+
+#: src/search.c:2667
+#, fuzzy
+msgid "Image content is"
+msgstr "เพิ่มเนื้อหา"
+
+#: src/search.c:2673
+#, fuzzy, no-c-format
+msgid "% similar to"
+msgstr "ความคล้ายกัน"
+
+#: src/search.c:2742
+#, fuzzy
+msgid "Rank"
+msgstr "สุ่ม"
+
+#: src/thumb.c:379
+msgid "Thumbnail image in cache failed to load, trying to recreate.\n"
+msgstr "ภาพเล็กในแคชล้มเหลวระหว่างโหลด,กำลังพยามสร้างใหม่\n"
+
+#: src/ui_bookmark.c:148
+#, c-format
+msgid "Unable to write history lists to: %s\n"
+msgstr "ไม่สามารถเขียนรายการประวัติศาสตร์สู่:-%s\n"
+
+#: src/ui_bookmark.c:445 src/ui_bookmark.c:508
+msgid "New Bookmark"
+msgstr ""
+
+#: src/ui_bookmark.c:591 src/ui_bookmark.c:597
+#, fuzzy
+msgid "Edit Bookmark"
+msgstr "อิดิเตอร์"
+
+#: src/ui_bookmark.c:612
+#, fuzzy
+msgid "Path:"
+msgstr "เส้นทาง"
+
+#: src/ui_bookmark.c:621
+msgid "Icon:"
+msgstr ""
+
+#: src/ui_bookmark.c:627
+#, fuzzy
+msgid "Select icon"
+msgstr "ไม่เลือกสิ่งใด"
+
+#: src/ui_bookmark.c:718
+#, fuzzy
+msgid "_Properties..."
+msgstr "/แกไข/ออพชัน..."
+
+#: src/ui_bookmark.c:720
+#, fuzzy
+msgid "Move _up"
+msgstr "ย้าย"
+
+#: src/ui_bookmark.c:722
+#, fuzzy
+msgid "Move _down"
+msgstr "ย้าย"
+
+#: src/ui_bookmark.c:724
+#, fuzzy
+msgid "_Remove"
+msgstr "ลบ"
+
+#: src/ui_help.c:111
+#, c-format
+msgid ""
+"Unable to load:\n"
+"%s"
+msgstr ""
+"ไม่สามารถโหลด:\n"
+"%s"
+
+#: src/ui_pathsel.c:429 src/utilops.c:2675
+#, c-format
+msgid "Failed to rename %s to %s."
+msgstr "ล้มเหล้วในการเปลี่ยนชื่อ %s เป็น %s"
+
+#: src/ui_pathsel.c:485 src/utilops.c:1354 src/utilops.c:1527
+#, c-format
+msgid ""
+"Unable to delete file:\n"
+"%s"
+msgstr ""
+"ไม่สามารถลบแฟ้ม:\n"
+"%s"
+
+#: src/ui_pathsel.c:486 src/utilops.c:1528
+msgid "File deletion failed"
+msgstr "การลบแฟ้มผิดพลาด"
+
+#: src/ui_pathsel.c:528 src/ui_pathsel.c:536
+msgid "Delete file"
+msgstr "ลบแฟ้ม"
+
+#: src/ui_pathsel.c:534
+#, c-format
+msgid ""
+"About to delete the file:\n"
+" %s"
+msgstr ""
+"เกี่ยวกับการลบแฟ้ม:\n"
+"%s"
+
+#: src/ui_pathsel.c:625 src/ui_pathsel.c:633 src/utilops.c:2253
+#: src/utilops.c:2509
+#, fuzzy
+msgid "_Rename"
+msgstr "เปลี่ยนชื่อ"
+
+#: src/ui_pathsel.c:627 src/ui_pathsel.c:637
+#, fuzzy
+msgid "Add _Bookmark"
+msgstr "อิดิเตอร์"
+
+#: src/ui_pathsel.c:635
+#, fuzzy
+msgid "_Delete"
+msgstr "ลบ"
+
+#: src/ui_pathsel.c:739 src/ui_pathsel.c:1044
+#, fuzzy
+msgid "New folder"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/ui_pathsel.c:749 src/utilops.c:2581 src/view_dir_list.c:330
+#: src/view_dir_tree.c:426
+#, fuzzy, c-format
+msgid ""
+"Unable to create folder:\n"
+"%s"
+msgstr ""
+"ไม่สามารถสร้างไดเรคทอรี\n"
+"%s"
+
+#: src/ui_pathsel.c:750 src/utilops.c:2582 src/view_dir_list.c:331
+#: src/view_dir_tree.c:427
+#, fuzzy
+msgid "Error creating folder"
+msgstr "การสร้างไดเรคทอรีผิดพลาด"
+
+#: src/ui_pathsel.c:971
+msgid "All Files"
+msgstr "ทุกแฟ้ม"
+
+#: src/ui_pathsel.c:1047
+msgid "Show hidden"
+msgstr "แสดงสิ่งที่ซ่อน"
+
+#: src/ui_pathsel.c:1131
+msgid "Filter:"
+msgstr "ฟิลเตอร์:"
+
+#: src/ui_tabcomp.c:857
+#, fuzzy
+msgid "Select path"
+msgstr "เลือกทั้งหมด"
+
+#: src/ui_tabcomp.c:873
+#, fuzzy
+msgid "All files"
+msgstr "ทุกแฟ้ม"
+
+#: src/utilops.c:505 src/utilops.c:826 src/utilops.c:1716 src/utilops.c:2438
+msgid "Overwrite file"
+msgstr "เขียนทับแฟ้ม"
+
+#: src/utilops.c:510 src/utilops.c:831 src/utilops.c:1721 src/utilops.c:2443
+#, fuzzy
+msgid "Overwrite file?"
+msgstr "เขียนทับแฟ้ม"
+
+#: src/utilops.c:511 src/utilops.c:832
+msgid "Replace existing file with new file."
+msgstr ""
+
+#: src/utilops.c:515
+#, fuzzy
+msgid "Overwrite _all"
+msgstr "เขียนทับแฟ้ม"
+
+#: src/utilops.c:517
+#, fuzzy
+msgid "S_kip all"
+msgstr "ข้าม"
+
+#: src/utilops.c:518
+#, fuzzy
+msgid "_Skip"
+msgstr "ข้าม"
+
+#: src/utilops.c:519 src/utilops.c:836 src/utilops.c:1727 src/utilops.c:2449
+#, fuzzy
+msgid "Existing file"
+msgstr "เกิดความผิดพลาดขณะย้ายแฟ้ม"
+
+#: src/utilops.c:519 src/utilops.c:836 src/utilops.c:1728 src/utilops.c:2450
+#, fuzzy
+msgid "New file"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/utilops.c:529 src/utilops.c:845 src/utilops.c:1862 src/utilops.c:1918
+#: src/utilops.c:1994 src/utilops.c:2326
+#, fuzzy
+msgid "Auto rename"
+msgstr "เมนู ชื่อ"
+
+#: src/utilops.c:537 src/utilops.c:853
+msgid "Rename"
+msgstr "เปลี่ยนชื่อ"
+
+#: src/utilops.c:578
+msgid "Source to copy matches destination"
+msgstr "คัดลอกต้นฉบับที่เหมือนกันกับปลายทาง"
+
+#: src/utilops.c:579
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to itself."
+msgstr ""
+"ไม่สามารถคัดลอกแฟ้ม:\n"
+"%s\n"
+"สู่ตัวเอง"
+
+#: src/utilops.c:583
+msgid "Source to move matches destination"
+msgstr "ย้ายต้นเฉพาะที่เหมือนกับปลายทาง"
+
+#: src/utilops.c:584
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to itself."
+msgstr ""
+"ไม่สามารถย้ายแฟ้ม:\n"
+"%s\n"
+"สู่ตัวเอง"
+
+#: src/utilops.c:592 src/utilops.c:679 src/utilops.c:1346
+#, fuzzy
+msgid "Co_ntinue"
+msgstr "ดำเนินการต่อ"
+
+#: src/utilops.c:665 src/utilops.c:893
+msgid "Error copying file"
+msgstr "เกิดความผิดพลาดขณะกำลังคัดลอกแฟ้ม"
+
+#: src/utilops.c:666
+#, fuzzy, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to:\n"
+"%s\n"
+"during multiple file copy."
+msgstr ""
+"ไม่สามารถคัดลอกแฟ้ม:\n"
+"%s สู่:\n"
+"%s\n"
+" ระหว่างหลายแฟ้มที่ถูกคัดลอก"
+
+#: src/utilops.c:670 src/utilops.c:898
+msgid "Error moving file"
+msgstr "เกิดความผิดพลาดขณะย้ายแฟ้ม"
+
+#: src/utilops.c:671
+#, fuzzy, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to:\n"
+"%s\n"
+"during multiple file move."
+msgstr ""
+"ไม่สามารถย้ายแฟ้ม:\n"
+"%sสู่:\n"
+"%s\n"
+" ระหว่างย้ายหลายแฟ้ม"
+
+#: src/utilops.c:817
+msgid "Source matches destination"
+msgstr "ต้นทางเหมือนปลายทาง"
+
+#: src/utilops.c:818
+msgid "Source and destination are the same, operation cancelled."
+msgstr "ต้นทางและปลายทางเหมือนกัน, การดำเนินการถูกยกเลิก"
+
+#: src/utilops.c:894
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"ไม่สามารถคัดลอกแฟ้ม:\n"
+"%s\n"
+"สู่:\n"
+"%s"
+
+#: src/utilops.c:899
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"ไม่สามารถย้ายแฟ้ม:\n"
+"%s\n"
+"สู่:\n"
+"%s"
+
+#: src/utilops.c:947
+msgid "Invalid destination"
+msgstr "ปลายทางไม่ถูกต้อง"
+
+#: src/utilops.c:948
+#, fuzzy
+msgid ""
+"When operating with multiple files, please select\n"
+"a folder, not a file."
+msgstr ""
+"เมื่อดำเนินการกับหลายแฟ้ม,โปรดเลือก\n"
+"ไดเรคทอรีไม,่ใช่แฟ้ม"
+
+#: src/utilops.c:953
+#, fuzzy
+msgid "Please select an existing folder."
+msgstr "โปรดเลือกได้เรคทอรีที่มีอยู่แล้ว"
+
+#: src/utilops.c:1022
+#, fuzzy
+msgid "Copy - GQview"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/utilops.c:1023 src/view_dir_list.c:209 src/view_dir_tree.c:301
+#, fuzzy
+msgid "_Copy"
+msgstr "คัดลอก"
+
+#: src/utilops.c:1026
+#, fuzzy
+msgid "Copy file"
+msgstr ""
+"เปลี่ยนชื่อแฟ้ม:\n"
+"%s\n"
+"เป็น:"
+
+#: src/utilops.c:1030
+#, fuzzy
+msgid "Copy multiple files"
+msgstr "คัดลอกหลายแฟ้มสู่:"
+
+#: src/utilops.c:1036
+#, fuzzy
+msgid "Move - GQview"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/utilops.c:1037 src/view_dir_list.c:211 src/view_dir_tree.c:303
+#, fuzzy
+msgid "_Move"
+msgstr "ย้าย"
+
+#: src/utilops.c:1040
+#, fuzzy
+msgid "Move file"
+msgstr ""
+"เปลี่ยนชื่อแฟ้ม:\n"
+"%s\n"
+"เป็น:"
+
+#: src/utilops.c:1044
+#, fuzzy
+msgid "Move multiple files"
+msgstr "ย้ายหลายแฟ้มสู่:"
+
+#: src/utilops.c:1058 src/utilops.c:1568
+#, fuzzy
+msgid "File name:"
+msgstr "เปลี่ยนชื่อ:"
+
+#: src/utilops.c:1062
+#, fuzzy
+msgid "Choose the destination folder."
+msgstr "ต้นทางเหมือนปลายทาง"
+
+#: src/utilops.c:1189 src/utilops.c:1338 src/utilops.c:1355 src/utilops.c:2902
+#: src/utilops.c:2953 src/utilops.c:3041 src/utilops.c:3052
+msgid "Delete failed"
+msgstr "การลบล้มเหลว"
+
+#: src/utilops.c:1190
+#, fuzzy
+msgid "Unable to remove old file from trash folder"
+msgstr ""
+"ไม่สามารถย้ายแฟ้ม:\n"
+"%s\n"
+"สู่ตัวเอง"
+
+#: src/utilops.c:1246 src/utilops.c:2574
+#, fuzzy
+msgid "Could not create folder"
+msgstr "ไม่สามารถสร้างไดเรคทอรี"
+
+#: src/utilops.c:1268
+msgid "Permission denied"
+msgstr ""
+
+#: src/utilops.c:1278
+#, fuzzy, c-format
+msgid ""
+"Unable to access or create the trash folder.\n"
+"\"%s\""
+msgstr ""
+"ไม่สามารถสร้างไดเรคทอรี\n"
+"%s"
+
+#: src/utilops.c:1282
+#, fuzzy
+msgid "Turn off safe delete"
+msgstr "ยืนยันการลบ"
+
+#: src/utilops.c:1300
+#, fuzzy, c-format
+msgid "Safe delete: %s"
+msgstr "ยืนยันการลบ"
+
+#: src/utilops.c:1342
+#, c-format
+msgid ""
+"Unable to delete file:\n"
+" %s\n"
+" Continue multiple delete operation?"
+msgstr ""
+"ไม่สามารถลบแฟ้ม:\n"
+" %s\n"
+" ดำเนินการลบหลายแฟ้มต่อหรือไม่?"
+
+#: src/utilops.c:1413
+#, c-format
+msgid "File %d of %d"
+msgstr ""
+
+#: src/utilops.c:1482
+#, fuzzy
+msgid "Delete files - GQview"
+msgstr "ลบแฟ้ม"
+
+#: src/utilops.c:1486
+#, fuzzy
+msgid "Delete multiple files"
+msgstr "เปลี่ยนชื่อหลายแฟ้ม"
+
+#: src/utilops.c:1504
+#, fuzzy, c-format
+msgid "Review %d files"
+msgstr "%d แฟ้ม"
+
+#: src/utilops.c:1560
+#, fuzzy
+msgid "Delete file - GQview"
+msgstr "ลบแฟ้ม"
+
+#: src/utilops.c:1564
+#, fuzzy
+msgid "Delete file?"
+msgstr "ลบแฟ้ม"
+
+#: src/utilops.c:1722 src/utilops.c:2444
+msgid "Replace existing file by renaming new file."
+msgstr ""
+
+#: src/utilops.c:1739
+#, c-format
+msgid ""
+"Unable to rename file:\n"
+"%s\n"
+" to:\n"
+"%s"
+msgstr ""
+"ไม่สามารถเปลี่ยนชื่อแฟ้ม:\n"
+"%s\n"
+" เป็น่:\n"
+"%s"
+
+#: src/utilops.c:1742 src/utilops.c:2461 src/view_file_list.c:451
+#: src/view_file_list.c:457 src/view_file_list.c:463
+msgid "Error renaming file"
+msgstr "เกิดความผิดพลาดในการเปลี่ยนชื่อแฟ้ม"
+
+#: src/utilops.c:1863
+msgid "Format must include at least one of the symbol characters '*' or '#'.\n"
+msgstr ""
+
+#: src/utilops.c:1919
+msgid ""
+"Can not auto rename with the selected\n"
+"number set, one or more files exist that\n"
+"match the resulting name list.\n"
+msgstr ""
+
+#: src/utilops.c:1993
+#, fuzzy, c-format
+msgid ""
+"Failed to rename\n"
+"%s\n"
+"The number was %d."
+msgstr "ล้มเหล้วในการเปลี่ยนชื่อ %s เป็น %s"
+
+#: src/utilops.c:2249 src/utilops.c:2503
+#, fuzzy
+msgid "Rename - GQview"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/utilops.c:2252
+#, fuzzy
+msgid "Rename multiple files"
+msgstr "เปลี่ยนชื่อหลายแฟ้ม"
+
+#: src/utilops.c:2286
+msgid "Original Name"
+msgstr ""
+
+#: src/utilops.c:2324
+#, fuzzy
+msgid "Manual rename"
+msgstr "เมนู ชื่อ"
+
+#: src/utilops.c:2325
+msgid "Formatted rename"
+msgstr ""
+
+#: src/utilops.c:2338 src/utilops.c:2516
+#, fuzzy
+msgid "Original name:"
+msgstr "เปลี่ยนชื่อ:"
+
+#: src/utilops.c:2341 src/utilops.c:2519
+#, fuzzy
+msgid "New name:"
+msgstr "เปลี่ยนชื่อ:"
+
+#: src/utilops.c:2359
+msgid "Begin text"
+msgstr ""
+
+#: src/utilops.c:2367 src/utilops.c:2399
+msgid "Start #"
+msgstr ""
+
+#: src/utilops.c:2373
+msgid "End text"
+msgstr ""
+
+#: src/utilops.c:2381
+msgid "Padding:"
+msgstr ""
+
+#: src/utilops.c:2391
+msgid "Format (* = original name, ## = numbers)"
+msgstr ""
+
+#: src/utilops.c:2460 src/view_file_list.c:462
+#, c-format
+msgid ""
+"Unable to rename file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"ไม่สามารถเปลี่ยนชื่อแฟ้ม:\n"
+"%s\n"
+"เป็น:\n"
+"%s"
+
+#: src/utilops.c:2506
+#, fuzzy
+msgid "Rename file"
+msgstr ""
+"เปลี่ยนชื่อแฟ้ม:\n"
+"%s\n"
+"เป็น:"
+
+#: src/utilops.c:2567 src/utilops.c:2657
+#, fuzzy, c-format
+msgid ""
+"The folder:\n"
+"%s\n"
+"already exists."
+msgstr ""
+"ไดเรคทอรี:\n"
+"%s\n"
+"มีอยู่แล้ว"
+
+#: src/utilops.c:2568 src/utilops.c:2658
+#, fuzzy
+msgid "Folder exists"
+msgstr "Tiles"
+
+#: src/utilops.c:2573 src/utilops.c:2666
+#, c-format
+msgid ""
+"The path:\n"
+"%s\n"
+"already exists as a file."
+msgstr ""
+"พาธ:\n"
+"%s\n"
+"มีอยู่แล้วเป็นแฟ้ม"
+
+#: src/utilops.c:2625
+#, fuzzy
+msgid "New folder - GQview"
+msgstr "ช่วยเหลือ - GQview"
+
+#: src/utilops.c:2628
+#, fuzzy, c-format
+msgid ""
+"Create folder in:\n"
+"%s\n"
+"named:"
+msgstr ""
+"สร้างไดเรคทอรีใน:\n"
+"%s\n"
+"ชื่อ:"
+
+#: src/utilops.c:2667 src/utilops.c:2676
+#, fuzzy
+msgid "Rename failed"
+msgstr ""
+"เปลี่ยนชื่อแฟ้ม:\n"
+"%s\n"
+"เป็น:"
+
+#: src/utilops.c:2775
+msgid "Location"
+msgstr ""
+
+#: src/utilops.c:2952
+#, fuzzy, c-format
+msgid ""
+"Unable to delete folder:\n"
+"\n"
+"%s"
+msgstr ""
+"ไม่สามารถลบแฟ้ม:\n"
+"%s"
+
+#: src/utilops.c:2959
+#, c-format
+msgid ""
+"Removal of folder contents failed at this file:\n"
+"\n"
+"%s"
+msgstr ""
+
+#: src/utilops.c:3016 src/utilops.c:3100
+#, fuzzy
+msgid "Delete folder"
+msgstr "ไม่เลือกสิ่งใด"
+
+#: src/utilops.c:3020
+#, c-format
+msgid ""
+"This will delete the symbolic link:\n"
+"\n"
+"%s\n"
+"\n"
+"The folder this link points to will not be deleted."
+msgstr ""
+
+#: src/utilops.c:3024
+msgid "Delete symbolic link to folder?"
+msgstr ""
+
+#: src/utilops.c:3039
+#, fuzzy, c-format
+msgid ""
+"Unable to remove folder %s\n"
+"Permissions do not allow writing to the folder."
+msgstr ""
+"ไม่สามารถย้ายแฟ้ม:\n"
+"%s\n"
+"สู่ตัวเอง"
+
+#: src/utilops.c:3051
+#, fuzzy, c-format
+msgid "Unable to list contents of folder %s"
+msgstr ""
+"ไม่สามารถสร้างไดเรคทอรี\n"
+"%s"
+
+#: src/utilops.c:3065 src/utilops.c:3073
+#, fuzzy
+msgid "Folder contains subfolders"
+msgstr "ชื่อแฟ้มไม่ถูกต้อง"
+
+#: src/utilops.c:3069
+#, c-format
+msgid ""
+"Unable to delete the folder:\n"
+"\n"
+"%s\n"
+"\n"
+"This folder contains subfolders which must be moved before it can be deleted."
+msgstr ""
+
+#: src/utilops.c:3077
+#, fuzzy
+msgid "Subfolders:"
+msgstr "Tiles"
+
+#: src/utilops.c:3104
+#, c-format
+msgid ""
+"This will delete the folder:\n"
+"\n"
+"%s\n"
+"\n"
+"The contents of this folder will also be deleted."
+msgstr ""
+
+#: src/utilops.c:3108
+#, fuzzy
+msgid "Delete folder?"
+msgstr "ลบแฟ้ม"
+
+#: src/utilops.c:3112
+#, fuzzy
+msgid "Contents:"
+msgstr "/ช่วยเหลือ/เกี่ยวกับ"
+
+#: src/view_dir_list.c:321 src/view_dir_tree.c:417
+msgid "new_folder"
+msgstr ""
+
+#: src/view_dir_list.c:387 src/view_dir_tree.c:491
+msgid "_Up to parent"
+msgstr ""
+
+#: src/view_dir_list.c:392 src/view_dir_tree.c:496
+#, fuzzy
+msgid "_Slideshow"
+msgstr "แสดงไสลด์"
+
+#: src/view_dir_list.c:394 src/view_dir_tree.c:498
+msgid "Slideshow recursive"
+msgstr "แสดงไสลด์แบบรีเคอร์ซีฟ"
+
+#: src/view_dir_list.c:398 src/view_dir_tree.c:502
+#, fuzzy
+msgid "Find _duplicates..."
+msgstr "หาตัวซ้ำ..."
+
+#: src/view_dir_list.c:400 src/view_dir_tree.c:504
+msgid "Find duplicates recursive..."
+msgstr "หาตัวซ้ำแบบรีเคอร์ซีฟ..."
+
+#: src/view_dir_list.c:407 src/view_dir_tree.c:511
+msgid "_New folder..."
+msgstr ""
+
+#: src/view_dir_list.c:421 src/view_dir_tree.c:520
+#, fuzzy
+msgid "View as _tree"
+msgstr "/ดู/เต็มจอ"
+
+#: src/view_dir_list.c:423 src/view_dir_tree.c:522 src/view_file_icon.c:315
+#: src/view_file_list.c:426
+#, fuzzy
+msgid "Re_fresh"
+msgstr "รีเฟรช"
+
+#: src/view_file_icon.c:308 src/view_file_list.c:419
+#, fuzzy
+msgid "_Sort"
+msgstr "เรียง"
+
+#: src/view_file_icon.c:311 src/view_file_list.c:422
+#, fuzzy
+msgid "View as _icons"
+msgstr "Dimensions"
+
+#: src/view_file_list.c:424
+#, fuzzy
+msgid "Show _thumbnails"
+msgstr "แคชรูปเล็ก"
+
+#: src/view_file_list.c:450
+#, c-format
+msgid ""
+"Invalid file name:\n"
+"%s"
+msgstr ""
+"ชื่อแฟ้มไม่ถูกต้อง:\n"
+"%s"
+
+#~ msgid "/File/tear1"
+#~ msgstr "/แฟ้ม/tear1"
+
+#~ msgid "/File/_New collection"
+#~ msgstr "/แฟ้ม/collection ใหม"
+
+#~ msgid "/File/_Open collection..."
+#~ msgstr "/แฟ้ม/เปิด collection..."
+
+#~ msgid "/File/sep1"
+#~ msgstr "/File/sep1"
+
+#, fuzzy
+#~ msgid "/File/_Search..."
+#~ msgstr "/แฟ้ม/เปลี่ยนชื่อ..."
+
+#~ msgid "/File/_Find duplicates..."
+#~ msgstr "/แฟ้ม/หาตัวซ้ำ..."
+
+#~ msgid "/File/sep2"
+#~ msgstr "/File/sep2"
+
+#, fuzzy
+#~ msgid "/File/_Print..."
+#~ msgstr "/แฟ้ม/เปลี่ยนชื่อ..."
+
+#, fuzzy
+#~ msgid "/File/N_ew folder..."
+#~ msgstr "/แฟ้ม/ลบ..."
+
+#~ msgid "/File/sep3"
+#~ msgstr "/File/sep3"
+
+#~ msgid "/File/_Copy..."
+#~ msgstr "/แฟ้ม/คัดลอก..."
+
+#~ msgid "/File/_Move..."
+#~ msgstr "แฟ้ม/ย้าย..."
+
+#~ msgid "/File/_Rename..."
+#~ msgstr "/แฟ้ม/เปลี่ยนชื่อ..."
+
+#~ msgid "/File/_Delete..."
+#~ msgstr "/แฟ้ม/ลบ..."
+
+#~ msgid "/File/sep4"
+#~ msgstr "/File/sep4"
+
+#, fuzzy
+#~ msgid "/File/C_lose window"
+#~ msgstr "ปิดหน้าต่าง"
+
+#, fuzzy
+#~ msgid "/File/_Quit"
+#~ msgstr "/แฟ้ม/ออก"
+
+#~ msgid "/_Edit"
+#~ msgstr "/แฟ้ม/แก้ไข"
+
+#~ msgid "/Edit/tear1"
+#~ msgstr "/แกไข/tear1"
+
+#~ msgid "/Edit/editor1"
+#~ msgstr "/แกไข/ตัวแก้ไข1"
+
+#~ msgid "/Edit/editor2"
+#~ msgstr "/แกไข/ตัวแก้ไข2"
+
+#~ msgid "/Edit/editor3"
+#~ msgstr "/แกไข/ตัวแก้ไข3"
+
+#~ msgid "/Edit/editor4"
+#~ msgstr "/แกไข/ตัวแก้ไข4"
+
+#~ msgid "/Edit/editor5"
+#~ msgstr "/แกไข/ตัวแก้ไข5"
+
+#~ msgid "/Edit/editor6"
+#~ msgstr "/แกไข/ตัวแก้ไข6"
+
+#~ msgid "/Edit/editor7"
+#~ msgstr "/แกไข/ตัวแก้ไข7"
+
+#~ msgid "/Edit/editor8"
+#~ msgstr "/แกไข/ตัวแก้ไข8"
+
+#, fuzzy
+#~ msgid "/Edit/editor9"
+#~ msgstr "/แกไข/ตัวแก้ไข1"
+
+#, fuzzy
+#~ msgid "/Edit/editor0"
+#~ msgstr "/แกไข/ตัวแก้ไข1"
+
+#~ msgid "/Edit/sep1"
+#~ msgstr "/แกไข/sep1"
+
+#~ msgid "/Edit/_Adjust"
+#~ msgstr "/แกไข/ปรับเปลี่ยน"
+
+#, fuzzy
+#~ msgid "/Edit/_Properties"
+#~ msgstr "/แกไข/ออพชัน..."
+
+#~ msgid "/Edit/Adjust/tear1"
+#~ msgstr "/แกไข/ปรับเปลี่ยน/tear1"
+
+#~ msgid "/Edit/Adjust/_Rotate clockwise"
+#~ msgstr "/แกไข/ปรับเปลี่ยน/หมุนตามเข็มนาฬิกา"
+
+#~ msgid "/Edit/Adjust/Rotate _counterclockwise"
+#~ msgstr "/แกไข/ปรับเปลี่ยน/หมุนทวนเข็มนาฬิกา"
+
+#~ msgid "/Edit/Adjust/Rotate 1_80"
+#~ msgstr "/แกไข/ปรับเปลี่ยน/หมุน 180"
+
+#~ msgid "/Edit/Adjust/_Mirror"
+#~ msgstr "/แกไข/ปรับเปลี่ยน/เงากระจก"
+
+#~ msgid "/Edit/Adjust/_Flip"
+#~ msgstr "/แกไข/ปรับเปลี่ยน/พลิก"
+
+#~ msgid "/Edit/sep2"
+#~ msgstr "/แกไข/sep2"
+
+#~ msgid "/Edit/Select _all"
+#~ msgstr "/แกไข/เลือกทั้งหมด"
+
+#~ msgid "/Edit/Select _none"
+#~ msgstr "/แกไข/ไม่เลือกสิ่งใด"
+
+#~ msgid "/Edit/sep3"
+#~ msgstr "/แกไข/sep3"
+
+#~ msgid "/Edit/_Options..."
+#~ msgstr "/แกไข/ออพชัน..."
+
+#~ msgid "/Edit/sep4"
+#~ msgstr "/แกไข/sep4"
+
+#~ msgid "/Edit/Set as _wallpaper"
+#~ msgstr "/แกไข/กำหนดเป็นวอลเปเปอร์"
+
+#~ msgid "/_View"
+#~ msgstr "/ดู"
+
+#~ msgid "/View/tear1"
+#~ msgstr "/ดู/tear1"
+
+#~ msgid "/View/Zoom _in"
+#~ msgstr "/ดู/ซูมเข้า"
+
+#~ msgid "/View/Zoom _out"
+#~ msgstr "/ดู/ซูมออก"
+
+#~ msgid "/View/Zoom _1:1"
+#~ msgstr "/ดู/ซูม1:1"
+
+#~ msgid "/View/sep1"
+#~ msgstr "/ดู/sep1"
+
+#~ msgid "/View/_Thumbnails"
+#~ msgstr "/ดู/ภาพเล็ก"
+
+#~ msgid "/View/sep2"
+#~ msgstr "/ดู/sep2"
+
+#~ msgid "/View/F_ull screen"
+#~ msgstr "/ดู/เต็มจอ"
+
+#~ msgid "/View/sep3"
+#~ msgstr "/มุมมอง/sep3"
+
+#, fuzzy
+#~ msgid "/View/_Hide file list"
+#~ msgstr "/ดู/(ไม่)ซ่อนแฟ้มรายการ"
+
+#, fuzzy
+#~ msgid "/View/sep4"
+#~ msgstr "/ดู/sep1"
+
+#, fuzzy
+#~ msgid "/View/Sort _manager"
+#~ msgstr "/ดู/ซูมเข้า"
+
+#, fuzzy
+#~ msgid "/View/sep5"
+#~ msgstr "/ดู/sep1"
+
+#~ msgid "/View/Toggle _slideshow"
+#~ msgstr "/มุมมอง/สลับการแสดงสไลด์"
+
+#~ msgid "/View/_Refresh Lists"
+#~ msgstr "/ดู/_รีเฟรชรายการ"
+
+#~ msgid "/Help/tear1"
+#~ msgstr "/ช่วยเหลือ/tear1"
+
+#~ msgid "/Help/sep1"
+#~ msgstr "/ช่วยเหลือ/sep1"
+
+#~ msgid "GQview configuration"
+#~ msgstr "GQview ปรับแต่งระบบ"
+
+#~ msgid "/Edit/_Remove old thumbnails"
+#~ msgstr "/แกไข/ลบรูปเล็กเก่า"
+
+#, fuzzy
+#~ msgid "path"
+#~ msgstr "เส้นทาง"
+
+#~ msgid "Save"
+#~ msgstr "บันทึก"
+
+#~ msgid "Close"
+#~ msgstr "ปิด"
+
+#~ msgid ""
+#~ "Overwrite collection file:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "เขียนทับแฟ้มcollection:\n"
+#~ "%s"
+
+#~ msgid "Save collection as:"
+#~ msgstr "บันทึก collection เป็น:"
+
+#~ msgid "Open collection from:"
+#~ msgstr "เปิด collection จาก:"
+
+#~ msgid "Open"
+#~ msgstr "เปิด"
+
+#~ msgid "Append collection from:"
+#~ msgstr "ต่อท้าย collection จาก"
+
+#, fuzzy
+#~ msgid "exit"
+#~ msgstr "ออก"
+
+#~ msgid "Exit"
+#~ msgstr "ออก"
+
+#~ msgid "Ok"
+#~ msgstr "ตกลง"
+
+#, fuzzy
+#~ msgid "Initial folder"
+#~ msgstr "ชื่อแฟ้มไม่ถูกต้อง"
+
+#, fuzzy
+#~ msgid "On startup, change to this folder:"
+#~ msgstr "เมื่อเริ่มระบบเปลี่ยนเป็นไดเรีคทอรีนี้"
+
+#~ msgid "Zoom (scaling):"
+#~ msgstr "ซูม (โดยการสเกล)"
+
+#~ msgid "Place dialogs under mouse"
+#~ msgstr "แสดงไดอะลอกภายใต้เมาส์"
+
+#~ msgid "Include files of type:"
+#~ msgstr "รวมถึงแฟ้มชนิด:"
+
+#~ msgid "Remove"
+#~ msgstr "ลบ"
+
+#, fuzzy
+#~ msgid "Help"
+#~ msgstr "/ช่วยเหลือ"
+
+#, fuzzy
+#~ msgid "Full screen size:"
+#~ msgstr "เต็มจอภาพ"
+
+#, fuzzy
+#~ msgid "Point size:"
+#~ msgstr "Tiles"
+
+#~ msgid ""
+#~ "Overwrite file:\n"
+#~ " %s\n"
+#~ " with:\n"
+#~ " %s"
+#~ msgstr ""
+#~ "เขียนทับแฟ้ม:\n"
+#~ " %s\n"
+#~ " ด้วย:\n"
+#~ " %s"
+
+#~ msgid "Yes"
+#~ msgstr "ใช่"
+
+#~ msgid "Yes to all"
+#~ msgstr "ใช่ทั้งหมด"
+
+#~ msgid ""
+#~ "Overwrite file:\n"
+#~ "%s\n"
+#~ " with:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "เขียนทับแฟ้ม:\n"
+#~ "%s\n"
+#~ " ด้วย:\n"
+#~ "%s"
+
+#~ msgid ""
+#~ "Copy file:\n"
+#~ "%s\n"
+#~ "to:"
+#~ msgstr ""
+#~ "คัดลอกแฟ้ม:\n"
+#~ "%s\n"
+#~ "สู่:"
+
+#~ msgid ""
+#~ "Move file:\n"
+#~ "%s\n"
+#~ "to:"
+#~ msgstr ""
+#~ "ย้ายแฟ้ม:\n"
+#~ "%s\n"
+#~ "สู่:"
+
+#~ msgid "About to delete multiple files..."
+#~ msgstr "เกี่ยวกับการลบหลายแฟ้ม..."
+
+#~ msgid ""
+#~ "Overwrite file:\n"
+#~ "%s\n"
+#~ "by renaming:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "เขียนทับแฟ้ม:\n"
+#~ "%s\n"
+#~ "โดยการเปลี่ยนชื่อ:\n"
+#~ "%s"
+
+#~ msgid "to:"
+#~ msgstr "สู่:"
+
+#~ msgid "Create"
+#~ msgstr "สร้าง"
+
+#~ msgid "Initial directory"
+#~ msgstr "ไดเรคทอรีเริ่มต้น"
+
+#~ msgid "New Directory"
+#~ msgstr "ไดเรคทอรีใหม่"
+
+#~ msgid ""
+#~ "Unable to create directory:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ไม่สามารถสร้างไดเรคทอรี\n"
+#~ "%s"
+
+#~ msgid "Error creating directory"
+#~ msgstr "การสร้างไดเรคทอรีผิดพลาด"
+
+#, fuzzy
+#~ msgid "Image details"
+#~ msgstr "ปลายทางไม่ถูกต้อง"
+
+#, fuzzy
+#~ msgid "/View/Image _details"
+#~ msgstr "/มุมมอง/สลับการแสดงสไลด์"
+
+#~ msgid "Add contents"
+#~ msgstr "เพิ่มเนื้อหา"
+
+#~ msgid "Add contents recursive"
+#~ msgstr "เพิ่มเนื้อหาแบบรีเคอซีฟ "
+
+#~ msgid "Skip directories"
+#~ msgstr "ข้ามไดเรคทอรี"
+
+#~ msgid "Invalid directory"
+#~ msgstr "ไดเรคทอรีไม่ถูกต้อง"
+
+#~ msgid "GQview - copy"
+#~ msgstr "GQview - คัดลอก"
+
+#~ msgid "GQview - move"
+#~ msgstr "GQview - ย้าย"
+
+#~ msgid "Directory exists"
+#~ msgstr "ไดเรคทอรีมีอยู่แล้ว"
+
+#~ msgid "GQview - new directory"
+#~ msgstr "GQview - ไดเรคทอรีใหม่"
+
+#~ msgid "/File/Create _Dir..."
+#~ msgstr "/แฟ้ม/สร้างไดเรคทอรี..."
+
+#~ msgid "Edit"
+#~ msgstr "แก้ไข"
+
+#~ msgid "Insert file drops at pointer location"
+#~ msgstr "แทรกแฟ้ม ณ ตำแหน่งที่ตัวชี้ชี้อยู่"
+
+#~ msgid "File named %s already exists."
+#~ msgstr "แฟ้มชื่อ %s มีอยู่แล้ว"
+
+#, fuzzy
+#~ msgid "top"
+#~ msgstr "สู่:"
+
+#~ msgid "GQview running: %s\n"
+#~ msgstr "GQview - กำลังรัน:%s\n"
+
+#~ msgid "Apply"
+#~ msgstr "Apply"

@@ -1,0 +1,1859 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkPrintSettings">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkPrintSettings.top_of_page">GtkPrintSettings</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkPrintSettings</refname>
+<refpurpose>Stores print settings</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkPrintSettings.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkPrintSettings-struct">GtkPrintSettings</link>;
+<link linkend="void">void</link>                (<link linkend="GtkPrintSettingsFunc">*GtkPrintSettingsFunc</link>)             (const <link linkend="gchar">gchar</link> *key,
+                                                         const <link linkend="gchar">gchar</link> *value,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="GtkPrintSettings">GtkPrintSettings</link> *  <link linkend="gtk-print-settings-new">gtk_print_settings_new</link>              (void);
+<link linkend="GtkPrintSettings">GtkPrintSettings</link> *  <link linkend="gtk-print-settings-copy">gtk_print_settings_copy</link>             (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *other);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-print-settings-has-key">gtk_print_settings_has_key</link>          (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-print-settings-get">gtk_print_settings_get</link>              (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set">gtk_print_settings_set</link>              (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         const <link linkend="gchar">gchar</link> *value);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-unset">gtk_print_settings_unset</link>            (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-foreach">gtk_print_settings_foreach</link>          (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPrintSettingsFunc">GtkPrintSettingsFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-print-settings-get-bool">gtk_print_settings_get_bool</link>         (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-bool">gtk_print_settings_set_bool</link>         (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gboolean">gboolean</link> value);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-print-settings-get-double">gtk_print_settings_get_double</link>       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-print-settings-get-double-with-default">gtk_print_settings_get_double_with_default</link>
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gdouble">gdouble</link> def);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-double">gtk_print_settings_set_double</link>       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gdouble">gdouble</link> value);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-print-settings-get-length">gtk_print_settings_get_length</link>       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-length">gtk_print_settings_set_length</link>       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gdouble">gdouble</link> value,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gint">gint</link>                <link linkend="gtk-print-settings-get-int">gtk_print_settings_get_int</link>          (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);
+<link linkend="gint">gint</link>                <link linkend="gtk-print-settings-get-int-with-default">gtk_print_settings_get_int_with_default</link>
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gint">gint</link> def);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-int">gtk_print_settings_set_int</link>          (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gint">gint</link> value);
+#define             <link linkend="GTK-PRINT-SETTINGS-PRINTER--CAPS">GTK_PRINT_SETTINGS_PRINTER</link>
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-print-settings-get-printer">gtk_print_settings_get_printer</link>      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-printer">gtk_print_settings_set_printer</link>      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *printer);
+enum                <link linkend="GtkPageOrientation">GtkPageOrientation</link>;
+#define             <link linkend="GTK-PRINT-SETTINGS-ORIENTATION--CAPS">GTK_PRINT_SETTINGS_ORIENTATION</link>
+<link linkend="GtkPageOrientation">GtkPageOrientation</link>  <link linkend="gtk-print-settings-get-orientation">gtk_print_settings_get_orientation</link>  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-orientation">gtk_print_settings_set_orientation</link>  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPageOrientation">GtkPageOrientation</link> orientation);
+#define             <link linkend="GTK-PRINT-SETTINGS-PAPER-FORMAT--CAPS">GTK_PRINT_SETTINGS_PAPER_FORMAT</link>
+<link linkend="GtkPaperSize">GtkPaperSize</link> *      <link linkend="gtk-print-settings-get-paper-size">gtk_print_settings_get_paper_size</link>   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-paper-size">gtk_print_settings_set_paper_size</link>   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPaperSize">GtkPaperSize</link> *paper_size);
+#define             <link linkend="GTK-PRINT-SETTINGS-PAPER-WIDTH--CAPS">GTK_PRINT_SETTINGS_PAPER_WIDTH</link>
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-print-settings-get-paper-width">gtk_print_settings_get_paper_width</link>  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-paper-width">gtk_print_settings_set_paper_width</link>  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gdouble">gdouble</link> width,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+#define             <link linkend="GTK-PRINT-SETTINGS-PAPER-HEIGHT--CAPS">GTK_PRINT_SETTINGS_PAPER_HEIGHT</link>
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-print-settings-get-paper-height">gtk_print_settings_get_paper_height</link> (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-paper-height">gtk_print_settings_set_paper_height</link> (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gdouble">gdouble</link> height,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+#define             <link linkend="GTK-PRINT-SETTINGS-USE-COLOR--CAPS">GTK_PRINT_SETTINGS_USE_COLOR</link>
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-print-settings-get-use-color">gtk_print_settings_get_use_color</link>    (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-use-color">gtk_print_settings_set_use_color</link>    (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gboolean">gboolean</link> use_color);
+#define             <link linkend="GTK-PRINT-SETTINGS-COLLATE--CAPS">GTK_PRINT_SETTINGS_COLLATE</link>
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-print-settings-get-collate">gtk_print_settings_get_collate</link>      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-collate">gtk_print_settings_set_collate</link>      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gboolean">gboolean</link> collate);
+#define             <link linkend="GTK-PRINT-SETTINGS-REVERSE--CAPS">GTK_PRINT_SETTINGS_REVERSE</link>
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-print-settings-get-reverse">gtk_print_settings_get_reverse</link>      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-reverse">gtk_print_settings_set_reverse</link>      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gboolean">gboolean</link> reverse);
+enum                <link linkend="GtkPrintDuplex">GtkPrintDuplex</link>;
+#define             <link linkend="GTK-PRINT-SETTINGS-DUPLEX--CAPS">GTK_PRINT_SETTINGS_DUPLEX</link>
+<link linkend="GtkPrintDuplex">GtkPrintDuplex</link>      <link linkend="gtk-print-settings-get-duplex">gtk_print_settings_get_duplex</link>       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-duplex">gtk_print_settings_set_duplex</link>       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPrintDuplex">GtkPrintDuplex</link> duplex);
+enum                <link linkend="GtkPrintQuality">GtkPrintQuality</link>;
+#define             <link linkend="GTK-PRINT-SETTINGS-QUALITY--CAPS">GTK_PRINT_SETTINGS_QUALITY</link>
+<link linkend="GtkPrintQuality">GtkPrintQuality</link>     <link linkend="gtk-print-settings-get-quality">gtk_print_settings_get_quality</link>      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-quality">gtk_print_settings_set_quality</link>      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPrintQuality">GtkPrintQuality</link> quality);
+#define             <link linkend="GTK-PRINT-SETTINGS-N-COPIES--CAPS">GTK_PRINT_SETTINGS_N_COPIES</link>
+<link linkend="gint">gint</link>                <link linkend="gtk-print-settings-get-n-copies">gtk_print_settings_get_n_copies</link>     (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-n-copies">gtk_print_settings_set_n_copies</link>     (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gint">gint</link> num_copies);
+#define             <link linkend="GTK-PRINT-SETTINGS-NUMBER-UP--CAPS">GTK_PRINT_SETTINGS_NUMBER_UP</link>
+<link linkend="gint">gint</link>                <link linkend="gtk-print-settings-get-number-up">gtk_print_settings_get_number_up</link>    (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-number-up">gtk_print_settings_set_number_up</link>    (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gint">gint</link> number_up);
+enum                <link linkend="GtkNumberUpLayout">GtkNumberUpLayout</link>;
+#define             <link linkend="GTK-PRINT-SETTINGS-NUMBER-UP-LAYOUT--CAPS">GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT</link>
+<link linkend="GtkNumberUpLayout">GtkNumberUpLayout</link>   <link linkend="gtk-print-settings-get-number-up-layout">gtk_print_settings_get_number_up_layout</link>
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-number-up-layout">gtk_print_settings_set_number_up_layout</link>
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkNumberUpLayout">GtkNumberUpLayout</link> number_up_layout);
+#define             <link linkend="GTK-PRINT-SETTINGS-RESOLUTION--CAPS">GTK_PRINT_SETTINGS_RESOLUTION</link>
+<link linkend="gint">gint</link>                <link linkend="gtk-print-settings-get-resolution">gtk_print_settings_get_resolution</link>   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-resolution">gtk_print_settings_set_resolution</link>   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gint">gint</link> resolution);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-resolution-xy">gtk_print_settings_set_resolution_xy</link>
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gint">gint</link> resolution_x,
+                                                         <link linkend="gint">gint</link> resolution_y);
+#define             <link linkend="GTK-PRINT-SETTINGS-RESOLUTION-X--CAPS">GTK_PRINT_SETTINGS_RESOLUTION_X</link>
+<link linkend="gint">gint</link>                <link linkend="gtk-print-settings-get-resolution-x">gtk_print_settings_get_resolution_x</link> (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+#define             <link linkend="GTK-PRINT-SETTINGS-RESOLUTION-Y--CAPS">GTK_PRINT_SETTINGS_RESOLUTION_Y</link>
+<link linkend="gint">gint</link>                <link linkend="gtk-print-settings-get-resolution-y">gtk_print_settings_get_resolution_y</link> (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+#define             <link linkend="GTK-PRINT-SETTINGS-PRINTER-LPI--CAPS">GTK_PRINT_SETTINGS_PRINTER_LPI</link>
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-print-settings-get-printer-lpi">gtk_print_settings_get_printer_lpi</link>  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-printer-lpi">gtk_print_settings_set_printer_lpi</link>  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gdouble">gdouble</link> lpi);
+#define             <link linkend="GTK-PRINT-SETTINGS-SCALE--CAPS">GTK_PRINT_SETTINGS_SCALE</link>
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-print-settings-get-scale">gtk_print_settings_get_scale</link>        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-scale">gtk_print_settings_set_scale</link>        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gdouble">gdouble</link> scale);
+enum                <link linkend="GtkPrintPages">GtkPrintPages</link>;
+#define             <link linkend="GTK-PRINT-SETTINGS-PRINT-PAGES--CAPS">GTK_PRINT_SETTINGS_PRINT_PAGES</link>
+<link linkend="GtkPrintPages">GtkPrintPages</link>       <link linkend="gtk-print-settings-get-print-pages">gtk_print_settings_get_print_pages</link>  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-print-pages">gtk_print_settings_set_print_pages</link>  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPrintPages">GtkPrintPages</link> pages);
+                    <link linkend="GtkPageRange">GtkPageRange</link>;
+#define             <link linkend="GTK-PRINT-SETTINGS-PAGE-RANGES--CAPS">GTK_PRINT_SETTINGS_PAGE_RANGES</link>
+<link linkend="GtkPageRange">GtkPageRange</link> *      <link linkend="gtk-print-settings-get-page-ranges">gtk_print_settings_get_page_ranges</link>  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gint">gint</link> *num_ranges);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-page-ranges">gtk_print_settings_set_page_ranges</link>  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPageRange">GtkPageRange</link> *page_ranges,
+                                                         <link linkend="gint">gint</link> num_ranges);
+enum                <link linkend="GtkPageSet">GtkPageSet</link>;
+#define             <link linkend="GTK-PRINT-SETTINGS-PAGE-SET--CAPS">GTK_PRINT_SETTINGS_PAGE_SET</link>
+<link linkend="GtkPageSet">GtkPageSet</link>          <link linkend="gtk-print-settings-get-page-set">gtk_print_settings_get_page_set</link>     (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-page-set">gtk_print_settings_set_page_set</link>     (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPageSet">GtkPageSet</link> page_set);
+#define             <link linkend="GTK-PRINT-SETTINGS-DEFAULT-SOURCE--CAPS">GTK_PRINT_SETTINGS_DEFAULT_SOURCE</link>
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-print-settings-get-default-source">gtk_print_settings_get_default_source</link>
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-default-source">gtk_print_settings_set_default_source</link>
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *default_source);
+#define             <link linkend="GTK-PRINT-SETTINGS-MEDIA-TYPE--CAPS">GTK_PRINT_SETTINGS_MEDIA_TYPE</link>
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-print-settings-get-media-type">gtk_print_settings_get_media_type</link>   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-media-type">gtk_print_settings_set_media_type</link>   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *media_type);
+#define             <link linkend="GTK-PRINT-SETTINGS-DITHER--CAPS">GTK_PRINT_SETTINGS_DITHER</link>
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-print-settings-get-dither">gtk_print_settings_get_dither</link>       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-dither">gtk_print_settings_set_dither</link>       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *dither);
+#define             <link linkend="GTK-PRINT-SETTINGS-FINISHINGS--CAPS">GTK_PRINT_SETTINGS_FINISHINGS</link>
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-print-settings-get-finishings">gtk_print_settings_get_finishings</link>   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-finishings">gtk_print_settings_set_finishings</link>   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *finishings);
+#define             <link linkend="GTK-PRINT-SETTINGS-OUTPUT-BIN--CAPS">GTK_PRINT_SETTINGS_OUTPUT_BIN</link>
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-print-settings-get-output-bin">gtk_print_settings_get_output_bin</link>   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-set-output-bin">gtk_print_settings_set_output_bin</link>   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *output_bin);
+#define             <link linkend="GTK-PRINT-SETTINGS-OUTPUT-FILE-FORMAT--CAPS">GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT</link>
+#define             <link linkend="GTK-PRINT-SETTINGS-OUTPUT-URI--CAPS">GTK_PRINT_SETTINGS_OUTPUT_URI</link>
+#define             <link linkend="GTK-PRINT-SETTINGS-WIN32-DRIVER-EXTRA--CAPS">GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA</link>
+#define             <link linkend="GTK-PRINT-SETTINGS-WIN32-DRIVER-VERSION--CAPS">GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION</link>
+
+<link linkend="GtkPrintSettings">GtkPrintSettings</link> *  <link linkend="gtk-print-settings-new-from-file">gtk_print_settings_new_from_file</link>    (const <link linkend="gchar">gchar</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="GtkPrintSettings">GtkPrintSettings</link> *  <link linkend="gtk-print-settings-new-from-key-file">gtk_print_settings_new_from_key_file</link>
+                                                        (<link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-print-settings-load-file">gtk_print_settings_load_file</link>        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-print-settings-load-key-file">gtk_print_settings_load_key_file</link>    (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-print-settings-to-file">gtk_print_settings_to_file</link>          (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="void">void</link>                <link linkend="gtk-print-settings-to-key-file">gtk_print_settings_to_key_file</link>      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkPrintSettings.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkPrintSettings
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+
+
+<refsect1 id="GtkPrintSettings.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A GtkPrintSettings object represents the settings of a print dialog in
+a system-independent way. The main use for this object is that once
+you've printed you can get a settings object that represents the settings
+the user chose, and the next time you print you can pass that object in so
+that the user doesn't have to re-set all his settings.
+</para>
+<para>
+Its also possible to enumerate the settings so that you can easily save
+the settings for the next time your app runs, or even store them in a
+document. The predefined keys try to use shared values as much as possible
+so that moving such a document between systems still works.
+</para>
+<!-- TODO example of getting, storing and setting settings -->
+<para>
+Printing support was added in GTK+ 2.10.
+</para>
+</refsect1>
+
+<refsect1 id="GtkPrintSettings.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkPrintSettings-struct" role="struct">
+<title>GtkPrintSettings</title>
+<indexterm zone="GtkPrintSettings-struct"><primary sortas="PrintSettings">GtkPrintSettings</primary></indexterm><programlisting>typedef struct _GtkPrintSettings GtkPrintSettings;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkPrintSettingsFunc" role="function">
+<title>GtkPrintSettingsFunc ()</title>
+<indexterm zone="GtkPrintSettingsFunc"><primary sortas="PrintSettingsFunc">GtkPrintSettingsFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GtkPrintSettingsFunc)             (const <link linkend="gchar">gchar</link> *key,
+                                                         const <link linkend="gchar">gchar</link> *value,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-print-settings-new" role="function" condition="since:2.10">
+<title>gtk_print_settings_new ()</title>
+<indexterm zone="gtk-print-settings-new" role="2.10"><primary sortas="print_settings_new">gtk_print_settings_new</primary></indexterm><programlisting><link linkend="GtkPrintSettings">GtkPrintSettings</link> *  gtk_print_settings_new              (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link> object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link> object
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-copy" role="function" condition="since:2.10">
+<title>gtk_print_settings_copy ()</title>
+<indexterm zone="gtk-print-settings-copy" role="2.10"><primary sortas="print_settings_copy">gtk_print_settings_copy</primary></indexterm><programlisting><link linkend="GtkPrintSettings">GtkPrintSettings</link> *  gtk_print_settings_copy             (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *other);</programlisting>
+<para>
+Copies a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link> object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>other</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly allocated copy of <parameter>other</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-has-key" role="function" condition="since:2.10">
+<title>gtk_print_settings_has_key ()</title>
+<indexterm zone="gtk-print-settings-has-key" role="2.10"><primary sortas="print_settings_has_key">gtk_print_settings_has_key</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_print_settings_has_key          (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, if a value is associated with <parameter>key</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, if <parameter>key</parameter> has a value
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-get" role="function" condition="since:2.10">
+<title>gtk_print_settings_get ()</title>
+<indexterm zone="gtk-print-settings-get" role="2.10"><primary sortas="print_settings_get">gtk_print_settings_get</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_print_settings_get              (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Looks up the string value associated with <parameter>key</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the string value for <parameter>key</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set" role="function" condition="since:2.10">
+<title>gtk_print_settings_set ()</title>
+<indexterm zone="gtk-print-settings-set" role="2.10"><primary sortas="print_settings_set">gtk_print_settings_set</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set              (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         const <link linkend="gchar">gchar</link> *value);</programlisting>
+<para>
+Associates <parameter>value</parameter> with <parameter>key</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> a string value, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-unset" role="function" condition="since:2.10">
+<title>gtk_print_settings_unset ()</title>
+<indexterm zone="gtk-print-settings-unset" role="2.10"><primary sortas="print_settings_unset">gtk_print_settings_unset</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_unset            (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Removes any value associated with <parameter>key</parameter>. 
+This has the same effect as setting the value to <link linkend="NULL--CAPS"><literal>NULL</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-foreach" role="function" condition="since:2.10">
+<title>gtk_print_settings_foreach ()</title>
+<indexterm zone="gtk-print-settings-foreach" role="2.10"><primary sortas="print_settings_foreach">gtk_print_settings_foreach</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_foreach          (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPrintSettingsFunc">GtkPrintSettingsFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+Calls <parameter>func</parameter> for each key-value pair of <parameter>settings</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> the function to call
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> user data for <parameter>func</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-get-bool" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_bool ()</title>
+<indexterm zone="gtk-print-settings-get-bool" role="2.10"><primary sortas="print_settings_get_bool">gtk_print_settings_get_bool</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_print_settings_get_bool         (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Returns the boolean represented by the value
+that is associated with <parameter>key</parameter>. 
+</para>
+<para>
+The string "true" represents <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, any other 
+string <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, if <parameter>key</parameter> maps to a true value.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-bool" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_bool ()</title>
+<indexterm zone="gtk-print-settings-set-bool" role="2.10"><primary sortas="print_settings_set_bool">gtk_print_settings_set_bool</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_bool         (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gboolean">gboolean</link> value);</programlisting>
+<para>
+Sets <parameter>key</parameter> to a boolean value.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> a boolean
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-get-double" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_double ()</title>
+<indexterm zone="gtk-print-settings-get-double" role="2.10"><primary sortas="print_settings_get_double">gtk_print_settings_get_double</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_print_settings_get_double       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Returns the double value associated with <parameter>key</parameter>, or 0.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the double value of <parameter>key</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-get-double-with-default" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_double_with_default ()</title>
+<indexterm zone="gtk-print-settings-get-double-with-default" role="2.10"><primary sortas="print_settings_get_double_with_default">gtk_print_settings_get_double_with_default</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_print_settings_get_double_with_default
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gdouble">gdouble</link> def);</programlisting>
+<para>
+Returns the floating point number represented by 
+the value that is associated with <parameter>key</parameter>, or <parameter>default_val</parameter>
+if the value does not represent a floating point number.
+</para>
+<para>
+Floating point numbers are parsed with <link linkend="g-ascii-strtod"><function>g_ascii_strtod()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>def</parameter>&#160;:</term>
+<listitem><simpara> the default value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the floating point number associated with <parameter>key</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-double" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_double ()</title>
+<indexterm zone="gtk-print-settings-set-double" role="2.10"><primary sortas="print_settings_set_double">gtk_print_settings_set_double</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_double       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gdouble">gdouble</link> value);</programlisting>
+<para>
+Sets <parameter>key</parameter> to a double value.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> a double value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-get-length" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_length ()</title>
+<indexterm zone="gtk-print-settings-get-length" role="2.10"><primary sortas="print_settings_get_length">gtk_print_settings_get_length</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_print_settings_get_length       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Returns the value associated with <parameter>key</parameter>, interpreted
+as a length. The returned value is converted to <parameter>units</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit of the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the length value of <parameter>key</parameter>, converted to <parameter>unit</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-length" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_length ()</title>
+<indexterm zone="gtk-print-settings-set-length" role="2.10"><primary sortas="print_settings_set_length">gtk_print_settings_set_length</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_length       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gdouble">gdouble</link> value,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Associates a length in units of <parameter>unit</parameter> with <parameter>key</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> a length
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit of <parameter>length</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-get-int" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_int ()</title>
+<indexterm zone="gtk-print-settings-get-int" role="2.10"><primary sortas="print_settings_get_int">gtk_print_settings_get_int</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_print_settings_get_int          (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Returns the integer value of <parameter>key</parameter>, or 0.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the integer value of <parameter>key</parameter> 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-get-int-with-default" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_int_with_default ()</title>
+<indexterm zone="gtk-print-settings-get-int-with-default" role="2.10"><primary sortas="print_settings_get_int_with_default">gtk_print_settings_get_int_with_default</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_print_settings_get_int_with_default
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gint">gint</link> def);</programlisting>
+<para>
+Returns the value of <parameter>key</parameter>, interpreted as
+an integer, or the default value.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>def</parameter>&#160;:</term>
+<listitem><simpara> the default value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the integer value of <parameter>key</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-int" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_int ()</title>
+<indexterm zone="gtk-print-settings-set-int" role="2.10"><primary sortas="print_settings_set_int">gtk_print_settings_set_int</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_int          (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         <link linkend="gint">gint</link> value);</programlisting>
+<para>
+Sets <parameter>key</parameter> to an integer value.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a key
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> an integer 
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-PRINTER--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_PRINTER</title>
+<indexterm zone="GTK-PRINT-SETTINGS-PRINTER--CAPS"><primary sortas="PRINT_SETTINGS_PRINTER">GTK_PRINT_SETTINGS_PRINTER</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_PRINTER          "printer"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-printer" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_printer ()</title>
+<indexterm zone="gtk-print-settings-get-printer" role="2.10"><primary sortas="print_settings_get_printer">gtk_print_settings_get_printer</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_print_settings_get_printer      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Convenience function to obtain the value of 
+<link linkend="GTK-PRINT-SETTINGS-PRINTER--CAPS"><literal>GTK_PRINT_SETTINGS_PRINTER</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the printer name
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-printer" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_printer ()</title>
+<indexterm zone="gtk-print-settings-set-printer" role="2.10"><primary sortas="print_settings_set_printer">gtk_print_settings_set_printer</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_printer      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *printer);</programlisting>
+<para>
+Convenience function to set <link linkend="GTK-PRINT-SETTINGS-PRINTER--CAPS"><literal>GTK_PRINT_SETTINGS_PRINTER</literal></link>
+to <parameter>printer</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>printer</parameter>&#160;:</term>
+<listitem><simpara> the printer name
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GtkPageOrientation" role="enum">
+<title>enum GtkPageOrientation</title>
+<indexterm zone="GtkPageOrientation"><primary sortas="PageOrientation">GtkPageOrientation</primary></indexterm><programlisting>typedef enum
+{
+  GTK_PAGE_ORIENTATION_PORTRAIT,
+  GTK_PAGE_ORIENTATION_LANDSCAPE,
+  GTK_PAGE_ORIENTATION_REVERSE_PORTRAIT,
+  GTK_PAGE_ORIENTATION_REVERSE_LANDSCAPE
+} GtkPageOrientation;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-ORIENTATION--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_ORIENTATION</title>
+<indexterm zone="GTK-PRINT-SETTINGS-ORIENTATION--CAPS"><primary sortas="PRINT_SETTINGS_ORIENTATION">GTK_PRINT_SETTINGS_ORIENTATION</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_ORIENTATION      "orientation"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-orientation" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_orientation ()</title>
+<indexterm zone="gtk-print-settings-get-orientation" role="2.10"><primary sortas="print_settings_get_orientation">gtk_print_settings_get_orientation</primary></indexterm><programlisting><link linkend="GtkPageOrientation">GtkPageOrientation</link>  gtk_print_settings_get_orientation  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Get the value of <link linkend="GTK-PRINT-SETTINGS-ORIENTATION--CAPS"><literal>GTK_PRINT_SETTINGS_ORIENTATION</literal></link>, 
+converted to a <link linkend="GtkPageOrientation"><type>GtkPageOrientation</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the orientation
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-orientation" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_orientation ()</title>
+<indexterm zone="gtk-print-settings-set-orientation" role="2.10"><primary sortas="print_settings_set_orientation">gtk_print_settings_set_orientation</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_orientation  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPageOrientation">GtkPageOrientation</link> orientation);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-ORIENTATION--CAPS"><literal>GTK_PRINT_SETTINGS_ORIENTATION</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>orientation</parameter>&#160;:</term>
+<listitem><simpara> a page orientation
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-PAPER-FORMAT--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_PAPER_FORMAT</title>
+<indexterm zone="GTK-PRINT-SETTINGS-PAPER-FORMAT--CAPS"><primary sortas="PRINT_SETTINGS_PAPER_FORMAT">GTK_PRINT_SETTINGS_PAPER_FORMAT</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_PAPER_FORMAT     "paper-format"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-paper-size" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_paper_size ()</title>
+<indexterm zone="gtk-print-settings-get-paper-size" role="2.10"><primary sortas="print_settings_get_paper_size">gtk_print_settings_get_paper_size</primary></indexterm><programlisting><link linkend="GtkPaperSize">GtkPaperSize</link> *      gtk_print_settings_get_paper_size   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-PAPER-FORMAT--CAPS"><literal>GTK_PRINT_SETTINGS_PAPER_FORMAT</literal></link>, 
+converted to a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the paper size
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-paper-size" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_paper_size ()</title>
+<indexterm zone="gtk-print-settings-set-paper-size" role="2.10"><primary sortas="print_settings_set_paper_size">gtk_print_settings_set_paper_size</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_paper_size   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPaperSize">GtkPaperSize</link> *paper_size);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-PAPER-FORMAT--CAPS"><literal>GTK_PRINT_SETTINGS_PAPER_FORMAT</literal></link>,
+<link linkend="GTK-PRINT-SETTINGS-PAPER-WIDTH--CAPS"><literal>GTK_PRINT_SETTINGS_PAPER_WIDTH</literal></link> and
+<link linkend="GTK-PRINT-SETTINGS-PAPER-HEIGHT--CAPS"><literal>GTK_PRINT_SETTINGS_PAPER_HEIGHT</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>paper_size</parameter>&#160;:</term>
+<listitem><simpara> a paper size
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-PAPER-WIDTH--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_PAPER_WIDTH</title>
+<indexterm zone="GTK-PRINT-SETTINGS-PAPER-WIDTH--CAPS"><primary sortas="PRINT_SETTINGS_PAPER_WIDTH">GTK_PRINT_SETTINGS_PAPER_WIDTH</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_PAPER_WIDTH      "paper-width"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-paper-width" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_paper_width ()</title>
+<indexterm zone="gtk-print-settings-get-paper-width" role="2.10"><primary sortas="print_settings_get_paper_width">gtk_print_settings_get_paper_width</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_print_settings_get_paper_width  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-PAPER-WIDTH--CAPS"><literal>GTK_PRINT_SETTINGS_PAPER_WIDTH</literal></link>,
+converted to <parameter>unit</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the paper width, in units of <parameter>unit</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-paper-width" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_paper_width ()</title>
+<indexterm zone="gtk-print-settings-set-paper-width" role="2.10"><primary sortas="print_settings_set_paper_width">gtk_print_settings_set_paper_width</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_paper_width  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gdouble">gdouble</link> width,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-PAPER-WIDTH--CAPS"><literal>GTK_PRINT_SETTINGS_PAPER_WIDTH</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> the paper width
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the units of <parameter>width</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-PAPER-HEIGHT--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_PAPER_HEIGHT</title>
+<indexterm zone="GTK-PRINT-SETTINGS-PAPER-HEIGHT--CAPS"><primary sortas="PRINT_SETTINGS_PAPER_HEIGHT">GTK_PRINT_SETTINGS_PAPER_HEIGHT</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_PAPER_HEIGHT     "paper-height"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-paper-height" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_paper_height ()</title>
+<indexterm zone="gtk-print-settings-get-paper-height" role="2.10"><primary sortas="print_settings_get_paper_height">gtk_print_settings_get_paper_height</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_print_settings_get_paper_height (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-PAPER-HEIGHT--CAPS"><literal>GTK_PRINT_SETTINGS_PAPER_HEIGHT</literal></link>,
+converted to <parameter>unit</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the paper height, in units of <parameter>unit</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-paper-height" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_paper_height ()</title>
+<indexterm zone="gtk-print-settings-set-paper-height" role="2.10"><primary sortas="print_settings_set_paper_height">gtk_print_settings_set_paper_height</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_paper_height (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gdouble">gdouble</link> height,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-PAPER-HEIGHT--CAPS"><literal>GTK_PRINT_SETTINGS_PAPER_HEIGHT</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> the paper height
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the units of <parameter>height</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-USE-COLOR--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_USE_COLOR</title>
+<indexterm zone="GTK-PRINT-SETTINGS-USE-COLOR--CAPS"><primary sortas="PRINT_SETTINGS_USE_COLOR">GTK_PRINT_SETTINGS_USE_COLOR</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_USE_COLOR        "use-color"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-use-color" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_use_color ()</title>
+<indexterm zone="gtk-print-settings-get-use-color" role="2.10"><primary sortas="print_settings_get_use_color">gtk_print_settings_get_use_color</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_print_settings_get_use_color    (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-USE-COLOR--CAPS"><literal>GTK_PRINT_SETTINGS_USE_COLOR</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether to use color
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-use-color" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_use_color ()</title>
+<indexterm zone="gtk-print-settings-set-use-color" role="2.10"><primary sortas="print_settings_set_use_color">gtk_print_settings_set_use_color</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_use_color    (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gboolean">gboolean</link> use_color);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-USE-COLOR--CAPS"><literal>GTK_PRINT_SETTINGS_USE_COLOR</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>use_color</parameter>&#160;:</term>
+<listitem><simpara> whether to use color
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-COLLATE--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_COLLATE</title>
+<indexterm zone="GTK-PRINT-SETTINGS-COLLATE--CAPS"><primary sortas="PRINT_SETTINGS_COLLATE">GTK_PRINT_SETTINGS_COLLATE</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_COLLATE          "collate"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-collate" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_collate ()</title>
+<indexterm zone="gtk-print-settings-get-collate" role="2.10"><primary sortas="print_settings_get_collate">gtk_print_settings_get_collate</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_print_settings_get_collate      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-COLLATE--CAPS"><literal>GTK_PRINT_SETTINGS_COLLATE</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether to collate the printed pages
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-collate" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_collate ()</title>
+<indexterm zone="gtk-print-settings-set-collate" role="2.10"><primary sortas="print_settings_set_collate">gtk_print_settings_set_collate</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_collate      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gboolean">gboolean</link> collate);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-COLLATE--CAPS"><literal>GTK_PRINT_SETTINGS_COLLATE</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>collate</parameter>&#160;:</term>
+<listitem><simpara> whether to collate the output
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-REVERSE--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_REVERSE</title>
+<indexterm zone="GTK-PRINT-SETTINGS-REVERSE--CAPS"><primary sortas="PRINT_SETTINGS_REVERSE">GTK_PRINT_SETTINGS_REVERSE</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_REVERSE          "reverse"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-reverse" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_reverse ()</title>
+<indexterm zone="gtk-print-settings-get-reverse" role="2.10"><primary sortas="print_settings_get_reverse">gtk_print_settings_get_reverse</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_print_settings_get_reverse      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-REVERSE--CAPS"><literal>GTK_PRINT_SETTINGS_REVERSE</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether to reverse the order of the printed pages
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-reverse" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_reverse ()</title>
+<indexterm zone="gtk-print-settings-set-reverse" role="2.10"><primary sortas="print_settings_set_reverse">gtk_print_settings_set_reverse</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_reverse      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gboolean">gboolean</link> reverse);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-REVERSE--CAPS"><literal>GTK_PRINT_SETTINGS_REVERSE</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>reverse</parameter>&#160;:</term>
+<listitem><simpara> whether to reverse the output
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GtkPrintDuplex" role="enum">
+<title>enum GtkPrintDuplex</title>
+<indexterm zone="GtkPrintDuplex"><primary sortas="PrintDuplex">GtkPrintDuplex</primary></indexterm><programlisting>typedef enum
+{
+  GTK_PRINT_DUPLEX_SIMPLEX,
+  GTK_PRINT_DUPLEX_HORIZONTAL,
+  GTK_PRINT_DUPLEX_VERTICAL
+} GtkPrintDuplex;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-DUPLEX--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_DUPLEX</title>
+<indexterm zone="GTK-PRINT-SETTINGS-DUPLEX--CAPS"><primary sortas="PRINT_SETTINGS_DUPLEX">GTK_PRINT_SETTINGS_DUPLEX</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_DUPLEX           "duplex"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-duplex" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_duplex ()</title>
+<indexterm zone="gtk-print-settings-get-duplex" role="2.10"><primary sortas="print_settings_get_duplex">gtk_print_settings_get_duplex</primary></indexterm><programlisting><link linkend="GtkPrintDuplex">GtkPrintDuplex</link>      gtk_print_settings_get_duplex       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-DUPLEX--CAPS"><literal>GTK_PRINT_SETTINGS_DUPLEX</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether to print the output in duplex.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-duplex" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_duplex ()</title>
+<indexterm zone="gtk-print-settings-set-duplex" role="2.10"><primary sortas="print_settings_set_duplex">gtk_print_settings_set_duplex</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_duplex       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPrintDuplex">GtkPrintDuplex</link> duplex);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-DUPLEX--CAPS"><literal>GTK_PRINT_SETTINGS_DUPLEX</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>duplex</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintDuplex"><type>GtkPrintDuplex</type></link> value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GtkPrintQuality" role="enum">
+<title>enum GtkPrintQuality</title>
+<indexterm zone="GtkPrintQuality"><primary sortas="PrintQuality">GtkPrintQuality</primary></indexterm><programlisting>typedef enum
+{
+  GTK_PRINT_QUALITY_LOW,
+  GTK_PRINT_QUALITY_NORMAL,
+  GTK_PRINT_QUALITY_HIGH,
+  GTK_PRINT_QUALITY_DRAFT
+} GtkPrintQuality;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-QUALITY--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_QUALITY</title>
+<indexterm zone="GTK-PRINT-SETTINGS-QUALITY--CAPS"><primary sortas="PRINT_SETTINGS_QUALITY">GTK_PRINT_SETTINGS_QUALITY</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_QUALITY          "quality"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-quality" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_quality ()</title>
+<indexterm zone="gtk-print-settings-get-quality" role="2.10"><primary sortas="print_settings_get_quality">gtk_print_settings_get_quality</primary></indexterm><programlisting><link linkend="GtkPrintQuality">GtkPrintQuality</link>     gtk_print_settings_get_quality      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-QUALITY--CAPS"><literal>GTK_PRINT_SETTINGS_QUALITY</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the print quality
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-quality" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_quality ()</title>
+<indexterm zone="gtk-print-settings-set-quality" role="2.10"><primary sortas="print_settings_set_quality">gtk_print_settings_set_quality</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_quality      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPrintQuality">GtkPrintQuality</link> quality);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-QUALITY--CAPS"><literal>GTK_PRINT_SETTINGS_QUALITY</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>quality</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintQuality"><type>GtkPrintQuality</type></link> value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-N-COPIES--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_N_COPIES</title>
+<indexterm zone="GTK-PRINT-SETTINGS-N-COPIES--CAPS"><primary sortas="PRINT_SETTINGS_N_COPIES">GTK_PRINT_SETTINGS_N_COPIES</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_N_COPIES         "n-copies"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-n-copies" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_n_copies ()</title>
+<indexterm zone="gtk-print-settings-get-n-copies" role="2.10"><primary sortas="print_settings_get_n_copies">gtk_print_settings_get_n_copies</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_print_settings_get_n_copies     (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-N-COPIES--CAPS"><literal>GTK_PRINT_SETTINGS_N_COPIES</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the number of copies to print
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-n-copies" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_n_copies ()</title>
+<indexterm zone="gtk-print-settings-set-n-copies" role="2.10"><primary sortas="print_settings_set_n_copies">gtk_print_settings_set_n_copies</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_n_copies     (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gint">gint</link> num_copies);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-N-COPIES--CAPS"><literal>GTK_PRINT_SETTINGS_N_COPIES</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>num_copies</parameter>&#160;:</term>
+<listitem><simpara> the number of copies 
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-NUMBER-UP--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_NUMBER_UP</title>
+<indexterm zone="GTK-PRINT-SETTINGS-NUMBER-UP--CAPS"><primary sortas="PRINT_SETTINGS_NUMBER_UP">GTK_PRINT_SETTINGS_NUMBER_UP</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_NUMBER_UP        "number-up"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-number-up" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_number_up ()</title>
+<indexterm zone="gtk-print-settings-get-number-up" role="2.10"><primary sortas="print_settings_get_number_up">gtk_print_settings_get_number_up</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_print_settings_get_number_up    (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-NUMBER-UP--CAPS"><literal>GTK_PRINT_SETTINGS_NUMBER_UP</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the number of pages per sheet
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-number-up" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_number_up ()</title>
+<indexterm zone="gtk-print-settings-set-number-up" role="2.10"><primary sortas="print_settings_set_number_up">gtk_print_settings_set_number_up</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_number_up    (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gint">gint</link> number_up);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-NUMBER-UP--CAPS"><literal>GTK_PRINT_SETTINGS_NUMBER_UP</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>number_up</parameter>&#160;:</term>
+<listitem><simpara> the number of pages per sheet 
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GtkNumberUpLayout" role="enum">
+<title>enum GtkNumberUpLayout</title>
+<indexterm zone="GtkNumberUpLayout"><primary sortas="NumberUpLayout">GtkNumberUpLayout</primary></indexterm><programlisting>typedef enum
+{
+  GTK_NUMBER_UP_LAYOUT_LEFT_TO_RIGHT_TOP_TO_BOTTOM, /*&lt; nick=lrtb &gt;*/
+  GTK_NUMBER_UP_LAYOUT_LEFT_TO_RIGHT_BOTTOM_TO_TOP, /*&lt; nick=lrbt &gt;*/
+  GTK_NUMBER_UP_LAYOUT_RIGHT_TO_LEFT_TOP_TO_BOTTOM, /*&lt; nick=rltb &gt;*/
+  GTK_NUMBER_UP_LAYOUT_RIGHT_TO_LEFT_BOTTOM_TO_TOP, /*&lt; nick=rlbt &gt;*/
+  GTK_NUMBER_UP_LAYOUT_TOP_TO_BOTTOM_LEFT_TO_RIGHT, /*&lt; nick=tblr &gt;*/
+  GTK_NUMBER_UP_LAYOUT_TOP_TO_BOTTOM_RIGHT_TO_LEFT, /*&lt; nick=tbrl &gt;*/
+  GTK_NUMBER_UP_LAYOUT_BOTTOM_TO_TOP_LEFT_TO_RIGHT, /*&lt; nick=btlr &gt;*/
+  GTK_NUMBER_UP_LAYOUT_BOTTOM_TO_TOP_RIGHT_TO_LEFT  /*&lt; nick=btrl &gt;*/
+} GtkNumberUpLayout;
+</programlisting>
+<para>
+Used to determine the layout of pages on a sheet when printing
+multiple pages per sheet.
+</para><variablelist role="enum">
+<varlistentry id="GTK-NUMBER-UP-LAYOUT-LEFT-TO-RIGHT-TOP-TO-BOTTOM--CAPS" role="constant">
+<term><literal>GTK_NUMBER_UP_LAYOUT_LEFT_TO_RIGHT_TOP_TO_BOTTOM</literal></term>
+<listitem><simpara><inlinegraphic valign="middle" fileref="layout-lrtb.png" format="PNG"></inlinegraphic>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-NUMBER-UP-LAYOUT-LEFT-TO-RIGHT-BOTTOM-TO-TOP--CAPS" role="constant">
+<term><literal>GTK_NUMBER_UP_LAYOUT_LEFT_TO_RIGHT_BOTTOM_TO_TOP</literal></term>
+<listitem><simpara><inlinegraphic valign="middle" fileref="layout-lrbt.png" format="PNG"></inlinegraphic>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-NUMBER-UP-LAYOUT-RIGHT-TO-LEFT-TOP-TO-BOTTOM--CAPS" role="constant">
+<term><literal>GTK_NUMBER_UP_LAYOUT_RIGHT_TO_LEFT_TOP_TO_BOTTOM</literal></term>
+<listitem><simpara><inlinegraphic valign="middle" fileref="layout-rltb.png" format="PNG"></inlinegraphic>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-NUMBER-UP-LAYOUT-RIGHT-TO-LEFT-BOTTOM-TO-TOP--CAPS" role="constant">
+<term><literal>GTK_NUMBER_UP_LAYOUT_RIGHT_TO_LEFT_BOTTOM_TO_TOP</literal></term>
+<listitem><simpara><inlinegraphic valign="middle" fileref="layout-rlbt.png" format="PNG"></inlinegraphic>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-NUMBER-UP-LAYOUT-TOP-TO-BOTTOM-LEFT-TO-RIGHT--CAPS" role="constant">
+<term><literal>GTK_NUMBER_UP_LAYOUT_TOP_TO_BOTTOM_LEFT_TO_RIGHT</literal></term>
+<listitem><simpara><inlinegraphic valign="middle" fileref="layout-tblr.png" format="PNG"></inlinegraphic>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-NUMBER-UP-LAYOUT-TOP-TO-BOTTOM-RIGHT-TO-LEFT--CAPS" role="constant">
+<term><literal>GTK_NUMBER_UP_LAYOUT_TOP_TO_BOTTOM_RIGHT_TO_LEFT</literal></term>
+<listitem><simpara><inlinegraphic valign="middle" fileref="layout-tbrl.png" format="PNG"></inlinegraphic>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-NUMBER-UP-LAYOUT-BOTTOM-TO-TOP-LEFT-TO-RIGHT--CAPS" role="constant">
+<term><literal>GTK_NUMBER_UP_LAYOUT_BOTTOM_TO_TOP_LEFT_TO_RIGHT</literal></term>
+<listitem><simpara><inlinegraphic valign="middle" fileref="layout-btlr.png" format="PNG"></inlinegraphic>
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-NUMBER-UP-LAYOUT-BOTTOM-TO-TOP-RIGHT-TO-LEFT--CAPS" role="constant">
+<term><literal>GTK_NUMBER_UP_LAYOUT_BOTTOM_TO_TOP_RIGHT_TO_LEFT</literal></term>
+<listitem><simpara><inlinegraphic valign="middle" fileref="layout-btrl.png" format="PNG"></inlinegraphic>
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-NUMBER-UP-LAYOUT--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT</title>
+<indexterm zone="GTK-PRINT-SETTINGS-NUMBER-UP-LAYOUT--CAPS"><primary sortas="PRINT_SETTINGS_NUMBER_UP_LAYOUT">GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT "number-up-layout"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-number-up-layout" role="function" condition="since:2.14">
+<title>gtk_print_settings_get_number_up_layout ()</title>
+<indexterm zone="gtk-print-settings-get-number-up-layout" role="2.14"><primary sortas="print_settings_get_number_up_layout">gtk_print_settings_get_number_up_layout</primary></indexterm><programlisting><link linkend="GtkNumberUpLayout">GtkNumberUpLayout</link>   gtk_print_settings_get_number_up_layout
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-NUMBER-UP-LAYOUT--CAPS"><literal>GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> layout of page in number-up mode
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-print-settings-set-number-up-layout" role="function" condition="since:2.14">
+<title>gtk_print_settings_set_number_up_layout ()</title>
+<indexterm zone="gtk-print-settings-set-number-up-layout" role="2.14"><primary sortas="print_settings_set_number_up_layout">gtk_print_settings_set_number_up_layout</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_number_up_layout
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkNumberUpLayout">GtkNumberUpLayout</link> number_up_layout);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-NUMBER-UP-LAYOUT--CAPS"><literal>GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>number_up_layout</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkNumberUpLayout"><type>GtkNumberUpLayout</type></link> value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-RESOLUTION--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_RESOLUTION</title>
+<indexterm zone="GTK-PRINT-SETTINGS-RESOLUTION--CAPS"><primary sortas="PRINT_SETTINGS_RESOLUTION">GTK_PRINT_SETTINGS_RESOLUTION</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_RESOLUTION       "resolution"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-resolution" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_resolution ()</title>
+<indexterm zone="gtk-print-settings-get-resolution" role="2.10"><primary sortas="print_settings_get_resolution">gtk_print_settings_get_resolution</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_print_settings_get_resolution   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-RESOLUTION--CAPS"><literal>GTK_PRINT_SETTINGS_RESOLUTION</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the resolution in dpi
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-resolution" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_resolution ()</title>
+<indexterm zone="gtk-print-settings-set-resolution" role="2.10"><primary sortas="print_settings_set_resolution">gtk_print_settings_set_resolution</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_resolution   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gint">gint</link> resolution);</programlisting>
+<para>
+Sets the values of <link linkend="GTK-PRINT-SETTINGS-RESOLUTION--CAPS"><literal>GTK_PRINT_SETTINGS_RESOLUTION</literal></link>,
+<link linkend="GTK-PRINT-SETTINGS-RESOLUTION-X--CAPS"><literal>GTK_PRINT_SETTINGS_RESOLUTION_X</literal></link> and 
+<link linkend="GTK-PRINT-SETTINGS-RESOLUTION-Y--CAPS"><literal>GTK_PRINT_SETTINGS_RESOLUTION_Y</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>resolution</parameter>&#160;:</term>
+<listitem><simpara> the resolution in dpi
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-resolution-xy" role="function" condition="since:2.16">
+<title>gtk_print_settings_set_resolution_xy ()</title>
+<indexterm zone="gtk-print-settings-set-resolution-xy" role="2.16"><primary sortas="print_settings_set_resolution_xy">gtk_print_settings_set_resolution_xy</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_resolution_xy
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gint">gint</link> resolution_x,
+                                                         <link linkend="gint">gint</link> resolution_y);</programlisting>
+<para>
+Sets the values of <link linkend="GTK-PRINT-SETTINGS-RESOLUTION--CAPS"><literal>GTK_PRINT_SETTINGS_RESOLUTION</literal></link>,
+<link linkend="GTK-PRINT-SETTINGS-RESOLUTION-X--CAPS"><literal>GTK_PRINT_SETTINGS_RESOLUTION_X</literal></link> and
+<link linkend="GTK-PRINT-SETTINGS-RESOLUTION-Y--CAPS"><literal>GTK_PRINT_SETTINGS_RESOLUTION_Y</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>resolution_x</parameter>&#160;:</term>
+<listitem><simpara> the horizontal resolution in dpi
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>resolution_y</parameter>&#160;:</term>
+<listitem><simpara> the vertical resolution in dpi
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-RESOLUTION-X--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_RESOLUTION_X</title>
+<indexterm zone="GTK-PRINT-SETTINGS-RESOLUTION-X--CAPS"><primary sortas="PRINT_SETTINGS_RESOLUTION_X">GTK_PRINT_SETTINGS_RESOLUTION_X</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_RESOLUTION_X     "resolution-x"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-resolution-x" role="function" condition="since:2.16">
+<title>gtk_print_settings_get_resolution_x ()</title>
+<indexterm zone="gtk-print-settings-get-resolution-x" role="2.16"><primary sortas="print_settings_get_resolution_x">gtk_print_settings_get_resolution_x</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_print_settings_get_resolution_x (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-RESOLUTION-X--CAPS"><literal>GTK_PRINT_SETTINGS_RESOLUTION_X</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the horizontal resolution in dpi
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-RESOLUTION-Y--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_RESOLUTION_Y</title>
+<indexterm zone="GTK-PRINT-SETTINGS-RESOLUTION-Y--CAPS"><primary sortas="PRINT_SETTINGS_RESOLUTION_Y">GTK_PRINT_SETTINGS_RESOLUTION_Y</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_RESOLUTION_Y     "resolution-y"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-resolution-y" role="function" condition="since:2.16">
+<title>gtk_print_settings_get_resolution_y ()</title>
+<indexterm zone="gtk-print-settings-get-resolution-y" role="2.16"><primary sortas="print_settings_get_resolution_y">gtk_print_settings_get_resolution_y</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_print_settings_get_resolution_y (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-RESOLUTION-Y--CAPS"><literal>GTK_PRINT_SETTINGS_RESOLUTION_Y</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the vertical resolution in dpi
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-PRINTER-LPI--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_PRINTER_LPI</title>
+<indexterm zone="GTK-PRINT-SETTINGS-PRINTER-LPI--CAPS"><primary sortas="PRINT_SETTINGS_PRINTER_LPI">GTK_PRINT_SETTINGS_PRINTER_LPI</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_PRINTER_LPI      "printer-lpi"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-printer-lpi" role="function" condition="since:2.16">
+<title>gtk_print_settings_get_printer_lpi ()</title>
+<indexterm zone="gtk-print-settings-get-printer-lpi" role="2.16"><primary sortas="print_settings_get_printer_lpi">gtk_print_settings_get_printer_lpi</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_print_settings_get_printer_lpi  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-PRINTER-LPI--CAPS"><literal>GTK_PRINT_SETTINGS_PRINTER_LPI</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the resolution in lpi (lines per inch)
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="gtk-print-settings-set-printer-lpi" role="function" condition="since:2.16">
+<title>gtk_print_settings_set_printer_lpi ()</title>
+<indexterm zone="gtk-print-settings-set-printer-lpi" role="2.16"><primary sortas="print_settings_set_printer_lpi">gtk_print_settings_set_printer_lpi</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_printer_lpi  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gdouble">gdouble</link> lpi);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-PRINTER-LPI--CAPS"><literal>GTK_PRINT_SETTINGS_PRINTER_LPI</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>lpi</parameter>&#160;:</term>
+<listitem><simpara> the resolution in lpi (lines per inch)
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-SCALE--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_SCALE</title>
+<indexterm zone="GTK-PRINT-SETTINGS-SCALE--CAPS"><primary sortas="PRINT_SETTINGS_SCALE">GTK_PRINT_SETTINGS_SCALE</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_SCALE            "scale"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-scale" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_scale ()</title>
+<indexterm zone="gtk-print-settings-get-scale" role="2.10"><primary sortas="print_settings_get_scale">gtk_print_settings_get_scale</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_print_settings_get_scale        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-SCALE--CAPS"><literal>GTK_PRINT_SETTINGS_SCALE</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the scale in percent
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-scale" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_scale ()</title>
+<indexterm zone="gtk-print-settings-set-scale" role="2.10"><primary sortas="print_settings_set_scale">gtk_print_settings_set_scale</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_scale        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gdouble">gdouble</link> scale);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-SCALE--CAPS"><literal>GTK_PRINT_SETTINGS_SCALE</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>scale</parameter>&#160;:</term>
+<listitem><simpara> the scale in percent
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GtkPrintPages" role="enum">
+<title>enum GtkPrintPages</title>
+<indexterm zone="GtkPrintPages"><primary sortas="PrintPages">GtkPrintPages</primary></indexterm><programlisting>typedef enum
+{
+  GTK_PRINT_PAGES_ALL,
+  GTK_PRINT_PAGES_CURRENT,
+  GTK_PRINT_PAGES_RANGES
+} GtkPrintPages;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-PRINT-PAGES--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_PRINT_PAGES</title>
+<indexterm zone="GTK-PRINT-SETTINGS-PRINT-PAGES--CAPS"><primary sortas="PRINT_SETTINGS_PRINT_PAGES">GTK_PRINT_SETTINGS_PRINT_PAGES</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_PRINT_PAGES      "print-pages"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-print-pages" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_print_pages ()</title>
+<indexterm zone="gtk-print-settings-get-print-pages" role="2.10"><primary sortas="print_settings_get_print_pages">gtk_print_settings_get_print_pages</primary></indexterm><programlisting><link linkend="GtkPrintPages">GtkPrintPages</link>       gtk_print_settings_get_print_pages  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-PRINT-PAGES--CAPS"><literal>GTK_PRINT_SETTINGS_PRINT_PAGES</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> which pages to print
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-print-pages" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_print_pages ()</title>
+<indexterm zone="gtk-print-settings-set-print-pages" role="2.10"><primary sortas="print_settings_set_print_pages">gtk_print_settings_set_print_pages</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_print_pages  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPrintPages">GtkPrintPages</link> pages);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-PRINT-PAGES--CAPS"><literal>GTK_PRINT_SETTINGS_PRINT_PAGES</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pages</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintPages"><type>GtkPrintPages</type></link> value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GtkPageRange" role="struct">
+<title>GtkPageRange</title>
+<indexterm zone="GtkPageRange"><primary sortas="PageRange">GtkPageRange</primary></indexterm><programlisting>typedef struct {
+  gint start;
+  gint end;
+} GtkPageRange;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-PAGE-RANGES--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_PAGE_RANGES</title>
+<indexterm zone="GTK-PRINT-SETTINGS-PAGE-RANGES--CAPS"><primary sortas="PRINT_SETTINGS_PAGE_RANGES">GTK_PRINT_SETTINGS_PAGE_RANGES</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_PAGE_RANGES      "page-ranges"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-page-ranges" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_page_ranges ()</title>
+<indexterm zone="gtk-print-settings-get-page-ranges" role="2.10"><primary sortas="print_settings_get_page_ranges">gtk_print_settings_get_page_ranges</primary></indexterm><programlisting><link linkend="GtkPageRange">GtkPageRange</link> *      gtk_print_settings_get_page_ranges  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="gint">gint</link> *num_ranges);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-PAGE-RANGES--CAPS"><literal>GTK_PRINT_SETTINGS_PAGE_RANGES</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>num_ranges</parameter>&#160;:</term>
+<listitem><simpara> return location for the length of the returned array
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an array of <link linkend="GtkPageRange"><type>GtkPageRange</type></link><!-- -->s. Use <link linkend="g-free"><function>g_free()</function></link>
+  to free the array when it is no longer needed. 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-page-ranges" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_page_ranges ()</title>
+<indexterm zone="gtk-print-settings-set-page-ranges" role="2.10"><primary sortas="print_settings_set_page_ranges">gtk_print_settings_set_page_ranges</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_page_ranges  (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPageRange">GtkPageRange</link> *page_ranges,
+                                                         <link linkend="gint">gint</link> num_ranges);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-PAGE-RANGES--CAPS"><literal>GTK_PRINT_SETTINGS_PAGE_RANGES</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>page_ranges</parameter>&#160;:</term>
+<listitem><simpara> an array of <link linkend="GtkPageRange"><type>GtkPageRange</type></link><!-- -->s
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>num_ranges</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>page_ranges</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GtkPageSet" role="enum">
+<title>enum GtkPageSet</title>
+<indexterm zone="GtkPageSet"><primary sortas="PageSet">GtkPageSet</primary></indexterm><programlisting>typedef enum
+{
+  GTK_PAGE_SET_ALL,
+  GTK_PAGE_SET_EVEN,
+  GTK_PAGE_SET_ODD
+} GtkPageSet;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-PAGE-SET--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_PAGE_SET</title>
+<indexterm zone="GTK-PRINT-SETTINGS-PAGE-SET--CAPS"><primary sortas="PRINT_SETTINGS_PAGE_SET">GTK_PRINT_SETTINGS_PAGE_SET</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_PAGE_SET         "page-set"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-page-set" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_page_set ()</title>
+<indexterm zone="gtk-print-settings-get-page-set" role="2.10"><primary sortas="print_settings_get_page_set">gtk_print_settings_get_page_set</primary></indexterm><programlisting><link linkend="GtkPageSet">GtkPageSet</link>          gtk_print_settings_get_page_set     (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-PAGE-SET--CAPS"><literal>GTK_PRINT_SETTINGS_PAGE_SET</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the set of pages to print
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-page-set" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_page_set ()</title>
+<indexterm zone="gtk-print-settings-set-page-set" role="2.10"><primary sortas="print_settings_set_page_set">gtk_print_settings_set_page_set</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_page_set     (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GtkPageSet">GtkPageSet</link> page_set);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-PAGE-SET--CAPS"><literal>GTK_PRINT_SETTINGS_PAGE_SET</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>page_set</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSet"><type>GtkPageSet</type></link> value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-DEFAULT-SOURCE--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_DEFAULT_SOURCE</title>
+<indexterm zone="GTK-PRINT-SETTINGS-DEFAULT-SOURCE--CAPS"><primary sortas="PRINT_SETTINGS_DEFAULT_SOURCE">GTK_PRINT_SETTINGS_DEFAULT_SOURCE</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_DEFAULT_SOURCE   "default-source"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-default-source" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_default_source ()</title>
+<indexterm zone="gtk-print-settings-get-default-source" role="2.10"><primary sortas="print_settings_get_default_source">gtk_print_settings_get_default_source</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_print_settings_get_default_source
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-DEFAULT-SOURCE--CAPS"><literal>GTK_PRINT_SETTINGS_DEFAULT_SOURCE</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the default source
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-default-source" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_default_source ()</title>
+<indexterm zone="gtk-print-settings-set-default-source" role="2.10"><primary sortas="print_settings_set_default_source">gtk_print_settings_set_default_source</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_default_source
+                                                        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *default_source);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-DEFAULT-SOURCE--CAPS"><literal>GTK_PRINT_SETTINGS_DEFAULT_SOURCE</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>default_source</parameter>&#160;:</term>
+<listitem><simpara> the default source
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-MEDIA-TYPE--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_MEDIA_TYPE</title>
+<indexterm zone="GTK-PRINT-SETTINGS-MEDIA-TYPE--CAPS"><primary sortas="PRINT_SETTINGS_MEDIA_TYPE">GTK_PRINT_SETTINGS_MEDIA_TYPE</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_MEDIA_TYPE       "media-type"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-media-type" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_media_type ()</title>
+<indexterm zone="gtk-print-settings-get-media-type" role="2.10"><primary sortas="print_settings_get_media_type">gtk_print_settings_get_media_type</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_print_settings_get_media_type   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-MEDIA-TYPE--CAPS"><literal>GTK_PRINT_SETTINGS_MEDIA_TYPE</literal></link>.
+</para>
+<para>
+The set of media types is defined in PWG 5101.1-2002 PWG.
+<!-- FIXME link here --></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the media type
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-media-type" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_media_type ()</title>
+<indexterm zone="gtk-print-settings-set-media-type" role="2.10"><primary sortas="print_settings_set_media_type">gtk_print_settings_set_media_type</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_media_type   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *media_type);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-MEDIA-TYPE--CAPS"><literal>GTK_PRINT_SETTINGS_MEDIA_TYPE</literal></link>.
+</para>
+<para>
+The set of media types is defined in PWG 5101.1-2002 PWG.
+<!-- FIXME link here --></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>media_type</parameter>&#160;:</term>
+<listitem><simpara> the media type
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-DITHER--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_DITHER</title>
+<indexterm zone="GTK-PRINT-SETTINGS-DITHER--CAPS"><primary sortas="PRINT_SETTINGS_DITHER">GTK_PRINT_SETTINGS_DITHER</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_DITHER           "dither"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-dither" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_dither ()</title>
+<indexterm zone="gtk-print-settings-get-dither" role="2.10"><primary sortas="print_settings_get_dither">gtk_print_settings_get_dither</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_print_settings_get_dither       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-DITHER--CAPS"><literal>GTK_PRINT_SETTINGS_DITHER</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the dithering that is used
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-dither" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_dither ()</title>
+<indexterm zone="gtk-print-settings-set-dither" role="2.10"><primary sortas="print_settings_set_dither">gtk_print_settings_set_dither</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_dither       (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *dither);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-DITHER--CAPS"><literal>GTK_PRINT_SETTINGS_DITHER</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dither</parameter>&#160;:</term>
+<listitem><simpara> the dithering that is used
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-FINISHINGS--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_FINISHINGS</title>
+<indexterm zone="GTK-PRINT-SETTINGS-FINISHINGS--CAPS"><primary sortas="PRINT_SETTINGS_FINISHINGS">GTK_PRINT_SETTINGS_FINISHINGS</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_FINISHINGS       "finishings"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-finishings" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_finishings ()</title>
+<indexterm zone="gtk-print-settings-get-finishings" role="2.10"><primary sortas="print_settings_get_finishings">gtk_print_settings_get_finishings</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_print_settings_get_finishings   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-FINISHINGS--CAPS"><literal>GTK_PRINT_SETTINGS_FINISHINGS</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the finishings
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-finishings" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_finishings ()</title>
+<indexterm zone="gtk-print-settings-set-finishings" role="2.10"><primary sortas="print_settings_set_finishings">gtk_print_settings_set_finishings</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_finishings   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *finishings);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-FINISHINGS--CAPS"><literal>GTK_PRINT_SETTINGS_FINISHINGS</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>finishings</parameter>&#160;:</term>
+<listitem><simpara> the finishings
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-OUTPUT-BIN--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_OUTPUT_BIN</title>
+<indexterm zone="GTK-PRINT-SETTINGS-OUTPUT-BIN--CAPS"><primary sortas="PRINT_SETTINGS_OUTPUT_BIN">GTK_PRINT_SETTINGS_OUTPUT_BIN</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_OUTPUT_BIN       "output-bin"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-get-output-bin" role="function" condition="since:2.10">
+<title>gtk_print_settings_get_output_bin ()</title>
+<indexterm zone="gtk-print-settings-get-output-bin" role="2.10"><primary sortas="print_settings_get_output_bin">gtk_print_settings_get_output_bin</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_print_settings_get_output_bin   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings);</programlisting>
+<para>
+Gets the value of <link linkend="GTK-PRINT-SETTINGS-OUTPUT-BIN--CAPS"><literal>GTK_PRINT_SETTINGS_OUTPUT_BIN</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the output bin
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-print-settings-set-output-bin" role="function" condition="since:2.10">
+<title>gtk_print_settings_set_output_bin ()</title>
+<indexterm zone="gtk-print-settings-set-output-bin" role="2.10"><primary sortas="print_settings_set_output_bin">gtk_print_settings_set_output_bin</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_set_output_bin   (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *output_bin);</programlisting>
+<para>
+Sets the value of <link linkend="GTK-PRINT-SETTINGS-OUTPUT-BIN--CAPS"><literal>GTK_PRINT_SETTINGS_OUTPUT_BIN</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>output_bin</parameter>&#160;:</term>
+<listitem><simpara> the output bin
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-OUTPUT-FILE-FORMAT--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT</title>
+<indexterm zone="GTK-PRINT-SETTINGS-OUTPUT-FILE-FORMAT--CAPS"><primary sortas="PRINT_SETTINGS_OUTPUT_FILE_FORMAT">GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT  "output-file-format"
+</programlisting>
+<para>
+The key used by the "Print to file" printer to store the format
+of the output. The supported values are "PS" and "PDF".
+</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-OUTPUT-URI--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_OUTPUT_URI</title>
+<indexterm zone="GTK-PRINT-SETTINGS-OUTPUT-URI--CAPS"><primary sortas="PRINT_SETTINGS_OUTPUT_URI">GTK_PRINT_SETTINGS_OUTPUT_URI</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_OUTPUT_URI          "output-uri"
+</programlisting>
+<para>
+The key used by the "Print to file" printer to store the URI
+to which the output should be written. GTK+ itself supports
+only "file://" URIs.
+</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-WIN32-DRIVER-EXTRA--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA</title>
+<indexterm zone="GTK-PRINT-SETTINGS-WIN32-DRIVER-EXTRA--CAPS"><primary sortas="PRINT_SETTINGS_WIN32_DRIVER_EXTRA">GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA   "win32-driver-extra"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GTK-PRINT-SETTINGS-WIN32-DRIVER-VERSION--CAPS" role="macro">
+<title>GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION</title>
+<indexterm zone="GTK-PRINT-SETTINGS-WIN32-DRIVER-VERSION--CAPS"><primary sortas="PRINT_SETTINGS_WIN32_DRIVER_VERSION">GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION</primary></indexterm><programlisting>#define GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION "win32-driver-version"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-print-settings-new-from-file" role="function" condition="since:2.12">
+<title>gtk_print_settings_new_from_file ()</title>
+<indexterm zone="gtk-print-settings-new-from-file" role="2.12"><primary sortas="print_settings_new_from_file">gtk_print_settings_new_from_file</primary></indexterm><programlisting><link linkend="GtkPrintSettings">GtkPrintSettings</link> *  gtk_print_settings_new_from_file    (const <link linkend="gchar">gchar</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Reads the print settings from <parameter>file_name</parameter>. Returns a new <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+object with the restored settings, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if an error occurred.
+See <link linkend="gtk-print-settings-to-file"><function>gtk_print_settings_to_file()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>file_name</parameter>&#160;:</term>
+<listitem><simpara> the filename to read the settings from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for errors, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the restored <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-print-settings-new-from-key-file" role="function" condition="since:2.12">
+<title>gtk_print_settings_new_from_key_file ()</title>
+<indexterm zone="gtk-print-settings-new-from-key-file" role="2.12"><primary sortas="print_settings_new_from_key_file">gtk_print_settings_new_from_key_file</primary></indexterm><programlisting><link linkend="GtkPrintSettings">GtkPrintSettings</link> *  gtk_print_settings_new_from_key_file
+                                                        (<link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Reads the print settings from the group <parameter>group_name</parameter> in <parameter>key_file</parameter>.
+Returns a new <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link> object with the restored settings,
+or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if an error occurred.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key_file</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GKeyFile"><type>GKeyFile</type></link> to retrieve the settings from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the group to use, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> to use
+    the default "Print Settings"
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for errors, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the restored <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-print-settings-load-file" role="function" condition="since:2.14">
+<title>gtk_print_settings_load_file ()</title>
+<indexterm zone="gtk-print-settings-load-file" role="2.14"><primary sortas="print_settings_load_file">gtk_print_settings_load_file</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_print_settings_load_file        (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Reads the print settings from <parameter>file_name</parameter>.
+See <link linkend="gtk-print-settings-to-file"><function>gtk_print_settings_to_file()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>file_name</parameter>&#160;:</term>
+<listitem><simpara> the filename to read the settings from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for errors, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-print-settings-load-key-file" role="function" condition="since:2.14">
+<title>gtk_print_settings_load_key_file ()</title>
+<indexterm zone="gtk-print-settings-load-key-file" role="2.14"><primary sortas="print_settings_load_key_file">gtk_print_settings_load_key_file</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_print_settings_load_key_file    (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Reads the print settings from the group <parameter>group_name</parameter> in <parameter>key_file</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key_file</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GKeyFile"><type>GKeyFile</type></link> to retrieve the settings from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the group to use, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> to use the default
+    "Print Settings"
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for errors, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-print-settings-to-file" role="function" condition="since:2.12">
+<title>gtk_print_settings_to_file ()</title>
+<indexterm zone="gtk-print-settings-to-file" role="2.12"><primary sortas="print_settings_to_file">gtk_print_settings_to_file</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_print_settings_to_file          (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         const <link linkend="gchar">gchar</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+This function saves the print settings from <parameter>settings</parameter> to <parameter>file_name</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>file_name</parameter>&#160;:</term>
+<listitem><simpara> the file to save to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for errors, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-print-settings-to-key-file" role="function" condition="since:2.12">
+<title>gtk_print_settings_to_key_file ()</title>
+<indexterm zone="gtk-print-settings-to-key-file" role="2.12"><primary sortas="print_settings_to_key_file">gtk_print_settings_to_key_file</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_print_settings_to_key_file      (<link linkend="GtkPrintSettings">GtkPrintSettings</link> *settings,
+                                                         <link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name);</programlisting>
+<para>
+This function adds the print settings from <parameter>settings</parameter> to <parameter>key_file</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key_file</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GKeyFile"><type>GKeyFile</type></link> to save the print settings to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group_name</parameter>&#160;:</term>
+<listitem><simpara> the group to add the settings to in <parameter>key_file</parameter>, or 
+    <link linkend="NULL--CAPS"><literal>NULL</literal></link> to use the default "Print Settings"
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

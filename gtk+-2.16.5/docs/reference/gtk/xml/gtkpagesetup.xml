@@ -1,0 +1,643 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkPageSetup">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkPageSetup.top_of_page">GtkPageSetup</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkPageSetup</refname>
+<refpurpose>Stores page setup information</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkPageSetup.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkPageSetup-struct">GtkPageSetup</link>;
+<link linkend="GtkPageSetup">GtkPageSetup</link> *      <link linkend="gtk-page-setup-new">gtk_page_setup_new</link>                  (void);
+<link linkend="GtkPageSetup">GtkPageSetup</link> *      <link linkend="gtk-page-setup-copy">gtk_page_setup_copy</link>                 (<link linkend="GtkPageSetup">GtkPageSetup</link> *other);
+<link linkend="GtkPageOrientation">GtkPageOrientation</link>  <link linkend="gtk-page-setup-get-orientation">gtk_page_setup_get_orientation</link>      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup);
+<link linkend="void">void</link>                <link linkend="gtk-page-setup-set-orientation">gtk_page_setup_set_orientation</link>      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkPageOrientation">GtkPageOrientation</link> orientation);
+<link linkend="GtkPaperSize">GtkPaperSize</link> *      <link linkend="gtk-page-setup-get-paper-size">gtk_page_setup_get_paper_size</link>       (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup);
+<link linkend="void">void</link>                <link linkend="gtk-page-setup-set-paper-size">gtk_page_setup_set_paper_size</link>       (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkPaperSize">GtkPaperSize</link> *size);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-page-setup-get-top-margin">gtk_page_setup_get_top_margin</link>       (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="void">void</link>                <link linkend="gtk-page-setup-set-top-margin">gtk_page_setup_set_top_margin</link>       (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="gdouble">gdouble</link> margin,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-page-setup-get-bottom-margin">gtk_page_setup_get_bottom_margin</link>    (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="void">void</link>                <link linkend="gtk-page-setup-set-bottom-margin">gtk_page_setup_set_bottom_margin</link>    (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="gdouble">gdouble</link> margin,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-page-setup-get-left-margin">gtk_page_setup_get_left_margin</link>      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="void">void</link>                <link linkend="gtk-page-setup-set-left-margin">gtk_page_setup_set_left_margin</link>      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="gdouble">gdouble</link> margin,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-page-setup-get-right-margin">gtk_page_setup_get_right_margin</link>     (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="void">void</link>                <link linkend="gtk-page-setup-set-right-margin">gtk_page_setup_set_right_margin</link>     (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="gdouble">gdouble</link> margin,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="void">void</link>                <link linkend="gtk-page-setup-set-paper-size-and-default-margins">gtk_page_setup_set_paper_size_and_default_margins</link>
+                                                        (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkPaperSize">GtkPaperSize</link> *size);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-page-setup-get-paper-width">gtk_page_setup_get_paper_width</link>      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-page-setup-get-paper-height">gtk_page_setup_get_paper_height</link>     (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-page-setup-get-page-width">gtk_page_setup_get_page_width</link>       (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-page-setup-get-page-height">gtk_page_setup_get_page_height</link>      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);
+
+<link linkend="GtkPageSetup">GtkPageSetup</link> *      <link linkend="gtk-page-setup-new-from-file">gtk_page_setup_new_from_file</link>        (const <link linkend="gchar">gchar</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="GtkPageSetup">GtkPageSetup</link> *      <link linkend="gtk-page-setup-new-from-key-file">gtk_page_setup_new_from_key_file</link>    (<link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-page-setup-load-file">gtk_page_setup_load_file</link>            (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         const <link linkend="char">char</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-page-setup-load-key-file">gtk_page_setup_load_key_file</link>        (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-page-setup-to-file">gtk_page_setup_to_file</link>              (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         const <link linkend="char">char</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="void">void</link>                <link linkend="gtk-page-setup-to-key-file">gtk_page_setup_to_key_file</link>          (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkPageSetup.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkPageSetup
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+
+
+<refsect1 id="GtkPageSetup.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A GtkPageSetup object stores the page size, orientation and margins.
+The idea is that you can get one of these from the page setup dialog
+and then pass it to the <link linkend="GtkPrintOperation"><type>GtkPrintOperation</type></link> when printing.
+The benefit of splitting this out of the <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link> is that
+these affect the actual layout of the page, and thus need to be set
+long before user prints.
+</para>
+<para id="print-margins">
+The margins specified in this object are the "print margins", i.e. the
+parts of the page that the printer cannot print on. These are different
+from the layout margins that a word processor uses; they are typically
+used to determine the <emphasis>minimal</emphasis> size for the layout
+margins.
+</para>
+<para>
+To obtain a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link> use <link linkend="gtk-page-setup-new"><function>gtk_page_setup_new()</function></link>
+to get the defaults, or use <link linkend="gtk-print-run-page-setup-dialog"><function>gtk_print_run_page_setup_dialog()</function></link> to show
+the page setup dialog and receive the resulting page setup.
+</para>
+<example>
+<title>A page setup dialog</title>
+<programlisting>
+static GtkPrintSettings *settings = NULL;
+static GtkPageSetup *page_setup = NULL;
+static void
+do_page_setup (void)
+{
+  GtkPageSetup *new_page_setup;
+  if (settings == NULL)
+    settings = gtk_print_settings_new (<!-- -->);
+  new_page_setup = gtk_print_run_page_setup_dialog (GTK_WINDOW (main_window),
+                                                    page_setup, settings);
+  if (page_setup)
+    g_object_unref (page_setup);
+  page_setup = new_page_setup;
+}
+</programlisting>
+</example>
+<para>
+Printing support was added in GTK+ 2.10.
+</para>
+</refsect1>
+
+<refsect1 id="GtkPageSetup.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkPageSetup-struct" role="struct">
+<title>GtkPageSetup</title>
+<indexterm zone="GtkPageSetup-struct"><primary sortas="PageSetup">GtkPageSetup</primary></indexterm><programlisting>typedef struct _GtkPageSetup GtkPageSetup;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-page-setup-new" role="function" condition="since:2.10">
+<title>gtk_page_setup_new ()</title>
+<indexterm zone="gtk-page-setup-new" role="2.10"><primary sortas="page_setup_new">gtk_page_setup_new</primary></indexterm><programlisting><link linkend="GtkPageSetup">GtkPageSetup</link> *      gtk_page_setup_new                  (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-copy" role="function" condition="since:2.10">
+<title>gtk_page_setup_copy ()</title>
+<indexterm zone="gtk-page-setup-copy" role="2.10"><primary sortas="page_setup_copy">gtk_page_setup_copy</primary></indexterm><programlisting><link linkend="GtkPageSetup">GtkPageSetup</link> *      gtk_page_setup_copy                 (<link linkend="GtkPageSetup">GtkPageSetup</link> *other);</programlisting>
+<para>
+Copies a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>other</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link> to copy
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a copy of <parameter>other</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-get-orientation" role="function" condition="since:2.10">
+<title>gtk_page_setup_get_orientation ()</title>
+<indexterm zone="gtk-page-setup-get-orientation" role="2.10"><primary sortas="page_setup_get_orientation">gtk_page_setup_get_orientation</primary></indexterm><programlisting><link linkend="GtkPageOrientation">GtkPageOrientation</link>  gtk_page_setup_get_orientation      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup);</programlisting>
+<para>
+Gets the page orientation of the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the page orientation
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-set-orientation" role="function" condition="since:2.10">
+<title>gtk_page_setup_set_orientation ()</title>
+<indexterm zone="gtk-page-setup-set-orientation" role="2.10"><primary sortas="page_setup_set_orientation">gtk_page_setup_set_orientation</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_page_setup_set_orientation      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkPageOrientation">GtkPageOrientation</link> orientation);</programlisting>
+<para>
+Sets the page orientation of the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>orientation</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageOrientation"><type>GtkPageOrientation</type></link> value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-get-paper-size" role="function" condition="since:2.10">
+<title>gtk_page_setup_get_paper_size ()</title>
+<indexterm zone="gtk-page-setup-get-paper-size" role="2.10"><primary sortas="page_setup_get_paper_size">gtk_page_setup_get_paper_size</primary></indexterm><programlisting><link linkend="GtkPaperSize">GtkPaperSize</link> *      gtk_page_setup_get_paper_size       (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup);</programlisting>
+<para>
+Gets the paper size of the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the paper size
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-set-paper-size" role="function" condition="since:2.10">
+<title>gtk_page_setup_set_paper_size ()</title>
+<indexterm zone="gtk-page-setup-set-paper-size" role="2.10"><primary sortas="page_setup_set_paper_size">gtk_page_setup_set_paper_size</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_page_setup_set_paper_size       (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkPaperSize">GtkPaperSize</link> *size);</programlisting>
+<para>
+Sets the paper size of the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link> without
+changing the margins. See 
+<link linkend="gtk-page-setup-set-paper-size-and-default-margins"><function>gtk_page_setup_set_paper_size_and_default_margins()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> 
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-get-top-margin" role="function" condition="since:2.10">
+<title>gtk_page_setup_get_top_margin ()</title>
+<indexterm zone="gtk-page-setup-get-top-margin" role="2.10"><primary sortas="page_setup_get_top_margin">gtk_page_setup_get_top_margin</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_page_setup_get_top_margin       (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the top margin in units of <parameter>unit</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the top margin
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-set-top-margin" role="function" condition="since:2.10">
+<title>gtk_page_setup_set_top_margin ()</title>
+<indexterm zone="gtk-page-setup-set-top-margin" role="2.10"><primary sortas="page_setup_set_top_margin">gtk_page_setup_set_top_margin</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_page_setup_set_top_margin       (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="gdouble">gdouble</link> margin,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Sets the top margin of the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>margin</parameter>&#160;:</term>
+<listitem><simpara> the new top margin in units of <parameter>unit</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the units for <parameter>margin</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-get-bottom-margin" role="function" condition="since:2.10">
+<title>gtk_page_setup_get_bottom_margin ()</title>
+<indexterm zone="gtk-page-setup-get-bottom-margin" role="2.10"><primary sortas="page_setup_get_bottom_margin">gtk_page_setup_get_bottom_margin</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_page_setup_get_bottom_margin    (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the bottom margin in units of <parameter>unit</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the bottom margin
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-set-bottom-margin" role="function" condition="since:2.10">
+<title>gtk_page_setup_set_bottom_margin ()</title>
+<indexterm zone="gtk-page-setup-set-bottom-margin" role="2.10"><primary sortas="page_setup_set_bottom_margin">gtk_page_setup_set_bottom_margin</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_page_setup_set_bottom_margin    (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="gdouble">gdouble</link> margin,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Sets the bottom margin of the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>margin</parameter>&#160;:</term>
+<listitem><simpara> the new bottom margin in units of <parameter>unit</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the units for <parameter>margin</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-get-left-margin" role="function" condition="since:2.10">
+<title>gtk_page_setup_get_left_margin ()</title>
+<indexterm zone="gtk-page-setup-get-left-margin" role="2.10"><primary sortas="page_setup_get_left_margin">gtk_page_setup_get_left_margin</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_page_setup_get_left_margin      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the left margin in units of <parameter>unit</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the left margin
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-set-left-margin" role="function" condition="since:2.10">
+<title>gtk_page_setup_set_left_margin ()</title>
+<indexterm zone="gtk-page-setup-set-left-margin" role="2.10"><primary sortas="page_setup_set_left_margin">gtk_page_setup_set_left_margin</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_page_setup_set_left_margin      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="gdouble">gdouble</link> margin,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Sets the left margin of the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>margin</parameter>&#160;:</term>
+<listitem><simpara> the new left margin in units of <parameter>unit</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the units for <parameter>margin</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-get-right-margin" role="function" condition="since:2.10">
+<title>gtk_page_setup_get_right_margin ()</title>
+<indexterm zone="gtk-page-setup-get-right-margin" role="2.10"><primary sortas="page_setup_get_right_margin">gtk_page_setup_get_right_margin</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_page_setup_get_right_margin     (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Gets the right margin in units of <parameter>unit</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the right margin
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-set-right-margin" role="function" condition="since:2.10">
+<title>gtk_page_setup_set_right_margin ()</title>
+<indexterm zone="gtk-page-setup-set-right-margin" role="2.10"><primary sortas="page_setup_set_right_margin">gtk_page_setup_set_right_margin</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_page_setup_set_right_margin     (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="gdouble">gdouble</link> margin,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Sets the right margin of the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>margin</parameter>&#160;:</term>
+<listitem><simpara> the new right margin in units of <parameter>unit</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the units for <parameter>margin</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-set-paper-size-and-default-margins" role="function" condition="since:2.10">
+<title>gtk_page_setup_set_paper_size_and_default_margins ()</title>
+<indexterm zone="gtk-page-setup-set-paper-size-and-default-margins" role="2.10"><primary sortas="page_setup_set_paper_size_and_default_margins">gtk_page_setup_set_paper_size_and_default_margins</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_page_setup_set_paper_size_and_default_margins
+                                                        (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkPaperSize">GtkPaperSize</link> *size);</programlisting>
+<para>
+Sets the paper size of the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link> and modifies
+the margins according to the new paper size.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPaperSize"><type>GtkPaperSize</type></link> 
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-get-paper-width" role="function" condition="since:2.10">
+<title>gtk_page_setup_get_paper_width ()</title>
+<indexterm zone="gtk-page-setup-get-paper-width" role="2.10"><primary sortas="page_setup_get_paper_width">gtk_page_setup_get_paper_width</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_page_setup_get_paper_width      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Returns the paper width in units of <parameter>unit</parameter>.
+</para>
+<para>
+Note that this function takes orientation, but 
+not margins into consideration. 
+See <link linkend="gtk-page-setup-get-page-width"><function>gtk_page_setup_get_page_width()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the paper width.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-get-paper-height" role="function" condition="since:2.10">
+<title>gtk_page_setup_get_paper_height ()</title>
+<indexterm zone="gtk-page-setup-get-paper-height" role="2.10"><primary sortas="page_setup_get_paper_height">gtk_page_setup_get_paper_height</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_page_setup_get_paper_height     (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Returns the paper height in units of <parameter>unit</parameter>.
+</para>
+<para>
+Note that this function takes orientation, but 
+not margins into consideration.
+See <link linkend="gtk-page-setup-get-page-height"><function>gtk_page_setup_get_page_height()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the paper height.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-get-page-width" role="function" condition="since:2.10">
+<title>gtk_page_setup_get_page_width ()</title>
+<indexterm zone="gtk-page-setup-get-page-width" role="2.10"><primary sortas="page_setup_get_page_width">gtk_page_setup_get_page_width</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_page_setup_get_page_width       (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Returns the page width in units of <parameter>unit</parameter>.
+</para>
+<para>
+Note that this function takes orientation and
+margins into consideration. 
+See <link linkend="gtk-page-setup-get-paper-width"><function>gtk_page_setup_get_paper_width()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the page width.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-get-page-height" role="function" condition="since:2.10">
+<title>gtk_page_setup_get_page_height ()</title>
+<indexterm zone="gtk-page-setup-get-page-height" role="2.10"><primary sortas="page_setup_get_page_height">gtk_page_setup_get_page_height</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_page_setup_get_page_height      (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GtkUnit">GtkUnit</link> unit);</programlisting>
+<para>
+Returns the page height in units of <parameter>unit</parameter>.
+</para>
+<para>
+Note that this function takes orientation and
+margins into consideration. 
+See <link linkend="gtk-page-setup-get-paper-height"><function>gtk_page_setup_get_paper_height()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>unit</parameter>&#160;:</term>
+<listitem><simpara> the unit for the return value
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the page height.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-new-from-file" role="function" condition="since:2.12">
+<title>gtk_page_setup_new_from_file ()</title>
+<indexterm zone="gtk-page-setup-new-from-file" role="2.12"><primary sortas="page_setup_new_from_file">gtk_page_setup_new_from_file</primary></indexterm><programlisting><link linkend="GtkPageSetup">GtkPageSetup</link> *      gtk_page_setup_new_from_file        (const <link linkend="gchar">gchar</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Reads the page setup from the file <parameter>file_name</parameter>. Returns a 
+new <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link> object with the restored page setup, 
+or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if an error occurred. See <link linkend="gtk-page-setup-to-file"><function>gtk_page_setup_to_file()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>file_name</parameter>&#160;:</term>
+<listitem><simpara> the filename to read the page setup from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the restored <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-page-setup-new-from-key-file" role="function" condition="since:2.12">
+<title>gtk_page_setup_new_from_key_file ()</title>
+<indexterm zone="gtk-page-setup-new-from-key-file" role="2.12"><primary sortas="page_setup_new_from_key_file">gtk_page_setup_new_from_key_file</primary></indexterm><programlisting><link linkend="GtkPageSetup">GtkPageSetup</link> *      gtk_page_setup_new_from_key_file    (<link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Reads the page setup from the group <parameter>group_name</parameter> in the key file
+<parameter>key_file</parameter>. Returns a new <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link> object with the restored
+page setup, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if an error occurred.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>key_file</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GKeyFile"><type>GKeyFile</type></link> to retrieve the page_setup from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the group in the key_file to read, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+             to use the default name "Page Setup"
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the restored <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-page-setup-load-file" role="function" condition="since:2.14">
+<title>gtk_page_setup_load_file ()</title>
+<indexterm zone="gtk-page-setup-load-file" role="2.14"><primary sortas="page_setup_load_file">gtk_page_setup_load_file</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_page_setup_load_file            (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         const <link linkend="char">char</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Reads the page setup from the file <parameter>file_name</parameter>.
+See <link linkend="gtk-page-setup-to-file"><function>gtk_page_setup_to_file()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>file_name</parameter>&#160;:</term>
+<listitem><simpara> the filename to read the page setup from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-page-setup-load-key-file" role="function" condition="since:2.14">
+<title>gtk_page_setup_load_key_file ()</title>
+<indexterm zone="gtk-page-setup-load-key-file" role="2.14"><primary sortas="page_setup_load_key_file">gtk_page_setup_load_key_file</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_page_setup_load_key_file        (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Reads the page setup from the group <parameter>group_name</parameter> in the key file
+<parameter>key_file</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key_file</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GKeyFile"><type>GKeyFile</type></link> to retrieve the page_setup from
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the group in the key_file to read, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+             to use the default name "Page Setup"
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-page-setup-to-file" role="function" condition="since:2.12">
+<title>gtk_page_setup_to_file ()</title>
+<indexterm zone="gtk-page-setup-to-file" role="2.12"><primary sortas="page_setup_to_file">gtk_page_setup_to_file</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_page_setup_to_file              (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         const <link linkend="char">char</link> *file_name,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+This function saves the information from <parameter>setup</parameter> to <parameter>file_name</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>file_name</parameter>&#160;:</term>
+<listitem><simpara> the file to save to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for errors, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-page-setup-to-key-file" role="function" condition="since:2.12">
+<title>gtk_page_setup_to_key_file ()</title>
+<indexterm zone="gtk-page-setup-to-key-file" role="2.12"><primary sortas="page_setup_to_key_file">gtk_page_setup_to_key_file</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_page_setup_to_key_file          (<link linkend="GtkPageSetup">GtkPageSetup</link> *setup,
+                                                         <link linkend="GKeyFile">GKeyFile</link> *key_file,
+                                                         const <link linkend="gchar">gchar</link> *group_name);</programlisting>
+<para>
+This function adds the page setup from <parameter>setup</parameter> to <parameter>key_file</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key_file</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GKeyFile"><type>GKeyFile</type></link> to save the page setup to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group_name</parameter>&#160;:</term>
+<listitem><simpara> the group to add the settings to in <parameter>key_file</parameter>, 
+     or <link linkend="NULL--CAPS"><literal>NULL</literal></link> to use the default name "Page Setup"
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkVSeparator">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkVSeparator.top_of_page">GtkVSeparator</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkVSeparator</refname>
+<refpurpose>A vertical separator</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkVSeparator.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkVSeparator-struct">GtkVSeparator</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-vseparator-new">gtk_vseparator_new</link>                  (void);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkVSeparator.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkSeparator">GtkSeparator</link>
+                           +----GtkVSeparator
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkVSeparator.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkVSeparator implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkVSeparator.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkVSeparator"><type>GtkVSeparator</type></link> widget is a vertical separator, used to group the
+widgets within a window. It displays a vertical line with a shadow to
+make it appear sunken into the interface.
+</para>
+</refsect1>
+
+<refsect1 id="GtkVSeparator.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkVSeparator-struct" role="struct">
+<title>GtkVSeparator</title>
+<indexterm zone="GtkVSeparator-struct"><primary sortas="VSeparator">GtkVSeparator</primary></indexterm><programlisting>typedef struct _GtkVSeparator GtkVSeparator;</programlisting>
+<para>
+The <link linkend="GtkVSeparator-struct"><type>GtkVSeparator</type></link> struct contains private data only, and
+should be accessed using the functions below.
+</para></refsect2>
+<refsect2 id="gtk-vseparator-new" role="function">
+<title>gtk_vseparator_new ()</title>
+<indexterm zone="gtk-vseparator-new"><primary sortas="vseparator_new">gtk_vseparator_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_vseparator_new                  (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkVSeparator"><type>GtkVSeparator</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a new <link linkend="GtkVSeparator"><type>GtkVSeparator</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkVSeparator.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="GtkHSeparator"><type>GtkHSeparator</type></link></term>
+<listitem><para>a horizontal separator.</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

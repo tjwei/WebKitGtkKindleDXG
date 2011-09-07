@@ -1,0 +1,77 @@
+      _                   _
+  ___| |__   _____      _(_)_ __   __ _
+ / __| '_ \ / _ \ \ /\ / / | '_ \ / _` |
+| (__| | | |  __/\ V  V /| | | | | (_| |
+ \___|_| |_|\___| \_/\_/ |_|_| |_|\__, |
+                                  |___/
+
+libchewing - The intelligent phonetic input method library
+  http://chewing.csie.net/
+
+[-] History
+
+libchewing is derived from Chewing input method, a xcin module
+focusing on intelligent phonetic processing by Lu-chuan Kung
+(lckung) and Kang-pen Chen (kpchen) during 1999-2001. However,
+the original authors of Chewing dropped its development, and
+Chewing was highly coupled with xcin, which prevents from
+comprehensive applications.
+
+
+[-] Motivation
+
+Jim Huang started to separate core algorithm and logic layer
+of Chewing since 2002, and he integrated his efforts into a
+Chinese terminal named JMCCE as a part of its input method
+modules. Also, in 2004, he attempts to let more applications
+adapt these collaborated efforts, so that new contributors
+(mentioned in file AUTHORS) created brand new Chewing Project
+as the infrastructure and wrote serveral new bridges among
+IIIMF, SCIM, OpenVanilla, Microsoft IME, OXIM, UIM, ibus, etc.
+
+
+[-] Status
+
+1. bridge integration
+  - works with xcin.
+  - works with JMCCE.
+  - works with IIIMF.
+  - works with SCIM.
+  - works with MacOS X (SpaceChewing).
+  - works with Sun's Java Desktop System Input Method Framework.
+  - works with OpenVanilla Input Method Framework.
+  - works as standalone IME for native Win32 (win32-chewing).
+  - works with OXIM.
+  - works with UIM.
+  - works with ibus.
+
+2. support phonetic keyboard layout
+  - Hsu
+  - IBM
+  - Gin-Yieh
+  - Eten
+  - Eten 26 keys
+  - Dvorak
+  - Dvorak Hsu
+  - HanYu PinYin
+
+
+[-] Installation
+
+# ./configure --prefix=/usr
+  (If you checkout from svn, make sure running ./autogen.sh 
+   before this.)
+# make
+# make install
+
+see "INSTALL" for details.
+
+
+[-] License
+
+See "COPYING" for details.
+
+
+[-] Authors & Contact Information
+
+See "AUTHORS" for details.

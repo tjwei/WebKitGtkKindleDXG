@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="GdkDisplayManager">
+<refmeta>
+<refentrytitle role="top_of_page" id="GdkDisplayManager.top_of_page">GdkDisplayManager</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GdkDisplayManager</refname>
+<refpurpose>Maintains a list of all open <type>GdkDisplay</type>s</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GdkDisplayManager.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gdk/gdk.h&gt;
+
+                    <link linkend="GdkDisplayManager-struct">GdkDisplayManager</link>;
+<link linkend="GdkDisplayManager">GdkDisplayManager</link> * <link linkend="gdk-display-manager-get">gdk_display_manager_get</link>             (void);
+<link linkend="GdkDisplay">GdkDisplay</link> *        <link linkend="gdk-display-manager-get-default-display">gdk_display_manager_get_default_display</link>
+                                                        (<link linkend="GdkDisplayManager">GdkDisplayManager</link> *display_manager);
+<link linkend="void">void</link>                <link linkend="gdk-display-manager-set-default-display">gdk_display_manager_set_default_display</link>
+                                                        (<link linkend="GdkDisplayManager">GdkDisplayManager</link> *display_manager,
+                                                         <link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="GSList">GSList</link> *            <link linkend="gdk-display-manager-list-displays">gdk_display_manager_list_displays</link>   (<link linkend="GdkDisplayManager">GdkDisplayManager</link> *display_manager);
+<link linkend="GdkDevice">GdkDevice</link> *         <link linkend="gdk-display-get-core-pointer">gdk_display_get_core_pointer</link>        (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GdkDisplayManager.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GdkDisplayManager
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GdkDisplayManager.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GdkDisplayManager--default-display">default-display</link>&quot;          <link linkend="GdkDisplay">GdkDisplay</link>*           : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GdkDisplayManager.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GdkDisplayManager-display-opened">display-opened</link>&quot;                                 : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GdkDisplayManager.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The purpose of the <link linkend="GdkDisplayManager"><type>GdkDisplayManager</type></link> singleton object is to offer
+notification when displays appear or disappear or the default display
+changes.
+</para>
+</refsect1>
+
+<refsect1 id="GdkDisplayManager.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GdkDisplayManager-struct" role="struct">
+<title>GdkDisplayManager</title>
+<indexterm zone="GdkDisplayManager-struct" role="2.2"><primary sortas="DisplayManager">GdkDisplayManager</primary></indexterm><programlisting>typedef struct _GdkDisplayManager GdkDisplayManager;</programlisting>
+<para>
+The <structname>GdkDisplayManager</structname> struct has no interesting
+fields.
+</para><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-manager-get" role="function" condition="since:2.2">
+<title>gdk_display_manager_get ()</title>
+<indexterm zone="gdk-display-manager-get" role="2.2"><primary sortas="display_manager_get">gdk_display_manager_get</primary></indexterm><programlisting><link linkend="GdkDisplayManager">GdkDisplayManager</link> * gdk_display_manager_get             (void);</programlisting>
+<para>
+Returns the global <link linkend="GdkDisplayManager"><type>GdkDisplayManager</type></link> singleton; <link linkend="gdk-parse-pargs"><function>gdk_parse_pargs()</function></link>,
+<link linkend="gdk-init"><function>gdk_init()</function></link>, or <link linkend="gdk-init-check"><function>gdk_init_check()</function></link> must have been called first.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the singleton <link linkend="GdkDisplayManager"><type>GdkDisplayManager</type></link> object.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-manager-get-default-display" role="function" condition="since:2.2">
+<title>gdk_display_manager_get_default_display ()</title>
+<indexterm zone="gdk-display-manager-get-default-display" role="2.2"><primary sortas="display_manager_get_default_display">gdk_display_manager_get_default_display</primary></indexterm><programlisting><link linkend="GdkDisplay">GdkDisplay</link> *        gdk_display_manager_get_default_display
+                                                        (<link linkend="GdkDisplayManager">GdkDisplayManager</link> *display_manager);</programlisting>
+<para>
+Gets the default <link linkend="GdkDisplay"><type>GdkDisplay</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display_manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplayManager"><type>GdkDisplayManager</type></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if there is no default
+  display.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-manager-set-default-display" role="function" condition="since:2.2">
+<title>gdk_display_manager_set_default_display ()</title>
+<indexterm zone="gdk-display-manager-set-default-display" role="2.2"><primary sortas="display_manager_set_default_display">gdk_display_manager_set_default_display</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_display_manager_set_default_display
+                                                        (<link linkend="GdkDisplayManager">GdkDisplayManager</link> *display_manager,
+                                                         <link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Sets <parameter>display</parameter> as the default display.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display_manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplayManager"><type>GdkDisplayManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-manager-list-displays" role="function" condition="since:2.2">
+<title>gdk_display_manager_list_displays ()</title>
+<indexterm zone="gdk-display-manager-list-displays" role="2.2"><primary sortas="display_manager_list_displays">gdk_display_manager_list_displays</primary></indexterm><programlisting><link linkend="GSList">GSList</link> *            gdk_display_manager_list_displays   (<link linkend="GdkDisplayManager">GdkDisplayManager</link> *display_manager);</programlisting>
+<para>
+List all currently open displays.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display_manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplayManager"><type>GdkDisplayManager</type></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly allocated <link linkend="GSList"><type>GSList</type></link> of <link linkend="GdkDisplay"><type>GdkDisplay</type></link> objects.
+ Free this list with <link linkend="g-slist-free"><function>g_slist_free()</function></link> when you are done with it.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-display-get-core-pointer" role="function" condition="since:2.2">
+<title>gdk_display_get_core_pointer ()</title>
+<indexterm zone="gdk-display-get-core-pointer" role="2.2"><primary sortas="display_get_core_pointer">gdk_display_get_core_pointer</primary></indexterm><programlisting><link linkend="GdkDevice">GdkDevice</link> *         gdk_display_get_core_pointer        (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Returns the core pointer device for the given display</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the core pointer device; this is owned by the
+  display and should not be freed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+
+</refsect1>
+<refsect1 id="GdkDisplayManager.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GdkDisplayManager--default-display" role="property"><title>The <literal>&quot;default-display&quot;</literal> property</title>
+<indexterm zone="GdkDisplayManager--default-display"><primary sortas="DisplayManager:default-display">GdkDisplayManager:default-display</primary></indexterm><programlisting>  &quot;default-display&quot;          <link linkend="GdkDisplay">GdkDisplay</link>*           : Read / Write</programlisting>
+<para>The default display for GDK.</para></refsect2>
+</refsect1>
+
+<refsect1 id="GdkDisplayManager.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GdkDisplayManager-display-opened" role="signal"><title>The <literal>&quot;display-opened&quot;</literal> signal</title>
+<indexterm zone="GdkDisplayManager-display-opened" role="2.2"><primary sortas="DisplayManager::display-opened">GdkDisplayManager::display-opened</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GdkDisplayManager">GdkDisplayManager</link> *display_manager,
+                                                        <link linkend="GdkDisplay">GdkDisplay</link>        *display,
+                                                        <link linkend="gpointer">gpointer</link>           user_data)            : Run Last</programlisting>
+<para>
+The ::display_opened signal is emitted when a display is opened.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display_manager</parameter>&#160;:</term>
+<listitem><simpara> the object on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> the opened display
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.2</para></refsect2>
+</refsect1>
+
+
+
+</refentry>

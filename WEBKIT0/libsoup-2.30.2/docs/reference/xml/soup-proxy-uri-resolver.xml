@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libsoup-24-SoupProxyURIResolver">
+<refmeta>
+<refentrytitle role="top_of_page" id="libsoup-24-SoupProxyURIResolver.top_of_page">SoupProxyURIResolver</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupProxyURIResolver</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libsoup-24-SoupProxyURIResolver.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SoupProxyURIResolver">SoupProxyURIResolver</link>;
+<link linkend="void">void</link>                (<link linkend="SoupProxyURIResolverCallback">*SoupProxyURIResolverCallback</link>)     (<link linkend="SoupProxyURIResolver">SoupProxyURIResolver</link> *resolver,
+                                                         <link linkend="guint">guint</link> status,
+                                                         <link linkend="SoupURI">SoupURI</link> *proxy_uri,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                <link linkend="soup-proxy-uri-resolver-get-proxy-uri-async">soup_proxy_uri_resolver_get_proxy_uri_async</link>
+                                                        (<link linkend="SoupProxyURIResolver">SoupProxyURIResolver</link> *proxy_uri_resolver,
+                                                         <link linkend="SoupURI">SoupURI</link> *uri,
+                                                         <link linkend="GMainContext">GMainContext</link> *async_context,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="SoupProxyURIResolverCallback">SoupProxyURIResolverCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="guint">guint</link>               <link linkend="soup-proxy-uri-resolver-get-proxy-uri-sync">soup_proxy_uri_resolver_get_proxy_uri_sync</link>
+                                                        (<link linkend="SoupProxyURIResolver">SoupProxyURIResolver</link> *proxy_uri_resolver,
+                                                         <link linkend="SoupURI">SoupURI</link> *uri,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="SoupURI">SoupURI</link> **proxy_uri);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libsoup-24-SoupProxyURIResolver.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libsoup-24-SoupProxyURIResolver.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupProxyURIResolver" role="struct">
+<title>SoupProxyURIResolver</title>
+<indexterm zone="SoupProxyURIResolver"><primary sortas="SoupProxyURIResolver">SoupProxyURIResolver</primary></indexterm><programlisting>typedef struct _SoupProxyURIResolver SoupProxyURIResolver;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="SoupProxyURIResolverCallback" role="function">
+<title>SoupProxyURIResolverCallback ()</title>
+<indexterm zone="SoupProxyURIResolverCallback"><primary sortas="SoupProxyURIResolverCallback">SoupProxyURIResolverCallback</primary></indexterm><programlisting><link linkend="void">void</link>                (*SoupProxyURIResolverCallback)     (<link linkend="SoupProxyURIResolver">SoupProxyURIResolver</link> *resolver,
+                                                         <link linkend="guint">guint</link> status,
+                                                         <link linkend="SoupURI">SoupURI</link> *proxy_uri,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+Callback for <link linkend="soup-proxy-uri-resolver-get-proxy-uri-async"><function>soup_proxy_uri_resolver_get_proxy_uri_async()</function></link></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>resolver</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="SoupProxyURIResolver"><type>SoupProxyURIResolver</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>status</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupKnownStatusCode"><type>SoupKnownStatusCode</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>proxy_uri</parameter>&#160;:</term>
+<listitem><simpara> the resolved proxy URI, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> data passed to <link linkend="soup-proxy-uri-resolver-get-proxy-uri-async"><function>soup_proxy_uri_resolver_get_proxy_uri_async()</function></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-proxy-uri-resolver-get-proxy-uri-async" role="function" condition="since:2.26.3">
+<title>soup_proxy_uri_resolver_get_proxy_uri_async ()</title>
+<indexterm zone="soup-proxy-uri-resolver-get-proxy-uri-async" role="2.26.3"><primary sortas="soup_proxy_uri_resolver_get_proxy_uri_async">soup_proxy_uri_resolver_get_proxy_uri_async</primary></indexterm><programlisting><link linkend="void">void</link>                soup_proxy_uri_resolver_get_proxy_uri_async
+                                                        (<link linkend="SoupProxyURIResolver">SoupProxyURIResolver</link> *proxy_uri_resolver,
+                                                         <link linkend="SoupURI">SoupURI</link> *uri,
+                                                         <link linkend="GMainContext">GMainContext</link> *async_context,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="SoupProxyURIResolverCallback">SoupProxyURIResolverCallback</link> callback,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+Asynchronously determines a proxy URI to use for <parameter>msg</parameter> and calls
+<parameter>callback</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>proxy_uri_resolver</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="SoupProxyURIResolver"><type>SoupProxyURIResolver</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="SoupURI"><type>SoupURI</type></link> you want a proxy for
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>async_context</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GMainContext"><type>GMainContext</type></link> to invoke <parameter>callback</parameter> in
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>callback</parameter>&#160;:</term>
+<listitem><simpara> callback to invoke with the proxy address
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> data for <parameter>callback</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26.3</para></refsect2>
+<refsect2 id="soup-proxy-uri-resolver-get-proxy-uri-sync" role="function" condition="since:2.26.3">
+<title>soup_proxy_uri_resolver_get_proxy_uri_sync ()</title>
+<indexterm zone="soup-proxy-uri-resolver-get-proxy-uri-sync" role="2.26.3"><primary sortas="soup_proxy_uri_resolver_get_proxy_uri_sync">soup_proxy_uri_resolver_get_proxy_uri_sync</primary></indexterm><programlisting><link linkend="guint">guint</link>               soup_proxy_uri_resolver_get_proxy_uri_sync
+                                                        (<link linkend="SoupProxyURIResolver">SoupProxyURIResolver</link> *proxy_uri_resolver,
+                                                         <link linkend="SoupURI">SoupURI</link> *uri,
+                                                         <link linkend="GCancellable">GCancellable</link> *cancellable,
+                                                         <link linkend="SoupURI">SoupURI</link> **proxy_uri);</programlisting>
+<para>
+Synchronously determines a proxy URI to use for <parameter>uri</parameter>. If <parameter>uri</parameter>
+should be sent via proxy, *<parameter>proxy_uri</parameter> will be set to the URI of the
+proxy, else it will be set to <link linkend="NULL--CAPS"><literal>NULL</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>proxy_uri_resolver</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="SoupProxyURIResolver"><type>SoupProxyURIResolver</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="SoupURI"><type>SoupURI</type></link> you want a proxy for
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cancellable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GCancellable"><type>GCancellable</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>proxy_uri</parameter>&#160;:</term>
+<listitem><simpara> on return, will contain the proxy URI
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="SOUP-STATUS-OK--CAPS"><literal>SOUP_STATUS_OK</literal></link> if successful, or a transport-level
+error.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26.3</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

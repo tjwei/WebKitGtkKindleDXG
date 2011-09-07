@@ -1,0 +1,480 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkToolButton">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkToolButton.top_of_page">GtkToolButton</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkToolButton</refname>
+<refpurpose>A GtkToolItem subclass that displays buttons</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkToolButton.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkToolButton-struct">GtkToolButton</link>;
+<link linkend="GtkToolItem">GtkToolItem</link> *       <link linkend="gtk-tool-button-new">gtk_tool_button_new</link>                 (<link linkend="GtkWidget">GtkWidget</link> *icon_widget,
+                                                         const <link linkend="gchar">gchar</link> *label);
+<link linkend="GtkToolItem">GtkToolItem</link> *       <link linkend="gtk-tool-button-new-from-stock">gtk_tool_button_new_from_stock</link>      (const <link linkend="gchar">gchar</link> *stock_id);
+<link linkend="void">void</link>                <link linkend="gtk-tool-button-set-label">gtk_tool_button_set_label</link>           (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         const <link linkend="gchar">gchar</link> *label);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-tool-button-get-label">gtk_tool_button_get_label</link>           (<link linkend="GtkToolButton">GtkToolButton</link> *button);
+<link linkend="void">void</link>                <link linkend="gtk-tool-button-set-use-underline">gtk_tool_button_set_use_underline</link>   (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         <link linkend="gboolean">gboolean</link> use_underline);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-tool-button-get-use-underline">gtk_tool_button_get_use_underline</link>   (<link linkend="GtkToolButton">GtkToolButton</link> *button);
+<link linkend="void">void</link>                <link linkend="gtk-tool-button-set-stock-id">gtk_tool_button_set_stock_id</link>        (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         const <link linkend="gchar">gchar</link> *stock_id);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-tool-button-get-stock-id">gtk_tool_button_get_stock_id</link>        (<link linkend="GtkToolButton">GtkToolButton</link> *button);
+<link linkend="void">void</link>                <link linkend="gtk-tool-button-set-icon-name">gtk_tool_button_set_icon_name</link>       (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         const <link linkend="gchar">gchar</link> *icon_name);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-tool-button-get-icon-name">gtk_tool_button_get_icon_name</link>       (<link linkend="GtkToolButton">GtkToolButton</link> *button);
+<link linkend="void">void</link>                <link linkend="gtk-tool-button-set-icon-widget">gtk_tool_button_set_icon_widget</link>     (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *icon_widget);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-tool-button-get-icon-widget">gtk_tool_button_get_icon_widget</link>     (<link linkend="GtkToolButton">GtkToolButton</link> *button);
+<link linkend="void">void</link>                <link linkend="gtk-tool-button-set-label-widget">gtk_tool_button_set_label_widget</link>    (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *label_widget);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-tool-button-get-label-widget">gtk_tool_button_get_label_widget</link>    (<link linkend="GtkToolButton">GtkToolButton</link> *button);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkToolButton.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkToolItem">GtkToolItem</link>
+                                       +----GtkToolButton
+                                             +----<link linkend="GtkMenuToolButton">GtkMenuToolButton</link>
+                                             +----<link linkend="GtkToggleToolButton">GtkToggleToolButton</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkToolButton.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkToolButton implements
+ <link linkend="GtkActivatable">GtkActivatable</link>,  <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkToolButton.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkToolButton--icon-name">icon-name</link>&quot;                <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkToolButton--icon-widget">icon-widget</link>&quot;              <link linkend="GtkWidget">GtkWidget</link>*            : Read / Write
+  &quot;<link linkend="GtkToolButton--label">label</link>&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkToolButton--label-widget">label-widget</link>&quot;             <link linkend="GtkWidget">GtkWidget</link>*            : Read / Write
+  &quot;<link linkend="GtkToolButton--stock-id">stock-id</link>&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkToolButton--use-underline">use-underline</link>&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write
+</synopsis>
+</refsect1>
+<refsect1 id="GtkToolButton.style-properties" role="style_properties">
+<title role="style_properties.title">Style Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkToolButton--s-icon-spacing">icon-spacing</link>&quot;             <link linkend="gint">gint</link>                  : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkToolButton.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkToolButton-clicked">clicked</link>&quot;                                        : Run First / Action
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkToolButton.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkToolButton"><type>GtkToolButton</type></link><!-- -->s are <link linkend="GtkToolItems"><type>GtkToolItems</type></link> containing buttons.
+</para>
+<para>
+Use <link linkend="gtk-tool-button-new"><function>gtk_tool_button_new()</function></link> to create a new <link linkend="GtkToolButton"><type>GtkToolButton</type></link>. Use
+<link linkend="gtk-tool-button-new-with-stock"><function>gtk_tool_button_new_with_stock()</function></link> to create a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+containing a stock item.
+</para>
+<para>
+The label of a <link linkend="GtkToolButton"><type>GtkToolButton</type></link> is determined by the properties
+"label-widget", "label", and "stock-id". If "label-widget" is
+non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, then that widget is used as the label. Otherwise, if
+"label" is non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, that string is used as the label. Otherwise, if
+"stock-id" is non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, the label is determined by the stock
+item. Otherwise, the button does not have a label.
+</para>
+<para>
+The icon of a <link linkend="GtkToolButton"><type>GtkToolButton</type></link> is determined by the properties
+"icon-widget" and "stock-id". If "icon-widget" is non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, then
+that widget is used as the icon. Otherwise, if "stock-id" is
+non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, the icon is determined by the stock item. Otherwise,
+the button does not have a icon.
+</para>
+</refsect1>
+
+<refsect1 id="GtkToolButton.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkToolButton-struct" role="struct">
+<title>GtkToolButton</title>
+<indexterm zone="GtkToolButton-struct"><primary sortas="ToolButton">GtkToolButton</primary></indexterm><programlisting>typedef struct _GtkToolButton GtkToolButton;</programlisting>
+<para>
+The <link linkend="GtkToolButton"><type>GtkToolButton</type></link> struct contains only private. It should only be
+accessed with the function described below.
+</para></refsect2>
+<refsect2 id="gtk-tool-button-new" role="function" condition="since:2.4">
+<title>gtk_tool_button_new ()</title>
+<indexterm zone="gtk-tool-button-new" role="2.4"><primary sortas="tool_button_new">gtk_tool_button_new</primary></indexterm><programlisting><link linkend="GtkToolItem">GtkToolItem</link> *       gtk_tool_button_new                 (<link linkend="GtkWidget">GtkWidget</link> *icon_widget,
+                                                         const <link linkend="gchar">gchar</link> *label);</programlisting>
+<para>
+Creates a new <link linkend="GtkToolButton"><literal>GtkToolButton</literal></link> using <parameter>icon_widget</parameter> as icon and <parameter>label</parameter> as
+label.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>icon_widget</parameter>&#160;:</term>
+<listitem><simpara> a widget that will be used as icon widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> a string that will be used as label, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A new <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-new-from-stock" role="function" condition="since:2.4">
+<title>gtk_tool_button_new_from_stock ()</title>
+<indexterm zone="gtk-tool-button-new-from-stock" role="2.4"><primary sortas="tool_button_new_from_stock">gtk_tool_button_new_from_stock</primary></indexterm><programlisting><link linkend="GtkToolItem">GtkToolItem</link> *       gtk_tool_button_new_from_stock      (const <link linkend="gchar">gchar</link> *stock_id);</programlisting>
+<para>
+Creates a new <link linkend="GtkToolButton"><type>GtkToolButton</type></link> containing the image and text from a
+stock item. Some stock ids have preprocessor macros like <link linkend="GTK-STOCK-OK--CAPS"><type>GTK_STOCK_OK</type></link>
+and <link linkend="GTK-STOCK-APPLY--CAPS"><type>GTK_STOCK_APPLY</type></link>.
+</para>
+<para>
+It is an error if <parameter>stock_id</parameter> is not a name of a stock item.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> the name of the stock item 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A new <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-set-label" role="function" condition="since:2.4">
+<title>gtk_tool_button_set_label ()</title>
+<indexterm zone="gtk-tool-button-set-label" role="2.4"><primary sortas="tool_button_set_label">gtk_tool_button_set_label</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tool_button_set_label           (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         const <link linkend="gchar">gchar</link> *label);</programlisting>
+<para>
+Sets <parameter>label</parameter> as the label used for the tool button. The "label" property
+only has an effect if not overridden by a non-<link linkend="NULL--CAPS"><literal>NULL</literal></link> "label_widget" property.
+If both the "label_widget" and "label" properties are <link linkend="NULL--CAPS"><literal>NULL</literal></link>, the label
+is determined by the "stock_id" property. If the "stock_id" property is also
+<link linkend="NULL--CAPS"><literal>NULL</literal></link>, <parameter>button</parameter> will not have a label.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> a string that will be used as label, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-get-label" role="function" condition="since:2.4">
+<title>gtk_tool_button_get_label ()</title>
+<indexterm zone="gtk-tool-button-get-label" role="2.4"><primary sortas="tool_button_get_label">gtk_tool_button_get_label</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_tool_button_get_label           (<link linkend="GtkToolButton">GtkToolButton</link> *button);</programlisting>
+<para>
+Returns the label used by the tool button, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if the tool button
+doesn't have a label. or uses a the label from a stock item. The returned
+string is owned by GTK+, and must not be modified or freed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The label, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-set-use-underline" role="function" condition="since:2.4">
+<title>gtk_tool_button_set_use_underline ()</title>
+<indexterm zone="gtk-tool-button-set-use-underline" role="2.4"><primary sortas="tool_button_set_use_underline">gtk_tool_button_set_use_underline</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tool_button_set_use_underline   (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         <link linkend="gboolean">gboolean</link> use_underline);</programlisting>
+<para>
+If set, an underline in the label property indicates that the next character
+should be used for the mnemonic accelerator key in the overflow menu. For
+example, if the label property is "_Open" and <parameter>use_underline</parameter> is <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>,
+the label on the tool button will be "Open" and the item on the overflow
+menu will have an underlined 'O'.
+</para>
+<para>
+Labels shown on tool buttons never have mnemonics on them; this property
+only affects the menu item on the overflow menu.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>use_underline</parameter>&#160;:</term>
+<listitem><simpara> whether the button label has the form "_Open"
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-get-use-underline" role="function" condition="since:2.4">
+<title>gtk_tool_button_get_use_underline ()</title>
+<indexterm zone="gtk-tool-button-get-use-underline" role="2.4"><primary sortas="tool_button_get_use_underline">gtk_tool_button_get_use_underline</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_tool_button_get_use_underline   (<link linkend="GtkToolButton">GtkToolButton</link> *button);</programlisting>
+<para>
+Returns whether underscores in the label property are used as mnemonics
+on menu items on the overflow menu. See <link linkend="gtk-tool-button-set-use-underline"><function>gtk_tool_button_set_use_underline()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if underscores in the label property are used as
+mnemonics on menu items on the overflow menu.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-set-stock-id" role="function" condition="since:2.4">
+<title>gtk_tool_button_set_stock_id ()</title>
+<indexterm zone="gtk-tool-button-set-stock-id" role="2.4"><primary sortas="tool_button_set_stock_id">gtk_tool_button_set_stock_id</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tool_button_set_stock_id        (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         const <link linkend="gchar">gchar</link> *stock_id);</programlisting>
+<para>
+Sets the name of the stock item. See <link linkend="gtk-tool-button-new-from-stock"><function>gtk_tool_button_new_from_stock()</function></link>.
+The stock_id property only has an effect if not
+overridden by non-<link linkend="NULL--CAPS"><literal>NULL</literal></link> "label" and "icon_widget" properties.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> a name of a stock item, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-get-stock-id" role="function" condition="since:2.4">
+<title>gtk_tool_button_get_stock_id ()</title>
+<indexterm zone="gtk-tool-button-get-stock-id" role="2.4"><primary sortas="tool_button_get_stock_id">gtk_tool_button_get_stock_id</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_tool_button_get_stock_id        (<link linkend="GtkToolButton">GtkToolButton</link> *button);</programlisting>
+<para>
+Returns the name of the stock item. See <link linkend="gtk-tool-button-set-stock-id"><function>gtk_tool_button_set_stock_id()</function></link>.
+The returned string is owned by GTK+ and must not be freed or modifed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the name of the stock item for <parameter>button</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-set-icon-name" role="function" condition="since:2.8">
+<title>gtk_tool_button_set_icon_name ()</title>
+<indexterm zone="gtk-tool-button-set-icon-name" role="2.8"><primary sortas="tool_button_set_icon_name">gtk_tool_button_set_icon_name</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tool_button_set_icon_name       (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         const <link linkend="gchar">gchar</link> *icon_name);</programlisting>
+<para>
+Sets the icon for the tool button from a named themed icon.
+See the docs for <link linkend="GtkIconTheme"><type>GtkIconTheme</type></link> for more details.
+The "icon_name" property only has an effect if not
+overridden by non-<link linkend="NULL--CAPS"><literal>NULL</literal></link> "label", "icon_widget" and "stock_id"
+properties.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the themed icon
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.8</para></refsect2>
+<refsect2 id="gtk-tool-button-get-icon-name" role="function" condition="since:2.8">
+<title>gtk_tool_button_get_icon_name ()</title>
+<indexterm zone="gtk-tool-button-get-icon-name" role="2.8"><primary sortas="tool_button_get_icon_name">gtk_tool_button_get_icon_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_tool_button_get_icon_name       (<link linkend="GtkToolButton">GtkToolButton</link> *button);</programlisting>
+<para>
+Returns the name of the themed icon for the tool button,
+see <link linkend="gtk-tool-button-set-icon-name"><function>gtk_tool_button_set_icon_name()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the icon name or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if the tool button has
+no themed icon
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.8</para></refsect2>
+<refsect2 id="gtk-tool-button-set-icon-widget" role="function" condition="since:2.4">
+<title>gtk_tool_button_set_icon_widget ()</title>
+<indexterm zone="gtk-tool-button-set-icon-widget" role="2.4"><primary sortas="tool_button_set_icon_widget">gtk_tool_button_set_icon_widget</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tool_button_set_icon_widget     (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *icon_widget);</programlisting>
+<para>
+Sets <parameter>icon</parameter> as the widget used as icon on <parameter>button</parameter>. If <parameter>icon_widget</parameter> is
+<link linkend="NULL--CAPS"><literal>NULL</literal></link> the icon is determined by the "stock_id" property. If the
+"stock_id" property is also <link linkend="NULL--CAPS"><literal>NULL</literal></link>, <parameter>button</parameter> will not have an icon.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon_widget</parameter>&#160;:</term>
+<listitem><simpara> the widget used as icon, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-get-icon-widget" role="function" condition="since:2.4">
+<title>gtk_tool_button_get_icon_widget ()</title>
+<indexterm zone="gtk-tool-button-get-icon-widget" role="2.4"><primary sortas="tool_button_get_icon_widget">gtk_tool_button_get_icon_widget</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_tool_button_get_icon_widget     (<link linkend="GtkToolButton">GtkToolButton</link> *button);</programlisting>
+<para>
+Return the widget used as icon widget on <parameter>button</parameter>. See
+<link linkend="gtk-tool-button-set-icon-widget"><function>gtk_tool_button_set_icon_widget()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The widget used as icon on <parameter>button</parameter>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-set-label-widget" role="function" condition="since:2.4">
+<title>gtk_tool_button_set_label_widget ()</title>
+<indexterm zone="gtk-tool-button-set-label-widget" role="2.4"><primary sortas="tool_button_set_label_widget">gtk_tool_button_set_label_widget</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tool_button_set_label_widget    (<link linkend="GtkToolButton">GtkToolButton</link> *button,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *label_widget);</programlisting>
+<para>
+Sets <parameter>label_widget</parameter> as the widget that will be used as the label
+for <parameter>button</parameter>. If <parameter>label_widget</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link> the "label" property is used
+as label. If "label" is also <link linkend="NULL--CAPS"><literal>NULL</literal></link>, the label in the stock item
+determined by the "stock_id" property is used as label. If
+"stock_id" is also <link linkend="NULL--CAPS"><literal>NULL</literal></link>, <parameter>button</parameter> does not have a label.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label_widget</parameter>&#160;:</term>
+<listitem><simpara> the widget used as label, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-tool-button-get-label-widget" role="function" condition="since:2.4">
+<title>gtk_tool_button_get_label_widget ()</title>
+<indexterm zone="gtk-tool-button-get-label-widget" role="2.4"><primary sortas="tool_button_get_label_widget">gtk_tool_button_get_label_widget</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_tool_button_get_label_widget    (<link linkend="GtkToolButton">GtkToolButton</link> *button);</programlisting>
+<para>
+Returns the widget used as label on <parameter>button</parameter>. See
+<link linkend="gtk-tool-button-set-label-widget"><function>gtk_tool_button_set_label_widget()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToolButton"><type>GtkToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The widget used as label on <parameter>button</parameter>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkToolButton.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkToolButton--icon-name" role="property"><title>The <literal>&quot;icon-name&quot;</literal> property</title>
+<indexterm zone="GtkToolButton--icon-name" role="2.8"><primary sortas="ToolButton:icon-name">GtkToolButton:icon-name</primary></indexterm><programlisting>  &quot;icon-name&quot;                <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+The name of the themed icon displayed on the item.
+This property only has an effect if not overridden by "label",
+"icon_widget" or "stock_id" properties.</para>
+<para>
+</para><para>Default value: NULL</para>
+<para>Since 2.8</para>
+</refsect2>
+<refsect2 id="GtkToolButton--icon-widget" role="property"><title>The <literal>&quot;icon-widget&quot;</literal> property</title>
+<indexterm zone="GtkToolButton--icon-widget"><primary sortas="ToolButton:icon-widget">GtkToolButton:icon-widget</primary></indexterm><programlisting>  &quot;icon-widget&quot;              <link linkend="GtkWidget">GtkWidget</link>*            : Read / Write</programlisting>
+<para>Icon widget to display in the item.</para></refsect2>
+<refsect2 id="GtkToolButton--label" role="property"><title>The <literal>&quot;label&quot;</literal> property</title>
+<indexterm zone="GtkToolButton--label"><primary sortas="ToolButton:label">GtkToolButton:label</primary></indexterm><programlisting>  &quot;label&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Text to show in the item.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkToolButton--label-widget" role="property"><title>The <literal>&quot;label-widget&quot;</literal> property</title>
+<indexterm zone="GtkToolButton--label-widget"><primary sortas="ToolButton:label-widget">GtkToolButton:label-widget</primary></indexterm><programlisting>  &quot;label-widget&quot;             <link linkend="GtkWidget">GtkWidget</link>*            : Read / Write</programlisting>
+<para>Widget to use as the item label.</para></refsect2>
+<refsect2 id="GtkToolButton--stock-id" role="property"><title>The <literal>&quot;stock-id&quot;</literal> property</title>
+<indexterm zone="GtkToolButton--stock-id"><primary sortas="ToolButton:stock-id">GtkToolButton:stock-id</primary></indexterm><programlisting>  &quot;stock-id&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>The stock icon displayed on the item.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkToolButton--use-underline" role="property"><title>The <literal>&quot;use-underline&quot;</literal> property</title>
+<indexterm zone="GtkToolButton--use-underline"><primary sortas="ToolButton:use-underline">GtkToolButton:use-underline</primary></indexterm><programlisting>  &quot;use-underline&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>If set, an underline in the label property indicates that the next character should be used for the mnemonic accelerator key in the overflow menu.</para><para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GtkToolButton.style-property-details" role="style_properties_details">
+<title role="style_properties_details.title">Style Property Details</title>
+<refsect2 id="GtkToolButton--s-icon-spacing" role="property"><title>The <literal>&quot;icon-spacing&quot;</literal> style property</title>
+<indexterm zone="GtkToolButton--s-icon-spacing"><primary sortas="ToolButton:icon-spacing">GtkToolButton:icon-spacing</primary></indexterm><programlisting>  &quot;icon-spacing&quot;             <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Spacing in pixels between the icon and label.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkToolButton.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkToolButton-clicked" role="signal"><title>The <literal>&quot;clicked&quot;</literal> signal</title>
+<indexterm zone="GtkToolButton-clicked"><primary sortas="ToolButton::clicked">GtkToolButton::clicked</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkToolButton">GtkToolButton</link> *toolbutton,
+                                                        <link linkend="gpointer">gpointer</link>       user_data)       : Run First / Action</programlisting>
+<para>
+This signal is emitted when the tool button is clicked with the mouse
+or activated with the keyboard.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>toolbutton</parameter>&#160;:</term>
+<listitem><simpara> the object that emitted the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+<refsect1 id="GtkToolButton.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="GtkToolbar"><type>GtkToolbar</type></link></term>
+<listitem><para>The toolbar widget</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkMenuToolButton"><type>GtkMenuToolButton</type></link></term>
+<listitem><para>A subclass of <link linkend="GtkToolButton"><type>GtkToolButton</type></link> that displays on
+    the toolbar a button with an additional dropdown
+    menu</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link></term>
+<listitem><para>A subclass of <link linkend="GtkToolButton"><type>GtkToolButton</type></link> that displays toggle
+    buttons on the toolbar</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkRadioToolButton"><type>GtkRadioToolButton</type></link></term>
+<listitem><para>A subclass of <link linkend="GtkToolButton"><type>GtkToolButton</type></link> that displays radio
+    buttons on the toolbar</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link></term>
+<listitem><para>A subclass of <link linkend="GtkToolItem"><type>GtkToolItem</type></link> that separates groups of
+    items on a toolbar</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

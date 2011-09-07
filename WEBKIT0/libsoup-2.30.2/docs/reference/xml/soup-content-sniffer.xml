@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libsoup-24-SoupContentSniffer">
+<refmeta>
+<refentrytitle role="top_of_page" id="libsoup-24-SoupContentSniffer.top_of_page">SoupContentSniffer</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupContentSniffer</refname>
+<refpurpose>Content sniffing for <link linkend="SoupSession"><type>SoupSession</type></link></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libsoup-24-SoupContentSniffer.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SoupContentSniffer">SoupContentSniffer</link>;
+<link linkend="SoupContentSniffer">SoupContentSniffer</link> * <link linkend="soup-content-sniffer-new">soup_content_sniffer_new</link>           (void);
+<link linkend="char">char</link> *              <link linkend="soup-content-sniffer-sniff">soup_content_sniffer_sniff</link>          (<link linkend="SoupContentSniffer">SoupContentSniffer</link> *sniffer,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *msg,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *buffer,
+                                                         <link linkend="GHashTable">GHashTable</link> **params);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libsoup-24-SoupContentSniffer.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A <link linkend="SoupContentSniffer"><type>SoupContentSniffer</type></link> tries to detect the actual content type of
+the files that are being downloaded by looking at some of the data
+before the <link linkend="SoupMessage"><type>SoupMessage</type></link> emits its <link linkend="SoupMessage-got-headers"><type>"got-headers"</type></link> signal.
+<link linkend="SoupContentSniffer"><type>SoupContentSniffer</type></link> implements <link linkend="SoupSessionFeature"><type>SoupSessionFeature</type></link>, so you can add
+content sniffing to a session with <link linkend="soup-session-add-feature"><function>soup_session_add_feature()</function></link> or
+<link linkend="soup-session-add-feature-by-type"><function>soup_session_add_feature_by_type()</function></link>.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libsoup-24-SoupContentSniffer.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupContentSniffer" role="struct">
+<title>SoupContentSniffer</title>
+<indexterm zone="SoupContentSniffer"><primary sortas="SoupContentSniffer">SoupContentSniffer</primary></indexterm><programlisting>typedef struct {
+	GObject parent;
+
+	SoupContentSnifferPrivate *priv;
+} SoupContentSniffer;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="soup-content-sniffer-new" role="function" condition="since:2.27.3">
+<title>soup_content_sniffer_new ()</title>
+<indexterm zone="soup-content-sniffer-new" role="2.27.3"><primary sortas="soup_content_sniffer_new">soup_content_sniffer_new</primary></indexterm><programlisting><link linkend="SoupContentSniffer">SoupContentSniffer</link> * soup_content_sniffer_new           (void);</programlisting>
+<para>
+Creates a new <link linkend="SoupContentSniffer"><type>SoupContentSniffer</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="SoupContentSniffer"><type>SoupContentSniffer</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.27.3</para></refsect2>
+<refsect2 id="soup-content-sniffer-sniff" role="function">
+<title>soup_content_sniffer_sniff ()</title>
+<indexterm zone="soup-content-sniffer-sniff"><primary sortas="soup_content_sniffer_sniff">soup_content_sniffer_sniff</primary></indexterm><programlisting><link linkend="char">char</link> *              soup_content_sniffer_sniff          (<link linkend="SoupContentSniffer">SoupContentSniffer</link> *sniffer,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *msg,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> *buffer,
+                                                         <link linkend="GHashTable">GHashTable</link> **params);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>sniffer</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>msg</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>params</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

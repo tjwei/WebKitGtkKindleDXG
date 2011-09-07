@@ -1,0 +1,154 @@
+dbus_daemon-config-loader-expat.o: config-loader-expat.c ../config.h \
+  config-parser.h ../dbus/dbus.h ../dbus/dbus-arch-deps.h \
+  ../dbus/dbus-macros.h ../dbus/dbus-address.h ../dbus/dbus-types.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h \
+  ../dbus/dbus-errors.h ../dbus/dbus-protocol.h ../dbus/dbus-bus.h \
+  ../dbus/dbus-connection.h ../dbus/dbus-memory.h ../dbus/dbus-message.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  ../dbus/dbus-shared.h ../dbus/dbus-misc.h ../dbus/dbus-pending-call.h \
+  ../dbus/dbus-server.h ../dbus/dbus-signature.h ../dbus/dbus-threads.h \
+  ../dbus/dbus-string.h ../dbus/dbus-list.h ../dbus/dbus-internals.h \
+  ../dbus/dbus-sysdeps.h /usr/include/stdint.h /usr/include/features.h \
+  /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /usr/include/bits/wchar.h ../dbus/dbus-file.h /usr/include/string.h \
+  /usr/include/xlocale.h /usr/include/bits/string.h \
+  /usr/include/bits/string2.h /usr/include/stdlib.h \
+  /usr/include/sys/poll.h /usr/include/bits/poll.h \
+  /usr/include/bits/sigset.h /usr/include/time.h \
+  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+  ../dbus/dbus-threads-internal.h ../dbus/dbus-hash.h \
+  /usr/include/inttypes.h bus.h ../dbus/dbus-mainloop.h \
+  ../dbus/dbus-pipe.h /usr/local/include/expat.h \
+  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+  /usr/include/endian.h /usr/include/bits/endian.h \
+  /usr/include/sys/types.h /usr/include/sys/select.h \
+  /usr/include/bits/select.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/alloca.h /usr/local/include/expat_external.h
+
+../config.h:
+
+config-parser.h:
+
+../dbus/dbus.h:
+
+../dbus/dbus-arch-deps.h:
+
+../dbus/dbus-macros.h:
+
+../dbus/dbus-address.h:
+
+../dbus/dbus-types.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:
+
+../dbus/dbus-errors.h:
+
+../dbus/dbus-protocol.h:
+
+../dbus/dbus-bus.h:
+
+../dbus/dbus-connection.h:
+
+../dbus/dbus-memory.h:
+
+../dbus/dbus-message.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+../dbus/dbus-shared.h:
+
+../dbus/dbus-misc.h:
+
+../dbus/dbus-pending-call.h:
+
+../dbus/dbus-server.h:
+
+../dbus/dbus-signature.h:
+
+../dbus/dbus-threads.h:
+
+../dbus/dbus-string.h:
+
+../dbus/dbus-list.h:
+
+../dbus/dbus-internals.h:
+
+../dbus/dbus-sysdeps.h:
+
+/usr/include/stdint.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/bits/wchar.h:
+
+../dbus/dbus-file.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/poll.h:
+
+/usr/include/bits/poll.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/time.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+../dbus/dbus-threads-internal.h:
+
+../dbus/dbus-hash.h:
+
+/usr/include/inttypes.h:
+
+bus.h:
+
+../dbus/dbus-mainloop.h:
+
+../dbus/dbus-pipe.h:
+
+/usr/local/include/expat.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/local/include/expat_external.h:

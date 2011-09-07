@@ -1,0 +1,665 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="gtk-Bindings">
+<refmeta>
+<refentrytitle role="top_of_page" id="gtk-Bindings.top_of_page">Bindings</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Bindings</refname>
+<refpurpose>Key bindings for individual widgets</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gtk-Bindings.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkBindingSet">GtkBindingSet</link>;
+                    <link linkend="GtkBindingEntry">GtkBindingEntry</link>;
+                    <link linkend="GtkBindingSignal">GtkBindingSignal</link>;
+                    <link linkend="GtkBindingArg">GtkBindingArg</link>;
+#define             <link linkend="gtk-binding-entry-add">gtk_binding_entry_add</link>
+<link linkend="void">void</link>                <link linkend="gtk-binding-entry-add-signall">gtk_binding_entry_add_signall</link>       (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers,
+                                                         const <link linkend="gchar">gchar</link> *signal_name,
+                                                         <link linkend="GSList">GSList</link> *binding_args);
+<link linkend="void">void</link>                <link linkend="gtk-binding-entry-clear">gtk_binding_entry_clear</link>             (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);
+<link linkend="guint">guint</link>               <link linkend="gtk-binding-parse-binding">gtk_binding_parse_binding</link>           (<link linkend="GScanner">GScanner</link> *scanner);
+<link linkend="GtkBindingSet">GtkBindingSet</link>*      <link linkend="gtk-binding-set-new">gtk_binding_set_new</link>                 (const <link linkend="gchar">gchar</link> *set_name);
+<link linkend="GtkBindingSet">GtkBindingSet</link>*      <link linkend="gtk-binding-set-by-class">gtk_binding_set_by_class</link>            (<link linkend="gpointer">gpointer</link> object_class);
+<link linkend="GtkBindingSet">GtkBindingSet</link>*      <link linkend="gtk-binding-set-find">gtk_binding_set_find</link>                (const <link linkend="gchar">gchar</link> *set_name);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-bindings-activate">gtk_bindings_activate</link>               (<link linkend="GtkObject">GtkObject</link> *object,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-bindings-activate-event">gtk_bindings_activate_event</link>         (<link linkend="GtkObject">GtkObject</link> *object,
+                                                         <link linkend="GdkEventKey">GdkEventKey</link> *event);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-binding-set-activate">gtk_binding_set_activate</link>            (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers,
+                                                         <link linkend="GtkObject">GtkObject</link> *object);
+<link linkend="void">void</link>                <link linkend="gtk-binding-entry-add-signal">gtk_binding_entry_add_signal</link>        (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers,
+                                                         const <link linkend="gchar">gchar</link> *signal_name,
+                                                         <link linkend="guint">guint</link> n_args,
+                                                         ...);
+<link linkend="void">void</link>                <link linkend="gtk-binding-entry-skip">gtk_binding_entry_skip</link>              (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);
+<link linkend="void">void</link>                <link linkend="gtk-binding-entry-remove">gtk_binding_entry_remove</link>            (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);
+<link linkend="void">void</link>                <link linkend="gtk-binding-set-add-path">gtk_binding_set_add_path</link>            (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="GtkPathType">GtkPathType</link> path_type,
+                                                         const <link linkend="gchar">gchar</link> *path_pattern,
+                                                         <link linkend="GtkPathPriorityType">GtkPathPriorityType</link> priority);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gtk-Bindings.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+GtkBinding provides a mechanism for configuring GTK+ key bindings through
+RC files. This eases key binding adjustments for application developers as
+well as users and provides GTK+ users or administrators with high key
+binding configurability which requires no application or toolkit side changes.
+</para>
+<refsect2>
+<anchor id="gtk-bindings-install"/>
+<title>Installing a key binding</title>
+<para>
+A resource file binding consists of a 'binding' definition and a match
+statement to apply the binding to specific widget types. Details on the
+matching mechanism are described under
+<link linkend="gtkrc-pathnames-and-patterns">Pathnames and patterns</link>.
+Inside the binding definition, key combinations are bound to specific signal
+emissions on the target widget. Key combinations are strings consisting of
+an optional <link linkend="GdkModifierType"><type>GdkModifierType</type></link> name and
+<link linkend="gdk-Keyboard-Handling">key names</link> such as those defined
+in <filename>&lt;gdk/gdkkeysyms.h&gt;</filename> or returned from
+<link linkend="gdk-keyval-name"><function>gdk_keyval_name()</function></link>, they have to be parsable by <link linkend="gtk-accelerator-parse"><function>gtk_accelerator_parse()</function></link>.
+Specifications of signal emissions consist of a string identifying the signal
+name, and a list of signal specific arguments in parenthesis.
+</para>
+<para>
+For example for binding Control and the left or right cursor keys of a
+<link linkend="GtkEntry"><type>GtkEntry</type></link> widget to the <link linkend="GtkEntry-move-cursor"><type>"move-cursor"</type></link> signal, so movement occurs
+in 3 letter steps, the following binding can be used:
+<informalexample><programlisting>
+binding "MoveCursor3" {
+  bind "&lt;Control&gt;Right" {
+    "move-cursor" (visual-positions, 3, 0)
+  }
+  bind "&lt;Control&gt;Left" {
+    "move-cursor" (visual-positions, -3, 0)
+  }
+}
+class "GtkEntry" binding "MoveCursor3"
+</programlisting></informalexample>
+</para>
+<anchor id="gtk-bindings-unbind"/>
+<title>Unbinding existing key bindings</title>
+<para>
+GTK+ already defines a number of useful bindings for the widgets it provides.
+Because custom bindings set up in RC files take precedence over the default
+bindings shipped with GTK+, overriding existing bindings as demonstrated in
+<link linkend="gtk-bindings-install">Installing a key binding</link>
+works as expected. The same mechanism can not be used to "unbind" existing
+bindings, however.
+<informalexample><programlisting>
+binding "MoveCursor3" {
+  bind "&lt;Control&gt;Right" { }
+  bind "&lt;Control&gt;Left" { }
+}
+class "GtkEntry" binding "MoveCursor3"
+</programlisting></informalexample>
+The above example will not have the desired effect of causing
+"&lt;Control&gt;Right" and "&lt;Control&gt;Left" key presses to be ignored
+by GTK+. Instead, it just causes any existing bindings from the bindings
+set "MoveCursor3" to be deleted, so when "&lt;Control&gt;Right" or
+"&lt;Control&gt;Left" are pressed, no binding for these keys is found in
+binding set "MoveCursor3". GTK+ will thus continue to search for matching
+key bindings, and will eventually lookup and find the default GTK+ bindings
+for entries which implement word movement. To keep GTK+ from activating its
+default bindings, the "unbind" keyword can be used like this:
+<informalexample><programlisting>
+binding "MoveCursor3" {
+  unbind "&lt;Control&gt;Right"
+  unbind "&lt;Control&gt;Left"
+}
+class "GtkEntry" binding "MoveCursor3"
+</programlisting></informalexample>
+Now, GTK+ will find a match when looking up "&lt;Control&gt;Right" and
+"&lt;Control&gt;Left" key presses before it resorts to its default
+bindings, and the match instructs it to abort ("unbind") the search, so
+the key presses are not consumed by this widget. As usual, further processing
+of the key presses, e.g. by an entry's parent widget, is now possible.
+</para>
+<para>
+The "unbind" functionality has been introduced in GTK+ 2.12.
+</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="gtk-Bindings.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkBindingSet" role="struct">
+<title>GtkBindingSet</title>
+<indexterm zone="GtkBindingSet"><primary sortas="BindingSet">GtkBindingSet</primary></indexterm><programlisting>typedef struct {
+  gchar			*set_name;
+  gint			 priority;
+  GSList		*widget_path_pspecs;
+  GSList		*widget_class_pspecs;
+  GSList		*class_branch_pspecs;
+  GtkBindingEntry	*entries;
+  GtkBindingEntry	*current;
+  guint                  parsed : 1; /* From RC content */
+} GtkBindingSet;
+</programlisting>
+<para>
+A binding set maintains a list of activatable key bindings.
+A single binding set can match multiple types of widgets.
+Similar to styles, widgets can be mapped by widget name paths, widget
+class paths or widget class types.  When a binding within a set is
+matched upon activation, an action signal is emitted on the target
+widget to carry out the actual activation.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>set_name</structfield>;</term>
+<listitem><simpara>		unique binding set name
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>priority</structfield>;</term>
+<listitem><simpara>		unused
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GSList">GSList</link>&#160;*<structfield>widget_path_pspecs</structfield>;</term>
+<listitem><simpara>	widgets matched by path that this binding set applies to
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GSList">GSList</link>&#160;*<structfield>widget_class_pspecs</structfield>;</term>
+<listitem><simpara>	widgets matched by class path that this binding set applies to
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GSList">GSList</link>&#160;*<structfield>class_branch_pspecs</structfield>;</term>
+<listitem><simpara>	widgets matched by class that this binding set applies to
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkBindingEntry">GtkBindingEntry</link>&#160;*<structfield>entries</structfield>;</term>
+<listitem><simpara>		the key binding entries in this binding set
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkBindingEntry">GtkBindingEntry</link>&#160;*<structfield>current</structfield>;</term>
+<listitem><simpara>		implementation detail
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>parsed</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>		whether this binding set stems from an RC file and is reset upon theme changes
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkBindingEntry" role="struct">
+<title>GtkBindingEntry</title>
+<indexterm zone="GtkBindingEntry"><primary sortas="BindingEntry">GtkBindingEntry</primary></indexterm><programlisting>typedef struct {
+  /* key portion
+   */
+  guint			 keyval;
+  GdkModifierType	 modifiers;
+  
+  GtkBindingSet		*binding_set;
+  guint			destroyed : 1;
+  guint			in_emission : 1;
+  guint                 marks_unbound : 1;
+  GtkBindingEntry	*set_next;
+  GtkBindingEntry	*hash_next;
+  GtkBindingSignal	*signals;
+} GtkBindingEntry;
+</programlisting>
+<para>
+Each key binding element of a binding sets binding list is represented by
+a <link linkend="GtkBindingEntry"><type>GtkBindingEntry</type></link>.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>keyval</structfield>;</term>
+<listitem><simpara>	key value to match
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GdkModifierType">GdkModifierType</link>&#160;<structfield>modifiers</structfield>;</term>
+<listitem><simpara>	key modifier to match
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkBindingSet">GtkBindingSet</link>&#160;*<structfield>binding_set</structfield>;</term>
+<listitem><simpara>	binding set this entry belongs to
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>destroyed</structfield>&#160;:&#160;1;</term>
+<listitem><simpara> 	implementation detail
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>in_emission</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>	implementation detail
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>marks_unbound</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>implementation detail
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkBindingEntry">GtkBindingEntry</link>&#160;*<structfield>set_next</structfield>;</term>
+<listitem><simpara>	linked list of entries maintained by binding set
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkBindingEntry">GtkBindingEntry</link>&#160;*<structfield>hash_next</structfield>;</term>
+<listitem><simpara>	implementation detail
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkBindingSignal">GtkBindingSignal</link>&#160;*<structfield>signals</structfield>;</term>
+<listitem><simpara>	action signals of this entry
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkBindingSignal" role="struct">
+<title>GtkBindingSignal</title>
+<indexterm zone="GtkBindingSignal"><primary sortas="BindingSignal">GtkBindingSignal</primary></indexterm><programlisting>typedef struct {
+  GtkBindingSignal	*next;
+  gchar 		*signal_name;
+  guint			 n_args;
+  GtkBindingArg		*args;
+} GtkBindingSignal;
+</programlisting>
+<para>
+A <link linkend="GtkBindingSignal"><type>GtkBindingSignal</type></link> stores the necessary information to activate a widget
+in response to a key press via a signal emission.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GtkBindingSignal">GtkBindingSignal</link>&#160;*<structfield>next</structfield>;</term>
+<listitem><simpara>		implementation detail
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>signal_name</structfield>;</term>
+<listitem><simpara>	the action signal to be emitted
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>n_args</structfield>;</term>
+<listitem><simpara>	number of arguments specified for the signal
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkBindingArg">GtkBindingArg</link>&#160;*<structfield>args</structfield>;</term>
+<listitem><simpara>		the arguments specified for the signal
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkBindingArg" role="struct">
+<title>GtkBindingArg</title>
+<indexterm zone="GtkBindingArg"><primary sortas="BindingArg">GtkBindingArg</primary></indexterm><programlisting>typedef struct {
+  GType		 arg_type;
+  union {
+    glong	 long_data;
+    gdouble	 double_data;
+    gchar	*string_data;
+  } d;
+} GtkBindingArg;
+</programlisting>
+<para>
+A <link linkend="GtkBindingArg"><type>GtkBindingArg</type></link> holds the data associated with an argument for a
+key binding signal emission as stored in <link linkend="GtkBindingSignal"><type>GtkBindingSignal</type></link>.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GType">GType</link>&#160;<structfield>arg_type</structfield>;</term>
+<listitem><simpara>implementation detail
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-entry-add" role="macro" condition="deprecated:2.12: Use gtk_binding_entry_add_signal() instead.">
+<title>gtk_binding_entry_add</title>
+<indexterm zone="gtk-binding-entry-add" role="deprecated"><primary sortas="binding_entry_add">gtk_binding_entry_add</primary></indexterm><programlisting>#define	 gtk_binding_entry_add		gtk_binding_entry_clear
+</programlisting>
+<warning><para><literal>gtk_binding_entry_add</literal> has been deprecated since version 2.12 and should not be used in newly-written code. Use <link linkend="gtk-binding-entry-add-signal"><function>gtk_binding_entry_add_signal()</function></link> instead.</para></warning>
+<para>
+Adds a binding entry.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>binding_set</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="a"><type>a</type></link> GtkBindingSet to clear an entry of
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyval</parameter>&#160;:</term>
+<listitem><simpara>      key value of binding to clear
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara>   key modifier of binding to clear
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-entry-add-signall" role="function">
+<title>gtk_binding_entry_add_signall ()</title>
+<indexterm zone="gtk-binding-entry-add-signall"><primary sortas="binding_entry_add_signall">gtk_binding_entry_add_signall</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_binding_entry_add_signall       (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers,
+                                                         const <link linkend="gchar">gchar</link> *signal_name,
+                                                         <link linkend="GSList">GSList</link> *binding_args);</programlisting>
+<para>
+Override or install a new key binding for <parameter>keyval</parameter> with <parameter>modifiers</parameter> on
+<parameter>binding_set</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>binding_set</parameter>&#160;:</term>
+<listitem><simpara>  a <link linkend="GtkBindingSet"><type>GtkBindingSet</type></link> to add a signal to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyval</parameter>&#160;:</term>
+<listitem><simpara>       key value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara>    key modifier
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>signal_name</parameter>&#160;:</term>
+<listitem><simpara>  signal name to be bound
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>binding_args</parameter>&#160;:</term>
+<listitem><simpara> list of <link linkend="GtkBindingArg"><type>GtkBindingArg</type></link> signal arguments
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-entry-clear" role="function" condition="deprecated:2.12: Use gtk_binding_entry_remove() instead.">
+<title>gtk_binding_entry_clear ()</title>
+<indexterm zone="gtk-binding-entry-clear" role="deprecated"><primary sortas="binding_entry_clear">gtk_binding_entry_clear</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_binding_entry_clear             (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);</programlisting>
+<warning><para><literal>gtk_binding_entry_clear</literal> has been deprecated since version 2.12 and should not be used in newly-written code. Use <link linkend="gtk-binding-entry-remove"><function>gtk_binding_entry_remove()</function></link> instead.</para></warning>
+<para>
+Clears a binding entry.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>binding_set</parameter>&#160;:</term>
+<listitem><simpara> binding set to clear an entry of
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyval</parameter>&#160;:</term>
+<listitem><simpara>      key value of binding to clear
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara>   key modifier of binding to clear
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-parse-binding" role="function" condition="deprecated:2.12: There should be no need to call this function outside GTK+.">
+<title>gtk_binding_parse_binding ()</title>
+<indexterm zone="gtk-binding-parse-binding" role="deprecated"><primary sortas="binding_parse_binding">gtk_binding_parse_binding</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_binding_parse_binding           (<link linkend="GScanner">GScanner</link> *scanner);</programlisting>
+<warning><para><literal>gtk_binding_parse_binding</literal> has been deprecated since version 2.12 and should not be used in newly-written code. There should be no need to call this function outside GTK+.</para></warning>
+<para>
+Parse a binding entry from a gtkrc file.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>scanner</parameter>&#160;:</term>
+<listitem><simpara> GtkRC scanner
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> expected token upon errors, <link linkend="G-TOKEN-NONE--CAPS"><literal>G_TOKEN_NONE</literal></link> on success.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-set-new" role="function">
+<title>gtk_binding_set_new ()</title>
+<indexterm zone="gtk-binding-set-new"><primary sortas="binding_set_new">gtk_binding_set_new</primary></indexterm><programlisting><link linkend="GtkBindingSet">GtkBindingSet</link>*      gtk_binding_set_new                 (const <link linkend="gchar">gchar</link> *set_name);</programlisting>
+<para>
+GTK+ maintains a global list of binding sets. Each binding set has
+a unique name which needs to be specified upon creation.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>set_name</parameter>&#160;:</term>
+<listitem><simpara> unique name of this binding set
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> new binding set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-set-by-class" role="function">
+<title>gtk_binding_set_by_class ()</title>
+<indexterm zone="gtk-binding-set-by-class"><primary sortas="binding_set_by_class">gtk_binding_set_by_class</primary></indexterm><programlisting><link linkend="GtkBindingSet">GtkBindingSet</link>*      gtk_binding_set_by_class            (<link linkend="gpointer">gpointer</link> object_class);</programlisting>
+<para>
+This function returns the binding set named after the type name of
+the passed in class structure. New binding sets are created on
+demand by this function.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>object_class</parameter>&#160;:</term>
+<listitem><simpara> a valid <link linkend="GtkObject"><type>GtkObject</type></link> class
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the binding set corresponding to <parameter>object_class</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-set-find" role="function">
+<title>gtk_binding_set_find ()</title>
+<indexterm zone="gtk-binding-set-find"><primary sortas="binding_set_find">gtk_binding_set_find</primary></indexterm><programlisting><link linkend="GtkBindingSet">GtkBindingSet</link>*      gtk_binding_set_find                (const <link linkend="gchar">gchar</link> *set_name);</programlisting>
+<para>
+Find a binding set by its globally unique name. The <parameter>set_name</parameter> can
+either be a name used for <link linkend="gtk-binding-set-new"><function>gtk_binding_set_new()</function></link> or the type name of
+a class used in <link linkend="gtk-binding-set-by-class"><function>gtk_binding_set_by_class()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>set_name</parameter>&#160;:</term>
+<listitem><simpara> unique binding set name
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="NULL--CAPS"><literal>NULL</literal></link> or the specified binding set
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-bindings-activate" role="function">
+<title>gtk_bindings_activate ()</title>
+<indexterm zone="gtk-bindings-activate"><primary sortas="bindings_activate">gtk_bindings_activate</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_bindings_activate               (<link linkend="GtkObject">GtkObject</link> *object,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);</programlisting>
+<para>
+Find a key binding matching <parameter>keyval</parameter> and <parameter>modifiers</parameter> and activate the
+binding on <parameter>object</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara> object to activate when binding found
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyval</parameter>&#160;:</term>
+<listitem><simpara> key value of the binding
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara> key modifier of the binding
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if a binding was found and activated
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-bindings-activate-event" role="function">
+<title>gtk_bindings_activate_event ()</title>
+<indexterm zone="gtk-bindings-activate-event"><primary sortas="bindings_activate_event">gtk_bindings_activate_event</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_bindings_activate_event         (<link linkend="GtkObject">GtkObject</link> *object,
+                                                         <link linkend="GdkEventKey">GdkEventKey</link> *event);</programlisting>
+<para>
+Looks up key bindings for <parameter>object</parameter> to find one matching
+<parameter>event</parameter>, and if one was found, activate it.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkObject"><type>GtkObject</type></link> (generally must be a widget)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkEventKey"><type>GdkEventKey</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if a matching key binding was found
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-set-activate" role="function">
+<title>gtk_binding_set_activate ()</title>
+<indexterm zone="gtk-binding-set-activate"><primary sortas="binding_set_activate">gtk_binding_set_activate</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_binding_set_activate            (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers,
+                                                         <link linkend="GtkObject">GtkObject</link> *object);</programlisting>
+<para>
+Find a key binding matching <parameter>keyval</parameter> and <parameter>modifiers</parameter> within
+<parameter>binding_set</parameter> and activate the binding on <parameter>object</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>binding_set</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBindingSet"><type>GtkBindingSet</type></link> set to activate
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyval</parameter>&#160;:</term>
+<listitem><simpara>      key value of the binding
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara>   key modifier of the binding
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara>      object to activate when binding found
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if a binding was found and activated
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-entry-add-signal" role="function">
+<title>gtk_binding_entry_add_signal ()</title>
+<indexterm zone="gtk-binding-entry-add-signal"><primary sortas="binding_entry_add_signal">gtk_binding_entry_add_signal</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_binding_entry_add_signal        (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers,
+                                                         const <link linkend="gchar">gchar</link> *signal_name,
+                                                         <link linkend="guint">guint</link> n_args,
+                                                         ...);</programlisting>
+<para>
+Override or install a new key binding for <parameter>keyval</parameter> with <parameter>modifiers</parameter> on
+<parameter>binding_set</parameter>. When the binding is activated, <parameter>signal_name</parameter> will be
+emitted on the target widget, with <parameter>n_args</parameter> <parameter>Varargs</parameter> used as
+arguments.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>binding_set</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBindingSet"><type>GtkBindingSet</type></link> to install an entry for
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyval</parameter>&#160;:</term>
+<listitem><simpara>      key value of binding to install
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara>   key modifier of binding to install
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>signal_name</parameter>&#160;:</term>
+<listitem><simpara> signal to execute upon activation
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_args</parameter>&#160;:</term>
+<listitem><simpara>      number of arguments to <parameter>signal_name</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara>     arguments to <parameter>signal_name</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-entry-skip" role="function" condition="since:2.12">
+<title>gtk_binding_entry_skip ()</title>
+<indexterm zone="gtk-binding-entry-skip" role="2.12"><primary sortas="binding_entry_skip">gtk_binding_entry_skip</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_binding_entry_skip              (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);</programlisting>
+<para>
+Install a binding on <parameter>binding_set</parameter> which causes key lookups
+to be aborted, to prevent bindings from lower priority sets
+to be activated.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>binding_set</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBindingSet"><type>GtkBindingSet</type></link> to skip an entry of
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyval</parameter>&#160;:</term>
+<listitem><simpara>      key value of binding to skip
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara>   key modifier of binding to skip
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-binding-entry-remove" role="function">
+<title>gtk_binding_entry_remove ()</title>
+<indexterm zone="gtk-binding-entry-remove"><primary sortas="binding_entry_remove">gtk_binding_entry_remove</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_binding_entry_remove            (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers);</programlisting>
+<para>
+Remove a binding previously installed via
+<link linkend="gtk-binding-entry-add-signal"><function>gtk_binding_entry_add_signal()</function></link> on <parameter>binding_set</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>binding_set</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBindingSet"><type>GtkBindingSet</type></link> to remove an entry of
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyval</parameter>&#160;:</term>
+<listitem><simpara>      key value of binding to remove
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara>   key modifier of binding to remove
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-binding-set-add-path" role="function">
+<title>gtk_binding_set_add_path ()</title>
+<indexterm zone="gtk-binding-set-add-path"><primary sortas="binding_set_add_path">gtk_binding_set_add_path</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_binding_set_add_path            (<link linkend="GtkBindingSet">GtkBindingSet</link> *binding_set,
+                                                         <link linkend="GtkPathType">GtkPathType</link> path_type,
+                                                         const <link linkend="gchar">gchar</link> *path_pattern,
+                                                         <link linkend="GtkPathPriorityType">GtkPathPriorityType</link> priority);</programlisting>
+<para>
+This function is used internally by the GtkRC parsing mechanism to
+assign match patterns to <link linkend="GtkBindingSet"><type>GtkBindingSet</type></link> structures.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>binding_set</parameter>&#160;:</term>
+<listitem><simpara>  a <link linkend="GtkBindingSet"><type>GtkBindingSet</type></link> to add a path to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>path_type</parameter>&#160;:</term>
+<listitem><simpara>    path type the pattern applies to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>path_pattern</parameter>&#160;:</term>
+<listitem><simpara> the actual match pattern
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>priority</parameter>&#160;:</term>
+<listitem><simpara>     binding priority
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="gtk-Bindings.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="gtk-keyboard-accelerators">Keyboard Accelerators</link>
+</term>
+<listitem><para>installing and using keyboard short-cuts.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="Resource-Files">Resource Files</link>
+</term>
+<listitem><para>GTK+ Resource Files - behavior and style definitions.</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

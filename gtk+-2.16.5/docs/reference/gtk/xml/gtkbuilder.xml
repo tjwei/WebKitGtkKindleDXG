@@ -1,0 +1,837 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkBuilder">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkBuilder.top_of_page">GtkBuilder</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkBuilder</refname>
+<refpurpose>Build an interface from an XML UI definition</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkBuilder.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkBuilder-struct">GtkBuilder</link>;
+<link linkend="void">void</link>                (<link linkend="GtkBuilderConnectFunc">*GtkBuilderConnectFunc</link>)            (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GObject">GObject</link> *object,
+                                                         const <link linkend="gchar">gchar</link> *signal_name,
+                                                         const <link linkend="gchar">gchar</link> *handler_name,
+                                                         <link linkend="GObject">GObject</link> *connect_object,
+                                                         <link linkend="GConnectFlags">GConnectFlags</link> flags,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+enum                <link linkend="GtkBuilderError">GtkBuilderError</link>;
+<link linkend="GtkBuilder">GtkBuilder</link>*         <link linkend="gtk-builder-new">gtk_builder_new</link>                     (void);
+<link linkend="guint">guint</link>               <link linkend="gtk-builder-add-from-file">gtk_builder_add_from_file</link>           (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *filename,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="guint">guint</link>               <link linkend="gtk-builder-add-from-string">gtk_builder_add_from_string</link>         (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *buffer,
+                                                         <link linkend="gsize">gsize</link> length,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="guint">guint</link>               <link linkend="gtk-builder-add-objects-from-file">gtk_builder_add_objects_from_file</link>   (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *filename,
+                                                         <link linkend="gchar">gchar</link> **object_ids,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="guint">guint</link>               <link linkend="gtk-builder-add-objects-from-string">gtk_builder_add_objects_from_string</link> (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *buffer,
+                                                         <link linkend="gsize">gsize</link> length,
+                                                         <link linkend="gchar">gchar</link> **object_ids,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="GObject">GObject</link>*            <link linkend="gtk-builder-get-object">gtk_builder_get_object</link>              (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *name);
+<link linkend="GSList">GSList</link>*             <link linkend="gtk-builder-get-objects">gtk_builder_get_objects</link>             (<link linkend="GtkBuilder">GtkBuilder</link> *builder);
+<link linkend="void">void</link>                <link linkend="gtk-builder-connect-signals">gtk_builder_connect_signals</link>         (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                <link linkend="gtk-builder-connect-signals-full">gtk_builder_connect_signals_full</link>    (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GtkBuilderConnectFunc">GtkBuilderConnectFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                <link linkend="gtk-builder-set-translation-domain">gtk_builder_set_translation_domain</link>  (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *domain);
+const <link linkend="gchar">gchar</link>*        <link linkend="gtk-builder-get-translation-domain">gtk_builder_get_translation_domain</link>  (<link linkend="GtkBuilder">GtkBuilder</link> *builder);
+<link linkend="GType">GType</link>               <link linkend="gtk-builder-get-type-from-name">gtk_builder_get_type_from_name</link>      (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="char">char</link> *type_name);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-builder-value-from-string">gtk_builder_value_from_string</link>       (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="gchar">gchar</link> *string,
+                                                         <link linkend="GValue">GValue</link> *value,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-builder-value-from-string-type">gtk_builder_value_from_string_type</link>  (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GType">GType</link> type,
+                                                         const <link linkend="gchar">gchar</link> *string,
+                                                         <link linkend="GValue">GValue</link> *value,
+                                                         <link linkend="GError">GError</link> **error);
+#define             <link linkend="GTK-BUILDER-WARN-INVALID-CHILD-TYPE--CAPS">GTK_BUILDER_WARN_INVALID_CHILD_TYPE</link> (object, type)
+#define             <link linkend="GTK-BUILDER-ERROR--CAPS">GTK_BUILDER_ERROR</link>
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkBuilder.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkBuilder
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkBuilder.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkBuilder--translation-domain">translation-domain</link>&quot;       <link linkend="gchar">gchar</link>*                : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkBuilder.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A GtkBuilder is an auxiliary object that reads textual descriptions
+of a user interface and instantiates the described objects. To pass a
+description to a GtkBuilder, call <link linkend="gtk-builder-add-from-file"><function>gtk_builder_add_from_file()</function></link> or
+<link linkend="gtk-builder-add-from-string"><function>gtk_builder_add_from_string()</function></link>. These functions can be called multiple
+times; the builder merges the content of all descriptions.
+</para>
+<para>
+A GtkBuilder holds a reference to all objects that it has constructed
+and drops these references when it is finalized. This finalization can
+cause the destruction of non-widget objects or widgets which are not
+contained in a toplevel window. For toplevel windows constructed by a
+builder, it is the responsibility of the user to call <link linkend="gtk-widget-destroy"><function>gtk_widget_destroy()</function></link>
+to get rid of them and all the widgets they contain.
+</para>
+<para>
+The functions <link linkend="gtk-builder-get-object"><function>gtk_builder_get_object()</function></link> and <link linkend="gtk-builder-get-objects"><function>gtk_builder_get_objects()</function></link>
+can be used to access the widgets in the interface by the names assigned
+to them inside the UI description. Toplevel windows returned by these
+functions will stay around until the user explicitly destroys them
+with <link linkend="gtk-widget-destroy"><function>gtk_widget_destroy()</function></link>. Other widgets will either be part of a
+larger hierarchy constructed by the builder (in which case you should
+not have to worry about their lifecycle), or without a parent, in which
+case they have to be added to some container to make use of them.
+Non-widget objects need to be reffed with <link linkend="g-object-ref"><function>g_object_ref()</function></link> to keep them
+beyond the lifespan of the builder.
+</para>
+<para>
+The function <link linkend="gtk-builder-connect-signals"><function>gtk_builder_connect_signals()</function></link> and variants thereof can be
+used to connect handlers to the named signals in the description.
+</para>
+<refsect2 id="BUILDER-UI"><title>GtkBuilder UI Definitions</title>
+<para>
+GtkBuilder parses textual descriptions of user interfaces which
+are specified in an XML format which can be roughly described
+by the DTD below. We refer to these descriptions as
+<firstterm>GtkBuilder UI definitions</firstterm> or just
+<firstterm>UI definitions</firstterm> if the context is clear.
+Do not confuse GtkBuilder UI Definitions with
+<link linkend="XML-UI">GtkUIManager UI Definitions</link>,
+which are more limited in scope.
+</para>
+<para>
+<programlisting><![CDATA[
+<!ELEMENT interface (requires|object)* >
+<!ELEMENT object    (property|signal|child|ANY)* >
+<!ELEMENT property  PCDATA >
+<!ELEMENT signal    EMPTY >
+<!ELEMENT requires  EMPTY >
+<!ELEMENT child     (object|ANY*) >
+<!ATTLIST interface  domain         	    #IMPLIED >
+<!ATTLIST object     id             	    #REQUIRED
+                     class          	    #REQUIRED
+                     type-func      	    #IMPLIED
+                     constructor    	    #IMPLIED >
+<!ATTLIST requires   lib             	    #REQUIRED
+                     version          	    #REQUIRED >
+<!ATTLIST property   name           	    #REQUIRED
+                     translatable   	    #IMPLIED
+                     comments               #IMPLIED
+                     context                #IMPLIED >
+<!ATTLIST signal     name           	    #REQUIRED
+                     handler        	    #REQUIRED
+                     after          	    #IMPLIED
+                     swapped        	    #IMPLIED
+                     object         	    #IMPLIED
+                     last_modification_time #IMPLIED >
+<!ATTLIST child      type           	    #IMPLIED
+                     internal-child 	    #IMPLIED >
+]]></programlisting>
+</para>
+<para>
+The toplevel element is &lt;interface&gt;.
+It optionally takes a "domain" attribute, which will make
+the builder look for translated strings using <link linkend="dgettext"><function>dgettext()</function></link> in the
+domain specified. This can also be done by calling
+<link linkend="gtk-builder-set-translation-domain"><function>gtk_builder_set_translation_domain()</function></link> on the builder.
+Objects are described by &lt;object&gt; elements, which can
+contain &lt;property&gt; elements to set properties, &lt;signal&gt;
+elements which connect signals to handlers, and &lt;child&gt;
+elements, which describe child objects (most often widgets
+inside a container, but also e.g. actions in an action group,
+or columns in a tree model). A &lt;child&gt; element contains
+an &lt;object&gt; element which describes the child object.
+The target toolkit version(s) are described by &lt;requires&gt;
+elements, the "lib" attribute specifies the widget library in
+question (currently the only supported value is "gtk+") and the "version"
+attribute specifies the target version in the form "&lt;major&gt;.&lt;minor&gt;".
+The builder will error out if the version requirements are not met.
+</para>
+<para>
+Typically, the specific kind of object represented by an
+&lt;object&gt; element is specified by the "class" attribute.
+If the type has not been loaded yet, GTK+ tries to find the
+<function><link linkend="get-type"><function>_get_type()</function></link></function> from the class name by applying
+heuristics. This works in most cases, but if necessary, it is
+possible to specify the name of the <function><link linkend="get-type"><function>_get_type()</function></link></function>
+explictly with the "type-func" attribute. As a special case,
+GtkBuilder allows to use an object that has been constructed
+by a <link linkend="GtkUIManager"><type>GtkUIManager</type></link> in another part of the UI definition by
+specifying the id of the <link linkend="GtkUIManager"><type>GtkUIManager</type></link> in the "constructor"
+attribute and the name of the object in the "id" attribute.
+</para>
+<para>
+Objects must be given a name with the "id" attribute, which
+allows the application to retrieve them from the builder with
+<link linkend="gtk-builder-get-object"><function>gtk_builder_get_object()</function></link>. An id is also necessary to use the
+object as property value in other parts of the UI definition.
+</para>
+<para>
+Setting properties of objects is pretty straightforward with
+the &lt;property&gt; element: the "name" attribute specifies
+the name of the property, and the content of the element
+specifies the value. If the "translatable" attribute is
+set to a true value, GTK+ uses <link linkend="gettext"><function>gettext()</function></link> (or <link linkend="dgettext"><function>dgettext()</function></link> if
+the builder has a translation domain set) to find a translation
+for the value. This happens before the value is parsed, so
+it can be used for properties of any type, but it is probably
+most useful for string properties. It is also possible to
+specify a context to disambiguate short strings, and comments
+which may help the translators.
+</para>
+<para>
+GtkBuilder can parse textual representations for the most
+common property types: characters, strings, integers, floating-point
+numbers, booleans (strings like "TRUE", "t", "yes", "y", "1" are
+interpreted as <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, strings like "FALSE, "f", "no", "n", "0" are
+interpreted as <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>), enumerations (can be specified by their
+name, nick or integer value), flags (can be specified by their name,
+nick, integer value, optionally combined with "|", e.g.
+"GTK_VISIBLE|GTK_REALIZED")  and colors (in a format understood by
+<link linkend="gdk-color-parse"><function>gdk_color_parse()</function></link>). Objects can be referred to by their name.
+Pixbufs can be specified as a filename of an image file to load.
+In general, GtkBuilder allows forward references to objects &mdash;
+an object doesn't have to constructed before it can be referred to.
+The exception to this rule is that an object has to be constructed
+before it can be used as the value of a construct-only property.
+</para>
+<para>
+Signal handlers are set up with the &lt;signal&gt; element.
+The "name" attribute specifies the name of the signal, and the
+"handler" attribute specifies the function to connect to the signal.
+By default, GTK+ tries to find the handler using <link linkend="g-module-symbol"><function>g_module_symbol()</function></link>,
+but this can be changed by passing a custom <link linkend="GtkBuilderConnectFunc"><type>GtkBuilderConnectFunc</type></link>
+to <link linkend="gtk-builder-connect-signals-full"><function>gtk_builder_connect_signals_full()</function></link>. The remaining attributes,
+"after", "swapped" and "object", have the same meaning as the
+corresponding parameters of the <link linkend="g-signal-connect-object"><function>g_signal_connect_object()</function></link> or
+<link linkend="g-signal-connect-data"><function>g_signal_connect_data()</function></link> functions. A "last_modification_time" attribute
+is also allowed, but it does not have a meaning to the builder.
+</para>
+<para>
+Sometimes it is necessary to refer to widgets which have implicitly
+been constructed by GTK+ as part of a composite widget, to set
+properties on them or to add further children (e.g. the <parameter>vbox</parameter>
+of a <link linkend="GtkDialog"><type>GtkDialog</type></link>). This can be achieved by setting the "internal-child"
+propery of the &lt;child&gt; element to a true value. Note that
+GtkBuilder still requires an &lt;object&gt; element for the internal
+child, even if it has already been constructed.
+</para>
+<para>
+A number of widgets have different places where a child can be
+added (e.g. tabs vs. page content in notebooks). This can be reflected
+in a UI definition by specifying the "type" attribute on a &lt;child&gt;
+The possible values for the "type" attribute are described in
+the sections describing the widget-specific portions of UI definitions.
+</para>
+<example>
+<title>A GtkBuilder UI Definition</title>
+<programlisting><![CDATA[
+<interface>
+  <object class="GtkDialog" id="dialog1">
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="vbox1">
+        <property name="border-width">10</property>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="hbuttonbox1">
+            <property name="border-width">20</property>
+            <child>
+              <object class="GtkButton" id="ok_button">
+                <property name="label">gtk-ok</property>
+                <property name="use-stock">TRUE</property>
+                <signal name="clicked" handler="ok_button_clicked"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
+]]></programlisting>
+</example>
+<para>
+Beyond this general structure, several object classes define
+their own XML DTD fragments for filling in the ANY placeholders
+in the DTD above. Note that a custom element in a &lt;child&gt;
+element gets parsed by the custom tag handler of the parent
+object, while a custom element in an &lt;object&gt; element
+gets parsed by the custom tag handler of the object.
+</para>
+<para>
+These XML fragments are explained in the documentation of the
+respective objects, see
+<link linkend="GtkWidget-BUILDER-UI">GtkWidget</link>,
+<link linkend="GtkLabel-BUILDER-UI">GtkLabel</link>,
+<link linkend="GtkWindow-BUILDER-UI">GtkWindow</link>,
+<link linkend="GtkContainer-BUILDER-UI">GtkContainer</link>,
+<link linkend="GtkDialog-BUILDER-UI">GtkDialog</link>,
+<link linkend="GtkCellLayout-BUILDER-UI">GtkCellLayout</link>,
+<link linkend="GtkColorSelectionDialog-BUILDER-UI">GtkColorSelectionDialog</link>,
+<link linkend="GtkFontSelectionDialog-BUILDER-UI">GtkFontSelectionDialog</link>,
+<link linkend="GtkComboBoxEntry-BUILDER-UI">GtkComboBoxEntry</link>,
+<link linkend="GtkExpander-BUILDER-UI">GtkExpander</link>,
+<link linkend="GtkFrame-BUILDER-UI">GtkFrame</link>,
+<link linkend="GtkListStore-BUILDER-UI">GtkListStore</link>,
+<link linkend="GtkTreeStore-BUILDER-UI">GtkTreeStore</link>,
+<link linkend="GtkNotebook-BUILDER-UI">GtkNotebook</link>,
+<link linkend="GtkSizeGroup-BUILDER-UI">GtkSizeGroup</link>,
+<link linkend="GtkTreeView-BUILDER-UI">GtkTreeView</link>,
+<link linkend="GtkUIManager-BUILDER-UI">GtkUIManager</link>,
+<link linkend="GtkActionGroup-BUILDER-UI">GtkActionGroup</link>.
+<link linkend="GtkMenuItem-BUILDER-UI">GtkMenuItem</link>.
+</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkBuilder.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkBuilder-struct" role="struct">
+<title>GtkBuilder</title>
+<indexterm zone="GtkBuilder-struct"><primary sortas="Builder">GtkBuilder</primary></indexterm><programlisting>typedef struct _GtkBuilder GtkBuilder;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkBuilderConnectFunc" role="function" condition="since:2.12">
+<title>GtkBuilderConnectFunc ()</title>
+<indexterm zone="GtkBuilderConnectFunc" role="2.12"><primary sortas="BuilderConnectFunc">GtkBuilderConnectFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GtkBuilderConnectFunc)            (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GObject">GObject</link> *object,
+                                                         const <link linkend="gchar">gchar</link> *signal_name,
+                                                         const <link linkend="gchar">gchar</link> *handler_name,
+                                                         <link linkend="GObject">GObject</link> *connect_object,
+                                                         <link linkend="GConnectFlags">GConnectFlags</link> flags,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+This is the signature of a function used to connect signals.  It is used
+by the <link linkend="gtk-builder-connect-signals"><function>gtk_builder_connect_signals()</function></link> and <link linkend="gtk-builder-connect-signals-full"><function>gtk_builder_connect_signals_full()</function></link>
+methods.  It is mainly intended for interpreted language bindings, but
+could be useful where the programmer wants more control over the signal
+connection process.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara> object to connect a signal to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>signal_name</parameter>&#160;:</term>
+<listitem><simpara> name of the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>handler_name</parameter>&#160;:</term>
+<listitem><simpara> name of the handler
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>connect_object</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GObject"><type>GObject</type></link>, if non-<link linkend="NULL--CAPS"><literal>NULL</literal></link>, use <link linkend="g-signal-connect-object"><function>g_signal_connect_object()</function></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>flags</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="GConnectFlags"><type>GConnectFlags</type></link> to use
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> user data
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="GtkBuilderError" role="enum">
+<title>enum GtkBuilderError</title>
+<indexterm zone="GtkBuilderError"><primary sortas="BuilderError">GtkBuilderError</primary></indexterm><programlisting>typedef enum
+{
+  GTK_BUILDER_ERROR_INVALID_TYPE_FUNCTION,
+  GTK_BUILDER_ERROR_UNHANDLED_TAG,
+  GTK_BUILDER_ERROR_MISSING_ATTRIBUTE,
+  GTK_BUILDER_ERROR_INVALID_ATTRIBUTE,
+  GTK_BUILDER_ERROR_INVALID_TAG,
+  GTK_BUILDER_ERROR_MISSING_PROPERTY_VALUE,
+  GTK_BUILDER_ERROR_INVALID_VALUE,
+  GTK_BUILDER_ERROR_VERSION_MISMATCH,
+  GTK_BUILDER_ERROR_DUPLICATE_ID
+} GtkBuilderError;
+</programlisting>
+<para>
+Error codes that identify various errors that can occur while
+using <link linkend="GtkBuilder"><type>GtkBuilder</type></link>.
+</para><variablelist role="enum">
+<varlistentry id="GTK-BUILDER-ERROR-INVALID-TYPE-FUNCTION--CAPS" role="constant">
+<term><literal>GTK_BUILDER_ERROR_INVALID_TYPE_FUNCTION</literal></term>
+<listitem><simpara>A type-func attribute didn't name
+    a function that returns a <link linkend="GType"><type>GType</type></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUILDER-ERROR-UNHANDLED-TAG--CAPS" role="constant">
+<term><literal>GTK_BUILDER_ERROR_UNHANDLED_TAG</literal></term>
+<listitem><simpara>The input contained a tag that <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+    can't handle.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUILDER-ERROR-MISSING-ATTRIBUTE--CAPS" role="constant">
+<term><literal>GTK_BUILDER_ERROR_MISSING_ATTRIBUTE</literal></term>
+<listitem><simpara>An attribute that is required by
+    <link linkend="GtkBuilder"><type>GtkBuilder</type></link> was missing.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUILDER-ERROR-INVALID-ATTRIBUTE--CAPS" role="constant">
+<term><literal>GTK_BUILDER_ERROR_INVALID_ATTRIBUTE</literal></term>
+<listitem><simpara>#GtkBuilder found an attribute that 
+    it doesn't understand.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUILDER-ERROR-INVALID-TAG--CAPS" role="constant">
+<term><literal>GTK_BUILDER_ERROR_INVALID_TAG</literal></term>
+<listitem><simpara>#GtkBuilder found a tag that
+    it doesn't understand.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUILDER-ERROR-MISSING-PROPERTY-VALUE--CAPS" role="constant">
+<term><literal>GTK_BUILDER_ERROR_MISSING_PROPERTY_VALUE</literal></term>
+<listitem><simpara>A required property value was 
+    missing.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUILDER-ERROR-INVALID-VALUE--CAPS" role="constant">
+<term><literal>GTK_BUILDER_ERROR_INVALID_VALUE</literal></term>
+<listitem><simpara>#GtkBuilder couldn't parse
+    some attribute value.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUILDER-ERROR-VERSION-MISMATCH--CAPS" role="constant">
+<term><literal>GTK_BUILDER_ERROR_VERSION_MISMATCH</literal></term>
+<listitem><simpara>The input file requires a newer version
+    of GTK+.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-BUILDER-ERROR-DUPLICATE-ID--CAPS" role="constant">
+<term><literal>GTK_BUILDER_ERROR_DUPLICATE_ID</literal></term>
+<listitem><simpara>An object id occurred twice.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-builder-new" role="function" condition="since:2.12">
+<title>gtk_builder_new ()</title>
+<indexterm zone="gtk-builder-new" role="2.12"><primary sortas="builder_new">gtk_builder_new</primary></indexterm><programlisting><link linkend="GtkBuilder">GtkBuilder</link>*         gtk_builder_new                     (void);</programlisting>
+<para>
+Creates a new builder object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkBuilder"><type>GtkBuilder</type></link> object
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-add-from-file" role="function" condition="since:2.12">
+<title>gtk_builder_add_from_file ()</title>
+<indexterm zone="gtk-builder-add-from-file" role="2.12"><primary sortas="builder_add_from_file">gtk_builder_add_from_file</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_builder_add_from_file           (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *filename,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Parses a file containing a <link linkend="BUILDER-UI">GtkBuilder 
+UI definition</link> and merges it with the current contents of <parameter>builder</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> the name of the file to parse
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A positive value on success, 0 if an error occurred
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-add-from-string" role="function" condition="since:2.12">
+<title>gtk_builder_add_from_string ()</title>
+<indexterm zone="gtk-builder-add-from-string" role="2.12"><primary sortas="builder_add_from_string">gtk_builder_add_from_string</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_builder_add_from_string         (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *buffer,
+                                                         <link linkend="gsize">gsize</link> length,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Parses a string containing a <link linkend="BUILDER-UI">GtkBuilder 
+UI definition</link> and merges it with the current contents of <parameter>builder</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> the string to parse
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>buffer</parameter> (may be -1 if <parameter>buffer</parameter> is nul-terminated)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A positive value on success, 0 if an error occurred
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-add-objects-from-file" role="function" condition="since:2.14">
+<title>gtk_builder_add_objects_from_file ()</title>
+<indexterm zone="gtk-builder-add-objects-from-file" role="2.14"><primary sortas="builder_add_objects_from_file">gtk_builder_add_objects_from_file</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_builder_add_objects_from_file   (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *filename,
+                                                         <link linkend="gchar">gchar</link> **object_ids,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Parses a file containing a <link linkend="BUILDER-UI">GtkBuilder 
+UI definition</link> building only the requested objects and merges
+them with the current contents of <parameter>builder</parameter>. 
+</para>
+<para>
+<note><para>
+If you are adding an object that depends on an object that is not 
+its child (for instance a <link linkend="GtkTreeView"><type>GtkTreeView</type></link> that depends on its
+<link linkend="GtkTreeModel"><type>GtkTreeModel</type></link>), you have to explicitely list all of them in <parameter>object_ids</parameter>. 
+</para></note></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> the name of the file to parse
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object_ids</parameter>&#160;:</term>
+<listitem><simpara> nul-terminated array of objects to build
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A positive value on success, 0 if an error occurred
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-builder-add-objects-from-string" role="function" condition="since:2.14">
+<title>gtk_builder_add_objects_from_string ()</title>
+<indexterm zone="gtk-builder-add-objects-from-string" role="2.14"><primary sortas="builder_add_objects_from_string">gtk_builder_add_objects_from_string</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_builder_add_objects_from_string (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *buffer,
+                                                         <link linkend="gsize">gsize</link> length,
+                                                         <link linkend="gchar">gchar</link> **object_ids,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Parses a string containing a <link linkend="BUILDER-UI">GtkBuilder 
+UI definition</link> building only the requested objects and merges
+them with the current contents of <parameter>builder</parameter>. 
+</para>
+<para>
+<note><para>
+If you are adding an object that depends on an object that is not 
+its child (for instance a <link linkend="GtkTreeView"><type>GtkTreeView</type></link> that depends on its
+<link linkend="GtkTreeModel"><type>GtkTreeModel</type></link>), you have to explicitely list all of them in <parameter>object_ids</parameter>. 
+</para></note></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> the string to parse
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>buffer</parameter> (may be -1 if <parameter>buffer</parameter> is nul-terminated)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object_ids</parameter>&#160;:</term>
+<listitem><simpara> nul-terminated array of objects to build
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A positive value on success, 0 if an error occurred
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-builder-get-object" role="function" condition="since:2.12">
+<title>gtk_builder_get_object ()</title>
+<indexterm zone="gtk-builder-get-object" role="2.12"><primary sortas="builder_get_object">gtk_builder_get_object</primary></indexterm><programlisting><link linkend="GObject">GObject</link>*            gtk_builder_get_object              (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *name);</programlisting>
+<para>
+Gets the object named <parameter>name</parameter>. Note that this function does not
+increment the reference count of the returned object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> name of object to get
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the object named <parameter>name</parameter> or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if it could not be 
+   found in the object tree. 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-get-objects" role="function" condition="since:2.12">
+<title>gtk_builder_get_objects ()</title>
+<indexterm zone="gtk-builder-get-objects" role="2.12"><primary sortas="builder_get_objects">gtk_builder_get_objects</primary></indexterm><programlisting><link linkend="GSList">GSList</link>*             gtk_builder_get_objects             (<link linkend="GtkBuilder">GtkBuilder</link> *builder);</programlisting>
+<para>
+Gets all objects that have been constructed by <parameter>builder</parameter>. Note that 
+this function does not increment the reference counts of the returned
+objects.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly-allocated <link linkend="GSList"><type>GSList</type></link> containing all the objects
+  constructed by the <link linkend="GtkBuilder"><type>GtkBuilder</type></link> instance. It should be freed by
+  <link linkend="g-slist-free"><function>g_slist_free()</function></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-connect-signals" role="function" condition="since:2.12">
+<title>gtk_builder_connect_signals ()</title>
+<indexterm zone="gtk-builder-connect-signals" role="2.12"><primary sortas="builder_connect_signals">gtk_builder_connect_signals</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_builder_connect_signals         (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+This method is a simpler variation of <link linkend="gtk-builder-connect-signals-full"><function>gtk_builder_connect_signals_full()</function></link>.
+It uses <link linkend="GModule"><type>GModule</type></link>'s introspective features (by opening the module <link linkend="NULL--CAPS"><literal>NULL</literal></link>) 
+to look at the application's symbol table. From here it tries to match
+the signal handler names given in the interface description with
+symbols in the application and connects the signals.
+</para>
+<para>
+Note that this function will not work correctly if <link linkend="GModule"><type>GModule</type></link> is not
+supported on the platform.
+</para>
+<para>
+When compiling applications for Windows, you must declare signal callbacks
+with <link linkend="G-MODULE-EXPORT--CAPS"><type>G_MODULE_EXPORT</type></link>, or they will not be put in the symbol table.
+On Linux and Unices, this is not necessary; applications should instead
+be compiled with the -Wl,--export-dynamic CFLAGS, and linked against
+gmodule-export-2.0.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a structure sent in as user data to all signals
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-connect-signals-full" role="function" condition="since:2.12">
+<title>gtk_builder_connect_signals_full ()</title>
+<indexterm zone="gtk-builder-connect-signals-full" role="2.12"><primary sortas="builder_connect_signals_full">gtk_builder_connect_signals_full</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_builder_connect_signals_full    (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GtkBuilderConnectFunc">GtkBuilderConnectFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+This function can be thought of the interpreted language binding
+version of <link linkend="gtk-builder-connect-signals"><function>gtk_builder_connect_signals()</function></link>, except that it does not
+require GModule to function correctly.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> the function used to connect the signals
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara> arbitrary data that will be passed to the connection function
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-set-translation-domain" role="function" condition="since:2.12">
+<title>gtk_builder_set_translation_domain ()</title>
+<indexterm zone="gtk-builder-set-translation-domain" role="2.12"><primary sortas="builder_set_translation_domain">gtk_builder_set_translation_domain</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_builder_set_translation_domain  (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *domain);</programlisting>
+<para>
+Sets the translation domain of <parameter>builder</parameter>. 
+See <link linkend="GtkBuilder--translation-domain"><type>"translation-domain"</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>domain</parameter>&#160;:</term>
+<listitem><simpara> the translation domain or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-get-translation-domain" role="function" condition="since:2.12">
+<title>gtk_builder_get_translation_domain ()</title>
+<indexterm zone="gtk-builder-get-translation-domain" role="2.12"><primary sortas="builder_get_translation_domain">gtk_builder_get_translation_domain</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link>*        gtk_builder_get_translation_domain  (<link linkend="GtkBuilder">GtkBuilder</link> *builder);</programlisting>
+<para>
+Gets the translation domain of <parameter>builder</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the translation domain. This string is owned
+by the builder object and must not be modified or freed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-get-type-from-name" role="function" condition="since:2.12">
+<title>gtk_builder_get_type_from_name ()</title>
+<indexterm zone="gtk-builder-get-type-from-name" role="2.12"><primary sortas="builder_get_type_from_name">gtk_builder_get_type_from_name</primary></indexterm><programlisting><link linkend="GType">GType</link>               gtk_builder_get_type_from_name      (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="char">char</link> *type_name);</programlisting>
+<para>
+Looks up a type by name, using the virtual function that 
+<link linkend="GtkBuilder"><type>GtkBuilder</type></link> has for that purpose. This is mainly used when
+implementing the <link linkend="GtkBuildable"><type>GtkBuildable</type></link> interface on a type.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type_name</parameter>&#160;:</term>
+<listitem><simpara> type name to lookup
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the <link linkend="GType"><type>GType</type></link> found for <parameter>type_name</parameter> or <link linkend="G-TYPE-INVALID--CAPS"><type>G_TYPE_INVALID</type></link> 
+  if no type was found
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-value-from-string" role="function" condition="since:2.12">
+<title>gtk_builder_value_from_string ()</title>
+<indexterm zone="gtk-builder-value-from-string" role="2.12"><primary sortas="builder_value_from_string">gtk_builder_value_from_string</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_builder_value_from_string       (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GParamSpec">GParamSpec</link> *pspec,
+                                                         const <link linkend="gchar">gchar</link> *string,
+                                                         <link linkend="GValue">GValue</link> *value,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+This function demarshals a value from a string. This function
+calls <link linkend="g-value-init"><function>g_value_init()</function></link> on the <parameter>value</parameter> argument, so it need not be
+initialised beforehand.
+</para>
+<para>
+This function can handle char, uchar, boolean, int, uint, long,
+ulong, enum, flags, float, double, string, <link linkend="GdkColor"><type>GdkColor</type></link> and
+<link linkend="GtkAdjustment"><type>GtkAdjustment</type></link> type values. Support for <link linkend="GtkWidget"><type>GtkWidget</type></link> type values is
+still to come.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pspec</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GParamSpec"><type>GParamSpec</type></link> for the property
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>string</parameter>&#160;:</term>
+<listitem><simpara> the string representation of the value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GValue"><type>GValue</type></link> to store the result in
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-builder-value-from-string-type" role="function" condition="since:2.12">
+<title>gtk_builder_value_from_string_type ()</title>
+<indexterm zone="gtk-builder-value-from-string-type" role="2.12"><primary sortas="builder_value_from_string_type">gtk_builder_value_from_string_type</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_builder_value_from_string_type  (<link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GType">GType</link> type,
+                                                         const <link linkend="gchar">gchar</link> *string,
+                                                         <link linkend="GValue">GValue</link> *value,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Like <link linkend="gtk-builder-value-from-string"><function>gtk_builder_value_from_string()</function></link>, this function demarshals 
+a value from a string, but takes a <link linkend="GType"><type>GType</type></link> instead of <link linkend="GParamSpec"><type>GParamSpec</type></link>.
+This function calls <link linkend="g-value-init"><function>g_value_init()</function></link> on the <parameter>value</parameter> argument, so it 
+need not be initialised beforehand.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GType"><type>GType</type></link> of the value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>string</parameter>&#160;:</term>
+<listitem><simpara> the string representation of the value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GValue"><type>GValue</type></link> to store the result in
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="GTK-BUILDER-WARN-INVALID-CHILD-TYPE--CAPS" role="macro">
+<title>GTK_BUILDER_WARN_INVALID_CHILD_TYPE()</title>
+<indexterm zone="GTK-BUILDER-WARN-INVALID-CHILD-TYPE--CAPS"><primary sortas="BUILDER_WARN_INVALID_CHILD_TYPE">GTK_BUILDER_WARN_INVALID_CHILD_TYPE</primary></indexterm><programlisting>#define             GTK_BUILDER_WARN_INVALID_CHILD_TYPE(object, type)</programlisting>
+<para>
+This macro should be used to emit a warning about and unexpected
+<parameter>type</parameter> value in a <link linkend="GtkBuildable"><type>GtkBuildable</type></link> add_child implementation.
+</para><variablelist role="params">
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkBuildable"><type>GtkBuildable</type></link> on which the warning ocurred
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara>the unexpected type value
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GTK-BUILDER-ERROR--CAPS" role="macro">
+<title>GTK_BUILDER_ERROR</title>
+<indexterm zone="GTK-BUILDER-ERROR--CAPS"><primary sortas="BUILDER_ERROR">GTK_BUILDER_ERROR</primary></indexterm><programlisting>#define GTK_BUILDER_ERROR                (gtk_builder_error_quark ())
+</programlisting>
+<para>
+The <link linkend="GError"><type>GError</type></link> quark for <link linkend="GtkBuilder"><type>GtkBuilder</type></link> errors
+</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkBuilder.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkBuilder--translation-domain" role="property"><title>The <literal>&quot;translation-domain&quot;</literal> property</title>
+<indexterm zone="GtkBuilder--translation-domain" role="2.12"><primary sortas="Builder:translation-domain">GtkBuilder:translation-domain</primary></indexterm><programlisting>  &quot;translation-domain&quot;       <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+The translation domain used when translating property values that
+have been marked as translatable in interface descriptions.
+If the translation domain is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, <link linkend="GtkBuilder"><type>GtkBuilder</type></link> uses <link linkend="gettext"><function>gettext()</function></link>,
+otherwise <link linkend="g-dgettext"><function>g_dgettext()</function></link>.</para>
+<para>
+</para><para>Default value: NULL</para>
+<para>Since 2.12</para>
+</refsect2>
+</refsect1>
+
+
+
+
+</refentry>

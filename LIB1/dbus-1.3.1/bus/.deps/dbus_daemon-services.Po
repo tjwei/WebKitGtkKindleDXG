@@ -1,0 +1,140 @@
+dbus_daemon-services.o: services.c ../config.h ../dbus/dbus-hash.h \
+  /usr/include/stdint.h /usr/include/features.h \
+  /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /usr/include/bits/wchar.h /usr/include/inttypes.h ../dbus/dbus-memory.h \
+  ../dbus/dbus-macros.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h \
+  ../dbus/dbus-types.h ../dbus/dbus-arch-deps.h ../dbus/dbus-sysdeps.h \
+  ../dbus/dbus-errors.h ../dbus/dbus-protocol.h ../dbus/dbus-file.h \
+  ../dbus/dbus-string.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+  /usr/include/bits/string2.h /usr/include/stdlib.h \
+  /usr/include/sys/poll.h /usr/include/bits/poll.h \
+  /usr/include/bits/sigset.h /usr/include/time.h \
+  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+  ../dbus/dbus-list.h ../dbus/dbus-internals.h \
+  ../dbus/dbus-threads-internal.h ../dbus/dbus-threads.h \
+  ../dbus/dbus-mempool.h ../dbus/dbus-marshal-validate.h driver.h \
+  ../dbus/dbus.h ../dbus/dbus-address.h ../dbus/dbus-bus.h \
+  ../dbus/dbus-connection.h ../dbus/dbus-message.h ../dbus/dbus-shared.h \
+  ../dbus/dbus-misc.h ../dbus/dbus-pending-call.h ../dbus/dbus-server.h \
+  ../dbus/dbus-signature.h connection.h bus.h ../dbus/dbus-mainloop.h \
+  ../dbus/dbus-pipe.h services.h utils.h activation.h policy.h selinux.h
+
+../config.h:
+
+../dbus/dbus-hash.h:
+
+/usr/include/stdint.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/inttypes.h:
+
+../dbus/dbus-memory.h:
+
+../dbus/dbus-macros.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:
+
+../dbus/dbus-types.h:
+
+../dbus/dbus-arch-deps.h:
+
+../dbus/dbus-sysdeps.h:
+
+../dbus/dbus-errors.h:
+
+../dbus/dbus-protocol.h:
+
+../dbus/dbus-file.h:
+
+../dbus/dbus-string.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/poll.h:
+
+/usr/include/bits/poll.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/time.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+../dbus/dbus-list.h:
+
+../dbus/dbus-internals.h:
+
+../dbus/dbus-threads-internal.h:
+
+../dbus/dbus-threads.h:
+
+../dbus/dbus-mempool.h:
+
+../dbus/dbus-marshal-validate.h:
+
+driver.h:
+
+../dbus/dbus.h:
+
+../dbus/dbus-address.h:
+
+../dbus/dbus-bus.h:
+
+../dbus/dbus-connection.h:
+
+../dbus/dbus-message.h:
+
+../dbus/dbus-shared.h:
+
+../dbus/dbus-misc.h:
+
+../dbus/dbus-pending-call.h:
+
+../dbus/dbus-server.h:
+
+../dbus/dbus-signature.h:
+
+connection.h:
+
+bus.h:
+
+../dbus/dbus-mainloop.h:
+
+../dbus/dbus-pipe.h:
+
+services.h:
+
+utils.h:
+
+activation.h:
+
+policy.h:
+
+selinux.h:

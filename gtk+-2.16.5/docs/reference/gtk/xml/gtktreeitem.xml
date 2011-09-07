@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkTreeItem">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkTreeItem.top_of_page">GtkTreeItem</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkTreeItem</refname>
+<refpurpose>The widget used for items in a GtkTree</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkTreeItem.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkTreeItem-struct">GtkTreeItem</link>;
+#define             <link linkend="GTK-TREE-ITEM-SUBTREE--CAPS">GTK_TREE_ITEM_SUBTREE</link>               (obj)
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-tree-item-new">gtk_tree_item_new</link>                   (void);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-tree-item-new-with-label">gtk_tree_item_new_with_label</link>        (const <link linkend="gchar">gchar</link> *label);
+<link linkend="void">void</link>                <link linkend="gtk-tree-item-set-subtree">gtk_tree_item_set_subtree</link>           (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *subtree);
+<link linkend="void">void</link>                <link linkend="gtk-tree-item-remove-subtree">gtk_tree_item_remove_subtree</link>        (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item);
+<link linkend="void">void</link>                <link linkend="gtk-tree-item-select">gtk_tree_item_select</link>                (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item);
+<link linkend="void">void</link>                <link linkend="gtk-tree-item-deselect">gtk_tree_item_deselect</link>              (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item);
+<link linkend="void">void</link>                <link linkend="gtk-tree-item-expand">gtk_tree_item_expand</link>                (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item);
+<link linkend="void">void</link>                <link linkend="gtk-tree-item-collapse">gtk_tree_item_collapse</link>              (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkTreeItem.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkItem">GtkItem</link>
+                                       +----GtkTreeItem
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkTreeItem.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkTreeItem implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+
+<refsect1 id="GtkTreeItem.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkTreeItem-collapse">collapse</link>&quot;                                       : Run First
+  &quot;<link linkend="GtkTreeItem-expand">expand</link>&quot;                                         : Run First
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkTreeItem.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<warning>
+<para>
+<link linkend="GtkTree"><type>GtkTree</type></link> is deprecated and unsupported. It is known to be
+buggy. To use it, you must define the symbol <link linkend="GTK-ENABLE-BROKEN--CAPS"><literal>GTK_ENABLE_BROKEN</literal></link>
+prior to including the GTK+ header files. Use <link linkend="GtkTreeView"><type>GtkTreeView</type></link> instead.
+</para>
+</warning>
+</para>
+</refsect1>
+
+<refsect1 id="GtkTreeItem.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkTreeItem-struct" role="struct">
+<title>GtkTreeItem</title>
+<indexterm zone="GtkTreeItem-struct" role="deprecated"><primary sortas="TreeItem">GtkTreeItem</primary></indexterm><programlisting>typedef struct _GtkTreeItem GtkTreeItem;</programlisting>
+<warning><para><literal>GtkTreeItem</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="GTK-TREE-ITEM-SUBTREE--CAPS" role="macro" condition="deprecated:">
+<title>GTK_TREE_ITEM_SUBTREE()</title>
+<indexterm zone="GTK-TREE-ITEM-SUBTREE--CAPS" role="deprecated"><primary sortas="TREE_ITEM_SUBTREE">GTK_TREE_ITEM_SUBTREE</primary></indexterm><programlisting>#define GTK_TREE_ITEM_SUBTREE(obj)      (GTK_TREE_ITEM(obj)-&gt;subtree)
+</programlisting>
+<warning><para><literal>GTK_TREE_ITEM_SUBTREE</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>obj</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-tree-item-new" role="function" condition="deprecated:">
+<title>gtk_tree_item_new ()</title>
+<indexterm zone="gtk-tree-item-new" role="deprecated"><primary sortas="tree_item_new">gtk_tree_item_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_tree_item_new                   (void);</programlisting>
+<warning><para><literal>gtk_tree_item_new</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-tree-item-new-with-label" role="function" condition="deprecated:">
+<title>gtk_tree_item_new_with_label ()</title>
+<indexterm zone="gtk-tree-item-new-with-label" role="deprecated"><primary sortas="tree_item_new_with_label">gtk_tree_item_new_with_label</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_tree_item_new_with_label        (const <link linkend="gchar">gchar</link> *label);</programlisting>
+<warning><para><literal>gtk_tree_item_new_with_label</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-tree-item-set-subtree" role="function" condition="deprecated:">
+<title>gtk_tree_item_set_subtree ()</title>
+<indexterm zone="gtk-tree-item-set-subtree" role="deprecated"><primary sortas="tree_item_set_subtree">gtk_tree_item_set_subtree</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tree_item_set_subtree           (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *subtree);</programlisting>
+<warning><para><literal>gtk_tree_item_set_subtree</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tree_item</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>subtree</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-tree-item-remove-subtree" role="function" condition="deprecated:">
+<title>gtk_tree_item_remove_subtree ()</title>
+<indexterm zone="gtk-tree-item-remove-subtree" role="deprecated"><primary sortas="tree_item_remove_subtree">gtk_tree_item_remove_subtree</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tree_item_remove_subtree        (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item);</programlisting>
+<warning><para><literal>gtk_tree_item_remove_subtree</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tree_item</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-tree-item-select" role="function" condition="deprecated:">
+<title>gtk_tree_item_select ()</title>
+<indexterm zone="gtk-tree-item-select" role="deprecated"><primary sortas="tree_item_select">gtk_tree_item_select</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tree_item_select                (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item);</programlisting>
+<warning><para><literal>gtk_tree_item_select</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tree_item</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-tree-item-deselect" role="function" condition="deprecated:">
+<title>gtk_tree_item_deselect ()</title>
+<indexterm zone="gtk-tree-item-deselect" role="deprecated"><primary sortas="tree_item_deselect">gtk_tree_item_deselect</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tree_item_deselect              (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item);</programlisting>
+<warning><para><literal>gtk_tree_item_deselect</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tree_item</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-tree-item-expand" role="function" condition="deprecated:">
+<title>gtk_tree_item_expand ()</title>
+<indexterm zone="gtk-tree-item-expand" role="deprecated"><primary sortas="tree_item_expand">gtk_tree_item_expand</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tree_item_expand                (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item);</programlisting>
+<warning><para><literal>gtk_tree_item_expand</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tree_item</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-tree-item-collapse" role="function" condition="deprecated:">
+<title>gtk_tree_item_collapse ()</title>
+<indexterm zone="gtk-tree-item-collapse" role="deprecated"><primary sortas="tree_item_collapse">gtk_tree_item_collapse</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tree_item_collapse              (<link linkend="GtkTreeItem">GtkTreeItem</link> *tree_item);</programlisting>
+<warning><para><literal>gtk_tree_item_collapse</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tree_item</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+<refsect1 id="GtkTreeItem.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkTreeItem-collapse" role="signal"><title>The <literal>&quot;collapse&quot;</literal> signal</title>
+<indexterm zone="GtkTreeItem-collapse"><primary sortas="TreeItem::collapse">GtkTreeItem::collapse</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTreeItem">GtkTreeItem</link> *treeitem,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run First</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>treeitem</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkTreeItem-expand" role="signal"><title>The <literal>&quot;expand&quot;</literal> signal</title>
+<indexterm zone="GtkTreeItem-expand"><primary sortas="TreeItem::expand">GtkTreeItem::expand</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkTreeItem">GtkTreeItem</link> *treeitem,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run First</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>treeitem</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

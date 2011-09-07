@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkCellRendererPixbuf">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkCellRendererPixbuf.top_of_page">GtkCellRendererPixbuf</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkCellRendererPixbuf</refname>
+<refpurpose>Renders a pixbuf in a cell</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkCellRendererPixbuf.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkCellRendererPixbuf-struct">GtkCellRendererPixbuf</link>;
+<link linkend="GtkCellRenderer">GtkCellRenderer</link> *   <link linkend="gtk-cell-renderer-pixbuf-new">gtk_cell_renderer_pixbuf_new</link>        (void);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkCellRendererPixbuf.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkCellRenderer">GtkCellRenderer</link>
+                     +----GtkCellRendererPixbuf
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkCellRendererPixbuf.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkCellRendererPixbuf--follow-state">follow-state</link>&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkCellRendererPixbuf--gicon">gicon</link>&quot;                    <link linkend="GIcon">GIcon</link>*                : Read / Write
+  &quot;<link linkend="GtkCellRendererPixbuf--icon-name">icon-name</link>&quot;                <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkCellRendererPixbuf--pixbuf">pixbuf</link>&quot;                   <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write
+  &quot;<link linkend="GtkCellRendererPixbuf--pixbuf-expander-closed">pixbuf-expander-closed</link>&quot;   <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write
+  &quot;<link linkend="GtkCellRendererPixbuf--pixbuf-expander-open">pixbuf-expander-open</link>&quot;     <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write
+  &quot;<link linkend="GtkCellRendererPixbuf--stock-detail">stock-detail</link>&quot;             <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkCellRendererPixbuf--stock-id">stock-id</link>&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkCellRendererPixbuf--stock-size">stock-size</link>&quot;               <link linkend="guint">guint</link>                 : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkCellRendererPixbuf.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A <link linkend="GtkCellRendererPixbuf"><type>GtkCellRendererPixbuf</type></link> can be used to render an image in a cell. It allows to render
+either a given <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> (set via the
+<link linkend="GtkCellRendererPixbuf--pixbuf">pixbuf</link> property) or a stock icon
+(set via the <link linkend="GtkCellRendererPixbuf--stock-id">stock-id</link> property).
+</para>
+<para>
+To support the tree view, <link linkend="GtkCellRendererPixbuf"><type>GtkCellRendererPixbuf</type></link> also supports rendering two alternative
+pixbufs, when the <link linkend="GtkCellRenderer--is-expander">is-expander</link> property
+is <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>. If the <link linkend="GtkCellRenderer--is-expanded">is-expanded</link> property
+is <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> and the
+<link linkend="GtkCellRendererPixbuf--pixbuf-expander-open">pixbuf-expander-open</link>
+property is set to a pixbuf, it renders that pixbuf, if the
+<link linkend="GtkCellRenderer--is-expanded">is-expanded</link> property is <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> and
+the
+<link linkend="GtkCellRendererPixbuf--pixbuf-expander-closed">pixbuf-expander-closed</link>
+property is set to a pixbuf, it renders that one.
+</para>
+</refsect1>
+
+<refsect1 id="GtkCellRendererPixbuf.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkCellRendererPixbuf-struct" role="struct">
+<title>GtkCellRendererPixbuf</title>
+<indexterm zone="GtkCellRendererPixbuf-struct"><primary sortas="CellRendererPixbuf">GtkCellRendererPixbuf</primary></indexterm><programlisting>typedef struct _GtkCellRendererPixbuf GtkCellRendererPixbuf;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-cell-renderer-pixbuf-new" role="function">
+<title>gtk_cell_renderer_pixbuf_new ()</title>
+<indexterm zone="gtk-cell-renderer-pixbuf-new"><primary sortas="cell_renderer_pixbuf_new">gtk_cell_renderer_pixbuf_new</primary></indexterm><programlisting><link linkend="GtkCellRenderer">GtkCellRenderer</link> *   gtk_cell_renderer_pixbuf_new        (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkCellRendererPixbuf"><type>GtkCellRendererPixbuf</type></link>. Adjust rendering
+parameters using object properties. Object properties can be set
+globally (with <link linkend="g-object-set"><function>g_object_set()</function></link>). Also, with <link linkend="GtkTreeViewColumn"><type>GtkTreeViewColumn</type></link>, you
+can bind a property to a value in a <link linkend="GtkTreeModel"><type>GtkTreeModel</type></link>. For example, you
+can bind the "pixbuf" property on the cell renderer to a pixbuf value
+in the model, thus rendering a different image in each row of the
+<link linkend="GtkTreeView"><type>GtkTreeView</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new cell renderer
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkCellRendererPixbuf.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkCellRendererPixbuf--follow-state" role="property"><title>The <literal>&quot;follow-state&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererPixbuf--follow-state" role="2.8"><primary sortas="CellRendererPixbuf:follow-state">GtkCellRendererPixbuf:follow-state</primary></indexterm><programlisting>  &quot;follow-state&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Specifies whether the rendered pixbuf should be colorized
+according to the <link linkend="GtkCellRendererState"><type>GtkCellRendererState</type></link>.</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.8</para>
+</refsect2>
+<refsect2 id="GtkCellRendererPixbuf--gicon" role="property"><title>The <literal>&quot;gicon&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererPixbuf--gicon" role="2.14"><primary sortas="CellRendererPixbuf:gicon">GtkCellRendererPixbuf:gicon</primary></indexterm><programlisting>  &quot;gicon&quot;                    <link linkend="GIcon">GIcon</link>*                : Read / Write</programlisting>
+<para>
+The GIcon representing the icon to display.
+If the icon theme is changed, the image will be updated
+automatically.</para>
+<para>
+</para><para>Since 2.14</para>
+</refsect2>
+<refsect2 id="GtkCellRendererPixbuf--icon-name" role="property"><title>The <literal>&quot;icon-name&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererPixbuf--icon-name" role="2.8"><primary sortas="CellRendererPixbuf:icon-name">GtkCellRendererPixbuf:icon-name</primary></indexterm><programlisting>  &quot;icon-name&quot;                <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+The name of the themed icon to display.
+This property only has an effect if not overridden by "stock_id"
+or "pixbuf" properties.</para>
+<para>
+</para><para>Default value: NULL</para>
+<para>Since 2.8</para>
+</refsect2>
+<refsect2 id="GtkCellRendererPixbuf--pixbuf" role="property"><title>The <literal>&quot;pixbuf&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererPixbuf--pixbuf"><primary sortas="CellRendererPixbuf:pixbuf">GtkCellRendererPixbuf:pixbuf</primary></indexterm><programlisting>  &quot;pixbuf&quot;                   <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write</programlisting>
+<para>The pixbuf to render.</para></refsect2>
+<refsect2 id="GtkCellRendererPixbuf--pixbuf-expander-closed" role="property"><title>The <literal>&quot;pixbuf-expander-closed&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererPixbuf--pixbuf-expander-closed"><primary sortas="CellRendererPixbuf:pixbuf-expander-closed">GtkCellRendererPixbuf:pixbuf-expander-closed</primary></indexterm><programlisting>  &quot;pixbuf-expander-closed&quot;   <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write</programlisting>
+<para>Pixbuf for closed expander.</para></refsect2>
+<refsect2 id="GtkCellRendererPixbuf--pixbuf-expander-open" role="property"><title>The <literal>&quot;pixbuf-expander-open&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererPixbuf--pixbuf-expander-open"><primary sortas="CellRendererPixbuf:pixbuf-expander-open">GtkCellRendererPixbuf:pixbuf-expander-open</primary></indexterm><programlisting>  &quot;pixbuf-expander-open&quot;     <link linkend="GdkPixbuf">GdkPixbuf</link>*            : Read / Write</programlisting>
+<para>Pixbuf for open expander.</para></refsect2>
+<refsect2 id="GtkCellRendererPixbuf--stock-detail" role="property"><title>The <literal>&quot;stock-detail&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererPixbuf--stock-detail"><primary sortas="CellRendererPixbuf:stock-detail">GtkCellRendererPixbuf:stock-detail</primary></indexterm><programlisting>  &quot;stock-detail&quot;             <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Render detail to pass to the theme engine.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkCellRendererPixbuf--stock-id" role="property"><title>The <literal>&quot;stock-id&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererPixbuf--stock-id"><primary sortas="CellRendererPixbuf:stock-id">GtkCellRendererPixbuf:stock-id</primary></indexterm><programlisting>  &quot;stock-id&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>The stock ID of the stock icon to render.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkCellRendererPixbuf--stock-size" role="property"><title>The <literal>&quot;stock-size&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererPixbuf--stock-size"><primary sortas="CellRendererPixbuf:stock-size">GtkCellRendererPixbuf:stock-size</primary></indexterm><programlisting>  &quot;stock-size&quot;               <link linkend="guint">guint</link>                 : Read / Write</programlisting>
+<para>The GtkIconSize value that specifies the size of the rendered icon.</para><para>Default value: 1</para>
+</refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

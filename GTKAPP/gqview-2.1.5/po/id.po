@@ -1,0 +1,4111 @@
+# GQView (Indonesian)
+# Copyright (C) 2003 John Ellis
+# This file is distributed under the same license as the PACKAGE package.
+# Tedi Heriyanto <tedi_h@gmx.net>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gqview\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-02 20:43-0500\n"
+"PO-Revision-Date: 2003-04-14 11:03GMT+0700\n"
+"Last-Translator: Tedi Heriyanto <tedi_h@gmx.net>\n"
+"Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+
+#: src/bar_info.c:30
+msgid "Favorite"
+msgstr ""
+
+#: src/bar_info.c:31
+#, fuzzy
+msgid "Todo"
+msgstr "Tool"
+
+#: src/bar_info.c:32
+msgid "People"
+msgstr ""
+
+#: src/bar_info.c:33
+msgid "Places"
+msgstr ""
+
+#: src/bar_info.c:34
+msgid "Art"
+msgstr ""
+
+#: src/bar_info.c:35
+#, fuzzy
+msgid "Nature"
+msgstr "Tanggal"
+
+#: src/bar_info.c:36
+msgid "Possessions"
+msgstr ""
+
+#: src/bar_info.c:505
+msgid "Keyword Presets"
+msgstr ""
+
+#: src/bar_info.c:508
+msgid "Favorite keywords list"
+msgstr ""
+
+#: src/bar_info.c:992 src/info.c:167 src/search.c:2683
+msgid "Keywords"
+msgstr ""
+
+#: src/bar_info.c:1006 src/info.c:722 src/pan-view.c:1521 src/print.c:2614
+msgid "Filename:"
+msgstr "Namafile:"
+
+#: src/bar_info.c:1007 src/info.c:366
+msgid "File date:"
+msgstr "Tanggal file:"
+
+#: src/bar_info.c:1027
+msgid "Keywords:"
+msgstr ""
+
+#: src/bar_info.c:1095
+#, fuzzy
+msgid "Comment:"
+msgstr "Bandingkan dengan:"
+
+#: src/bar_info.c:1119
+msgid "Edit favorite keywords list."
+msgstr ""
+
+#: src/bar_info.c:1123
+msgid "Add keywords to selected files"
+msgstr ""
+
+#: src/bar_info.c:1126
+msgid "Add keywords to selected files, replacing the existing ones."
+msgstr ""
+
+#: src/bar_info.c:1130
+#, fuzzy
+msgid "Save comment now"
+msgstr "Simpan koleksi"
+
+#: src/bar_exif.c:436
+msgid "Tag"
+msgstr ""
+
+#: src/bar_exif.c:437 src/dupe.c:2589 src/dupe.c:3112 src/print.c:3205
+#: src/search.c:2744 src/utilops.c:2779 src/view_file_list.c:1655
+msgid "Name"
+msgstr "Nama"
+
+#: src/bar_exif.c:438
+msgid "Value"
+msgstr ""
+
+#: src/bar_exif.c:439
+#, fuzzy
+msgid "Format"
+msgstr "Normal"
+
+#: src/bar_exif.c:440
+msgid "Elements"
+msgstr ""
+
+#: src/bar_exif.c:441 src/preferences.c:1063
+#, fuzzy
+msgid "Description"
+msgstr "deskripsi"
+
+#: src/bar_exif.c:562 src/info.c:106
+#, fuzzy
+msgid "Exif"
+msgstr "Keluar"
+
+#: src/bar_exif.c:635
+msgid "Advanced view"
+msgstr ""
+
+#: src/bar_sort.c:217
+#, fuzzy, c-format
+msgid ""
+"Unable to remove symbolic link:\n"
+"%s"
+msgstr ""
+"Tidak dapat menyalin file:\n"
+"%s\n"
+"ke:\n"
+"%s"
+
+#: src/bar_sort.c:218
+#, fuzzy
+msgid "Unlink failed"
+msgstr "Gagal hapus"
+
+#: src/bar_sort.c:297
+#, fuzzy, c-format
+msgid ""
+"Unable to create symbolic link:\n"
+"%s"
+msgstr ""
+"Tidak dapat membuat direktori baru:\n"
+"%s"
+
+#: src/bar_sort.c:298
+msgid "Link failed"
+msgstr ""
+
+#: src/bar_sort.c:435
+#, fuzzy, c-format
+msgid ""
+"The collection:\n"
+"%s\n"
+"already exists."
+msgstr ""
+"Direktori:\n"
+"%s\n"
+"sudah ada."
+
+#: src/bar_sort.c:436
+#, fuzzy
+msgid "Collection exists"
+msgstr "Koleksi kosong"
+
+#: src/bar_sort.c:450 src/collect.c:1057 src/collect-dlg.c:84
+#, c-format
+msgid ""
+"Failed to save the collection:\n"
+"%s"
+msgstr ""
+"Gagal menyimpan koleksi:\n"
+"%s"
+
+#: src/bar_sort.c:451 src/collect.c:1058 src/collect-dlg.c:85
+msgid "Save Failed"
+msgstr "Gagal Menyimpan"
+
+#: src/bar_sort.c:485 src/bar_sort.c:611
+msgid "Add Bookmark"
+msgstr ""
+
+#: src/bar_sort.c:489
+#, fuzzy
+msgid "Add Collection"
+msgstr "Koleksi"
+
+#: src/bar_sort.c:506 src/ui_bookmark.c:603
+#, fuzzy
+msgid "Name:"
+msgstr "Nama"
+
+#: src/bar_sort.c:568
+#, fuzzy
+msgid "Sort Manager"
+msgstr "Urutkan berdasarkan nama"
+
+#: src/bar_sort.c:577 src/pan-view.c:2378 src/ui_pathsel.c:1094
+#, fuzzy
+msgid "Folders"
+msgstr "File"
+
+#: src/bar_sort.c:578 src/main.c:1125
+msgid "Collections"
+msgstr "Koleksi"
+
+#: src/bar_sort.c:586
+msgid "Copy"
+msgstr "Salin"
+
+#: src/bar_sort.c:589
+msgid "Move"
+msgstr "Pindah"
+
+#: src/bar_sort.c:592
+msgid "Link"
+msgstr ""
+
+#: src/bar_sort.c:598
+#, fuzzy
+msgid "Add image"
+msgstr "%d image"
+
+#: src/bar_sort.c:601
+#, fuzzy
+msgid "Add selection"
+msgstr "Tidak ada yang dipilih"
+
+#: src/bar_sort.c:614
+msgid "Undo last image"
+msgstr ""
+
+#: src/cache_maint.c:126 src/cache_maint.c:680 src/cache_maint.c:893
+#: src/editors.c:437
+#, fuzzy
+msgid "done"
+msgstr "Tidak ada"
+
+#: src/cache_maint.c:303
+#, fuzzy
+msgid "Removing old metadata..."
+msgstr "Membaca kemiripan data..."
+
+#: src/cache_maint.c:307
+#, fuzzy
+msgid "Clearing cached thumbnails..."
+msgstr "Menghapus thumbnail..."
+
+#: src/cache_maint.c:311 src/cache_maint.c:1047
+#, fuzzy
+msgid "Removing old thumbnails..."
+msgstr "Menghapus thumbnail lama..."
+
+#: src/cache_maint.c:314 src/cache_maint.c:1050
+msgid "Maintenance"
+msgstr ""
+
+#: src/cache_maint.c:791 src/utilops.c:952
+#, fuzzy
+msgid "Invalid folder"
+msgstr "Namafile tidak valid"
+
+#: src/cache_maint.c:792
+msgid "The specified folder can not be found."
+msgstr ""
+
+#: src/cache_maint.c:820 src/cache_maint.c:834 src/cache_maint.c:1215
+#, fuzzy
+msgid "Create thumbnails"
+msgstr "Cache thumbnail"
+
+#: src/cache_maint.c:828 src/cache_maint.c:1057
+#, fuzzy
+msgid "S_tart"
+msgstr "Mulai #"
+
+#: src/cache_maint.c:841 src/preferences.c:1200
+#, fuzzy
+msgid "Folder:"
+msgstr "File"
+
+#: src/cache_maint.c:844
+#, fuzzy
+msgid "Select folder"
+msgstr "Tidak ada yang dipilih"
+
+#: src/cache_maint.c:848
+#, fuzzy
+msgid "Include subfolders"
+msgstr "Namafile tidak valid"
+
+#: src/cache_maint.c:849
+msgid "Store thumbnails local to source images"
+msgstr ""
+
+#: src/cache_maint.c:858 src/cache_maint.c:1066
+msgid "click start to begin"
+msgstr ""
+
+#: src/cache_maint.c:996 src/editors.c:585
+#, fuzzy
+msgid "running..."
+msgstr "Membandingkan..."
+
+#: src/cache_maint.c:1042
+msgid "Clearing thumbnails..."
+msgstr "Menghapus thumbnail..."
+
+#: src/cache_maint.c:1108 src/cache_maint.c:1111 src/cache_maint.c:1190
+#: src/cache_maint.c:1210
+msgid "Clear cache"
+msgstr "Hapus cache"
+
+#: src/cache_maint.c:1112
+msgid ""
+"This will remove all thumbnails that have\n"
+"been saved to disk, continue?"
+msgstr ""
+"Akan menghapus semua thumbnail yang telah\n"
+"disimpan ke disk, lanjutkan?"
+
+#: src/cache_maint.c:1162
+#, fuzzy
+msgid "Cache Maintenance - GQview"
+msgstr "Properti image.-.GQview"
+
+#: src/cache_maint.c:1172
+msgid "Cache and Data Maintenance"
+msgstr ""
+
+#: src/cache_maint.c:1176
+#, fuzzy
+msgid "GQview thumbnail cache"
+msgstr "GQview layar penuh"
+
+#: src/cache_maint.c:1178 src/cache_maint.c:1198 src/cache_maint.c:1226
+#: src/pan-view.c:1523 src/pan-view.c:2367 src/preferences.c:1177
+#: src/utilops.c:1571
+#, fuzzy
+msgid "Location:"
+msgstr "Koleksi"
+
+#: src/cache_maint.c:1185 src/cache_maint.c:1205 src/cache_maint.c:1233
+#, fuzzy
+msgid "Clean up"
+msgstr "Bersihkan"
+
+#: src/cache_maint.c:1188 src/cache_maint.c:1208
+msgid "Remove orphaned or outdated thumbnails."
+msgstr ""
+
+#: src/cache_maint.c:1193 src/cache_maint.c:1213
+#, fuzzy
+msgid "Delete all cached thumbnails."
+msgstr "Cache thumbnail"
+
+#: src/cache_maint.c:1196
+#, fuzzy
+msgid "Shared thumbnail cache"
+msgstr "Tampilkan thumbnail"
+
+#: src/cache_maint.c:1219
+#, fuzzy
+msgid "Render"
+msgstr "Ganti nama"
+
+#: src/cache_maint.c:1222
+msgid "Render thumbnails for a specific folder."
+msgstr ""
+
+#: src/cache_maint.c:1224
+msgid "Metadata"
+msgstr ""
+
+#: src/cache_maint.c:1236
+msgid "Remove orphaned keywords and comments."
+msgstr ""
+
+#: src/collect.c:350 src/image.c:151 src/image-overlay.c:110
+#: src/image-overlay.c:152
+#, c-format
+msgid "Untitled"
+msgstr "Tiada judul"
+
+#: src/collect.c:354
+#, c-format
+msgid "Untitled (%d)"
+msgstr "Tiada judul (%d)"
+
+#: src/collect.c:976
+#, c-format
+msgid "%s - GQview Collection"
+msgstr "%s - Koleksi GQview"
+
+#: src/collect.c:1094 src/collect.c:1098
+msgid "Close collection"
+msgstr "Menutup koleksi"
+
+#: src/collect.c:1099
+msgid ""
+"Collection has been modified.\n"
+"Save first?"
+msgstr ""
+"Koleksi telah dimodifikasi \n"
+"Simpan dulu?"
+
+#: src/collect.c:1102
+msgid "_Discard"
+msgstr ""
+
+#: src/collect-dlg.c:58
+#, fuzzy, c-format
+msgid ""
+"Specified path:\n"
+"%s\n"
+"is a folder, collections are files"
+msgstr ""
+"Path yang dispesifikasikan:\n"
+"%s\n"
+"adalah direktori, koleksi adalah file"
+
+#: src/collect-dlg.c:59
+msgid "Invalid filename"
+msgstr "Namafile tidak valid"
+
+#: src/collect-dlg.c:68
+msgid "Overwrite File"
+msgstr "Timpa File"
+
+#: src/collect-dlg.c:73
+#, fuzzy
+msgid "Overwrite existing file?"
+msgstr "Timpa file"
+
+#: src/collect-dlg.c:75 src/utilops.c:514 src/utilops.c:835 src/utilops.c:1725
+#: src/utilops.c:2447
+#, fuzzy
+msgid "_Overwrite"
+msgstr "Timpa"
+
+#: src/collect-dlg.c:169
+msgid "Save collection"
+msgstr "Simpan koleksi"
+
+#: src/collect-dlg.c:176
+msgid "Open collection"
+msgstr "Buka koleksi"
+
+#: src/collect-dlg.c:184
+msgid "Append collection"
+msgstr "Tambahkan koleksi"
+
+#: src/collect-dlg.c:185
+#, fuzzy
+msgid "_Append"
+msgstr "Tambah"
+
+#: src/collect-dlg.c:203
+msgid "Collection Files"
+msgstr "File Koleksi"
+
+#: src/collect-dlg.c:221
+msgid "Collection empty"
+msgstr "Koleksi kosong"
+
+#: src/collect-dlg.c:222
+msgid "The current collection is empty, save aborted."
+msgstr "Koleksi saat ini kosong, penyimpanan dibatalkan"
+
+#: src/collect-table.c:164 src/layout.c:372 src/layout_util.c:737
+msgid "Empty"
+msgstr "Kosong"
+
+#: src/collect-table.c:168
+#, c-format
+msgid "%d images (%d)"
+msgstr "%d image (%d)"
+
+#: src/collect-table.c:172
+#, c-format
+msgid "%d images"
+msgstr "%d image"
+
+#: src/collect-table.c:186 src/dupe.c:1296 src/search.c:303
+#: src/view_file_icon.c:1776 src/view_file_icon.c:1891
+#: src/view_file_list.c:916 src/view_file_list.c:1021
+msgid "Loading thumbs..."
+msgstr "Memuatkan thumb..."
+
+#: src/collect-table.c:773 src/dupe.c:2187 src/dupe.c:2497
+#: src/layout_util.c:780 src/search.c:969
+#, fuzzy
+msgid "_View"
+msgstr "/_View"
+
+#: src/collect-table.c:775 src/dupe.c:2189 src/dupe.c:2499 src/img-view.c:1251
+#: src/layout_image.c:735 src/pan-view.c:2788 src/search.c:971
+#: src/view_file_icon.c:287 src/view_file_list.c:398
+#, fuzzy
+msgid "View in _new window"
+msgstr "Lihat di jendela baru"
+
+#: src/collect-table.c:778 src/dupe.c:2219 src/dupe.c:2507 src/search.c:997
+#, fuzzy
+msgid "Rem_ove"
+msgstr "Pindahkan"
+
+#: src/collect-table.c:781
+msgid "Append from file list"
+msgstr "Tambahkan dari daftar file"
+
+#: src/collect-table.c:783
+msgid "Append from collection..."
+msgstr "Tambahkan dari koleksi..."
+
+#: src/collect-table.c:786 src/dupe.c:2192 src/dupe.c:2502 src/search.c:974
+msgid "Select all"
+msgstr "Pilih semua"
+
+#: src/collect-table.c:788 src/dupe.c:2194 src/dupe.c:2504 src/search.c:976
+msgid "Select none"
+msgstr "Tidak ada yang dipilih"
+
+#: src/collect-table.c:796 src/dupe.c:2203 src/img-view.c:1249
+#: src/layout_image.c:732 src/layout_util.c:815 src/pan-view.c:2785
+#: src/search.c:981 src/view_file_icon.c:284 src/view_file_list.c:396
+#, fuzzy
+msgid "_Properties"
+msgstr "Properti"
+
+#: src/collect-table.c:799 src/dupe.c:2210 src/img-view.c:1254
+#: src/layout_image.c:740 src/layout_util.c:792 src/pan-view.c:2792
+#: src/search.c:988 src/view_file_icon.c:291 src/view_file_list.c:402
+#, fuzzy
+msgid "_Copy..."
+msgstr "Salin..."
+
+#: src/collect-table.c:801 src/dupe.c:2212 src/img-view.c:1255
+#: src/layout_image.c:742 src/layout_util.c:793 src/pan-view.c:2794
+#: src/search.c:990 src/view_file_icon.c:293 src/view_file_list.c:404
+#, fuzzy
+msgid "_Move..."
+msgstr "Pindah..."
+
+#: src/collect-table.c:803 src/dupe.c:2214 src/img-view.c:1256
+#: src/layout_image.c:744 src/layout_util.c:794 src/pan-view.c:2796
+#: src/search.c:992 src/view_dir_list.c:415 src/view_dir_tree.c:514
+#: src/view_file_icon.c:295 src/view_file_list.c:406
+#, fuzzy
+msgid "_Rename..."
+msgstr "Ganti nama..."
+
+#: src/collect-table.c:805 src/dupe.c:2216 src/img-view.c:1257
+#: src/layout_image.c:746 src/layout_util.c:795 src/pan-view.c:2798
+#: src/search.c:994 src/view_dir_list.c:417 src/view_dir_tree.c:516
+#: src/view_file_icon.c:297 src/view_file_list.c:408
+#, fuzzy
+msgid "_Delete..."
+msgstr "Hapus..."
+
+#: src/collect-table.c:810 src/view_file_icon.c:313
+#, fuzzy
+msgid "Show filename _text"
+msgstr "Tampilkan sembunyi"
+
+#: src/collect-table.c:813
+#, fuzzy
+msgid "_Save collection"
+msgstr "Simpan koleksi"
+
+#: src/collect-table.c:815
+#, fuzzy
+msgid "Save collection _as..."
+msgstr "Simpan koleksi sebagai..."
+
+#: src/collect-table.c:818 src/layout_util.c:788
+#, fuzzy
+msgid "_Find duplicates..."
+msgstr "Cari duplikat..."
+
+#: src/collect-table.c:820 src/dupe.c:2207 src/search.c:985
+#, fuzzy
+msgid "Print..."
+msgstr "/File/_Rename..."
+
+#: src/collect-table.c:1972 src/dupe.c:3300 src/img-view.c:1411
+#, fuzzy
+msgid "Dropped list includes folders."
+msgstr "Hapus daftar termasuk direktori."
+
+#: src/collect-table.c:1974 src/dupe.c:3302 src/img-view.c:1413
+#, fuzzy
+msgid "_Add contents"
+msgstr "Tambah isi"
+
+#: src/collect-table.c:1976 src/dupe.c:3303 src/img-view.c:1414
+#, fuzzy
+msgid "Add contents _recursive"
+msgstr "Tambah isi secara rekursif"
+
+#: src/collect-table.c:1978 src/dupe.c:3304 src/img-view.c:1415
+#, fuzzy
+msgid "_Skip folders"
+msgstr "Lewati direktori"
+
+#: src/collect-table.c:1981 src/dupe.c:3306 src/img-view.c:1417
+#: src/view_dir_list.c:214 src/view_dir_tree.c:306
+msgid "Cancel"
+msgstr "Batal"
+
+#: src/dupe.c:96
+msgid "Drop files to compare them."
+msgstr "Hapus file untuk membandingkannya"
+
+#: src/dupe.c:100
+#, c-format
+msgid "%d files"
+msgstr "%d files"
+
+#: src/dupe.c:104
+#, c-format
+msgid "%d matches found in %d files"
+msgstr "%d kecocokan ditemukan dalam %d file"
+
+#: src/dupe.c:109
+msgid "[set 1]"
+msgstr ""
+
+#: src/dupe.c:1422
+msgid "Reading checksums..."
+msgstr "Membaca checksum..."
+
+#: src/dupe.c:1455
+msgid "Reading dimensions..."
+msgstr "Membaca dimensi..."
+
+#: src/dupe.c:1489
+msgid "Reading similarity data..."
+msgstr "Membaca kemiripan data..."
+
+#: src/dupe.c:1524 src/dupe.c:1555
+msgid "Comparing..."
+msgstr "Membandingkan..."
+
+#: src/dupe.c:1535 src/pan-view.c:1080
+#, fuzzy
+msgid "Sorting..."
+msgstr "Membandingkan..."
+
+#: src/dupe.c:2196
+msgid "Select group _1 duplicates"
+msgstr ""
+
+#: src/dupe.c:2198
+msgid "Select group _2 duplicates"
+msgstr ""
+
+#: src/dupe.c:2205 src/search.c:983
+msgid "Add to new collection"
+msgstr "Tambah ke koleksi baru"
+
+#: src/dupe.c:2221 src/dupe.c:2509 src/search.c:999
+#, fuzzy
+msgid "C_lear"
+msgstr "Bersihkan"
+
+#: src/dupe.c:2224 src/dupe.c:2512
+#, fuzzy
+msgid "Close _window"
+msgstr "Tutup jendela"
+
+#: src/dupe.c:2382
+#, fuzzy, c-format
+msgid "%d files (set 2)"
+msgstr "%d file%s"
+
+#: src/dupe.c:2590 src/dupe.c:3113 src/preferences.c:982 src/print.c:3209
+#: src/search.c:2745 src/view_file_list.c:1656
+msgid "Size"
+msgstr "Ukuran"
+
+#: src/dupe.c:2591 src/dupe.c:3114 src/exif.c:296 src/exif.c:417
+#: src/print.c:3207 src/search.c:2746 src/view_file_list.c:1657
+msgid "Date"
+msgstr "Tanggal"
+
+#: src/dupe.c:2592 src/dupe.c:3115 src/print.c:3211 src/search.c:2747
+msgid "Dimensions"
+msgstr "Dimensi"
+
+#: src/dupe.c:2593
+msgid "Checksum"
+msgstr "Checksum"
+
+#: src/dupe.c:2594 src/dupe.c:3116 src/search.c:2748 src/ui_pathsel.c:1106
+msgid "Path"
+msgstr "Path"
+
+#: src/dupe.c:2595
+msgid "Similarity (high)"
+msgstr "Kemiripan (tinggi)"
+
+#: src/dupe.c:2596
+msgid "Similarity"
+msgstr "Kemiripan"
+
+#: src/dupe.c:2597
+msgid "Similarity (low)"
+msgstr "Kemiripan (rendah)"
+
+#: src/dupe.c:2598
+msgid "Similarity (custom)"
+msgstr "Kemiripan (kustom)"
+
+#: src/dupe.c:3076
+msgid "Find duplicates - GQview"
+msgstr "Cari duplikat.-. GQview"
+
+#: src/dupe.c:3148
+msgid "Compare to:"
+msgstr "Bandingkan dengan:"
+
+#: src/dupe.c:3161
+msgid "Compare by:"
+msgstr "Dibandingkan secara:"
+
+#: src/dupe.c:3169 src/preferences.c:870 src/search.c:2761
+msgid "Thumbnails"
+msgstr "Thumbnail"
+
+#: src/dupe.c:3176
+msgid "Compare two file sets"
+msgstr "Bandingkan dua set file"
+
+#: src/editors.c:50
+msgid "The Gimp"
+msgstr "The Gimp"
+
+#: src/editors.c:51
+msgid "XV"
+msgstr "XV"
+
+#: src/editors.c:52
+msgid "Xpaint"
+msgstr "Xpaint"
+
+#: src/editors.c:58
+#, fuzzy
+msgid "Rotate jpeg clockwise"
+msgstr "Putar searah jarum jam"
+
+#: src/editors.c:59
+#, fuzzy
+msgid "Rotate jpeg counterclockwise"
+msgstr "Putar berlawanan dengan arah jam"
+
+#: src/editors.c:104
+#, fuzzy
+msgid "stopping..."
+msgstr "Membandingkan..."
+
+#: src/editors.c:131
+msgid "Edit command results"
+msgstr ""
+
+#: src/editors.c:134
+#, c-format
+msgid "Output of %s"
+msgstr ""
+
+#: src/editors.c:303
+#, fuzzy, c-format
+msgid ""
+"Failed to run command:\n"
+"%s\n"
+msgstr ""
+"Tidak dapat memuatkan:\n"
+"%s"
+
+#: src/editors.c:441
+#, fuzzy
+msgid "stopped by user"
+msgstr "Urutkan berdasarkan angka"
+
+#: src/exif.c:111 src/exif.c:124 src/exif.c:138 src/exif.c:163 src/exif.c:572
+#: src/exif.c:1626 src/exif.c:1629 src/exif.c:1694
+#, fuzzy
+msgid "unknown"
+msgstr "dalam (tidak dikenal)..."
+
+#: src/exif.c:112
+#, fuzzy
+msgid "top left"
+msgstr "Hapus"
+
+#: src/exif.c:113
+msgid "top right"
+msgstr ""
+
+#: src/exif.c:114
+msgid "bottom right"
+msgstr ""
+
+#: src/exif.c:115
+msgid "bottom left"
+msgstr ""
+
+#: src/exif.c:116
+#, fuzzy
+msgid "left top"
+msgstr "Hapus"
+
+#: src/exif.c:117
+msgid "right top"
+msgstr ""
+
+#: src/exif.c:118
+msgid "right bottom"
+msgstr ""
+
+#: src/exif.c:119
+msgid "left bottom"
+msgstr ""
+
+#: src/exif.c:126
+msgid "inch"
+msgstr ""
+
+#: src/exif.c:127
+msgid "centimeter"
+msgstr ""
+
+#: src/exif.c:139
+msgid "average"
+msgstr ""
+
+#: src/exif.c:140
+msgid "center weighted"
+msgstr ""
+
+#: src/exif.c:141
+msgid "spot"
+msgstr ""
+
+#: src/exif.c:142
+msgid "multi-spot"
+msgstr ""
+
+#: src/exif.c:143
+msgid "multi-segment"
+msgstr ""
+
+#: src/exif.c:144
+msgid "partial"
+msgstr ""
+
+#: src/exif.c:145 src/exif.c:183
+msgid "other"
+msgstr ""
+
+#: src/exif.c:150
+msgid "not defined"
+msgstr ""
+
+#: src/exif.c:151
+msgid "manual"
+msgstr ""
+
+#: src/exif.c:152
+#, fuzzy
+msgid "normal"
+msgstr "Normal"
+
+#: src/exif.c:153
+msgid "aperture"
+msgstr ""
+
+#: src/exif.c:154
+msgid "shutter"
+msgstr ""
+
+#: src/exif.c:155
+#, fuzzy
+msgid "creative"
+msgstr "Buat"
+
+#: src/exif.c:156
+msgid "action"
+msgstr ""
+
+#: src/exif.c:157
+msgid "portrait"
+msgstr ""
+
+#: src/exif.c:158
+msgid "landscape"
+msgstr ""
+
+#: src/exif.c:164
+msgid "daylight"
+msgstr ""
+
+#: src/exif.c:165
+msgid "fluorescent"
+msgstr ""
+
+#: src/exif.c:166
+msgid "tungsten (incandescent)"
+msgstr ""
+
+#: src/exif.c:167
+msgid "flash"
+msgstr ""
+
+#: src/exif.c:188 src/exif.c:1649 src/info.c:232
+msgid "no"
+msgstr "tidak"
+
+#. flash fired (bit 0)
+#: src/exif.c:189 src/exif.c:1649 src/info.c:232
+msgid "yes"
+msgstr "ya"
+
+#: src/exif.c:190
+msgid "yes, not detected by strobe"
+msgstr ""
+
+#: src/exif.c:191
+msgid "yes, detected by strobe"
+msgstr ""
+
+#: src/exif.c:288
+#, fuzzy
+msgid "Image description"
+msgstr "deskripsi"
+
+#: src/exif.c:291
+#, fuzzy
+msgid "Orientation"
+msgstr "Dimensi:"
+
+#: src/exif.c:302
+#, fuzzy
+msgid "Copyright"
+msgstr "Salin"
+
+#: src/exif.c:307
+msgid "Exposure program"
+msgstr ""
+
+#: src/exif.c:309 src/exif.c:345 src/exif.c:421
+msgid "ISO sensitivity"
+msgstr ""
+
+#: src/exif.c:312
+msgid "Date original"
+msgstr ""
+
+#: src/exif.c:313
+msgid "Date digitized"
+msgstr ""
+
+#: src/exif.c:316 src/exif.c:418
+msgid "Shutter speed"
+msgstr ""
+
+#: src/exif.c:317 src/exif.c:419
+msgid "Aperture"
+msgstr ""
+
+#: src/exif.c:319 src/exif.c:420
+msgid "Exposure bias"
+msgstr ""
+
+#: src/exif.c:321 src/exif.c:423
+msgid "Subject distance"
+msgstr ""
+
+#: src/exif.c:322
+#, fuzzy
+msgid "Metering mode"
+msgstr "Metode dithering:"
+
+#: src/exif.c:323
+msgid "Light source"
+msgstr ""
+
+#: src/exif.c:324 src/exif.c:424
+msgid "Flash"
+msgstr ""
+
+#: src/exif.c:325 src/exif.c:422
+msgid "Focal length"
+msgstr ""
+
+#. ExifImageWidth, ExifImageHeight can also be unsigned short
+#: src/exif.c:335
+msgid "Width"
+msgstr ""
+
+#: src/exif.c:336
+msgid "Height"
+msgstr ""
+
+#: src/exif.c:416
+msgid "Camera"
+msgstr ""
+
+#: src/exif.c:425
+msgid "Resolution"
+msgstr ""
+
+#: src/exif.c:1625
+msgid "infinity"
+msgstr ""
+
+#: src/exif.c:1653
+#, fuzzy
+msgid "mode:"
+msgstr "File"
+
+#: src/exif.c:1657 src/utilops.c:1300
+#, fuzzy
+msgid "on"
+msgstr "Tidak ada"
+
+#: src/exif.c:1660 src/utilops.c:1300
+msgid "off"
+msgstr ""
+
+#: src/exif.c:1663
+msgid "auto"
+msgstr ""
+
+#: src/exif.c:1669
+msgid "not detected by strobe"
+msgstr ""
+
+#: src/exif.c:1670
+msgid "detected by strobe"
+msgstr ""
+
+#. we ignore flash function (bit 5)
+#. red-eye (bit 6)
+#: src/exif.c:1675
+msgid "red-eye reduction"
+msgstr ""
+
+#: src/exif.c:1694
+msgid "dot"
+msgstr ""
+
+#: src/filelist.c:523
+#, c-format
+msgid "%d bytes"
+msgstr "%d bytes"
+
+#: src/filelist.c:527
+#, c-format
+msgid "%.1f K"
+msgstr "%.1f K"
+
+#: src/filelist.c:531
+#, c-format
+msgid "%.1f MB"
+msgstr "%.1f MB"
+
+#: src/filelist.c:536
+#, fuzzy, c-format
+msgid "%.1f GB"
+msgstr "%.1f MB"
+
+#: src/fullscreen.c:267
+msgid "GQview full screen"
+msgstr "GQview layar penuh"
+
+#: src/fullscreen.c:397
+#, fuzzy
+msgid "Full size"
+msgstr "Ukuran file:"
+
+#: src/fullscreen.c:402
+msgid "Monitor"
+msgstr ""
+
+#: src/fullscreen.c:407 src/layout.c:452
+msgid "Screen"
+msgstr ""
+
+#: src/fullscreen.c:644
+#, fuzzy
+msgid "Stay above other windows"
+msgstr "Sesuaikan image ke jendela"
+
+#: src/fullscreen.c:651
+msgid "Determined by Window Manager"
+msgstr ""
+
+#: src/fullscreen.c:652
+msgid "Active screen"
+msgstr ""
+
+#: src/fullscreen.c:654
+msgid "Active monitor"
+msgstr ""
+
+#: src/img-view.c:1237 src/layout_image.c:719 src/layout_util.c:822
+#: src/pan-view.c:2774
+#, fuzzy
+msgid "Zoom _in"
+msgstr "Perbesar"
+
+#: src/img-view.c:1238 src/layout_image.c:720 src/layout_util.c:823
+#: src/pan-view.c:2776
+#, fuzzy
+msgid "Zoom _out"
+msgstr "Perkecil"
+
+#: src/img-view.c:1239 src/layout_image.c:721 src/layout_util.c:824
+#: src/pan-view.c:2778
+#, fuzzy
+msgid "Zoom _1:1"
+msgstr "Zoom 1:1"
+
+#: src/img-view.c:1240 src/layout_image.c:722
+#, fuzzy
+msgid "Fit image to _window"
+msgstr "Sesuaikan image ke jendela"
+
+#: src/img-view.c:1245 src/layout_image.c:728 src/layout_util.c:820
+#, fuzzy
+msgid "Set as _wallpaper"
+msgstr "Set sebagai wallpaper"
+
+#: src/img-view.c:1263 src/layout_image.c:753
+#, fuzzy
+msgid "_Stop slideshow"
+msgstr "Hentikan slideshow"
+
+#: src/img-view.c:1266 src/layout_image.c:756
+#, fuzzy
+msgid "Continue slides_how"
+msgstr "Lanjutkan slideshow"
+
+#: src/img-view.c:1271 src/img-view.c:1279 src/layout_image.c:761
+#: src/layout_image.c:768
+#, fuzzy
+msgid "Pause slides_how"
+msgstr "Pause slideshow"
+
+#: src/img-view.c:1277 src/layout_image.c:767
+#, fuzzy
+msgid "_Start slideshow"
+msgstr "Mulai slideshow"
+
+#: src/img-view.c:1285 src/layout_image.c:778 src/pan-view.c:2844
+#, fuzzy
+msgid "Exit _full screen"
+msgstr "Keluar layar penuh"
+
+#: src/img-view.c:1289 src/layout_image.c:774 src/pan-view.c:2848
+#, fuzzy
+msgid "_Full screen"
+msgstr "Layar penuh"
+
+#: src/img-view.c:1293 src/layout_util.c:796 src/pan-view.c:2852
+#, fuzzy
+msgid "C_lose window"
+msgstr "Tutup jendela"
+
+#: src/info.c:367
+msgid "File size:"
+msgstr "Ukuran file:"
+
+#: src/info.c:369
+msgid "Dimensions:"
+msgstr "Dimensi:"
+
+#: src/info.c:370
+msgid "Transparent:"
+msgstr "Transparan:"
+
+#: src/info.c:371 src/print.c:3386
+msgid "Image size:"
+msgstr "Ukuran image:"
+
+#: src/info.c:373
+msgid "Compress ratio:"
+msgstr "Rasio kompresi:"
+
+#: src/info.c:374
+#, fuzzy
+msgid "File type:"
+msgstr "Tanggal file:"
+
+#: src/info.c:376
+msgid "Owner:"
+msgstr "Pemilik:"
+
+#: src/info.c:377
+msgid "Group:"
+msgstr "Grup:"
+
+#: src/info.c:380 src/preferences.c:851
+msgid "General"
+msgstr "Umum"
+
+#: src/info.c:461
+#, c-format
+msgid "Image %d of %d"
+msgstr ""
+
+#: src/info.c:684
+msgid "Image properties - GQview"
+msgstr "Properti image.-.GQview"
+
+#: src/layout.c:274 src/view_file_icon.c:305 src/view_file_list.c:416
+msgid "Ascending"
+msgstr "Menaik"
+
+#: src/layout.c:399
+msgid "Color profiles not supported"
+msgstr ""
+
+#: src/layout.c:400
+msgid ""
+"This installation of GQview was not built with support for color profiles."
+msgstr ""
+
+#: src/layout.c:410
+msgid "Use _color profiles"
+msgstr ""
+
+#: src/layout.c:415
+msgid "Use profile from _image"
+msgstr ""
+
+#: src/layout.c:419 src/layout.c:436
+#, c-format
+msgid "Input _%d:"
+msgstr ""
+
+#: src/layout.c:461
+msgid "_Screen profile"
+msgstr ""
+
+#: src/layout.c:528
+msgid " Slideshow"
+msgstr " Slideshow"
+
+#: src/layout.c:532
+msgid " Paused"
+msgstr " Pause"
+
+#: src/layout.c:549
+#, c-format
+msgid "%s, %d files (%s, %d)%s"
+msgstr "%s, %d file (%s, %d)%s"
+
+#: src/layout.c:556
+#, c-format
+msgid "%s, %d files%s"
+msgstr "%s, %d file%s"
+
+#: src/layout.c:561
+#, c-format
+msgid "%d files%s"
+msgstr "%d file%s"
+
+#: src/layout.c:590
+#, c-format
+msgid "(no read permission) %s bytes"
+msgstr "(tidak ada ijin membaca) %s byte"
+
+#: src/layout.c:594
+#, c-format
+msgid "( ? x ? ) %s bytes"
+msgstr "( ? x ? ) %s byte"
+
+#: src/layout.c:602
+#, c-format
+msgid "( %d x %d ) %s bytes"
+msgstr "( %d x %d ) %s byte"
+
+#: src/layout.c:1304
+msgid "GQview Tools"
+msgstr "Tool GQview"
+
+#: src/layout.c:1934
+#, fuzzy
+msgid "Invalid geometry\n"
+msgstr "Namafile tidak valid"
+
+#: src/layout_config.c:57
+msgid "Tools"
+msgstr "Tool"
+
+#: src/layout_config.c:57 src/ui_pathsel.c:1174
+msgid "Files"
+msgstr "File"
+
+#: src/layout_config.c:57 src/preferences.c:916 src/print.c:114
+msgid "Image"
+msgstr "Image"
+
+#: src/layout_config.c:363
+msgid "(drag to change order)"
+msgstr "(tarik untuk merubah urutan)"
+
+#: src/layout_image.c:783
+#, fuzzy
+msgid "Hide file _list"
+msgstr "Sembunyikan daftar file"
+
+#: src/layout_util.c:654 src/menu.c:74
+#, c-format
+msgid "in %s..."
+msgstr "dalam %s..."
+
+#: src/layout_util.c:658 src/menu.c:76
+msgid "in (unknown)..."
+msgstr "dalam (tidak dikenal)..."
+
+#: src/layout_util.c:666
+#, fuzzy
+msgid "empty"
+msgstr "Kosong"
+
+#: src/layout_util.c:777
+#, fuzzy
+msgid "_File"
+msgstr "/_File"
+
+#: src/layout_util.c:778 src/menu.c:91
+#, fuzzy
+msgid "_Edit"
+msgstr "/_Edit"
+
+#: src/layout_util.c:779 src/menu.c:259
+#, fuzzy
+msgid "_Adjust"
+msgstr "Sesuaikan"
+
+#: src/layout_util.c:781
+#, fuzzy
+msgid "_Help"
+msgstr "/_Help"
+
+#: src/layout_util.c:783
+#, fuzzy
+msgid "New _window"
+msgstr "/File/New _window"
+
+#: src/layout_util.c:784
+#, fuzzy
+msgid "_New collection"
+msgstr "Simpan koleksi"
+
+#: src/layout_util.c:785
+#, fuzzy
+msgid "_Open collection..."
+msgstr "Buka koleksi"
+
+#: src/layout_util.c:786
+#, fuzzy
+msgid "Open _recent"
+msgstr "/File/Open _recent"
+
+#: src/layout_util.c:787
+#, fuzzy
+msgid "_Search..."
+msgstr "Membandingkan..."
+
+#: src/layout_util.c:789
+#, fuzzy
+msgid "Pan _view"
+msgstr "Bantuan - GQview"
+
+#: src/layout_util.c:790
+#, fuzzy
+msgid "_Print..."
+msgstr "/File/_Rename..."
+
+#: src/layout_util.c:791
+#, fuzzy
+msgid "N_ew folder..."
+msgstr "Folder baru..."
+
+#: src/layout_util.c:797
+#, fuzzy
+msgid "_Quit"
+msgstr "Kualitas"
+
+#: src/layout_util.c:809 src/menu.c:201
+#, fuzzy
+msgid "_Rotate clockwise"
+msgstr "Putar searah jarum jam"
+
+#: src/layout_util.c:810 src/menu.c:204
+#, fuzzy
+msgid "Rotate _counterclockwise"
+msgstr "Putar berlawanan dengan arah jam"
+
+#: src/layout_util.c:811
+#, fuzzy
+msgid "Rotate 1_80"
+msgstr "Rotasi 180"
+
+#: src/layout_util.c:812 src/menu.c:210
+#, fuzzy
+msgid "_Mirror"
+msgstr "Cermin"
+
+#: src/layout_util.c:813 src/menu.c:213
+#, fuzzy
+msgid "_Flip"
+msgstr "Balik"
+
+#: src/layout_util.c:814 src/menu.c:216
+msgid "_Grayscale"
+msgstr ""
+
+#: src/layout_util.c:816
+#, fuzzy
+msgid "Select _all"
+msgstr "Pilih semua"
+
+#: src/layout_util.c:817
+#, fuzzy
+msgid "Select _none"
+msgstr "Tidak ada yang dipilih"
+
+#: src/layout_util.c:818
+#, fuzzy
+msgid "P_references..."
+msgstr "Properti"
+
+#: src/layout_util.c:819
+msgid "_Thumbnail maintenance..."
+msgstr ""
+
+#: src/layout_util.c:825
+#, fuzzy
+msgid "_Zoom to fit"
+msgstr "/View/_Zoom to fit"
+
+#: src/layout_util.c:826
+#, fuzzy
+msgid "F_ull screen"
+msgstr "Layar penuh"
+
+#: src/layout_util.c:827
+#, fuzzy
+msgid "_Hide file list"
+msgstr "Sembunyikan daftar file"
+
+#: src/layout_util.c:828
+#, fuzzy
+msgid "Toggle _slideshow"
+msgstr "Hentikan slideshow"
+
+#: src/layout_util.c:829
+#, fuzzy
+msgid "_Refresh"
+msgstr "Refresh"
+
+#: src/layout_util.c:831
+#, fuzzy
+msgid "_Contents"
+msgstr "/Help/_About"
+
+#: src/layout_util.c:832
+#, fuzzy
+msgid "_Keyboard shortcuts"
+msgstr "/Help/_Keyboard shortcuts"
+
+#: src/layout_util.c:833
+#, fuzzy
+msgid "_Release notes"
+msgstr "/Help/_Release notes"
+
+#: src/layout_util.c:834
+#, fuzzy
+msgid "_About"
+msgstr "/Help/_About"
+
+#: src/layout_util.c:838 src/layout_util.c:1086
+#, fuzzy
+msgid "_Thumbnails"
+msgstr "Thumbnail"
+
+#: src/layout_util.c:839
+#, fuzzy
+msgid "Tr_ee"
+msgstr "/View/Tr_ee"
+
+#: src/layout_util.c:840
+#, fuzzy
+msgid "_Float file list"
+msgstr "/View/_Float file list"
+
+#: src/layout_util.c:841
+#, fuzzy
+msgid "Hide tool_bar"
+msgstr "/View/Hide tool_bar"
+
+#: src/layout_util.c:842
+#, fuzzy
+msgid "_Keywords"
+msgstr "/View/I_cons"
+
+#: src/layout_util.c:843
+#, fuzzy
+msgid "E_xif data"
+msgstr "/View/_List"
+
+#: src/layout_util.c:844
+#, fuzzy
+msgid "Sort _manager"
+msgstr "Urutkan berdasarkan nama"
+
+#: src/layout_util.c:848
+#, fuzzy
+msgid "_List"
+msgstr "/View/_List"
+
+#: src/layout_util.c:849
+#, fuzzy
+msgid "I_cons"
+msgstr "/View/I_cons"
+
+#: src/layout_util.c:1087
+msgid "Show thumbnails"
+msgstr "Tampilkan thumbnail"
+
+#: src/layout_util.c:1092
+#, fuzzy
+msgid "Change to home folder"
+msgstr "Rubah ke home direktori"
+
+#: src/layout_util.c:1094
+msgid "Refresh file list"
+msgstr "Refresh daftar file"
+
+#: src/layout_util.c:1096
+msgid "Zoom in"
+msgstr "Perbesar"
+
+#: src/layout_util.c:1098
+msgid "Zoom out"
+msgstr "Perkecil"
+
+#: src/layout_util.c:1100 src/preferences.c:945
+msgid "Fit image to window"
+msgstr "Sesuaikan image ke jendela"
+
+#: src/layout_util.c:1102
+msgid "Set zoom 1:1"
+msgstr "Set zoom 1:1"
+
+#: src/layout_util.c:1104
+msgid "Configure options"
+msgstr "Opsi konfigurasi"
+
+#: src/layout_util.c:1105
+#, fuzzy
+msgid "_Float"
+msgstr "Normal"
+
+#: src/layout_util.c:1106
+msgid "Float Controls"
+msgstr "Kendali Ambang"
+
+#: src/main.c:237
+msgid "Help - GQview"
+msgstr "Bantuan - GQview"
+
+#: src/main.c:460 src/main.c:1376
+msgid "Command line"
+msgstr "Perintah baris"
+
+#. short, long                  callback,               extra, prefer,description
+#: src/main.c:498
+#, fuzzy
+msgid "next image"
+msgstr "Preload gambar berikutnya"
+
+#: src/main.c:499
+msgid "previous image"
+msgstr ""
+
+#: src/main.c:500
+#, fuzzy
+msgid "first image"
+msgstr "%d image"
+
+#: src/main.c:501
+#, fuzzy
+msgid "last image"
+msgstr "Preload gambar berikutnya"
+
+#: src/main.c:502
+#, fuzzy
+msgid "toggle full screen"
+msgstr "Keluar layar penuh"
+
+#: src/main.c:503
+#, fuzzy
+msgid "start full screen"
+msgstr "Keluar layar penuh"
+
+#: src/main.c:504
+#, fuzzy
+msgid "stop full screen"
+msgstr "Keluar layar penuh"
+
+#: src/main.c:505
+#, fuzzy
+msgid "toggle slide show"
+msgstr "Hentikan slideshow"
+
+#: src/main.c:506
+#, fuzzy
+msgid "start slide show"
+msgstr "Mulai slideshow"
+
+#: src/main.c:507
+#, fuzzy
+msgid "stop slide show"
+msgstr "Hentikan slideshow"
+
+#: src/main.c:508
+#, fuzzy
+msgid "start recursive slide show"
+msgstr "Mulai slideshow"
+
+#: src/main.c:509
+msgid "set slide show delay in seconds"
+msgstr ""
+
+#: src/main.c:510
+msgid "show tools"
+msgstr ""
+
+#: src/main.c:511
+#, fuzzy
+msgid "hide tools"
+msgstr "Tool GQview"
+
+#: src/main.c:512
+msgid "quit"
+msgstr ""
+
+#: src/main.c:513
+#, fuzzy
+msgid "open file"
+msgstr ""
+"Ganti nama file:\n"
+"%s\n"
+"ke:"
+
+#: src/main.c:514
+#, fuzzy
+msgid "open file in new window"
+msgstr "Lihat di jendela baru"
+
+#: src/main.c:580
+msgid "Remote command list:\n"
+msgstr ""
+
+#: src/main.c:638
+msgid "Remote GQview not running, starting..."
+msgstr ""
+
+#: src/main.c:773
+msgid "Remote not available\n"
+msgstr ""
+
+#: src/main.c:991
+msgid ""
+"Usage: gqview [options] [path]\n"
+"\n"
+msgstr ""
+"Penggunaan: gqview [options] [path]\n"
+"\n"
+
+#: src/main.c:992
+msgid "valid options are:\n"
+msgstr "opsi valid:\n"
+
+#: src/main.c:993
+msgid "  +t, --with-tools           force show of tools\n"
+msgstr "  +t, --with-tools           paksa tampilkan tool\n"
+
+#: src/main.c:994
+msgid "  -t, --without-tools        force hide of tools\n"
+msgstr "  -t, --without-tools        paksa sembunyikan tool\n"
+
+#: src/main.c:995
+msgid "  -f, --fullscreen           start in full screen mode\n"
+msgstr "  -f, --fullscreen           mulai dengan mode layar penuh\n"
+
+#: src/main.c:996
+msgid "  -s, --slideshow            start in slideshow mode\n"
+msgstr "  -s, --slideshow            mulai dalam mode slideshow\n"
+
+#: src/main.c:997
+msgid "  -l, --list                 open collection window for command line\n"
+msgstr ""
+"  -l, --list                 buka jendela koleksi untuk perintah baris\n"
+
+#: src/main.c:998
+msgid "      --geometry=GEOMETRY    set main window location\n"
+msgstr ""
+
+#: src/main.c:999
+#, fuzzy
+msgid "  -r, --remote               send following commands to open window\n"
+msgstr ""
+"  -l, --list                 buka jendela koleksi untuk perintah baris\n"
+
+#: src/main.c:1000
+msgid "  -rh,--remote-help          print remote command list\n"
+msgstr ""
+
+#: src/main.c:1001
+msgid "  --debug                    turn on debug output\n"
+msgstr "  --debug                    adakan output debug\n"
+
+#: src/main.c:1002
+msgid "  -v, --version              print version info\n"
+msgstr "  -v, --version              cetak info versi\n"
+
+#: src/main.c:1003
+msgid ""
+"  -h, --help                 show this message\n"
+"\n"
+msgstr ""
+"  -h, --help                 tampilkan pesan ini\n"
+"\n"
+
+#: src/main.c:1017
+#, c-format
+msgid ""
+"invalid or ignored: %s\n"
+"Use --help for options\n"
+msgstr ""
+"tidak valid atau diabaikan: %s\n"
+"Gunakan --help untuk opsi\n"
+
+#: src/main.c:1093
+#, c-format
+msgid "Creating GQview dir:%s\n"
+msgstr "Membuat direktori GQView: %s\n"
+
+#: src/main.c:1099
+#, c-format
+msgid "Could not create dir:%s\n"
+msgstr "Tidak dapat membuat dir: %s\n"
+
+#: src/main.c:1120 src/ui_bookmark.c:858 src/ui_pathsel.c:1042
+msgid "Home"
+msgstr "Rumah"
+
+#: src/main.c:1122 src/ui_bookmark.c:865
+msgid "Desktop"
+msgstr ""
+
+#: src/main.c:1222
+msgid "GQview - exit"
+msgstr "GQview - keluar"
+
+#: src/main.c:1226
+#, fuzzy
+msgid "Quit GQview"
+msgstr "Bantuan - GQview"
+
+#: src/main.c:1226
+#, fuzzy
+msgid "Collections have been modified. Quit anyway?"
+msgstr ""
+"Koleksi telah dimodifikasi.\n"
+"Tetap keluar?"
+
+#: src/menu.c:115
+#, fuzzy
+msgid "Sort by size"
+msgstr "Urutkan berdasarkan ukuran"
+
+#: src/menu.c:118
+#, fuzzy
+msgid "Sort by date"
+msgstr "Urutkan berdasarkan tanggal"
+
+#: src/menu.c:121
+msgid "Unsorted"
+msgstr "Tidak diurutkan"
+
+#: src/menu.c:124
+#, fuzzy
+msgid "Sort by path"
+msgstr "Urutkan berdasarkan path"
+
+#: src/menu.c:127
+#, fuzzy
+msgid "Sort by number"
+msgstr "Urutkan berdasarkan angka"
+
+#: src/menu.c:131
+#, fuzzy
+msgid "Sort by name"
+msgstr "Urutkan berdasarkan nama"
+
+#: src/menu.c:182
+msgid "Sort"
+msgstr "Urutkan"
+
+#: src/menu.c:207
+#, fuzzy
+msgid "Rotate _180"
+msgstr "Rotasi 180"
+
+#: src/pan-view.c:467
+#, fuzzy, c-format
+msgid "%d images, %s"
+msgstr "%d image"
+
+#: src/pan-view.c:477
+#, c-format
+msgid "The pan view does not support the folder \"%s\"."
+msgstr ""
+
+#: src/pan-view.c:478
+msgid "Folder not supported"
+msgstr ""
+
+#: src/pan-view.c:1070 src/pan-view.c:1086
+#, fuzzy
+msgid "Reading image data..."
+msgstr "Membaca kemiripan data..."
+
+#: src/pan-view.c:1145
+#, fuzzy
+msgid "Sorting images..."
+msgstr "Membandingkan..."
+
+#: src/pan-view.c:1525 src/pan-view.c:1891
+#, fuzzy
+msgid "Date:"
+msgstr "Tanggal"
+
+#: src/pan-view.c:1527 src/preferences.c:873 src/print.c:3216 src/print.c:3423
+msgid "Size:"
+msgstr "Ukuran:"
+
+#: src/pan-view.c:1629
+msgid "path found"
+msgstr ""
+
+#: src/pan-view.c:1629
+#, fuzzy
+msgid "filename found"
+msgstr "Namafile:"
+
+#: src/pan-view.c:1677
+msgid "partial match"
+msgstr ""
+
+#: src/pan-view.c:1888 src/pan-view.c:1921
+msgid "no match"
+msgstr ""
+
+#: src/pan-view.c:2247 src/search.c:2131
+msgid "Folder not found"
+msgstr ""
+
+#: src/pan-view.c:2248
+msgid "The entered path is not a folder"
+msgstr ""
+
+#: src/pan-view.c:2354
+#, fuzzy
+msgid "Pan View - GQview"
+msgstr "Bantuan - GQview"
+
+#: src/pan-view.c:2376
+#, fuzzy
+msgid "Timeline"
+msgstr "Bilinear"
+
+#: src/pan-view.c:2377
+#, fuzzy
+msgid "Calendar"
+msgstr "Bersihkan"
+
+#: src/pan-view.c:2379
+#, fuzzy
+msgid "Folders (flower)"
+msgstr "File"
+
+#: src/pan-view.c:2380
+msgid "Grid"
+msgstr ""
+
+#: src/pan-view.c:2389
+#, fuzzy
+msgid "Dots"
+msgstr "Xpaint"
+
+#: src/pan-view.c:2390
+#, fuzzy
+msgid "No Images"
+msgstr "Image"
+
+#: src/pan-view.c:2391
+#, fuzzy
+msgid "Small Thumbnails"
+msgstr "Thumbnail"
+
+#: src/pan-view.c:2392
+#, fuzzy
+msgid "Normal Thumbnails"
+msgstr "Thumbnail"
+
+#: src/pan-view.c:2393
+#, fuzzy
+msgid "Large Thumbnails"
+msgstr "Menghapus thumbnail"
+
+#: src/pan-view.c:2394 src/pan-view.c:2834
+msgid "1:10 (10%)"
+msgstr ""
+
+#: src/pan-view.c:2395 src/pan-view.c:2830
+msgid "1:4 (25%)"
+msgstr ""
+
+#: src/pan-view.c:2396 src/pan-view.c:2826
+msgid "1:3 (33%)"
+msgstr ""
+
+#: src/pan-view.c:2397 src/pan-view.c:2822
+msgid "1:2 (50%)"
+msgstr ""
+
+#: src/pan-view.c:2398
+msgid "1:1 (100%)"
+msgstr ""
+
+#: src/pan-view.c:2446
+#, fuzzy
+msgid "Find:"
+msgstr "Filter:"
+
+#: src/pan-view.c:2489
+#, fuzzy
+msgid "Use Exif date"
+msgstr "/View/_List"
+
+#: src/pan-view.c:2502
+msgid "Find"
+msgstr ""
+
+#: src/pan-view.c:2569
+msgid "Pan View Performance"
+msgstr ""
+
+#: src/pan-view.c:2576
+msgid "Pan view performance may be poor."
+msgstr ""
+
+#: src/pan-view.c:2577
+msgid ""
+"To improve performance of thumbnails in the pan view the following options "
+"can be enabled. Note that both options must be enabled to notice a change in "
+"performance."
+msgstr ""
+
+#: src/pan-view.c:2585 src/preferences.c:876
+msgid "Cache thumbnails"
+msgstr "Cache thumbnail"
+
+#: src/pan-view.c:2587 src/preferences.c:882
+msgid "Use shared thumbnail cache"
+msgstr ""
+
+#: src/pan-view.c:2593
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/pan-view.c:2802
+#, fuzzy
+msgid "Sort by E_xif date"
+msgstr "Urutkan berdasarkan tanggal"
+
+#: src/pan-view.c:2808
+msgid "_Show Exif information"
+msgstr ""
+
+#: src/pan-view.c:2810
+#, fuzzy
+msgid "Show im_age"
+msgstr "Tampilkan sembunyi"
+
+#: src/pan-view.c:2814
+#, fuzzy
+msgid "_None"
+msgstr "Tidak ada"
+
+#: src/pan-view.c:2818
+#, fuzzy
+msgid "_Full size"
+msgstr "Ukuran file:"
+
+#: src/preferences.c:414
+msgid "Nearest (worst, but fastest)"
+msgstr "Terdekat (terjelek, namun tercepat)"
+
+#: src/preferences.c:416
+msgid "Tiles"
+msgstr "Ubin"
+
+#: src/preferences.c:418
+msgid "Bilinear"
+msgstr "Bilinear"
+
+#: src/preferences.c:420
+msgid "Hyper (best, but slowest)"
+msgstr "Hiper (terbaik, namun terlambat)"
+
+#: src/preferences.c:448
+msgid "None"
+msgstr "Tidak ada"
+
+#: src/preferences.c:449
+msgid "Normal"
+msgstr "Normal"
+
+#: src/preferences.c:450
+msgid "Best"
+msgstr "Terbaik"
+
+#: src/preferences.c:528 src/print.c:369
+msgid "Custom"
+msgstr ""
+
+#: src/preferences.c:692 src/preferences.c:695
+msgid "Reset filters"
+msgstr "Reset filter"
+
+#: src/preferences.c:696
+msgid ""
+"This will reset the file filters to the defaults.\n"
+"Continue?"
+msgstr ""
+"Akan mereset file filter ke bakunya.\n"
+"Lanjutkan?"
+
+#: src/preferences.c:729 src/preferences.c:732
+#, fuzzy
+msgid "Reset editors"
+msgstr "Reset filter"
+
+#: src/preferences.c:733
+#, fuzzy
+msgid ""
+"This will reset the edit commands to the defaults.\n"
+"Continue?"
+msgstr ""
+"Akan mereset file filter ke bakunya.\n"
+"Lanjutkan?"
+
+#: src/preferences.c:757 src/preferences.c:760
+#, fuzzy
+msgid "Clear trash"
+msgstr "Hapus cache"
+
+#: src/preferences.c:761
+msgid "This will remove the trash contents."
+msgstr ""
+
+#: src/preferences.c:800
+#, fuzzy
+msgid "GQview Preferences"
+msgstr "GQview - ganti nama"
+
+#: src/preferences.c:854
+#, fuzzy
+msgid "Startup"
+msgstr "Mulai #"
+
+#: src/preferences.c:856
+#, fuzzy
+msgid "Change to folder:"
+msgstr "Rubah ke home direktori"
+
+#: src/preferences.c:867
+msgid "Use current"
+msgstr "Gunakan saat ini"
+
+#: src/preferences.c:874 src/preferences.c:925
+msgid "Quality:"
+msgstr "Kualitas:"
+
+#: src/preferences.c:888
+msgid "Cache thumbnails into .thumbnails"
+msgstr "Cache thumbnail ke thumbnail"
+
+#: src/preferences.c:892
+msgid "Use xvpics thumbnails when found (read only)"
+msgstr "Gunakan xvpics thumbnail bila ditemukan (hanya-baca)"
+
+#: src/preferences.c:896
+msgid "Faster jpeg thumbnailing (may reduce quality)"
+msgstr ""
+
+#: src/preferences.c:899
+msgid "Slide show"
+msgstr "Slide show"
+
+#: src/preferences.c:902
+#, fuzzy
+msgid "Delay between image change:"
+msgstr "Tunda sebelum gambar berubah (detik):"
+
+#: src/preferences.c:902
+msgid "seconds"
+msgstr ""
+
+#: src/preferences.c:908
+msgid "Random"
+msgstr "Acak"
+
+#: src/preferences.c:909
+msgid "Repeat"
+msgstr "Berulang"
+
+#: src/preferences.c:919
+#, fuzzy
+msgid "Zoom"
+msgstr "Perbesar"
+
+#: src/preferences.c:922
+msgid "Dithering method:"
+msgstr "Metode dithering:"
+
+#: src/preferences.c:927
+msgid "Two pass zooming"
+msgstr "Zoom 2-pass"
+
+#: src/preferences.c:930
+#, fuzzy
+msgid "Allow enlargement of image for zoom to fit"
+msgstr "Ekspansi gambar untuk zoom agar sesuai."
+
+#: src/preferences.c:934
+msgid "Zoom increment:"
+msgstr "Inkrementasi zoom:"
+
+#: src/preferences.c:939
+msgid "When new image is selected:"
+msgstr "Ketika gambar baru terpilih:"
+
+#: src/preferences.c:942
+msgid "Zoom to original size"
+msgstr "Zoom ke ukuran asli"
+
+#: src/preferences.c:948
+msgid "Leave Zoom at previous setting"
+msgstr "Biarkan zoom pada setting sebelumnya"
+
+#: src/preferences.c:952
+#, fuzzy
+msgid "Appearance"
+msgstr "Tambah"
+
+#: src/preferences.c:954
+msgid "Black background"
+msgstr "Latar belakang hitam"
+
+#: src/preferences.c:957
+#, fuzzy
+msgid "Convenience"
+msgstr "Lanjut"
+
+#: src/preferences.c:959
+#, fuzzy
+msgid "Refresh on file change"
+msgstr "Refresh daftar file"
+
+#: src/preferences.c:961
+msgid "Preload next image"
+msgstr "Preload gambar berikutnya"
+
+#: src/preferences.c:963
+msgid "Auto rotate image using Exif information"
+msgstr ""
+
+#: src/preferences.c:972
+msgid "Windows"
+msgstr "Jendela"
+
+#: src/preferences.c:975
+#, fuzzy
+msgid "State"
+msgstr "Mulai #"
+
+#: src/preferences.c:977
+msgid "Remember window positions"
+msgstr "Ingat posisi jendela"
+
+#: src/preferences.c:979
+msgid "Remember tool state (float/hidden)"
+msgstr "Ingat status tool (float/sembunyi)"
+
+#: src/preferences.c:984
+msgid "Fit window to image when tools are hidden/floating"
+msgstr "Sesuaikan jendela dengan gambar ketika tool sembunyi/mengambang"
+
+#: src/preferences.c:988
+msgid "Limit size when auto-sizing window (%):"
+msgstr "Batasi ukuran ketika jendela auto-sizing (%):"
+
+#: src/preferences.c:995 src/print.c:3371 src/print.c:3378
+msgid "Layout"
+msgstr "Layout"
+
+#: src/preferences.c:1008
+msgid "Filtering"
+msgstr "Filter"
+
+#: src/preferences.c:1013
+msgid "Show entries that begin with a dot"
+msgstr "Tampilkan entri yang dimulai dengan titik"
+
+#: src/preferences.c:1015
+msgid "Case sensitive sort"
+msgstr ""
+
+#: src/preferences.c:1018
+msgid "Disable File Filtering"
+msgstr "Tiadakan File Filtering"
+
+#: src/preferences.c:1021
+#, fuzzy
+msgid "File types"
+msgstr "Tanggal file:"
+
+#: src/preferences.c:1043
+#, fuzzy
+msgid "Filter"
+msgstr "Filter:"
+
+#: src/preferences.c:1080 src/preferences.c:1144
+msgid "Defaults"
+msgstr "Baku"
+
+#: src/preferences.c:1101
+msgid "Editors"
+msgstr "Editor"
+
+#: src/preferences.c:1107
+msgid "#"
+msgstr "#"
+
+#: src/preferences.c:1110 src/preferences.c:1264
+msgid "Menu name"
+msgstr "Nama menu"
+
+#: src/preferences.c:1113
+msgid "Command Line"
+msgstr "Perintah baris"
+
+#: src/preferences.c:1160
+msgid "Advanced"
+msgstr ""
+
+#: src/preferences.c:1173
+#, fuzzy
+msgid "Full screen"
+msgstr "Layar penuh"
+
+#: src/preferences.c:1181
+#, fuzzy
+msgid "Smooth image flip"
+msgstr "Ukuran image:"
+
+#: src/preferences.c:1183
+msgid "Disable screen saver"
+msgstr ""
+
+#: src/preferences.c:1186
+msgid "Delete"
+msgstr "Hapus"
+
+#: src/preferences.c:1188
+msgid "Confirm file delete"
+msgstr "Konfirmasi hapus file"
+
+#: src/preferences.c:1190
+msgid "Enable Delete key"
+msgstr "Adakan kunci hapus"
+
+#: src/preferences.c:1193
+#, fuzzy
+msgid "Safe delete"
+msgstr "Konfirmasi hapus file"
+
+#: src/preferences.c:1211
+#, fuzzy
+msgid "Maximum size:"
+msgstr "Ukuran file:"
+
+#: src/preferences.c:1211
+msgid "MB"
+msgstr ""
+
+#: src/preferences.c:1214
+msgid "View"
+msgstr "Lihat"
+
+#: src/preferences.c:1224
+msgid "Behavior"
+msgstr ""
+
+#: src/preferences.c:1226
+#, fuzzy
+msgid "Rectangular selection in icon view"
+msgstr "Seleksi kotak"
+
+#: src/preferences.c:1229
+msgid "Descend folders in tree view"
+msgstr "Folder descend dalam view pohon"
+
+#: src/preferences.c:1232
+msgid "In place renaming"
+msgstr "Menggantikan"
+
+#: src/preferences.c:1235
+msgid "Navigation"
+msgstr ""
+
+#: src/preferences.c:1237
+msgid "Progressive keyboard scrolling"
+msgstr "Scrolling keyboard progresif"
+
+#: src/preferences.c:1239
+msgid "Mouse wheel scrolls image"
+msgstr "Scrool gambar roda mouse "
+
+#: src/preferences.c:1242
+msgid "Miscellaneous"
+msgstr ""
+
+#: src/preferences.c:1244
+msgid "Store keywords and comments local to source images"
+msgstr ""
+
+#: src/preferences.c:1247
+msgid "Custom similarity threshold:"
+msgstr "Ambang kesamaan kustom:"
+
+#: src/preferences.c:1250
+msgid "Offscreen cache size (Mb per image):"
+msgstr "Ukuran cache offscreen (Mb per gambar):"
+
+#: src/preferences.c:1253
+#, fuzzy
+msgid "Color profiles"
+msgstr "Semua file"
+
+#: src/preferences.c:1261
+msgid "Type"
+msgstr ""
+
+#: src/preferences.c:1267
+#, fuzzy
+msgid "File"
+msgstr "Filter:"
+
+#: src/preferences.c:1289 src/preferences.c:1300
+#, fuzzy
+msgid "Select color profile"
+msgstr "Tidak ada yang dipilih"
+
+#: src/preferences.c:1297
+msgid "Screen:"
+msgstr ""
+
+#: src/preferences.c:1380
+#, fuzzy
+msgid "About - GQview"
+msgstr "Bantuan - GQview"
+
+#: src/preferences.c:1393
+#, fuzzy, c-format
+msgid ""
+"GQview %s\n"
+"\n"
+"Copyright (c) %s John Ellis\n"
+"website: %s\n"
+"email: %s\n"
+"\n"
+"Released under the GNU General Public License"
+msgstr ""
+"GQview %s\n"
+"\n"
+"Copyright (c) 2002 by John Ellis\n"
+"http://gqview.sourceforge.net\n"
+"gqview@users.sourceforge.net\n"
+"\n"
+"Released under the GNU General Public License"
+
+#: src/preferences.c:1411
+#, fuzzy
+msgid "Credits..."
+msgstr "Properti"
+
+#: src/print.c:115
+#, fuzzy
+msgid "Selection"
+msgstr "Tidak ada yang dipilih"
+
+#: src/print.c:116
+msgid "All"
+msgstr ""
+
+#: src/print.c:127
+msgid "One image per page"
+msgstr ""
+
+#: src/print.c:128
+msgid "Proof sheet"
+msgstr ""
+
+#: src/print.c:141
+#, fuzzy
+msgid "Default printer"
+msgstr "Baku"
+
+#: src/print.c:142
+msgid "Custom printer"
+msgstr ""
+
+#: src/print.c:143
+msgid "PostScript file"
+msgstr ""
+
+#: src/print.c:144
+#, fuzzy
+msgid "Image file"
+msgstr "Ukuran image:"
+
+#: src/print.c:158
+msgid "jpeg, low quality"
+msgstr ""
+
+#: src/print.c:159
+msgid "jpeg, normal quality"
+msgstr ""
+
+#: src/print.c:160
+msgid "jpeg, high quality"
+msgstr ""
+
+#: src/print.c:354 src/print.c:3216
+#, fuzzy
+msgid "points"
+msgstr "Xpaint"
+
+#: src/print.c:355
+msgid "millimeters"
+msgstr ""
+
+#: src/print.c:356
+msgid "centimeters"
+msgstr ""
+
+#: src/print.c:357
+msgid "inches"
+msgstr ""
+
+#: src/print.c:358
+msgid "picas"
+msgstr ""
+
+#: src/print.c:363
+msgid "Portrait"
+msgstr ""
+
+#: src/print.c:364
+msgid "Landscape"
+msgstr ""
+
+#: src/print.c:370
+msgid "Letter"
+msgstr ""
+
+#. in 8.5 x 11
+#: src/print.c:371
+msgid "Legal"
+msgstr ""
+
+#. in 8.5 x 14
+#: src/print.c:372
+msgid "Executive"
+msgstr ""
+
+#. in 7.25x 10.5
+#. mm 841 x 1189
+#. mm 594 x 841
+#. mm 420 x 594
+#. mm 297 x 420
+#. mm 210 x 297
+#. mm 148 x 210
+#. mm 105 x 148
+#. mm 353 x 500
+#. mm 250 x 353
+#. mm 176 x 250
+#. mm 125 x 176
+#: src/print.c:384
+msgid "Envelope #10"
+msgstr ""
+
+#. in 4.125 x 9.5
+#: src/print.c:385
+msgid "Envelope #9"
+msgstr ""
+
+#. in 3.875 x 8.875
+#: src/print.c:386
+msgid "Envelope C4"
+msgstr ""
+
+#. mm 229 x 324
+#: src/print.c:387
+msgid "Envelope C5"
+msgstr ""
+
+#. mm 162 x 229
+#: src/print.c:388
+msgid "Envelope C6"
+msgstr ""
+
+#. mm 114 x 162
+#: src/print.c:389
+msgid "Photo 6x4"
+msgstr ""
+
+#. in 6   x 4
+#: src/print.c:390
+msgid "Photo 8x10"
+msgstr ""
+
+#. in 8   x 10
+#: src/print.c:391
+msgid "Postcard"
+msgstr ""
+
+#. mm 100 x 148
+#: src/print.c:392
+msgid "Tabloid"
+msgstr ""
+
+#: src/print.c:548
+#, c-format
+msgid "page %d of %d"
+msgstr ""
+
+#: src/print.c:740 src/utilops.c:2287
+msgid "Preview"
+msgstr ""
+
+#: src/print.c:1048
+#, c-format
+msgid ""
+"Unable to open pipe for writing.\n"
+"\"%s\""
+msgstr ""
+
+#: src/print.c:1063 src/print.c:1503 src/ui_pathsel.c:423
+#: src/view_file_list.c:456
+#, fuzzy, c-format
+msgid "A file with name %s already exists."
+msgstr "Nama file %s sudah ada."
+
+#: src/print.c:1078 src/print.c:1558
+#, c-format
+msgid "Failure writing to file %s"
+msgstr ""
+
+#: src/print.c:1132 src/print.c:1169 src/print.c:1205 src/print.c:1322
+#: src/print.c:1413 src/print.c:1444
+msgid "SIGPIPE error writing to printer."
+msgstr ""
+
+#: src/print.c:1979
+#, c-format
+msgid "Page %d"
+msgstr ""
+
+#: src/print.c:2001 src/print.c:2006
+#, fuzzy
+msgid "Printing error"
+msgstr "Filter:"
+
+#: src/print.c:2005
+#, c-format
+msgid "An error occured printing to %s."
+msgstr ""
+
+#: src/print.c:2009
+#, fuzzy
+msgid "Details"
+msgstr "Baku"
+
+#: src/print.c:2602 src/print.c:3347
+#, fuzzy
+msgid "Print - GQview"
+msgstr "Bantuan - GQview"
+
+#: src/print.c:2606
+#, c-format
+msgid "Printing %d pages to %s."
+msgstr ""
+
+#: src/print.c:2706
+#, fuzzy
+msgid "Format:"
+msgstr "Normal"
+
+#: src/print.c:2781
+msgid "Units:"
+msgstr ""
+
+#: src/print.c:2825
+#, fuzzy
+msgid "Orientation:"
+msgstr "Dimensi:"
+
+#: src/print.c:2957
+#, fuzzy
+msgid "Destination:"
+msgstr "deskripsi"
+
+#: src/print.c:3005
+#, fuzzy
+msgid "<printer name>"
+msgstr "Namafile:"
+
+#: src/print.c:3094
+#, fuzzy
+msgid "Unlimited"
+msgstr "Tiada judul"
+
+#: src/print.c:3203
+msgid "Show"
+msgstr ""
+
+#: src/print.c:3214
+#, fuzzy
+msgid "Font"
+msgstr "Tidak ada"
+
+#: src/print.c:3374
+#, fuzzy
+msgid "Source"
+msgstr "Urutkan"
+
+#: src/print.c:3390
+#, fuzzy
+msgid "Proof size:"
+msgstr "Ukuran image:"
+
+#: src/print.c:3406
+msgid "Text"
+msgstr ""
+
+#: src/print.c:3416
+#, fuzzy
+msgid "Paper"
+msgstr "filter"
+
+#: src/print.c:3439
+msgid "Margins"
+msgstr ""
+
+#: src/print.c:3441
+msgid "Left:"
+msgstr ""
+
+#: src/print.c:3444
+msgid "Right:"
+msgstr ""
+
+#: src/print.c:3447
+#, fuzzy
+msgid "Top:"
+msgstr "Grup:"
+
+#: src/print.c:3450
+#, fuzzy
+msgid "Bottom:"
+msgstr "ke:"
+
+#: src/print.c:3459
+#, fuzzy
+msgid "Printer"
+msgstr "Filter:"
+
+#: src/print.c:3465
+msgid "Custom printer:"
+msgstr ""
+
+#: src/print.c:3474
+#, fuzzy
+msgid "File:"
+msgstr "Filter:"
+
+#: src/print.c:3483
+#, fuzzy
+msgid "File format:"
+msgstr "Tanggal file:"
+
+#: src/print.c:3488
+msgid "DPI:"
+msgstr ""
+
+#: src/print.c:3496
+#, fuzzy
+msgid "Remember print settings"
+msgstr "Ingat posisi jendela"
+
+#: src/rcfile.c:185
+#, c-format
+msgid "error saving config file: %s\n"
+msgstr "kesalahan menyimpan file config: %s\n"
+
+#: src/search.c:200
+#, fuzzy
+msgid "folder"
+msgstr "File"
+
+#: src/search.c:201
+#, fuzzy
+msgid "comments"
+msgstr "Tambah isi"
+
+#: src/search.c:202
+#, fuzzy
+msgid "results"
+msgstr "Baku"
+
+#: src/search.c:206
+#, fuzzy
+msgid "contains"
+msgstr "Lanjut"
+
+#: src/search.c:207
+msgid "is"
+msgstr ""
+
+#: src/search.c:211 src/search.c:218
+msgid "equal to"
+msgstr ""
+
+#: src/search.c:212
+msgid "less than"
+msgstr ""
+
+#: src/search.c:213
+msgid "greater than"
+msgstr ""
+
+#: src/search.c:214 src/search.c:221
+msgid "between"
+msgstr ""
+
+#: src/search.c:219
+msgid "before"
+msgstr ""
+
+#: src/search.c:220
+#, fuzzy
+msgid "after"
+msgstr "filter"
+
+#: src/search.c:225
+msgid "match all"
+msgstr ""
+
+#: src/search.c:226
+msgid "match any"
+msgstr ""
+
+#: src/search.c:227
+msgid "exclude"
+msgstr ""
+
+#: src/search.c:277
+#, fuzzy, c-format
+msgid "%s, %d files (%s, %d)"
+msgstr "%s, %d file (%s, %d)%s"
+
+#: src/search.c:284
+#, fuzzy, c-format
+msgid "%s, %d files"
+msgstr "%s, %d file%s"
+
+#: src/search.c:301
+#, fuzzy
+msgid "Searching..."
+msgstr "Membandingkan..."
+
+#: src/search.c:2084
+msgid "File not found"
+msgstr ""
+
+#: src/search.c:2085
+#, fuzzy
+msgid "Please enter an existing file for image content."
+msgstr "Silakan pilih direktori yang ada"
+
+#: src/search.c:2132
+#, fuzzy
+msgid "Please enter an existing folder to search."
+msgstr "Silakan pilih direktori yang ada"
+
+#: src/search.c:2561
+#, fuzzy
+msgid "Image search - GQview"
+msgstr "Properti image.-.GQview"
+
+#: src/search.c:2590
+#, fuzzy
+msgid "Search:"
+msgstr "Membandingkan..."
+
+#: src/search.c:2604
+msgid "Recurse"
+msgstr ""
+
+#: src/search.c:2608
+#, fuzzy
+msgid "File name"
+msgstr "Namafile:"
+
+#: src/search.c:2614
+msgid "Match case"
+msgstr ""
+
+#: src/search.c:2618
+#, fuzzy
+msgid "File size is"
+msgstr "Ukuran file:"
+
+#: src/search.c:2625 src/search.c:2640 src/search.c:2658
+#, fuzzy
+msgid "and"
+msgstr "Acak"
+
+#: src/search.c:2630
+#, fuzzy
+msgid "File date is"
+msgstr "Tanggal file:"
+
+#: src/search.c:2647
+#, fuzzy
+msgid "Image dimensions are"
+msgstr "deskripsi"
+
+#: src/search.c:2667
+#, fuzzy
+msgid "Image content is"
+msgstr "Tambah isi"
+
+#: src/search.c:2673
+#, fuzzy, no-c-format
+msgid "% similar to"
+msgstr "Kemiripan"
+
+#: src/search.c:2742
+#, fuzzy
+msgid "Rank"
+msgstr "Acak"
+
+#: src/thumb.c:379
+msgid "Thumbnail image in cache failed to load, trying to recreate.\n"
+msgstr "Gambar thumbnail di cache gagal dimuatkan, coba buat ulang.\n"
+
+#: src/ui_bookmark.c:148
+#, c-format
+msgid "Unable to write history lists to: %s\n"
+msgstr "Tidak dapat menulis daftar sejarah ke: %s\n"
+
+#: src/ui_bookmark.c:445 src/ui_bookmark.c:508
+msgid "New Bookmark"
+msgstr ""
+
+#: src/ui_bookmark.c:591 src/ui_bookmark.c:597
+#, fuzzy
+msgid "Edit Bookmark"
+msgstr "Editor"
+
+#: src/ui_bookmark.c:612
+#, fuzzy
+msgid "Path:"
+msgstr "Path"
+
+#: src/ui_bookmark.c:621
+msgid "Icon:"
+msgstr ""
+
+#: src/ui_bookmark.c:627
+#, fuzzy
+msgid "Select icon"
+msgstr "Tidak ada yang dipilih"
+
+#: src/ui_bookmark.c:718
+#, fuzzy
+msgid "_Properties..."
+msgstr "Properti"
+
+#: src/ui_bookmark.c:720
+#, fuzzy
+msgid "Move _up"
+msgstr "Pindah"
+
+#: src/ui_bookmark.c:722
+#, fuzzy
+msgid "Move _down"
+msgstr "Pindah"
+
+#: src/ui_bookmark.c:724
+#, fuzzy
+msgid "_Remove"
+msgstr "Pindahkan"
+
+#: src/ui_help.c:111
+#, c-format
+msgid ""
+"Unable to load:\n"
+"%s"
+msgstr ""
+"Tidak dapat memuatkan:\n"
+"%s"
+
+#: src/ui_pathsel.c:429 src/utilops.c:2675
+#, c-format
+msgid "Failed to rename %s to %s."
+msgstr "Gagal mengganti nama %s ke %s."
+
+#: src/ui_pathsel.c:485 src/utilops.c:1354 src/utilops.c:1527
+#, c-format
+msgid ""
+"Unable to delete file:\n"
+"%s"
+msgstr ""
+"Tidak dapat menghapus file:\n"
+"%s"
+
+#: src/ui_pathsel.c:486 src/utilops.c:1528
+msgid "File deletion failed"
+msgstr "Gagal hapus file"
+
+#: src/ui_pathsel.c:528 src/ui_pathsel.c:536
+msgid "Delete file"
+msgstr "Hapus file"
+
+#: src/ui_pathsel.c:534
+#, c-format
+msgid ""
+"About to delete the file:\n"
+" %s"
+msgstr ""
+"Akan menghapus file:\n"
+"%s"
+
+#: src/ui_pathsel.c:625 src/ui_pathsel.c:633 src/utilops.c:2253
+#: src/utilops.c:2509
+#, fuzzy
+msgid "_Rename"
+msgstr "Ganti nama"
+
+#: src/ui_pathsel.c:627 src/ui_pathsel.c:637
+#, fuzzy
+msgid "Add _Bookmark"
+msgstr "Editor"
+
+#: src/ui_pathsel.c:635
+#, fuzzy
+msgid "_Delete"
+msgstr "Hapus"
+
+#: src/ui_pathsel.c:739 src/ui_pathsel.c:1044
+#, fuzzy
+msgid "New folder"
+msgstr "Folder baru..."
+
+#: src/ui_pathsel.c:749 src/utilops.c:2581 src/view_dir_list.c:330
+#: src/view_dir_tree.c:426
+#, fuzzy, c-format
+msgid ""
+"Unable to create folder:\n"
+"%s"
+msgstr ""
+"Tidak dapat membuat direktori baru:\n"
+"%s"
+
+#: src/ui_pathsel.c:750 src/utilops.c:2582 src/view_dir_list.c:331
+#: src/view_dir_tree.c:427
+#, fuzzy
+msgid "Error creating folder"
+msgstr "Gagal membuat direktori"
+
+#: src/ui_pathsel.c:971
+msgid "All Files"
+msgstr "Semua file"
+
+#: src/ui_pathsel.c:1047
+msgid "Show hidden"
+msgstr "Tampilkan sembunyi"
+
+#: src/ui_pathsel.c:1131
+msgid "Filter:"
+msgstr "Filter:"
+
+#: src/ui_tabcomp.c:857
+#, fuzzy
+msgid "Select path"
+msgstr "Pilih semua"
+
+#: src/ui_tabcomp.c:873
+#, fuzzy
+msgid "All files"
+msgstr "Semua file"
+
+#: src/utilops.c:505 src/utilops.c:826 src/utilops.c:1716 src/utilops.c:2438
+msgid "Overwrite file"
+msgstr "Timpa file"
+
+#: src/utilops.c:510 src/utilops.c:831 src/utilops.c:1721 src/utilops.c:2443
+#, fuzzy
+msgid "Overwrite file?"
+msgstr "Timpa file"
+
+#: src/utilops.c:511 src/utilops.c:832
+msgid "Replace existing file with new file."
+msgstr ""
+
+#: src/utilops.c:515
+#, fuzzy
+msgid "Overwrite _all"
+msgstr "Timpa file"
+
+#: src/utilops.c:517
+#, fuzzy
+msgid "S_kip all"
+msgstr "Lewati semua"
+
+#: src/utilops.c:518
+#, fuzzy
+msgid "_Skip"
+msgstr "Lewati"
+
+#: src/utilops.c:519 src/utilops.c:836 src/utilops.c:1727 src/utilops.c:2449
+#, fuzzy
+msgid "Existing file"
+msgstr "Gagal memindahkan file"
+
+#: src/utilops.c:519 src/utilops.c:836 src/utilops.c:1728 src/utilops.c:2450
+#, fuzzy
+msgid "New file"
+msgstr "Folder baru..."
+
+#: src/utilops.c:529 src/utilops.c:845 src/utilops.c:1862 src/utilops.c:1918
+#: src/utilops.c:1994 src/utilops.c:2326
+msgid "Auto rename"
+msgstr "Ganti nama otomatis"
+
+#: src/utilops.c:537 src/utilops.c:853
+msgid "Rename"
+msgstr "Ganti nama"
+
+#: src/utilops.c:578
+msgid "Source to copy matches destination"
+msgstr "Sumber untuk menyalin tujuan kecocokan"
+
+#: src/utilops.c:579
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to itself."
+msgstr ""
+"Tidak dapat menyalin file:\n"
+"%s\n"
+"ke dirinya sendiri."
+
+#: src/utilops.c:583
+msgid "Source to move matches destination"
+msgstr "Sumber untuk memindahkan tujuan kecocokan"
+
+#: src/utilops.c:584
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to itself."
+msgstr ""
+"Tidak dapat memindahkan file:\n"
+"%s\n"
+"ke dirinya sendiri."
+
+#: src/utilops.c:592 src/utilops.c:679 src/utilops.c:1346
+#, fuzzy
+msgid "Co_ntinue"
+msgstr "Lanjut"
+
+#: src/utilops.c:665 src/utilops.c:893
+msgid "Error copying file"
+msgstr "Gagal menyalin file"
+
+#: src/utilops.c:666
+#, fuzzy, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to:\n"
+"%s\n"
+"during multiple file copy."
+msgstr ""
+"Tidak dapat menyalin file:\n"
+"%s ke:\n"
+"%s\n"
+" selama penyalinan file ganda."
+
+#: src/utilops.c:670 src/utilops.c:898
+msgid "Error moving file"
+msgstr "Gagal memindahkan file"
+
+#: src/utilops.c:671
+#, fuzzy, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to:\n"
+"%s\n"
+"during multiple file move."
+msgstr ""
+"Gagal memindahkan file:\n"
+"%s ke:\n"
+"%s\n"
+" selama memindahkan banyak file"
+
+#: src/utilops.c:817
+msgid "Source matches destination"
+msgstr "Tujuan sumber kecocokan"
+
+#: src/utilops.c:818
+msgid "Source and destination are the same, operation cancelled."
+msgstr "Sumber dan tujuan sama, operasi dibatalkan."
+
+#: src/utilops.c:894
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Tidak dapat menyalin file:\n"
+"%s\n"
+"ke:\n"
+"%s"
+
+#: src/utilops.c:899
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Tidak dapat menyalin file:\n"
+"%s\n"
+"ke:\n"
+"%s"
+
+#: src/utilops.c:947
+msgid "Invalid destination"
+msgstr "Tujuan tidak valid"
+
+#: src/utilops.c:948
+#, fuzzy
+msgid ""
+"When operating with multiple files, please select\n"
+"a folder, not a file."
+msgstr ""
+"Ketika beroperasi pada banyak file, silakan pilih\n"
+"direktori, bukan file."
+
+#: src/utilops.c:953
+#, fuzzy
+msgid "Please select an existing folder."
+msgstr "Silakan pilih direktori yang ada"
+
+#: src/utilops.c:1022
+#, fuzzy
+msgid "Copy - GQview"
+msgstr "Bantuan - GQview"
+
+#: src/utilops.c:1023 src/view_dir_list.c:209 src/view_dir_tree.c:301
+#, fuzzy
+msgid "_Copy"
+msgstr "Salin"
+
+#: src/utilops.c:1026
+#, fuzzy
+msgid "Copy file"
+msgstr ""
+"Ganti nama file:\n"
+"%s\n"
+"ke:"
+
+#: src/utilops.c:1030
+#, fuzzy
+msgid "Copy multiple files"
+msgstr "Salin banyak file ke:"
+
+#: src/utilops.c:1036
+#, fuzzy
+msgid "Move - GQview"
+msgstr "Bantuan - GQview"
+
+#: src/utilops.c:1037 src/view_dir_list.c:211 src/view_dir_tree.c:303
+#, fuzzy
+msgid "_Move"
+msgstr "Pindah"
+
+#: src/utilops.c:1040
+#, fuzzy
+msgid "Move file"
+msgstr ""
+"Ganti nama file:\n"
+"%s\n"
+"ke:"
+
+#: src/utilops.c:1044
+#, fuzzy
+msgid "Move multiple files"
+msgstr "Pindah banyak file ke:"
+
+#: src/utilops.c:1058 src/utilops.c:1568
+#, fuzzy
+msgid "File name:"
+msgstr "Namafile:"
+
+#: src/utilops.c:1062
+#, fuzzy
+msgid "Choose the destination folder."
+msgstr "Tujuan sumber kecocokan"
+
+#: src/utilops.c:1189 src/utilops.c:1338 src/utilops.c:1355 src/utilops.c:2902
+#: src/utilops.c:2953 src/utilops.c:3041 src/utilops.c:3052
+msgid "Delete failed"
+msgstr "Gagal hapus"
+
+#: src/utilops.c:1190
+#, fuzzy
+msgid "Unable to remove old file from trash folder"
+msgstr ""
+"Tidak dapat memindahkan file:\n"
+"%s\n"
+"ke dirinya sendiri."
+
+#: src/utilops.c:1246 src/utilops.c:2574
+#, fuzzy
+msgid "Could not create folder"
+msgstr "Tidak dapat membuat direktori"
+
+#: src/utilops.c:1268
+msgid "Permission denied"
+msgstr ""
+
+#: src/utilops.c:1278
+#, fuzzy, c-format
+msgid ""
+"Unable to access or create the trash folder.\n"
+"\"%s\""
+msgstr ""
+"Tidak dapat membuat direktori baru:\n"
+"%s"
+
+#: src/utilops.c:1282
+#, fuzzy
+msgid "Turn off safe delete"
+msgstr "Konfirmasi hapus file"
+
+#: src/utilops.c:1300
+#, fuzzy, c-format
+msgid "Safe delete: %s"
+msgstr "Konfirmasi hapus file"
+
+#: src/utilops.c:1342
+#, c-format
+msgid ""
+"Unable to delete file:\n"
+" %s\n"
+" Continue multiple delete operation?"
+msgstr ""
+"Tidak dapat menghapus file:\n"
+" %s\n"
+" Lanjut operasi hapus banyak file?"
+
+#: src/utilops.c:1413
+#, c-format
+msgid "File %d of %d"
+msgstr ""
+
+#: src/utilops.c:1482
+#, fuzzy
+msgid "Delete files - GQview"
+msgstr "Hapus file"
+
+#: src/utilops.c:1486
+#, fuzzy
+msgid "Delete multiple files"
+msgstr "Ganti nama banyak file:"
+
+#: src/utilops.c:1504
+#, fuzzy, c-format
+msgid "Review %d files"
+msgstr "%d files"
+
+#: src/utilops.c:1560
+#, fuzzy
+msgid "Delete file - GQview"
+msgstr "Hapus file"
+
+#: src/utilops.c:1564
+#, fuzzy
+msgid "Delete file?"
+msgstr "Hapus file"
+
+#: src/utilops.c:1722 src/utilops.c:2444
+msgid "Replace existing file by renaming new file."
+msgstr ""
+
+#: src/utilops.c:1739
+#, c-format
+msgid ""
+"Unable to rename file:\n"
+"%s\n"
+" to:\n"
+"%s"
+msgstr ""
+"Tidak dapat mengganti nama file:\n"
+"%s\n"
+" ke:\n"
+"%s"
+
+#: src/utilops.c:1742 src/utilops.c:2461 src/view_file_list.c:451
+#: src/view_file_list.c:457 src/view_file_list.c:463
+msgid "Error renaming file"
+msgstr "Gagal mengganti nama file"
+
+#: src/utilops.c:1863
+msgid "Format must include at least one of the symbol characters '*' or '#'.\n"
+msgstr ""
+
+#: src/utilops.c:1919
+msgid ""
+"Can not auto rename with the selected\n"
+"number set, one or more files exist that\n"
+"match the resulting name list.\n"
+msgstr ""
+"Tidak dapat mengganti nama otomatis ke himpunan angka\n"
+"yang dipilih, satu atau lebih file sudah ada\n"
+"yang cocok dengan daftar nama hasil.\n"
+
+#: src/utilops.c:1993
+#, c-format
+msgid ""
+"Failed to rename\n"
+"%s\n"
+"The number was %d."
+msgstr ""
+"Gagal mengganti nama\n"
+"%s\n"
+"Angkanya adalah %d."
+
+#: src/utilops.c:2249 src/utilops.c:2503
+#, fuzzy
+msgid "Rename - GQview"
+msgstr "Bantuan - GQview"
+
+#: src/utilops.c:2252
+#, fuzzy
+msgid "Rename multiple files"
+msgstr "Ganti nama banyak file:"
+
+#: src/utilops.c:2286
+msgid "Original Name"
+msgstr ""
+
+#: src/utilops.c:2324
+#, fuzzy
+msgid "Manual rename"
+msgstr "Nama menu"
+
+#: src/utilops.c:2325
+msgid "Formatted rename"
+msgstr ""
+
+#: src/utilops.c:2338 src/utilops.c:2516
+#, fuzzy
+msgid "Original name:"
+msgstr "Namafile:"
+
+#: src/utilops.c:2341 src/utilops.c:2519
+#, fuzzy
+msgid "New name:"
+msgstr "Ganti nama:"
+
+#: src/utilops.c:2359
+msgid "Begin text"
+msgstr "Teks awal"
+
+#: src/utilops.c:2367 src/utilops.c:2399
+msgid "Start #"
+msgstr "Mulai #"
+
+#: src/utilops.c:2373
+msgid "End text"
+msgstr "Teks akhir"
+
+#: src/utilops.c:2381
+msgid "Padding:"
+msgstr "Padding:"
+
+#: src/utilops.c:2391
+msgid "Format (* = original name, ## = numbers)"
+msgstr ""
+
+#: src/utilops.c:2460 src/view_file_list.c:462
+#, c-format
+msgid ""
+"Unable to rename file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Tidak dapat mengganti nama file:\n"
+"%s\n"
+"ke:\n"
+"%s"
+
+#: src/utilops.c:2506
+#, fuzzy
+msgid "Rename file"
+msgstr ""
+"Ganti nama file:\n"
+"%s\n"
+"ke:"
+
+#: src/utilops.c:2567 src/utilops.c:2657
+#, fuzzy, c-format
+msgid ""
+"The folder:\n"
+"%s\n"
+"already exists."
+msgstr ""
+"Direktori:\n"
+"%s\n"
+"sudah ada."
+
+#: src/utilops.c:2568 src/utilops.c:2658
+#, fuzzy
+msgid "Folder exists"
+msgstr "File"
+
+#: src/utilops.c:2573 src/utilops.c:2666
+#, c-format
+msgid ""
+"The path:\n"
+"%s\n"
+"already exists as a file."
+msgstr ""
+"Path:\n"
+"%s\n"
+"sudah ada sebagai file."
+
+#: src/utilops.c:2625
+#, fuzzy
+msgid "New folder - GQview"
+msgstr "Bantuan - GQview"
+
+#: src/utilops.c:2628
+#, fuzzy, c-format
+msgid ""
+"Create folder in:\n"
+"%s\n"
+"named:"
+msgstr ""
+"Buat direktori di:\n"
+"%s\n"
+"bernama:"
+
+#: src/utilops.c:2667 src/utilops.c:2676
+#, fuzzy
+msgid "Rename failed"
+msgstr ""
+"Ganti nama file:\n"
+"%s\n"
+"ke:"
+
+#: src/utilops.c:2775
+#, fuzzy
+msgid "Location"
+msgstr "Koleksi"
+
+#: src/utilops.c:2952
+#, fuzzy, c-format
+msgid ""
+"Unable to delete folder:\n"
+"\n"
+"%s"
+msgstr ""
+"Tidak dapat menghapus file:\n"
+"%s"
+
+#: src/utilops.c:2959
+#, c-format
+msgid ""
+"Removal of folder contents failed at this file:\n"
+"\n"
+"%s"
+msgstr ""
+
+#: src/utilops.c:3016 src/utilops.c:3100
+#, fuzzy
+msgid "Delete folder"
+msgstr "Tidak ada yang dipilih"
+
+#: src/utilops.c:3020
+#, c-format
+msgid ""
+"This will delete the symbolic link:\n"
+"\n"
+"%s\n"
+"\n"
+"The folder this link points to will not be deleted."
+msgstr ""
+
+#: src/utilops.c:3024
+msgid "Delete symbolic link to folder?"
+msgstr ""
+
+#: src/utilops.c:3039
+#, fuzzy, c-format
+msgid ""
+"Unable to remove folder %s\n"
+"Permissions do not allow writing to the folder."
+msgstr ""
+"Tidak dapat memindahkan file:\n"
+"%s\n"
+"ke dirinya sendiri."
+
+#: src/utilops.c:3051
+#, fuzzy, c-format
+msgid "Unable to list contents of folder %s"
+msgstr ""
+"Tidak dapat membuat direktori baru:\n"
+"%s"
+
+#: src/utilops.c:3065 src/utilops.c:3073
+#, fuzzy
+msgid "Folder contains subfolders"
+msgstr "Namafile tidak valid"
+
+#: src/utilops.c:3069
+#, c-format
+msgid ""
+"Unable to delete the folder:\n"
+"\n"
+"%s\n"
+"\n"
+"This folder contains subfolders which must be moved before it can be deleted."
+msgstr ""
+
+#: src/utilops.c:3077
+#, fuzzy
+msgid "Subfolders:"
+msgstr "File"
+
+#: src/utilops.c:3104
+#, c-format
+msgid ""
+"This will delete the folder:\n"
+"\n"
+"%s\n"
+"\n"
+"The contents of this folder will also be deleted."
+msgstr ""
+
+#: src/utilops.c:3108
+#, fuzzy
+msgid "Delete folder?"
+msgstr "Hapus file"
+
+#: src/utilops.c:3112
+#, fuzzy
+msgid "Contents:"
+msgstr "/Help/_About"
+
+#: src/view_dir_list.c:321 src/view_dir_tree.c:417
+msgid "new_folder"
+msgstr "new_folder"
+
+#: src/view_dir_list.c:387 src/view_dir_tree.c:491
+#, fuzzy
+msgid "_Up to parent"
+msgstr "Ke orangtua"
+
+#: src/view_dir_list.c:392 src/view_dir_tree.c:496
+#, fuzzy
+msgid "_Slideshow"
+msgstr "Slideshow"
+
+#: src/view_dir_list.c:394 src/view_dir_tree.c:498
+msgid "Slideshow recursive"
+msgstr "Rekursif Slideshow"
+
+#: src/view_dir_list.c:398 src/view_dir_tree.c:502
+#, fuzzy
+msgid "Find _duplicates..."
+msgstr "Cari duplikat..."
+
+#: src/view_dir_list.c:400 src/view_dir_tree.c:504
+msgid "Find duplicates recursive..."
+msgstr "Cari rekursif ganda..."
+
+#: src/view_dir_list.c:407 src/view_dir_tree.c:511
+#, fuzzy
+msgid "_New folder..."
+msgstr "Folder baru..."
+
+#: src/view_dir_list.c:421 src/view_dir_tree.c:520
+#, fuzzy
+msgid "View as _tree"
+msgstr "Lihat sebagai pohon"
+
+#: src/view_dir_list.c:423 src/view_dir_tree.c:522 src/view_file_icon.c:315
+#: src/view_file_list.c:426
+#, fuzzy
+msgid "Re_fresh"
+msgstr "Refresh"
+
+#: src/view_file_icon.c:308 src/view_file_list.c:419
+#, fuzzy
+msgid "_Sort"
+msgstr "Urutkan"
+
+#: src/view_file_icon.c:311 src/view_file_list.c:422
+#, fuzzy
+msgid "View as _icons"
+msgstr "Lihat sebagai ikon"
+
+#: src/view_file_list.c:424
+#, fuzzy
+msgid "Show _thumbnails"
+msgstr "Tampilkan thumbnail"
+
+#: src/view_file_list.c:450
+#, c-format
+msgid ""
+"Invalid file name:\n"
+"%s"
+msgstr ""
+"Nama file tidak valid:\n"
+"%s"
+
+#~ msgid "/File/tear1"
+#~ msgstr "/File/tear1"
+
+#~ msgid "/File/_New collection"
+#~ msgstr "/File/_New collection"
+
+#~ msgid "/File/_Open collection..."
+#~ msgstr "/File/_Open collection..."
+
+#~ msgid "/File/sep1"
+#~ msgstr "/File/sep1"
+
+#, fuzzy
+#~ msgid "/File/_Search..."
+#~ msgstr "/File/_Rename..."
+
+#~ msgid "/File/_Find duplicates..."
+#~ msgstr "/File/_Find duplicates..."
+
+#~ msgid "/File/sep2"
+#~ msgstr "/File/sep2"
+
+#, fuzzy
+#~ msgid "/File/_Print..."
+#~ msgstr "/File/_Rename..."
+
+#, fuzzy
+#~ msgid "/File/N_ew folder..."
+#~ msgstr "Folder baru..."
+
+#~ msgid "/File/sep3"
+#~ msgstr "/File/sep3"
+
+#~ msgid "/File/_Copy..."
+#~ msgstr "/File/_Copy..."
+
+#~ msgid "/File/_Move..."
+#~ msgstr "/File/_Move..."
+
+#~ msgid "/File/_Rename..."
+#~ msgstr "/File/_Rename..."
+
+#~ msgid "/File/_Delete..."
+#~ msgstr "/File/_Delete..."
+
+#~ msgid "/File/sep4"
+#~ msgstr "/File/sep4"
+
+#~ msgid "/File/C_lose window"
+#~ msgstr "/File/C_lose window"
+
+#, fuzzy
+#~ msgid "/File/_Quit"
+#~ msgstr "/File/E_xit"
+
+#~ msgid "/_Edit"
+#~ msgstr "/_Edit"
+
+#~ msgid "/Edit/tear1"
+#~ msgstr "/Edit/tear1"
+
+#~ msgid "/Edit/editor1"
+#~ msgstr "/Edit/editor1"
+
+#~ msgid "/Edit/editor2"
+#~ msgstr "/Edit/editor2"
+
+#~ msgid "/Edit/editor3"
+#~ msgstr "/Edit/editor3"
+
+#~ msgid "/Edit/editor4"
+#~ msgstr "/Edit/editor4"
+
+#~ msgid "/Edit/editor5"
+#~ msgstr "/Edit/editor5"
+
+#~ msgid "/Edit/editor6"
+#~ msgstr "/Edit/editor6"
+
+#~ msgid "/Edit/editor7"
+#~ msgstr "/Edit/editor7"
+
+#~ msgid "/Edit/editor8"
+#~ msgstr "/Edit/editor8"
+
+#, fuzzy
+#~ msgid "/Edit/editor9"
+#~ msgstr "/Edit/editor1"
+
+#, fuzzy
+#~ msgid "/Edit/editor0"
+#~ msgstr "/Edit/editor1"
+
+#~ msgid "/Edit/sep1"
+#~ msgstr "/Edit/sep1"
+
+#~ msgid "/Edit/_Adjust"
+#~ msgstr "/Edit/_Adjust"
+
+#~ msgid "/Edit/_Properties"
+#~ msgstr "/Edit/_Properties"
+
+#~ msgid "/Edit/Adjust/tear1"
+#~ msgstr "/Edit/Adjust/tear1"
+
+#~ msgid "/Edit/Adjust/_Rotate clockwise"
+#~ msgstr "/Edit/Adjust/_Rotate clockwise"
+
+#~ msgid "/Edit/Adjust/Rotate _counterclockwise"
+#~ msgstr "/Edit/Adjust/Rotate _counterclockwise"
+
+#~ msgid "/Edit/Adjust/Rotate 1_80"
+#~ msgstr "/Edit/Adjust/Rotate 1_80"
+
+#~ msgid "/Edit/Adjust/_Mirror"
+#~ msgstr "/Edit/Adjust/_Mirror"
+
+#~ msgid "/Edit/Adjust/_Flip"
+#~ msgstr "/Edit/Adjust/_Flip"
+
+#~ msgid "/Edit/sep2"
+#~ msgstr "/Edit/sep2"
+
+#~ msgid "/Edit/Select _all"
+#~ msgstr "/Edit/Select _all"
+
+#~ msgid "/Edit/Select _none"
+#~ msgstr "/Edit/Select _none"
+
+#~ msgid "/Edit/sep3"
+#~ msgstr "/Edit/sep3"
+
+#~ msgid "/Edit/_Options..."
+#~ msgstr "/Edit/_Options..."
+
+#~ msgid "/Edit/sep4"
+#~ msgstr "/Edit/sep4"
+
+#~ msgid "/Edit/Set as _wallpaper"
+#~ msgstr "/Edit/Set as _wallpaper"
+
+#~ msgid "/_View"
+#~ msgstr "/_View"
+
+#~ msgid "/View/tear1"
+#~ msgstr "/View/tear1"
+
+#~ msgid "/View/Zoom _in"
+#~ msgstr "/View/Zoom _in"
+
+#~ msgid "/View/Zoom _out"
+#~ msgstr "/View/Zoom _out"
+
+#~ msgid "/View/Zoom _1:1"
+#~ msgstr "/View/Zoom _1:1"
+
+#~ msgid "/View/sep1"
+#~ msgstr "/View/sep1"
+
+#~ msgid "/View/_Thumbnails"
+#~ msgstr "/View/_Thumbnails"
+
+#~ msgid "/View/sep2"
+#~ msgstr "/View/sep2"
+
+#~ msgid "/View/F_ull screen"
+#~ msgstr "/View/F_ull screen"
+
+#~ msgid "/View/sep3"
+#~ msgstr "/View/sep3"
+
+#~ msgid "/View/_Hide file list"
+#~ msgstr "/View/_Hide file list"
+
+#~ msgid "/View/sep4"
+#~ msgstr "/View/sep4"
+
+#, fuzzy
+#~ msgid "/View/Sort _manager"
+#~ msgstr "/View/Zoom _in"
+
+#, fuzzy
+#~ msgid "/View/sep5"
+#~ msgstr "/View/sep1"
+
+#~ msgid "/View/Toggle _slideshow"
+#~ msgstr "/View/Toggle _slideshow"
+
+#~ msgid "/View/_Refresh Lists"
+#~ msgstr "/View/_Refresh Lists"
+
+#~ msgid "/Help/tear1"
+#~ msgstr "/Help/tear1"
+
+#~ msgid "/Help/sep1"
+#~ msgstr "/Help/sep1"
+
+#~ msgid "GQview configuration"
+#~ msgstr "Konfigurasi GQview"
+
+#~ msgid "/Edit/_Remove old thumbnails"
+#~ msgstr "/Edit/_Remove old thumbnails"
+
+#, fuzzy
+#~ msgid "path"
+#~ msgstr "Path"
+
+#~ msgid "Save"
+#~ msgstr "Simpan"
+
+#~ msgid "Close"
+#~ msgstr "Tutup"
+
+#~ msgid ""
+#~ "Overwrite collection file:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Timpa file koleksi:\n"
+#~ "%s"
+
+#~ msgid "Save collection as:"
+#~ msgstr "Simpan koleksi sebagai:"
+
+#~ msgid "Open collection from:"
+#~ msgstr "Buka koleksi dari:"
+
+#~ msgid "Open"
+#~ msgstr "Buka"
+
+#~ msgid "Append collection from:"
+#~ msgstr "Tambahkan koleksi dari:"
+
+#, fuzzy
+#~ msgid "exit"
+#~ msgstr "Keluar"
+
+#~ msgid "Exit"
+#~ msgstr "Keluar"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#, fuzzy
+#~ msgid "Initial folder"
+#~ msgstr "Namafile tidak valid"
+
+#, fuzzy
+#~ msgid "On startup, change to this folder:"
+#~ msgstr "Saat mulai, ubah ke direktori ini:"
+
+#~ msgid "Zoom (scaling):"
+#~ msgstr "Zoom (skala):"
+
+#~ msgid "Place dialogs under mouse"
+#~ msgstr "Letakkan dialog di bawah mouse"
+
+#~ msgid "Include files of type:"
+#~ msgstr "Sertakan file tipe:"
+
+#~ msgid "Remove"
+#~ msgstr "Pindahkan"
+
+#~ msgid "Add"
+#~ msgstr "Tambah"
+
+#, fuzzy
+#~ msgid "Help"
+#~ msgstr "/_Help"
+
+#, fuzzy
+#~ msgid "Full screen size:"
+#~ msgstr "Layar penuh"
+
+#, fuzzy
+#~ msgid "Point size:"
+#~ msgstr "Ukuran file:"
+
+#~ msgid ""
+#~ "Overwrite file:\n"
+#~ " %s\n"
+#~ " with:\n"
+#~ " %s"
+#~ msgstr ""
+#~ "Timpa file:\n"
+#~ " %s\n"
+#~ " dengan:\n"
+#~ " %s"
+
+#~ msgid "Yes"
+#~ msgstr "Ya"
+
+#~ msgid "Yes to all"
+#~ msgstr "Ya ke semua"
+
+#~ msgid ""
+#~ "Overwrite file:\n"
+#~ "%s\n"
+#~ " with:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Timpa file:\n"
+#~ "%s\n"
+#~ " dengan:\n"
+#~ "%s"
+
+#~ msgid ""
+#~ "Copy file:\n"
+#~ "%s\n"
+#~ "to:"
+#~ msgstr ""
+#~ "Salin file:\n"
+#~ "%s\n"
+#~ "ke:"
+
+#~ msgid ""
+#~ "Move file:\n"
+#~ "%s\n"
+#~ "to:"
+#~ msgstr ""
+#~ "Pindah file:\n"
+#~ "%s\n"
+#~ "ke:"
+
+#~ msgid "About to delete multiple files..."
+#~ msgstr "Akan menghapus banyak file..."
+
+#~ msgid ""
+#~ "Overwrite file:\n"
+#~ "%s\n"
+#~ "by renaming:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Timpa file:\n"
+#~ "%s\n"
+#~ "dengan mengganti nama:\n"
+#~ "%s"
+
+#~ msgid "to:"
+#~ msgstr "ke:"
+
+#~ msgid "Create"
+#~ msgstr "Buat"
+
+#~ msgid "Initial directory"
+#~ msgstr "Direktori awal"
+
+#~ msgid "New Directory"
+#~ msgstr "Direktori Baru"
+
+#~ msgid ""
+#~ "Unable to create directory:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Tidak dapat membuat direktori baru:\n"
+#~ "%s"
+
+#~ msgid "Error creating directory"
+#~ msgstr "Gagal membuat direktori"
+
+#, fuzzy
+#~ msgid "Image details"
+#~ msgstr "deskripsi"
+
+#, fuzzy
+#~ msgid "/View/Image _details"
+#~ msgstr "/View/Toggle _slideshow"
+
+#~ msgid "Add contents"
+#~ msgstr "Tambah isi"
+
+#~ msgid "Add contents recursive"
+#~ msgstr "Tambah isi secara rekursif"
+
+#~ msgid "Skip directories"
+#~ msgstr "Lewati direktori"
+
+#~ msgid "Invalid directory"
+#~ msgstr "Direktori tidak valid"
+
+#~ msgid "GQview - copy"
+#~ msgstr "GQview - salin"
+
+#~ msgid "GQview - move"
+#~ msgstr "GQview - pindah"
+
+#~ msgid "Directory exists"
+#~ msgstr "Direktori ada"
+
+#~ msgid "GQview - new directory"
+#~ msgstr "GQview - direktori baru"
+
+#~ msgid "Misc."
+#~ msgstr "Lain"
+
+#~ msgid "/File/Create _Dir..."
+#~ msgstr "/File/Create _Dir..."
+
+#~ msgid "Edit"
+#~ msgstr "Edit"
+
+#~ msgid "Insert file drops at pointer location"
+#~ msgstr "Sisipkan file drop pada lokasi pointer"
+
+#~ msgid "File named %s already exists."
+#~ msgstr "File bernama %s sudah ada."
+
+#, fuzzy
+#~ msgid "top"
+#~ msgstr "ke:"
+
+#~ msgid "GQview running: %s\n"
+#~ msgstr "GQview berjalan: %s\n"
+
+#~ msgid "Electric Eyes"
+#~ msgstr "Electric Eyes"
+
+#~ msgid "Apply"
+#~ msgstr "Aplikasikan"

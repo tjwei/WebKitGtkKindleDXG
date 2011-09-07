@@ -1,0 +1,628 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libsoup-24-SoupCookie">
+<refmeta>
+<refentrytitle role="top_of_page" id="libsoup-24-SoupCookie.top_of_page">SoupCookie</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupCookie</refname>
+<refpurpose>HTTP Cookies</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libsoup-24-SoupCookie.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SoupCookie">SoupCookie</link>;
+<link linkend="SoupCookie">SoupCookie</link> *        <link linkend="soup-cookie-new">soup_cookie_new</link>                     (const <link linkend="char">char</link> *name,
+                                                         const <link linkend="char">char</link> *value,
+                                                         const <link linkend="char">char</link> *domain,
+                                                         const <link linkend="char">char</link> *path,
+                                                         <link linkend="int">int</link> max_age);
+<link linkend="SoupCookie">SoupCookie</link> *        <link linkend="soup-cookie-parse">soup_cookie_parse</link>                   (const <link linkend="char">char</link> *header,
+                                                         <link linkend="SoupURI">SoupURI</link> *origin);
+<link linkend="SoupCookie">SoupCookie</link> *        <link linkend="soup-cookie-copy">soup_cookie_copy</link>                    (<link linkend="SoupCookie">SoupCookie</link> *cookie);
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-cookie-equal">soup_cookie_equal</link>                   (<link linkend="SoupCookie">SoupCookie</link> *cookie1,
+                                                         <link linkend="SoupCookie">SoupCookie</link> *cookie2);
+<link linkend="void">void</link>                <link linkend="soup-cookie-free">soup_cookie_free</link>                    (<link linkend="SoupCookie">SoupCookie</link> *cookie);
+
+<link linkend="void">void</link>                <link linkend="soup-cookie-set-name">soup_cookie_set_name</link>                (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         const <link linkend="char">char</link> *name);
+<link linkend="void">void</link>                <link linkend="soup-cookie-set-value">soup_cookie_set_value</link>               (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         const <link linkend="char">char</link> *value);
+<link linkend="void">void</link>                <link linkend="soup-cookie-set-domain">soup_cookie_set_domain</link>              (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         const <link linkend="char">char</link> *domain);
+<link linkend="void">void</link>                <link linkend="soup-cookie-set-path">soup_cookie_set_path</link>                (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         const <link linkend="char">char</link> *path);
+<link linkend="void">void</link>                <link linkend="soup-cookie-set-max-age">soup_cookie_set_max_age</link>             (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         <link linkend="int">int</link> max_age);
+#define             <link linkend="SOUP-COOKIE-MAX-AGE-ONE-HOUR--CAPS">SOUP_COOKIE_MAX_AGE_ONE_HOUR</link>
+#define             <link linkend="SOUP-COOKIE-MAX-AGE-ONE-DAY--CAPS">SOUP_COOKIE_MAX_AGE_ONE_DAY</link>
+#define             <link linkend="SOUP-COOKIE-MAX-AGE-ONE-WEEK--CAPS">SOUP_COOKIE_MAX_AGE_ONE_WEEK</link>
+#define             <link linkend="SOUP-COOKIE-MAX-AGE-ONE-YEAR--CAPS">SOUP_COOKIE_MAX_AGE_ONE_YEAR</link>
+<link linkend="void">void</link>                <link linkend="soup-cookie-set-expires">soup_cookie_set_expires</link>             (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         <link linkend="SoupDate">SoupDate</link> *expires);
+<link linkend="void">void</link>                <link linkend="soup-cookie-set-secure">soup_cookie_set_secure</link>              (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         <link linkend="gboolean">gboolean</link> secure);
+<link linkend="void">void</link>                <link linkend="soup-cookie-set-http-only">soup_cookie_set_http_only</link>           (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         <link linkend="gboolean">gboolean</link> http_only);
+
+<link linkend="gboolean">gboolean</link>            <link linkend="soup-cookie-applies-to-uri">soup_cookie_applies_to_uri</link>          (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         <link linkend="SoupURI">SoupURI</link> *uri);
+
+<link linkend="char">char</link> *              <link linkend="soup-cookie-to-cookie-header">soup_cookie_to_cookie_header</link>        (<link linkend="SoupCookie">SoupCookie</link> *cookie);
+<link linkend="char">char</link> *              <link linkend="soup-cookie-to-set-cookie-header">soup_cookie_to_set_cookie_header</link>    (<link linkend="SoupCookie">SoupCookie</link> *cookie);
+
+<link linkend="GSList">GSList</link> *            <link linkend="soup-cookies-from-request">soup_cookies_from_request</link>           (<link linkend="SoupMessage">SoupMessage</link> *msg);
+<link linkend="GSList">GSList</link> *            <link linkend="soup-cookies-from-response">soup_cookies_from_response</link>          (<link linkend="SoupMessage">SoupMessage</link> *msg);
+<link linkend="void">void</link>                <link linkend="soup-cookies-to-request">soup_cookies_to_request</link>             (<link linkend="GSList">GSList</link> *cookies,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *msg);
+<link linkend="void">void</link>                <link linkend="soup-cookies-to-response">soup_cookies_to_response</link>            (<link linkend="GSList">GSList</link> *cookies,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *msg);
+<link linkend="char">char</link> *              <link linkend="soup-cookies-to-cookie-header">soup_cookies_to_cookie_header</link>       (<link linkend="GSList">GSList</link> *cookies);
+<link linkend="void">void</link>                <link linkend="soup-cookies-free">soup_cookies_free</link>                   (<link linkend="GSList">GSList</link> *cookies);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libsoup-24-SoupCookie.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="SoupCookie"><type>SoupCookie</type></link> implements HTTP cookies, primarily as described by
+<ulink
+url="http://wp.netscape.com/newsref/std/cookie_spec.html">the
+original Netscape cookie specification</ulink>, but with slight
+modifications based on <ulink
+url="http://www.ietf.org/rfc/rfc2109.txt">RFC 2109</ulink>, <ulink
+url="http://msdn2.microsoft.com/en-us/library/ms533046.aspx">Microsoft's
+HttpOnly extension attribute</ulink>, and observed real-world usage
+(and, in particular, based on what Firefox does).
+</para>
+<para>
+To have a <link linkend="SoupSession"><type>SoupSession</type></link> handle cookies for your appliction
+automatically, use a <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libsoup-24-SoupCookie.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupCookie" role="struct" condition="since:2.24">
+<title>SoupCookie</title>
+<indexterm zone="SoupCookie" role="2.24"><primary sortas="SoupCookie">SoupCookie</primary></indexterm><programlisting>typedef struct {
+	char     *name;
+	char     *value;
+	char     *domain;
+	char     *path;
+	SoupDate *expires;
+	gboolean  secure;
+	gboolean  http_only;
+} SoupCookie;
+</programlisting>
+<para>
+An HTTP cookie.
+</para>
+<para>
+<parameter>name</parameter> and <parameter>value</parameter> will be set for all cookies. If the cookie is
+generated from a string that appears to have no name, then <parameter>name</parameter>
+will be the empty string.
+</para>
+<para>
+<parameter>domain</parameter> and <parameter>path</parameter> give the host or domain, and path within that
+host/domain, to restrict this cookie to. If <parameter>domain</parameter> starts with
+".", that indicates a domain (which matches the string after the
+".", or any hostname that has <parameter>domain</parameter> as a suffix). Otherwise, it
+is a hostname and must match exactly.
+</para>
+<para>
+<parameter>expires</parameter> will be non-<link linkend="NULL--CAPS"><literal>NULL</literal></link> if the cookie uses either the original
+"expires" attribute, or the "max-age" attribute specified in RFC
+2109. If <parameter>expires</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, it indicates that neither "expires" nor
+"max-age" was specified, and the cookie expires at the end of the
+session.
+</para>
+<para>
+If <parameter>http_only</parameter> is set, the cookie should not be exposed to untrusted
+code (eg, javascript), so as to minimize the danger posed by
+cross-site scripting attacks.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="char">char</link>&#160;*<structfield>name</structfield>;</term>
+<listitem><simpara> the cookie name
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="char">char</link>&#160;*<structfield>value</structfield>;</term>
+<listitem><simpara> the cookie value
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="char">char</link>&#160;*<structfield>domain</structfield>;</term>
+<listitem><simpara> the "domain" attribute, or else the hostname that the
+cookie came from.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="char">char</link>&#160;*<structfield>path</structfield>;</term>
+<listitem><simpara> the "path" attribute, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="SoupDate">SoupDate</link>&#160;*<structfield>expires</structfield>;</term>
+<listitem><simpara> the cookie expiration time, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> for a session cookie
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gboolean">gboolean</link>&#160;<structfield>secure</structfield>;</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the cookie should only be tranferred over SSL
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gboolean">gboolean</link>&#160;<structfield>http_only</structfield>;</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the cookie should not be exposed to scripts
+</simpara></listitem>
+</varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-new" role="function" condition="since:2.24">
+<title>soup_cookie_new ()</title>
+<indexterm zone="soup-cookie-new" role="2.24"><primary sortas="soup_cookie_new">soup_cookie_new</primary></indexterm><programlisting><link linkend="SoupCookie">SoupCookie</link> *        soup_cookie_new                     (const <link linkend="char">char</link> *name,
+                                                         const <link linkend="char">char</link> *value,
+                                                         const <link linkend="char">char</link> *domain,
+                                                         const <link linkend="char">char</link> *path,
+                                                         <link linkend="int">int</link> max_age);</programlisting>
+<para>
+Creates a new <link linkend="SoupCookie"><type>SoupCookie</type></link> with the given attributes. (Use
+<link linkend="soup-cookie-set-secure"><function>soup_cookie_set_secure()</function></link> and <link linkend="soup-cookie-set-http-only"><function>soup_cookie_set_http_only()</function></link> if you
+need to set those attributes on the returned cookie.)
+</para>
+<para>
+<parameter>max_age</parameter> is used to set the "expires" attribute on the cookie; pass
+-1 to not include the attribute (indicating that the cookie expires
+with the current session), 0 for an already-expired cookie, or a
+lifetime in seconds. You can use the constants
+<link linkend="SOUP-COOKIE-MAX-AGE-ONE-HOUR--CAPS"><literal>SOUP_COOKIE_MAX_AGE_ONE_HOUR</literal></link>, <link linkend="SOUP-COOKIE-MAX-AGE-ONE-DAY--CAPS"><literal>SOUP_COOKIE_MAX_AGE_ONE_DAY</literal></link>,
+<link linkend="SOUP-COOKIE-MAX-AGE-ONE-WEEK--CAPS"><literal>SOUP_COOKIE_MAX_AGE_ONE_WEEK</literal></link> and <link linkend="SOUP-COOKIE-MAX-AGE-ONE-YEAR--CAPS"><literal>SOUP_COOKIE_MAX_AGE_ONE_YEAR</literal></link> (or
+multiples thereof) to calculate this value. (If you really care
+about setting the exact time that the cookie will expire, use
+<link linkend="soup-cookie-set-expires"><function>soup_cookie_set_expires()</function></link>.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> cookie name
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> cookie value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>domain</parameter>&#160;:</term>
+<listitem><simpara> cookie domain or hostname
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>path</parameter>&#160;:</term>
+<listitem><simpara> cookie path, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_age</parameter>&#160;:</term>
+<listitem><simpara> max age of the cookie, or -1 for a session cookie
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="SoupCookie"><type>SoupCookie</type></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-parse" role="function" condition="since:2.24">
+<title>soup_cookie_parse ()</title>
+<indexterm zone="soup-cookie-parse" role="2.24"><primary sortas="soup_cookie_parse">soup_cookie_parse</primary></indexterm><programlisting><link linkend="SoupCookie">SoupCookie</link> *        soup_cookie_parse                   (const <link linkend="char">char</link> *header,
+                                                         <link linkend="SoupURI">SoupURI</link> *origin);</programlisting>
+<para>
+Parses <parameter>header</parameter> and returns a <link linkend="SoupCookie"><type>SoupCookie</type></link>. (If <parameter>header</parameter> contains
+multiple cookies, only the first one will be parsed.)
+</para>
+<para>
+If <parameter>header</parameter> does not have "path" or "domain" attributes, they will
+be defaulted from <parameter>origin</parameter>. If <parameter>origin</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, path will default
+to "/", but domain will be left as <link linkend="NULL--CAPS"><literal>NULL</literal></link>. Note that this is not a
+valid state for a <link linkend="SoupCookie"><type>SoupCookie</type></link>, and you will need to fill in some
+appropriate string for the domain if you want to actually make use
+of the cookie.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>header</parameter>&#160;:</term>
+<listitem><simpara> a cookie string (eg, the value of a Set-Cookie header)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>origin</parameter>&#160;:</term>
+<listitem><simpara> origin of the cookie, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="SoupCookie"><type>SoupCookie</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if it could not be
+parsed, or contained an illegal "domain" attribute for a cookie
+originating from <parameter>origin</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-copy" role="function" condition="since:2.24">
+<title>soup_cookie_copy ()</title>
+<indexterm zone="soup-cookie-copy" role="2.24"><primary sortas="soup_cookie_copy">soup_cookie_copy</primary></indexterm><programlisting><link linkend="SoupCookie">SoupCookie</link> *        soup_cookie_copy                    (<link linkend="SoupCookie">SoupCookie</link> *cookie);</programlisting>
+<para>
+Copies <parameter>cookie</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a copy of <parameter>cookie</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-equal" role="function">
+<title>soup_cookie_equal ()</title>
+<indexterm zone="soup-cookie-equal"><primary sortas="soup_cookie_equal">soup_cookie_equal</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_cookie_equal                   (<link linkend="SoupCookie">SoupCookie</link> *cookie1,
+                                                         <link linkend="SoupCookie">SoupCookie</link> *cookie2);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cookie2</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-cookie-free" role="function" condition="since:2.24">
+<title>soup_cookie_free ()</title>
+<indexterm zone="soup-cookie-free" role="2.24"><primary sortas="soup_cookie_free">soup_cookie_free</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_free                    (<link linkend="SoupCookie">SoupCookie</link> *cookie);</programlisting>
+<para>
+Frees <parameter>cookie</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-set-name" role="function" condition="since:2.24">
+<title>soup_cookie_set_name ()</title>
+<indexterm zone="soup-cookie-set-name" role="2.24"><primary sortas="soup_cookie_set_name">soup_cookie_set_name</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_set_name                (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         const <link linkend="char">char</link> *name);</programlisting>
+<para>
+Sets <parameter>cookie</parameter>'s name to <parameter>name</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> the new name
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-set-value" role="function" condition="since:2.24">
+<title>soup_cookie_set_value ()</title>
+<indexterm zone="soup-cookie-set-value" role="2.24"><primary sortas="soup_cookie_set_value">soup_cookie_set_value</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_set_value               (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         const <link linkend="char">char</link> *value);</programlisting>
+<para>
+Sets <parameter>cookie</parameter>'s value to <parameter>value</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the new value
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-set-domain" role="function" condition="since:2.24">
+<title>soup_cookie_set_domain ()</title>
+<indexterm zone="soup-cookie-set-domain" role="2.24"><primary sortas="soup_cookie_set_domain">soup_cookie_set_domain</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_set_domain              (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         const <link linkend="char">char</link> *domain);</programlisting>
+<para>
+Sets <parameter>cookie</parameter>'s domain to <parameter>domain</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>domain</parameter>&#160;:</term>
+<listitem><simpara> the new domain
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-set-path" role="function" condition="since:2.24">
+<title>soup_cookie_set_path ()</title>
+<indexterm zone="soup-cookie-set-path" role="2.24"><primary sortas="soup_cookie_set_path">soup_cookie_set_path</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_set_path                (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         const <link linkend="char">char</link> *path);</programlisting>
+<para>
+Sets <parameter>cookie</parameter>'s path to <parameter>path</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>path</parameter>&#160;:</term>
+<listitem><simpara> the new path
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-set-max-age" role="function" condition="since:2.24">
+<title>soup_cookie_set_max_age ()</title>
+<indexterm zone="soup-cookie-set-max-age" role="2.24"><primary sortas="soup_cookie_set_max_age">soup_cookie_set_max_age</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_set_max_age             (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         <link linkend="int">int</link> max_age);</programlisting>
+<para>
+Sets <parameter>cookie</parameter>'s max age to <parameter>max_age</parameter>. If <parameter>max_age</parameter> is -1, the cookie
+is a session cookie, and will expire at the end of the client's
+session. Otherwise, it is the number of seconds until the cookie
+expires. You can use the constants <link linkend="SOUP-COOKIE-MAX-AGE-ONE-HOUR--CAPS"><literal>SOUP_COOKIE_MAX_AGE_ONE_HOUR</literal></link>,
+<link linkend="SOUP-COOKIE-MAX-AGE-ONE-DAY--CAPS"><literal>SOUP_COOKIE_MAX_AGE_ONE_DAY</literal></link>, <link linkend="SOUP-COOKIE-MAX-AGE-ONE-WEEK--CAPS"><literal>SOUP_COOKIE_MAX_AGE_ONE_WEEK</literal></link> and
+<link linkend="SOUP-COOKIE-MAX-AGE-ONE-YEAR--CAPS"><literal>SOUP_COOKIE_MAX_AGE_ONE_YEAR</literal></link> (or multiples thereof) to calculate
+this value. (A value of 0 indicates that the cookie should be
+considered already-expired.)
+</para>
+<para>
+(This sets the same property as <link linkend="soup-cookie-set-expires"><function>soup_cookie_set_expires()</function></link>.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_age</parameter>&#160;:</term>
+<listitem><simpara> the new max age
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="SOUP-COOKIE-MAX-AGE-ONE-HOUR--CAPS" role="macro" condition="since:2.24">
+<title>SOUP_COOKIE_MAX_AGE_ONE_HOUR</title>
+<indexterm zone="SOUP-COOKIE-MAX-AGE-ONE-HOUR--CAPS" role="2.24"><primary sortas="SOUP_COOKIE_MAX_AGE_ONE_HOUR">SOUP_COOKIE_MAX_AGE_ONE_HOUR</primary></indexterm><programlisting>#define SOUP_COOKIE_MAX_AGE_ONE_HOUR (60 * 60)
+</programlisting>
+<para>
+A constant corresponding to 1 hour, for use with <link linkend="soup-cookie-new"><function>soup_cookie_new()</function></link>
+and <link linkend="soup-cookie-set-max-age"><function>soup_cookie_set_max_age()</function></link>.</para>
+<para>
+</para><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="SOUP-COOKIE-MAX-AGE-ONE-DAY--CAPS" role="macro" condition="since:2.24">
+<title>SOUP_COOKIE_MAX_AGE_ONE_DAY</title>
+<indexterm zone="SOUP-COOKIE-MAX-AGE-ONE-DAY--CAPS" role="2.24"><primary sortas="SOUP_COOKIE_MAX_AGE_ONE_DAY">SOUP_COOKIE_MAX_AGE_ONE_DAY</primary></indexterm><programlisting>#define SOUP_COOKIE_MAX_AGE_ONE_DAY  (SOUP_COOKIE_MAX_AGE_ONE_HOUR * 24)
+</programlisting>
+<para>
+A constant corresponding to 1 day, for use with <link linkend="soup-cookie-new"><function>soup_cookie_new()</function></link>
+and <link linkend="soup-cookie-set-max-age"><function>soup_cookie_set_max_age()</function></link>.</para>
+<para>
+</para><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="SOUP-COOKIE-MAX-AGE-ONE-WEEK--CAPS" role="macro" condition="since:2.24">
+<title>SOUP_COOKIE_MAX_AGE_ONE_WEEK</title>
+<indexterm zone="SOUP-COOKIE-MAX-AGE-ONE-WEEK--CAPS" role="2.24"><primary sortas="SOUP_COOKIE_MAX_AGE_ONE_WEEK">SOUP_COOKIE_MAX_AGE_ONE_WEEK</primary></indexterm><programlisting>#define SOUP_COOKIE_MAX_AGE_ONE_WEEK (SOUP_COOKIE_MAX_AGE_ONE_DAY * 7)
+</programlisting>
+<para>
+A constant corresponding to 1 week, for use with <link linkend="soup-cookie-new"><function>soup_cookie_new()</function></link>
+and <link linkend="soup-cookie-set-max-age"><function>soup_cookie_set_max_age()</function></link>.</para>
+<para>
+</para><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="SOUP-COOKIE-MAX-AGE-ONE-YEAR--CAPS" role="macro" condition="since:2.24">
+<title>SOUP_COOKIE_MAX_AGE_ONE_YEAR</title>
+<indexterm zone="SOUP-COOKIE-MAX-AGE-ONE-YEAR--CAPS" role="2.24"><primary sortas="SOUP_COOKIE_MAX_AGE_ONE_YEAR">SOUP_COOKIE_MAX_AGE_ONE_YEAR</primary></indexterm><programlisting>#define SOUP_COOKIE_MAX_AGE_ONE_YEAR (SOUP_COOKIE_MAX_AGE_ONE_DAY * 365.2422)
+</programlisting>
+<para>
+A constant corresponding to 1 year, for use with <link linkend="soup-cookie-new"><function>soup_cookie_new()</function></link>
+and <link linkend="soup-cookie-set-max-age"><function>soup_cookie_set_max_age()</function></link>.</para>
+<para>
+</para><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-set-expires" role="function" condition="since:2.24">
+<title>soup_cookie_set_expires ()</title>
+<indexterm zone="soup-cookie-set-expires" role="2.24"><primary sortas="soup_cookie_set_expires">soup_cookie_set_expires</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_set_expires             (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         <link linkend="SoupDate">SoupDate</link> *expires);</programlisting>
+<para>
+Sets <parameter>cookie</parameter>'s expiration time to <parameter>expires</parameter>. If <parameter>expires</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>,
+<parameter>cookie</parameter> will be a session cookie and will expire at the end of the
+client's session.
+</para>
+<para>
+(This sets the same property as <link linkend="soup-cookie-set-max-age"><function>soup_cookie_set_max_age()</function></link>.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>expires</parameter>&#160;:</term>
+<listitem><simpara> the new expiration time, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-set-secure" role="function" condition="since:2.24">
+<title>soup_cookie_set_secure ()</title>
+<indexterm zone="soup-cookie-set-secure" role="2.24"><primary sortas="soup_cookie_set_secure">soup_cookie_set_secure</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_set_secure              (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         <link linkend="gboolean">gboolean</link> secure);</programlisting>
+<para>
+Sets <parameter>cookie</parameter>'s secure attribute to <parameter>secure</parameter>. If <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, <parameter>cookie</parameter> will
+only be transmitted from the client to the server over secure
+(https) connections.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>secure</parameter>&#160;:</term>
+<listitem><simpara> the new value for the secure attribute
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-set-http-only" role="function" condition="since:2.24">
+<title>soup_cookie_set_http_only ()</title>
+<indexterm zone="soup-cookie-set-http-only" role="2.24"><primary sortas="soup_cookie_set_http_only">soup_cookie_set_http_only</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookie_set_http_only           (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         <link linkend="gboolean">gboolean</link> http_only);</programlisting>
+<para>
+Sets <parameter>cookie</parameter>'s HttpOnly attribute to <parameter>http_only</parameter>. If <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, <parameter>cookie</parameter>
+will be marked as "http only", meaning it should not be exposed to
+web page scripts or other untrusted code.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>http_only</parameter>&#160;:</term>
+<listitem><simpara> the new value for the HttpOnly attribute
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-applies-to-uri" role="function" condition="since:2.24">
+<title>soup_cookie_applies_to_uri ()</title>
+<indexterm zone="soup-cookie-applies-to-uri" role="2.24"><primary sortas="soup_cookie_applies_to_uri">soup_cookie_applies_to_uri</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            soup_cookie_applies_to_uri          (<link linkend="SoupCookie">SoupCookie</link> *cookie,
+                                                         <link linkend="SoupURI">SoupURI</link> *uri);</programlisting>
+<para>
+Tests if <parameter>cookie</parameter> should be sent to <parameter>uri</parameter>.
+</para>
+<para>
+(At the moment, this does not check that <parameter>cookie</parameter>'s domain matches
+<parameter>uri</parameter>, because it assumes that the caller has already done that.
+But don't rely on that; it may change in the future.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupURI"><type>SoupURI</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>cookie</parameter> should be sent to <parameter>uri</parameter>, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if
+not
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-to-cookie-header" role="function" condition="since:2.24">
+<title>soup_cookie_to_cookie_header ()</title>
+<indexterm zone="soup-cookie-to-cookie-header" role="2.24"><primary sortas="soup_cookie_to_cookie_header">soup_cookie_to_cookie_header</primary></indexterm><programlisting><link linkend="char">char</link> *              soup_cookie_to_cookie_header        (<link linkend="SoupCookie">SoupCookie</link> *cookie);</programlisting>
+<para>
+Serializes <parameter>cookie</parameter> in the format used by the Cookie header (ie, for
+returning a cookie from a <link linkend="SoupSession"><type>SoupSession</type></link> to a server).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the header
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookie-to-set-cookie-header" role="function" condition="since:2.24">
+<title>soup_cookie_to_set_cookie_header ()</title>
+<indexterm zone="soup-cookie-to-set-cookie-header" role="2.24"><primary sortas="soup_cookie_to_set_cookie_header">soup_cookie_to_set_cookie_header</primary></indexterm><programlisting><link linkend="char">char</link> *              soup_cookie_to_set_cookie_header    (<link linkend="SoupCookie">SoupCookie</link> *cookie);</programlisting>
+<para>
+Serializes <parameter>cookie</parameter> in the format used by the Set-Cookie header
+(ie, for sending a cookie from a <link linkend="SoupServer"><type>SoupServer</type></link> to a client).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookie</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the header
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookies-from-request" role="function" condition="since:2.24">
+<title>soup_cookies_from_request ()</title>
+<indexterm zone="soup-cookies-from-request" role="2.24"><primary sortas="soup_cookies_from_request">soup_cookies_from_request</primary></indexterm><programlisting><link linkend="GSList">GSList</link> *            soup_cookies_from_request           (<link linkend="SoupMessage">SoupMessage</link> *msg);</programlisting>
+<para>
+Parses <parameter>msg</parameter>'s Cookie request header and returns a <link linkend="GSList"><type>GSList</type></link> of
+<link linkend="SoupCookie"><type>SoupCookie</type></link><!-- -->s. As the "Cookie" header, unlike "Set-Cookie",
+only contains cookie names and values, none of the other
+<link linkend="SoupCookie"><type>SoupCookie</type></link> fields will be filled in. (Thus, you can't generally
+pass a cookie returned from this method directly to
+<link linkend="soup-cookies-to-response"><function>soup_cookies_to_response()</function></link>.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>msg</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessage"><type>SoupMessage</type></link> containing a "Cookie" request header
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GSList"><type>GSList</type></link> of <link linkend="SoupCookie"><type>SoupCookie</type></link><!-- -->s, which can be freed
+with <link linkend="soup-cookies-free"><function>soup_cookies_free()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookies-from-response" role="function" condition="since:2.24">
+<title>soup_cookies_from_response ()</title>
+<indexterm zone="soup-cookies-from-response" role="2.24"><primary sortas="soup_cookies_from_response">soup_cookies_from_response</primary></indexterm><programlisting><link linkend="GSList">GSList</link> *            soup_cookies_from_response          (<link linkend="SoupMessage">SoupMessage</link> *msg);</programlisting>
+<para>
+Parses <parameter>msg</parameter>'s Set-Cookie response headers and returns a <link linkend="GSList"><type>GSList</type></link> of
+<link linkend="SoupCookie"><type>SoupCookie</type></link><!-- -->s. Cookies that do not specify "path" or
+"domain" attributes will have their values defaulted from <parameter>msg</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>msg</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessage"><type>SoupMessage</type></link> containing a "Set-Cookie" response header
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GSList"><type>GSList</type></link> of <link linkend="SoupCookie"><type>SoupCookie</type></link><!-- -->s, which can be freed
+with <link linkend="soup-cookies-free"><function>soup_cookies_free()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookies-to-request" role="function" condition="since:2.24">
+<title>soup_cookies_to_request ()</title>
+<indexterm zone="soup-cookies-to-request" role="2.24"><primary sortas="soup_cookies_to_request">soup_cookies_to_request</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookies_to_request             (<link linkend="GSList">GSList</link> *cookies,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *msg);</programlisting>
+<para>
+Adds the name and value of each cookie in <parameter>cookies</parameter> to <parameter>msg</parameter>'s
+"Cookie" request. (If <parameter>msg</parameter> already has a "Cookie" request header,
+these cookies will be appended to the cookies already present. Be
+careful that you do not append the same cookies twice, eg, when
+requeuing a message.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookies</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GSList"><type>GSList</type></link> of <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>msg</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessage"><type>SoupMessage</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookies-to-response" role="function" condition="since:2.24">
+<title>soup_cookies_to_response ()</title>
+<indexterm zone="soup-cookies-to-response" role="2.24"><primary sortas="soup_cookies_to_response">soup_cookies_to_response</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookies_to_response            (<link linkend="GSList">GSList</link> *cookies,
+                                                         <link linkend="SoupMessage">SoupMessage</link> *msg);</programlisting>
+<para>
+Appends a "Set-Cookie" response header to <parameter>msg</parameter> for each cookie in
+<parameter>cookies</parameter>. (This is in addition to any other "Set-Cookie" headers
+<parameter>msg</parameter> may already have.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookies</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GSList"><type>GSList</type></link> of <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>msg</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessage"><type>SoupMessage</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookies-to-cookie-header" role="function" condition="since:2.24">
+<title>soup_cookies_to_cookie_header ()</title>
+<indexterm zone="soup-cookies-to-cookie-header" role="2.24"><primary sortas="soup_cookies_to_cookie_header">soup_cookies_to_cookie_header</primary></indexterm><programlisting><link linkend="char">char</link> *              soup_cookies_to_cookie_header       (<link linkend="GSList">GSList</link> *cookies);</programlisting>
+<para>
+Serializes a <link linkend="GSList"><type>GSList</type></link> of <link linkend="SoupCookie"><type>SoupCookie</type></link> into a string suitable for
+setting as the value of the "Cookie" header.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookies</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GSList"><type>GSList</type></link> of <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the serialization of <parameter>cookies</parameter>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+<refsect2 id="soup-cookies-free" role="function" condition="since:2.24">
+<title>soup_cookies_free ()</title>
+<indexterm zone="soup-cookies-free" role="2.24"><primary sortas="soup_cookies_free">soup_cookies_free</primary></indexterm><programlisting><link linkend="void">void</link>                soup_cookies_free                   (<link linkend="GSList">GSList</link> *cookies);</programlisting>
+<para>
+Frees <parameter>cookies</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cookies</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GSList"><type>GSList</type></link> of <link linkend="SoupCookie"><type>SoupCookie</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.24</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="libsoup-24-SoupCookie.see-also">
+<title>See Also</title>
+#SoupMessage
+</refsect1>
+
+</refentry>

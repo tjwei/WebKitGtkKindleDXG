@@ -1,0 +1,181 @@
+TODO key: d = done, w = work in progress, ? = possibly fixed
+          * = required before next release
+
+Major:
+----------------------------------------------
+
+d> figure out if crash when expanding a folder in the folder tree view when pessing "*" is a bug in
+   GTK+ 2.10.4 (gdb shows it deep inside gtk). This does not happen on GTK+ 2.6.
+   (determined fault of GTK+, filed as GTK+ bug #366782.
+
+ > pixbuf-renderer.c:
+   > tile dispose order is slightly incorrect, furthest ones from current position should be dropped first
+
+ > image.c:
+  d> test and probably fix delay_flip.
+      > UPDATE: works as before (pre pixbuf-renderer), but should be fixed to provide a single redraw
+        by pre-rendering any scaled tiles that are visible before signaling 'render_complete'.
+   > make this a g_object with signals for completed, changed, etc.
+   > fix delay flip 'completed' signal (full screen busy cursor is not always turned off)
+
+ > cache-load.c:
+   > should honor enable_thumbnails setting
+
+ > color profiles:
+  d> support profiles embedded in images
+  d> check if clamp arg is handled correct in post_process_*()
+   > add support in img-view.c
+
+  ---
+
+ >raw + exif formats:
+
+   > all thats left to do is possibly mmap the file so we have all the tiff data available when
+     looking for the make TIFF tag (0x10f) as it may not always fit within data available from
+     the first read() in image-load.c.
+
+   > support konica / minolta MakerNote, investigate RAW.
+
+   > exif.c parser should not be using EXIF tags during tiff directory search for EXIF tag.
+
+   > fix parsers to properly indicate which offsets are valid
+     instead of making one zero if the other is found, this leads to making
+     the file loader parse an entire file even if we found no jpeg but did find an exif segment.
+     (simply set non-found offsets to file length?)
+
+  ---
+
+ > work on pan view:
+   > Pick a better keyboard shortcut than Control + J :)
+  w> Fix search scrolling to try to center image and info popup.
+   > Fix info popup location to opposing horizontal side when near edge of grid.
+   > Find something to do with middle mouse clicks.
+   > should delete key actually work?
+   > search should highlight all matching images (with toggle?)
+   > should non-thumbnail images have a drop shadow?
+  d> optimize pixbuf_draw_line (line endpoints should clip to draw region before draw loop)
+     > introduced bug (looks like clamp or rounding error)
+  d> optimize pixbuf_draw_triangle
+     > introduced bug (round error?)
+   > check ref counting of image when redrawing after finish loading
+
+   > add control to toggle 'ignore folder symlinks'
+   > the folder tree should not have to be re-read when changing options
+     that do not effect the file list count/contents
+
+   > time line view:
+    w> allow use of file date or EXIF (embedded) date.
+     > allow horizontal _or_ vertical orientation.
+
+   > calendar view:
+    w> fix search. (UPDATE: still can not find day containing name/path/partial)
+     > supports thumbnail size images only, should grey out actual size items in size menu or something...
+    w> allow use of file date or EXIF (embedded) date.
+    d> fix scrolling when 'day' popup appears outsize of canvas.
+
+   > grid view:
+     > allow sorting by name, date, size, dimensions, etc.
+
+   > flower view:
+    d> do not show empty folders
+
+   > under consideration:
+     > split view
+
+  ---
+
+ > the info dialog is not set as a transient of the calling window, this causes it to be behind
+   a full screen window when 'stay above other windows' is enabled.
+
+ > folder tree view shortcuts for expanding/collapsing leak through to the main
+   window (+,-,*,/, etc.), figure what behavior is desired and fix this.
+
+ -------------
+
+ > update translations:
+
+ > document recent additions/changes:
+   > Added 'Fast jpeg thumbnailing'.
+   > xvpics is now hidden option.
+   > Holding down shift will now scroll more when panning with mouse.
+   > add --geometry command line option
+   > add [shift]+G grayscale alteration
+   > add F11 for full screen toggle
+   > default edit commands not described.
+   > add formatted rename option.
+   > [Control]+V now shows image in new window
+   > [Shift]+P print shortcut added to collection and img-view windows.
+     (fixme, forgot to add it to find dialog).
+   > add color profile page
+
+   > add blurb about moving images between collections with shift+drag
+
+   > start documenting the pan view, at least the basic options
+     and how search works/what's supported
+
+
+Minor (non blockers):
+----------------------------------------------
+
+d> fix memory leak in real_slideshow_start() when slideshow_step fails.
+
+d> fix gtk_table_attach use to not use FALSE for fill vertical arg.
+
+ > xv and xpaint are hardly used or even installed by any distro anymore - time
+   to remove these (and find alternates?) seems silly to only have gimp.
+
+ > allow editor commands to be interrupted (via SIGTERM?)
+ > fix hanging editor commands that await user input (how to handle, or even detect this?)
+
+ > when resizing/refreshing collection window, keep the same top left thumbnail visible
+
+ > do not lose slideshow when reworking window layout.
+
+d> fix printing of transparent images to not use black for transparency (white or user settable).
+
+ > fix comment field in keywords bar to a height of 2 or 3 text lines.
+
+ > add toolbar to: (UPDATE: these toolbars may not make it into 1.6)
+   > find dupes window (with button to open dialog to add new files/folders)
+   > collection window
+   > search window
+
+ > make wallpaper setting have a dialog to allow choosing tile, scale, center and then
+   also choose desktop environment (or detect it somehow?)
+
+Wishlist?:
+----------------------------------------------
+
+ > Explore tabbed view option to main window, where 'view in new window' option results
+   in a new tab instead of window.
+
+ > Initiating full screen from the command line should not
+   show main window until full screen is exited.
+
+ > Add shortcut to jump to next folder within parent folder.
+
+ > add animated image support
+
+ > add gamma correction patch
+
+ > deleting a file should not discontinue slide show.
+
+ > add option to only preload max # of thumbnails (to conserve memory),
+   then release old/load new needed thumbnails on demand.
+
+ > printing (low priority):
+   > fix text postscript output by converting utf8 to a locale (better) understood by postscript...
+   > allow selection of background color... (for image files only?)...
+   > allow text color and font selection
+
+ > image comparison window (displays two or more images for comparison)
+
+ > add symlink option (in addition to the move/copy stuff.)
+
+ > allow slideshow transition effects (wipe/fade etc.)
+
+ > allow on the fly slideshow delay change with [,] and [.] (< and > too?)
+   > show change in overlay for image...
+   > account for changing of imd when toggling full screen...
+   > should change be only to current slideshow?
+

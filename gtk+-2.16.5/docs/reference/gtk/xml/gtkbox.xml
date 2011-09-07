@@ -1,0 +1,601 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkBox">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkBox.top_of_page">GtkBox</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkBox</refname>
+<refpurpose>Base class for box containers</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkBox.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkBox-struct">GtkBox</link>;
+                    <link linkend="GtkBoxChild">GtkBoxChild</link>;
+<link linkend="void">void</link>                <link linkend="gtk-box-pack-start">gtk_box_pack_start</link>                  (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gboolean">gboolean</link> expand,
+                                                         <link linkend="gboolean">gboolean</link> fill,
+                                                         <link linkend="guint">guint</link> padding);
+<link linkend="void">void</link>                <link linkend="gtk-box-pack-end">gtk_box_pack_end</link>                    (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gboolean">gboolean</link> expand,
+                                                         <link linkend="gboolean">gboolean</link> fill,
+                                                         <link linkend="guint">guint</link> padding);
+<link linkend="void">void</link>                <link linkend="gtk-box-pack-start-defaults">gtk_box_pack_start_defaults</link>         (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *widget);
+<link linkend="void">void</link>                <link linkend="gtk-box-pack-end-defaults">gtk_box_pack_end_defaults</link>           (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *widget);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-box-get-homogeneous">gtk_box_get_homogeneous</link>             (<link linkend="GtkBox">GtkBox</link> *box);
+<link linkend="void">void</link>                <link linkend="gtk-box-set-homogeneous">gtk_box_set_homogeneous</link>             (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="gboolean">gboolean</link> homogeneous);
+<link linkend="gint">gint</link>                <link linkend="gtk-box-get-spacing">gtk_box_get_spacing</link>                 (<link linkend="GtkBox">GtkBox</link> *box);
+<link linkend="void">void</link>                <link linkend="gtk-box-set-spacing">gtk_box_set_spacing</link>                 (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="gint">gint</link> spacing);
+<link linkend="void">void</link>                <link linkend="gtk-box-reorder-child">gtk_box_reorder_child</link>               (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gint">gint</link> position);
+<link linkend="void">void</link>                <link linkend="gtk-box-query-child-packing">gtk_box_query_child_packing</link>         (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gboolean">gboolean</link> *expand,
+                                                         <link linkend="gboolean">gboolean</link> *fill,
+                                                         <link linkend="guint">guint</link> *padding,
+                                                         <link linkend="GtkPackType">GtkPackType</link> *pack_type);
+<link linkend="void">void</link>                <link linkend="gtk-box-set-child-packing">gtk_box_set_child_packing</link>           (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gboolean">gboolean</link> expand,
+                                                         <link linkend="gboolean">gboolean</link> fill,
+                                                         <link linkend="guint">guint</link> padding,
+                                                         <link linkend="GtkPackType">GtkPackType</link> pack_type);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkBox.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----GtkBox
+                                 +----<link linkend="GtkButtonBox">GtkButtonBox</link>
+                                 +----<link linkend="GtkVBox">GtkVBox</link>
+                                 +----<link linkend="GtkHBox">GtkHBox</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkBox.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkBox implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkBox.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkBox--homogeneous">homogeneous</link>&quot;              <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkBox--spacing">spacing</link>&quot;                  <link linkend="gint">gint</link>                  : Read / Write
+</synopsis>
+</refsect1>
+<refsect1 id="GtkBox.child-properties" role="child_properties">
+<title role="child_properties.title">Child Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkBox--c-expand">expand</link>&quot;                   <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkBox--c-fill">fill</link>&quot;                     <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkBox--c-pack-type">pack-type</link>&quot;                <link linkend="GtkPackType">GtkPackType</link>           : Read / Write
+  &quot;<link linkend="GtkBox--c-padding">padding</link>&quot;                  <link linkend="guint">guint</link>                 : Read / Write
+  &quot;<link linkend="GtkBox--c-position">position</link>&quot;                 <link linkend="gint">gint</link>                  : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkBox.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+GtkBox is an abstract widget which encapsulates functionality for a
+particular kind of container, one that organizes a variable number of
+widgets into a rectangular area.  GtkBox has a number of derived
+classes, e.g. <link linkend="GtkHBox"><type>GtkHBox</type></link> and <link linkend="GtkVBox"><type>GtkVBox</type></link>.
+</para>
+<para>
+The rectangular area of a GtkBox is organized into either a single row
+or a single column of child widgets depending upon whether the box is
+of type <link linkend="GtkHBox"><type>GtkHBox</type></link> or <link linkend="GtkVBox"><type>GtkVBox</type></link>, respectively.  Thus, all children of a
+GtkBox are allocated one dimension in common, which is the height of a
+row, or the width of a column.
+</para>
+<para>
+GtkBox uses a notion of <emphasis>packing</emphasis>.  Packing refers to
+adding widgets with reference to a particular position in a
+<link linkend="GtkContainer"><type>GtkContainer</type></link>.  For a GtkBox, there are two reference positions: the
+<emphasis>start</emphasis> and the <emphasis>end</emphasis> of the box.
+For a <link linkend="GtkVBox"><type>GtkVBox</type></link>, the start is defined as the top of the box and the end is
+defined as the bottom.  For a <link linkend="GtkHBox"><type>GtkHBox</type></link> the start is defined as the
+left side and the end is defined as the right side.
+</para>
+<para>
+Use repeated calls to <link linkend="gtk-box-pack-start"><function>gtk_box_pack_start()</function></link> to pack widgets into a
+GtkBox from start to end.  Use <link linkend="gtk-box-pack-end"><function>gtk_box_pack_end()</function></link> to add widgets from
+end to start.  You may intersperse these calls and add widgets from
+both ends of the same GtkBox.
+</para>
+<para>
+Use <link linkend="gtk-box-pack-start-defaults"><function>gtk_box_pack_start_defaults()</function></link> or <link linkend="gtk-box-pack-end-defaults"><function>gtk_box_pack_end_defaults()</function></link>
+to pack widgets into a GtkBox if you do not need to specify the
+<link linkend="GtkBox--expand"><type>"expand"</type></link>, <link linkend="GtkBox--fill"><type>"fill"</type></link>, or <link linkend="GtkBox--padding"><type>"padding"</type></link> child properties
+for the child to be added.
+</para>
+<para>
+Because GtkBox is a <link linkend="GtkContainer"><type>GtkContainer</type></link>, you may also use
+<link linkend="gtk-container-add"><function>gtk_container_add()</function></link> to insert widgets into the box, and they will be
+packed as if with <link linkend="gtk-box-pack-start-defaults"><function>gtk_box_pack_start_defaults()</function></link>.  Use
+<link linkend="gtk-container-remove"><function>gtk_container_remove()</function></link> to remove widgets from the GtkBox.
+</para>
+<para>
+Use <link linkend="gtk-box-set-homogeneous"><function>gtk_box_set_homogeneous()</function></link> to specify whether or not all children
+of the GtkBox are forced to get the same amount of space.
+</para>
+<para>
+Use <link linkend="gtk-box-set-spacing"><function>gtk_box_set_spacing()</function></link> to determine how much space will be
+minimally placed between all children in the GtkBox.
+</para>
+<para>
+Use <link linkend="gtk-box-reorder-child"><function>gtk_box_reorder_child()</function></link> to move a GtkBox child to a different
+place in the box.
+</para>
+<para>
+Use <link linkend="gtk-box-set-child-packing"><function>gtk_box_set_child_packing()</function></link> to reset the <link linkend="GtkBox--expand"><type>"expand"</type></link>,
+<link linkend="GtkBox--fill"><type>"fill"</type></link> and <link linkend="GtkBox--padding"><type>"padding"</type></link> child properties.
+Use <link linkend="gtk-box-query-child-packing"><function>gtk_box_query_child_packing()</function></link> to query these fields.
+</para>
+</refsect1>
+
+<refsect1 id="GtkBox.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkBox-struct" role="struct">
+<title>GtkBox</title>
+<indexterm zone="GtkBox-struct"><primary sortas="Box">GtkBox</primary></indexterm><programlisting>typedef struct {
+  GList *GSEAL (children);
+  gint16 GSEAL (spacing);
+  guint GSEAL (homogeneous) : 1;
+} GtkBox;
+</programlisting>
+<para>
+The <link linkend="GtkBox-struct"><type>GtkBox</type></link> describes an instance of GtkBox and contains the
+following fields.  (These fields should be considered read-only.
+They should never be set by an application.)
+</para></refsect2>
+<refsect2 id="GtkBoxChild" role="struct">
+<title>GtkBoxChild</title>
+<indexterm zone="GtkBoxChild"><primary sortas="BoxChild">GtkBoxChild</primary></indexterm><programlisting>typedef struct {
+  GtkWidget *widget;
+  guint16 padding;
+  guint expand : 1;
+  guint fill : 1;
+  guint pack : 1;
+  guint is_secondary : 1;
+} GtkBoxChild;
+</programlisting>
+<para>
+The <link linkend="GtkBoxChild-struct"><type>GtkBoxChild</type></link> holds a child widget of GtkBox and describes
+how the child is to be packed into the GtkBox.  Use
+<link linkend="gtk-box-query-child-packing"><function>gtk_box_query_child_packing()</function></link> and <link linkend="gtk-box-set-child-packing"><function>gtk_box_set_child_packing()</function></link> to query
+and reset the <structfield>padding</structfield>,
+<structfield>expand</structfield>, <structfield>fill</structfield>,
+and <structfield>pack</structfield> fields.
+</para>
+<para>
+<link linkend="GtkBoxChild-struct"><type>GtkBoxChild</type></link> contains the following fields.  (These fields
+should be considered read-only. They should never be directly set by an
+application.)
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GtkWidget">GtkWidget</link>&#160;*<structfield>widget</structfield>;</term>
+<listitem><simpara>the child widget, packed into the GtkBox.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint16">guint16</link>&#160;<structfield>padding</structfield>;</term>
+<listitem><simpara>the number of extra pixels to put between this child and its
+  neighbors, set when packed, zero by default.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>expand</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>flag indicates whether extra space should be given to this
+  child. Any extra space given to the parent GtkBox is divided up
+  among all children with this attribute set to <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>; set when packed,
+  <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> by default.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>fill</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>flag indicates whether any extra space given to this child due 
+  to its <parameter>expand</parameter> attribute being set is actually allocated to the child,
+  rather than being used as padding around the widget; set when packed,
+  <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> by default.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>pack</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>one of <link linkend="GtkPackType"><type>GtkPackType</type></link> indicating whether the child is packed with 
+  reference to the start (top/left) or end (bottom/right) of the GtkBox.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>is_secondary</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>%TRUE if the child is secondary
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-pack-start" role="function">
+<title>gtk_box_pack_start ()</title>
+<indexterm zone="gtk-box-pack-start"><primary sortas="box_pack_start">gtk_box_pack_start</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_box_pack_start                  (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gboolean">gboolean</link> expand,
+                                                         <link linkend="gboolean">gboolean</link> fill,
+                                                         <link linkend="guint">guint</link> padding);</programlisting>
+<para>
+Adds <parameter>child</parameter> to <parameter>box</parameter>, packed with reference to the start of <parameter>box</parameter>.
+The <parameter>child</parameter> is packed after any other child packed with reference 
+to the start of <parameter>box</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkWidget"><type>GtkWidget</type></link> to be added to <parameter>box</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>expand</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the new child is to be given extra space allocated to
+<parameter>box</parameter>.  The extra space will be divided evenly between all children of
+<parameter>box</parameter> that use this option
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>fill</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if space given to <parameter>child</parameter> by the <parameter>expand</parameter> option is
+  actually allocated to <parameter>child</parameter>, rather than just padding it.  This
+  parameter has no effect if <parameter>expand</parameter> is set to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.  A child is
+  always allocated the full height of a <link linkend="GtkHBox"><type>GtkHBox</type></link> and the full width 
+  of a <link linkend="GtkVBox"><type>GtkVBox</type></link>. This option affects the other dimension
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>padding</parameter>&#160;:</term>
+<listitem><simpara> extra space in pixels to put between this child and its
+  neighbors, over and above the global amount specified by
+  <link linkend="GtkBox--spacing"><type>"spacing"</type></link> property.  If <parameter>child</parameter> is a widget at one of the 
+  reference ends of <parameter>box</parameter>, then <parameter>padding</parameter> pixels are also put between 
+  <parameter>child</parameter> and the reference edge of <parameter>box</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-pack-end" role="function">
+<title>gtk_box_pack_end ()</title>
+<indexterm zone="gtk-box-pack-end"><primary sortas="box_pack_end">gtk_box_pack_end</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_box_pack_end                    (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gboolean">gboolean</link> expand,
+                                                         <link linkend="gboolean">gboolean</link> fill,
+                                                         <link linkend="guint">guint</link> padding);</programlisting>
+<para>
+Adds <parameter>child</parameter> to <parameter>box</parameter>, packed with reference to the end of <parameter>box</parameter>.  
+The <parameter>child</parameter> is packed after (away from end of) any other child 
+packed with reference to the end of <parameter>box</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkWidget"><type>GtkWidget</type></link> to be added to <parameter>box</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>expand</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the new child is to be given extra space allocated 
+  to <parameter>box</parameter>. The extra space will be divided evenly between all children 
+  of <parameter>box</parameter> that use this option
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>fill</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if space given to <parameter>child</parameter> by the <parameter>expand</parameter> option is
+  actually allocated to <parameter>child</parameter>, rather than just padding it.  This
+  parameter has no effect if <parameter>expand</parameter> is set to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.  A child is
+  always allocated the full height of a <link linkend="GtkHBox"><type>GtkHBox</type></link> and the full width 
+  of a <link linkend="GtkVBox"><type>GtkVBox</type></link>.  This option affects the other dimension
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>padding</parameter>&#160;:</term>
+<listitem><simpara> extra space in pixels to put between this child and its
+  neighbors, over and above the global amount specified by
+  <link linkend="GtkBox--spacing"><type>"spacing"</type></link> property.  If <parameter>child</parameter> is a widget at one of the 
+  reference ends of <parameter>box</parameter>, then <parameter>padding</parameter> pixels are also put between 
+  <parameter>child</parameter> and the reference edge of <parameter>box</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-pack-start-defaults" role="function" condition="deprecated:2.14: Use gtk_box_pack_start()">
+<title>gtk_box_pack_start_defaults ()</title>
+<indexterm zone="gtk-box-pack-start-defaults" role="deprecated"><primary sortas="box_pack_start_defaults">gtk_box_pack_start_defaults</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_box_pack_start_defaults         (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *widget);</programlisting>
+<warning><para><literal>gtk_box_pack_start_defaults</literal> has been deprecated since version 2.14 and should not be used in newly-written code. Use <link linkend="gtk-box-pack-start"><function>gtk_box_pack_start()</function></link></para></warning>
+<para>
+Adds <parameter>widget</parameter> to <parameter>box</parameter>, packed with reference to the start of <parameter>box</parameter>.
+The child is packed after any other child packed with reference 
+to the start of <parameter>box</parameter>. 
+</para>
+<para>
+Parameters for how to pack the child <parameter>widget</parameter>, <link linkend="GtkBox--expand"><type>"expand"</type></link>, 
+<link linkend="GtkBox--fill"><type>"fill"</type></link> and <link linkend="GtkBox--padding"><type>"padding"</type></link>, are given their default
+values, <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, and 0, respectively.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkWidget"><type>GtkWidget</type></link> to be added to <parameter>box</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-pack-end-defaults" role="function" condition="deprecated:2.14: Use gtk_box_pack_end()">
+<title>gtk_box_pack_end_defaults ()</title>
+<indexterm zone="gtk-box-pack-end-defaults" role="deprecated"><primary sortas="box_pack_end_defaults">gtk_box_pack_end_defaults</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_box_pack_end_defaults           (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *widget);</programlisting>
+<warning><para><literal>gtk_box_pack_end_defaults</literal> has been deprecated since version 2.14 and should not be used in newly-written code. Use <link linkend="gtk-box-pack-end"><function>gtk_box_pack_end()</function></link></para></warning>
+<para>
+Adds <parameter>widget</parameter> to <parameter>box</parameter>, packed with reference to the end of <parameter>box</parameter>.
+The child is packed after any other child packed with reference 
+to the start of <parameter>box</parameter>. 
+</para>
+<para>
+Parameters for how to pack the child <parameter>widget</parameter>, <link linkend="GtkBox--expand"><type>"expand"</type></link>, 
+<link linkend="GtkBox--fill"><type>"fill"</type></link> and <link linkend="GtkBox--padding"><type>"padding"</type></link>, are given their default
+values, <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, and 0, respectively.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkWidget"><type>GtkWidget</type></link> to be added to <parameter>box</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-get-homogeneous" role="function">
+<title>gtk_box_get_homogeneous ()</title>
+<indexterm zone="gtk-box-get-homogeneous"><primary sortas="box_get_homogeneous">gtk_box_get_homogeneous</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_box_get_homogeneous             (<link linkend="GtkBox">GtkBox</link> *box);</programlisting>
+<para>
+Returns whether the box is homogeneous (all children are the
+same size). See <link linkend="gtk-box-set-homogeneous"><function>gtk_box_set_homogeneous()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the box is homogeneous.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-set-homogeneous" role="function">
+<title>gtk_box_set_homogeneous ()</title>
+<indexterm zone="gtk-box-set-homogeneous"><primary sortas="box_set_homogeneous">gtk_box_set_homogeneous</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_box_set_homogeneous             (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="gboolean">gboolean</link> homogeneous);</programlisting>
+<para>
+Sets the <link linkend="GtkBox--homogeneous"><type>"homogeneous"</type></link> property of <parameter>box</parameter>, controlling 
+whether or not all children of <parameter>box</parameter> are given equal space 
+in the box.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>homogeneous</parameter>&#160;:</term>
+<listitem><simpara> a boolean value, <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> to create equal allotments,
+  <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> for variable allotments
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-get-spacing" role="function">
+<title>gtk_box_get_spacing ()</title>
+<indexterm zone="gtk-box-get-spacing"><primary sortas="box_get_spacing">gtk_box_get_spacing</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_box_get_spacing                 (<link linkend="GtkBox">GtkBox</link> *box);</programlisting>
+<para>
+Gets the value set by <link linkend="gtk-box-set-spacing"><function>gtk_box_set_spacing()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> spacing between children
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-set-spacing" role="function">
+<title>gtk_box_set_spacing ()</title>
+<indexterm zone="gtk-box-set-spacing"><primary sortas="box_set_spacing">gtk_box_set_spacing</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_box_set_spacing                 (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="gint">gint</link> spacing);</programlisting>
+<para>
+Sets the <link linkend="GtkBox--spacing"><type>"spacing"</type></link> property of <parameter>box</parameter>, which is the 
+number of pixels to place between children of <parameter>box</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>spacing</parameter>&#160;:</term>
+<listitem><simpara> the number of pixels to put between children
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-reorder-child" role="function">
+<title>gtk_box_reorder_child ()</title>
+<indexterm zone="gtk-box-reorder-child"><primary sortas="box_reorder_child">gtk_box_reorder_child</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_box_reorder_child               (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gint">gint</link> position);</programlisting>
+<para>
+Moves <parameter>child</parameter> to a new <parameter>position</parameter> in the list of <parameter>box</parameter> children.  
+The list is the <structfield>children</structfield> field of
+<link linkend="GtkBox-struct"><type>GtkBox</type></link>, and contains both widgets packed <link linkend="GTK-PACK-START--CAPS"><type>GTK_PACK_START</type></link> 
+as well as widgets packed <link linkend="GTK-PACK-END--CAPS"><type>GTK_PACK_END</type></link>, in the order that these 
+widgets were added to <parameter>box</parameter>.
+</para>
+<para>
+A widget's position in the <parameter>box</parameter> children list determines where 
+the widget is packed into <parameter>box</parameter>.  A child widget at some position 
+in the list will be packed just after all other widgets of the 
+same packing type that appear earlier in the list.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkWidget"><type>GtkWidget</type></link> to move
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>position</parameter>&#160;:</term>
+<listitem><simpara> the new position for <parameter>child</parameter> in the list of children 
+  of <parameter>box</parameter>, starting from 0. If negative, indicates the end of 
+  the list
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-query-child-packing" role="function">
+<title>gtk_box_query_child_packing ()</title>
+<indexterm zone="gtk-box-query-child-packing"><primary sortas="box_query_child_packing">gtk_box_query_child_packing</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_box_query_child_packing         (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gboolean">gboolean</link> *expand,
+                                                         <link linkend="gboolean">gboolean</link> *fill,
+                                                         <link linkend="guint">guint</link> *padding,
+                                                         <link linkend="GtkPackType">GtkPackType</link> *pack_type);</programlisting>
+<para>
+Obtains information about how <parameter>child</parameter> is packed into <parameter>box</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkWidget"><type>GtkWidget</type></link> of the child to query
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>expand</parameter>&#160;:</term>
+<listitem><simpara> pointer to return location for <link linkend="GtkBox--expand"><type>"expand"</type></link> child property 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>fill</parameter>&#160;:</term>
+<listitem><simpara> pointer to return location for <link linkend="GtkBox--fill"><type>"fill"</type></link> child property 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>padding</parameter>&#160;:</term>
+<listitem><simpara> pointer to return location for <link linkend="GtkBox--padding"><type>"padding"</type></link> child property 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pack_type</parameter>&#160;:</term>
+<listitem><simpara> pointer to return location for <link linkend="GtkBox--pack-type"><type>"pack-type"</type></link> child property 
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-box-set-child-packing" role="function">
+<title>gtk_box_set_child_packing ()</title>
+<indexterm zone="gtk-box-set-child-packing"><primary sortas="box_set_child_packing">gtk_box_set_child_packing</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_box_set_child_packing           (<link linkend="GtkBox">GtkBox</link> *box,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *child,
+                                                         <link linkend="gboolean">gboolean</link> expand,
+                                                         <link linkend="gboolean">gboolean</link> fill,
+                                                         <link linkend="guint">guint</link> padding,
+                                                         <link linkend="GtkPackType">GtkPackType</link> pack_type);</programlisting>
+<para>
+Sets the way <parameter>child</parameter> is packed into <parameter>box</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>box</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBox"><type>GtkBox</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkWidget"><type>GtkWidget</type></link> of the child to set
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>expand</parameter>&#160;:</term>
+<listitem><simpara> the new value of the <link linkend="GtkBox--expand"><type>"expand"</type></link> child property 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>fill</parameter>&#160;:</term>
+<listitem><simpara> the new value of the <link linkend="GtkBox--fill"><type>"fill"</type></link> child property
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>padding</parameter>&#160;:</term>
+<listitem><simpara> the new value of the <link linkend="GtkBox--padding"><type>"padding"</type></link> child property
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pack_type</parameter>&#160;:</term>
+<listitem><simpara> the new value of the <link linkend="GtkBox--pack-type"><type>"pack-type"</type></link> child property
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkBox.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkBox--homogeneous" role="property"><title>The <literal>&quot;homogeneous&quot;</literal> property</title>
+<indexterm zone="GtkBox--homogeneous"><primary sortas="Box:homogeneous">GtkBox:homogeneous</primary></indexterm><programlisting>  &quot;homogeneous&quot;              <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the children should all be the same size.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkBox--spacing" role="property"><title>The <literal>&quot;spacing&quot;</literal> property</title>
+<indexterm zone="GtkBox--spacing"><primary sortas="Box:spacing">GtkBox:spacing</primary></indexterm><programlisting>  &quot;spacing&quot;                  <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>The amount of space between children.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+</refsect1>
+<refsect1 id="GtkBox.child-property-details" role="child_property_details">
+<title role="child_property_details.title">Child Property Details</title>
+<refsect2 id="GtkBox--c-expand" role="property"><title>The <literal>&quot;expand&quot;</literal> child property</title>
+<indexterm zone="GtkBox--c-expand"><primary sortas="Box:expand">GtkBox:expand</primary></indexterm><programlisting>  &quot;expand&quot;                   <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the child should receive extra space when the parent grows.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkBox--c-fill" role="property"><title>The <literal>&quot;fill&quot;</literal> child property</title>
+<indexterm zone="GtkBox--c-fill"><primary sortas="Box:fill">GtkBox:fill</primary></indexterm><programlisting>  &quot;fill&quot;                     <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether extra space given to the child should be allocated to the child or used as padding.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkBox--c-pack-type" role="property"><title>The <literal>&quot;pack-type&quot;</literal> child property</title>
+<indexterm zone="GtkBox--c-pack-type"><primary sortas="Box:pack-type">GtkBox:pack-type</primary></indexterm><programlisting>  &quot;pack-type&quot;                <link linkend="GtkPackType">GtkPackType</link>           : Read / Write</programlisting>
+<para>A GtkPackType indicating whether the child is packed with reference to the start or end of the parent.</para><para>Default value: GTK_PACK_START</para>
+</refsect2>
+<refsect2 id="GtkBox--c-padding" role="property"><title>The <literal>&quot;padding&quot;</literal> child property</title>
+<indexterm zone="GtkBox--c-padding"><primary sortas="Box:padding">GtkBox:padding</primary></indexterm><programlisting>  &quot;padding&quot;                  <link linkend="guint">guint</link>                 : Read / Write</programlisting>
+<para>Extra space to put between the child and its neighbors, in pixels.</para><para>Allowed values: &lt;= G_MAXINT</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkBox--c-position" role="property"><title>The <literal>&quot;position&quot;</literal> child property</title>
+<indexterm zone="GtkBox--c-position"><primary sortas="Box:position">GtkBox:position</primary></indexterm><programlisting>  &quot;position&quot;                 <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>The index of the child in the parent.</para><para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 0</para>
+</refsect2>
+</refsect1>
+
+
+
+<refsect1 id="GtkBox.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="GtkHBox"><type>GtkHBox</type></link></term>
+<listitem><para>a derived class that organizes widgets into a row.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkVBox"><type>GtkVBox</type></link></term>
+<listitem><para>a derived class that organizes widgets into a column.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkFrame"><type>GtkFrame</type></link></term>
+<listitem><para>a <link linkend="GtkWidget"><type>GtkWidget</type></link> useful for drawing a border around a GtkBox.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkTable"><type>GtkTable</type></link></term>
+<listitem><para>a <link linkend="GtkContainer"><type>GtkContainer</type></link> for organizing widgets into a grid,
+rather than independent rows or columns.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkLayout"><type>GtkLayout</type></link></term>
+<listitem><para>a <link linkend="GtkContainer"><type>GtkContainer</type></link> for organizing widgets into arbitrary
+layouts.</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

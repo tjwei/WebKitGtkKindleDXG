@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkCellRendererSpin">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkCellRendererSpin.top_of_page">GtkCellRendererSpin</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkCellRendererSpin</refname>
+<refpurpose>Renders a spin button in a cell</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkCellRendererSpin.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkCellRendererSpin-struct">GtkCellRendererSpin</link>;
+<link linkend="GtkCellRenderer">GtkCellRenderer</link> *   <link linkend="gtk-cell-renderer-spin-new">gtk_cell_renderer_spin_new</link>          (void);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkCellRendererSpin.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkCellRenderer">GtkCellRenderer</link>
+                     +----<link linkend="GtkCellRendererText">GtkCellRendererText</link>
+                           +----GtkCellRendererSpin
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkCellRendererSpin.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkCellRendererSpin--adjustment">adjustment</link>&quot;               <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write
+  &quot;<link linkend="GtkCellRendererSpin--climb-rate">climb-rate</link>&quot;               <link linkend="gdouble">gdouble</link>               : Read / Write
+  &quot;<link linkend="GtkCellRendererSpin--digits">digits</link>&quot;                   <link linkend="guint">guint</link>                 : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkCellRendererSpin.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkCellRendererSpin"><type>GtkCellRendererSpin</type></link> renders text in a cell like <link linkend="GtkCellRendererText"><type>GtkCellRendererText</type></link> from
+which it is derived. But while <link linkend="GtkCellRendererText"><type>GtkCellRendererText</type></link> offers a simple entry to
+edit the text, <link linkend="GtkCellRendererSpin"><type>GtkCellRendererSpin</type></link> offers a <link linkend="GtkSpinButton"><type>GtkSpinButton</type></link> widget. Of course,
+that means that the text has to be parseable as a floating point number.
+</para>
+<para>
+The range of the spinbutton is taken from the adjustment property of the
+cell renderer, which can be set explicitly or mapped to a column in the
+tree model, like all properties of cell renders. <link linkend="GtkCellRendererSpin"><type>GtkCellRendererSpin</type></link>
+also has properties for the climb rate and the number of digits to
+display. Other <link linkend="GtkSpinButton"><type>GtkSpinButton</type></link> properties can be set in a handler for the
+start-editing signal.
+</para>
+<para>
+The <link linkend="GtkCellRendererSpin"><type>GtkCellRendererSpin</type></link> cell renderer was added in GTK+ 2.10.
+</para>
+</refsect1>
+
+<refsect1 id="GtkCellRendererSpin.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkCellRendererSpin-struct" role="struct">
+<title>GtkCellRendererSpin</title>
+<indexterm zone="GtkCellRendererSpin-struct"><primary sortas="CellRendererSpin">GtkCellRendererSpin</primary></indexterm><programlisting>typedef struct _GtkCellRendererSpin GtkCellRendererSpin;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-cell-renderer-spin-new" role="function" condition="since:2.10">
+<title>gtk_cell_renderer_spin_new ()</title>
+<indexterm zone="gtk-cell-renderer-spin-new" role="2.10"><primary sortas="cell_renderer_spin_new">gtk_cell_renderer_spin_new</primary></indexterm><programlisting><link linkend="GtkCellRenderer">GtkCellRenderer</link> *   gtk_cell_renderer_spin_new          (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkCellRendererSpin"><type>GtkCellRendererSpin</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkCellRendererSpin"><type>GtkCellRendererSpin</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkCellRendererSpin.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkCellRendererSpin--adjustment" role="property"><title>The <literal>&quot;adjustment&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererSpin--adjustment" role="2.10"><primary sortas="CellRendererSpin:adjustment">GtkCellRendererSpin:adjustment</primary></indexterm><programlisting>  &quot;adjustment&quot;               <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write</programlisting>
+<para>
+The adjustment that holds the value of the spinbutton.
+This must be non-<link linkend="NULL--CAPS"><literal>NULL</literal></link> for the cell renderer to be editable.</para>
+<para>
+</para><para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkCellRendererSpin--climb-rate" role="property"><title>The <literal>&quot;climb-rate&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererSpin--climb-rate" role="2.10"><primary sortas="CellRendererSpin:climb-rate">GtkCellRendererSpin:climb-rate</primary></indexterm><programlisting>  &quot;climb-rate&quot;               <link linkend="gdouble">gdouble</link>               : Read / Write</programlisting>
+<para>
+The acceleration rate when you hold down a button.</para>
+<para>
+</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkCellRendererSpin--digits" role="property"><title>The <literal>&quot;digits&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererSpin--digits" role="2.10"><primary sortas="CellRendererSpin:digits">GtkCellRendererSpin:digits</primary></indexterm><programlisting>  &quot;digits&quot;                   <link linkend="guint">guint</link>                 : Read / Write</programlisting>
+<para>
+The number of decimal places to display.</para>
+<para>
+</para><para>Allowed values: &lt;= 20</para>
+<para>Default value: 0</para>
+<para>Since 2.10</para>
+</refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkCellRendererSpin.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkCellRendererText"><type>GtkCellRendererText</type></link>, <link linkend="GtkSpinButton"><type>GtkSpinButton</type></link>
+</para>
+</refsect1>
+
+</refentry>

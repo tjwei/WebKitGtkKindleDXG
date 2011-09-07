@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkVPaned">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkVPaned.top_of_page">GtkVPaned</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkVPaned</refname>
+<refpurpose>A container with two panes arranged vertically</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkVPaned.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkVPaned-struct">GtkVPaned</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-vpaned-new">gtk_vpaned_new</link>                      (void);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkVPaned.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkPaned">GtkPaned</link>
+                                 +----GtkVPaned
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkVPaned.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkVPaned implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkVPaned.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The VPaned widget is a container widget with two
+children arranged vertically. The division between
+the two panes is adjustable by the user by dragging
+a handle. See <link linkend="GtkPaned"><type>GtkPaned</type></link> for details.
+</para>
+</refsect1>
+
+<refsect1 id="GtkVPaned.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkVPaned-struct" role="struct">
+<title>GtkVPaned</title>
+<indexterm zone="GtkVPaned-struct"><primary sortas="VPaned">GtkVPaned</primary></indexterm><programlisting>typedef struct _GtkVPaned GtkVPaned;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-vpaned-new" role="function">
+<title>gtk_vpaned_new ()</title>
+<indexterm zone="gtk-vpaned-new"><primary sortas="vpaned_new">gtk_vpaned_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_vpaned_new                      (void);</programlisting>
+<para>
+Create a new <link linkend="GtkVPaned"><type>GtkVPaned</type></link>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>the new <link linkend="GtkVPaned"><type>GtkVPaned</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

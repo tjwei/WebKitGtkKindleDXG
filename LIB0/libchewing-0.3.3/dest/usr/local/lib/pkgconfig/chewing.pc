@@ -1,0 +1,16 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}/chewing
+sysconfdir=${prefix}/etc
+
+chewing_binary_version=1.0.0
+
+Name: Chewing
+Description: Intelligent Chinese phonetic input method library
+Version: 0.3.3
+Requires: 
+Libs: -L${libdir} -lchewing
+Cflags: -I${includedir}/chewing

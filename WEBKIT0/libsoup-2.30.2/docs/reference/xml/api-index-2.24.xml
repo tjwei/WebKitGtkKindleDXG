@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="SoupCookie"><link linkend="SoupCookie">SoupCookie</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SoupSession--add-feature"><link linkend="SoupSession--add-feature">SoupSession:add-feature</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SoupSession--add-feature-by-type"><link linkend="SoupSession--add-feature-by-type">SoupSession:add-feature-by-type</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SoupSession--remove-feature-by-type"><link linkend="SoupSession--remove-feature-by-type">SoupSession:remove-feature-by-type</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SoupSessionFeature-struct"><link linkend="SoupSessionFeature-struct">SoupSessionFeature</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SoupSessionFeatureInterface"><link linkend="SoupSessionFeatureInterface">SoupSessionFeatureInterface</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-add-completion"><link linkend="soup-add-completion">soup_add_completion</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookies-free"><link linkend="soup-cookies-free">soup_cookies_free</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookies-from-request"><link linkend="soup-cookies-from-request">soup_cookies_from_request</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookies-from-response"><link linkend="soup-cookies-from-response">soup_cookies_from_response</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookies-to-cookie-header"><link linkend="soup-cookies-to-cookie-header">soup_cookies_to_cookie_header</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookies-to-request"><link linkend="soup-cookies-to-request">soup_cookies_to_request</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookies-to-response"><link linkend="soup-cookies-to-response">soup_cookies_to_response</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-applies-to-uri"><link linkend="soup-cookie-applies-to-uri">soup_cookie_applies_to_uri</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-copy"><link linkend="soup-cookie-copy">soup_cookie_copy</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-free"><link linkend="soup-cookie-free">soup_cookie_free</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-jar-get-cookies"><link linkend="soup-cookie-jar-get-cookies">soup_cookie_jar_get_cookies</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-jar-new"><link linkend="soup-cookie-jar-new">soup_cookie_jar_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-jar-set-cookie"><link linkend="soup-cookie-jar-set-cookie">soup_cookie_jar_set_cookie</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-COOKIE-MAX-AGE-ONE-DAY--CAPS"><link linkend="SOUP-COOKIE-MAX-AGE-ONE-DAY--CAPS">SOUP_COOKIE_MAX_AGE_ONE_DAY</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-COOKIE-MAX-AGE-ONE-HOUR--CAPS"><link linkend="SOUP-COOKIE-MAX-AGE-ONE-HOUR--CAPS">SOUP_COOKIE_MAX_AGE_ONE_HOUR</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-COOKIE-MAX-AGE-ONE-WEEK--CAPS"><link linkend="SOUP-COOKIE-MAX-AGE-ONE-WEEK--CAPS">SOUP_COOKIE_MAX_AGE_ONE_WEEK</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-COOKIE-MAX-AGE-ONE-YEAR--CAPS"><link linkend="SOUP-COOKIE-MAX-AGE-ONE-YEAR--CAPS">SOUP_COOKIE_MAX_AGE_ONE_YEAR</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-new"><link linkend="soup-cookie-new">soup_cookie_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-parse"><link linkend="soup-cookie-parse">soup_cookie_parse</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-set-domain"><link linkend="soup-cookie-set-domain">soup_cookie_set_domain</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-set-expires"><link linkend="soup-cookie-set-expires">soup_cookie_set_expires</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-set-http-only"><link linkend="soup-cookie-set-http-only">soup_cookie_set_http_only</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-set-max-age"><link linkend="soup-cookie-set-max-age">soup_cookie_set_max_age</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-set-name"><link linkend="soup-cookie-set-name">soup_cookie_set_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-set-path"><link linkend="soup-cookie-set-path">soup_cookie_set_path</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-set-secure"><link linkend="soup-cookie-set-secure">soup_cookie_set_secure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-set-value"><link linkend="soup-cookie-set-value">soup_cookie_set_value</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-to-cookie-header"><link linkend="soup-cookie-to-cookie-header">soup_cookie_to_cookie_header</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-cookie-to-set-cookie-header"><link linkend="soup-cookie-to-set-cookie-header">soup_cookie_to_set_cookie_header</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-date-is-past"><link linkend="soup-date-is-past">soup_date_is_past</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-date-to-timeval"><link linkend="soup-date-to-timeval">soup_date_to_timeval</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-header-parse-semi-param-list"><link linkend="soup-header-parse-semi-param-list">soup_header_parse_semi_param_list</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-SESSION-ADD-FEATURE--CAPS"><link linkend="SOUP-SESSION-ADD-FEATURE--CAPS">SOUP_SESSION_ADD_FEATURE</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-session-add-feature"><link linkend="soup-session-add-feature">soup_session_add_feature</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-SESSION-ADD-FEATURE-BY-TYPE--CAPS"><link linkend="SOUP-SESSION-ADD-FEATURE-BY-TYPE--CAPS">SOUP_SESSION_ADD_FEATURE_BY_TYPE</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-session-add-feature-by-type"><link linkend="soup-session-add-feature-by-type">soup_session_add_feature_by_type</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-session-remove-feature"><link linkend="soup-session-remove-feature">soup_session_remove_feature</link></primaryie></indexentry>
+<indexentry><primaryie linkends="soup-session-remove-feature-by-type"><link linkend="soup-session-remove-feature-by-type">soup_session_remove_feature_by_type</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-SESSION-REMOVE-FEATURE-BY-TYPE--CAPS"><link linkend="SOUP-SESSION-REMOVE-FEATURE-BY-TYPE--CAPS">SOUP_SESSION_REMOVE_FEATURE_BY_TYPE</link></primaryie></indexentry>
+<indexentry><primaryie linkends="SOUP-URI-VALID-FOR-HTTP--CAPS"><link linkend="SOUP-URI-VALID-FOR-HTTP--CAPS">SOUP_URI_VALID_FOR_HTTP</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

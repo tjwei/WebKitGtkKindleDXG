@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkRecentChooserMenu">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkRecentChooserMenu.top_of_page">GtkRecentChooserMenu</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkRecentChooserMenu</refname>
+<refpurpose>Displays recently used files in a menu</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkRecentChooserMenu.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkRecentChooserMenu-struct">GtkRecentChooserMenu</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-recent-chooser-menu-new">gtk_recent_chooser_menu_new</link>         (void);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-recent-chooser-menu-new-for-manager">gtk_recent_chooser_menu_new_for_manager</link>
+                                                        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-chooser-menu-get-show-numbers">gtk_recent_chooser_menu_get_show_numbers</link>
+                                                        (<link linkend="GtkRecentChooserMenu">GtkRecentChooserMenu</link> *menu);
+<link linkend="void">void</link>                <link linkend="gtk-recent-chooser-menu-set-show-numbers">gtk_recent_chooser_menu_set_show_numbers</link>
+                                                        (<link linkend="GtkRecentChooserMenu">GtkRecentChooserMenu</link> *menu,
+                                                         <link linkend="gboolean">gboolean</link> show_numbers);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkRecentChooserMenu.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkMenuShell">GtkMenuShell</link>
+                                 +----<link linkend="GtkMenu">GtkMenu</link>
+                                       +----GtkRecentChooserMenu
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkRecentChooserMenu.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkRecentChooserMenu implements
+ <link linkend="GtkActivatable">GtkActivatable</link>,  <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkRecentChooser">GtkRecentChooser</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkRecentChooserMenu.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkRecentChooserMenu--show-numbers">show-numbers</link>&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkRecentChooserMenu.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link> is a widget suitable for displaying recently used files
+inside a menu.  It can be used to set a sub-menu of a <link linkend="GtkMenuItem"><type>GtkMenuItem</type></link> using
+<link linkend="gtk-menu-item-set-submenu"><function>gtk_menu_item_set_submenu()</function></link>, or as the menu of a <link linkend="GtkMenuToolButton"><type>GtkMenuToolButton</type></link>.
+</para>
+<para>
+Note that <link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link> does not have any methods of its own.  Instead,
+you should use the functions that work on a <link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>.
+</para>
+<para>
+Note also that <link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link> does not support multiple filters, as it
+has no way to let the user choose between them as the <link linkend="GtkRecentChooserWidget"><type>GtkRecentChooserWidget</type></link>
+and <link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link> widgets do. Thus using <link linkend="gtk-recent-chooser-add-filter"><function>gtk_recent_chooser_add_filter()</function></link>
+on a <link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link> widget will yield the same effects as using
+<link linkend="gtk-recent-chooser-set-filter"><function>gtk_recent_chooser_set_filter()</function></link>, replacing any currently set filter
+with the supplied filter; <link linkend="gtk-recent-chooser-remove-filter"><function>gtk_recent_chooser_remove_filter()</function></link> will remove
+any currently set <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link> object and will unset the current filter;
+<link linkend="gtk-recent-chooser-list-filters"><function>gtk_recent_chooser_list_filters()</function></link> will return a list containing a single
+<link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link> object.
+</para>
+<para>
+Recently used files are supported since GTK+ 2.10.
+</para>
+</refsect1>
+
+<refsect1 id="GtkRecentChooserMenu.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkRecentChooserMenu-struct" role="struct">
+<title>GtkRecentChooserMenu</title>
+<indexterm zone="GtkRecentChooserMenu-struct"><primary sortas="RecentChooserMenu">GtkRecentChooserMenu</primary></indexterm><programlisting>typedef struct _GtkRecentChooserMenu GtkRecentChooserMenu;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-recent-chooser-menu-new" role="function" condition="since:2.10">
+<title>gtk_recent_chooser_menu_new ()</title>
+<indexterm zone="gtk-recent-chooser-menu-new" role="2.10"><primary sortas="recent_chooser_menu_new">gtk_recent_chooser_menu_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_recent_chooser_menu_new         (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link> widget.
+</para>
+<para>
+This kind of widget shows the list of recently used resources as
+a menu, each item as a menu item.  Each item inside the menu might
+have an icon, representing its MIME type, and a number, for mnemonic
+access.
+</para>
+<para>
+This widget implements the <link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link> interface.
+</para>
+<para>
+This widget creates its own <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> object.  See the
+<link linkend="gtk-recent-chooser-menu-new-for-manager"><function>gtk_recent_chooser_menu_new_for_manager()</function></link> function to know how to create
+a <link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link> widget bound to another <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-chooser-menu-new-for-manager" role="function" condition="since:2.10">
+<title>gtk_recent_chooser_menu_new_for_manager ()</title>
+<indexterm zone="gtk-recent-chooser-menu-new-for-manager" role="2.10"><primary sortas="recent_chooser_menu_new_for_manager">gtk_recent_chooser_menu_new_for_manager</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_recent_chooser_menu_new_for_manager
+                                                        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager);</programlisting>
+<para>
+Creates a new <link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link> widget using <parameter>manager</parameter> as
+the underlying recently used resources manager.
+</para>
+<para>
+This is useful if you have implemented your own recent manager,
+or if you have a customized instance of a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+object or if you wish to share a common <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> object
+among multiple <link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link> widgets.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link>, bound to <parameter>manager</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-chooser-menu-get-show-numbers" role="function" condition="since:2.10">
+<title>gtk_recent_chooser_menu_get_show_numbers ()</title>
+<indexterm zone="gtk-recent-chooser-menu-get-show-numbers" role="2.10"><primary sortas="recent_chooser_menu_get_show_numbers">gtk_recent_chooser_menu_get_show_numbers</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_chooser_menu_get_show_numbers
+                                                        (<link linkend="GtkRecentChooserMenu">GtkRecentChooserMenu</link> *menu);</programlisting>
+<para>
+Returns the value set by <link linkend="gtk-recent-chooser-menu-set-show-numbers"><function>gtk_recent_chooser_menu_set_show_numbers()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>menu</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if numbers should be shown.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-chooser-menu-set-show-numbers" role="function" condition="since:2.10">
+<title>gtk_recent_chooser_menu_set_show_numbers ()</title>
+<indexterm zone="gtk-recent-chooser-menu-set-show-numbers" role="2.10"><primary sortas="recent_chooser_menu_set_show_numbers">gtk_recent_chooser_menu_set_show_numbers</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_chooser_menu_set_show_numbers
+                                                        (<link linkend="GtkRecentChooserMenu">GtkRecentChooserMenu</link> *menu,
+                                                         <link linkend="gboolean">gboolean</link> show_numbers);</programlisting>
+<para>
+Sets whether a number should be added to the items of <parameter>menu</parameter>.  The
+numbers are shown to provide a unique character for a mnemonic to
+be used inside ten menu item's label.  Only the first the items
+get a number to avoid clashes.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>menu</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>show_numbers</parameter>&#160;:</term>
+<listitem><simpara> whether to show numbers
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkRecentChooserMenu.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkRecentChooserMenu--show-numbers" role="property"><title>The <literal>&quot;show-numbers&quot;</literal> property</title>
+<indexterm zone="GtkRecentChooserMenu--show-numbers" role="2.10"><primary sortas="RecentChooserMenu:show-numbers">GtkRecentChooserMenu:show-numbers</primary></indexterm><programlisting>  &quot;show-numbers&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether the first ten items in the menu should be prepended by
+a number acting as a unique mnemonic.</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.10</para>
+</refsect2>
+</refsect1>
+
+
+
+<refsect1 id="GtkRecentChooserMenu.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>
+</para>
+</refsect1>
+
+</refentry>

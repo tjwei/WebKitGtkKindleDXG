@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkVBox">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkVBox.top_of_page">GtkVBox</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkVBox</refname>
+<refpurpose>A vertical container box</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkVBox.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkVBox-struct">GtkVBox</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-vbox-new">gtk_vbox_new</link>                        (<link linkend="gboolean">gboolean</link> homogeneous,
+                                                         <link linkend="gint">gint</link> spacing);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkVBox.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBox">GtkBox</link>
+                                 +----GtkVBox
+                                       +----<link linkend="GtkColorSelection">GtkColorSelection</link>
+                                       +----<link linkend="GtkFileChooserWidget">GtkFileChooserWidget</link>
+                                       +----<link linkend="GtkFontSelection">GtkFontSelection</link>
+                                       +----<link linkend="GtkGammaCurve">GtkGammaCurve</link>
+                                       +----<link linkend="GtkRecentChooserWidget">GtkRecentChooserWidget</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkVBox.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkVBox implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkVBox.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+GtkVBox is a container that organizes child widgets into a single column.
+</para>
+<para>
+Use the <link linkend="GtkBox"><type>GtkBox</type></link> packing interface to determine the arrangement,
+spacing, height, and alignment of GtkVBox children.
+</para>
+<para>
+All children are allocated the same width.
+</para>
+</refsect1>
+
+<refsect1 id="GtkVBox.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkVBox-struct" role="struct">
+<title>GtkVBox</title>
+<indexterm zone="GtkVBox-struct"><primary sortas="VBox">GtkVBox</primary></indexterm><programlisting>typedef struct _GtkVBox GtkVBox;</programlisting>
+</refsect2>
+<refsect2 id="gtk-vbox-new" role="function">
+<title>gtk_vbox_new ()</title>
+<indexterm zone="gtk-vbox-new"><primary sortas="vbox_new">gtk_vbox_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_vbox_new                        (<link linkend="gboolean">gboolean</link> homogeneous,
+                                                         <link linkend="gint">gint</link> spacing);</programlisting>
+<para>
+Creates a new GtkVBox.
+</para><variablelist role="params">
+<varlistentry><term><parameter>homogeneous</parameter>&#160;:</term>
+<listitem><simpara>%TRUE if all children are to be given equal space allotments.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>spacing</parameter>&#160;:</term>
+<listitem><simpara>the number of pixels to place by default between children.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a new GtkVBox.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkVBox.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="GtkHBox"><type>GtkHBox</type></link></term>
+<listitem><para>a sister class that organizes widgets into a row.</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

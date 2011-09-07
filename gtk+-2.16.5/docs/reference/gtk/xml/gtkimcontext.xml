@@ -1,0 +1,740 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkIMContext">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkIMContext.top_of_page">GtkIMContext</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkIMContext</refname>
+<refpurpose>Base class for input method contexts</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkIMContext.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+#include &lt;gtk/gtkimmodule.h&gt;
+
+                    <link linkend="GtkIMContext-struct">GtkIMContext</link>;
+                    <link linkend="GtkIMContextClass">GtkIMContextClass</link>;
+                    <link linkend="GtkIMContextInfo">GtkIMContextInfo</link>;
+<link linkend="void">void</link>                <link linkend="gtk-im-context-set-client-window">gtk_im_context_set_client_window</link>    (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="GdkWindow">GdkWindow</link> *window);
+<link linkend="void">void</link>                <link linkend="gtk-im-context-get-preedit-string">gtk_im_context_get_preedit_string</link>   (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="gchar">gchar</link> **str,
+                                                         <link linkend="PangoAttrList">PangoAttrList</link> **attrs,
+                                                         <link linkend="gint">gint</link> *cursor_pos);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-im-context-filter-keypress">gtk_im_context_filter_keypress</link>      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="GdkEventKey">GdkEventKey</link> *event);
+<link linkend="void">void</link>                <link linkend="gtk-im-context-focus-in">gtk_im_context_focus_in</link>             (<link linkend="GtkIMContext">GtkIMContext</link> *context);
+<link linkend="void">void</link>                <link linkend="gtk-im-context-focus-out">gtk_im_context_focus_out</link>            (<link linkend="GtkIMContext">GtkIMContext</link> *context);
+<link linkend="void">void</link>                <link linkend="gtk-im-context-reset">gtk_im_context_reset</link>                (<link linkend="GtkIMContext">GtkIMContext</link> *context);
+<link linkend="void">void</link>                <link linkend="gtk-im-context-set-cursor-location">gtk_im_context_set_cursor_location</link>  (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *area);
+<link linkend="void">void</link>                <link linkend="gtk-im-context-set-use-preedit">gtk_im_context_set_use_preedit</link>      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="gboolean">gboolean</link> use_preedit);
+<link linkend="void">void</link>                <link linkend="gtk-im-context-set-surrounding">gtk_im_context_set_surrounding</link>      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         const <link linkend="gchar">gchar</link> *text,
+                                                         <link linkend="gint">gint</link> len,
+                                                         <link linkend="gint">gint</link> cursor_index);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-im-context-get-surrounding">gtk_im_context_get_surrounding</link>      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="gchar">gchar</link> **text,
+                                                         <link linkend="gint">gint</link> *cursor_index);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-im-context-delete-surrounding">gtk_im_context_delete_surrounding</link>   (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="gint">gint</link> offset,
+                                                         <link linkend="gint">gint</link> n_chars);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkIMContext.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkIMContext
+         +----<link linkend="GtkIMContextSimple">GtkIMContextSimple</link>
+         +----<link linkend="GtkIMMulticontext">GtkIMMulticontext</link>
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+<refsect1 id="GtkIMContext.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkIMContext-commit">commit</link>&quot;                                         : Run Last
+  &quot;<link linkend="GtkIMContext-delete-surrounding">delete-surrounding</link>&quot;                             : Run Last
+  &quot;<link linkend="GtkIMContext-preedit-changed">preedit-changed</link>&quot;                                : Run Last
+  &quot;<link linkend="GtkIMContext-preedit-end">preedit-end</link>&quot;                                    : Run Last
+  &quot;<link linkend="GtkIMContext-preedit-start">preedit-start</link>&quot;                                  : Run Last
+  &quot;<link linkend="GtkIMContext-retrieve-surrounding">retrieve-surrounding</link>&quot;                           : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkIMContext.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkIMContext"><type>GtkIMContext</type></link> defines the interface for GTK+ input methods. An input method
+is used by GTK+ text input widgets like <link linkend="GtkEntry"><type>GtkEntry</type></link> to map from key events to
+Unicode character strings.
+</para>
+<para>
+The user may change the current input method via a context menu, unless the   
+<link linkend="GtkSettings--gtk-show-input-method-menu"><type>"gtk-show-input-method-menu"</type></link> GtkSettings property is set to FALSE. 
+The default input method can be set programmatically via the 
+<link linkend="GtkSettings--gtk-im-module"><type>"gtk-im-module"</type></link> GtkSettings property. Alternatively, you may set 
+the GTK_IM_MODULE environment variable as documented in <link linkend="gtk-running"><type>gtk-running</type></link>.
+</para>
+<para>
+The <link linkend="GtkEntry"><type>GtkEntry</type></link> <link linkend="GtkEntry--im-module"><type>"im-module"</type></link> and <link linkend="GtkTextView"><type>GtkTextView</type></link> <link linkend="GtkTextView--im-module"><type>"im-module"</type></link> 
+properties may also be used to set input methods for specific widget 
+instances. For instance, a certain entry widget might be expected to contain 
+certain characters which would be easier to input with a certain input 
+method.
+</para>
+<para>
+An input method may consume multiple key events in sequence and finally
+output the composed result. This is called preediting, and an input method
+may provide feedback about this process by displaying the intermediate
+composition states as preedit text. For instance, the default GTK+ input
+method implements the input of arbitrary Unicode code points by holding down
+the Control and Shift keys and then typing "U" followed by the hexadecimal
+digits of the code point.  When releasing the Control and Shift keys,
+preediting ends and the character is inserted as text. Ctrl+Shift+u20AC for
+example results in the € sign.
+</para>
+<para>
+Additional input methods can be made available for use by GTK+ widgets as
+loadable modules. An input method module is a small shared library which
+implements a subclass of <link linkend="GtkIMContext"><type>GtkIMContext</type></link> or <link linkend="GtkIMContextSimple"><type>GtkIMContextSimple</type></link> and exports
+these four functions:
+</para>
+<para>
+<informalexample><programlisting>
+void im_module_init(<link linkend="GTypeModule">GTypeModule</link> *module);
+</programlisting></informalexample>
+This function should register the <link linkend="GType"><type>GType</type></link> of the <link linkend="GtkIMContext"><type>GtkIMContext</type></link> subclass which
+implements the input method by means of <link linkend="g-type-module-register-type"><function>g_type_module_register_type()</function></link>. Note
+that <link linkend="g-type-register-static"><function>g_type_register_static()</function></link> cannot be used as the type needs to be
+registered dynamically.
+</para>
+<para>
+<informalexample><programlisting>
+void im_module_exit(void);
+</programlisting></informalexample>
+Here goes any cleanup code your input method might require on module unload.
+</para>
+<para>
+<informalexample><programlisting>
+void im_module_list(const <link linkend="GtkIMContextInfo">GtkIMContextInfo</link> ***contexts, int *n_contexts)
+{
+  *contexts = info_list;
+  *n_contexts = G_N_ELEMENTS (info_list);
+}
+</programlisting></informalexample>
+This function returns the list of input methods provided by the module. The
+example implementation above shows a common solution and simply returns a
+pointer to statically defined array of <link linkend="GtkIMContextInfo"><type>GtkIMContextInfo</type></link> items for each
+provided input method.
+</para>
+<para>
+<informalexample><programlisting>
+<link linkend="GtkIMContext">GtkIMContext</link> * im_module_create(const <link linkend="gchar">gchar</link> *context_id);
+</programlisting></informalexample>
+This function should return a pointer to a newly created instance of the
+<link linkend="GtkIMContext"><type>GtkIMContext</type></link> subclass identified by <parameter>context_id</parameter>. The context ID is the same
+as specified in the <link linkend="GtkIMContextInfo"><type>GtkIMContextInfo</type></link> array returned by <link linkend="im-module-list"><function>im_module_list()</function></link>.
+</para>
+<para>
+After a new loadable input method module has been installed on the system,
+the configuration file <filename>gtk.immodules</filename> needs to be
+regenerated by <link linkend="gtk-query-immodules-2.0">gtk-query-immodules-2.0</link>,
+in order for the new input method to become available to GTK+ applications.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GtkIMContext.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkIMContext-struct" role="struct">
+<title>GtkIMContext</title>
+<indexterm zone="GtkIMContext-struct"><primary sortas="IMContext">GtkIMContext</primary></indexterm><programlisting>typedef struct _GtkIMContext GtkIMContext;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkIMContextClass" role="struct">
+<title>GtkIMContextClass</title>
+<indexterm zone="GtkIMContextClass"><primary sortas="IMContextClass">GtkIMContextClass</primary></indexterm><programlisting>typedef struct {
+  /* Signals */
+  void     (*preedit_start)        (GtkIMContext *context);
+  void     (*preedit_end)          (GtkIMContext *context);
+  void     (*preedit_changed)      (GtkIMContext *context);
+  void     (*commit)               (GtkIMContext *context, const gchar *str);
+  gboolean (*retrieve_surrounding) (GtkIMContext *context);
+  gboolean (*delete_surrounding)   (GtkIMContext *context,
+				    gint          offset,
+				    gint          n_chars);
+
+  /* Virtual functions */
+  void     (*set_client_window)   (GtkIMContext   *context,
+				   GdkWindow      *window);
+  void     (*get_preedit_string)  (GtkIMContext   *context,
+				   gchar         **str,
+				   PangoAttrList **attrs,
+				   gint           *cursor_pos);
+  gboolean (*filter_keypress)     (GtkIMContext   *context,
+			           GdkEventKey    *event);
+  void     (*focus_in)            (GtkIMContext   *context);
+  void     (*focus_out)           (GtkIMContext   *context);
+  void     (*reset)               (GtkIMContext   *context);
+  void     (*set_cursor_location) (GtkIMContext   *context,
+				   GdkRectangle   *area);
+  void     (*set_use_preedit)     (GtkIMContext   *context,
+				   gboolean        use_preedit);
+  void     (*set_surrounding)     (GtkIMContext   *context,
+				   const gchar    *text,
+				   gint            len,
+				   gint            cursor_index);
+  gboolean (*get_surrounding)     (GtkIMContext   *context,
+				   gchar         **text,
+				   gint           *cursor_index);
+} GtkIMContextClass;
+</programlisting>
+<para>
+</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><structfield>preedit_start</structfield>&#160;()</term>
+<listitem><simpara> Default handler of the <link linkend="GtkIMContext-preedit-start"><type>"preedit-start"</type></link> signal.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>preedit_end</structfield>&#160;()</term>
+<listitem><simpara> Default handler of the <link linkend="GtkIMContext-preedit-end"><type>"preedit-end"</type></link> signal.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>preedit_changed</structfield>&#160;()</term>
+<listitem><simpara> Default handler of the <link linkend="GtkIMContext-preedit-changed"><type>"preedit-changed"</type></link>
+  signal.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>commit</structfield>&#160;()</term>
+<listitem><simpara> Default handler of the <link linkend="GtkIMContext-commit"><type>"commit"</type></link> signal.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>retrieve_surrounding</structfield>&#160;()</term>
+<listitem><simpara> Default handler of the
+  <link linkend="GtkIMContext-retrieve-surrounding"><type>"retrieve-surrounding"</type></link> signal.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>delete_surrounding</structfield>&#160;()</term>
+<listitem><simpara> Default handler of the
+  <link linkend="GtkIMContext-delete-surrounding"><type>"delete-surrounding"</type></link> signal.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>set_client_window</structfield>&#160;()</term>
+<listitem><simpara> Called via <link linkend="gtk-im-context-set-client-window"><function>gtk_im_context_set_client_window()</function></link> when the
+  input window where the entered text will appear changes. Override this to
+  keep track of the current input window, for instance for the purpose of
+  positioning a status display of your input method.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_preedit_string</structfield>&#160;()</term>
+<listitem><simpara> Called via <link linkend="gtk-im-context-get-preedit-string"><function>gtk_im_context_get_preedit_string()</function></link> to
+  retrieve the text currently being preedited for display at the cursor
+  position. Any input method which composes complex characters or any
+  other compositions from multiple sequential key presses should override
+  this method to provide feedback.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>filter_keypress</structfield>&#160;()</term>
+<listitem><simpara> Called via <link linkend="gtk-im-context-filter-keypress"><function>gtk_im_context_filter_keypress()</function></link> on every
+  key press or release event. Every non-trivial input method needs to
+  override this in order to implement the mapping from key events to text.
+  A return value of <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> indicates to the caller that the event was
+  consumed by the input method. In that case, the <link linkend="GtkIMContext-commit"><type>"commit"</type></link>
+  signal should be emitted upon completion of a key sequence to pass the
+  resulting text back to the input widget. Alternatively, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> may be
+  returned to indicate that the event wasn't handled by the input method.
+  If a builtin mapping exists for the key, it is used to produce a
+  character.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>focus_in</structfield>&#160;()</term>
+<listitem><simpara> Called via <link linkend="gtk-im-context-focus-in"><function>gtk_im_context_focus_in()</function></link> when the input widget
+  has gained focus. May be overridden to keep track of the current focus.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>focus_out</structfield>&#160;()</term>
+<listitem><simpara> Called via <link linkend="gtk-im-context-focus-in"><function>gtk_im_context_focus_in()</function></link> when the input widget
+  has lost focus. May be overridden to keep track of the current focus.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>reset</structfield>&#160;()</term>
+<listitem><simpara> Called via <link linkend="gtk-im-context-reset"><function>gtk_im_context_reset()</function></link> to signal a change such as a
+  change in cursor position. An input method that implements preediting
+  should override this method to clear the preedit state on reset.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>set_cursor_location</structfield>&#160;()</term>
+<listitem><simpara> Called via <link linkend="gtk-im-context-set-cursor-location"><function>gtk_im_context_set_cursor_location()</function></link>
+  to inform the input method of the current cursor location relative to
+  the client window. May be overridden to implement the display of popup
+  windows at the cursor position.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>set_use_preedit</structfield>&#160;()</term>
+<listitem><simpara> Called via <link linkend="gtk-im-context-set-use-preedit"><function>gtk_im_context_set_use_preedit()</function></link> to control
+  the use of the preedit string. Override this to display feedback by some
+  other means if turned off.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>set_surrounding</structfield>&#160;()</term>
+<listitem><simpara> Called via <link linkend="gtk-im-context-set-surrounding"><function>gtk_im_context_set_surrounding()</function></link> in response
+  to signal <link linkend="GtkIMContext-retrieve-surrounding"><type>"retrieve-surrounding"</type></link> to update the input
+  method's idea of the context around the cursor. It is not necessary to
+  override this method even with input methods which implement
+  context-dependent behavior. The base implementation is sufficient for
+  <link linkend="gtk-im-context-get-surrounding"><function>gtk_im_context_get_surrounding()</function></link> to work.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_surrounding</structfield>&#160;()</term>
+<listitem><simpara> Called via <link linkend="gtk-im-context-get-surrounding"><function>gtk_im_context_get_surrounding()</function></link> to update
+  the context around the cursor location. It is not necessary to override
+  this method even with input methods which implement context-dependent
+  behavior. The base implementation emits
+  <link linkend="GtkIMContext-retrieve-surrounding"><type>"retrieve-surrounding"</type></link> and records the context received
+  by the subsequent invocation of <parameter>get_surrounding</parameter>.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkIMContextInfo" role="struct">
+<title>GtkIMContextInfo</title>
+<indexterm zone="GtkIMContextInfo"><primary sortas="IMContextInfo">GtkIMContextInfo</primary></indexterm><programlisting>typedef struct {
+  const gchar *context_id;
+  const gchar *context_name;
+  const gchar *domain;
+  const gchar *domain_dirname;
+  const gchar *default_locales;
+} GtkIMContextInfo;
+</programlisting>
+<para>
+Bookkeeping information about a loadable input method.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>context_id</structfield>;</term>
+<listitem><simpara> The unique identification string of the input method.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>context_name</structfield>;</term>
+<listitem><simpara> The human-readable name of the input method.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>domain</structfield>;</term>
+<listitem><simpara> Translation domain to be used with <link linkend="dgettext"><function>dgettext()</function></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>domain_dirname</structfield>;</term>
+<listitem><simpara> Name of locale directory for use with <link linkend="bindtextdomain"><function>bindtextdomain()</function></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>default_locales</structfield>;</term>
+<listitem><simpara> A colon-separated list of locales where this input method
+  should be the default. The asterisk "*" sets the default for all locales.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-set-client-window" role="function">
+<title>gtk_im_context_set_client_window ()</title>
+<indexterm zone="gtk-im-context-set-client-window"><primary sortas="im_context_set_client_window">gtk_im_context_set_client_window</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_context_set_client_window    (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="GdkWindow">GdkWindow</link> *window);</programlisting>
+<para>
+Set the client window for the input context; this is the
+<link linkend="GdkWindow"><type>GdkWindow</type></link> in which the input appears. This window is
+used in order to correctly position status windows, and may
+also be used for purposes internal to the input method.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMContext"><type>GtkIMContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>window</parameter>&#160;:</term>
+<listitem><simpara>  the client window. This may be <link linkend="NULL--CAPS"><literal>NULL</literal></link> to indicate
+          that the previous client window no longer exists.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-get-preedit-string" role="function">
+<title>gtk_im_context_get_preedit_string ()</title>
+<indexterm zone="gtk-im-context-get-preedit-string"><primary sortas="im_context_get_preedit_string">gtk_im_context_get_preedit_string</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_context_get_preedit_string   (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="gchar">gchar</link> **str,
+                                                         <link linkend="PangoAttrList">PangoAttrList</link> **attrs,
+                                                         <link linkend="gint">gint</link> *cursor_pos);</programlisting>
+<para>
+Retrieve the current preedit string for the input context,
+and a list of attributes to apply to the string.
+This string should be displayed inserted at the insertion
+point.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara>    a <link linkend="GtkIMContext"><type>GtkIMContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>str</parameter>&#160;:</term>
+<listitem><simpara>        location to store the retrieved string. The
+             string retrieved must be freed with <link linkend="g-free"><function>g_free()</function></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>attrs</parameter>&#160;:</term>
+<listitem><simpara>      location to store the retrieved attribute list.
+             When you are done with this list, you must
+             unreference it with <link linkend="pango-attr-list-unref"><function>pango_attr_list_unref()</function></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cursor_pos</parameter>&#160;:</term>
+<listitem><simpara> location to store position of cursor (in characters)
+             within the preedit string.  
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-filter-keypress" role="function">
+<title>gtk_im_context_filter_keypress ()</title>
+<indexterm zone="gtk-im-context-filter-keypress"><primary sortas="im_context_filter_keypress">gtk_im_context_filter_keypress</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_im_context_filter_keypress      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="GdkEventKey">GdkEventKey</link> *event);</programlisting>
+<para>
+Allow an input method to internally handle key press and release 
+events. If this function returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, then no further processing
+should be done for this key event.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMContext"><type>GtkIMContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> the key event
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the input method handled the key event.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-focus-in" role="function">
+<title>gtk_im_context_focus_in ()</title>
+<indexterm zone="gtk-im-context-focus-in"><primary sortas="im_context_focus_in">gtk_im_context_focus_in</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_context_focus_in             (<link linkend="GtkIMContext">GtkIMContext</link> *context);</programlisting>
+<para>
+Notify the input method that the widget to which this
+input context corresponds has gained focus. The input method
+may, for example, change the displayed feedback to reflect
+this change.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMContext"><type>GtkIMContext</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-focus-out" role="function">
+<title>gtk_im_context_focus_out ()</title>
+<indexterm zone="gtk-im-context-focus-out"><primary sortas="im_context_focus_out">gtk_im_context_focus_out</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_context_focus_out            (<link linkend="GtkIMContext">GtkIMContext</link> *context);</programlisting>
+<para>
+Notify the input method that the widget to which this
+input context corresponds has lost focus. The input method
+may, for example, change the displayed feedback or reset the contexts
+state to reflect this change.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMContext"><type>GtkIMContext</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-reset" role="function">
+<title>gtk_im_context_reset ()</title>
+<indexterm zone="gtk-im-context-reset"><primary sortas="im_context_reset">gtk_im_context_reset</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_context_reset                (<link linkend="GtkIMContext">GtkIMContext</link> *context);</programlisting>
+<para>
+Notify the input method that a change such as a change in cursor
+position has been made. This will typically cause the input
+method to clear the preedit state.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMContext"><type>GtkIMContext</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-set-cursor-location" role="function">
+<title>gtk_im_context_set_cursor_location ()</title>
+<indexterm zone="gtk-im-context-set-cursor-location"><primary sortas="im_context_set_cursor_location">gtk_im_context_set_cursor_location</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_context_set_cursor_location  (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *area);</programlisting>
+<para>
+Notify the input method that a change in cursor 
+position has been made. The location is relative to the client
+window.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMContext"><type>GtkIMContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>area</parameter>&#160;:</term>
+<listitem><simpara> new location
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-set-use-preedit" role="function">
+<title>gtk_im_context_set_use_preedit ()</title>
+<indexterm zone="gtk-im-context-set-use-preedit"><primary sortas="im_context_set_use_preedit">gtk_im_context_set_use_preedit</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_context_set_use_preedit      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="gboolean">gboolean</link> use_preedit);</programlisting>
+<para>
+Sets whether the IM context should use the preedit string
+to display feedback. If <parameter>use_preedit</parameter> is FALSE (default
+is TRUE), then the IM context may use some other method to display
+feedback, such as displaying it in a child of the root window.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMContext"><type>GtkIMContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>use_preedit</parameter>&#160;:</term>
+<listitem><simpara> whether the IM context should use the preedit string.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-set-surrounding" role="function">
+<title>gtk_im_context_set_surrounding ()</title>
+<indexterm zone="gtk-im-context-set-surrounding"><primary sortas="im_context_set_surrounding">gtk_im_context_set_surrounding</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_context_set_surrounding      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         const <link linkend="gchar">gchar</link> *text,
+                                                         <link linkend="gint">gint</link> len,
+                                                         <link linkend="gint">gint</link> cursor_index);</programlisting>
+<para>
+Sets surrounding context around the insertion point and preedit
+string. This function is expected to be called in response to the
+GtkIMContext::retrieve_surrounding signal, and will likely have no
+effect if called at other times.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMContext"><type>GtkIMContext</type></link> 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> text surrounding the insertion point, as UTF-8.
+       the preedit string should not be included within
+       <parameter>text</parameter>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>text</parameter>, or -1 if <parameter>text</parameter> is nul-terminated
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cursor_index</parameter>&#160;:</term>
+<listitem><simpara> the byte index of the insertion cursor within <parameter>text</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-get-surrounding" role="function">
+<title>gtk_im_context_get_surrounding ()</title>
+<indexterm zone="gtk-im-context-get-surrounding"><primary sortas="im_context_get_surrounding">gtk_im_context_get_surrounding</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_im_context_get_surrounding      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="gchar">gchar</link> **text,
+                                                         <link linkend="gint">gint</link> *cursor_index);</programlisting>
+<para>
+Retrieves context around the insertion point. Input methods
+typically want context in order to constrain input text based on
+existing text; this is important for languages such as Thai where
+only some sequences of characters are allowed.
+</para>
+<para>
+This function is implemented by emitting the
+GtkIMContext::retrieve_surrounding signal on the input method; in
+response to this signal, a widget should provide as much context as
+is available, up to an entire paragraph, by calling
+<link linkend="gtk-im-context-set-surrounding"><function>gtk_im_context_set_surrounding()</function></link>. Note that there is no obligation
+for a widget to respond to the ::retrieve_surrounding signal, so input
+methods must be prepared to function without context.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMContext"><type>GtkIMContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> location to store a UTF-8 encoded string of text
+       holding context around the insertion point.
+       If the function returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, then you must free
+       the result stored in this location with <link linkend="g-free"><function>g_free()</function></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cursor_index</parameter>&#160;:</term>
+<listitem><simpara> location to store byte index of the insertion cursor
+       within <parameter>text</parameter>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if surrounding text was provided; in this case
+   you must free the result stored in *text.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-context-delete-surrounding" role="function">
+<title>gtk_im_context_delete_surrounding ()</title>
+<indexterm zone="gtk-im-context-delete-surrounding"><primary sortas="im_context_delete_surrounding">gtk_im_context_delete_surrounding</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_im_context_delete_surrounding   (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                         <link linkend="gint">gint</link> offset,
+                                                         <link linkend="gint">gint</link> n_chars);</programlisting>
+<para>
+Asks the widget that the input context is attached to to delete
+characters around the cursor position by emitting the
+GtkIMContext::delete_surrounding signal. Note that <parameter>offset</parameter> and <parameter>n_chars</parameter>
+are in characters not in bytes which differs from the usage other
+places in <link linkend="GtkIMContext"><type>GtkIMContext</type></link>.
+</para>
+<para>
+In order to use this function, you should first call
+<link linkend="gtk-im-context-get-surrounding"><function>gtk_im_context_get_surrounding()</function></link> to get the current context, and
+call this function immediately afterwards to make sure that you
+know what you are deleting. You should also account for the fact
+that even if the signal was handled, the input context might not
+have deleted all the characters that were requested to be deleted.
+</para>
+<para>
+This function is used by an input method that wants to make
+subsitutions in the existing text in response to new input. It is
+not useful for applications.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMContext"><type>GtkIMContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>offset</parameter>&#160;:</term>
+<listitem><simpara> offset from cursor position in chars;
+   a negative value means start before the cursor.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_chars</parameter>&#160;:</term>
+<listitem><simpara> number of characters to delete.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the signal was handled.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+<refsect1 id="GtkIMContext.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkIMContext-commit" role="signal"><title>The <literal>&quot;commit&quot;</literal> signal</title>
+<indexterm zone="GtkIMContext-commit"><primary sortas="IMContext::commit">GtkIMContext::commit</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                        <link linkend="gchar">gchar</link>        *str,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run Last</programlisting>
+<para>
+The ::commit signal is emitted when a complete input sequence
+has been entered by the user. This can be a single character
+immediately after a key press or the final result of preediting.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> the object on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>str</parameter>&#160;:</term>
+<listitem><simpara> the completed character(s) entered by the user
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkIMContext-delete-surrounding" role="signal"><title>The <literal>&quot;delete-surrounding&quot;</literal> signal</title>
+<indexterm zone="GtkIMContext-delete-surrounding"><primary sortas="IMContext::delete-surrounding">GtkIMContext::delete-surrounding</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            user_function                      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                        <link linkend="gint">gint</link>          offset,
+                                                        <link linkend="gint">gint</link>          n_chars,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run Last</programlisting>
+<para>
+The ::delete-surrounding signal is emitted when the input method
+needs to delete all or part of the context surrounding the cursor.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> the object on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>offset</parameter>&#160;:</term>
+<listitem><simpara>  the character offset from the cursor position of the text
+          to be deleted. A negative value indicates a position before
+          the cursor.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_chars</parameter>&#160;:</term>
+<listitem><simpara> the number of characters to be deleted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the signal was handled.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkIMContext-preedit-changed" role="signal"><title>The <literal>&quot;preedit-changed&quot;</literal> signal</title>
+<indexterm zone="GtkIMContext-preedit-changed"><primary sortas="IMContext::preedit-changed">GtkIMContext::preedit-changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run Last</programlisting>
+<para>
+The ::preedit-changed signal is emitted whenever the preedit sequence
+currently being entered has changed.  It is also emitted at the end of
+a preedit sequence, in which case
+<link linkend="gtk-im-context-get-preedit-string"><function>gtk_im_context_get_preedit_string()</function></link> returns the empty string.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> the object on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkIMContext-preedit-end" role="signal"><title>The <literal>&quot;preedit-end&quot;</literal> signal</title>
+<indexterm zone="GtkIMContext-preedit-end"><primary sortas="IMContext::preedit-end">GtkIMContext::preedit-end</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run Last</programlisting>
+<para>
+The ::preedit-end signal is emitted when a preediting sequence
+has been completed or canceled.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> the object on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkIMContext-preedit-start" role="signal"><title>The <literal>&quot;preedit-start&quot;</literal> signal</title>
+<indexterm zone="GtkIMContext-preedit-start"><primary sortas="IMContext::preedit-start">GtkIMContext::preedit-start</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run Last</programlisting>
+<para>
+The ::preedit-start signal is emitted when a new preediting sequence
+starts.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> the object on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkIMContext-retrieve-surrounding" role="signal"><title>The <literal>&quot;retrieve-surrounding&quot;</literal> signal</title>
+<indexterm zone="GtkIMContext-retrieve-surrounding"><primary sortas="IMContext::retrieve-surrounding">GtkIMContext::retrieve-surrounding</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            user_function                      (<link linkend="GtkIMContext">GtkIMContext</link> *context,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run Last</programlisting>
+<para>
+The ::retrieve-surrounding signal is emitted when the input method
+requires the context surrounding the cursor.  The callback should set
+the input method surrounding context by calling the
+<link linkend="gtk-im-context-set-surrounding"><function>gtk_im_context_set_surrounding()</function></link> method.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> the object on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the signal was handled.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

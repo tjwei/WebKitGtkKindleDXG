@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libsoup-24-soup-method">
+<refmeta>
+<refentrytitle role="top_of_page" id="libsoup-24-soup-method.top_of_page">soup-method</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>soup-method</refname>
+<refpurpose>HTTP method definitions</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libsoup-24-soup-method.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+#define             <link linkend="SOUP-METHOD-OPTIONS--CAPS">SOUP_METHOD_OPTIONS</link>
+#define             <link linkend="SOUP-METHOD-GET--CAPS">SOUP_METHOD_GET</link>
+#define             <link linkend="SOUP-METHOD-HEAD--CAPS">SOUP_METHOD_HEAD</link>
+#define             <link linkend="SOUP-METHOD-PUT--CAPS">SOUP_METHOD_PUT</link>
+#define             <link linkend="SOUP-METHOD-POST--CAPS">SOUP_METHOD_POST</link>
+#define             <link linkend="SOUP-METHOD-DELETE--CAPS">SOUP_METHOD_DELETE</link>
+#define             <link linkend="SOUP-METHOD-TRACE--CAPS">SOUP_METHOD_TRACE</link>
+#define             <link linkend="SOUP-METHOD-CONNECT--CAPS">SOUP_METHOD_CONNECT</link>
+
+#define             <link linkend="SOUP-METHOD-PROPFIND--CAPS">SOUP_METHOD_PROPFIND</link>
+#define             <link linkend="SOUP-METHOD-PROPPATCH--CAPS">SOUP_METHOD_PROPPATCH</link>
+#define             <link linkend="SOUP-METHOD-MKCOL--CAPS">SOUP_METHOD_MKCOL</link>
+#define             <link linkend="SOUP-METHOD-COPY--CAPS">SOUP_METHOD_COPY</link>
+#define             <link linkend="SOUP-METHOD-MOVE--CAPS">SOUP_METHOD_MOVE</link>
+#define             <link linkend="SOUP-METHOD-LOCK--CAPS">SOUP_METHOD_LOCK</link>
+#define             <link linkend="SOUP-METHOD-UNLOCK--CAPS">SOUP_METHOD_UNLOCK</link>
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libsoup-24-soup-method.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+soup-method.h contains a number of defines for standard HTTP and
+WebDAV headers. You do not need to use these defines; you can pass
+arbitrary strings to <link linkend="soup-message-new"><function>soup_message_new()</function></link> if you prefer.
+</para>
+<para>
+The thing that these defines <emphasis>are</emphasis> useful for is
+performing quick comparisons against <link linkend="SoupMessage"><type>SoupMessage</type></link>'s <link linkend="method"><literal>method</literal></link> field;
+because that field always contains an interned string, and these
+macros return interned strings, you can compare <link linkend="method"><literal>method</literal></link> directly
+against these macros rather than needing to use <link linkend="strcmp"><function>strcmp()</function></link>. This is
+most useful in SoupServer handlers. Eg:
+</para>
+<para>
+<informalexample><programlisting>
+	if (msg->method != SOUP_METHOD_GET &amp;&amp; msg->method != SOUP_METHOD_HEAD) {
+		soup_message_set_status (msg, SOUP_METHOD_NOT_IMPLEMENTED);
+		return;
+	}
+</programlisting></informalexample></para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libsoup-24-soup-method.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SOUP-METHOD-OPTIONS--CAPS" role="macro">
+<title>SOUP_METHOD_OPTIONS</title>
+<indexterm zone="SOUP-METHOD-OPTIONS--CAPS"><primary sortas="SOUP_METHOD_OPTIONS">SOUP_METHOD_OPTIONS</primary></indexterm><programlisting>#define SOUP_METHOD_OPTIONS   _SOUP_INTERN_METHOD (OPTIONS)
+</programlisting>
+<para>
+"OPTIONS" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-GET--CAPS" role="macro">
+<title>SOUP_METHOD_GET</title>
+<indexterm zone="SOUP-METHOD-GET--CAPS"><primary sortas="SOUP_METHOD_GET">SOUP_METHOD_GET</primary></indexterm><programlisting>#define SOUP_METHOD_GET       _SOUP_INTERN_METHOD (GET)
+</programlisting>
+<para>
+"GET" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-HEAD--CAPS" role="macro">
+<title>SOUP_METHOD_HEAD</title>
+<indexterm zone="SOUP-METHOD-HEAD--CAPS"><primary sortas="SOUP_METHOD_HEAD">SOUP_METHOD_HEAD</primary></indexterm><programlisting>#define SOUP_METHOD_HEAD      _SOUP_INTERN_METHOD (HEAD)
+</programlisting>
+<para>
+"HEAD" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-PUT--CAPS" role="macro">
+<title>SOUP_METHOD_PUT</title>
+<indexterm zone="SOUP-METHOD-PUT--CAPS"><primary sortas="SOUP_METHOD_PUT">SOUP_METHOD_PUT</primary></indexterm><programlisting>#define SOUP_METHOD_PUT       _SOUP_INTERN_METHOD (PUT)
+</programlisting>
+<para>
+"PUT" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-POST--CAPS" role="macro">
+<title>SOUP_METHOD_POST</title>
+<indexterm zone="SOUP-METHOD-POST--CAPS"><primary sortas="SOUP_METHOD_POST">SOUP_METHOD_POST</primary></indexterm><programlisting>#define SOUP_METHOD_POST      _SOUP_INTERN_METHOD (POST)
+</programlisting>
+<para>
+"POST" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-DELETE--CAPS" role="macro">
+<title>SOUP_METHOD_DELETE</title>
+<indexterm zone="SOUP-METHOD-DELETE--CAPS"><primary sortas="SOUP_METHOD_DELETE">SOUP_METHOD_DELETE</primary></indexterm><programlisting>#define SOUP_METHOD_DELETE    _SOUP_INTERN_METHOD (DELETE)
+</programlisting>
+<para>
+"DELETE" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-TRACE--CAPS" role="macro">
+<title>SOUP_METHOD_TRACE</title>
+<indexterm zone="SOUP-METHOD-TRACE--CAPS"><primary sortas="SOUP_METHOD_TRACE">SOUP_METHOD_TRACE</primary></indexterm><programlisting>#define SOUP_METHOD_TRACE     _SOUP_INTERN_METHOD (TRACE)
+</programlisting>
+<para>
+"TRACE" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-CONNECT--CAPS" role="macro">
+<title>SOUP_METHOD_CONNECT</title>
+<indexterm zone="SOUP-METHOD-CONNECT--CAPS"><primary sortas="SOUP_METHOD_CONNECT">SOUP_METHOD_CONNECT</primary></indexterm><programlisting>#define SOUP_METHOD_CONNECT   _SOUP_INTERN_METHOD (CONNECT)
+</programlisting>
+<para>
+"CONNECT" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-PROPFIND--CAPS" role="macro">
+<title>SOUP_METHOD_PROPFIND</title>
+<indexterm zone="SOUP-METHOD-PROPFIND--CAPS"><primary sortas="SOUP_METHOD_PROPFIND">SOUP_METHOD_PROPFIND</primary></indexterm><programlisting>#define SOUP_METHOD_PROPFIND  _SOUP_INTERN_METHOD (PROPFIND)
+</programlisting>
+<para>
+"PROPFIND" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-PROPPATCH--CAPS" role="macro">
+<title>SOUP_METHOD_PROPPATCH</title>
+<indexterm zone="SOUP-METHOD-PROPPATCH--CAPS"><primary sortas="SOUP_METHOD_PROPPATCH">SOUP_METHOD_PROPPATCH</primary></indexterm><programlisting>#define SOUP_METHOD_PROPPATCH _SOUP_INTERN_METHOD (PROPPATCH)
+</programlisting>
+<para>
+"PROPPATCH" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-MKCOL--CAPS" role="macro">
+<title>SOUP_METHOD_MKCOL</title>
+<indexterm zone="SOUP-METHOD-MKCOL--CAPS"><primary sortas="SOUP_METHOD_MKCOL">SOUP_METHOD_MKCOL</primary></indexterm><programlisting>#define SOUP_METHOD_MKCOL     _SOUP_INTERN_METHOD (MKCOL)
+</programlisting>
+<para>
+"MKCOL" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-COPY--CAPS" role="macro">
+<title>SOUP_METHOD_COPY</title>
+<indexterm zone="SOUP-METHOD-COPY--CAPS"><primary sortas="SOUP_METHOD_COPY">SOUP_METHOD_COPY</primary></indexterm><programlisting>#define SOUP_METHOD_COPY      _SOUP_INTERN_METHOD (COPY)
+</programlisting>
+<para>
+"COPY" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-MOVE--CAPS" role="macro">
+<title>SOUP_METHOD_MOVE</title>
+<indexterm zone="SOUP-METHOD-MOVE--CAPS"><primary sortas="SOUP_METHOD_MOVE">SOUP_METHOD_MOVE</primary></indexterm><programlisting>#define SOUP_METHOD_MOVE      _SOUP_INTERN_METHOD (MOVE)
+</programlisting>
+<para>
+"MOVE" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-LOCK--CAPS" role="macro">
+<title>SOUP_METHOD_LOCK</title>
+<indexterm zone="SOUP-METHOD-LOCK--CAPS"><primary sortas="SOUP_METHOD_LOCK">SOUP_METHOD_LOCK</primary></indexterm><programlisting>#define SOUP_METHOD_LOCK      _SOUP_INTERN_METHOD (LOCK)
+</programlisting>
+<para>
+"LOCK" as an interned string.</para>
+<para>
+</para></refsect2>
+<refsect2 id="SOUP-METHOD-UNLOCK--CAPS" role="macro">
+<title>SOUP_METHOD_UNLOCK</title>
+<indexterm zone="SOUP-METHOD-UNLOCK--CAPS"><primary sortas="SOUP_METHOD_UNLOCK">SOUP_METHOD_UNLOCK</primary></indexterm><programlisting>#define SOUP_METHOD_UNLOCK    _SOUP_INTERN_METHOD (UNLOCK)
+</programlisting>
+<para>
+"UNLOCK" as an interned string.</para>
+<para>
+</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

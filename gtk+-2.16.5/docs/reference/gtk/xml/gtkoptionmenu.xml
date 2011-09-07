@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkOptionMenu">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkOptionMenu.top_of_page">GtkOptionMenu</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkOptionMenu</refname>
+<refpurpose>A widget used to choose from a list of valid choices</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkOptionMenu.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkOptionMenu-struct">GtkOptionMenu</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-option-menu-new">gtk_option_menu_new</link>                 (void);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-option-menu-get-menu">gtk_option_menu_get_menu</link>            (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *option_menu);
+<link linkend="void">void</link>                <link linkend="gtk-option-menu-set-menu">gtk_option_menu_set_menu</link>            (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *option_menu,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *menu);
+<link linkend="void">void</link>                <link linkend="gtk-option-menu-remove-menu">gtk_option_menu_remove_menu</link>         (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *option_menu);
+<link linkend="void">void</link>                <link linkend="gtk-option-menu-set-history">gtk_option_menu_set_history</link>         (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *option_menu,
+                                                         <link linkend="guint">guint</link> index_);
+<link linkend="gint">gint</link>                <link linkend="gtk-option-menu-get-history">gtk_option_menu_get_history</link>         (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *option_menu);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkOptionMenu.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkButton">GtkButton</link>
+                                       +----GtkOptionMenu
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkOptionMenu.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkOptionMenu implements
+ <link linkend="GtkActivatable">GtkActivatable</link>,  <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkOptionMenu.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkOptionMenu--menu">menu</link>&quot;                     <link linkend="GtkMenu">GtkMenu</link>*              : Read / Write
+</synopsis>
+</refsect1>
+<refsect1 id="GtkOptionMenu.style-properties" role="style_properties">
+<title role="style_properties.title">Style Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkOptionMenu--s-indicator-size">indicator-size</link>&quot;           <link linkend="GtkRequisition">GtkRequisition</link>*       : Read
+  &quot;<link linkend="GtkOptionMenu--s-indicator-spacing">indicator-spacing</link>&quot;        <link linkend="GtkBorder">GtkBorder</link>*            : Read
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkOptionMenu.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkOptionMenu-changed">changed</link>&quot;                                        : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkOptionMenu.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link> is a widget that allows the user to choose from a
+list of valid choices.  The <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link> displays the selected
+choice.  When activated the <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link> displays a popup <link linkend="GtkMenu"><type>GtkMenu</type></link>
+which allows the user to make a new choice.
+</para>
+<para>
+Using a <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link> is simple; build a <link linkend="GtkMenu"><type>GtkMenu</type></link>, by calling
+<link linkend="gtk-menu-new"><function>gtk_menu_new()</function></link>, then appending menu items to it with
+<link linkend="gtk-menu-shell-append"><function>gtk_menu_shell_append()</function></link>. Set that menu on the option menu
+with <link linkend="gtk-option-menu-set-menu"><function>gtk_option_menu_set_menu()</function></link>. Set the selected menu item with
+<link linkend="gtk-option-menu-set-history"><function>gtk_option_menu_set_history()</function></link>; connect to the "changed" signal on
+the option menu; in the "changed" signal, check the new selected
+menu item with <link linkend="gtk-option-menu-get-history"><function>gtk_option_menu_get_history()</function></link>.
+</para>
+<para>
+As of GTK+ 2.4, <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link> has been deprecated in favor of <link linkend="GtkComboBox"><type>GtkComboBox</type></link>.
+</para>
+</refsect1>
+
+<refsect1 id="GtkOptionMenu.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkOptionMenu-struct" role="struct">
+<title>GtkOptionMenu</title>
+<indexterm zone="GtkOptionMenu-struct" role="deprecated"><primary sortas="OptionMenu">GtkOptionMenu</primary></indexterm><programlisting>typedef struct _GtkOptionMenu GtkOptionMenu;</programlisting>
+<warning><para><literal>GtkOptionMenu</literal> has been deprecated since version 2.4 and should not be used in newly-written code. Use <link linkend="GtkComboBox"><type>GtkComboBox</type></link> instead.</para></warning>
+<para>
+The <link linkend="GtkOptionMenu-struct"><type>GtkOptionMenu</type></link> struct contains private data only, and
+should be accessed using the functions below.
+</para></refsect2>
+<refsect2 id="gtk-option-menu-new" role="function" condition="deprecated:2.4: Use #GtkComboBox instead.">
+<title>gtk_option_menu_new ()</title>
+<indexterm zone="gtk-option-menu-new" role="deprecated"><primary sortas="option_menu_new">gtk_option_menu_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_option_menu_new                 (void);</programlisting>
+<warning><para><literal>gtk_option_menu_new</literal> has been deprecated since version 2.4 and should not be used in newly-written code. Use <link linkend="GtkComboBox"><type>GtkComboBox</type></link> instead.</para></warning>
+<para>
+Creates a new <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a new <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-option-menu-get-menu" role="function" condition="deprecated:2.4: Use #GtkComboBox instead.">
+<title>gtk_option_menu_get_menu ()</title>
+<indexterm zone="gtk-option-menu-get-menu" role="deprecated"><primary sortas="option_menu_get_menu">gtk_option_menu_get_menu</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_option_menu_get_menu            (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *option_menu);</programlisting>
+<warning><para><literal>gtk_option_menu_get_menu</literal> has been deprecated since version 2.4 and should not be used in newly-written code. Use <link linkend="GtkComboBox"><type>GtkComboBox</type></link> instead.</para></warning>
+<para>
+Returns the <link linkend="GtkMenu"><type>GtkMenu</type></link> associated with the <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>option_menu</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>the <link linkend="GtkMenu"><type>GtkMenu</type></link> associated with the <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-option-menu-set-menu" role="function" condition="deprecated:2.4: Use #GtkComboBox instead.">
+<title>gtk_option_menu_set_menu ()</title>
+<indexterm zone="gtk-option-menu-set-menu" role="deprecated"><primary sortas="option_menu_set_menu">gtk_option_menu_set_menu</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_option_menu_set_menu            (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *option_menu,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *menu);</programlisting>
+<warning><para><literal>gtk_option_menu_set_menu</literal> has been deprecated since version 2.4 and should not be used in newly-written code. Use <link linkend="GtkComboBox"><type>GtkComboBox</type></link> instead.</para></warning>
+<para>
+Provides the <link linkend="GtkMenu"><type>GtkMenu</type></link> that is popped up to allow the user to choose
+a new value.  You should provide a simple menu avoiding the
+use of tearoff menu items, submenus, and accelerators.
+</para><variablelist role="params">
+<varlistentry><term><parameter>option_menu</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>menu</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkMenu"><type>GtkMenu</type></link> to associate with the <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-option-menu-remove-menu" role="function" condition="deprecated:2.4: Use #GtkComboBox instead.">
+<title>gtk_option_menu_remove_menu ()</title>
+<indexterm zone="gtk-option-menu-remove-menu" role="deprecated"><primary sortas="option_menu_remove_menu">gtk_option_menu_remove_menu</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_option_menu_remove_menu         (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *option_menu);</programlisting>
+<warning><para><literal>gtk_option_menu_remove_menu</literal> has been deprecated since version 2.4 and should not be used in newly-written code. Use <link linkend="GtkComboBox"><type>GtkComboBox</type></link> instead.</para></warning>
+<para>
+Removes the menu from the option menu.
+</para><variablelist role="params">
+<varlistentry><term><parameter>option_menu</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-option-menu-set-history" role="function" condition="deprecated:2.4: Use #GtkComboBox instead.">
+<title>gtk_option_menu_set_history ()</title>
+<indexterm zone="gtk-option-menu-set-history" role="deprecated"><primary sortas="option_menu_set_history">gtk_option_menu_set_history</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_option_menu_set_history         (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *option_menu,
+                                                         <link linkend="guint">guint</link> index_);</programlisting>
+<warning><para><literal>gtk_option_menu_set_history</literal> has been deprecated since version 2.4 and should not be used in newly-written code. Use <link linkend="GtkComboBox"><type>GtkComboBox</type></link> instead.</para></warning>
+<para>
+Selects the menu item specified by <parameter>index_</parameter> making it the newly
+selected value for the option menu.
+</para><variablelist role="params">
+<varlistentry><term><parameter>option_menu</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>index_</parameter>&#160;:</term>
+<listitem><simpara>the index of the menu item to select.  Index values are from 0 to n-1.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-option-menu-get-history" role="function" condition="deprecated:2.4: Use #GtkComboBox instead.">
+<title>gtk_option_menu_get_history ()</title>
+<indexterm zone="gtk-option-menu-get-history" role="deprecated"><primary sortas="option_menu_get_history">gtk_option_menu_get_history</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_option_menu_get_history         (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *option_menu);</programlisting>
+<warning><para><literal>gtk_option_menu_get_history</literal> has been deprecated since version 2.4 and should not be used in newly-written code. Use <link linkend="GtkComboBox"><type>GtkComboBox</type></link> instead.</para></warning>
+<para>
+Retrieves the index of the currently selected menu item. The menu
+items are numbered from top to bottom, starting with 0.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>option_menu</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkOptionMenu"><type>GtkOptionMenu</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> index of the selected menu item, or -1 if there are no menu items
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkOptionMenu.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkOptionMenu--menu" role="property"><title>The <literal>&quot;menu&quot;</literal> property</title>
+<indexterm zone="GtkOptionMenu--menu"><primary sortas="OptionMenu:menu">GtkOptionMenu:menu</primary></indexterm><programlisting>  &quot;menu&quot;                     <link linkend="GtkMenu">GtkMenu</link>*              : Read / Write</programlisting>
+<para>The menu of options.</para></refsect2>
+</refsect1>
+<refsect1 id="GtkOptionMenu.style-property-details" role="style_properties_details">
+<title role="style_properties_details.title">Style Property Details</title>
+<refsect2 id="GtkOptionMenu--s-indicator-size" role="property"><title>The <literal>&quot;indicator-size&quot;</literal> style property</title>
+<indexterm zone="GtkOptionMenu--s-indicator-size"><primary sortas="OptionMenu:indicator-size">GtkOptionMenu:indicator-size</primary></indexterm><programlisting>  &quot;indicator-size&quot;           <link linkend="GtkRequisition">GtkRequisition</link>*       : Read</programlisting>
+<para>Size of dropdown indicator.</para></refsect2>
+<refsect2 id="GtkOptionMenu--s-indicator-spacing" role="property"><title>The <literal>&quot;indicator-spacing&quot;</literal> style property</title>
+<indexterm zone="GtkOptionMenu--s-indicator-spacing"><primary sortas="OptionMenu:indicator-spacing">GtkOptionMenu:indicator-spacing</primary></indexterm><programlisting>  &quot;indicator-spacing&quot;        <link linkend="GtkBorder">GtkBorder</link>*            : Read</programlisting>
+<para>Spacing around indicator.</para></refsect2>
+</refsect1>
+
+<refsect1 id="GtkOptionMenu.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkOptionMenu-changed" role="signal"><title>The <literal>&quot;changed&quot;</literal> signal</title>
+<indexterm zone="GtkOptionMenu-changed"><primary sortas="OptionMenu::changed">GtkOptionMenu::changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkOptionMenu">GtkOptionMenu</link> *optionmenu,
+                                                        <link linkend="gpointer">gpointer</link>       user_data)       : Run Last</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>optionmenu</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

@@ -1,0 +1,1 @@
+make -f Makefile-libbz2_so -j12 CFLAGS="$CFLAGS" $ARGS && make  -j12 CFLAGS="$CFLAGS" $ARGS

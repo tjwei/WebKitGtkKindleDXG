@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkToggleToolButton">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkToggleToolButton.top_of_page">GtkToggleToolButton</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkToggleToolButton</refname>
+<refpurpose>A GtkToolItem containing a toggle button</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkToggleToolButton.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkToggleToolButton-struct">GtkToggleToolButton</link>;
+<link linkend="GtkToolItem">GtkToolItem</link> *       <link linkend="gtk-toggle-tool-button-new">gtk_toggle_tool_button_new</link>          (void);
+<link linkend="GtkToolItem">GtkToolItem</link> *       <link linkend="gtk-toggle-tool-button-new-from-stock">gtk_toggle_tool_button_new_from_stock</link>
+                                                        (const <link linkend="gchar">gchar</link> *stock_id);
+<link linkend="void">void</link>                <link linkend="gtk-toggle-tool-button-set-active">gtk_toggle_tool_button_set_active</link>   (<link linkend="GtkToggleToolButton">GtkToggleToolButton</link> *button,
+                                                         <link linkend="gboolean">gboolean</link> is_active);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-toggle-tool-button-get-active">gtk_toggle_tool_button_get_active</link>   (<link linkend="GtkToggleToolButton">GtkToggleToolButton</link> *button);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkToggleToolButton.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkToolItem">GtkToolItem</link>
+                                       +----<link linkend="GtkToolButton">GtkToolButton</link>
+                                             +----GtkToggleToolButton
+                                                   +----<link linkend="GtkRadioToolButton">GtkRadioToolButton</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkToggleToolButton.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkToggleToolButton implements
+ <link linkend="GtkActivatable">GtkActivatable</link>,  <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkToggleToolButton.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkToggleToolButton--active">active</link>&quot;                   <link linkend="gboolean">gboolean</link>              : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkToggleToolButton.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkToggleToolButton-toggled">toggled</link>&quot;                                        : Run First
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkToggleToolButton.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+  A <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link> is a <link linkend="GtkToolItem"><type>GtkToolItem</type></link> that contains a toggle
+  button.
+</para>
+<para>
+  Use <link linkend="gtk-toggle-tool-button-new"><function>gtk_toggle_tool_button_new()</function></link> to create a new
+  <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link>. Use <link linkend="gtk-toggle-tool-button-new-from-stock"><function>gtk_toggle_tool_button_new_from_stock()</function></link> to
+  create a new <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link> containing a stock item.
+</para>
+</refsect1>
+
+<refsect1 id="GtkToggleToolButton.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkToggleToolButton-struct" role="struct">
+<title>GtkToggleToolButton</title>
+<indexterm zone="GtkToggleToolButton-struct"><primary sortas="ToggleToolButton">GtkToggleToolButton</primary></indexterm><programlisting>typedef struct _GtkToggleToolButton GtkToggleToolButton;</programlisting>
+<para>
+  The <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link> struct contains only private data and
+  should only be accessed through the functions described below.
+</para></refsect2>
+<refsect2 id="gtk-toggle-tool-button-new" role="function" condition="since:2.4">
+<title>gtk_toggle_tool_button_new ()</title>
+<indexterm zone="gtk-toggle-tool-button-new" role="2.4"><primary sortas="toggle_tool_button_new">gtk_toggle_tool_button_new</primary></indexterm><programlisting><link linkend="GtkToolItem">GtkToolItem</link> *       gtk_toggle_tool_button_new          (void);</programlisting>
+<para>
+Returns a new <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly created <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-toggle-tool-button-new-from-stock" role="function" condition="since:2.4">
+<title>gtk_toggle_tool_button_new_from_stock ()</title>
+<indexterm zone="gtk-toggle-tool-button-new-from-stock" role="2.4"><primary sortas="toggle_tool_button_new_from_stock">gtk_toggle_tool_button_new_from_stock</primary></indexterm><programlisting><link linkend="GtkToolItem">GtkToolItem</link> *       gtk_toggle_tool_button_new_from_stock
+                                                        (const <link linkend="gchar">gchar</link> *stock_id);</programlisting>
+<para>
+Creates a new <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link> containing the image and text from a
+stock item. Some stock ids have preprocessor macros like <link linkend="GTK-STOCK-OK--CAPS"><type>GTK_STOCK_OK</type></link>
+and <link linkend="GTK-STOCK-APPLY--CAPS"><type>GTK_STOCK_APPLY</type></link>.
+</para>
+<para>
+It is an error if <parameter>stock_id</parameter> is not a name of a stock item.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> the name of the stock item 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A new <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-toggle-tool-button-set-active" role="function" condition="since:2.4">
+<title>gtk_toggle_tool_button_set_active ()</title>
+<indexterm zone="gtk-toggle-tool-button-set-active" role="2.4"><primary sortas="toggle_tool_button_set_active">gtk_toggle_tool_button_set_active</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_toggle_tool_button_set_active   (<link linkend="GtkToggleToolButton">GtkToggleToolButton</link> *button,
+                                                         <link linkend="gboolean">gboolean</link> is_active);</programlisting>
+<para>
+Sets the status of the toggle tool button. Set to <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if you
+want the GtkToggleButton to be 'pressed in', and <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> to raise it.
+This action causes the toggled signal to be emitted.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>is_active</parameter>&#160;:</term>
+<listitem><simpara> whether <parameter>button</parameter> should be active
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-toggle-tool-button-get-active" role="function" condition="since:2.4">
+<title>gtk_toggle_tool_button_get_active ()</title>
+<indexterm zone="gtk-toggle-tool-button-get-active" role="2.4"><primary sortas="toggle_tool_button_get_active">gtk_toggle_tool_button_get_active</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_toggle_tool_button_get_active   (<link linkend="GtkToggleToolButton">GtkToggleToolButton</link> *button);</programlisting>
+<para>
+Queries a <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link> and returns its current state.
+Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the toggle button is pressed in and <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if it is raised.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the toggle tool button is pressed in, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if not
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkToggleToolButton.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkToggleToolButton--active" role="property"><title>The <literal>&quot;active&quot;</literal> property</title>
+<indexterm zone="GtkToggleToolButton--active" role="2.8"><primary sortas="ToggleToolButton:active">GtkToggleToolButton:active</primary></indexterm><programlisting>  &quot;active&quot;                   <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+If the toggle tool button should be pressed in or not.</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.8</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkToggleToolButton.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkToggleToolButton-toggled" role="signal"><title>The <literal>&quot;toggled&quot;</literal> signal</title>
+<indexterm zone="GtkToggleToolButton-toggled"><primary sortas="ToggleToolButton::toggled">GtkToggleToolButton::toggled</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkToggleToolButton">GtkToggleToolButton</link> *toggle_tool_button,
+                                                        <link linkend="gpointer">gpointer</link>             user_data)               : Run First</programlisting>
+<para>
+Emitted whenever the toggle tool button changes state.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>toggle_tool_button</parameter>&#160;:</term>
+<listitem><simpara> the object that emitted the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+<refsect1 id="GtkToggleToolButton.see-also">
+<title>See Also</title>
+<para>
+  <varlistentry>
+    <term><link linkend="GtkToolbar"><type>GtkToolbar</type></link></term>
+    <listitem><para>The toolbar widget</para></listitem>
+    <term><link linkend="GtkToolButton"><type>GtkToolButton</type></link></term>
+    <listitem>
+      <para>
+	The parent class of <link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link>. The properties
+	"label_widget", "label", "icon_widget", and "stock_id" on
+	<link linkend="GtkToolButton"><type>GtkToolButton</type></link> determine the label and icon used on
+	<link linkend="GtkToggleToolButton"><type>GtkToggleToolButton</type></link><!-- -->s.
+      </para>
+    </listitem>
+    <term><link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link></term>
+    <listitem>
+      <para>A subclass of <link linkend="GtkToolItem"><type>GtkToolItem</type></link> that separates groups of
+	items on a toolbar.
+      </para>
+    </listitem>
+  </varlistentry>
+</para>
+</refsect1>
+
+</refentry>

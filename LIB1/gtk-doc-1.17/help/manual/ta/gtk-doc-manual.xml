@@ -1,0 +1,1959 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml-stylesheet type="text/xml" href="params.xsl"?>
+<!-- vim: set ai tw=80 ts=3 sw=3: -->
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN" "
+              http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY FDL SYSTEM "fdl-appendix.xml">
+<!ENTITY FDLlink "<link linkend='fdl'>included</link>">
+]>
+<!-- =============Document Header ============================= -->
+<book id="index" lang="ta">
+  <bookinfo>
+    <title>ஜிடிகே டாக் கையேடு</title>
+    <edition>1.15</edition>
+    <abstract role="description"><para>உருவாக்குவோருக்கான ஜிடிகே டாக்(GTK-Doc) பயன்பாட்டு பயனர் கையேடு </para></abstract>
+    <authorgroup>
+      <author>
+        <firstname>க்ரிஸ்</firstname>
+        <surname>லைட்டில்</surname>
+        <affiliation>
+          <address>
+            <email>chris@wilddev.net</email>
+          </address>
+        </affiliation>
+      </author>
+      <author>
+        <firstname>டேன்</firstname>
+        <surname>மீயத்</surname>
+        <affiliation>
+          <address>
+            <email>d-mueth@uchicago.edu</email>
+          </address>
+        </affiliation>
+      </author>
+      <author>
+        <firstname>ஸ்டீபன்</firstname>
+        <surname>கோஸ்ட்</surname>
+        <affiliation>
+          <address>
+            <email>ensonic@users.sf.net</email>
+          </address>
+        </affiliation>
+      </author>
+    </authorgroup>
+    <publisher role="maintainer">
+      <publishername>ஜிடிகே-டாக் திட்டம்</publishername>
+      <address><email>gtk-doc-list@gnome.org</email></address>
+    </publisher>
+    <copyright>
+      <year>2000, 2005, 2007-2009</year>
+      <holder>டேன் மீயத் க்ரிஸ் லைட்டில் மற்றும் ஸ்டீபன் கோஸ்ட்</holder>
+    </copyright>
+
+    <!-- translators: uncomment this:
+    <copyright>
+      <year>2000</year>
+      <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+    -->
+
+    <legalnotice>
+      <para>நீங்கள் இலவச மென் பொருள் அமைப்பினால் வெளியிடப்பட்ட<citetitle> ஜிஎன்யு பொது ஆவண அனுமதிக்கான</citetitle> இந்த 1.1 ம் பதிப்பு அல்லது அடுத்த பதிப்புகள் விதிகளின் படி நீங்கள் (விருப்பப்படி) மாற்றமில்லா தொகுதிகள், முன் அட்டை உரைகள், பின் அட்டை உரைகள் ஆக்கியன நீங்கலாக  இதை பிரதி எடுக்கலாம், வினியோகிக்கலாம், மாற்றலாம். அனுமதியின் பிரதி இங்குள்ளது:<link linkend="fdl">included</link></para>
+      <para>நிறுவனங்களால் அவர்களது பொருட்கள், சேவைகளை குறிப்பிட பயனாகும் பல பெயர்களை அவர்களது வியாபார குறியாக சொல்கிறார்கள். அத்தகைய பெயர்கள் க்னோம் ஆவணங்களில் காணப்படுமானால், அவை க்னோம் ஆவண திட்ட உறுப்பினருக்கு தெரிவிக்கப்பட்டால், அவை தலை எழுத்துக்களாக அலல்து முதல் எழுத்து தலை எழுத்தாக  காட்டப்படும். </para>
+    </legalnotice>
+
+    <revhistory>
+      <revision>
+        <revnumber>1.17</revnumber>
+        <date>26 Feb 2011</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>urgent bug fix update</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.16</revnumber>
+        <date>14 Jan 2011</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>bugfixes, layout improvements</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.15</revnumber>
+        <date>21 May 2010</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>bug and regression fixes</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.14</revnumber>
+        <date>28 March 2010</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>bugfixes and performance improvements</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.13</revnumber>
+        <date>18டிசம்பர் 2009</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>சிதைந்த டார் பால் இற்றைப்படுத்தல்</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.12</revnumber>
+        <date>18டிசம்பர் 2009</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>புதிய அம்சங்கள் மற்றும் வழி நீக்கங்கள்</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.11</revnumber>
+        <date>16 நவம்பர் 2008</date>
+        <authorinitials>மால்</authorinitials>
+        <revremark>க்னோம் டாக்-யுடில்ஸ் இட மாற்றம்</revremark>
+      </revision>
+    </revhistory>
+
+  </bookinfo>
+
+  <!-- ======== Chapter 1: Introduction ======================== -->
+
+  <chapter id="introduction">
+    <title>அறிமுகம்</title>
+
+    <para>இந்த அத்தியாயம் ஜிடிகே-டாக் குறித்த அறிமுகம் தருகிறது. மேலும் அது என்ன எப்படி பயன்படுத்துவது என மேலோட்டமாக சொல்லுகிறது.</para>
+
+    <sect1 id="whatisgtkdoc">
+      <title>ஜிடிகே டாக் என்பதென்ன?</title>
+
+      <para>ஜிடிகே டாக் சி குறியாக்கத்தை ஆவணப்படுத்துகிறது. இது எடுத்துக்காட்டாக ஜிடிகே+ மற்றும் க்னோம் நூலகங்கள் போன்ற  நூலகங்களின் பொது ஏபிஐ களை ஆவணப்படுத்த பயன்படுகிறது. ஆனாலும் இது நிரல்களின் குறியாக்கத்தை ஆவணப்படுத்தக்கூட பயன்படுத்தலாம். </para>
+    </sect1>
+
+    <sect1 id="howdoesgtkdocwork">
+      <title>ஜிடிகே டாக் எப்படி வேலை செய்கிறது?</title>
+
+      <para>ஜிடிகே டாக் வேலை செய்வதெப்படி எனில் சிறப்பு ஒழுங்கில் விமர்சன தொகுதிகளாக செயல்களின் ஆவணங்கள் மூல கோப்புகளில் வைக்கப்படும். அல்லது  ஜிடிகே டாக் பயன்படுத்தும் டெம்ப் கோப்புகளுக்கு சேர்க்கபடும். (ஆயினும்   ஜிடிகே டாக் தலைப்பு கோப்புகளில் அறுதியிட்ட பங்ஷன்களை மட்டுமே ஆவணப்படுத்தும். நிலையான பங்க்ஷன்களுக்கு வெளியீடு தராது)</para>
+
+      <para>ஜிடிகே டாக் இல் பல பெர்ல் குறுநிரல்கள் உள்ளன. </para>
+
+      <para>இந்த நடப்பில் ஐந்து படிகள் உள்ளன</para>
+
+      <orderedlist>
+
+        <listitem>
+          <para><guilabel>ஆவணம் எழுதும் முறை.</guilabel> ஆசிரியர் மூல கோப்பை ஒவ்வொரு செயல், மேக்ரோ, இணைப்புக்கும் ஆவணங்களால் நிரப்புவார். (முன்னே விவரங்கள் உருவாக்கப்பட்ட வார்ப்புரு கோப்புக்களால் உள்ளிடப்பட்டது. அப்படி இனி செய்ய பரிந்துரைக்கவில்லை.)</para>
+        </listitem>
+
+        <listitem>
+          <para>
+            <guilabel>Gathering information about the code.</guilabel>
+
+            <application>gtkdoc-scan</application> scans the header files of the
+            code looking for declarations of functions, macros, enums, structs, and unions.
+            It creates the file <filename>&lt;module&gt;-decl-list.txt</filename> containg a list of the
+            declarations, placing them into sections according to which header file they
+            are in. On the first run this file is copied to <filename>&lt;module&gt;-sections.txt</filename>.
+            The author can rearrange the sections, and the order of the
+            declarations within them, to produce the final desired order.
+            The second file it generates is <filename>&lt;module&gt;-decl.txt</filename>.
+            This file contains the full declarations found by the scanner. If for
+            some reason one would like some symbols to show up in the docs, where
+            the full declaration cannot be found by the scanner or the declaration
+            should appear differently, one can place enties similar to the ones in
+            <filename>&lt;module&gt;-decl.txt</filename> into <filename>&lt;module&gt;-overrides.txt</filename>.
+
+            <application>gtkdoc-scanobj</application> can also be used to dynamically query a library about
+            any GtkObject subclasses it exports. It saves information about each
+            object's position in the class hierarchy and about any GTK Args and Signals it
+            provides.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>"வார்ப்புரு" கோப்புகள் உருவாக்கம் .</guilabel><application>gtkdoc-mktmpl</application> இந்த துணை அடைவில் முதல் சுற்றில் சேகரித்த தகவல்களைக் கொண்டு பல கோப்புகளை உருவாக்குகிறது: <filename class="directory">tmpl/</filename> (இதை மீண்டும் மீண்டும் இயக்கலாம். எந்த கோப்பும் தொலைந்து போகாமல் இது பார்த்துக்கொள்ளும்.)</para>
+          <note>
+            <para>ஜிடிகே டாக் 1.9 முதல் வார்ப்புருக்களை தவிர்க்கலாம். மக்கள் ஆவணத்தை குறீயாக்கத்தில் வைத்து இருப்பதையே நாங்கள் விரும்புகிறோம். <application>gtkdocize</application>  இப்போது இந்த <option>--flavour no-tmpl</option> தேர்வை ஆதரிக்கிறது. இது (tmpl) வார்ப்புரு பயன்பாட்டை முற்றூம் தவிர்க்கும் ஒரு மேக் பைலை தேர்வுசெய்கிறது. நீங்கள் கைமுறையாக எந்த ஒரு tmpl கோப்பையும் மாற்றியது இல்லையானால் தயை செய்து இந்த அடைவை நீக்கவும்.(எ.கா. வெர்ஷன் கன்ட்ரோல் அமைப்பு).</para>
+          </note>
+        </listitem>
+
+        <listitem>
+          <para>
+            <guilabel>Generating the SGML/XML and HTML/PDF.</guilabel>
+
+            <application>gtkdoc-mkdb</application> turns the template files into
+            SGML or XML files in the <filename class="directory">sgml/</filename>
+            or <filename class="directory">xml/</filename> subdirectory.
+            If the source code contains documentation on functions, using the
+            special comment blocks, it gets merged in here. If there are no tmpl files used
+            it only reads docs from sources and introspection data. We recommend
+            to use Docbook XML.
+          </para>
+          <para>
+            <application>gtkdoc-mkhtml</application> turns the SGML/XML files into HTML
+            files in the <filename class="directory">html/</filename> subdirectory.
+            Likewise <application>gtkdoc-mkpdf</application> turns the SGML/XML files into a PDF
+            document called <filename>&lt;package&gt;.pdf</filename>.
+          </para>
+          <para> <filename class="directory">sgml/</filename> அல்லது <filename class="directory">xml/</filename> மற்றும்  <filename class="directory">html/</filename>  இல் உள்ள அடைவுகள் எப்போதுமே மேலெழுதப்படும். அவற்றை யாரும் எப்போதும் நேரடியாக திருத்தக்கூடாது.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>ஆவணங்கள் இடையில் குறுக்கு தொடுப்புகளை சரி செய்தல்</guilabel> HTML கோப்புக்களை நிறுவிய பின்னர், பின் வரும் நிரலை இயக்கி  <application>gtkdoc-fixxref</application> ஆவணங்கள் இடையில் குறுக்கு தொடுப்புகளை சரி செய்யலாம். உதாரணமாக ஜிடிகே+ ஆவணத்தில் ஜிலிப் கையேட்டில் ஆவணப்படுத்திய பல வகைகளுக்கு குறுக்கு தொடுப்புகள் இருக்கும். வினியோகிக்க டார் பால் செய்யும் போது <application>gtkdoc-rebase</application> எல்லா வெளி தொடுப்புக்களையும் வலை தொடுப்பாக மாற்றிவிடும். இதே நிரல் ஆவணங்கள் நிறுவப்படும்போது அவற்றை உள்ளமை தொடுப்புக்களாக மாற்றியமைக்கும். (மற்ற ஆவணங்கள் நிறுவப்பட்டு இருக்கும் பட்சத்தில்.)</para>
+        </listitem>
+      </orderedlist>
+
+    </sect1>
+
+    <sect1 id="gettinggtkdoc">
+      <title>ஜிடிகே டாக் ஐ பெறுதல்</title>
+
+      <sect2 id="requirements">
+        <title>முன் தேவைகள்</title>
+        <para>
+          <guilabel>Perl v5</guilabel> - the main scripts are in Perl.
+        </para>
+        <para>
+          <guilabel>DocBook DTD v3.0</guilabel> - This is the DocBook SGML DTD.
+          <ulink url="http://www.ora.com/davenport" type="http">http://www.ora.com/davenport</ulink>
+        </para>
+        <para>
+          <guilabel>Jade v1.1</guilabel> - This is a DSSSL processor for converting SGML to various formats.
+          <ulink url="http://www.jclark.com/jade" type="http">http://www.jclark.com/jade</ulink>
+        </para>
+        <para>
+          <guilabel>Modular DocBook Stylesheets</guilabel>
+          This is the DSSSL code to convert DocBook to HTML (and a few other
+          formats). It's used together with jade.
+          I've customized the DSSSL code slightly, in gtk-doc.dsl, to colour
+          the program code listings/declarations, and to support global
+          cross-reference indices in the generated HTML.
+          <ulink url="http://nwalsh.com/docbook/dsssl" type="http">http://nwalsh.com/docbook/dsssl</ulink>
+        </para>
+        <para> நீங்கள் டாக்புக் இலிருந்து மேன் பக்கங்களை தயாரிக்க விரும்பினால் ..மொழிபெயர்ப்பு  குறிப்புக்களை சற்றே நான் மாற்றியுள்ளேன். தொகுப்பு தலைப்புகள் மேலெழுத்தில் காட்டப்படும். ஜிடிகே நூலகம் என்னும் தலைப்பு ('GTK Library') பக்கங்களின் மேலே காட்டப்படும். திருத்திய தேதி கீழே காட்டப்படும். இதற்கு இங்கு ஒரு தொடுப்பு உள்ளது: <ulink url="http://www.ora.com/davenport" type="http">http://www.ora.com/davenport</ulink> குறிப்பு: இது இன்னும் செயலில் இல்லை..</para>
+      </sect2>
+
+      <sect2 id="installation">
+        <title>நிறுவல்</title>
+        <para>மாடுலர் டாக் புக் ஸ்டைய்ல்ஷீட்ஸ் நிறுவப்பட செந்தரமான இடமில்லை.</para>
+        <para>ஜிடிகே டாக் இன் வடிவமைக்கும் குறுநிரல் மூன்று அடைவுகளை தானியங்கியாக பார்க்கும்.</para>
+        <para><filename> /usr/lib/sgml/stylesheets/nwalsh-modular </filename> (ரெட் ஹாட் ஆல் பயன்படுத்தப்படுவது)</para>
+        <para><filename> /usr/lib/dsssl/stylesheets/docbook </filename> (டெபியன் ஆல் பயன்படுத்தப்படுவது)</para>
+        <para><filename> /usr/share/sgml/docbkdsl </filename> (சூசே ஆல் பயன்படுத்தப்படுவது)</para>
+        <para>ஸ்டைய்ல் ஷீட் கள் வேறெங்கும் நிறுவி இருப்பின் கை முறையாக ஜிடிகே டாக் ஐ வடிவமைக்க வேண்டும். கட்டளை தேர்ர்வு: <command> --with-dsssl-dir=&lt;PATH_TO_TOPLEVEL_STYLESHEETS_DIR&gt; </command> </para>
+      </sect2>
+
+    </sect1>
+
+    <!-- not realy worth a section
+    <sect1 id="whentousegtkdoc">
+      <title>When to Use GTK-Doc</title>
+
+      <para>
+        (What things GTK-Doc should, and shouldn't, be used for.)
+        (- ???)
+        (- non C-based projects)
+        (+ Tutorials)
+      </para>
+
+    </sect1>
+    -->
+
+    <sect1 id="aboutgtkdoc">
+      <title>ஜிடிகே டாக் பற்றி</title>
+
+      <para>(FIXME)</para>
+
+      <para>(வரலாறு, ஆசிரியர்கள், வலைப்பக்கங்கள், உரிமை, எதிர்கால திட்டங்கள், மற்ற இதே போன்ற அமைப்புகளுடன் ஒப்பீடு)</para>
+
+    </sect1>
+
+    <sect1 id="aboutthismanual">
+      <title>இந்த கையேடு பற்றி</title>
+
+      <para>(FIXME)</para>
+
+      <para>(இது யாருக்கு, உரிமம், எங்கு பெறுவது)</para>
+
+    </sect1>
+
+  </chapter>
+
+  <chapter id="settingup">
+    <title>உங்கள் திட்டத்தை அமைத்தல்</title>
+
+    <para>
+      The next sections describe what steps to perform to integrate GTK-Doc into
+      your project. Theses sections assume we work on a project called 'meep'.
+      This project contains a library called 'libmeep' and
+      an end-user app called 'meeper'.
+    </para>
+
+    <sect1 id="settingup_docfiles">
+      <title>தோராய ஆவணம் அமைத்தல்</title>
+
+      <para>உங்கள் தலை மட்ட திட்ட அடைவில் இந்த மாதிரி அடைவுகளை உருவாக்குக.docs/reference (இதனால் உங்களுக்கு பயனர் ஆவணம் docs/help உம் கிடைக்கும்). இன்னொரு துணை அடைவு doc-package என் பெயரிட்டு உருவாக்கவும். ஒரே ஒரு நூலகம் உள்ள பொதிகளுக்கு இந்த படி தேவையில்லை</para>
+
+      <para>
+        This can then look as shown below:
+        <example><title>எடுத்துக்காட்டு அடைவு அமைப்பு</title>
+          <programlisting>
+<![CDATA[
+meep/
+  docs/
+    reference/
+      libmeep/
+      meeper/
+  src/
+    libmeep/
+    meeper/
+]]>
+          </programlisting>
+        </example>
+      </para>
+    </sect1>
+
+    <sect1 id="settingup_autoconf">
+      <title>ஆட்டோ கான்ஃப் உடன் ஒருங்கிணைப்பு</title>
+
+      <para>ரொம்ப சுலபம். <filename>configure.ac</filename> குறுநிரலுக்கு ஒரே ஒரு வரி மட்டும் சேருங்கள்.</para>
+
+      <para>
+        <example><title>ஆட்டோ கான்ஃப் உடன் ஒருங்கிணைப்பு</title>
+          <programlisting>
+<![CDATA[
+# check for gtk-doc
+GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+      <para>
+        This will require all developers to have gtk-doc installed. If it is
+        okay for your project to have optional api-doc build setup, you can
+        solve this as below. Keep it as is, as gtkdocize is looking for
+        <function>GTK_DOC_CHECK</function>  at the start of a line.
+        <example><title>Keep gtk-doc optional</title>
+          <programlisting>
+<![CDATA[
+# check for gtk-doc
+m4_ifdef([GTK_DOC_CHECK], [
+GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
+],[
+AM_CONDITIONAL([ENABLE_GTK_DOC], false)
+])
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+      <para>முதல் தரு மதிப்பு வடிவமைப்பு நேரத்தில்  ஜிடிகே டாக் இன் பதிப்பை சோதிக்கிறது. இரண்டாவது தெர்வு தருமதிப்பு. இது இந்த நிரலால் பயன்படுத்தப்படுகிறது. <application>gtkdocize</application>.  <symbol>GTK_DOC_CHECK</symbol> மேக்ரோ பல மாற்றிகளை வடிவமைத்து சேர்க்கிறது:</para>
+      <orderedlist>
+        <listitem><para>--with-html-dir=PATH : நிறுவிய ஆவணங்களுக்கான பாதை</para></listitem>
+        <listitem><para>""--enable-gtk-doc :ஆவணமாக்கத்துக்கு  ஜிடிகே டாக் ஐ பயன்படுத்துக. [முன்னிருப்பு=இல்லை]</para></listitem>
+        <listitem><para>--enable-gtk-doc-html : html ஒழுங்கில் ஆவணத்தை உருவாக்குக[முன்னிருப்பு=ஆம்]</para></listitem>
+        <listitem><para>--enable-gtk-doc-pdf : pdf ஒழுங்கில் ஆவணத்தை உருவாக்குக [முன்னிருப்பு=இல்லை]</para></listitem>
+      </orderedlist>
+
+      <important>
+      	<para>ஜிடிகே டாக் GTK-Doc முன்னிருப்பாக செயலிழந்து இருக்கும்! ஆகவே அடுத்த <filename>configure</filename> இயக்கத்துக்கு இந்த தேர்வை செய்க: <option>'--enable-gtk-doc'</option> . இல்லையானால் முன் உருவாக்கிய ஆவணங்கள் நிறூவப்படும்.( இது பயனர்களுக்கு புரியும், நல்லது. ஆனால் உருவாக்குவோருக்கு அல்ல).</para>
+      </important>
+
+      <para> மேலும் பின் வரும் வரியை உங்கள்  <filename>configure.ac</filename> குறுநிரலில் அமைத்துக்கொள்க. இது <application>gtkdocize</application> நிரலை தானியங்கியாக   <function>GTK_DOC_CHECK</function> இன் மேக்ரோ அறிதியீட்டை உங்கள் திட்டத்துக்கு பிரதி எடுக்கிறது.</para>
+
+      <para>
+        <example><title>gtkdocize க்கு முன்னேற்பாடு</title>
+          <programlisting>
+<![CDATA[
+AC_CONFIG_MACRO_DIR(m4)
+]]>
+          </programlisting>
+        </example>
+      </para>
+    </sect1>
+
+    <sect1 id="settingup_automake">
+      <title>ஆட்டோமேக் உடன் ஒருங்கிணைப்பு</title>
+
+      <para>முதலில் gtkdoc-sources அடைவிலிருந்து உங்கள் திட்டத்தின் ஏபிஐ ஆவண அடைவு ( <filename class="directory">./docs/reference/&lt;package&gt;</filename>) க்கு <filename>Makefile.am</filename> ஐ பிரதி எடுக்கவும். உங்களுக்கு பல டாக் பொதிகள் இருப்பின் இதை ஒவ்வொன்றுக்கும் செய்யவும்.</para>
+
+      <para>
+        The next step is to edit the settings inside the <filename>Makefile.am</filename>.
+        All the settings have a comment above that describes their purpose.
+        Most settings are extra flags passed to the respective tools. Every tool
+        has a variable of the form <option>&lt;TOOLNAME&gt;_OPTIONS</option>.
+        All the tools support <option>--help</option> to list the supported
+        parameters.
+      </para>
+
+      <!-- FIXME: explain options ? -->
+
+      <para>
+        You may also want to enable GTK-Doc for the distcheck make target. Just
+        add the one line shown in the next example to your top-level
+        <filename>Makefile.am</filename>:
+      </para>
+
+      <para>
+        <example><title>distcheck போது ஜிடிகே- டாக் ஐ செயலாக்குக</title>
+          <programlisting>
+<![CDATA[
+DISTCHECK_CONFIGURE_FLAGS=--enable-gtk-doc
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+    </sect1>
+
+    <sect1 id="settingup_autogen">
+      <title>ஆட்டொஜென் உடன் ஒருங்கிணைத்தல்</title>
+
+      <para>முக்கால்வாசி திட்டங்களில் (cvs/svn/git போன்ற) வெர்ஷன் கட்டுப்பாடு அமைப்பில் இருந்து பெறப்பட்டதும் அடிக்கட்டுமான பணியை செய்ய   <filename>autogen.sh</filename> குறுநிரல் இருக்கும்.  ஜிடிகே டாக் (GTK-Doc) இல் <application>gtkdocize</application> என ஒரு கருவி உண்டு. இது அது போன்ற குறுநிரலுடன் வேலை செய்யும்.இது autoheader, automake அல்லது autoconf க்கு முன்னால் இயக்கப்பட வேண்டும்.</para>
+
+      <para>
+        <example><title>autogen.sh இலிருந்து  gtkdocize ஐ இயக்குதல்</title>
+          <programlisting>
+<![CDATA[
+gtkdocize || exit 1
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+      <para>
+        When running <application>gtkdocize</application> it copies
+        <filename>gtk-doc.make</filename> to your project root (or any directory
+        specified by the <option>--docdir</option> option).
+        It also checks you configure script for the <function>GTK_DOC_CHECK</function>
+        invocation. This macro can be used to pass extra parameters to
+        <application>gtkdocize</application>.
+      </para>
+
+      <para>
+        Historically GTK-Doc was generating template files where developers entered the docs.
+        This turned out to be not so good (e.g. the need for having generated
+        files under version control).
+        Since GTK-Doc 1.9 the tools can get all the information from source comments
+        and thus the templates can be avoided. We encourage people to keep
+        documentation in the code. <application>gtkdocize</application> supports now
+        a <option>--flavour no-tmpl</option> option that chooses a makefile that skips
+        tmpl usage totally. Besides adding the option directly to the command
+        invocation, they can be added also to an environment variable called <symbol>GTKDOCIZE_FLAGS</symbol>
+        or set as a 2nd parameter in <symbol>GTK_DOC_CHECK</symbol> macro in the configure script.
+        If you have never changed file in tmpl by hand and migrating from older gtkdoc versions,
+        please remove the dir (e.g. from version control system).
+      </para>
+    </sect1>
+
+    <sect1 id="settingup_firstrun">
+      <title>டாக் உருவாக்கியை (doc build) இயக்குதல்</title>
+
+      <para>இப்போது கட்டுமானத்திற்கு ஆயத்தமாகிவிட்டோம். முதலில் நாம் மீன்டும் <filename>autogen.sh</filename> ஐ இயக்கவேண்டும். இது உங்களுக்கு கட்டமைப்பை இயக்கினால் அதற்கு <option>--enable-gtk-doc</option> தேர்வை தரவும். இல்லையானால் கைமுறையாக இதே தேர்வுடன் <filename>configure</filename> ஐ பிரிதொரு முறை இயக்கவும்.</para>
+      <para>ஆவண அடைவுகளில் (doc-dirs) பல கூடுதல் கோப்புகளை முதல் மேக் இயக்கம் உருவாக்கும்.அவற்றில்ய் முக்கியமானவை: <filename>&lt;package&gt;.types</filename>, <filename>&lt;package&gt;-docs.sgml</filename>, <filename>&lt;package&gt;-sections.txt</filename>.</para>
+      <para>
+        <example><title>டாக் உருவாக்கியை (doc build) இயக்குதல்</title>
+          <programlisting>
+<![CDATA[
+./autogen.sh --enable-gtk-doc
+make
+]]>
+          </programlisting>
+        </example>
+      </para>
+      <para>இப்போது உங்கள் உலாவியை  <filename>docs/reference/&lt;package&gt;/index.html</filename> க்கு சுட்டிக்காட்டலாம். ஆமாம், இது கொஞ்சம் ஏமாற்றமாகத்தான் இருக்கிறது. கவலை வேண்டாம். அடுத்த அத்தியாயத்தில் எப்படி இவற்றை உயிருக்கு கொண்டு வருவது என பார்க்கலாம்.</para>
+    </sect1>
+
+    <sect1 id="settingup_vcs">
+      <title>வெர்ஷன் கன்ட்ரோல் அமைப்புகளுடன் ஒருங்கிணைத்தல்</title>
+
+      <para>குத்து மதிப்பாக சொல்லப்போனால் , நீங்கள் திருத்தும் கோப்புகள்தான் வெர்ஷன் கட்டுப்படுக்கு போக வேண்டும். வழக்கமாக இவைதான் அந்த கோப்புகள்: <filename>&lt;package&gt;.types</filename><filename>&lt;package&gt;-docs.sgml</filename><filename>&lt;package&gt;-sections.txt</filename><filename>Makefile.am</filename></para>
+    </sect1>
+
+  </chapter>
+
+  <chapter id="documenting">
+    <title>குறியாக்கத்தை ஆவணப்படுத்துதல்</title>
+
+    <para>
+      GTK-Doc uses source code comment with a special syntax for code documentation.
+      Further it retrieves information about your project structure from other
+      sources. During the next section you will find all information about the
+      syntax of the comments.
+    </para>
+
+    <note>
+      <title>ஆவணம் இடுதல்</title>
+      <para>முன் காலத்தில்  பெரும்பாலான ஆவணங்கள்  <filename>tmpl</filename> அடைவில் இருக்கும் கோப்புகளில் நிரப்பப்பட வேண்டி இருந்தது. இதில் நஷ்டமாக தகவல்கள்  அவ்வப்போது புதுப்பிக்கப்படவில்லை. மேலும் இவை வெர்ஷன் கட்டுப்பாடு அமைப்புகளுடன் பொருந்தவில்லை</para>
+      <para>மேற்கூறிய காரணங்களால் நாங்கள் ஆவணங்களை மூலத்துடன் வைக்கு மாறூ சொல்கிறோம். இந்த கையேடு இந்த முறையை மட்டுமே விவாதிக்கும்.</para>
+    </note>
+
+    <para>
+      The scanner can handle the majority of c headers fine. In the case of
+      receiving warnings from the scanner that look like a special case, one can
+      hint GTK-Doc to skip over them.
+      <example><title>ஜிடிகே டாக் விமரிசன தொகுப்பு</title>
+        <programlisting>
+<![CDATA[
+#ifndef __GTK_DOC_IGNORE__
+/* unparseable code here */
+#endif
+]]>
+        </programlisting>
+      </example>
+    </para>
+
+    <!--  -->
+
+    <sect1 id="documenting_syntax">
+      <title>ஆவணமாக்க விமரிசனங்கள்</title>
+
+      <para> '*'  இல் துவங்கும் பல்வரி விமர்சனம் ஜிடிகே டாக் கருவிகளால் ஒரு ஆவணமாக்கல் தொகுதியாக கையாளப்படும். <example><title>ஜிடிகே டாக் விமரிசன தொகுப்பு</title>
+          <programlisting>
+<![CDATA[
+/**
+ * identifier:
+ * documentation ...
+ */
+]]>
+          </programlisting>
+        </example> </para>
+
+      <para> 'identifier' எனப்படும் இனம் காட்டி விமர்சனம் பொருந்தும் உருப்படியின்  பெயருடன் கூடிய ஒரு வரி. உருப்படியை பொருத்து இலக்கணம் சற்று மாறலாம். </para>
+
+      <para>ஆவண ( 'documentation') தொகுதி ஒவ்வொரு அடையாளத்துக்கும் கூட தனித் தனியாகும் .symbol type. Symbol types that get parameters such as functions or macros have the parameter description first followed by a blank line (just a '*'). Afterwards follows the detailed description. All lines (outside program- listings and CDATA sections) just containing a ' *' (blank-asterisk) are converted to paragraph breaks. If you don't want a paragraph break, change that into ' * ' (blank-asterisk-blank-blank).</para>
+
+      <para>ஜிடிகே டாக் </para>
+
+      <tip>
+	  <para>சிறப்பு குறிகளான  '&lt;', '&gt;', '()', '@', '%', அல்லது '#' ஐ  ஜிடிகே டாக் மாற்றாமல் அப்படியே ஆவணத்தில் பயன்படுத்த அவற்றுக்கான ஹெச்எம்எல் ஐ பயன்படுத்துக: "&amp;lt;", "&amp;gt;", "&amp;lpar;", "&amp;rpar;", "&amp;commat;", "&amp;percnt;" மற்றும் "&amp;num;"  அல்லது பின் சாய்வு கோடால் அவற்றை தனியாக்கலாம்.'\'. </para>
+      </tip>
+
+      <para>
+        DocBook can do more that just links. One can also have lists, tables and
+        examples. To enable the usage of SGML/XML tags inside doc-comments you
+        need to have <option>--xml-mode</option> or <option>--sgml-mode</option>
+        in the variable <symbol>MKDB_OPTIONS</symbol> inside
+        <filename>Makefile.am</filename>.
+      </para>
+
+      <tip>
+	<para>ஜிடிகே டாக் </para>
+      </tip>
+    </sect1>
+
+    <sect1 id="documenting_sections">
+      <title>ஆவணப்படுத்தும் தொகுதிகள்</title>
+
+      <para>ஆவணத்தில் ஒவ்வொரு பிரிவும் ஒரு வகுப்பு அல்லது கூறு குறித்து தகவலைப்பெற்றிருக்கும். ஒரு பாகத்தை அறிமுகம் செய்ய ஒரு தொகுதியை எழுதலாம். குறுகிய விவரணம் உள்ளடக்க பட்டியலில் கூட பயன்படுத்தப்படும். எல்லா @ புலங்களூம் தேர்வுக்குரியன.</para>
+
+      <para>
+        <example><title>பிரிவு விமரிசன தொகுதி</title>
+          <programlisting>
+<![CDATA[
+/**
+ * SECTION:meepapp
+ * @short_description: the application class
+ * @title: Meep application
+ * @section_id:
+ * @see_also: #MeepSettings
+ * @stability: Stable
+ * @include: meep/app.h
+ * @image: application.png
+ *
+ * The application class handles ...
+ */
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+      <variablelist>
+        <varlistentry>
+          <term>SECTION:&lt;பெயர்&gt;</term>
+          <listitem>
+            <para>பகுதி ஆவணத்தை பெயர்  <filename>&lt;package&gt;-sections.txt</filename>கோப்புக்கு இணைக்கிறது. கொடுக்கப்பட்ட பெயர்   <filename>&lt;package&gt;-sections.txt</filename> கோப்பில் &lt;FILE&gt; குறிப்புடன் பொருந்த வேண்டும்.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@short_description</term>
+          <listitem>
+            <para>பகுதி பக்கத்தின் மேலே உள்ளடக்க பட்டியலுக்கான தொடுப்புகளுக்குப்பின் காணும் ஒரு வரி விவரம்.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@title</term>
+          <listitem>
+            <para>இந்த தொகுதி  SECTION சாற்றுரையிலிருந்து &lt;name&gt; க்கு முன்னிருப்பாக செல்லும். இதை உதாசீனப்படுத்த @title புலத்தை பயன்படுத்துக.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@section_id</term>
+          <listitem>
+            <para>
+              Overrides the use of title as a section identifier. For GObjects
+              the &lt;title&gt; is used as a section_id and for other sections
+              it is &lt;MODULE&gt;-&lt;title&gt;.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@see_also</term>
+          <listitem>
+            <para>
+              A list of symbols that are related to this section.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@stability</term>
+          <listitem>
+            <para>
+              A informal description of the stability level this API has.
+              We recommend the use of one of these terms:
+              <itemizedlist>
+                <listitem>
+                  <para>Stable - நிலையான- எனில் இடைமுகம் நிலையானது. மூன்றாம் நபர்கள் இவற்றை ஒட்டி நிரல்களை எழுதி வெளியிடலாம்; எந்த பெரிய வெளியீட்டுக்குள் அவை வெளியிடப்பட்டதோ அதன் சிறிய வெளியீட்டுகளுக்குள் அவை சரியாக வேலை செய்யும் என நம்பலாம். பெரிய வெளியீடில் கூட இசைவு இல்லாமல் போவது துர்லபம்.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    Unstable
+                    - Unstable interfaces are experimental or transitional.
+                    They are typically used to give outside developers early
+                    access to new or rapidly changing technology, or to provide
+                    an interim solution to a problem where a more general
+                    solution is anticipated.
+                    No claims are made about either source or binary
+                    compatibility from one minor release to the next.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>Private - தனிப்பயன் எனில் க்னோம் இல் மட்டும் பயன்படும் இடைமுகம். ஆயின் இறுதி பயனருக்கு ஆவணப்படுத்தவில்லை. அப்படிப்பட்ட செயல்கள் குறீப்பிட்ட ஆவணப்படுத்தப்பட்ட வழியில் மட்டுமே பயன்படுத்தப்பட வேண்டும்.</para>
+                </listitem>
+                <listitem>
+                  <para>
+                    Internal
+                    - An interface that is internal to a module and does not
+                    require end-user documentation. Functions that are
+                    undocumented are assumed to be Internal.
+                  </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@include</term>
+          <listitem>
+            <para>
+              The <literal>#include</literal> files to show in the section
+              synopsis (a comma separated list), overriding the global
+              value from the <link linkend="metafiles_sections">section
+              file</link> or command line.  This item is optional.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@image</term>
+          <listitem>
+            <para>
+              The image to display at the top of the reference page for this
+              section.  This will often be some sort of a diagram to illustrate
+              the visual appearance of a class or a diagram of its relationship
+              to other classes.  This item is optional.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <tip>
+        <para>
+          To avoid unnecessary recompilation after doc-changes put the section
+          docs into the c-source where possible.
+        </para>
+      </tip>
+
+    </sect1>
+
+    <sect1 id="documenting_symbols">
+      <title>சிம்பல்களை ஆவணப் படுத்தல்</title>
+
+      <para>
+        Each symbol (function, macro, struct, enum, signal and property) is
+        documented in a separate block. The block is best placed close to the
+        definition of the symbols so that it is easy to keep them in sync.
+        Thus functions are usually documented in the c-source and macros,
+        structs and enums in the header file.
+      </para>
+
+      <sect2><title>பொது டேக் ஒட்டுகள்</title>
+
+        <para>
+          You can add versioning information to all documentation elements to tell
+          when an api was introduced, or when it was deprecated.
+        </para>
+
+        <variablelist><title>டேக் களை பதிப்பாக்கல்</title>
+          <varlistentry><term>இதிலிருந்து:</term>
+            <listitem>
+              <para>
+                Description since which version of the code the API is available.
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry><term>கைவிடப்பட்டது.</term>
+            <listitem>
+              <para>
+                Paragraph denoting that this function should no be used anymore.
+                The description should point the reader to the new API.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+
+          <para>FIXME : Stability information)</para>
+
+        <example><title>பொது டேக் ஒட்டுகள்</title>
+          <programlisting>
+<![CDATA[
+/**
+ * foo_get_bar:
+ * @foo: some foo
+ *
+ * Retrieves @foo's bar.
+ *
+ * Returns: @foo's bar
+ *
+ * Since: 2.6
+ * Deprecated: 2.12: Use foo_baz_get_bar() instead.
+ **/
+Bar *
+foo_get_bar(Foo *foo)
+{
+...
+]]>
+          </programlisting>
+        </example>
+      </sect2>
+
+      <sect2><title>பங்ஷன் விமரிசன தொகுதி</title>
+
+        <para><itemizedlist>
+            <listitem>
+              <para>
+                Document whether returned objects, lists, strings, etc, should be
+                freed/unrefed/released.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Document whether parameters can be NULL, and what happens if they are.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Mention interesting pre-conditions and post-conditions where appropriate.
+              </para>
+            </listitem>
+          </itemizedlist> க்கு நினைவிருத்துக</para>
+
+        <para>
+          Gtk-doc assumes all symbols (macros, functions) starting with '_' are
+          private. They are treated like static functions.
+        </para>
+
+        <para>
+          
+          Also, take a look at gobject introspection annotation tags:
+          http://live.gnome.org/GObjectIntrospection/Annotations
+        </para>
+
+        <example><title>பங்ஷன் விமரிசன தொகுதி</title>
+          <programlisting>
+<![CDATA[
+/**
+ * function_name:
+ * @par1:  description of parameter 1. These can extend over more than
+ * one line.
+ * @par2:  description of parameter 2
+ * @...: a %NULL-terminated list of bars
+ *
+ * The function description goes here. You can use @par1 to refer to parameters
+ * so that they are highlighted in the output. You can also use %constant
+ * for constants, function_name2() for functions and #GtkWidget for links to
+ * other declarations (which may be documented elsewhere).
+ *
+ * Returns: an integer.
+ *
+ * Since: 2.2
+ * Deprecated: 2.18: Use other_function() instead.
+ */
+]]>
+          </programlisting>
+        </example>
+
+        <variablelist><title>பங்ஷன் டேக் ஒட்டுகள்</title>
+          <varlistentry><term>திருப்பிகிடைப்பவை:</term>
+            <listitem>
+              <para>
+                Paragraph describing the returned result.
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry><term>@...:</term>
+            <listitem>
+              <para>
+                In case the function has variadic arguments, you should use this
+                tag (@Varargs: does also work for historic reasons).
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+
+      </sect2>
+
+      <sect2><title>பண்புகள் விமரிசன தொகுதி</title>
+
+        <example><title>பண்புகள் விமரிசன தொகுதி</title>
+          <programlisting>
+<![CDATA[
+/**
+ * SomeWidget:some-property:
+ *
+ * Here you can document a property.
+ */
+g_object_class_install_property (object_class, PROP_SOME_PROPERTY, ...);
+]]>
+          </programlisting>
+        </example>
+
+      </sect2>
+
+      <sect2><title>சமிக்ஞை விமரிசன தொகுதி</title>
+
+        <para><itemizedlist>
+            <listitem>
+              <para>சமிக்ஞை எப்போது வெளியிடப்படும் மற்றும் மற்ற சமிக்ஞைகளுக்கு முன்னா பின்னா வெளியிடப்படும் என ஆவணப்படுத்தல்.</para>
+            </listitem>
+            <listitem>
+              <para>
+                Document what an application might do in the signal handler.
+              </para>
+            </listitem>
+          </itemizedlist> க்கு நினைவிருத்துக</para>
+
+        <example><title>சமிக்ஞை விமரிசன தொகுதி</title>
+          <programlisting>
+<![CDATA[
+/**
+ * FooWidget::foobarized:
+ * @widget: the widget that received the signal
+ * @foo: some foo
+ * @bar: some bar
+ *
+ * The ::foobarized signal is emitted each time someone tries to foobarize @widget.
+ */
+foo_signals[FOOBARIZE] =
+  g_signal_new ("foobarize",
+                ...
+]]>
+          </programlisting>
+        </example>
+
+      </sect2>
+
+      <sect2><title>அமைப்பு விமரிசன தொகுதி</title>
+        <example><title>அமைப்பு விமரிசன தொகுதி</title>
+          <programlisting>
+<![CDATA[
+/**
+ * FooWidget:
+ * @bar: some #gboolean
+ *
+ * This is the best widget, ever.
+ */
+typedef struct _FooWidget {
+  /*< private >*/
+  GtkWidget parent;
+
+  /*< public >*/
+  gboolean bar;
+} FooWidget;
+]]>
+          </programlisting>
+        </example>
+
+        <para>
+          Use <code>/*&lt; private &gt;*/</code> before the private struct fields
+          you want to hide. Use <code>/*&lt; public &gt;*/</code> for the reverse
+          behaviour.
+        </para>
+
+        <para>
+          Struct comment blocks can also be used for GObjects and GObjectClasses.
+          It is usualy a good idea to add a comment blco for a class, if it has
+          vmethods (as this is how they can be documented). For the GObject
+          itself one can use the related section docs, having a separate block
+          for the instance struct would be useful if the instance has public
+          fields. One disadvantage here is that this creates two index entries
+          of the same name (the structure and the section).
+        </para>
+
+      </sect2>
+
+      <sect2><title>ஈநம் விமரிசன தொகுதி</title>
+        <example><title>ஈநம் விமரிசன தொகுதி</title>
+          <programlisting>
+<![CDATA[
+/**
+ * Something:
+ * @SOMETHING_FOO: something foo
+ * @SOMETHING_BAR: something bar
+ *
+ * Enum values used for the thing, to specify the thing.
+ *
+ **/
+typedef enum {
+  SOMETHING_FOO,
+  SOMETHING_BAR,
+  /*< private >*/
+  SOMETHING_COUNT
+} Something;
+]]>
+          </programlisting>
+        </example>
+
+        <para>
+          Use <code>/*&lt; private &gt;*/</code> before the private enum values
+          you want to hide. Use <code>/*&lt; public &gt;*/</code> for the reverse
+          behaviour.
+        </para>
+
+      </sect2>
+    </sect1>
+
+    <sect1 id="documenting_docbook">
+      <title>Useful DocBook tags</title>
+
+      <para>
+        Here are some DocBook tags which are most useful when documenting the
+        code.
+      </para>
+
+      <para>
+        To link to another section in the GTK docs:
+
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<link linkend="glib-Hash-Tables">Hash Tables</link>
+]]>
+          </programlisting>
+        </informalexample>
+        The linkend is the SGML/XML id on the top item of the page you want to link to.
+        For most pages this is currently the part ("gtk", "gdk", "glib") and then
+        the page title ("Hash Tables"). For widgets it is just the class name.
+        Spaces and underscores are converted to '-' to conform to SGML/XML.
+      </para>
+
+      <para>
+        To refer to an external function, e.g. a standard C function:
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<function>...</function>
+]]>
+          </programlisting>
+        </informalexample>
+      </para>
+
+      <para>ஜிடிகே டாக் </para>
+
+      <para>
+        To include bulleted lists:
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<itemizedlist>
+  <listitem>
+    <para>
+      ...
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      ...
+    </para>
+  </listitem>
+</itemizedlist>
+]]>
+          </programlisting>
+        </informalexample>
+      </para>
+
+      <para>
+        To include a note which stands out from the text:
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<note>
+  <para>
+    Make sure you free the data after use.
+  </para>
+</note>
+]]>
+          </programlisting>
+        </informalexample>
+      </para>
+
+      <para>
+        To refer to a type:
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<type>unsigned char</type>
+]]>
+          </programlisting>
+        </informalexample>
+      </para>
+
+      <para>
+        To refer to an external structure (not one described in the GTK docs):
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<structname>XFontStruct</structname>
+]]>
+          </programlisting>
+        </informalexample>
+      </para>
+
+      <para>
+        To refer to a field of a structure:
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<structfield>len</structfield>
+]]>
+          </programlisting>
+        </informalexample>
+      </para>
+
+      <para>
+        To refer to a class name, we could possibly use:
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<classname>GtkWidget</classname>
+]]>
+          </programlisting>
+        </informalexample>
+        but you'll probably be using #GtkWidget instead (to automatically create
+        a link to the GtkWidget page - see <link linkend="documenting_syntax">the abbreviations</link>).
+      </para>
+
+      <para>
+        To emphasize text:
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<emphasis>This is important</emphasis>
+]]>
+          </programlisting>
+        </informalexample>
+      </para>
+
+      <para>
+        For filenames use:
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<filename>/home/user/documents</filename>
+]]>
+          </programlisting>
+        </informalexample>
+      </para>
+
+      <para>
+        To refer to keys use:
+        <informalexample>
+          <programlisting>
+<![CDATA[
+<keycombo><keycap>Control</keycap><keycap>L</keycap></keycombo>
+]]>
+          </programlisting>
+        </informalexample>
+      </para>
+
+    </sect1>
+  </chapter>
+
+  <chapter id="metafiles">
+    <title>கூடுதல் கோப்புகளை நிரப்புதல் </title>
+
+    <para>
+      There are a couple of extra files, that need to be maintained along with
+      the inline source code comments:
+      <filename>&lt;package&gt;.types</filename>,
+      <filename>&lt;package&gt;-docs.sgml</filename>,
+      <filename>&lt;package&gt;-sections.txt</filename>.
+    </para>
+
+    <sect1 id="metafiles_types">
+      <title>கோப்பு வகையை திருத்துதல்</title>
+
+      <para>
+        If your library or application includes GtkObjects/GObjects, you want
+        their signals, arguments/parameters and position in the hierarchy to be
+        shown in the documentation. All you need to do, is to list the
+        <function>xxx_get_type</function> functions together with their include
+        inside the <filename>&lt;package&gt;.types</filename> file.
+      </para>
+
+      <para>
+        <example><title>Example types file snippet</title>
+          <programlisting>
+<![CDATA[
+#include <gtk/gtk.h>
+
+gtk_accel_label_get_type
+gtk_adjustment_get_type
+gtk_alignment_get_type
+gtk_arrow_get_type
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+      <para>ஜிடிகே டாக் </para>
+
+    </sect1>
+
+    <sect1 id="metafiles_master">
+      <title>முதன்மை ஆவணத்தை திருத்துதல்</title>
+
+      <para>
+        GTK-Doc produces documentation in DocBook SGML/XML. When processing the
+        inline source comments, the GTK-Doc tools generate one documentation
+        page per class or module as a separate file. The master document
+        includes them and place them in an order.
+      </para>
+
+      <para>ஜிடிகே டாக் </para>
+
+      <tip>
+        <para>
+          Do not create tutorials as extra documents. Just write extra chapters.
+          The benefit of directly embedding the tutorial for your library into
+          the API documentation is that it is easy to link for the tutorial to
+          symbol documentation. Apart chances are higher that the tutorial gets
+          updates along with the library.
+        </para>
+      </tip>
+
+      <para>
+        So what are the things to change inside the master document? For a start
+        is only a little. There are some placeholders (text in square brackets)
+        there which you should take care of.
+      </para>
+
+      <para>
+        <example><title>முதன்மை ஆவணத்தின் தலைப்பு</title>
+          <programlisting>
+<![CDATA[
+<bookinfo>
+  <title>MODULENAME Reference Manual</title>
+  <releaseinfo>
+    for MODULENAME [VERSION]
+    The latest version of this documentation can be found on-line at
+    <ulink role="online-location" url="http://[SERVER]/MODULENAME/index.html">http://[SERVER]/MODULENAME/</ulink>.
+  </releaseinfo>
+</bookinfo>
+
+<chapter>
+  <title>[Insert title here]</title>
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+    </sect1>
+
+    <sect1 id="metafiles_sections">
+      <title>தொகுதி கோப்பை திருத்துதல்</title>
+
+      <para>ஜிடிகே டாக் </para>
+
+      <para>
+        The section file is a plain test file with xml like syntax (using tags).
+        Blank lines are ignored and lines starting with a '#' are treated as
+        comment lines.
+      </para>
+
+      <para>
+        The &lt;FILE&gt; ... &lt;/FILE&gt; tag is used to specify the file name,
+        without any suffix. For example, using '&lt;FILE&gt;gnome-config&lt;/FILE&gt;'
+        will result in the section declarations being output in the template
+        file <filename>tmpl/gnome-config.sgml</filename>, which will be
+        converted into the DocBook SGML/XML file <filename>sgml/gnome-config.sgml</filename>
+        or .DocBook XML file <filename>xml/gnome-config.xml</filename>.
+        (The name of the html file is based on the module name and the section
+        title, or for gobjects it is based on the gobjects class name converted
+        to lower case).
+      </para>
+
+      <para>
+        The &lt;TITLE&gt; ... &lt;/TITLE&gt; tag is used to specify the title of
+        the section. It is only useful before the templates (if used) are
+        initially created, since the title set in the template file overrides
+        this. Also if one uses SECTION comment in the sources, this is obsolete.
+      </para>
+
+      <para>
+        You can group items in the section by using the &lt;SUBSECTION&gt; tag.
+        Currently it outputs a blank line between subsections in the synopsis
+        section.
+        You can also use &lt;SUBSECTION Standard&gt; for standard GObject
+        declarations (e.g. the functions like g_object_get_type and macros like
+        G_OBJECT(), G_IS_OBJECT() etc.).
+        Currently these are left out of the documentation.
+        You can also use &lt;SUBSECTION Private&gt; for private declarations
+        which will not be output (It is a handy way to avoid warning messages
+        about unused declarations.).
+        If your library contains private types which you don't want to appear in
+        the object hierarchy and the list of implemented or required interfaces,
+        add them to a Private subsection.
+        Wheter you would place GObject and GObjectClass like structs in public
+        or Standard section depends if they have public entries (variables,
+        vmethods).
+      </para>
+
+      <para>
+        You can also use &lt;INCLUDE&gt; ... &lt;/INCLUDE&gt; to specify the
+        #include files which are shown in the synopsis sections.
+        It contains a comma-separate list of #include files, without the angle
+        brackets. If you set it outside of any sections, it acts for all
+        sections until the end of the file. If you set it within a section, it
+        only applies to that section.
+      </para>
+
+    </sect1>
+
+  </chapter>
+
+  <chapter id="reports">
+    <title>விடையை கட்டுப்படுத்தல்</title>
+
+    <para>ஜிடிகே டாக் </para>
+
+    <para>
+      The <filename>&lt;package&gt;-undocumented.txt</filename> file starts with
+      the documentation coverage summary. Below are two sections divided by
+      blank lines. The first section lists undocumented or incomplete symbols.
+      The second section does the same for section docs. Incomplete entries are
+      those, which have documentation, but where e.g. a new parameter has been
+      added.
+    </para>
+
+    <para>
+      The <filename>&lt;package&gt;-undeclared.txt</filename> file lists symbols
+      given in the <filename>&lt;package&gt;-sections.txt</filename> but not
+      found in the sources. Check if they have been removed or if they are
+      misspelled.
+    </para>
+
+    <para>ஜிடிகே டாக் </para>
+
+    <tip>
+      <para>ஜிடிகே டாக் </para>
+    </tip>
+
+    <para>
+      One can also look at the files produced by the source code scanner:
+      <filename>&lt;package&gt;-decl-list.txt</filename> and
+      <filename>&lt;package&gt;-decl.txt</filename>. The first one can be
+      compared with the section file if that is manualy maintained. The second
+      lists all declarations fromt he headers If a symbol is missing one could
+      check if this file contains it.
+    </para>
+
+    <para>
+      If the project is GObject based, one can also look into the files produced
+      by the object scanner:
+      <filename>&lt;package&gt;.args.txt</filename>,
+      <filename>&lt;package&gt;.hierarchy.txt</filename>,
+      <filename>&lt;package&gt;.interfaces.txt</filename>,
+      <filename>&lt;package&gt;.prerequisites.txt</filename> and
+      <filename>&lt;package&gt;.signals.txt</filename>. If there are missing
+      symbols in any of those, one can ask gtkdoc to keep the intermedia scanner
+      file for further analysis, but running it as
+      <command>GTK_DOC_KEEP_INTERMEDIATE=1 make</command>.
+    </para>
+  </chapter>
+
+  <chapter id="documenting-others">
+    <title>Documenting other interfaces</title>
+
+    <para>
+      So far we have been using GTK-Doc to document the API of code. The next
+      sections contain suggestions how the tools can be used to document other
+      interfaces too.
+    </para>
+
+    <sect1 id="commandline-interfaces">
+      <title>Commandline options and man pages</title>
+
+      <para>
+        As one can generate man pages for a docbook refentry as well, it sounds
+        like a good idea to use it for that purpose. This way the interface is
+        part of the reference and one gets the man-page for free.
+      </para>
+
+      <sect2 id="commandline-interfaces-file">
+        <title>Document the tool</title>
+
+        <para>
+          Create one refentry file per tool. Following
+          <link linkend="settingup_docfiles">our example</link> we would call it
+          <filename>meep/docs/reference/meeper/meep.xml</filename>. For the xml
+          tags that should be used and can look at generated file in the xml
+          subdirectory as well as examples e.g. in glib.
+        </para>
+      </sect2>
+
+      <sect2 id="commandline-interfaces-configure">
+        <title>Adding the extra configure check</title>
+
+        <para>
+          <example><title>Extra configure checks</title>
+            <programlisting>
+<![CDATA[
+AC_ARG_ENABLE(man,
+              [AC_HELP_STRING([--enable-man],
+                              [regenerate man pages from Docbook [default=no]])],enable_man=yes,
+              enable_man=no)
+
+AC_PATH_PROG([XSLTPROC], [xsltproc])
+AM_CONDITIONAL(ENABLE_MAN, test x$enable_man != xno)
+]]>
+            </programlisting>
+          </example>
+        </para>
+      </sect2>
+
+      <sect2 id="commandline-interfaces-make">
+        <title>Adding the extra makefile rules</title>
+
+        <para>
+          <example><title>Extra configure checks</title>
+            <programlisting>
+<![CDATA[
+man_MANS = \
+       meeper.1
+
+if ENABLE_GTK_DOC
+if ENABLE_MAN
+
+%.1 : %.xml
+        @XSLTPROC@ -nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
+
+endif
+endif
+
+BUILT_EXTRA_DIST = $(man_MANS)
+EXTRA_DIST += meep.xml
+]]>
+            </programlisting>
+          </example>
+        </para>
+      </sect2>
+    </sect1>
+
+    <sect1 id="dbus-interfaces">
+      <title>DBus interfaces</title>
+
+      <para>
+        (FIXME: http://hal.freedesktop.org/docs/DeviceKit/DeviceKit.html,
+http://cgit.freedesktop.org/DeviceKit/DeviceKit/tree/doc/dbus)
+      </para>
+    </sect1>
+
+  </chapter>
+
+  <chapter id="faq">
+    <title>Frequently asked questions</title>
+
+    <segmentedlist>
+      <?dbhtml list-presentation="list"?>
+      <segtitle>கேள்வி</segtitle>
+      <segtitle>பதில்</segtitle>
+      <seglistitem>
+        <seg>வகுப்பு கட்டுமுறை இல்லை</seg>
+        <seg><function>""xxx_get_type()</function> பொருட்கள் பங்ஷன் இன்னும்  <filename>&lt;package&gt;.வகைகள்</filename> கோப்பில் உள்ளிடப்படவில்லை</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>இன்னும் வகுப்பு கட்டுமுறை இல்லை</seg>
+        <seg><filename>&lt;package&gt;-sections.txt</filename> கோப்பில் தவறான பெயரிடுதல் அல்லது காணவில்லை (பார்க்க: <ulink url="http://mail.gnome.org/archives/gtk-doc-list/2003-October/msg00006.html">விளக்கம்</ulink>)</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>அடடா, இன்னும் வகுப்பு கட்டுமுறை இல்லை </seg>
+        <seg>
+          Is the object name (name of the instance struct, e.g. <type>ஜிடிகேவிட்செட்</type>)
+          part of the normal section (don't put this into Standard or Private
+          subsections).
+        </seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>சிம்பல் குறி அட்டவணை இல்லை</seg>
+        <seg>
+          Does the <filename>&lt;package&gt;-docs.{xml,sgml}</filename> contain a
+          index that xi:includes the generated index?
+        </seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>Symbols are not linked to their doc-section.</seg>
+        <seg>
+          Is the doc-comment using the correct markup (added #,% or ())?
+          Check if the gtkdoc-fixxref warns about unresolvable xrefs.
+        </seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>A new class does not appear in the docs.</seg>
+        <seg>
+          Is the new page xi:included from
+          <filename>&lt;package&gt;-docs.{xml,sgml}</filename>.
+        </seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>A new symbol does not appear in the docs.</seg>
+        <seg>
+          Is the doc-comment properly formatted. Check for spelling mistakes in
+          the begin of the comment. Check if the gtkdoc-fixxref warns about
+          unresolvable xrefs. Check if the symbol is correctly listed in the
+          <filename>&lt;package&gt;-sections.txt</filename> in a public subsection.
+        </seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>A type is missing from the class hierarchy.</seg>
+        <seg>
+          If the type is listed in <filename>&lt;package&gt;.hierarchy</filename>
+          but not in <filename>xml/tree_index.sgml</filename> then double check
+          that the type is correctly placed in the <filename>&lt;package&gt;-sections.txt</filename>.
+          If the type instance (e.g. <type>ஜிடிகேவிட்செட்</type>) is not listed or
+          incidentialy makred private it will not be shown.
+        </seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>I get foldoc links for all gobject annotations.</seg>
+        <seg>
+          Check that <filename>xml/annotation-glossary.xml</filename> is
+          xi:included from <filename>&lt;package&gt;-docs.{xml,sgml}</filename>.
+        </seg>
+      </seglistitem>
+
+      <!-- gtk-doc warnings: -->
+      <seglistitem>
+        <seg>Parameter described in source code comment block but does not exist</seg>
+        <seg>Check if the prototype in the header has different parameter names as in the source.</seg>
+      </seglistitem>
+
+      <!-- docbook warnings: -->
+      <seglistitem>
+        <seg>multiple "IDs" for constraint linkend: XYZ</seg>
+        <seg>Symbol XYZ appears twice in <filename>&lt;package&gt;-sections.txt</filename> file.</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>குறி XYZ இல் இரு முறை காண்கிறது.</seg>
+        <seg/>
+      </seglistitem>
+    </segmentedlist>
+  </chapter>
+
+  <chapter id="contrib">
+    <title>Tools related to gtk-doc</title>
+
+    <para>
+      GtkDocPlugin - a <ulink url="http://trac-hacks.org/wiki/GtkDocPlugin">Trac GTK-Doc</ulink>
+      integration plugin, that adds api docs to a trac site and integrates with
+      the trac search.
+    </para>
+    <para>
+      Gtkdoc-depscan - a tool (part of gtk-doc) to check used API against since
+      tags in the api to determine the minimum required version.
+    </para>
+
+  </chapter>
+
+  <!-- ======== Appendix: FDL ================================== -->
+  <!--  
+     The GNU Free Documentation License 1.1 in DocBook
+     Markup by Eric Baudais <baudais@okstate.edu>
+     Maintained by the GNOME Documentation Project
+     http://developer.gnome.org/projects/gdp
+     Version: 1.0.1
+     Last Modified: Nov 16, 2000
+-->
+
+<appendix id="fdl">
+  <appendixinfo>
+    <releaseinfo>பதிப்பு 1.1, மார்ச் 2000</releaseinfo>
+    <copyright>
+      <year>2000</year><holder>Free Software Foundation, Inc.</holder>
+    </copyright>
+    <legalnotice id="fdl-legalnotice">
+      <para><address>Free Software Foundation, Inc. <street>51 Franklin Street, Suite 330</street>, <city>Boston</city>, <state>MA</state><postcode>02110-1301</postcode><country>USA</country></address> இந்த லைசென்ஸ் ஆவணத்தை அனவரும் பிரதி எடுத்து வினியோகிக்கலாம் ஆனால் மாற்றக்கூடாது.</para>
+    </legalnotice>
+  </appendixinfo>
+  <title>க்னூ இலவச ஆவண லைசென்ஸ்</title>
+
+  <sect1 id="fdl-preamble">
+    <title>0. முன்னுரை (PREAMBLE)</title>
+    <para>
+      The purpose of this License is to make a manual, textbook, or
+      other written document <quote>free</quote> in the sense of
+      freedom: to assure everyone the effective freedom to copy and
+      redistribute it, with or without modifying it, either
+      commercially or noncommercially. Secondarily, this License
+      preserves for the author and publisher a way to get credit for
+      their work, while not being considered responsible for
+      modifications made by others.
+    </para>
+    
+    <para>
+      This License is a kind of <quote>copyleft</quote>, which means
+      that derivative works of the document must themselves be free in
+      the same sense. It complements the GNU General Public License,
+      which is a copyleft license designed for free software.
+    </para>
+    
+    <para>
+      We have designed this License in order to use it for manuals for
+      free software, because free software needs free documentation: a
+      free program should come with manuals providing the same
+      freedoms that the software does. But this License is not limited
+      to software manuals; it can be used for any textual work,
+      regardless of subject matter or whether it is published as a
+      printed book. We recommend this License principally for works
+      whose purpose is instruction or reference.
+    </para>
+  </sect1>
+  <sect1 id="fdl-section1">
+    <title>1. APPLICABILITY AND DEFINITIONS</title>
+    <para id="fdl-document">
+      This License applies to any manual or other work that contains a
+      notice placed by the copyright holder saying it can be
+      distributed under the terms of this License. The
+      <quote>Document</quote>, below, refers to any such manual or
+      work. Any member of the public is a licensee, and is addressed
+      as <quote>you</quote>.
+    </para>
+    
+    <para id="fdl-modified">
+      A <quote>Modified Version</quote> of the Document means any work
+      containing the Document or a portion of it, either copied
+      verbatim, or with modifications and/or translated into another
+      language.
+    </para>
+	
+    <para id="fdl-secondary">
+      A <quote>Secondary Section</quote> is a named appendix or a
+      front-matter section of the <link linkend="fdl-document">Document</link> that deals exclusively
+      with the relationship of the publishers or authors of the
+      Document to the Document's overall subject (or to related
+      matters) and contains nothing that could fall directly within
+      that overall subject. (For example, if the Document is in part a
+      textbook of mathematics, a Secondary Section may not explain any
+      mathematics.)  The relationship could be a matter of historical
+      connection with the subject or with related matters, or of
+      legal, commercial, philosophical, ethical or political position
+      regarding them.
+    </para>
+
+    <para id="fdl-invariant">
+      The <quote>Invariant Sections</quote> are certain <link linkend="fdl-secondary"> Secondary Sections</link> whose titles
+      are designated, as being those of Invariant Sections, in the
+      notice that says that the <link linkend="fdl-document">Document</link> is released under this
+      License.
+    </para>
+    
+    <para id="fdl-cover-texts">
+      The <quote>Cover Texts</quote> are certain short passages of
+      text that are listed, as Front-Cover Texts or Back-Cover Texts,
+      in the notice that says that the <link linkend="fdl-document">Document</link> is released under this
+      License.
+    </para>
+	
+    <para id="fdl-transparent">
+      A <quote>Transparent</quote> copy of the <link linkend="fdl-document"> Document</link> means a machine-readable
+      copy, represented in a format whose specification is available
+      to the general public, whose contents can be viewed and edited
+      directly and straightforwardly with generic text editors or (for
+      images composed of pixels) generic paint programs or (for
+      drawings) some widely available drawing editor, and that is
+      suitable for input to text formatters or for automatic
+      translation to a variety of formats suitable for input to text
+      formatters. A copy made in an otherwise Transparent file format
+      whose markup has been designed to thwart or discourage
+      subsequent modification by readers is not Transparent.  A copy
+      that is not <quote>Transparent</quote> is called
+      <quote>Opaque</quote>.
+    </para>
+    
+    <para>
+      Examples of suitable formats for Transparent copies include
+      plain ASCII without markup, Texinfo input format, LaTeX input
+      format, SGML or XML using a publicly available DTD, and
+      standard-conforming simple HTML designed for human
+      modification. Opaque formats include PostScript, PDF,
+      proprietary formats that can be read and edited only by
+      proprietary word processors, SGML or XML for which the DTD
+      and/or processing tools are not generally available, and the
+      machine-generated HTML produced by some word processors for
+      output purposes only.
+    </para>
+    
+    <para id="fdl-title-page">
+      The <quote>Title Page</quote> means, for a printed book, the
+      title page itself, plus such following pages as are needed to
+      hold, legibly, the material this License requires to appear in
+      the title page. For works in formats which do not have any title
+      page as such, <quote>Title Page</quote> means the text near the
+      most prominent appearance of the work's title, preceding the
+      beginning of the body of the text.
+    </para>
+  </sect1>
+    
+  <sect1 id="fdl-section2">
+    <title>2. VERBATIM COPYING</title>
+    <para>
+      You may copy and distribute the <link linkend="fdl-document">Document</link> in any medium, either
+      commercially or noncommercially, provided that this License, the
+      copyright notices, and the license notice saying this License
+      applies to the Document are reproduced in all copies, and that
+      you add no other conditions whatsoever to those of this
+      License. You may not use technical measures to obstruct or
+      control the reading or further copying of the copies you make or
+      distribute. However, you may accept compensation in exchange for
+      copies. If you distribute a large enough number of copies you
+      must also follow the conditions in <link linkend="fdl-section3">section 3</link>.
+    </para>
+    
+    <para>
+      You may also lend copies, under the same conditions stated
+      above, and you may publicly display copies.
+    </para>
+    </sect1>
+    
+  <sect1 id="fdl-section3">
+    <title>3. COPYING IN QUANTITY</title>
+    <para>
+      If you publish printed copies of the <link linkend="fdl-document">Document</link> numbering more than 100,
+      and the Document's license notice requires <link linkend="fdl-cover-texts">Cover Texts</link>, you must enclose
+      the copies in covers that carry, clearly and legibly, all these
+      Cover Texts: Front-Cover Texts on the front cover, and
+      Back-Cover Texts on the back cover. Both covers must also
+      clearly and legibly identify you as the publisher of these
+      copies. The front cover must present the full title with all
+      words of the title equally prominent and visible. You may add
+      other material on the covers in addition. Copying with changes
+      limited to the covers, as long as they preserve the title of the
+      <link linkend="fdl-document">Document</link> and satisfy these
+      conditions, can be treated as verbatim copying in other
+      respects.
+    </para>
+    
+    <para>
+      If the required texts for either cover are too voluminous to fit
+      legibly, you should put the first ones listed (as many as fit
+      reasonably) on the actual cover, and continue the rest onto
+      adjacent pages.
+    </para>
+    
+    <para>
+      If you publish or distribute <link linkend="fdl-transparent">Opaque</link> copies of the <link linkend="fdl-document">Document</link> numbering more than 100,
+      you must either include a machine-readable <link linkend="fdl-transparent">Transparent</link> copy along with
+      each Opaque copy, or state in or with each Opaque copy a
+      publicly-accessible computer-network location containing a
+      complete Transparent copy of the Document, free of added
+      material, which the general network-using public has access to
+      download anonymously at no charge using public-standard network
+      protocols. If you use the latter option, you must take
+      reasonably prudent steps, when you begin distribution of Opaque
+      copies in quantity, to ensure that this Transparent copy will
+      remain thus accessible at the stated location until at least one
+      year after the last time you distribute an Opaque copy (directly
+      or through your agents or retailers) of that edition to the
+      public.
+    </para>
+    
+    <para>
+      It is requested, but not required, that you contact the authors
+      of the <link linkend="fdl-document">Document</link> well before
+      redistributing any large number of copies, to give them a chance
+      to provide you with an updated version of the Document.
+    </para>
+    </sect1>
+    
+  <sect1 id="fdl-section4">
+    <title>4. மாற்றங்கள் (MODIFICATIONS)</title>
+    <para>நீங்கள் ஒரு <link linkend="fdl-document">Document</link>  ஆவணத்தின்  <link linkend="fdl-modified">மாற்றப்பட்ட பதிப்பு(Modified Version)</link> ஐ கீழ் கண்ட தொகுதிகளின் விதிகளூக்கு இணங்க வினியோகிக்கலாம்: <link linkend="fdl-section2">2</link> and <link linkend="fdl-section3">3</link> கட்டுப்பாடு எது எனில் யாரிடம் எந்த பதிப்பு இருக்கிறதோ அதே லைசன்ஸ் கீழ் வெளியிட வேண்டும். மாற்றிய பதிப்பு ஆவணத்தின் பங்கை செய்ய வேண்டும். மேலும் பின் வருவனவற்றை மாற்றிய பதிப்பில் செய்ய வேண்டும்.:</para>
+    
+    <itemizedlist mark="opencircle">
+      <listitem>
+	<formalpara>
+	  <title>A</title>
+	  <para>முந்தைய பதிப்புகளின் வரலாற்றை ஆவணத்தின் வரலாற்றில் எழுதுக. இப்பதிப்புகளின் </para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>B</title>
+	  <para> <link linkend="fdl-title-page">Title Page</link>, இல் ஆசிரியர்களாக பட்டியலிடப்பட்டதில் ஒருவரோ மேலுமோ யார் மாற்றங்களை செய்தனரோ அவரது பெயர்களையும் <link linkend="fdl-modified">Modified Version</link> இல் சேர்க்கவும்.  <link linkend="fdl-document">Document</link> இன் ஆசிரியர்கள் ஐந்துக்கு குறைவாக இருப்பின் அனைத்து பெயர்களூம் அதிகமாக இருப்பின் குறைந்தது ஐந்து முக்கிய ஆசிரியர்கள் பெயர்களும் சேர்க்கப்பட வேண்டும்.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>C</title>
+	  <para><link linkend="fdl-title-page">Title Page</link> இல் வெளியிடுவோர் பெயராக <link linkend="fdl-modified">Modified Version</link> ஐ வெளியிடுவோர் பெயரை குறிப்பிடுக.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>D</title>
+	  <para><link linkend="fdl-document">Document</link> இன் காப்புரிமையை பாதுகாக்கவும்.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>E</title>
+	  <para>காப்புரிமை அறிவிப்புக்கு அருகில் உங்கள் மாற்றங்களுக்கான காப்புரிமையை வெளியிடுக.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>F</title>
+	  <para>உங்கள் காப்புரிமை அறிவிப்புக்கு பின்னாலேயே <link linkend="fdl-modified">Modified Version</link> ஐ பொது ஜனம் பயன்படுத்த பின் வரும் படிவத்தில் இந்த லைசென்ஸ் மூலம் அனுமதி வழங்குக.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>G</title>
+	  <para>link linkend="fdl-invariant"&gt; Invariant Sections</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>H</title>
+	  <para>இந்த லைசென்ஸின் மாற்றப்படாத வடிவத்தையும் ஒரு பிரதி வைத்திருங்கள்.  </para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>I</title>
+	  <para><quote>History</quote> எனக்குறித்த தொகுதி, அதன் தலைப்பு இவற்றை பாதுகாக்கவும். இதனுடன் <link linkend="fdl-title-page">Title Page</link>. இல் தரப்பட்ட <link linkend="fdl-modified">Modified Version </link> இன்  தலைப்பு, வருடம், புதிய ஆசிரியர்கள், வெளியிடுவோர் , ஆகியவற்றை சேர்க்கவும். <link linkend="fdl-document">Document</link> இல் அப்படி  <quote>History</quote> எனக்குறித்த தொகுதி இல்லாவிடில்   வருடம், புதிய ஆசிரியர்கள், வெளியிடுவோர் , ஆகியவற்றை தலைப்பு பக்கத்தில் உள்ளபடி உருவாக்கி பின் புதிதாக  முன் சொன்னவாறு மாற்றியதை சேர்க்கவும்..</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>J</title>
+	  <para>ஆவணத்தின் பிரதிக்கு பொதுஜன அணுகலுக்கு தரப்பட்ட <link linkend="fdl-document">Document</link> இல் காணும் <link linkend="fdl-transparent">Transparent</link> தொடுப்பை பாதுகாக்கவும்.அதேபோல முதைய பதிப்புகளில் உள்ள தொடுப்புகளையும் பாதுகாக்கவும். இவற்றை  <quote>History</quote> பகுதியில் வைக்கலாம். ஆவணத்துக்கு நான்கு வருடங்கள் முன் வெளியிட்டவற்றையும் ஆசிரியர் நீக்கலாம் என அனுமதி தந்தவற்றையும் நீக்கலாம்.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>K</title>
+	  <para><quote>Acknowledgements</quote> அல்லது <quote>Dedications</quote> எனக்குறித்த எந்த தொகுதியிலும் தொகுதியின் தலைப்பையும் அதில் உள்ளவற்றில்  ஒவ்வொரு பங்கீடு அளித்தோரின் நன்றி அறிதல் /அர்ப்பணம் ஆகியவற்றின் சாரத்தையும் பாதுகாக்கவும் , </para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>L</title>
+	  <para><link linkend="fdl-document">Document</link>,  இன் <link linkend="fdl-invariant">Invariant Sections</link> of the <link linkend="fdl-document">Document</link> களை உரை தலைப்புகளை மாற்றாமல் பாதுகாக்கவும். தொகுதி எண்களும் அல்லது அதன் சமானமானவையும் இதில் சேராது.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>M</title>
+	  <para> <quote>Endorsements</quote> இல் உள்ளதை நீக்கவும். அப்படிப்பட்ட எந்த தொகுதியும் <link linkend="fdl-modified">Modified Version</link> இல் இருத்தலாகாது..</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>N</title>
+	  <para>இருப்பிலுள்ள எந்த தொகுதியையும் <quote>Endorsements</quote> என் மறு பெயரிடவோ அல்லது <link linkend="fdl-invariant">Invariant Section</link> உடன் மோதும் எதையும் செய்யலாகாது </para>
+	</formalpara>
+      </listitem>
+    </itemizedlist>
+    
+    <para><link linkend="fdl-modified">Modified Version</link>இல் புதிய விஷயம் இருந்தாலோ அல்லது <link linkend="fdl-secondary">Secondary Sections</link> என அனுபந்தம் இருந்து அதில் ஆவணத்திலிருந்து பிரதி எடுத்த ஏதும் இல்லாமல் இருந்தாலோ நீங்கள் தேர்ந்தெடுத்து அவற்றை  முழுதுமோ பகுடியோ மாறாதவை என குறிப்பிடலாம். இதை செய்ய அவற்றின் தலைப்புகளை மாற்றிய பதிப்பு நோட்டீசில் <link linkend="fdl-invariant">Invariant Sections</link> பட்டியலில் சேர்க்கவும். இந்த தலைப்புகள் மற்ற தலைப்புகளீன் பெயரிலிருந்து மாறுபட்டு இருத்தல் வேண்டும்.</para>
+    
+    <para>சகாக்கள் எழுதிய விமர்சனங்கள், மதிப்புரைகள் அல்லது ஒரு நிறுவனம்  உங்கள்  <link linkend="fdl-modified">Modified Version</link> ஐ திறனாய்வு செய்து தகுதி சான்று  கொடுத்து இருப்பின் அவை மட்டும் இருக்கும் பட்சத்தில் நீங்கள் <quote>Endorsements</quote> என தலைப்பிட்ட தொகுதி ஒன்றை சேர்க்கலாம்.</para>
+    
+    <para>link linkend="fdl-cover-texts"&gt;Front-Cover Text</para>
+    
+    <para>
+      The author(s) and publisher(s) of the <link linkend="fdl-document">Document</link> do not by this License
+      give permission to use their names for publicity for or to
+      assert or imply endorsement of any <link linkend="fdl-modified">Modified Version </link>.
+    </para>
+  </sect1>
+    
+  <sect1 id="fdl-section5">
+    <title>5. COMBINING DOCUMENTS</title>
+    <para>
+      You may combine the <link linkend="fdl-document">Document</link>
+      with other documents released under this License, under the
+      terms defined in <link linkend="fdl-section4">section 4</link>
+      above for modified versions, provided that you include in the
+      combination all of the <link linkend="fdl-invariant">Invariant
+      Sections</link> of all of the original documents, unmodified,
+      and list them all as Invariant Sections of your combined work in
+      its license notice.
+    </para>
+    
+    <para>
+      The combined work need only contain one copy of this License,
+      and multiple identical <link linkend="fdl-invariant">Invariant
+      Sections</link> may be replaced with a single copy. If there are
+      multiple Invariant Sections with the same name but different
+      contents, make the title of each such section unique by adding
+      at the end of it, in parentheses, the name of the original
+      author or publisher of that section if known, or else a unique
+      number. Make the same adjustment to the section titles in the
+      list of Invariant Sections in the license notice of the combined
+      work.
+    </para>
+    
+    <para>
+      In the combination, you must combine any sections entitled
+      <quote>History</quote> in the various original documents,
+      forming one section entitled <quote>History</quote>; likewise
+      combine any sections entitled <quote>Acknowledgements</quote>,
+      and any sections entitled <quote>Dedications</quote>.  You must
+      delete all sections entitled <quote>Endorsements.</quote>
+    </para>
+    </sect1>
+    
+  <sect1 id="fdl-section6">
+    <title>6. COLLECTIONS OF DOCUMENTS</title>
+    <para>
+      You may make a collection consisting of the <link linkend="fdl-document">Document</link> and other documents
+      released under this License, and replace the individual copies
+      of this License in the various documents with a single copy that
+      is included in the collection, provided that you follow the
+      rules of this License for verbatim copying of each of the
+      documents in all other respects.
+    </para>
+    
+    <para>
+      You may extract a single document from such a collection, and
+      dispbibute it individually under this License, provided you
+      insert a copy of this License into the extracted document, and
+      follow this License in all other respects regarding verbatim
+      copying of that document.
+    </para>
+    </sect1>
+    
+  <sect1 id="fdl-section7">
+    <title>7. AGGREGATION WITH INDEPENDENT WORKS</title>
+    <para>
+      A compilation of the <link linkend="fdl-document">Document</link> or its derivatives with
+      other separate and independent documents or works, in or on a
+      volume of a storage or distribution medium, does not as a whole
+      count as a <link linkend="fdl-modified">Modified Version</link>
+      of the Document, provided no compilation copyright is claimed
+      for the compilation.  Such a compilation is called an
+      <quote>aggregate</quote>, and this License does not apply to the
+      other self-contained works thus compiled with the Document , on
+      account of their being thus compiled, if they are not themselves
+      derivative works of the Document.  If the <link linkend="fdl-cover-texts">Cover Text</link> requirement of <link linkend="fdl-section3">section 3</link> is applicable to these
+      copies of the Document, then if the Document is less than one
+      quarter of the entire aggregate, the Document's Cover Texts may
+      be placed on covers that surround only the Document within the
+      aggregate. Otherwise they must appear on covers around the whole
+      aggregate.
+    </para>
+    </sect1>
+    
+  <sect1 id="fdl-section8">
+    <title>8. மொழிபெயர்ப்பு</title>
+    <para>
+      Translation is considered a kind of modification, so you may
+      distribute translations of the <link linkend="fdl-document">Document</link> under the terms of <link linkend="fdl-section4">section 4</link>. Replacing <link linkend="fdl-invariant"> Invariant Sections</link> with
+      translations requires special permission from their copyright
+      holders, but you may include translations of some or all
+      Invariant Sections in addition to the original versions of these
+      Invariant Sections. You may include a translation of this
+      License provided that you also include the original English
+      version of this License. In case of a disagreement between the
+      translation and the original English version of this License,
+      the original English version will prevail.
+    </para>
+    </sect1>
+    
+  <sect1 id="fdl-section9">
+    <title>9. TERMINATION</title>
+    <para>
+      You may not copy, modify, sublicense, or distribute the <link linkend="fdl-document">Document</link> except as expressly
+      provided for under this License. Any other attempt to copy,
+      modify, sublicense or distribute the Document is void, and will
+      automatically terminate your rights under this License. However,
+      parties who have received copies, or rights, from you under this
+      License will not have their licenses terminated so long as such
+      parties remain in full compliance.
+    </para>
+    </sect1>
+    
+  <sect1 id="fdl-section10">
+    <title>10. FUTURE REVISIONS OF THIS LICENSE</title>
+    <para>
+      The <ulink type="http" url="http://www.gnu.org/fsf/fsf.html">Free Software
+      Foundation</ulink> may publish new, revised versions of the GNU
+      Free Documentation License from time to time. Such new versions
+      will be similar in spirit to the present version, but may differ
+      in detail to address new problems or concerns. See <ulink type="http" url="http://www.gnu.org/copyleft">http://www.gnu.org/copyleft/</ulink>.
+    </para>
+    
+    <para>
+      Each version of the License is given a distinguishing version
+      number. If the <link linkend="fdl-document">Document</link>
+      specifies that a particular numbered version of this License
+      <quote>or any later version</quote> applies to it, you have the
+      option of following the terms and conditions either of that
+      specified version or of any later version that has been
+      published (not as a draft) by the Free Software Foundation. If
+      the Document does not specify a version number of this License,
+      you may choose any version ever published (not as a draft) by
+      the Free Software Foundation.
+    </para>
+  </sect1>
+
+  <sect1 id="fdl-using">
+    <title>Addendum</title>
+    <para>To use this License in a document you have written, include a copy of the License in the document and put the following copyright and license notices just after the title page:</para>
+    
+    <blockquote>
+      <para>Copyright 2010, I. Felix.</para>
+      <para>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with the <link linkend="fdl-invariant">Invariant Sections</link> being LIST THEIR TITLES, with the <link linkend="fdl-cover-texts">Front-Cover Texts</link> being LIST, and with the <link linkend="fdl-cover-texts">Back-Cover Texts</link> being LIST. A copy of the license is included in the section entitled <quote>GNU Free Documentation License</quote>.</para>
+    </blockquote>
+      
+    <para>If you have no <link linkend="fdl-invariant">Invariant Sections</link>, write <quote>with no Invariant Sections</quote> instead of saying which ones are invariant. If you have no <link linkend="fdl-cover-texts">Front-Cover Texts</link>, write <quote>no Front-Cover Texts</quote> instead of <quote>Front-Cover Texts being LIST</quote>; likewise for <link linkend="fdl-cover-texts">Back-Cover Texts</link>.</para>
+    
+    <para>உங்கள் ஆவணத்தில் முக்கியமல்லாத நிரல் குறியீட்டு உதாரணங்கள் இருப்பின் , எங்கள் பரிந்துரை: இவற்றின் இலவச பயனுக்கு  இந்த உதாரணங்களை இணையாக மென்பொருள் அனுமதிக்கான உங்கள் தேர்வில் வெளியிடுங்கள்.மாதிரிக்கு: <ulink type="http" url="http://www.gnu.org/copyleft/gpl.html"> GNU General Public License</ulink>,</para>
+  </sect1>
+</appendix>  
+
+
+
+
+
+
+
+
+</book>

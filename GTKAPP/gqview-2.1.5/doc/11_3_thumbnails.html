@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>Thumbnails - GQview User Manual</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040805;23590500">
+	<META NAME="CHANGED" CONTENT="20050131;9432500">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="11_2_keyboard_shortcuts.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER>Thumbnails - Reference</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="11_4_management.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</CENTER>
+<HR>
+<H1>11.3 Thumbnails</H1>
+<P STYLE="text-decoration: none"><I>Note: This page only refers the
+GQview thumbnail caching mechanism, the shared thumbnail cache
+mechanism is not explained here.</I></P>
+<P><U>Format</U></P>
+<P STYLE="margin-left: 0.79in">Thumbnails are stored in PNG image
+format. The thumbnail name is the name of the source image with
+&ldquo;.png&rdquo; appended.</P>
+<P STYLE="margin-left: 0.79in">The modification time (mtime) of the
+thumbnail is set to match the source file. Thumbnails are regenerated
+when the timestamps of the thumbnail and source file do not match.</P>
+<P STYLE="margin-left: 0.79in"><BR><BR>
+</P>
+<P><U>Location</U></P>
+<P STYLE="margin-left: 0.79in">Thumbnails are stored in:</P>
+<P STYLE="margin-left: 1.58in">($HOME)/.gqview/thumbnails</P>
+<P STYLE="margin-left: 0.79in">The directory structure of the
+thumbnail cache duplicates the location of the source files, for
+example a source file with the name:</P>
+<P STYLE="margin-left: 1.58in">/path/to/image.jpg</P>
+<P STYLE="margin-left: 0.79in">will store the thumbnail in:</P>
+<P STYLE="margin-left: 1.58in">($HOME)/.gqview/thumbnails/path/to/image.jpg.png</P>
+<P STYLE="margin-left: 0.79in">When thumbnails are to be stored local
+to the source file, the thumbnail will be placed in:</P>
+<P STYLE="margin-left: 1.58in">/path/to/.thumbnails/image.jpg.png</P>
+<P STYLE="margin-left: 0.79in">Local thumbnail caching is enabled
+with the option &ldquo;Cache thumbnails into .thumbnails&rdquo; on
+the <A HREF="10_1_general.html">General</A> tab of the options
+dialog. If it is not possible to store the thumbnail local to the
+source file (usually due to no write permissions), GQview will fall
+back to saving the thumbnail in the user's ($HOME)/.gqview/thumbnails
+folder.</P>
+<P><BR><BR>
+</P>
+<P><U>Size</U></P>
+<P STYLE="margin-left: 0.79in">GQview allows the following sizes for
+thumbnails:</P>
+<P STYLE="margin-left: 1.58in">24x24, 32x32, 48x48, 64x64, 96x72,
+96x96, 129x96, 128x128, 160x120, 160x160, 192x144, 192x192, 256x192,
+256x256</P>
+<P STYLE="margin-left: 0.79in">The thumbnail is scaled to fit within
+the preferred size maintaining the aspect ratio. Thumbnails are not
+cached for images that are equal to or smaller than the preferred
+thumbnail size.</P>
+<P STYLE="margin-left: 0.79in">When a cached thumbnail's width and
+height do not match the preferred size, the thumbnail is regenerated.</P>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<HR>
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="11_2_keyboard_shortcuts.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><A HREF="index.html">Contents</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="11_4_management.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT>GQview User Manual</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>

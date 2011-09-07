@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="gtk-Orientable">
+<refmeta>
+<refentrytitle role="top_of_page" id="gtk-Orientable.top_of_page">GtkOrientable</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkOrientable</refname>
+<refpurpose>An interface for flippable widgets</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gtk-Orientable.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+<anchor id="GtkOrientable"/>
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkOrientable-struct">GtkOrientable</link>;
+<link linkend="GtkOrientation">GtkOrientation</link>      <link linkend="gtk-orientable-get-orientation">gtk_orientable_get_orientation</link>      (<link linkend="GtkOrientable">GtkOrientable</link> *orientable);
+<link linkend="void">void</link>                <link linkend="gtk-orientable-set-orientation">gtk_orientable_set_orientation</link>      (<link linkend="GtkOrientable">GtkOrientable</link> *orientable,
+                                                         <link linkend="GtkOrientation">GtkOrientation</link> orientation);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="gtk-Orientable.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GInterface">GInterface</link>
+   +----GtkOrientable
+</synopsis>
+</refsect1>
+
+
+
+
+<refsect1 id="gtk-Orientable.implementations" role="implementations">
+<title role="implementations.title">Known Implementations</title>
+<para>
+GtkOrientable is implemented by
+ <link linkend="GtkButtonBox">GtkButtonBox</link>,  <link linkend="GtkPaned">GtkPaned</link>,  <link linkend="GtkVButtonBox">GtkVButtonBox</link>,  <link linkend="GtkHButtonBox">GtkHButtonBox</link>,  <link linkend="GtkVRuler">GtkVRuler</link>,  <link linkend="GtkVSeparator">GtkVSeparator</link>,  <link linkend="GtkVBox">GtkVBox</link>,  <link linkend="GtkHRuler">GtkHRuler</link>,  <link linkend="GtkHScale">GtkHScale</link>,  <link linkend="GtkFileChooserButton">GtkFileChooserButton</link>,  <link linkend="GtkStatusbar">GtkStatusbar</link>,  <link linkend="GtkVScale">GtkVScale</link>,  <link linkend="GtkGammaCurve">GtkGammaCurve</link>,  <link linkend="GtkHSeparator">GtkHSeparator</link>,  <link linkend="GtkRange">GtkRange</link>,  <link linkend="GtkToolbar">GtkToolbar</link>,  <link linkend="GtkScale">GtkScale</link>,  <link linkend="GtkSeparator">GtkSeparator</link>,  <link linkend="GtkFontSelection">GtkFontSelection</link>,  <link linkend="GtkFileChooserWidget">GtkFileChooserWidget</link>,  <link linkend="GtkHBox">GtkHBox</link>,  <link linkend="GtkCombo">GtkCombo</link>,  <link linkend="GtkHScrollbar">GtkHScrollbar</link>,  <link linkend="GtkScaleButton">GtkScaleButton</link>,  <link linkend="GtkRecentChooserWidget">GtkRecentChooserWidget</link>,  <link linkend="GtkVScrollbar">GtkVScrollbar</link>,  <link linkend="GtkColorSelection">GtkColorSelection</link>,  <link linkend="GtkVolumeButton">GtkVolumeButton</link>,  <link linkend="GtkHPaned">GtkHPaned</link>,  <link linkend="GtkBox">GtkBox</link>,  <link linkend="GtkRuler">GtkRuler</link>,  <link linkend="GtkVPaned">GtkVPaned</link> and  <link linkend="GtkScrollbar">GtkScrollbar</link>.</para>
+</refsect1>
+
+<refsect1 id="gtk-Orientable.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkOrientable--orientation">orientation</link>&quot;              <link linkend="GtkOrientation">GtkOrientation</link>        : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="gtk-Orientable.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkOrientable"><type>GtkOrientable</type></link> interface is implemented by all widgets that can be
+oriented horizontally or vertically. Historically, such widgets have been
+realized as subclasses of a common base class (e.g <link linkend="GtkBox"><type>GtkBox</type></link>/<link linkend="GtkHBox"><type>GtkHBox</type></link>/<link linkend="GtkVBox"><type>GtkVBox</type></link>
+and <link linkend="GtkScale"><type>GtkScale</type></link>/<link linkend="GtkHScale"><type>GtkHScale</type></link>/<link linkend="GtkVScale"><type>GtkVScale</type></link>). GtkOrientable is more flexible in that
+it allows the orientation to be changed at runtime, allowing the widgets
+to 'flip'.
+</para>
+<para>
+GtkOrientable was introduced in GTK+ 2.16.
+</para>
+</refsect1>
+
+<refsect1 id="gtk-Orientable.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkOrientable-struct" role="struct">
+<title>GtkOrientable</title>
+<indexterm zone="GtkOrientable-struct"><primary sortas="Orientable">GtkOrientable</primary></indexterm><programlisting>typedef struct _GtkOrientable GtkOrientable;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-orientable-get-orientation" role="function" condition="since:2.16">
+<title>gtk_orientable_get_orientation ()</title>
+<indexterm zone="gtk-orientable-get-orientation" role="2.16"><primary sortas="orientable_get_orientation">gtk_orientable_get_orientation</primary></indexterm><programlisting><link linkend="GtkOrientation">GtkOrientation</link>      gtk_orientable_get_orientation      (<link linkend="GtkOrientable">GtkOrientable</link> *orientable);</programlisting>
+<para>
+Retrieves the orientation of the <parameter>orientable</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>orientable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkOrientable"><type>GtkOrientable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the orientation of the <parameter>orientable</parameter>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="gtk-orientable-set-orientation" role="function" condition="since:2.16">
+<title>gtk_orientable_set_orientation ()</title>
+<indexterm zone="gtk-orientable-set-orientation" role="2.16"><primary sortas="orientable_set_orientation">gtk_orientable_set_orientation</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_orientable_set_orientation      (<link linkend="GtkOrientable">GtkOrientable</link> *orientable,
+                                                         <link linkend="GtkOrientation">GtkOrientation</link> orientation);</programlisting>
+<para>
+Sets the orientation of the <parameter>orientable</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>orientable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkOrientable"><type>GtkOrientable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>orientation</parameter>&#160;:</term>
+<listitem><simpara> the orientable's new orientation.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+
+</refsect1>
+<refsect1 id="gtk-Orientable.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkOrientable--orientation" role="property"><title>The <literal>&quot;orientation&quot;</literal> property</title>
+<indexterm zone="GtkOrientable--orientation" role="2.16"><primary sortas="Orientable:orientation">GtkOrientable:orientation</primary></indexterm><programlisting>  &quot;orientation&quot;              <link linkend="GtkOrientation">GtkOrientation</link>        : Read / Write</programlisting>
+<para>
+The orientation of the orientable.</para>
+<para>
+</para><para>Default value: GTK_ORIENTATION_HORIZONTAL</para>
+<para>Since 2.16</para>
+</refsect2>
+</refsect1>
+
+
+
+
+</refentry>

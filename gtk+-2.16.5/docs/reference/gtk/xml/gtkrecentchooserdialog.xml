@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkRecentChooserDialog">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkRecentChooserDialog.top_of_page">GtkRecentChooserDialog</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkRecentChooserDialog</refname>
+<refpurpose>Displays recently used files in a dialog</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkRecentChooserDialog.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkRecentChooserDialog-struct">GtkRecentChooserDialog</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-recent-chooser-dialog-new">gtk_recent_chooser_dialog_new</link>       (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent,
+                                                         const <link linkend="gchar">gchar</link> *first_button_text,
+                                                         ...);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-recent-chooser-dialog-new-for-manager">gtk_recent_chooser_dialog_new_for_manager</link>
+                                                        (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent,
+                                                         <link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *first_button_text,
+                                                         ...);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkRecentChooserDialog.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkWindow">GtkWindow</link>
+                                       +----<link linkend="GtkDialog">GtkDialog</link>
+                                             +----GtkRecentChooserDialog
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkRecentChooserDialog.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkRecentChooserDialog implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkRecentChooser">GtkRecentChooser</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkRecentChooserDialog.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link> is a dialog box suitable for displaying the recently
+used documents.  This widgets works by putting a <link linkend="GtkRecentChooserWidget"><type>GtkRecentChooserWidget</type></link> inside
+a <link linkend="GtkDialog"><type>GtkDialog</type></link>.  It exposes the <link linkend="GtkRecentChooserIface"><type>GtkRecentChooserIface</type></link> interface, so you can use
+all the <link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link> functions on the recent chooser dialog as well as
+those for <link linkend="GtkDialog"><type>GtkDialog</type></link>.
+</para>
+<para>
+Note that <link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link> does not have any methods of its own.
+Instead, you should use the functions that work on a <link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>.
+</para>
+<example id="gtkrecentchooser-typical-usage">
+  <title>Typical usage</title>
+  <para>
+    In the simplest of cases, you can use the following code to use
+    a <link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link> to select a recently used file:
+  </para>
+  <programlisting>
+GtkWidget *dialog;
+dialog = gtk_recent_chooser_dialog_new ("Recent Documents",
+					parent_window,
+					GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+					GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+					NULL);
+if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
+  {
+    GtkRecentInfo *info;
+    info = gtk_recent_chooser_get_current_item (GTK_RECENT_CHOOSER (dialog));
+    open_file (gtk_recent_info_get_uri (info));
+    gtk_recent_info_unref (info);
+  }
+gtk_widget_destroy (dialog);
+  </programlisting>
+</example>
+<para>
+Recently used files are supported since GTK+ 2.10.
+</para>
+</refsect1>
+
+<refsect1 id="GtkRecentChooserDialog.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkRecentChooserDialog-struct" role="struct">
+<title>GtkRecentChooserDialog</title>
+<indexterm zone="GtkRecentChooserDialog-struct"><primary sortas="RecentChooserDialog">GtkRecentChooserDialog</primary></indexterm><programlisting>typedef struct _GtkRecentChooserDialog GtkRecentChooserDialog;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-recent-chooser-dialog-new" role="function" condition="since:2.10">
+<title>gtk_recent_chooser_dialog_new ()</title>
+<indexterm zone="gtk-recent-chooser-dialog-new" role="2.10"><primary sortas="recent_chooser_dialog_new">gtk_recent_chooser_dialog_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_recent_chooser_dialog_new       (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent,
+                                                         const <link linkend="gchar">gchar</link> *first_button_text,
+                                                         ...);</programlisting>
+<para>
+Creates a new <link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link>.  This function is analogous to
+<link linkend="gtk-dialog-new-with-buttons"><function>gtk_dialog_new_with_buttons()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> Title of the dialog, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> Transient parent of the dialog, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>,
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>first_button_text</parameter>&#160;:</term>
+<listitem><simpara> stock ID or text to go in the first button, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> response ID for the first button, then additional (button, id)
+  pairs, ending with <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-chooser-dialog-new-for-manager" role="function" condition="since:2.10">
+<title>gtk_recent_chooser_dialog_new_for_manager ()</title>
+<indexterm zone="gtk-recent-chooser-dialog-new-for-manager" role="2.10"><primary sortas="recent_chooser_dialog_new_for_manager">gtk_recent_chooser_dialog_new_for_manager</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_recent_chooser_dialog_new_for_manager
+                                                        (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent,
+                                                         <link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *first_button_text,
+                                                         ...);</programlisting>
+<para>
+Creates a new <link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link> with a specified recent manager.
+</para>
+<para>
+This is useful if you have implemented your own recent manager, or if you
+have a customized instance of a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> Title of the dialog, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> Transient parent of the dialog, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>,
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>first_button_text</parameter>&#160;:</term>
+<listitem><simpara> stock ID or text to go in the first button, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> response ID for the first button, then additional (button, id)
+  pairs, ending with <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkRecentChooserDialog.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>, <link linkend="GtkDialog"><type>GtkDialog</type></link>
+</para>
+</refsect1>
+
+</refentry>

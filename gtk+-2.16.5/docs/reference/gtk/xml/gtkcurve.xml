@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkCurve">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkCurve.top_of_page">GtkCurve</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkCurve</refname>
+<refpurpose>Allows direct editing of a curve</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkCurve.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkCurve-struct">GtkCurve</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-curve-new">gtk_curve_new</link>                       (void);
+<link linkend="void">void</link>                <link linkend="gtk-curve-reset">gtk_curve_reset</link>                     (<link linkend="GtkCurve">GtkCurve</link> *curve);
+<link linkend="void">void</link>                <link linkend="gtk-curve-set-gamma">gtk_curve_set_gamma</link>                 (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                         <link linkend="gfloat">gfloat</link> gamma_);
+<link linkend="void">void</link>                <link linkend="gtk-curve-set-range">gtk_curve_set_range</link>                 (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                         <link linkend="gfloat">gfloat</link> min_x,
+                                                         <link linkend="gfloat">gfloat</link> max_x,
+                                                         <link linkend="gfloat">gfloat</link> min_y,
+                                                         <link linkend="gfloat">gfloat</link> max_y);
+<link linkend="void">void</link>                <link linkend="gtk-curve-get-vector">gtk_curve_get_vector</link>                (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                         <link linkend="int">int</link> veclen,
+                                                         <link linkend="gfloat">gfloat</link> vector[]);
+<link linkend="void">void</link>                <link linkend="gtk-curve-set-vector">gtk_curve_set_vector</link>                (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                         <link linkend="int">int</link> veclen,
+                                                         <link linkend="gfloat">gfloat</link> vector[]);
+<link linkend="void">void</link>                <link linkend="gtk-curve-set-curve-type">gtk_curve_set_curve_type</link>            (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                         <link linkend="GtkCurveType">GtkCurveType</link> type);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkCurve.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkDrawingArea">GtkDrawingArea</link>
+                           +----GtkCurve
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkCurve.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkCurve implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkCurve.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkCurve--curve-type">curve-type</link>&quot;               <link linkend="GtkCurveType">GtkCurveType</link>          : Read / Write
+  &quot;<link linkend="GtkCurve--max-x">max-x</link>&quot;                    <link linkend="gfloat">gfloat</link>                : Read / Write
+  &quot;<link linkend="GtkCurve--max-y">max-y</link>&quot;                    <link linkend="gfloat">gfloat</link>                : Read / Write
+  &quot;<link linkend="GtkCurve--min-x">min-x</link>&quot;                    <link linkend="gfloat">gfloat</link>                : Read / Write
+  &quot;<link linkend="GtkCurve--min-y">min-y</link>&quot;                    <link linkend="gfloat">gfloat</link>                : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkCurve.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkCurve-curve-type-changed">curve-type-changed</link>&quot;                             : Run First
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkCurve.description" role="desc">
+<title role="desc.title">Description</title>
+<note>
+<para>
+ This widget is considered too specialized/little-used for
+ GTK+, and will in the future be moved to some other package.  If
+ your application needs this widget, feel free to use it, as the
+ widget does work and is useful in some applications; it's just not
+ of general interest. However, we are not accepting new features for
+ the widget, and it will eventually move out of the GTK+
+ distribution.
+</para>
+</note>
+<para>
+The <link linkend="GtkCurve"><type>GtkCurve</type></link> widget allows the user to edit a curve covering a range of
+values. It is typically used to fine-tune color balances in graphics
+applications like the Gimp.
+</para>
+<para>
+The <link linkend="GtkCurve"><type>GtkCurve</type></link> widget has 3 modes of operation - spline, linear and free.
+In spline mode the user places points on the curve which are automatically
+connected together into a smooth curve. In linear mode the user places points
+on the curve which are connected by straight lines. In free mode the user can
+draw the points of the curve freely, and they are not connected at all.
+</para>
+</refsect1>
+
+<refsect1 id="GtkCurve.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkCurve-struct" role="struct">
+<title>GtkCurve</title>
+<indexterm zone="GtkCurve-struct"><primary sortas="Curve">GtkCurve</primary></indexterm><programlisting>typedef struct _GtkCurve GtkCurve;</programlisting>
+<para>
+The <link linkend="GtkCurve-struct"><type>GtkCurve</type></link> struct contains private data only, and
+should be accessed using the functions below.
+</para></refsect2>
+<refsect2 id="gtk-curve-new" role="function">
+<title>gtk_curve_new ()</title>
+<indexterm zone="gtk-curve-new"><primary sortas="curve_new">gtk_curve_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_curve_new                       (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkCurve"><type>GtkCurve</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a new <link linkend="GtkCurve"><type>GtkCurve</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-curve-reset" role="function">
+<title>gtk_curve_reset ()</title>
+<indexterm zone="gtk-curve-reset"><primary sortas="curve_reset">gtk_curve_reset</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_curve_reset                     (<link linkend="GtkCurve">GtkCurve</link> *curve);</programlisting>
+<para>
+Resets the curve to a straight line from the minimum x and y values to the
+maximum x and y values (i.e. from the bottom-left to the top-right corners).
+The curve type is not changed.
+</para><variablelist role="params">
+<varlistentry><term><parameter>curve</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkCurve"><type>GtkCurve</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-curve-set-gamma" role="function">
+<title>gtk_curve_set_gamma ()</title>
+<indexterm zone="gtk-curve-set-gamma"><primary sortas="curve_set_gamma">gtk_curve_set_gamma</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_curve_set_gamma                 (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                         <link linkend="gfloat">gfloat</link> gamma_);</programlisting>
+<para>
+Recomputes the entire curve using the given gamma value.
+A gamma value of 1 results in a straight line. Values greater than 1 result
+in a curve above the straight line. Values less than 1 result in a curve
+below the straight line. The curve type is changed to <link linkend="GTK-CURVE-TYPE-FREE--CAPS"><literal>GTK_CURVE_TYPE_FREE</literal></link>.
+FIXME: Needs a more precise definition of gamma.
+</para><variablelist role="params">
+<varlistentry><term><parameter>curve</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkCurve"><type>GtkCurve</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gamma_</parameter>&#160;:</term>
+<listitem><simpara>the gamma value.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-curve-set-range" role="function">
+<title>gtk_curve_set_range ()</title>
+<indexterm zone="gtk-curve-set-range"><primary sortas="curve_set_range">gtk_curve_set_range</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_curve_set_range                 (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                         <link linkend="gfloat">gfloat</link> min_x,
+                                                         <link linkend="gfloat">gfloat</link> max_x,
+                                                         <link linkend="gfloat">gfloat</link> min_y,
+                                                         <link linkend="gfloat">gfloat</link> max_y);</programlisting>
+<para>
+Sets the minimum and maximum x and y values of the curve.
+The curve is also reset with a call to <link linkend="gtk-curve-reset"><function>gtk_curve_reset()</function></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>curve</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkCurve"><type>GtkCurve</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>min_x</parameter>&#160;:</term>
+<listitem><simpara>the minimum x value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_x</parameter>&#160;:</term>
+<listitem><simpara>the maximum x value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>min_y</parameter>&#160;:</term>
+<listitem><simpara>the minimum y value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_y</parameter>&#160;:</term>
+<listitem><simpara>the maximum y value.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-curve-get-vector" role="function">
+<title>gtk_curve_get_vector ()</title>
+<indexterm zone="gtk-curve-get-vector"><primary sortas="curve_get_vector">gtk_curve_get_vector</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_curve_get_vector                (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                         <link linkend="int">int</link> veclen,
+                                                         <link linkend="gfloat">gfloat</link> vector[]);</programlisting>
+<para>
+Returns a vector of points representing the curve.
+</para><variablelist role="params">
+<varlistentry><term><parameter>curve</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkCurve"><type>GtkCurve</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>veclen</parameter>&#160;:</term>
+<listitem><simpara>the number of points to calculate.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>vector</parameter>&#160;:</term>
+<listitem><simpara>returns the points.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-curve-set-vector" role="function">
+<title>gtk_curve_set_vector ()</title>
+<indexterm zone="gtk-curve-set-vector"><primary sortas="curve_set_vector">gtk_curve_set_vector</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_curve_set_vector                (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                         <link linkend="int">int</link> veclen,
+                                                         <link linkend="gfloat">gfloat</link> vector[]);</programlisting>
+<para>
+Sets the vector of points on the curve.
+The curve type is set to <link linkend="GTK-CURVE-TYPE-FREE--CAPS"><literal>GTK_CURVE_TYPE_FREE</literal></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>curve</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkCurve"><type>GtkCurve</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>veclen</parameter>&#160;:</term>
+<listitem><simpara>the number of points.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>vector</parameter>&#160;:</term>
+<listitem><simpara>the points on the curve.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-curve-set-curve-type" role="function">
+<title>gtk_curve_set_curve_type ()</title>
+<indexterm zone="gtk-curve-set-curve-type"><primary sortas="curve_set_curve_type">gtk_curve_set_curve_type</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_curve_set_curve_type            (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                         <link linkend="GtkCurveType">GtkCurveType</link> type);</programlisting>
+<para>
+Sets the type of the curve. The curve will remain unchanged except when
+changing from a free curve to a linear or spline curve, in which case the
+curve will be changed as little as possible.
+</para><variablelist role="params">
+<varlistentry><term><parameter>curve</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkCurve"><type>GtkCurve</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara>the type of the curve.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkCurve.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkCurve--curve-type" role="property"><title>The <literal>&quot;curve-type&quot;</literal> property</title>
+<indexterm zone="GtkCurve--curve-type"><primary sortas="Curve:curve-type">GtkCurve:curve-type</primary></indexterm><programlisting>  &quot;curve-type&quot;               <link linkend="GtkCurveType">GtkCurveType</link>          : Read / Write</programlisting>
+<para>Is this curve linear, spline interpolated, or free-form.</para><para>Default value: GTK_CURVE_TYPE_SPLINE</para>
+</refsect2>
+<refsect2 id="GtkCurve--max-x" role="property"><title>The <literal>&quot;max-x&quot;</literal> property</title>
+<indexterm zone="GtkCurve--max-x"><primary sortas="Curve:max-x">GtkCurve:max-x</primary></indexterm><programlisting>  &quot;max-x&quot;                    <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>Maximum possible X value.</para><para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GtkCurve--max-y" role="property"><title>The <literal>&quot;max-y&quot;</literal> property</title>
+<indexterm zone="GtkCurve--max-y"><primary sortas="Curve:max-y">GtkCurve:max-y</primary></indexterm><programlisting>  &quot;max-y&quot;                    <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>Maximum possible value for Y.</para><para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GtkCurve--min-x" role="property"><title>The <literal>&quot;min-x&quot;</literal> property</title>
+<indexterm zone="GtkCurve--min-x"><primary sortas="Curve:min-x">GtkCurve:min-x</primary></indexterm><programlisting>  &quot;min-x&quot;                    <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>Minimum possible value for X.</para><para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkCurve--min-y" role="property"><title>The <literal>&quot;min-y&quot;</literal> property</title>
+<indexterm zone="GtkCurve--min-y"><primary sortas="Curve:min-y">GtkCurve:min-y</primary></indexterm><programlisting>  &quot;min-y&quot;                    <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>Minimum possible value for Y.</para><para>Default value: 0</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkCurve.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkCurve-curve-type-changed" role="signal"><title>The <literal>&quot;curve-type-changed&quot;</literal> signal</title>
+<indexterm zone="GtkCurve-curve-type-changed"><primary sortas="Curve::curve-type-changed">GtkCurve::curve-type-changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkCurve">GtkCurve</link> *curve,
+                                                        <link linkend="gpointer">gpointer</link>  user_data)      : Run First</programlisting>
+<para>
+Emitted when the curve type has been changed.
+The curve type can be changed explicitly with a call to
+<link linkend="gtk-curve-set-curve-type"><function>gtk_curve_set_curve_type()</function></link>. It is also changed as a side-effect of
+calling <link linkend="gtk-curve-reset"><function>gtk_curve_reset()</function></link> or <link linkend="gtk-curve-set-gamma"><function>gtk_curve_set_gamma()</function></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>curve</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+<refsect1 id="GtkCurve.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="GtkGammaCurve"><type>GtkGammaCurve</type></link></term>
+<listitem><para>a subclass for editing gamma curves.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

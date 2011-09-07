@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkFontSelectionDialog">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkFontSelectionDialog.top_of_page">GtkFontSelectionDialog</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkFontSelectionDialog</refname>
+<refpurpose>A dialog box for selecting fonts</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkFontSelectionDialog.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkFontSelectionDialog-struct">GtkFontSelectionDialog</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-font-selection-dialog-new">gtk_font_selection_dialog_new</link>       (const <link linkend="gchar">gchar</link> *title);
+<link linkend="GdkFont">GdkFont</link>*            <link linkend="gtk-font-selection-dialog-get-font">gtk_font_selection_dialog_get_font</link>  (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);
+<link linkend="gchar">gchar</link>*              <link linkend="gtk-font-selection-dialog-get-font-name">gtk_font_selection_dialog_get_font_name</link>
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-font-selection-dialog-set-font-name">gtk_font_selection_dialog_set_font_name</link>
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd,
+                                                         const <link linkend="gchar">gchar</link> *fontname);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-font-selection-dialog-get-preview-text">gtk_font_selection_dialog_get_preview_text</link>
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);
+<link linkend="void">void</link>                <link linkend="gtk-font-selection-dialog-set-preview-text">gtk_font_selection_dialog_set_preview_text</link>
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd,
+                                                         const <link linkend="gchar">gchar</link> *text);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-font-selection-dialog-get-apply-button">gtk_font_selection_dialog_get_apply_button</link>
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-font-selection-dialog-get-cancel-button">gtk_font_selection_dialog_get_cancel_button</link>
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-font-selection-dialog-get-ok-button">gtk_font_selection_dialog_get_ok_button</link>
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkFontSelectionDialog.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkWindow">GtkWindow</link>
+                                       +----<link linkend="GtkDialog">GtkDialog</link>
+                                             +----GtkFontSelectionDialog
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkFontSelectionDialog.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkFontSelectionDialog implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkFontSelectionDialog.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link> widget is a dialog box for selecting a font.
+</para>
+<para>
+To set the font which is initially selected, use
+<link linkend="gtk-font-selection-dialog-set-font-name"><function>gtk_font_selection_dialog_set_font_name()</function></link>.
+</para>
+<para>
+To get the selected font use <link linkend="gtk-font-selection-dialog-get-font-name"><function>gtk_font_selection_dialog_get_font_name()</function></link>.
+</para>
+<para>
+To change the text which is shown in the preview area, use
+<link linkend="gtk-font-selection-dialog-set-preview-text"><function>gtk_font_selection_dialog_set_preview_text()</function></link>.
+</para>
+<refsect2 id="GtkFontSelectionDialog-BUILDER-UI">
+<title>GtkFontSelectionDialog as GtkBuildable</title>
+<para>
+The GtkFontSelectionDialog implementation of the GtkBuildable interface
+exposes the embedded <link linkend="GtkFontSelection"><type>GtkFontSelection</type></link> as internal child with the
+name "font_selection". It also exposes the buttons with the names
+"ok_button", "cancel_button" and "apply_button".
+</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkFontSelectionDialog.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkFontSelectionDialog-struct" role="struct">
+<title>GtkFontSelectionDialog</title>
+<indexterm zone="GtkFontSelectionDialog-struct"><primary sortas="FontSelectionDialog">GtkFontSelectionDialog</primary></indexterm><programlisting>typedef struct {
+  GtkWidget *GSEAL (ok_button);
+  GtkWidget *GSEAL (apply_button);
+  GtkWidget *GSEAL (cancel_button);
+} GtkFontSelectionDialog;
+</programlisting>
+</refsect2>
+<refsect2 id="gtk-font-selection-dialog-new" role="function">
+<title>gtk_font_selection_dialog_new ()</title>
+<indexterm zone="gtk-font-selection-dialog-new"><primary sortas="font_selection_dialog_new">gtk_font_selection_dialog_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_font_selection_dialog_new       (const <link linkend="gchar">gchar</link> *title);</programlisting>
+<para>
+Creates a new <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> the title of the dialog window 
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-font-selection-dialog-get-font" role="function" condition="deprecated:2.0: Use gtk_font_selection_dialog_get_font_name() instead.">
+<title>gtk_font_selection_dialog_get_font ()</title>
+<indexterm zone="gtk-font-selection-dialog-get-font" role="deprecated"><primary sortas="font_selection_dialog_get_font">gtk_font_selection_dialog_get_font</primary></indexterm><programlisting><link linkend="GdkFont">GdkFont</link>*            gtk_font_selection_dialog_get_font  (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);</programlisting>
+<warning><para><literal>gtk_font_selection_dialog_get_font</literal> has been deprecated since version 2.0 and should not be used in newly-written code. Use <link linkend="gtk-font-selection-dialog-get-font-name"><function>gtk_font_selection_dialog_get_font_name()</function></link> instead.</para></warning>
+<para>
+Gets the currently-selected font.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>fsd</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the <link linkend="GdkFont"><type>GdkFont</type></link> from the <link linkend="GtkFontSelection"><type>GtkFontSelection</type></link> for the
+    currently selected font in the dialog, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if no font is selected
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-font-selection-dialog-get-font-name" role="function">
+<title>gtk_font_selection_dialog_get_font_name ()</title>
+<indexterm zone="gtk-font-selection-dialog-get-font-name"><primary sortas="font_selection_dialog_get_font_name">gtk_font_selection_dialog_get_font_name</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              gtk_font_selection_dialog_get_font_name
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);</programlisting>
+<para>
+Gets the currently-selected font name.
+</para>
+<para>
+Note that this can be a different string than what you set with 
+<link linkend="gtk-font-selection-dialog-set-font-name"><function>gtk_font_selection_dialog_set_font_name()</function></link>, as the font selection widget
+may normalize font names and thus return a string with a different 
+structure. For example, "Helvetica Italic Bold 12" could be normalized 
+to "Helvetica Bold Italic 12".  Use <link linkend="pango-font-description-equal"><function>pango_font_description_equal()</function></link>
+if you want to compare two font descriptions.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>fsd</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A string with the name of the current font, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if no 
+    font is selected. You must free this string with <link linkend="g-free"><function>g_free()</function></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-font-selection-dialog-set-font-name" role="function">
+<title>gtk_font_selection_dialog_set_font_name ()</title>
+<indexterm zone="gtk-font-selection-dialog-set-font-name"><primary sortas="font_selection_dialog_set_font_name">gtk_font_selection_dialog_set_font_name</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_font_selection_dialog_set_font_name
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd,
+                                                         const <link linkend="gchar">gchar</link> *fontname);</programlisting>
+<para>
+Sets the currently selected font.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>fsd</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>fontname</parameter>&#160;:</term>
+<listitem><simpara> a font name like "Helvetica 12" or "Times Bold 18"
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the font selected in <parameter>fsd</parameter> is now the
+    <parameter>fontname</parameter> specified, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise. 
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-font-selection-dialog-get-preview-text" role="function">
+<title>gtk_font_selection_dialog_get_preview_text ()</title>
+<indexterm zone="gtk-font-selection-dialog-get-preview-text"><primary sortas="font_selection_dialog_get_preview_text">gtk_font_selection_dialog_get_preview_text</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_font_selection_dialog_get_preview_text
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);</programlisting>
+<para>
+Gets the text displayed in the preview area.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>fsd</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the text displayed in the preview area. 
+    This string is owned by the widget and should not be 
+    modified or freed 
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-font-selection-dialog-set-preview-text" role="function">
+<title>gtk_font_selection_dialog_set_preview_text ()</title>
+<indexterm zone="gtk-font-selection-dialog-set-preview-text"><primary sortas="font_selection_dialog_set_preview_text">gtk_font_selection_dialog_set_preview_text</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_font_selection_dialog_set_preview_text
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd,
+                                                         const <link linkend="gchar">gchar</link> *text);</programlisting>
+<para>
+Sets the text displayed in the preview area.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>fsd</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> the text to display in the preview area
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-font-selection-dialog-get-apply-button" role="function" condition="deprecated:2.16: Don't use this function.|since:2.14">
+<title>gtk_font_selection_dialog_get_apply_button ()</title>
+<indexterm zone="gtk-font-selection-dialog-get-apply-button" role="deprecated"><primary sortas="font_selection_dialog_get_apply_button">gtk_font_selection_dialog_get_apply_button</primary></indexterm><indexterm zone="gtk-font-selection-dialog-get-apply-button" role="2.14"><primary sortas="font_selection_dialog_get_apply_button">gtk_font_selection_dialog_get_apply_button</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_font_selection_dialog_get_apply_button
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);</programlisting>
+<warning><para><literal>gtk_font_selection_dialog_get_apply_button</literal> has been deprecated since version 2.16 and should not be used in newly-written code. Don't use this function.</para></warning>
+<para>
+Obtains a button. The button doesn't have any function.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>fsd</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GtkWidget"><type>GtkWidget</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-font-selection-dialog-get-cancel-button" role="function" condition="since:2.14">
+<title>gtk_font_selection_dialog_get_cancel_button ()</title>
+<indexterm zone="gtk-font-selection-dialog-get-cancel-button" role="2.14"><primary sortas="font_selection_dialog_get_cancel_button">gtk_font_selection_dialog_get_cancel_button</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_font_selection_dialog_get_cancel_button
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);</programlisting>
+<para>
+Gets the 'Cancel' button.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>fsd</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the <link linkend="GtkWidget"><type>GtkWidget</type></link> used in the dialog for the 'Cancel' button.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-font-selection-dialog-get-ok-button" role="function" condition="since:2.14">
+<title>gtk_font_selection_dialog_get_ok_button ()</title>
+<indexterm zone="gtk-font-selection-dialog-get-ok-button" role="2.14"><primary sortas="font_selection_dialog_get_ok_button">gtk_font_selection_dialog_get_ok_button</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_font_selection_dialog_get_ok_button
+                                                        (<link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link> *fsd);</programlisting>
+<para>
+Gets the 'OK' button.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>fsd</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkFontSelectionDialog"><type>GtkFontSelectionDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the <link linkend="GtkWidget"><type>GtkWidget</type></link> used in the dialog for the 'OK' button.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkFontSelectionDialog.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="GtkFontSelection"><type>GtkFontSelection</type></link></term>
+<listitem><para>the underlying widget for selecting
+fonts.</para></listitem>
+<term><link linkend="GtkDialog"><type>GtkDialog</type></link></term>
+<listitem><para>the parent class of GtkFontSelectionDialog</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

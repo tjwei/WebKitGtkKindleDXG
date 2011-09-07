@@ -1,0 +1,462 @@
+libxml2-py.lo: libxml2-py.c /usr/local/include/python2.7/Python.h \
+  /usr/local/include/python2.7/patchlevel.h \
+  /usr/local/include/python2.7/pyconfig.h \
+  /usr/local/include/python2.7/pymacconfig.h /usr/include/limits.h \
+  /usr/include/features.h /usr/include/bits/predefs.h \
+  /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+  /usr/include/gnu/stubs.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h \
+  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/xopen_lim.h /usr/include/bits/stdio_lim.h \
+  /usr/include/stdio.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h \
+  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+  /usr/include/bits/wchar.h /usr/include/gconv.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  /usr/include/bits/sys_errlist.h /usr/include/bits/stdio.h \
+  /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+  /usr/include/bits/string2.h /usr/include/stdlib.h /usr/include/errno.h \
+  /usr/include/bits/errno.h /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/sys/types.h /usr/include/time.h \
+  /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/alloca.h /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h /usr/include/getopt.h \
+  /usr/include/assert.h /usr/local/include/python2.7/pyport.h \
+  /usr/include/inttypes.h /usr/include/stdint.h /usr/include/math.h \
+  /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
+  /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
+  /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
+  /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h \
+  /usr/include/sys/time.h /usr/include/sys/stat.h \
+  /usr/include/bits/stat.h /usr/local/include/python2.7/pymath.h \
+  /usr/local/include/python2.7/pymem.h \
+  /usr/local/include/python2.7/object.h \
+  /usr/local/include/python2.7/objimpl.h \
+  /usr/local/include/python2.7/pydebug.h \
+  /usr/local/include/python2.7/unicodeobject.h /usr/include/ctype.h \
+  /usr/local/include/python2.7/intobject.h \
+  /usr/local/include/python2.7/boolobject.h \
+  /usr/local/include/python2.7/longobject.h \
+  /usr/local/include/python2.7/floatobject.h \
+  /usr/local/include/python2.7/complexobject.h \
+  /usr/local/include/python2.7/rangeobject.h \
+  /usr/local/include/python2.7/stringobject.h \
+  /usr/local/include/python2.7/memoryobject.h \
+  /usr/local/include/python2.7/bufferobject.h \
+  /usr/local/include/python2.7/bytesobject.h \
+  /usr/local/include/python2.7/bytearrayobject.h \
+  /usr/local/include/python2.7/tupleobject.h \
+  /usr/local/include/python2.7/listobject.h \
+  /usr/local/include/python2.7/dictobject.h \
+  /usr/local/include/python2.7/enumobject.h \
+  /usr/local/include/python2.7/setobject.h \
+  /usr/local/include/python2.7/methodobject.h \
+  /usr/local/include/python2.7/moduleobject.h \
+  /usr/local/include/python2.7/funcobject.h \
+  /usr/local/include/python2.7/classobject.h \
+  /usr/local/include/python2.7/fileobject.h \
+  /usr/local/include/python2.7/cobject.h \
+  /usr/local/include/python2.7/pycapsule.h \
+  /usr/local/include/python2.7/traceback.h \
+  /usr/local/include/python2.7/sliceobject.h \
+  /usr/local/include/python2.7/cellobject.h \
+  /usr/local/include/python2.7/iterobject.h \
+  /usr/local/include/python2.7/genobject.h \
+  /usr/local/include/python2.7/descrobject.h \
+  /usr/local/include/python2.7/warnings.h \
+  /usr/local/include/python2.7/weakrefobject.h \
+  /usr/local/include/python2.7/codecs.h \
+  /usr/local/include/python2.7/pyerrors.h \
+  /usr/local/include/python2.7/pystate.h \
+  /usr/local/include/python2.7/pyarena.h \
+  /usr/local/include/python2.7/modsupport.h \
+  /usr/local/include/python2.7/pythonrun.h \
+  /usr/local/include/python2.7/ceval.h \
+  /usr/local/include/python2.7/sysmodule.h \
+  /usr/local/include/python2.7/intrcheck.h \
+  /usr/local/include/python2.7/import.h \
+  /usr/local/include/python2.7/abstract.h \
+  /usr/local/include/python2.7/compile.h \
+  /usr/local/include/python2.7/code.h /usr/local/include/python2.7/eval.h \
+  /usr/local/include/python2.7/pyctype.h \
+  /usr/local/include/python2.7/pystrtod.h \
+  /usr/local/include/python2.7/pystrcmp.h \
+  /usr/local/include/python2.7/dtoa.h \
+  /usr/local/include/python2.7/pyfpe.h ../include/libxml/xmlversion.h \
+  ../include/libxml/xmlexports.h ../include/libxml/tree.h \
+  ../include/libxml/xmlstring.h ../include/libxml/xmlregexp.h \
+  ../include/libxml/dict.h ../include/libxml/xmlmemory.h \
+  ../include/libxml/threads.h ../include/libxml/globals.h \
+  ../include/libxml/parser.h ../include/libxml/hash.h \
+  ../include/libxml/valid.h ../include/libxml/xmlerror.h \
+  ../include/libxml/list.h ../include/libxml/xmlautomata.h \
+  ../include/libxml/entities.h ../include/libxml/encoding.h \
+  /usr/include/iconv.h ../include/libxml/xmlIO.h ../include/libxml/SAX.h \
+  ../include/libxml/xlink.h ../include/libxml/SAX2.h \
+  ../include/libxml/xmlschemastypes.h \
+  ../include/libxml/schemasInternals.h ../include/libxml/xmlschemas.h \
+  libxml_wrap.h ../include/libxml/parserInternals.h \
+  ../include/libxml/HTMLparser.h ../include/libxml/chvalid.h \
+  ../include/libxml/catalog.h ../include/libxml/nanoftp.h \
+  ../include/libxml/nanohttp.h ../include/libxml/uri.h \
+  ../include/libxml/xpath.h ../include/libxml/xpathInternals.h \
+  ../include/libxml/debugXML.h ../include/libxml/HTMLtree.h \
+  ../include/libxml/xinclude.h ../include/libxml/xpointer.h \
+  ../include/libxml/xmlunicode.h ../include/libxml/xmlreader.h \
+  ../include/libxml/relaxng.h libxml2-py.h
+
+/usr/local/include/python2.7/Python.h:
+
+/usr/local/include/python2.7/patchlevel.h:
+
+/usr/local/include/python2.7/pyconfig.h:
+
+/usr/local/include/python2.7/pymacconfig.h:
+
+/usr/include/limits.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/stdio.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/gconv.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/errno.h:
+
+/usr/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/assert.h:
+
+/usr/local/include/python2.7/pyport.h:
+
+/usr/include/inttypes.h:
+
+/usr/include/stdint.h:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathinline.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/bits/stat.h:
+
+/usr/local/include/python2.7/pymath.h:
+
+/usr/local/include/python2.7/pymem.h:
+
+/usr/local/include/python2.7/object.h:
+
+/usr/local/include/python2.7/objimpl.h:
+
+/usr/local/include/python2.7/pydebug.h:
+
+/usr/local/include/python2.7/unicodeobject.h:
+
+/usr/include/ctype.h:
+
+/usr/local/include/python2.7/intobject.h:
+
+/usr/local/include/python2.7/boolobject.h:
+
+/usr/local/include/python2.7/longobject.h:
+
+/usr/local/include/python2.7/floatobject.h:
+
+/usr/local/include/python2.7/complexobject.h:
+
+/usr/local/include/python2.7/rangeobject.h:
+
+/usr/local/include/python2.7/stringobject.h:
+
+/usr/local/include/python2.7/memoryobject.h:
+
+/usr/local/include/python2.7/bufferobject.h:
+
+/usr/local/include/python2.7/bytesobject.h:
+
+/usr/local/include/python2.7/bytearrayobject.h:
+
+/usr/local/include/python2.7/tupleobject.h:
+
+/usr/local/include/python2.7/listobject.h:
+
+/usr/local/include/python2.7/dictobject.h:
+
+/usr/local/include/python2.7/enumobject.h:
+
+/usr/local/include/python2.7/setobject.h:
+
+/usr/local/include/python2.7/methodobject.h:
+
+/usr/local/include/python2.7/moduleobject.h:
+
+/usr/local/include/python2.7/funcobject.h:
+
+/usr/local/include/python2.7/classobject.h:
+
+/usr/local/include/python2.7/fileobject.h:
+
+/usr/local/include/python2.7/cobject.h:
+
+/usr/local/include/python2.7/pycapsule.h:
+
+/usr/local/include/python2.7/traceback.h:
+
+/usr/local/include/python2.7/sliceobject.h:
+
+/usr/local/include/python2.7/cellobject.h:
+
+/usr/local/include/python2.7/iterobject.h:
+
+/usr/local/include/python2.7/genobject.h:
+
+/usr/local/include/python2.7/descrobject.h:
+
+/usr/local/include/python2.7/warnings.h:
+
+/usr/local/include/python2.7/weakrefobject.h:
+
+/usr/local/include/python2.7/codecs.h:
+
+/usr/local/include/python2.7/pyerrors.h:
+
+/usr/local/include/python2.7/pystate.h:
+
+/usr/local/include/python2.7/pyarena.h:
+
+/usr/local/include/python2.7/modsupport.h:
+
+/usr/local/include/python2.7/pythonrun.h:
+
+/usr/local/include/python2.7/ceval.h:
+
+/usr/local/include/python2.7/sysmodule.h:
+
+/usr/local/include/python2.7/intrcheck.h:
+
+/usr/local/include/python2.7/import.h:
+
+/usr/local/include/python2.7/abstract.h:
+
+/usr/local/include/python2.7/compile.h:
+
+/usr/local/include/python2.7/code.h:
+
+/usr/local/include/python2.7/eval.h:
+
+/usr/local/include/python2.7/pyctype.h:
+
+/usr/local/include/python2.7/pystrtod.h:
+
+/usr/local/include/python2.7/pystrcmp.h:
+
+/usr/local/include/python2.7/dtoa.h:
+
+/usr/local/include/python2.7/pyfpe.h:
+
+../include/libxml/xmlversion.h:
+
+../include/libxml/xmlexports.h:
+
+../include/libxml/tree.h:
+
+../include/libxml/xmlstring.h:
+
+../include/libxml/xmlregexp.h:
+
+../include/libxml/dict.h:
+
+../include/libxml/xmlmemory.h:
+
+../include/libxml/threads.h:
+
+../include/libxml/globals.h:
+
+../include/libxml/parser.h:
+
+../include/libxml/hash.h:
+
+../include/libxml/valid.h:
+
+../include/libxml/xmlerror.h:
+
+../include/libxml/list.h:
+
+../include/libxml/xmlautomata.h:
+
+../include/libxml/entities.h:
+
+../include/libxml/encoding.h:
+
+/usr/include/iconv.h:
+
+../include/libxml/xmlIO.h:
+
+../include/libxml/SAX.h:
+
+../include/libxml/xlink.h:
+
+../include/libxml/SAX2.h:
+
+../include/libxml/xmlschemastypes.h:
+
+../include/libxml/schemasInternals.h:
+
+../include/libxml/xmlschemas.h:
+
+libxml_wrap.h:
+
+../include/libxml/parserInternals.h:
+
+../include/libxml/HTMLparser.h:
+
+../include/libxml/chvalid.h:
+
+../include/libxml/catalog.h:
+
+../include/libxml/nanoftp.h:
+
+../include/libxml/nanohttp.h:
+
+../include/libxml/uri.h:
+
+../include/libxml/xpath.h:
+
+../include/libxml/xpathInternals.h:
+
+../include/libxml/debugXML.h:
+
+../include/libxml/HTMLtree.h:
+
+../include/libxml/xinclude.h:
+
+../include/libxml/xpointer.h:
+
+../include/libxml/xmlunicode.h:
+
+../include/libxml/xmlreader.h:
+
+../include/libxml/relaxng.h:
+
+libxml2-py.h:

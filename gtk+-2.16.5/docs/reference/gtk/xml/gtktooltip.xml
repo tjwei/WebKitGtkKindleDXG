@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkTooltip">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkTooltip.top_of_page">GtkTooltip</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkTooltip</refname>
+<refpurpose>Add tips to your widgets</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkTooltip.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkTooltip-struct">GtkTooltip</link>;
+<link linkend="void">void</link>                <link linkend="gtk-tooltip-set-markup">gtk_tooltip_set_markup</link>              (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *markup);
+<link linkend="void">void</link>                <link linkend="gtk-tooltip-set-text">gtk_tooltip_set_text</link>                (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *text);
+<link linkend="void">void</link>                <link linkend="gtk-tooltip-set-icon">gtk_tooltip_set_icon</link>                (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="void">void</link>                <link linkend="gtk-tooltip-set-icon-from-stock">gtk_tooltip_set_icon_from_stock</link>     (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);
+<link linkend="void">void</link>                <link linkend="gtk-tooltip-set-icon-from-icon-name">gtk_tooltip_set_icon_from_icon_name</link> (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *icon_name,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);
+<link linkend="void">void</link>                <link linkend="gtk-tooltip-set-custom">gtk_tooltip_set_custom</link>              (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *custom_widget);
+<link linkend="void">void</link>                <link linkend="gtk-tooltip-trigger-tooltip-query">gtk_tooltip_trigger_tooltip_query</link>   (<link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="void">void</link>                <link linkend="gtk-tooltip-set-tip-area">gtk_tooltip_set_tip_area</link>            (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *rect);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkTooltip.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkTooltip
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+
+
+<refsect1 id="GtkTooltip.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkTooltip"><type>GtkTooltip</type></link> belongs to the new tooltips API that was
+introduced in GTK+ 2.12 and which deprecates the old
+<link linkend="GtkTooltips"><type>GtkTooltips</type></link> API.
+</para>
+<para>
+Basic tooltips can be realized simply by using <link linkend="gtk-widget-set-tooltip-text"><function>gtk_widget_set_tooltip_text()</function></link>
+or <link linkend="gtk-widget-set-tooltip-markup"><function>gtk_widget_set_tooltip_markup()</function></link> without any explicit tooltip object.
+</para>
+<para>
+When you need a tooltip with a little more fancy contents, like
+adding an image, or you want the tooltip to have different contents
+per GtkTreeView row or cell, you will have to do a little more work:
+<itemizedlist>
+<listitem><para>
+Set the <link linkend="GtkWidget--has-tooltip"><type>"has-tooltip"</type></link> property to <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, this will
+make GTK+ monitor the widget for motion and related events
+which are needed to determine when and where to show a tooltip.
+</para></listitem>
+<listitem><para>
+Connect to the <link linkend="GtkWidget-query-tooltip"><type>"query-tooltip"</type></link> signal.  This signal
+will be emitted when a tooltip is supposed to be shown. One
+of the arguments passed to the signal handler is a <link linkend="GtkTooltip"><type>GtkTooltip</type></link>
+object. This is the object that we are about to display as a
+tooltip, and can be manipulated in your callback using functions
+like <link linkend="gtk-tooltip-set-icon"><function>gtk_tooltip_set_icon()</function></link>. There are functions for setting
+the tooltip's markup, setting an image from a stock icon, or
+even putting in a custom widget.
+</para></listitem>
+<listitem><para>
+Return <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> from your query-tooltip handler. This causes
+the tooltip to be show. If you return <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, it will not be shown.
+</para></listitem>
+</itemizedlist>
+</para>
+<para>
+In the probably rare case where you want to have even more control
+over the tooltip that is about to be shown, you can set your own
+<link linkend="GtkWindow"><type>GtkWindow</type></link> which will be used as tooltip window.  This works as
+follows:
+<itemizedlist>
+<listitem><para>
+Set <link linkend="GtkWidget--has-tooltip"><type>"has-tooltip"</type></link> and connect to <link linkend="GtkWidget-query-tooltip"><type>"query-tooltip"</type></link> as
+before.
+</para></listitem>
+<listitem><para>
+Use <link linkend="gtk-widget-set-tooltip-window"><function>gtk_widget_set_tooltip_window()</function></link> to set a <link linkend="GtkWindow"><type>GtkWindow</type></link> created
+by you as tooltip window.
+</para></listitem>
+<listitem><para>
+In the ::query-tooltip callback you can access your window
+using <link linkend="gtk-widget-get-tooltip-window"><function>gtk_widget_get_tooltip_window()</function></link> and manipulate as you
+wish. The semantics of the return value are exactly as before,
+return <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> to show the window, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> to not show it.
+</para></listitem>
+</itemizedlist>
+</para>
+</refsect1>
+
+<refsect1 id="GtkTooltip.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkTooltip-struct" role="struct">
+<title>GtkTooltip</title>
+<indexterm zone="GtkTooltip-struct"><primary sortas="Tooltip">GtkTooltip</primary></indexterm><programlisting>typedef struct _GtkTooltip GtkTooltip;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-tooltip-set-markup" role="function" condition="since:2.12">
+<title>gtk_tooltip_set_markup ()</title>
+<indexterm zone="gtk-tooltip-set-markup" role="2.12"><primary sortas="tooltip_set_markup">gtk_tooltip_set_markup</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tooltip_set_markup              (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *markup);</programlisting>
+<para>
+Sets the text of the tooltip to be <parameter>markup</parameter>, which is marked up
+with the <link
+linkend="PangoMarkupFormat">Pango text markup language</link>.
+If <parameter>markup</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, the label will be hidden.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tooltip</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTooltip"><type>GtkTooltip</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>markup</parameter>&#160;:</term>
+<listitem><simpara> a markup string (see <link linkend="PangoMarkupFormat">Pango markup format</link>) or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-tooltip-set-text" role="function" condition="since:2.12">
+<title>gtk_tooltip_set_text ()</title>
+<indexterm zone="gtk-tooltip-set-text" role="2.12"><primary sortas="tooltip_set_text">gtk_tooltip_set_text</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tooltip_set_text                (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *text);</programlisting>
+<para>
+Sets the text of the tooltip to be <parameter>text</parameter>. If <parameter>text</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, the label
+will be hidden. See also <link linkend="gtk-tooltip-set-markup"><function>gtk_tooltip_set_markup()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tooltip</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTooltip"><type>GtkTooltip</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> a text string or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-tooltip-set-icon" role="function" condition="since:2.12">
+<title>gtk_tooltip_set_icon ()</title>
+<indexterm zone="gtk-tooltip-set-icon" role="2.12"><primary sortas="tooltip_set_icon">gtk_tooltip_set_icon</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tooltip_set_icon                (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Sets the icon of the tooltip (which is in front of the text) to be
+<parameter>pixbuf</parameter>.  If <parameter>pixbuf</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, the image will be hidden.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tooltip</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTooltip"><type>GtkTooltip</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-tooltip-set-icon-from-stock" role="function" condition="since:2.12">
+<title>gtk_tooltip_set_icon_from_stock ()</title>
+<indexterm zone="gtk-tooltip-set-icon-from-stock" role="2.12"><primary sortas="tooltip_set_icon_from_stock">gtk_tooltip_set_icon_from_stock</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tooltip_set_icon_from_stock     (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);</programlisting>
+<para>
+Sets the icon of the tooltip (which is in front of the text) to be
+the stock item indicated by <parameter>stock_id</parameter> with the size indicated
+by <parameter>size</parameter>.  If <parameter>stock_id</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, the image will be hidden.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tooltip</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTooltip"><type>GtkTooltip</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> a stock id, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a stock icon size
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-tooltip-set-icon-from-icon-name" role="function" condition="since:2.14">
+<title>gtk_tooltip_set_icon_from_icon_name ()</title>
+<indexterm zone="gtk-tooltip-set-icon-from-icon-name" role="2.14"><primary sortas="tooltip_set_icon_from_icon_name">gtk_tooltip_set_icon_from_icon_name</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tooltip_set_icon_from_icon_name (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *icon_name,
+                                                         <link linkend="GtkIconSize">GtkIconSize</link> size);</programlisting>
+<para>
+Sets the icon of the tooltip (which is in front of the text) to be
+the icon indicated by <parameter>icon_name</parameter> with the size indicated
+by <parameter>size</parameter>.  If <parameter>icon_name</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, the image will be hidden.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tooltip</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTooltip"><type>GtkTooltip</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon_name</parameter>&#160;:</term>
+<listitem><simpara> an icon name, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a stock icon size
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-tooltip-set-custom" role="function" condition="since:2.12">
+<title>gtk_tooltip_set_custom ()</title>
+<indexterm zone="gtk-tooltip-set-custom" role="2.12"><primary sortas="tooltip_set_custom">gtk_tooltip_set_custom</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tooltip_set_custom              (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *custom_widget);</programlisting>
+<para>
+Replaces the widget packed into the tooltip with <parameter>custom_widget</parameter>.  
+By default a box with a <link linkend="GtkImage"><type>GtkImage</type></link> and <link linkend="GtkLabel"><type>GtkLabel</type></link> is embedded in 
+the tooltip, which can be configured using <link linkend="gtk-tooltip-set-markup"><function>gtk_tooltip_set_markup()</function></link> 
+and <link linkend="gtk-tooltip-set-icon"><function>gtk_tooltip_set_icon()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tooltip</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTooltip"><type>GtkTooltip</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>custom_widget</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkWidget"><type>GtkWidget</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-tooltip-trigger-tooltip-query" role="function" condition="since:2.12">
+<title>gtk_tooltip_trigger_tooltip_query ()</title>
+<indexterm zone="gtk-tooltip-trigger-tooltip-query" role="2.12"><primary sortas="tooltip_trigger_tooltip_query">gtk_tooltip_trigger_tooltip_query</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tooltip_trigger_tooltip_query   (<link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Triggers a new tooltip query on <parameter>display</parameter>, in order to update the current
+visible tooltip, or to show/hide the current tooltip.  This function is
+useful to call when, for example, the state of the widget changed by a
+key press.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-tooltip-set-tip-area" role="function" condition="since:2.12">
+<title>gtk_tooltip_set_tip_area ()</title>
+<indexterm zone="gtk-tooltip-set-tip-area" role="2.12"><primary sortas="tooltip_set_tip_area">gtk_tooltip_set_tip_area</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_tooltip_set_tip_area            (<link linkend="GtkTooltip">GtkTooltip</link> *tooltip,
+                                                         const <link linkend="GdkRectangle">GdkRectangle</link> *rect);</programlisting>
+<para>
+Sets the area of the widget, where the contents of this tooltip apply,
+to be <parameter>rect</parameter> (in widget coordinates).  This is especially useful for
+properly setting tooltips on <link linkend="GtkTreeView"><type>GtkTreeView</type></link> rows and cells, <link linkend="GtkIconViews"><type>GtkIconViews</type></link>,
+etc.
+</para>
+<para>
+For setting tooltips on <link linkend="GtkTreeView"><type>GtkTreeView</type></link>, please refer to the convenience
+functions for this: <link linkend="gtk-tree-view-set-tooltip-row"><function>gtk_tree_view_set_tooltip_row()</function></link> and
+<link linkend="gtk-tree-view-set-tooltip-cell"><function>gtk_tree_view_set_tooltip_cell()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tooltip</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTooltip"><type>GtkTooltip</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rect</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkRectangle"><type>GdkRectangle</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

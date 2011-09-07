@@ -1,0 +1,4 @@
+WebKitTools/Scripts/build-webkit --gtk --no-dom-storage --no-svg --no-offline-web-applications \
+ --no-video --no-xslt --no-svg-animation --no-svg-as-image --no-svg-dom-objc-bindings \
+--no-svg-filters --no-svg-fonts --no-svg-foreign-object --no-svg-use --release --with-target=directfb && \
+install WebKitBuild/Release/Programs/GtkLauncher /usr/local/bin

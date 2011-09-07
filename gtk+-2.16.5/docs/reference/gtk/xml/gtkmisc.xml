@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkMisc">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkMisc.top_of_page">GtkMisc</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkMisc</refname>
+<refpurpose>Base class for widgets with alignments and padding</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkMisc.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkMisc-struct">GtkMisc</link>;
+<link linkend="void">void</link>                <link linkend="gtk-misc-set-alignment">gtk_misc_set_alignment</link>              (<link linkend="GtkMisc">GtkMisc</link> *misc,
+                                                         <link linkend="gfloat">gfloat</link> xalign,
+                                                         <link linkend="gfloat">gfloat</link> yalign);
+<link linkend="void">void</link>                <link linkend="gtk-misc-set-padding">gtk_misc_set_padding</link>                (<link linkend="GtkMisc">GtkMisc</link> *misc,
+                                                         <link linkend="gint">gint</link> xpad,
+                                                         <link linkend="gint">gint</link> ypad);
+<link linkend="void">void</link>                <link linkend="gtk-misc-get-alignment">gtk_misc_get_alignment</link>              (<link linkend="GtkMisc">GtkMisc</link> *misc,
+                                                         <link linkend="gfloat">gfloat</link> *xalign,
+                                                         <link linkend="gfloat">gfloat</link> *yalign);
+<link linkend="void">void</link>                <link linkend="gtk-misc-get-padding">gtk_misc_get_padding</link>                (<link linkend="GtkMisc">GtkMisc</link> *misc,
+                                                         <link linkend="gint">gint</link> *xpad,
+                                                         <link linkend="gint">gint</link> *ypad);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkMisc.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----GtkMisc
+                           +----<link linkend="GtkLabel">GtkLabel</link>
+                           +----<link linkend="GtkArrow">GtkArrow</link>
+                           +----<link linkend="GtkImage">GtkImage</link>
+                           +----<link linkend="GtkPixmap">GtkPixmap</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkMisc.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkMisc implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkMisc.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkMisc--xalign">xalign</link>&quot;                   <link linkend="gfloat">gfloat</link>                : Read / Write
+  &quot;<link linkend="GtkMisc--xpad">xpad</link>&quot;                     <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkMisc--yalign">yalign</link>&quot;                   <link linkend="gfloat">gfloat</link>                : Read / Write
+  &quot;<link linkend="GtkMisc--ypad">ypad</link>&quot;                     <link linkend="gint">gint</link>                  : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkMisc.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkMisc"><type>GtkMisc</type></link> widget is an abstract widget which is not useful itself, but
+is used to derive subclasses which have alignment and padding attributes.
+</para>
+<para>
+The horizontal and vertical padding attributes allows extra space to be
+added around the widget.
+</para>
+<para>
+The horizontal and vertical alignment attributes enable the widget to be
+positioned within its allocated area. Note that if the widget is added to
+a container in such a way that it expands automatically to fill its
+allocated area, the alignment settings will not alter the widgets position.
+</para>
+</refsect1>
+
+<refsect1 id="GtkMisc.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkMisc-struct" role="struct">
+<title>GtkMisc</title>
+<indexterm zone="GtkMisc-struct"><primary sortas="Misc">GtkMisc</primary></indexterm><programlisting>typedef struct _GtkMisc GtkMisc;</programlisting>
+<para>
+The <link linkend="GtkMisc-struct"><type>GtkMisc</type></link> struct contains the following fields.
+(These fields should be considered read-only. They should never be set by
+an application.)
+<informaltable pgwide="1" frame="none" role="struct">
+<tgroup cols="2"><colspec colwidth="2*"/><colspec colwidth="8*"/>
+<tbody>
+<row>
+<entry><link linkend="gfloat"><type>gfloat</type></link> <structfield>xalign</structfield>;</entry>
+<entry>the horizontal alignment, from 0 (left) to 1 (right).</entry>
+</row>
+<row>
+<entry><link linkend="gfloat"><type>gfloat</type></link> <structfield>yalign</structfield>;</entry>
+<entry>the vertical alignment, from 0 (top) to 1 (bottom).</entry>
+</row>
+<row>
+<entry><link linkend="guint16"><type>guint16</type></link> <structfield>xpad</structfield>;</entry>
+<entry>the amount of space to add on the left and right of the widget,
+in pixels.</entry>
+</row>
+<row>
+<entry><link linkend="guint16"><type>guint16</type></link> <structfield>ypad</structfield>;</entry>
+<entry>the amount of space to add on the top and bottom of the widget,
+in pixels.</entry>
+</row>
+</tbody></tgroup></informaltable>
+</para></refsect2>
+<refsect2 id="gtk-misc-set-alignment" role="function">
+<title>gtk_misc_set_alignment ()</title>
+<indexterm zone="gtk-misc-set-alignment"><primary sortas="misc_set_alignment">gtk_misc_set_alignment</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_misc_set_alignment              (<link linkend="GtkMisc">GtkMisc</link> *misc,
+                                                         <link linkend="gfloat">gfloat</link> xalign,
+                                                         <link linkend="gfloat">gfloat</link> yalign);</programlisting>
+<para>
+Sets the alignment of the widget.
+</para><variablelist role="params">
+<varlistentry><term><parameter>misc</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkMisc"><type>GtkMisc</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xalign</parameter>&#160;:</term>
+<listitem><simpara>the horizontal alignment, from 0 (left) to 1 (right).
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>yalign</parameter>&#160;:</term>
+<listitem><simpara>the vertical alignment, from 0 (top) to 1 (bottom).
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-misc-set-padding" role="function">
+<title>gtk_misc_set_padding ()</title>
+<indexterm zone="gtk-misc-set-padding"><primary sortas="misc_set_padding">gtk_misc_set_padding</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_misc_set_padding                (<link linkend="GtkMisc">GtkMisc</link> *misc,
+                                                         <link linkend="gint">gint</link> xpad,
+                                                         <link linkend="gint">gint</link> ypad);</programlisting>
+<para>
+Sets the amount of space to add around the widget.
+</para><variablelist role="params">
+<varlistentry><term><parameter>misc</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkMisc"><type>GtkMisc</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xpad</parameter>&#160;:</term>
+<listitem><simpara>the amount of space to add on the left and right of the widget,
+in pixels.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ypad</parameter>&#160;:</term>
+<listitem><simpara>the amount of space to add on the top and bottom of the widget,
+in pixels.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-misc-get-alignment" role="function">
+<title>gtk_misc_get_alignment ()</title>
+<indexterm zone="gtk-misc-get-alignment"><primary sortas="misc_get_alignment">gtk_misc_get_alignment</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_misc_get_alignment              (<link linkend="GtkMisc">GtkMisc</link> *misc,
+                                                         <link linkend="gfloat">gfloat</link> *xalign,
+                                                         <link linkend="gfloat">gfloat</link> *yalign);</programlisting>
+<para>
+Gets the X and Y alignment of the widget within its allocation. 
+See <link linkend="gtk-misc-set-alignment"><function>gtk_misc_set_alignment()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>misc</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkMisc"><type>GtkMisc</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xalign</parameter>&#160;:</term>
+<listitem><simpara> location to store X alignment of <parameter>misc</parameter>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>yalign</parameter>&#160;:</term>
+<listitem><simpara> location to store Y alignment of <parameter>misc</parameter>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-misc-get-padding" role="function">
+<title>gtk_misc_get_padding ()</title>
+<indexterm zone="gtk-misc-get-padding"><primary sortas="misc_get_padding">gtk_misc_get_padding</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_misc_get_padding                (<link linkend="GtkMisc">GtkMisc</link> *misc,
+                                                         <link linkend="gint">gint</link> *xpad,
+                                                         <link linkend="gint">gint</link> *ypad);</programlisting>
+<para>
+Gets the padding in the X and Y directions of the widget. 
+See <link linkend="gtk-misc-set-padding"><function>gtk_misc_set_padding()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>misc</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkMisc"><type>GtkMisc</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xpad</parameter>&#160;:</term>
+<listitem><simpara> location to store padding in the X direction, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ypad</parameter>&#160;:</term>
+<listitem><simpara> location to store padding in the Y direction, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkMisc.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkMisc--xalign" role="property"><title>The <literal>&quot;xalign&quot;</literal> property</title>
+<indexterm zone="GtkMisc--xalign"><primary sortas="Misc:xalign">GtkMisc:xalign</primary></indexterm><programlisting>  &quot;xalign&quot;                   <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>The horizontal alignment, from 0 (left) to 1 (right). Reversed for RTL layouts.</para><para>Allowed values: [0,1]</para>
+<para>Default value: 0.5</para>
+</refsect2>
+<refsect2 id="GtkMisc--xpad" role="property"><title>The <literal>&quot;xpad&quot;</literal> property</title>
+<indexterm zone="GtkMisc--xpad"><primary sortas="Misc:xpad">GtkMisc:xpad</primary></indexterm><programlisting>  &quot;xpad&quot;                     <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>The amount of space to add on the left and right of the widget, in pixels.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkMisc--yalign" role="property"><title>The <literal>&quot;yalign&quot;</literal> property</title>
+<indexterm zone="GtkMisc--yalign"><primary sortas="Misc:yalign">GtkMisc:yalign</primary></indexterm><programlisting>  &quot;yalign&quot;                   <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>The vertical alignment, from 0 (top) to 1 (bottom).</para><para>Allowed values: [0,1]</para>
+<para>Default value: 0.5</para>
+</refsect2>
+<refsect2 id="GtkMisc--ypad" role="property"><title>The <literal>&quot;ypad&quot;</literal> property</title>
+<indexterm zone="GtkMisc--ypad"><primary sortas="Misc:ypad">GtkMisc:ypad</primary></indexterm><programlisting>  &quot;ypad&quot;                     <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>The amount of space to add on the top and bottom of the widget, in pixels.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+</refsect1>
+
+
+
+
+</refentry>

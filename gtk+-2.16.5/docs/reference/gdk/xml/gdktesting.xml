@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="gdk-Testing">
+<refmeta>
+<refentrytitle role="top_of_page" id="gdk-Testing.top_of_page">Testing</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Testing</refname>
+<refpurpose>Test utilities</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gdk-Testing.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gdk/gdk.h&gt;
+
+<link linkend="void">void</link>                <link linkend="gdk-test-render-sync">gdk_test_render_sync</link>                (<link linkend="GdkWindow">GdkWindow</link> *window);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-test-simulate-button">gdk_test_simulate_button</link>            (<link linkend="GdkWindow">GdkWindow</link> *window,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y,
+                                                         <link linkend="guint">guint</link> button,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers,
+                                                         <link linkend="GdkEventType">GdkEventType</link> button_pressrelease);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-test-simulate-key">gdk_test_simulate_key</link>               (<link linkend="GdkWindow">GdkWindow</link> *window,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers,
+                                                         <link linkend="GdkEventType">GdkEventType</link> key_pressrelease);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gdk-Testing.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The functions in this section are intended to be used in test programs.
+They allow to simulate some user input.
+</para>
+</refsect1>
+
+<refsect1 id="gdk-Testing.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="gdk-test-render-sync" role="function" condition="since:2.14">
+<title>gdk_test_render_sync ()</title>
+<indexterm zone="gdk-test-render-sync" role="2.14"><primary sortas="test_render_sync">gdk_test_render_sync</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_test_render_sync                (<link linkend="GdkWindow">GdkWindow</link> *window);</programlisting>
+<para>
+This function retrives a pixel from <parameter>window</parameter> to force the windowing
+system to carry out any pending rendering commands.
+This function is intended to be used to syncronize with rendering
+pipelines, to benchmark windowing system rendering operations.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>window</parameter>&#160;:</term>
+<listitem><simpara> a mapped GdkWindow
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gdk-test-simulate-button" role="function" condition="since:2.14">
+<title>gdk_test_simulate_button ()</title>
+<indexterm zone="gdk-test-simulate-button" role="2.14"><primary sortas="test_simulate_button">gdk_test_simulate_button</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_test_simulate_button            (<link linkend="GdkWindow">GdkWindow</link> *window,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y,
+                                                         <link linkend="guint">guint</link> button,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers,
+                                                         <link linkend="GdkEventType">GdkEventType</link> button_pressrelease);</programlisting>
+<para>
+This function is intended to be used in Gtk+ test programs.
+It will warp the mouse pointer to the given (<parameter>x</parameter>,<parameter>y</parameter>) corrdinates
+within <parameter>window</parameter> and simulate a button press or release event.
+Because the mouse pointer needs to be warped to the target
+location, use of this function outside of test programs that
+run in their own virtual windowing system (e.g. Xvfb) is not
+recommended.
+Also, <link linkend="gtk-test-simulate-button"><function>gtk_test_simulate_button()</function></link> is a fairly low level function,
+for most testing purposes, <link linkend="gtk-test-widget-click"><function>gtk_test_widget_click()</function></link> is the right
+function to call which will generate a button press event followed
+by its accompanying button release event.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>window</parameter>&#160;:</term>
+<listitem><simpara> Gdk window to simulate a button event for.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara>      x coordinate within <parameter>window</parameter> for the button event.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara>      y coordinate within <parameter>window</parameter> for the button event.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> Number of the pointer button for the event, usually 1, 2 or 3.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara> Keyboard modifiers the event is setup with.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>button_pressrelease</parameter>&#160;:</term>
+<listitem><simpara> either <link linkend="GDK-BUTTON-PRESS--CAPS"><literal>GDK_BUTTON_PRESS</literal></link> or <link linkend="GDK-BUTTON-RELEASE--CAPS"><literal>GDK_BUTTON_RELEASE</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> wether all actions neccessary for a button event simulation were carried out successfully.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gdk-test-simulate-key" role="function" condition="since:2.14">
+<title>gdk_test_simulate_key ()</title>
+<indexterm zone="gdk-test-simulate-key" role="2.14"><primary sortas="test_simulate_key">gdk_test_simulate_key</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_test_simulate_key               (<link linkend="GdkWindow">GdkWindow</link> *window,
+                                                         <link linkend="gint">gint</link> x,
+                                                         <link linkend="gint">gint</link> y,
+                                                         <link linkend="guint">guint</link> keyval,
+                                                         <link linkend="GdkModifierType">GdkModifierType</link> modifiers,
+                                                         <link linkend="GdkEventType">GdkEventType</link> key_pressrelease);</programlisting>
+<para>
+This function is intended to be used in Gtk+ test programs.
+If (<parameter>x</parameter>,<parameter>y</parameter>) are &gt; (-1,-1), it will warp the mouse pointer to
+the given (<parameter>x</parameter>,<parameter>y</parameter>) corrdinates within <parameter>window</parameter> and simulate a
+key press or release event.
+When the mouse pointer is warped to the target location, use
+of this function outside of test programs that run in their
+own virtual windowing system (e.g. Xvfb) is not recommended.
+If (<parameter>x</parameter>,<parameter>y</parameter>) are passed as (-1,-1), the mouse pointer will not
+be warped and <parameter>window</parameter> origin will be used as mouse pointer
+location for the event.
+Also, <link linkend="gtk-test-simulate-key"><function>gtk_test_simulate_key()</function></link> is a fairly low level function,
+for most testing purposes, <link linkend="gtk-test-widget-send-key"><function>gtk_test_widget_send_key()</function></link> is the
+right function to call which will generate a key press event
+followed by its accompanying key release event.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>window</parameter>&#160;:</term>
+<listitem><simpara> Gdk window to simulate a key event for.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara>      x coordinate within <parameter>window</parameter> for the key event.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara>      y coordinate within <parameter>window</parameter> for the key event.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>keyval</parameter>&#160;:</term>
+<listitem><simpara> A Gdk keyboard value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>modifiers</parameter>&#160;:</term>
+<listitem><simpara> Keyboard modifiers the event is setup with.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key_pressrelease</parameter>&#160;:</term>
+<listitem><simpara> either <link linkend="GDK-KEY-PRESS--CAPS"><literal>GDK_KEY_PRESS</literal></link> or <link linkend="GDK-KEY-RELEASE--CAPS"><literal>GDK_KEY_RELEASE</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> wether all actions neccessary for a key event simulation were carried out successfully.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

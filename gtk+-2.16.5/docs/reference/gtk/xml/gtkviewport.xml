@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkViewport">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkViewport.top_of_page">GtkViewport</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkViewport</refname>
+<refpurpose>An adapter which makes widgets scrollable</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkViewport.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkViewport-struct">GtkViewport</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-viewport-new">gtk_viewport_new</link>                    (<link linkend="GtkAdjustment">GtkAdjustment</link> *hadjustment,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *vadjustment);
+<link linkend="GtkAdjustment">GtkAdjustment</link>*      <link linkend="gtk-viewport-get-hadjustment">gtk_viewport_get_hadjustment</link>        (<link linkend="GtkViewport">GtkViewport</link> *viewport);
+<link linkend="GtkAdjustment">GtkAdjustment</link>*      <link linkend="gtk-viewport-get-vadjustment">gtk_viewport_get_vadjustment</link>        (<link linkend="GtkViewport">GtkViewport</link> *viewport);
+<link linkend="void">void</link>                <link linkend="gtk-viewport-set-hadjustment">gtk_viewport_set_hadjustment</link>        (<link linkend="GtkViewport">GtkViewport</link> *viewport,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);
+<link linkend="void">void</link>                <link linkend="gtk-viewport-set-vadjustment">gtk_viewport_set_vadjustment</link>        (<link linkend="GtkViewport">GtkViewport</link> *viewport,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);
+<link linkend="void">void</link>                <link linkend="gtk-viewport-set-shadow-type">gtk_viewport_set_shadow_type</link>        (<link linkend="GtkViewport">GtkViewport</link> *viewport,
+                                                         <link linkend="GtkShadowType">GtkShadowType</link> type);
+<link linkend="GtkShadowType">GtkShadowType</link>       <link linkend="gtk-viewport-get-shadow-type">gtk_viewport_get_shadow_type</link>        (<link linkend="GtkViewport">GtkViewport</link> *viewport);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkViewport.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----GtkViewport
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkViewport.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkViewport implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkViewport.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkViewport--hadjustment">hadjustment</link>&quot;              <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write / Construct
+  &quot;<link linkend="GtkViewport--shadow-type">shadow-type</link>&quot;              <link linkend="GtkShadowType">GtkShadowType</link>         : Read / Write
+  &quot;<link linkend="GtkViewport--vadjustment">vadjustment</link>&quot;              <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write / Construct
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkViewport.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkViewport-set-scroll-adjustments">set-scroll-adjustments</link>&quot;                         : Run Last / Action
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkViewport.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkViewport"><type>GtkViewport</type></link> widget acts as an adaptor class, implementing
+scrollability for child widgets that lack their own scrolling
+capabilities. Use <link linkend="GtkViewport"><type>GtkViewport</type></link> to scroll child widgets such as
+<link linkend="GtkTable"><type>GtkTable</type></link>, <link linkend="GtkBox"><type>GtkBox</type></link>, and so on.
+</para>
+<para>
+If a widget has native scrolling abilities, such as <link linkend="GtkTextView"><type>GtkTextView</type></link>,
+<link linkend="GtkTreeView"><type>GtkTreeView</type></link> or <link linkend="GtkIconview"><type>GtkIconview</type></link>, it can be added to a <link linkend="GtkScrolledWindow"><type>GtkScrolledWindow</type></link>
+with <link linkend="gtk-container-add"><function>gtk_container_add()</function></link>. If a widget does not, you must first add the
+widget to a <link linkend="GtkViewport"><type>GtkViewport</type></link>, then add the viewport to the scrolled window.
+The convenience function <link linkend="gtk-scrolled-window-add-with-viewport"><function>gtk_scrolled_window_add_with_viewport()</function></link> does
+exactly this, so you can ignore the presence of the viewport.
+</para>
+</refsect1>
+
+<refsect1 id="GtkViewport.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkViewport-struct" role="struct">
+<title>GtkViewport</title>
+<indexterm zone="GtkViewport-struct"><primary sortas="Viewport">GtkViewport</primary></indexterm><programlisting>typedef struct _GtkViewport GtkViewport;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-viewport-new" role="function">
+<title>gtk_viewport_new ()</title>
+<indexterm zone="gtk-viewport-new"><primary sortas="viewport_new">gtk_viewport_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_viewport_new                    (<link linkend="GtkAdjustment">GtkAdjustment</link> *hadjustment,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *vadjustment);</programlisting>
+<para>
+Creates a new <link linkend="GtkViewport"><type>GtkViewport</type></link> with the given adjustments.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>hadjustment</parameter>&#160;:</term>
+<listitem><simpara> horizontal adjustment.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>vadjustment</parameter>&#160;:</term>
+<listitem><simpara> vertical adjustment.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkViewport"><type>GtkViewport</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-viewport-get-hadjustment" role="function">
+<title>gtk_viewport_get_hadjustment ()</title>
+<indexterm zone="gtk-viewport-get-hadjustment"><primary sortas="viewport_get_hadjustment">gtk_viewport_get_hadjustment</primary></indexterm><programlisting><link linkend="GtkAdjustment">GtkAdjustment</link>*      gtk_viewport_get_hadjustment        (<link linkend="GtkViewport">GtkViewport</link> *viewport);</programlisting>
+<para>
+Returns the horizontal adjustment of the viewport.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>viewport</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkViewport"><type>GtkViewport</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the horizontal adjustment of <parameter>viewport</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-viewport-get-vadjustment" role="function">
+<title>gtk_viewport_get_vadjustment ()</title>
+<indexterm zone="gtk-viewport-get-vadjustment"><primary sortas="viewport_get_vadjustment">gtk_viewport_get_vadjustment</primary></indexterm><programlisting><link linkend="GtkAdjustment">GtkAdjustment</link>*      gtk_viewport_get_vadjustment        (<link linkend="GtkViewport">GtkViewport</link> *viewport);</programlisting>
+<para>
+Returns the vertical adjustment of the viewport.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>viewport</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkViewport"><type>GtkViewport</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the vertical adjustment of <parameter>viewport</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-viewport-set-hadjustment" role="function">
+<title>gtk_viewport_set_hadjustment ()</title>
+<indexterm zone="gtk-viewport-set-hadjustment"><primary sortas="viewport_set_hadjustment">gtk_viewport_set_hadjustment</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_viewport_set_hadjustment        (<link linkend="GtkViewport">GtkViewport</link> *viewport,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);</programlisting>
+<para>
+Sets the horizontal adjustment of the viewport.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>viewport</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkViewport"><type>GtkViewport</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>adjustment</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-viewport-set-vadjustment" role="function">
+<title>gtk_viewport_set_vadjustment ()</title>
+<indexterm zone="gtk-viewport-set-vadjustment"><primary sortas="viewport_set_vadjustment">gtk_viewport_set_vadjustment</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_viewport_set_vadjustment        (<link linkend="GtkViewport">GtkViewport</link> *viewport,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);</programlisting>
+<para>
+Sets the vertical adjustment of the viewport.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>viewport</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkViewport"><type>GtkViewport</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>adjustment</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-viewport-set-shadow-type" role="function">
+<title>gtk_viewport_set_shadow_type ()</title>
+<indexterm zone="gtk-viewport-set-shadow-type"><primary sortas="viewport_set_shadow_type">gtk_viewport_set_shadow_type</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_viewport_set_shadow_type        (<link linkend="GtkViewport">GtkViewport</link> *viewport,
+                                                         <link linkend="GtkShadowType">GtkShadowType</link> type);</programlisting>
+<para>
+Sets the shadow type of the viewport.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>viewport</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkViewport"><type>GtkViewport</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> the new shadow type.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-viewport-get-shadow-type" role="function">
+<title>gtk_viewport_get_shadow_type ()</title>
+<indexterm zone="gtk-viewport-get-shadow-type"><primary sortas="viewport_get_shadow_type">gtk_viewport_get_shadow_type</primary></indexterm><programlisting><link linkend="GtkShadowType">GtkShadowType</link>       gtk_viewport_get_shadow_type        (<link linkend="GtkViewport">GtkViewport</link> *viewport);</programlisting>
+<para>
+Gets the shadow type of the <link linkend="GtkViewport"><type>GtkViewport</type></link>. See
+<link linkend="gtk-viewport-set-shadow-type"><function>gtk_viewport_set_shadow_type()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>viewport</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkViewport"><type>GtkViewport</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the shadow type 
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkViewport.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkViewport--hadjustment" role="property"><title>The <literal>&quot;hadjustment&quot;</literal> property</title>
+<indexterm zone="GtkViewport--hadjustment"><primary sortas="Viewport:hadjustment">GtkViewport:hadjustment</primary></indexterm><programlisting>  &quot;hadjustment&quot;              <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write / Construct</programlisting>
+<para>The GtkAdjustment that determines the values of the horizontal position for this viewport.</para></refsect2>
+<refsect2 id="GtkViewport--shadow-type" role="property"><title>The <literal>&quot;shadow-type&quot;</literal> property</title>
+<indexterm zone="GtkViewport--shadow-type"><primary sortas="Viewport:shadow-type">GtkViewport:shadow-type</primary></indexterm><programlisting>  &quot;shadow-type&quot;              <link linkend="GtkShadowType">GtkShadowType</link>         : Read / Write</programlisting>
+<para>Determines how the shadowed box around the viewport is drawn.</para><para>Default value: GTK_SHADOW_IN</para>
+</refsect2>
+<refsect2 id="GtkViewport--vadjustment" role="property"><title>The <literal>&quot;vadjustment&quot;</literal> property</title>
+<indexterm zone="GtkViewport--vadjustment"><primary sortas="Viewport:vadjustment">GtkViewport:vadjustment</primary></indexterm><programlisting>  &quot;vadjustment&quot;              <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write / Construct</programlisting>
+<para>The GtkAdjustment that determines the values of the vertical position for this viewport.</para></refsect2>
+</refsect1>
+
+<refsect1 id="GtkViewport.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkViewport-set-scroll-adjustments" role="signal"><title>The <literal>&quot;set-scroll-adjustments&quot;</literal> signal</title>
+<indexterm zone="GtkViewport-set-scroll-adjustments"><primary sortas="Viewport::set-scroll-adjustments">GtkViewport::set-scroll-adjustments</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkViewport">GtkViewport</link>   *horizontal,
+                                                        <link linkend="GtkAdjustment">GtkAdjustment</link> *vertical,
+                                                        <link linkend="GtkAdjustment">GtkAdjustment</link> *arg2,
+                                                        <link linkend="gpointer">gpointer</link>       user_data)       : Run Last / Action</programlisting>
+<para>
+Set the scroll adjustments for the viewport. Usually scrolled containers
+like <link linkend="GtkScrolledWindow"><type>GtkScrolledWindow</type></link> will emit this signal to connect two instances
+of <link linkend="GtkScrollbar"><type>GtkScrollbar</type></link> to the scroll directions of the <link linkend="GtkViewport"><type>GtkViewport</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>horizontal</parameter>&#160;:</term>
+<listitem><simpara> the horizontal <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>vertical</parameter>&#160;:</term>
+<listitem><simpara> the vertical <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+<refsect1 id="GtkViewport.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkScrolledWindow"><type>GtkScrolledWindow</type></link>, <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link>
+</para>
+</refsect1>
+
+</refentry>

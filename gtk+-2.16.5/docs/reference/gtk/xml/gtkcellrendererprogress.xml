@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkCellRendererProgress">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkCellRendererProgress.top_of_page">GtkCellRendererProgress</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkCellRendererProgress</refname>
+<refpurpose>Renders numbers as progress bars</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkCellRendererProgress.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkCellRendererProgress-struct">GtkCellRendererProgress</link>;
+<link linkend="GtkCellRenderer">GtkCellRenderer</link>*    <link linkend="gtk-cell-renderer-progress-new">gtk_cell_renderer_progress_new</link>      (void);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkCellRendererProgress.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkCellRenderer">GtkCellRenderer</link>
+                     +----GtkCellRendererProgress
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkCellRendererProgress.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkCellRendererProgress--orientation">orientation</link>&quot;              <link linkend="GtkProgressBarOrientation">GtkProgressBarOrientation</link>  : Read / Write
+  &quot;<link linkend="GtkCellRendererProgress--pulse">pulse</link>&quot;                    <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkCellRendererProgress--text">text</link>&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkCellRendererProgress--text-xalign">text-xalign</link>&quot;              <link linkend="gfloat">gfloat</link>                : Read / Write
+  &quot;<link linkend="GtkCellRendererProgress--text-yalign">text-yalign</link>&quot;              <link linkend="gfloat">gfloat</link>                : Read / Write
+  &quot;<link linkend="GtkCellRendererProgress--value">value</link>&quot;                    <link linkend="gint">gint</link>                  : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkCellRendererProgress.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkCellRendererProgress"><type>GtkCellRendererProgress</type></link> renders a numeric value as a progress par in a cell.
+Additionally, it can display a text on top of the progress bar.
+</para>
+<para>
+The <link linkend="GtkCellRendererProgress"><type>GtkCellRendererProgress</type></link> cell renderer was added in GTK+ 2.6.
+</para>
+</refsect1>
+
+<refsect1 id="GtkCellRendererProgress.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkCellRendererProgress-struct" role="struct">
+<title>GtkCellRendererProgress</title>
+<indexterm zone="GtkCellRendererProgress-struct"><primary sortas="CellRendererProgress">GtkCellRendererProgress</primary></indexterm><programlisting>typedef struct _GtkCellRendererProgress GtkCellRendererProgress;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-cell-renderer-progress-new" role="function" condition="since:2.6">
+<title>gtk_cell_renderer_progress_new ()</title>
+<indexterm zone="gtk-cell-renderer-progress-new" role="2.6"><primary sortas="cell_renderer_progress_new">gtk_cell_renderer_progress_new</primary></indexterm><programlisting><link linkend="GtkCellRenderer">GtkCellRenderer</link>*    gtk_cell_renderer_progress_new      (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkCellRendererProgress"><type>GtkCellRendererProgress</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new cell renderer
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkCellRendererProgress.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkCellRendererProgress--orientation" role="property"><title>The <literal>&quot;orientation&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererProgress--orientation" role="2.12"><primary sortas="CellRendererProgress:orientation">GtkCellRendererProgress:orientation</primary></indexterm><programlisting>  &quot;orientation&quot;              <link linkend="GtkProgressBarOrientation">GtkProgressBarOrientation</link>  : Read / Write</programlisting>
+<para>
+The "orientation" property controls the direction and growth
+direction of the progress bar (left-to-right, right-to-left,
+top-to-bottom or bottom-to-top).</para>
+<para>
+</para><para>Default value: GTK_PROGRESS_LEFT_TO_RIGHT</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkCellRendererProgress--pulse" role="property"><title>The <literal>&quot;pulse&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererProgress--pulse" role="2.12"><primary sortas="CellRendererProgress:pulse">GtkCellRendererProgress:pulse</primary></indexterm><programlisting>  &quot;pulse&quot;                    <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+Setting this to a non-negative value causes the cell renderer to
+enter "activity mode", where a block bounces back and forth to
+indicate that some progress is made, without specifying exactly how
+much.
+</para>
+<para>
+Each increment of the property causes the block to move by a little 
+bit.
+</para>
+<para>
+To indicate that the activity has not started yet, set the property
+to zero. To indicate completion, set the property to <link linkend="G-MAXINT--CAPS"><literal>G_MAXINT</literal></link>.</para>
+<para>
+</para><para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkCellRendererProgress--text" role="property"><title>The <literal>&quot;text&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererProgress--text" role="2.6"><primary sortas="CellRendererProgress:text">GtkCellRendererProgress:text</primary></indexterm><programlisting>  &quot;text&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+The "text" property determines the label which will be drawn
+over the progress bar. Setting this property to <link linkend="NULL--CAPS"><literal>NULL</literal></link> causes the default 
+label to be displayed. Setting this property to an empty string causes 
+no label to be displayed.</para>
+<para>
+</para><para>Default value: NULL</para>
+<para>Since 2.6</para>
+</refsect2>
+<refsect2 id="GtkCellRendererProgress--text-xalign" role="property"><title>The <literal>&quot;text-xalign&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererProgress--text-xalign" role="2.12"><primary sortas="CellRendererProgress:text-xalign">GtkCellRendererProgress:text-xalign</primary></indexterm><programlisting>  &quot;text-xalign&quot;              <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>
+The "text-xalign" property controls the horizontal alignment of the
+text in the progress bar.  Valid values range from 0 (left) to 1
+(right).  Reserved for RTL layouts.</para>
+<para>
+</para><para>Allowed values: [0,1]</para>
+<para>Default value: 0.5</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkCellRendererProgress--text-yalign" role="property"><title>The <literal>&quot;text-yalign&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererProgress--text-yalign" role="2.12"><primary sortas="CellRendererProgress:text-yalign">GtkCellRendererProgress:text-yalign</primary></indexterm><programlisting>  &quot;text-yalign&quot;              <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>
+The "text-yalign" property controls the vertical alignment of the
+text in the progress bar.  Valid values range from 0 (top) to 1
+(bottom).</para>
+<para>
+</para><para>Allowed values: [0,1]</para>
+<para>Default value: 0.5</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkCellRendererProgress--value" role="property"><title>The <literal>&quot;value&quot;</literal> property</title>
+<indexterm zone="GtkCellRendererProgress--value" role="2.6"><primary sortas="CellRendererProgress:value">GtkCellRendererProgress:value</primary></indexterm><programlisting>  &quot;value&quot;                    <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+The "value" property determines the percentage to which the
+progress bar will be "filled in".</para>
+<para>
+</para><para>Allowed values: [0,100]</para>
+<para>Default value: 0</para>
+<para>Since 2.6</para>
+</refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

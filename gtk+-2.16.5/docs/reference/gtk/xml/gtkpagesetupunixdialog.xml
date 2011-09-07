@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkPageSetupUnixDialog">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkPageSetupUnixDialog.top_of_page">GtkPageSetupUnixDialog</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkPageSetupUnixDialog</refname>
+<refpurpose>A page setup dialog</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkPageSetupUnixDialog.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtkpagesetupunixdialog.h&gt;
+
+                    <link linkend="GtkPageSetupUnixDialog-struct">GtkPageSetupUnixDialog</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-page-setup-unix-dialog-new">gtk_page_setup_unix_dialog_new</link>      (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);
+<link linkend="void">void</link>                <link linkend="gtk-page-setup-unix-dialog-set-page-setup">gtk_page_setup_unix_dialog_set_page_setup</link>
+                                                        (<link linkend="GtkPageSetupUnixDialog">GtkPageSetupUnixDialog</link> *dialog,
+                                                         <link linkend="GtkPageSetup">GtkPageSetup</link> *page_setup);
+<link linkend="GtkPageSetup">GtkPageSetup</link> *      <link linkend="gtk-page-setup-unix-dialog-get-page-setup">gtk_page_setup_unix_dialog_get_page_setup</link>
+                                                        (<link linkend="GtkPageSetupUnixDialog">GtkPageSetupUnixDialog</link> *dialog);
+<link linkend="void">void</link>                <link linkend="gtk-page-setup-unix-dialog-set-print-settings">gtk_page_setup_unix_dialog_set_print_settings</link>
+                                                        (<link linkend="GtkPageSetupUnixDialog">GtkPageSetupUnixDialog</link> *dialog,
+                                                         <link linkend="GtkPrintSettings">GtkPrintSettings</link> *print_settings);
+<link linkend="GtkPrintSettings">GtkPrintSettings</link> *  <link linkend="gtk-page-setup-unix-dialog-get-print-settings">gtk_page_setup_unix_dialog_get_print_settings</link>
+                                                        (<link linkend="GtkPageSetupUnixDialog">GtkPageSetupUnixDialog</link> *dialog);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkPageSetupUnixDialog.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkWindow">GtkWindow</link>
+                                       +----<link linkend="GtkDialog">GtkDialog</link>
+                                             +----GtkPageSetupUnixDialog
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkPageSetupUnixDialog.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkPageSetupUnixDialog implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkPageSetupUnixDialog.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+GtkPageSetupUnixDialog implements a page setup dialog for platforms
+which don't provide a native page setup dialog, like Unix. It can
+be used very much like any other GTK+ dialog, at the cost of
+the portability offered by the <link
+linkend="gtk-High-level-Printing-API">high-level printing API</link>
+</para>
+<para>
+Printing support was added in GTK+ 2.10.
+</para>
+</refsect1>
+
+<refsect1 id="GtkPageSetupUnixDialog.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkPageSetupUnixDialog-struct" role="struct">
+<title>GtkPageSetupUnixDialog</title>
+<indexterm zone="GtkPageSetupUnixDialog-struct"><primary sortas="PageSetupUnixDialog">GtkPageSetupUnixDialog</primary></indexterm><programlisting>typedef struct _GtkPageSetupUnixDialog GtkPageSetupUnixDialog;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-page-setup-unix-dialog-new" role="function" condition="since:2.10">
+<title>gtk_page_setup_unix_dialog_new ()</title>
+<indexterm zone="gtk-page-setup-unix-dialog-new" role="2.10"><primary sortas="page_setup_unix_dialog_new">gtk_page_setup_unix_dialog_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_page_setup_unix_dialog_new      (const <link linkend="gchar">gchar</link> *title,
+                                                         <link linkend="GtkWindow">GtkWindow</link> *parent);</programlisting>
+<para>
+Creates a new page setup dialog.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>title</parameter>&#160;:</term>
+<listitem><simpara> the title of the dialog, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parent</parameter>&#160;:</term>
+<listitem><simpara> transient parent of the dialog, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="GtkPageSetupUnixDialog"><type>GtkPageSetupUnixDialog</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-unix-dialog-set-page-setup" role="function" condition="since:2.10">
+<title>gtk_page_setup_unix_dialog_set_page_setup ()</title>
+<indexterm zone="gtk-page-setup-unix-dialog-set-page-setup" role="2.10"><primary sortas="page_setup_unix_dialog_set_page_setup">gtk_page_setup_unix_dialog_set_page_setup</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_page_setup_unix_dialog_set_page_setup
+                                                        (<link linkend="GtkPageSetupUnixDialog">GtkPageSetupUnixDialog</link> *dialog,
+                                                         <link linkend="GtkPageSetup">GtkPageSetup</link> *page_setup);</programlisting>
+<para>
+Sets the <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link> from which the page setup
+dialog takes its values.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetupUnixDialog"><type>GtkPageSetupUnixDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>page_setup</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetup"><type>GtkPageSetup</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-unix-dialog-get-page-setup" role="function" condition="since:2.10">
+<title>gtk_page_setup_unix_dialog_get_page_setup ()</title>
+<indexterm zone="gtk-page-setup-unix-dialog-get-page-setup" role="2.10"><primary sortas="page_setup_unix_dialog_get_page_setup">gtk_page_setup_unix_dialog_get_page_setup</primary></indexterm><programlisting><link linkend="GtkPageSetup">GtkPageSetup</link> *      gtk_page_setup_unix_dialog_get_page_setup
+                                                        (<link linkend="GtkPageSetupUnixDialog">GtkPageSetupUnixDialog</link> *dialog);</programlisting>
+<para>
+Gets the currently selected page setup from the dialog.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetupUnixDialog"><type>GtkPageSetupUnixDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the current page setup 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-unix-dialog-set-print-settings" role="function" condition="since:2.10">
+<title>gtk_page_setup_unix_dialog_set_print_settings ()</title>
+<indexterm zone="gtk-page-setup-unix-dialog-set-print-settings" role="2.10"><primary sortas="page_setup_unix_dialog_set_print_settings">gtk_page_setup_unix_dialog_set_print_settings</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_page_setup_unix_dialog_set_print_settings
+                                                        (<link linkend="GtkPageSetupUnixDialog">GtkPageSetupUnixDialog</link> *dialog,
+                                                         <link linkend="GtkPrintSettings">GtkPrintSettings</link> *print_settings);</programlisting>
+<para>
+Sets the <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link> from which the page setup dialog
+takes its values.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetupUnixDialog"><type>GtkPageSetupUnixDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>print_settings</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPrintSettings"><type>GtkPrintSettings</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-page-setup-unix-dialog-get-print-settings" role="function" condition="since:2.10">
+<title>gtk_page_setup_unix_dialog_get_print_settings ()</title>
+<indexterm zone="gtk-page-setup-unix-dialog-get-print-settings" role="2.10"><primary sortas="page_setup_unix_dialog_get_print_settings">gtk_page_setup_unix_dialog_get_print_settings</primary></indexterm><programlisting><link linkend="GtkPrintSettings">GtkPrintSettings</link> *  gtk_page_setup_unix_dialog_get_print_settings
+                                                        (<link linkend="GtkPageSetupUnixDialog">GtkPageSetupUnixDialog</link> *dialog);</programlisting>
+<para>
+Gets the current print settings from the dialog.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>dialog</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkPageSetupUnixDialog"><type>GtkPageSetupUnixDialog</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the current print settings
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

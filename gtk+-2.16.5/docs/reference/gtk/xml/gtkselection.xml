@@ -1,0 +1,1114 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="gtk-Selections">
+<refmeta>
+<refentrytitle role="top_of_page" id="gtk-Selections.top_of_page">Selections</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Selections</refname>
+<refpurpose>Functions for handling inter-process communication via selections</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gtk-Selections.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkTargetEntry">GtkTargetEntry</link>;
+                    <link linkend="GtkTargetList">GtkTargetList</link>;
+                    <link linkend="GtkTargetPair">GtkTargetPair</link>;
+<link linkend="GtkTargetList">GtkTargetList</link> *     <link linkend="gtk-target-list-new">gtk_target_list_new</link>                 (const <link linkend="GtkTargetEntry">GtkTargetEntry</link> *targets,
+                                                         <link linkend="guint">guint</link> ntargets);
+<link linkend="GtkTargetList">GtkTargetList</link> *     <link linkend="gtk-target-list-ref">gtk_target_list_ref</link>                 (<link linkend="GtkTargetList">GtkTargetList</link> *list);
+<link linkend="void">void</link>                <link linkend="gtk-target-list-unref">gtk_target_list_unref</link>               (<link linkend="GtkTargetList">GtkTargetList</link> *list);
+<link linkend="void">void</link>                <link linkend="gtk-target-list-add">gtk_target_list_add</link>                 (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="GdkAtom">GdkAtom</link> target,
+                                                         <link linkend="guint">guint</link> flags,
+                                                         <link linkend="guint">guint</link> info);
+<link linkend="void">void</link>                <link linkend="gtk-target-list-add-table">gtk_target_list_add_table</link>           (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         const <link linkend="GtkTargetEntry">GtkTargetEntry</link> *targets,
+                                                         <link linkend="guint">guint</link> ntargets);
+<link linkend="void">void</link>                <link linkend="gtk-target-list-add-text-targets">gtk_target_list_add_text_targets</link>    (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="guint">guint</link> info);
+<link linkend="void">void</link>                <link linkend="gtk-target-list-add-image-targets">gtk_target_list_add_image_targets</link>   (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="guint">guint</link> info,
+                                                         <link linkend="gboolean">gboolean</link> writable);
+<link linkend="void">void</link>                <link linkend="gtk-target-list-add-uri-targets">gtk_target_list_add_uri_targets</link>     (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="guint">guint</link> info);
+<link linkend="void">void</link>                <link linkend="gtk-target-list-add-rich-text-targets">gtk_target_list_add_rich_text_targets</link>
+                                                        (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="guint">guint</link> info,
+                                                         <link linkend="gboolean">gboolean</link> deserializable,
+                                                         <link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer);
+<link linkend="void">void</link>                <link linkend="gtk-target-list-remove">gtk_target_list_remove</link>              (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="GdkAtom">GdkAtom</link> target);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-target-list-find">gtk_target_list_find</link>                (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="GdkAtom">GdkAtom</link> target,
+                                                         <link linkend="guint">guint</link> *info);
+<link linkend="void">void</link>                <link linkend="gtk-target-table-free">gtk_target_table_free</link>               (<link linkend="GtkTargetEntry">GtkTargetEntry</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets);
+<link linkend="GtkTargetEntry">GtkTargetEntry</link> *    <link linkend="gtk-target-table-new-from-list">gtk_target_table_new_from_list</link>      (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="gint">gint</link> *n_targets);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-owner-set">gtk_selection_owner_set</link>             (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection,
+                                                         <link linkend="guint32">guint32</link> time_);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-owner-set-for-display">gtk_selection_owner_set_for_display</link> (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection,
+                                                         <link linkend="guint32">guint32</link> time_);
+<link linkend="void">void</link>                <link linkend="gtk-selection-add-target">gtk_selection_add_target</link>            (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection,
+                                                         <link linkend="GdkAtom">GdkAtom</link> target,
+                                                         <link linkend="guint">guint</link> info);
+<link linkend="void">void</link>                <link linkend="gtk-selection-add-targets">gtk_selection_add_targets</link>           (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection,
+                                                         const <link linkend="GtkTargetEntry">GtkTargetEntry</link> *targets,
+                                                         <link linkend="guint">guint</link> ntargets);
+<link linkend="void">void</link>                <link linkend="gtk-selection-clear-targets">gtk_selection_clear_targets</link>         (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-convert">gtk_selection_convert</link>               (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection,
+                                                         <link linkend="GdkAtom">GdkAtom</link> target,
+                                                         <link linkend="guint32">guint32</link> time_);
+<link linkend="void">void</link>                <link linkend="gtk-selection-data-set">gtk_selection_data_set</link>              (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="GdkAtom">GdkAtom</link> type,
+                                                         <link linkend="gint">gint</link> format,
+                                                         const <link linkend="guchar">guchar</link> *data,
+                                                         <link linkend="gint">gint</link> length);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-data-set-text">gtk_selection_data_set_text</link>         (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         const <link linkend="gchar">gchar</link> *str,
+                                                         <link linkend="gint">gint</link> len);
+<link linkend="guchar">guchar</link> *            <link linkend="gtk-selection-data-get-text">gtk_selection_data_get_text</link>         (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-data-set-pixbuf">gtk_selection_data_set_pixbuf</link>       (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="GdkPixbuf">GdkPixbuf</link> *         <link linkend="gtk-selection-data-get-pixbuf">gtk_selection_data_get_pixbuf</link>       (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-data-set-uris">gtk_selection_data_set_uris</link>         (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="gchar">gchar</link> **uris);
+<link linkend="gchar">gchar</link> **            <link linkend="gtk-selection-data-get-uris">gtk_selection_data_get_uris</link>         (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-data-get-targets">gtk_selection_data_get_targets</link>      (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="GdkAtom">GdkAtom</link> **targets,
+                                                         <link linkend="gint">gint</link> *n_atoms);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-data-targets-include-image">gtk_selection_data_targets_include_image</link>
+                                                        (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="gboolean">gboolean</link> writable);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-data-targets-include-text">gtk_selection_data_targets_include_text</link>
+                                                        (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-data-targets-include-uri">gtk_selection_data_targets_include_uri</link>
+                                                        (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-data-targets-include-rich-text">gtk_selection_data_targets_include_rich_text</link>
+                                                        (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer);
+<link linkend="GdkAtom">GdkAtom</link>             <link linkend="gtk-selection-data-get-selection">gtk_selection_data_get_selection</link>    (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+const <link linkend="guchar">guchar</link> *      <link linkend="gtk-selection-data-get-data">gtk_selection_data_get_data</link>         (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="gint">gint</link>                <link linkend="gtk-selection-data-get-length">gtk_selection_data_get_length</link>       (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="GdkAtom">GdkAtom</link>             <link linkend="gtk-selection-data-get-data-type">gtk_selection_data_get_data_type</link>    (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="GdkDisplay">GdkDisplay</link> *        <link linkend="gtk-selection-data-get-display">gtk_selection_data_get_display</link>      (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="gint">gint</link>                <link linkend="gtk-selection-data-get-format">gtk_selection_data_get_format</link>       (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="GdkAtom">GdkAtom</link>             <link linkend="gtk-selection-data-get-target">gtk_selection_data_get_target</link>       (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-targets-include-image">gtk_targets_include_image</link>           (<link linkend="GdkAtom">GdkAtom</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets,
+                                                         <link linkend="gboolean">gboolean</link> writable);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-targets-include-text">gtk_targets_include_text</link>            (<link linkend="GdkAtom">GdkAtom</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-targets-include-uri">gtk_targets_include_uri</link>             (<link linkend="GdkAtom">GdkAtom</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-targets-include-rich-text">gtk_targets_include_rich_text</link>       (<link linkend="GdkAtom">GdkAtom</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets,
+                                                         <link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer);
+<link linkend="void">void</link>                <link linkend="gtk-selection-remove-all">gtk_selection_remove_all</link>            (<link linkend="GtkWidget">GtkWidget</link> *widget);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-selection-clear">gtk_selection_clear</link>                 (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkEventSelection">GdkEventSelection</link> *event);
+<link linkend="GtkSelectionData">GtkSelectionData</link> *  <link linkend="gtk-selection-data-copy">gtk_selection_data_copy</link>             (<link linkend="GtkSelectionData">GtkSelectionData</link> *data);
+<link linkend="void">void</link>                <link linkend="gtk-selection-data-free">gtk_selection_data_free</link>             (<link linkend="GtkSelectionData">GtkSelectionData</link> *data);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gtk-Selections.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The selection mechanism provides the basis for different types
+of communication between processes. In particular, drag and drop and
+<link linkend="GtkClipboard"><type>GtkClipboard</type></link> work via selections. You will very seldom or
+never need to use most of the functions in this section directly;
+<link linkend="GtkClipboard"><type>GtkClipboard</type></link> provides a nicer interface to the same functionality.
+</para>
+<para>
+Some of the datatypes defined this section are used in
+the <link linkend="GtkClipboard"><type>GtkClipboard</type></link> and drag-and-drop API's as well. The
+<link linkend="GtkTargetEntry"><type>GtkTargetEntry</type></link> structure and <link linkend="GtkTargetList"><type>GtkTargetList</type></link> objects represent
+lists of data types that are supported when sending or
+receiving data. The <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object is used to
+store a chunk of data along with the data type and other
+associated information.
+</para>
+</refsect1>
+
+<refsect1 id="gtk-Selections.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkTargetEntry" role="struct">
+<title>GtkTargetEntry</title>
+<indexterm zone="GtkTargetEntry"><primary sortas="TargetEntry">GtkTargetEntry</primary></indexterm><programlisting>typedef struct {
+  gchar *target;
+  guint  flags;
+  guint  info;
+} GtkTargetEntry;
+</programlisting>
+<para>
+A <link linkend="GtkTargetEntry"><type>GtkTargetEntry</type></link> structure represents a single type of
+data than can be supplied for by a widget for a selection
+or for supplied or received during drag-and-drop. It
+contains a string representing the drag type, a flags
+field (used only for drag and drop - see <link linkend="GtkTargetFlags"><type>GtkTargetFlags</type></link>),
+and an application assigned integer ID. The integer
+ID will later be passed as a signal parameter for signals
+like "selection_get". It allows the application to identify
+the target type without extensive string compares.
+</para></refsect2>
+<refsect2 id="GtkTargetList" role="struct">
+<title>GtkTargetList</title>
+<indexterm zone="GtkTargetList"><primary sortas="TargetList">GtkTargetList</primary></indexterm><programlisting>typedef struct {
+  GList *list;
+  guint ref_count;
+} GtkTargetList;
+</programlisting>
+<para>
+A <link linkend="GtkTargetList"><type>GtkTargetList</type></link> structure is a reference counted list
+of <link linkend="GtkTargetPair"><type>GtkTargetPair</type></link>. It is used to represent the same
+information as a table of <link linkend="GtkTargetEntry"><type>GtkTargetEntry</type></link>, but in
+an efficient form. This structure should be treated as
+opaque.
+</para></refsect2>
+<refsect2 id="GtkTargetPair" role="struct">
+<title>GtkTargetPair</title>
+<indexterm zone="GtkTargetPair"><primary sortas="TargetPair">GtkTargetPair</primary></indexterm><programlisting>typedef struct {
+  GdkAtom   target;
+  guint     flags;
+  guint     info;
+} GtkTargetPair;
+</programlisting>
+<para>
+Internally used structure in the drag-and-drop and
+selection handling code.
+</para></refsect2>
+<refsect2 id="gtk-target-list-new" role="function">
+<title>gtk_target_list_new ()</title>
+<indexterm zone="gtk-target-list-new"><primary sortas="target_list_new">gtk_target_list_new</primary></indexterm><programlisting><link linkend="GtkTargetList">GtkTargetList</link> *     gtk_target_list_new                 (const <link linkend="GtkTargetEntry">GtkTargetEntry</link> *targets,
+                                                         <link linkend="guint">guint</link> ntargets);</programlisting>
+<para>
+Creates a new <link linkend="GtkTargetList"><type>GtkTargetList</type></link> from an array of <link linkend="GtkTargetEntry"><type>GtkTargetEntry</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>targets</parameter>&#160;:</term>
+<listitem><simpara> Pointer to an array of <link linkend="GtkTargetEntry"><type>GtkTargetEntry</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ntargets</parameter>&#160;:</term>
+<listitem><simpara>  number of entries in <parameter>targets</parameter>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="GtkTargetList"><type>GtkTargetList</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-target-list-ref" role="function">
+<title>gtk_target_list_ref ()</title>
+<indexterm zone="gtk-target-list-ref"><primary sortas="target_list_ref">gtk_target_list_ref</primary></indexterm><programlisting><link linkend="GtkTargetList">GtkTargetList</link> *     gtk_target_list_ref                 (<link linkend="GtkTargetList">GtkTargetList</link> *list);</programlisting>
+<para>
+Increases the reference count of a <link linkend="GtkTargetList"><type>GtkTargetList</type></link> by one.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara>  a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the passed in <link linkend="GtkTargetList"><type>GtkTargetList</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-target-list-unref" role="function">
+<title>gtk_target_list_unref ()</title>
+<indexterm zone="gtk-target-list-unref"><primary sortas="target_list_unref">gtk_target_list_unref</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_target_list_unref               (<link linkend="GtkTargetList">GtkTargetList</link> *list);</programlisting>
+<para>
+Decreases the reference count of a <link linkend="GtkTargetList"><type>GtkTargetList</type></link> by one.
+If the resulting reference count is zero, frees the list.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-target-list-add" role="function">
+<title>gtk_target_list_add ()</title>
+<indexterm zone="gtk-target-list-add"><primary sortas="target_list_add">gtk_target_list_add</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_target_list_add                 (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="GdkAtom">GdkAtom</link> target,
+                                                         <link linkend="guint">guint</link> flags,
+                                                         <link linkend="guint">guint</link> info);</programlisting>
+<para>
+Appends another target to a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara>  a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>target</parameter>&#160;:</term>
+<listitem><simpara> the interned atom representing the target
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>flags</parameter>&#160;:</term>
+<listitem><simpara> the flags for this target
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> an ID that will be passed back to the application
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-target-list-add-table" role="function">
+<title>gtk_target_list_add_table ()</title>
+<indexterm zone="gtk-target-list-add-table"><primary sortas="target_list_add_table">gtk_target_list_add_table</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_target_list_add_table           (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         const <link linkend="GtkTargetEntry">GtkTargetEntry</link> *targets,
+                                                         <link linkend="guint">guint</link> ntargets);</programlisting>
+<para>
+Prepends a table of <link linkend="GtkTargetEntry"><type>GtkTargetEntry</type></link> to a target list.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>targets</parameter>&#160;:</term>
+<listitem><simpara> the table of <link linkend="GtkTargetEntry"><type>GtkTargetEntry</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ntargets</parameter>&#160;:</term>
+<listitem><simpara> number of targets in the table
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-target-list-add-text-targets" role="function" condition="since:2.6">
+<title>gtk_target_list_add_text_targets ()</title>
+<indexterm zone="gtk-target-list-add-text-targets" role="2.6"><primary sortas="target_list_add_text_targets">gtk_target_list_add_text_targets</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_target_list_add_text_targets    (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="guint">guint</link> info);</programlisting>
+<para>
+Appends the text targets supported by <link linkend="GtkSelection"><type>GtkSelection</type></link> to
+the target list. All targets are added with the same <parameter>info</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> an ID that will be passed back to the application
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-target-list-add-image-targets" role="function" condition="since:2.6">
+<title>gtk_target_list_add_image_targets ()</title>
+<indexterm zone="gtk-target-list-add-image-targets" role="2.6"><primary sortas="target_list_add_image_targets">gtk_target_list_add_image_targets</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_target_list_add_image_targets   (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="guint">guint</link> info,
+                                                         <link linkend="gboolean">gboolean</link> writable);</programlisting>
+<para>
+Appends the image targets supported by <link linkend="GtkSelection"><type>GtkSelection</type></link> to
+the target list. All targets are added with the same <parameter>info</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> an ID that will be passed back to the application
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>writable</parameter>&#160;:</term>
+<listitem><simpara> whether to add only targets for which GTK+ knows
+  how to convert a pixbuf into the format
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-target-list-add-uri-targets" role="function" condition="since:2.6">
+<title>gtk_target_list_add_uri_targets ()</title>
+<indexterm zone="gtk-target-list-add-uri-targets" role="2.6"><primary sortas="target_list_add_uri_targets">gtk_target_list_add_uri_targets</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_target_list_add_uri_targets     (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="guint">guint</link> info);</programlisting>
+<para>
+Appends the URI targets supported by <link linkend="GtkSelection"><type>GtkSelection</type></link> to
+the target list. All targets are added with the same <parameter>info</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> an ID that will be passed back to the application
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-target-list-add-rich-text-targets" role="function" condition="since:2.10">
+<title>gtk_target_list_add_rich_text_targets ()</title>
+<indexterm zone="gtk-target-list-add-rich-text-targets" role="2.10"><primary sortas="target_list_add_rich_text_targets">gtk_target_list_add_rich_text_targets</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_target_list_add_rich_text_targets
+                                                        (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="guint">guint</link> info,
+                                                         <link linkend="gboolean">gboolean</link> deserializable,
+                                                         <link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer);</programlisting>
+<para>
+Appends the rich text targets registered with
+<link linkend="gtk-text-buffer-register-serialize-format"><function>gtk_text_buffer_register_serialize_format()</function></link> or
+<link linkend="gtk-text-buffer-register-deserialize-format"><function>gtk_text_buffer_register_deserialize_format()</function></link> to the target list. All
+targets are added with the same <parameter>info</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> an ID that will be passed back to the application
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>deserializable</parameter>&#160;:</term>
+<listitem><simpara> if <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, then deserializable rich text formats
+                 will be added, serializable formats otherwise.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-target-list-remove" role="function">
+<title>gtk_target_list_remove ()</title>
+<indexterm zone="gtk-target-list-remove"><primary sortas="target_list_remove">gtk_target_list_remove</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_target_list_remove              (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="GdkAtom">GdkAtom</link> target);</programlisting>
+<para>
+Removes a target from a target list.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>target</parameter>&#160;:</term>
+<listitem><simpara> the interned atom representing the target
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-target-list-find" role="function">
+<title>gtk_target_list_find ()</title>
+<indexterm zone="gtk-target-list-find"><primary sortas="target_list_find">gtk_target_list_find</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_target_list_find                (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="GdkAtom">GdkAtom</link> target,
+                                                         <link linkend="guint">guint</link> *info);</programlisting>
+<para>
+Looks up a given target in a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>target</parameter>&#160;:</term>
+<listitem><simpara> an interned atom representing the target to search for
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a pointer to the location to store application info for target,
+       or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the target was found, otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-target-table-free" role="function" condition="since:2.10">
+<title>gtk_target_table_free ()</title>
+<indexterm zone="gtk-target-table-free" role="2.10"><primary sortas="target_table_free">gtk_target_table_free</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_target_table_free               (<link linkend="GtkTargetEntry">GtkTargetEntry</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets);</programlisting>
+<para>
+This function frees a target table as returned by
+<link linkend="gtk-target-table-new-from-list"><function>gtk_target_table_new_from_list()</function></link></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>targets</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTargetEntry"><type>GtkTargetEntry</type></link> array
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_targets</parameter>&#160;:</term>
+<listitem><simpara> the number of entries in the array
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-target-table-new-from-list" role="function" condition="since:2.10">
+<title>gtk_target_table_new_from_list ()</title>
+<indexterm zone="gtk-target-table-new-from-list" role="2.10"><primary sortas="target_table_new_from_list">gtk_target_table_new_from_list</primary></indexterm><programlisting><link linkend="GtkTargetEntry">GtkTargetEntry</link> *    gtk_target_table_new_from_list      (<link linkend="GtkTargetList">GtkTargetList</link> *list,
+                                                         <link linkend="gint">gint</link> *n_targets);</programlisting>
+<para>
+This function creates an <link linkend="GtkTargetEntry"><type>GtkTargetEntry</type></link> array that contains the
+same targets as the passed <link linkend="list"><literal>list</literal></link>. The returned table is newly
+allocated and should be freed using <link linkend="gtk-target-table-free"><function>gtk_target_table_free()</function></link> when no
+longer needed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>list</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTargetList"><type>GtkTargetList</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_targets</parameter>&#160;:</term>
+<listitem><simpara> return location for the number ot targets in the table
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new table.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-selection-owner-set" role="function">
+<title>gtk_selection_owner_set ()</title>
+<indexterm zone="gtk-selection-owner-set"><primary sortas="selection_owner_set">gtk_selection_owner_set</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_owner_set             (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection,
+                                                         <link linkend="guint32">guint32</link> time_);</programlisting>
+<para>
+Claims ownership of a given selection for a particular widget,
+or, if <parameter>widget</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, release ownership of the selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>  a <link linkend="GtkWidget"><type>GtkWidget</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>selection</parameter>&#160;:</term>
+<listitem><simpara>  an interned atom representing the selection to claim
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>time_</parameter>&#160;:</term>
+<listitem><simpara> timestamp with which to claim the selection
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the operation succeeded
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-owner-set-for-display" role="function" condition="since:2.2">
+<title>gtk_selection_owner_set_for_display ()</title>
+<indexterm zone="gtk-selection-owner-set-for-display" role="2.2"><primary sortas="selection_owner_set_for_display">gtk_selection_owner_set_for_display</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_owner_set_for_display (<link linkend="GdkDisplay">GdkDisplay</link> *display,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection,
+                                                         <link linkend="guint32">guint32</link> time_);</programlisting>
+<para>
+Claim ownership of a given selection for a particular widget, or,
+if <parameter>widget</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>, release ownership of the selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="Gdkdisplay"><type>Gdkdisplay</type></link> where the selection is set 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> new selection owner (a <link linkend="GdkWidget"><type>GdkWidget</type></link>), or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>selection</parameter>&#160;:</term>
+<listitem><simpara> an interned atom representing the selection to claim.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>time_</parameter>&#160;:</term>
+<listitem><simpara> timestamp with which to claim the selection
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if the operation succeeded 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gtk-selection-add-target" role="function">
+<title>gtk_selection_add_target ()</title>
+<indexterm zone="gtk-selection-add-target"><primary sortas="selection_add_target">gtk_selection_add_target</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_selection_add_target            (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection,
+                                                         <link linkend="GdkAtom">GdkAtom</link> target,
+                                                         <link linkend="guint">guint</link> info);</programlisting>
+<para>
+Appends a specified target to the list of supported targets for a 
+given widget and selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>  a <link linkend="GtkTarget"><type>GtkTarget</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>selection</parameter>&#160;:</term>
+<listitem><simpara> the selection
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>target</parameter>&#160;:</term>
+<listitem><simpara> target to add.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> A unsigned integer which will be passed back to the application.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-add-targets" role="function">
+<title>gtk_selection_add_targets ()</title>
+<indexterm zone="gtk-selection-add-targets"><primary sortas="selection_add_targets">gtk_selection_add_targets</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_selection_add_targets           (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection,
+                                                         const <link linkend="GtkTargetEntry">GtkTargetEntry</link> *targets,
+                                                         <link linkend="guint">guint</link> ntargets);</programlisting>
+<para>
+Prepends a table of targets to the list of supported targets
+for a given widget and selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkWidget"><type>GtkWidget</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>selection</parameter>&#160;:</term>
+<listitem><simpara> the selection
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>targets</parameter>&#160;:</term>
+<listitem><simpara> a table of targets to add
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ntargets</parameter>&#160;:</term>
+<listitem><simpara>  number of entries in <parameter>targets</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-clear-targets" role="function">
+<title>gtk_selection_clear_targets ()</title>
+<indexterm zone="gtk-selection-clear-targets"><primary sortas="selection_clear_targets">gtk_selection_clear_targets</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_selection_clear_targets         (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection);</programlisting>
+<para>
+Remove all targets registered for the given selection for the
+widget.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara>    a <link linkend="GtkWidget"><type>GtkWidget</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>selection</parameter>&#160;:</term>
+<listitem><simpara> an atom representing a selection
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-convert" role="function">
+<title>gtk_selection_convert ()</title>
+<indexterm zone="gtk-selection-convert"><primary sortas="selection_convert">gtk_selection_convert</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_convert               (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkAtom">GdkAtom</link> selection,
+                                                         <link linkend="GdkAtom">GdkAtom</link> target,
+                                                         <link linkend="guint32">guint32</link> time_);</programlisting>
+<para>
+Requests the contents of a selection. When received, 
+a "selection-received" signal will be generated.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> The widget which acts as requestor
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>selection</parameter>&#160;:</term>
+<listitem><simpara> Which selection to get
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>target</parameter>&#160;:</term>
+<listitem><simpara> Form of information desired (e.g., STRING)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>time_</parameter>&#160;:</term>
+<listitem><simpara> Time of request (usually of triggering event)
+       In emergency, you could use <link linkend="GDK-CURRENT-TIME--CAPS"><type>GDK_CURRENT_TIME</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if requested succeeded. <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if we could not process
+         request. (e.g., there was already a request in process for
+         this widget).
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-data-set" role="function">
+<title>gtk_selection_data_set ()</title>
+<indexterm zone="gtk-selection-data-set"><primary sortas="selection_data_set">gtk_selection_data_set</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_selection_data_set              (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="GdkAtom">GdkAtom</link> type,
+                                                         <link linkend="gint">gint</link> format,
+                                                         const <link linkend="guchar">guchar</link> *data,
+                                                         <link linkend="gint">gint</link> length);</programlisting>
+<para>
+Stores new data into a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object. Should
+<emphasis>only</emphasis> be called from a selection handler callback.
+Zero-terminates the stored data.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> the type of selection data
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara> format (number of bits in a unit)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> pointer to the data (will be copied)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> length of the data
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-data-set-text" role="function">
+<title>gtk_selection_data_set_text ()</title>
+<indexterm zone="gtk-selection-data-set-text"><primary sortas="selection_data_set_text">gtk_selection_data_set_text</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_data_set_text         (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         const <link linkend="gchar">gchar</link> *str,
+                                                         <link linkend="gint">gint</link> len);</programlisting>
+<para>
+Sets the contents of the selection from a UTF-8 encoded string.
+The string is converted to the form determined by
+<parameter>selection_data->target</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>str</parameter>&#160;:</term>
+<listitem><simpara> a UTF-8 string
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>str</parameter>, or -1 if <parameter>str</parameter> is nul-terminated.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the selection was successfully set,
+  otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-data-get-text" role="function">
+<title>gtk_selection_data_get_text ()</title>
+<indexterm zone="gtk-selection-data-get-text"><primary sortas="selection_data_get_text">gtk_selection_data_get_text</primary></indexterm><programlisting><link linkend="guchar">guchar</link> *            gtk_selection_data_get_text         (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Gets the contents of the selection data as a UTF-8 string.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> if the selection data contained a recognized
+  text type and it could be converted to UTF-8, a newly allocated
+  string containing the converted text, otherwise <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+  If the result is non-<link linkend="NULL--CAPS"><literal>NULL</literal></link> it must be freed with <link linkend="g-free"><function>g_free()</function></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-data-set-pixbuf" role="function" condition="since:2.6">
+<title>gtk_selection_data_set_pixbuf ()</title>
+<indexterm zone="gtk-selection-data-set-pixbuf" role="2.6"><primary sortas="selection_data_set_pixbuf">gtk_selection_data_set_pixbuf</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_data_set_pixbuf       (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Sets the contents of the selection from a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>
+The pixbuf is converted to the form determined by
+<parameter>selection_data->target</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the selection was successfully set,
+  otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-selection-data-get-pixbuf" role="function" condition="since:2.6">
+<title>gtk_selection_data_get_pixbuf ()</title>
+<indexterm zone="gtk-selection-data-get-pixbuf" role="2.6"><primary sortas="selection_data_get_pixbuf">gtk_selection_data_get_pixbuf</primary></indexterm><programlisting><link linkend="GdkPixbuf">GdkPixbuf</link> *         gtk_selection_data_get_pixbuf       (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Gets the contents of the selection data as a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> if the selection data contained a recognized
+  image type and it could be converted to a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>, a 
+  newly allocated pixbuf is returned, otherwise <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+  If the result is non-<link linkend="NULL--CAPS"><literal>NULL</literal></link> it must be freed with <link linkend="g-object-unref"><function>g_object_unref()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-selection-data-set-uris" role="function" condition="since:2.6">
+<title>gtk_selection_data_set_uris ()</title>
+<indexterm zone="gtk-selection-data-set-uris" role="2.6"><primary sortas="selection_data_set_uris">gtk_selection_data_set_uris</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_data_set_uris         (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="gchar">gchar</link> **uris);</programlisting>
+<para>
+Sets the contents of the selection from a list of URIs.
+The string is converted to the form determined by
+<parameter>selection_data->target</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uris</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated array of strings holding URIs
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the selection was successfully set,
+  otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-selection-data-get-uris" role="function" condition="since:2.6">
+<title>gtk_selection_data_get_uris ()</title>
+<indexterm zone="gtk-selection-data-get-uris" role="2.6"><primary sortas="selection_data_get_uris">gtk_selection_data_get_uris</primary></indexterm><programlisting><link linkend="gchar">gchar</link> **            gtk_selection_data_get_uris         (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Gets the contents of the selection data as array of URIs.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> if the selection data contains a list of
+  URIs, a newly allocated <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated string array
+  containing the URIs, otherwise <link linkend="NULL--CAPS"><literal>NULL</literal></link>. If the result is 
+  non-<link linkend="NULL--CAPS"><literal>NULL</literal></link> it must be freed with <link linkend="g-strfreev"><function>g_strfreev()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-selection-data-get-targets" role="function">
+<title>gtk_selection_data_get_targets ()</title>
+<indexterm zone="gtk-selection-data-get-targets"><primary sortas="selection_data_get_targets">gtk_selection_data_get_targets</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_data_get_targets      (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="GdkAtom">GdkAtom</link> **targets,
+                                                         <link linkend="gint">gint</link> *n_atoms);</programlisting>
+<para>
+Gets the contents of <parameter>selection_data</parameter> as an array of targets.
+This can be used to interpret the results of getting
+the standard TARGETS target that is always supplied for
+any selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>targets</parameter>&#160;:</term>
+<listitem><simpara> location to store an array of targets. The result
+          stored here must be freed with <link linkend="g-free"><function>g_free()</function></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_atoms</parameter>&#160;:</term>
+<listitem><simpara> location to store number of items in <parameter>targets</parameter>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>selection_data</parameter> contains a valid
+   array of targets, otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-data-targets-include-image" role="function" condition="since:2.6">
+<title>gtk_selection_data_targets_include_image ()</title>
+<indexterm zone="gtk-selection-data-targets-include-image" role="2.6"><primary sortas="selection_data_targets_include_image">gtk_selection_data_targets_include_image</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_data_targets_include_image
+                                                        (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="gboolean">gboolean</link> writable);</programlisting>
+<para>
+Given a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object holding a list of targets,
+determines if any of the targets in <parameter>targets</parameter> can be used to
+provide a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>writable</parameter>&#160;:</term>
+<listitem><simpara> whether to accept only targets for which GTK+ knows
+  how to convert a pixbuf into the format
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>selection_data</parameter> holds a list of targets,
+  and a suitable target for images is included, otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gtk-selection-data-targets-include-text" role="function">
+<title>gtk_selection_data_targets_include_text ()</title>
+<indexterm zone="gtk-selection-data-targets-include-text"><primary sortas="selection_data_targets_include_text">gtk_selection_data_targets_include_text</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_data_targets_include_text
+                                                        (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Given a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object holding a list of targets,
+determines if any of the targets in <parameter>targets</parameter> can be used to
+provide text.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>selection_data</parameter> holds a list of targets,
+  and a suitable target for text is included, otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-data-targets-include-uri" role="function" condition="since:2.10">
+<title>gtk_selection_data_targets_include_uri ()</title>
+<indexterm zone="gtk-selection-data-targets-include-uri" role="2.10"><primary sortas="selection_data_targets_include_uri">gtk_selection_data_targets_include_uri</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_data_targets_include_uri
+                                                        (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Given a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object holding a list of targets,
+determines if any of the targets in <parameter>targets</parameter> can be used to
+provide a list or URIs.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>selection_data</parameter> holds a list of targets,
+  and a suitable target for URI lists is included, otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-selection-data-targets-include-rich-text" role="function" condition="since:2.10">
+<title>gtk_selection_data_targets_include_rich_text ()</title>
+<indexterm zone="gtk-selection-data-targets-include-rich-text" role="2.10"><primary sortas="selection_data_targets_include_rich_text">gtk_selection_data_targets_include_rich_text</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_data_targets_include_rich_text
+                                                        (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data,
+                                                         <link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer);</programlisting>
+<para>
+Given a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object holding a list of targets,
+determines if any of the targets in <parameter>targets</parameter> can be used to
+provide rich text.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>selection_data</parameter> holds a list of targets,
+              and a suitable target for rich text is included,
+              otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-selection-data-get-selection" role="function" condition="since:2.16">
+<title>gtk_selection_data_get_selection ()</title>
+<indexterm zone="gtk-selection-data-get-selection" role="2.16"><primary sortas="selection_data_get_selection">gtk_selection_data_get_selection</primary></indexterm><programlisting><link linkend="GdkAtom">GdkAtom</link>             gtk_selection_data_get_selection    (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Retrieves the selection <link linkend="GdkAtom"><type>GdkAtom</type></link> of the selection data.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the selection <link linkend="GdkAtom"><type>GdkAtom</type></link> of the selection data.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="gtk-selection-data-get-data" role="function" condition="since:2.14">
+<title>gtk_selection_data_get_data ()</title>
+<indexterm zone="gtk-selection-data-get-data" role="2.14"><primary sortas="selection_data_get_data">gtk_selection_data_get_data</primary></indexterm><programlisting>const <link linkend="guchar">guchar</link> *      gtk_selection_data_get_data         (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Retrieves the raw data of the selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the raw data of the selection.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-selection-data-get-length" role="function" condition="since:2.14">
+<title>gtk_selection_data_get_length ()</title>
+<indexterm zone="gtk-selection-data-get-length" role="2.14"><primary sortas="selection_data_get_length">gtk_selection_data_get_length</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_selection_data_get_length       (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Retrieves the length of the raw data of the selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the length of the data of the selection.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-selection-data-get-data-type" role="function" condition="since:2.14">
+<title>gtk_selection_data_get_data_type ()</title>
+<indexterm zone="gtk-selection-data-get-data-type" role="2.14"><primary sortas="selection_data_get_data_type">gtk_selection_data_get_data_type</primary></indexterm><programlisting><link linkend="GdkAtom">GdkAtom</link>             gtk_selection_data_get_data_type    (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Retrieves the data type of the selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>  the data type of the selection.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-selection-data-get-display" role="function" condition="since:2.14">
+<title>gtk_selection_data_get_display ()</title>
+<indexterm zone="gtk-selection-data-get-display" role="2.14"><primary sortas="selection_data_get_display">gtk_selection_data_get_display</primary></indexterm><programlisting><link linkend="GdkDisplay">GdkDisplay</link> *        gtk_selection_data_get_display      (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Retrieves the display of the selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the display of the selection.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-selection-data-get-format" role="function" condition="since:2.14">
+<title>gtk_selection_data_get_format ()</title>
+<indexterm zone="gtk-selection-data-get-format" role="2.14"><primary sortas="selection_data_get_format">gtk_selection_data_get_format</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_selection_data_get_format       (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Retrieves the format of the selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the format of the selection.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-selection-data-get-target" role="function" condition="since:2.14">
+<title>gtk_selection_data_get_target ()</title>
+<indexterm zone="gtk-selection-data-get-target" role="2.14"><primary sortas="selection_data_get_target">gtk_selection_data_get_target</primary></indexterm><programlisting><link linkend="GdkAtom">GdkAtom</link>             gtk_selection_data_get_target       (<link linkend="GtkSelectionData">GtkSelectionData</link> *selection_data);</programlisting>
+<para>
+Retrieves the target of the selection.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>selection_data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>  the target of the selection.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-targets-include-image" role="function" condition="since:2.10">
+<title>gtk_targets_include_image ()</title>
+<indexterm zone="gtk-targets-include-image" role="2.10"><primary sortas="targets_include_image">gtk_targets_include_image</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_targets_include_image           (<link linkend="GdkAtom">GdkAtom</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets,
+                                                         <link linkend="gboolean">gboolean</link> writable);</programlisting>
+<para>
+Determines if any of the targets in <parameter>targets</parameter> can be used to
+provide a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>targets</parameter>&#160;:</term>
+<listitem><simpara> an array of <link linkend="GdkAtom"><type>GdkAtom</type></link><!-- -->s
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_targets</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>targets</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>writable</parameter>&#160;:</term>
+<listitem><simpara> whether to accept only targets for which GTK+ knows
+  how to convert a pixbuf into the format
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>targets</parameter> include a suitable target for images,
+  otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-targets-include-text" role="function" condition="since:2.10">
+<title>gtk_targets_include_text ()</title>
+<indexterm zone="gtk-targets-include-text" role="2.10"><primary sortas="targets_include_text">gtk_targets_include_text</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_targets_include_text            (<link linkend="GdkAtom">GdkAtom</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets);</programlisting>
+<para>
+Determines if any of the targets in <parameter>targets</parameter> can be used to
+provide text.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>targets</parameter>&#160;:</term>
+<listitem><simpara> an array of <link linkend="GdkAtom"><type>GdkAtom</type></link><!-- -->s
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_targets</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>targets</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>targets</parameter> include a suitable target for text,
+  otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-targets-include-uri" role="function" condition="since:2.10">
+<title>gtk_targets_include_uri ()</title>
+<indexterm zone="gtk-targets-include-uri" role="2.10"><primary sortas="targets_include_uri">gtk_targets_include_uri</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_targets_include_uri             (<link linkend="GdkAtom">GdkAtom</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets);</programlisting>
+<para>
+Determines if any of the targets in <parameter>targets</parameter> can be used to
+provide an uri list.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>targets</parameter>&#160;:</term>
+<listitem><simpara> an array of <link linkend="GdkAtom"><type>GdkAtom</type></link><!-- -->s
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_targets</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>targets</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>targets</parameter> include a suitable target for uri lists,
+  otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-targets-include-rich-text" role="function" condition="since:2.10">
+<title>gtk_targets_include_rich_text ()</title>
+<indexterm zone="gtk-targets-include-rich-text" role="2.10"><primary sortas="targets_include_rich_text">gtk_targets_include_rich_text</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_targets_include_rich_text       (<link linkend="GdkAtom">GdkAtom</link> *targets,
+                                                         <link linkend="gint">gint</link> n_targets,
+                                                         <link linkend="GtkTextBuffer">GtkTextBuffer</link> *buffer);</programlisting>
+<para>
+Determines if any of the targets in <parameter>targets</parameter> can be used to
+provide rich text.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>targets</parameter>&#160;:</term>
+<listitem><simpara> an array of <link linkend="GdkAtom"><type>GdkAtom</type></link><!-- -->s
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_targets</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>targets</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>targets</parameter> include a suitable target for rich text,
+              otherwise <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-selection-remove-all" role="function">
+<title>gtk_selection_remove_all ()</title>
+<indexterm zone="gtk-selection-remove-all"><primary sortas="selection_remove_all">gtk_selection_remove_all</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_selection_remove_all            (<link linkend="GtkWidget">GtkWidget</link> *widget);</programlisting>
+<para>
+Removes all handlers and unsets ownership of all 
+selections for a widget. Called when widget is being
+destroyed. This function will not generally be
+called by applications.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkWidget"><type>GtkWidget</type></link> 
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-clear" role="function" condition="deprecated|since:2.2">
+<title>gtk_selection_clear ()</title>
+<indexterm zone="gtk-selection-clear" role="deprecated"><primary sortas="selection_clear">gtk_selection_clear</primary></indexterm><indexterm zone="gtk-selection-clear" role="2.2"><primary sortas="selection_clear">gtk_selection_clear</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_selection_clear                 (<link linkend="GtkWidget">GtkWidget</link> *widget,
+                                                         <link linkend="GdkEventSelection">GdkEventSelection</link> *event);</programlisting>
+<warning><para><literal>gtk_selection_clear</literal> has been deprecated since version 2.4 and should not be used in newly-written code. Instead of calling this function, chain up from
+your selection-clear-event handler. Calling this function
+from any other context is illegal.</para></warning>
+<para>
+The default handler for the <link linkend="GtkWidget-selection-clear-event"><type>"selection-clear-event"</type></link>
+signal.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkWidget"><type>GtkWidget</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> the event
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the event was handled, otherwise false
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gtk-selection-data-copy" role="function">
+<title>gtk_selection_data_copy ()</title>
+<indexterm zone="gtk-selection-data-copy"><primary sortas="selection_data_copy">gtk_selection_data_copy</primary></indexterm><programlisting><link linkend="GtkSelectionData">GtkSelectionData</link> *  gtk_selection_data_copy             (<link linkend="GtkSelectionData">GtkSelectionData</link> *data);</programlisting>
+<para>
+Makes a copy of a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure and its data.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a pointer to a copy of <parameter>data</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-selection-data-free" role="function">
+<title>gtk_selection_data_free ()</title>
+<indexterm zone="gtk-selection-data-free"><primary sortas="selection_data_free">gtk_selection_data_free</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_selection_data_free             (<link linkend="GtkSelectionData">GtkSelectionData</link> *data);</programlisting>
+<para>
+Frees a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure returned from
+<link linkend="gtk-selection-data-copy"><function>gtk_selection_data_copy()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> a pointer to a <link linkend="GtkSelectionData"><type>GtkSelectionData</type></link> structure.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="gtk-Selections.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="GtkWidget"><type>GtkWidget</type></link></term>
+<listitem><para>Much of the operation of selections happens via
+             signals for <link linkend="GtkWidget"><type>GtkWidget</type></link>. In particular, if you are
+             using the functions in this section, you may need
+             to pay attention to ::selection_get,
+             ::selection_received,  and :selection_clear_event
+             signals.</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

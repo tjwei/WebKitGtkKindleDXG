@@ -1,0 +1,11 @@
+#!/bin/sh
+export BUILD_OUTPUT_OPT=" > /dev/null "
+for i in LIB0/ LIB1/ glib- DirectFB- LIB2/ GTK0/ gtk+- WEBKIT0/ WebKit- 
+do
+	while true
+	do
+		SRCDIRS="$i*" ./mycmi && break
+		echo "Fix the problem or exit 1"
+		/bin/bash || exit 1
+	done
+done

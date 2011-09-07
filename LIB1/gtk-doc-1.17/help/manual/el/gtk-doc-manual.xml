@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml-stylesheet type="text/xml" href="params.xsl"?>
+<!-- vim: set ai tw=80 ts=3 sw=3: -->
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN" "
+              http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY FDL SYSTEM "fdl-appendix.xml">
+<!ENTITY FDLlink "<link linkend='fdl'>included</link>">
+]>
+<!-- =============Document Header ============================= -->
+<book id="index" lang="el">
+  <bookinfo>
+    <title>Εγχειρίδιο GTK-Doc</title>
+    <edition>1.15</edition>
+    <abstract role="description"><para>Εγχειρίδιο χρήσης του GTK-Doc για προγραμματιστές.</para></abstract>
+    <authorgroup>
+      <author>
+        <firstname>Chris</firstname>
+        <surname>Lyttle</surname>
+        <affiliation>
+          <address>
+            <email>chris@wilddev.net</email>
+          </address>
+        </affiliation>
+      </author>
+      <author>
+        <firstname>Dan</firstname>
+        <surname>Mueth</surname>
+        <affiliation>
+          <address>
+            <email>d-mueth@uchicago.edu</email>
+          </address>
+        </affiliation>
+      </author>
+      <author>
+        <firstname>Stefan</firstname>
+        <surname>Kost</surname>
+        <affiliation>
+          <address>
+            <email>ensonic@users.sf.net</email>
+          </address>
+        </affiliation>
+      </author>
+    </authorgroup>
+    <publisher role="maintainer">
+      <publishername>Έργο GTK-Doc</publishername>
+      <address><email>gtk-doc-list@gnome.org</email></address>
+    </publisher>
+    <copyright>
+      <year>2000, 2005, 2007-2009</year>
+      <holder>Dan Mueth, Chris Lyttle και Stefan Kost</holder>
+    </copyright><copyright><year>επισκεφθείτε την σελίδα http://www.gnome.gr/</year><holder>Για περισσότερες πληροφορίες</holder></copyright>
+
+    <!-- translators: uncomment this:
+    <copyright>
+      <year>2000</year>
+      <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+    -->
+
+    <legalnotice>
+      <para>Χορηγείται άδεια αντιγραφής, διανομής και/ή τροποποίησης του παρόντος εγγράφου υπό τους όρους της έκδοσης 1.1 της <citetitle>Ελεύθερης Άδειας Τεκμηρίωσης GNU (GFDL)</citetitle>, ή οποιασδήποτε μεταγενέστερης έκδοσής αυτής από το Ίδρυμα Ελεύθερου Λογισμικού (FSF), χωρίς αμετάβλητα τμήματα, κείμενα εξωφύλλου και κείμενα οπισθοφύλλου. Συμπεριλαμβάνεται <link linkend="fdl">αντίγραφο της άδειας</link>.</para>
+      <para>Πολλές από τις ονομασίες που χρησιμοποιούνται από εταιρείες για την διαφοροποίηση των προϊόντων και υπηρεσιών τους έχουν καταχωρισθεί ως εμπορικά σήματα. Σε όποιο σημείο της τεκμηρίωσης GNOME τυχόν εμφανίζονται αυτές οι ονομασίες, και εφόσον τα μέλη του Έργου τεκμηρίωσης GNOME έχουν λάβει γνώση αυτών των εμπορικών σημάτων, οι ονομασίες ή τα αρχικά αυτών θα γράφονται με κεφαλαίους χαρακτήρες.</para>
+    </legalnotice>
+
+    <revhistory>
+      <revision>
+        <revnumber>1.17</revnumber>
+        <date>26 Feb 2011</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>urgent bug fix update</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.16</revnumber>
+        <date>14 Jan 2011</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>bugfixes, layout improvements</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.15</revnumber>
+        <date>21 Μαΐου 2010</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>bug and regression fixes</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.14</revnumber>
+        <date>28 Μαρτίου 2010</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>διορθώσεις λαθών και βελτιώσεις απόδοσης</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.13</revnumber>
+        <date>18 Δεκεμβρίου 2009</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>ενημέρωση σπασμένου tarball</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.12</revnumber>
+        <date>18 Δεκεμβρίου 2009</date>
+        <authorinitials>sk</authorinitials>
+        <revremark>νέα χαρακτηριστικά του εργαλείο και διορθώσεις σφαλμάτων</revremark>
+      </revision>
+      <revision>
+        <revnumber>1.11</revnumber>
+        <date>16 Νοεμβρίου 2008</date>
+        <authorinitials>mal</authorinitials>
+        <revremark>Μετάβαση από GNOME doc-utils</revremark>
+      </revision>
+    </revhistory>
+
+  </bookinfo>
+
+  <!-- ======== Chapter 1: Introduction ======================== -->
+
+  <chapter id="introduction">
+    <title>Εισαγωγή</title>
+
+    <para>Αυτό το κεφάλαιο αποτελεί μια εισαγωγή στο GTK-Doc. Περιγράφει το GTK-Doc και τον τρόπο χρήσης του.</para>
+
+    <sect1 id="whatisgtkdoc">
+      <title>Τι είναι το GTK-Doc;</title>
+
+      <para>Το GTK-Doc χρησιμοποιείται για την τεκμηρίωση κώδικα C. Συνήθως, χρησιμοποιείται για την τεκμηρίωση του δημόσιου API βιβλιοθηκών όπως η GTK+ και η GNOME. Μπορεί όμως να χρησιμοποιηθεί και για την τεκμηρίωση κώδικα εφαρμογών.</para>
+    </sect1>
+
+    <sect1 id="howdoesgtkdocwork">
+      <title>Πώς λειτουργεί το GTK-Doc;</title>
+
+      <para>Το GTK-Doc χρησιμοποιεί την τεκμηρίωση συναρτήσεων που έχει συμπεριληφθεί στα πηγαία αρχεία (εντός μπλοκ σχολίων με ειδική μορφή), ή την τεκμηρίωση που έχει προστεθεί στα πρότυπα αρχεία που χρησιμοποιεί το GTK-Doc (σημειώστε όμως ότι το GTK-Doc παράγει τεκμηρίωση μόνο για τις συναρτήσεις που δηλώνονται σε αρχεία κεφαλίδας· δεν παράγει τεκμηρίωση για στατικές συναρτήσεις).</para>
+
+      <para>Το GTK-Doc αποτελείται από μια σειρά από σενάρια perl , καθένα από τα οποία είναι υπεύθυνο για διαφορετικό στάδιο της όλης διαδικασίας.</para>
+
+      <para>Η διαδικασία περιλαμβάνει 5 κύρια στάδια:</para>
+
+      <orderedlist>
+
+        <listitem>
+          <para><guilabel>Συγγραφή τεκμηρίωσης</guilabel> Ο συγγραφέας συμπληρώνει τα πηγαία αρχεία με τεκμηρίωση για όλες τις συναρτήσεις, μακροεντολές, ενώσεις κτλ. (Στο παρελθόν, οι πληροφορίες συμπληρώνονταν σε πρότυπα αρχεία που παράγονταν αυτόματα, αλλά αυτός ο τρόπος δεν συνιστάται πλέον.)</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Συλλογή πληροφοριών για τον κώδικα</guilabel> Το <application>gtkdoc-scan</application> σαρώνει τα αρχεία κεφαλίδας του κώδικα, αναζητώντας δηλώσεις συναρτήσεων, μακροεντολών, αριθμήσεων, δομών και ενώσεων. Στη συνέχεια, δημιουργεί το αρχείο <filename>&lt;module&gt;-decl-list.txt</filename> που περιέχει λίστα με όλες τις δηλώσεις, ταξινομημένες ανά ενότητες, ανάλογα με το αρχείο κεφαλίδας από το οποίο προήλθαν. Κατά την πρώτη εκτέλεση, αυτό το αρχείο αντιγράφεται στο <filename>&lt;module&gt;-sections.txt</filename>. Ο συγγραφέας μπορεί να αλλάξει τη σειρά των ενοτήτων, καθώς και τη σειρά των δηλώσεων σε κάθε ενότητα, προκειμένου η τελική σειρά να ανταποκρίνεται στις επιθυμίες του. Το δεύτερο αρχείο που παράγεται είναι το <filename>&lt;module&gt;-decl.txt</filename>. Αυτό το αρχείο περιέχει όλες τις δηλώσεις που βρέθηκαν κατά τη σάρωση. Αν θέλετε να εμφανιστούν στην τεκμηρίωση δηλώσεις οι οποίες δε βρέθηκαν κατά τη σάρωση, ή αν θέλετε να αλλάξει η εμφάνιση κάποιων δηλώσεων, μπορείτε να δημιουργήσετε εγγραφές παρόμοιες με αυτές του αρχείου <filename>&lt;module&gt;-decl.txt</filename> και να τις προσθέσετε στο αρχείο <filename>&lt;module&gt;-overrides.txt</filename>. Το <application>gtkdoc-scanobj</application> μπορεί επίσης να χρησιμοποιηθεί για να κάνει δυναμική αναζήτηση σε μια βιβλιοθήκη για ενδεχόμενες υποκλάσεις GtkObject. Αποθηκεύει τις πληροφορίες για τη θέση κάθε αντικειμένου στην ιεραρχία κλάσεων, καθώς και για τα ορίσματα και σήματα GTK που περιέχει.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Δημιουργία "πρότυπων" αρχείων</guilabel> Το <application>gtkdoc-mktmpl</application> παράγει μια σειρά από αρχεία στον υποκατάλογο <filename class="directory">tmpl/</filename>, χρησιμοποιώντας τις πληροφορίες που συλλέχθηκαν κατά το πρώτο στάδιο. (Σημειώστε ότι μπορεί να εκτελεστεί περισσότερες από μία φορές. Προσπαθεί να διασφαλίσει ότι δεν χάνεται ποτέ και κανενός είδους τεκμηρίωση.)</para>
+          <note>
+            <para>Από την έκδοση 1.9 και μετά, τα πρότυπα αρχεία δεν είναι πλέον απαραίτητα. Σας συνιστούμε να διατηρείτε την τεκμηρίωση στον κώδικα. Το <application>gtkdocize</application> υποστηρίζει πλέον την επιλογή <option>--flavour no-tmpl</option> η οποία επιλέγει ένα αρχείο makefile που δεν χρησιμοποιεί καθόλου πρότυπα tmpl. Αν δεν έχετε κάνει ποτέ αλλαγές με το χέρι σε αρχεία προτύπων tmpl, παρακαλώ αφαιρέστε τον κατάλογο (π.χ. από ένα σύστημα ελέγχου εκδόσεων).</para>
+          </note>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Παραγωγή SGML/XML και HTML/PDF</guilabel>. Το <application>gtkdoc-mkdb</application> μετατρέπει τα αρχεία προτύπων tmpl σε αρχεία SGML ή XML και τα τοποθετεί στους υποκαταλόγους<filename class="directory">sgml/</filename> ή <filename class="directory">xml/</filename>. Αν ο πηγαίος κώδικας περιέχει τεκμηρίωση συναρτήσεων εντός ειδικών μπλοκ σχολίων, τα σχόλια συγχωνεύονται σε αυτό το στάδιο. Αν δεν υπάρχουν αρχεία προτύπων tmpl, τότε χρησιμοποιούνται μόνο τα έγγραφα που προέκυψαν από τον πηγαίο κώδικα και τα δεδομένα της ενδοσκόπησης. Σας συνιστούμε να χρησιμοποιήσετε το βιβλίο τεκμηρίωσης XML.</para>
+          <para> Το <application>gtkdoc-mkhtml</application> μετατρέπει τα αρχεία SGML/XML σε αρχεία HTML που τοποθετούνται στον υποκατάλογο <filename class="directory">html/</filename>. Ομοίως το <application>gtkdoc-mkpdf</application> μετατρέπει τα αρχεία SGML/XML σε ένα αρχείο PDF που ονομάζεται <filename>&lt;package&gt;.pdf</filename>.</para>
+          <para>Τα αρχεία στους καταλόγους <filename class="directory">sgml/</filename>, <filename class="directory">xml/</filename> και <filename class="directory">html/</filename> αντικαθίστανται αυτόματα. Επομένως, δεν πρέπει να τα αλλάζετε με το χέρι.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Διόρθωση παραπομπών μεταξύ εγγράφων</guilabel> Μετά την εγκατάσταση των αρχείων HTML, μπορείτε να εκτελέσετε το <application>gtkdoc-fixxref</application> για να διορθώσετε τυχόν παραπομπές σε διαφορετικά έγγραφα. Για παράδειγμα, η τεκμηρίωση του GTK+ περιέχει πολλές παραπομπές σε τύπους που επεξηγούνται στο εγχειρίδιο του GLib. Όταν ετοιμάζετε πακέτα κώδικα για διανομή, μπορείτε να χρησιμοποιείτε το <application>gtkdoc-rebase</application> για να μετατρέπετε όλους τους εξωτερικούς συνδέσμους σε διαδικτυακούς συνδέσμους. Κατά την εγκατάσταση της τεκμηρίωσης που περιλαμβάνεται στο διανεμηθέντα κώδικα (παράγεται αυτόματα), η ίδια εφαρμογή θα προσπαθήσει να μετατρέψει ξανά τους συνδέσμους σε τοπικούς συνδέσμους (προς τις τοποθεσίες όπου είναι εγκατεστημένη η τεκμηρίωση).</para>
+        </listitem>
+      </orderedlist>
+
+    </sect1>
+
+    <sect1 id="gettinggtkdoc">
+      <title>Λήψη GTK-Doc</title>
+
+      <sect2 id="requirements">
+        <title>Απαιτήσεις</title>
+        <para><guilabel>Perl v5</guilabel> - τα βασικά σενάρια είναι γραμμένα σε Perl.</para>
+        <para><guilabel>DocBook DTD v3.0</guilabel> - Πρόκειται για την DocBook SGML DTD. <ulink url="http://www.ora.com/davenport" type="http">http://www.ora.com/davenport</ulink></para>
+        <para><guilabel>Jade v1.1</guilabel> - Πρόκειται για επεξεργαστή DSSSL που μετατρέπει τη SGML σε διάφορες άλλες μορφές. <ulink url="http://www.jclark.com/jade" type="http">http://www.jclark.com/jade</ulink></para>
+        <para><guilabel>Modular DocBook Stylesheets</guilabel> Πρόκειται για τον κώδικα DSSSL που απαιτείται για τη μετατροπή από DocBook σε HTML (και ορισμένες άλλες μορφές). Χρησιμοποιείται σε συνδυασμό με το jade. Έχουν γίνει κάποιες μικρές προσαρμογές του κώδικα DSSSL, στο gtk-doc.dsl, για το χρωματισμό κώδικα/δηλώσεων και για την υποστήριξη των καθολικών ευρετηρίων παραπομπών στα παραγόμενα HTML. <ulink url="http://nwalsh.com/docbook/dsssl" type="http">http://nwalsh.com/docbook/dsssl</ulink></para>
+        <para><guilabel>docbook-to-man</guilabel> - Σε περίπτωση που θέλετε να δημιουργήσετε σελίδες man από το DocBook. Έχουν γίνει κάποιες μικρές προσαρμογές των 'προδιαγραφών μετάφρασης', για να εμφανίζονται με κεφαλαία οι τίτλοι ενοτήτων και να προστίθενται ο τίτλος 'Βιβλιοθήκη GTK' στην αρχή της σελίδας και η ημερομηνία αναθεώρησης στο τέλος της. Βλέπε <ulink url="http://www.ora.com/davenport" type="http">http://www.ora.com/davenport</ulink> ΣΗΜΕΙΩΣΗ: Αυτή η δυνατότητα δε λειτουργεί προς το παρόν.</para>
+      </sect2>
+
+      <sect2 id="installation">
+        <title>Εγκατάσταση</title>
+        <para>Δεν υπάρχει σταθερή τοποθεσία για την εγκατάσταση των DocBook Modular Stylesheets.</para>
+        <para>Το σενάριο εντολών configure του GTK-Doc ψάχνει αυτόματα τους τρεις παρακάτω καταλόγους:</para>
+        <para><filename> /usr/lib/sgml/stylesheets/nwalsh-modular </filename> (χρησιμοποιείται από το RedHat)</para>
+        <para><filename> /usr/lib/dsssl/stylesheets/docbook </filename> (χρησιμοποιείται από το Debian)</para>
+        <para><filename> /usr/share/sgml/docbkdsl </filename> (χρησιμοποιείται από το SuSE)</para>
+        <para>Αν τα φύλλα στυλ είναι εγκατεστημένα κάπου αλλού, θα πρέπει να ρυθμίσετε GTK-Doc με την επιλογή: <command> --with-dsssl-dir=&lt; ΔΙΑΔΡΟΜΗ_ΠΡΟΣ_ΡΙΖΙΚΟ_ΚΑΤΑΛΟΓΟ_ΦΥΛΛΩΝ_ΣΤΥΛ&gt; </command></para>
+      </sect2>
+
+    </sect1>
+
+    <!-- not realy worth a section
+    <sect1 id="whentousegtkdoc">
+      <title>When to Use GTK-Doc</title>
+
+      <para>
+        (What things GTK-Doc should, and shouldn't, be used for.)
+        (- ???)
+        (- non C-based projects)
+        (+ Tutorials)
+      </para>
+
+    </sect1>
+    -->
+
+    <sect1 id="aboutgtkdoc">
+      <title>Περί GTK-Doc</title>
+
+      <para>(ΠΡΟΣ ΔΙΟΡΘΩΣΗ)</para>
+
+      <para>(Ιστορικό, συγγραφείς, ιστοσελίδες, άδεια, μελλοντικά σχέδια, σύγκριση με άλλα παρόμοια συστήματα.)</para>
+
+    </sect1>
+
+    <sect1 id="aboutthismanual">
+      <title>Περί του εγχειριδίου</title>
+
+      <para>(ΠΡΟΣ ΔΙΟΡΘΩΣΗ)</para>
+
+      <para>(σε ποιους απευθύνεται, πού θα το βρείτε, άδεια)</para>
+
+    </sect1>
+
+  </chapter>
+
+  <chapter id="settingup">
+    <title>Ξεκινώντας ένα έργο</title>
+
+    <para>Οι επόμενες ενότητες περιγράφουν τα βήματα που απαιτούνται για να ενσωματώσετε το GTK-Doc στο έργο σας. Υποθέστε ότι εργάζεστε στο έργο 'meep'. Το έργο περιέχει τη βιβλιοθήκη 'libmeep' και την εφαρμογή 'meeper' για τον τελικό χρήστη.</para>
+
+    <sect1 id="settingup_docfiles">
+      <title>Δημιουργία ενός σκελετού τεκμηρίωσης</title>
+
+      <para>Εντός του ριζικού καταλόγου του έργου δημιουργήστε το φάκελο docs/reference (ώστε να μπορείτε να χρησιμοποιήσετε το όνομα docs/help για την τεκμηρίωση του τελικού χρήστη). Συνιστάται να δημιουργήσετε έναν ακόμη υποκατάλογο με το όνομα του πακέτου τεκμηρίωσης. Αυτό δε χρειάζεται για πακέτα που περιλαμβάνουν μόνο μία βιβλιοθήκη.</para>
+
+      <para>This can then look as shown below: <example><title>Παράδειγμα δομής καταλόγου</title>
+          <programlisting>
+<![CDATA[
+meep/
+  docs/
+    reference/
+      libmeep/
+      meeper/
+  src/
+    libmeep/
+    meeper/
+]]>
+          </programlisting>
+        </example></para>
+    </sect1>
+
+    <sect1 id="settingup_autoconf">
+      <title>Ενσωμάτωση στο autoconf</title>
+
+      <para>Πολύ απλά! Απλά προσθέτετε μία γραμμή στο σενάριο <filename>configure.ac</filename>.</para>
+
+      <para>
+        <example><title>Ενσωμάτωση στο autoconf</title>
+          <programlisting>
+<![CDATA[
+# check for gtk-doc
+GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+      <para>Αυτό θα επαιτεί όλοι οι προγραμματιστές να έχουν εγκατεστημένο το gtk-doc. Αν είναι εντάξει για το έργο σας να έχετε επιπλέον κατασκευή ρυθμίσεων για το api-doc, μπορείτε να το επιλύσετε όπως αναφέρετε παρακάτω. Αφήστε το όπως έχει, όσο το gtkdocize ψάχνει στην αρχή της σειράς για το <function>GTK_DOC_CHECK</function>. <example><title>Προαιρετικά κρατήστε το gtk-doc</title>
+          <programlisting>
+<![CDATA[
+# check for gtk-doc
+m4_ifdef([GTK_DOC_CHECK], [
+GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
+],[
+AM_CONDITIONAL([ENABLE_GTK_DOC], false)
+])
+]]>
+          </programlisting>
+        </example></para>
+
+      <para>Το πρώτο όρισμα χρησιμοποιείται για έλεγχο του gtkdocversion κατά τη ρύθμιση. Το δεύτερο, προαιρετικό όρισμα χρησιμοποιείται από το <application>gtkdocize</application>. Η μακροεντολή <symbol>GTK_DOC_CHECK</symbol> επίσης προσθέτει αρκετούς διακόπτες ρύθμισης:</para>
+      <orderedlist>
+        <listitem><para>--with-html-dir=ΔΙΑΔΡΟΜΗ : διαδρομή προς την εγκατεστημένη τεκμηρίωση</para></listitem>
+        <listitem><para>--enable-gtk-doc : χρήση gtk-doc για την παραγωγή τεκμηρίωσης [default=no]</para></listitem>
+        <listitem><para>--enable-gtk-doc-html : παραγωγή τεκμηρίωσης σε μορφή html [default=yes]</para></listitem>
+        <listitem><para>--enable-gtk-doc-pdf : παραγωγή τεκμηρίωσης σε μορφή pdf [default=no]</para></listitem>
+      </orderedlist>
+
+      <important>
+      	<para>Η προεπιλογή είναι να είναι απενεργοποιημένο το GTK-Doc! Θυμηθείτε να χρησιμοποιήσετε την επιλογή <option>'--enable-gtk-doc'</option> στην επόμενη εκτέλεση του <filename>configure</filename>. Διαφορετικά εγκαθίσταται η προπαραχθείσα τεκμηρίωση (δυνατότητα χρήσιμη για το χρήστη, αλλά όχι για τον προγραμματιστή).</para>
+      </important>
+
+      <para>Επίσης, συνιστάται να προσθέσετε την ακόλουθη γραμμή στο σενάριο <filename>configure.ac</filename>. Επιτρέπει στο <filename>gtkdocize</filename> να αντιγράφει αυτόματα τον ορισμό της μακροεντολής  <function>GTK_DOC_CHECK</function> στο έργο σας.</para>
+
+      <para>
+        <example><title>Προετοιμασία για το gtkdocize</title>
+          <programlisting>
+<![CDATA[
+AC_CONFIG_MACRO_DIR(m4)
+]]>
+          </programlisting>
+        </example>
+      </para>
+    </sect1>
+
+    <sect1 id="settingup_automake">
+      <title>Ενσωμάτωση στο automake</title>
+
+      <para>Πρώτα αντιγράψτε το <filename>Makefile.am</filename> από τον υποκατάλογο με τα παραδείγματα των gtkdoc-sources στον κατάλογο της τεκμηρίωσης API του έργου σας ( <filename class="directory">./docs/reference/&lt;package&gt;</filename>). Αν έχετε περισσότερα από ένα πακέτα τεκμηρίωσης, επαναλάβετε τη διαδικασία για καθένα από αυτά.</para>
+
+      <para>Το επόμενο βήμα είναι να τροποποιήσετε τις ρυθμίσεις στο <filename>Makefile.am</filename>. Πριν από κάθε ρύθμιση υπάρχει ένα σχόλιο που εξηγεί τη χρησιμότητά της. Οι περισσότερες είναι σημαίες που στέλνονται στα αντίστοιχα εργαλεία. Κάθε εργαλείο διαθέτει μια μεταβλητή της μορφής <option>&lt;ΟΝΟΜΑ_ΕΡΓΑΛΕΙΟΥ&gt;_ΕΠΙΛΟΓΕΣ</option>. όλα τα εργαλεία υποστηρίζουν την επιλογή <option>--help</option> για την παραγωγή λίστας με τις υποστηριζόμενες παραμέτρους.</para>
+
+      <!-- FIXME: explain options ? -->
+
+      <para>Μπορείτε, επίσης, να ενεργοποιήσετε το GTK-Doc για το distcheckmake target. Απλά προσθέστε τη γραμμή του επόμενου παραδείγματος στο ριζικό <filename>Makefile.am</filename>:</para>
+
+      <para>
+        <example><title>Ενεργοποίηση του GTK-Doc κατά το make distcheck</title>
+          <programlisting>
+<![CDATA[
+DISTCHECK_CONFIGURE_FLAGS=--enable-gtk-doc
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+    </sect1>
+
+    <sect1 id="settingup_autogen">
+      <title>Ενσωμάτωση στο autogen</title>
+
+      <para>Τα περισσότερα έργα διαθέτουν ένα σενάριο <filename>autogen.sh</filename> για τη δημιουργία υποδομών μετά από το checkout από ένα το σύστημα ελέγχου εκδόσεων (π.χ., cvs/svn/git). Το GTK-Doc διαθέτει το εργαλείο <filename>gtkdocize</filename>, το οποίο μπορεί να χρησιμοποιηθεί για ένα τέτοιο σενάριο. Θα πρέπει να εκτελείται πριν το autoheader, το automake ή το autoconf.</para>
+
+      <para>
+        <example><title>Εκτέλεση του gtkdocize από το autogen.sh</title>
+          <programlisting>
+<![CDATA[
+gtkdocize || exit 1
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+      <para>Κατά την εκτέλεσή του, το <filename>gtkdocize</filename> αντιγράφει το <filename>gtk-doc.make</filename> στο ριζικό κατάλογο του έργου σας (ή στον κατάλογο που ορίζει η επιλογή <option>--docdir</option>). Επίσης, ελέγχει το σενάριο configure για να βρει την κλήση στο <function>GTK_DOC_CHECK</function>.</para>
+
+      <para>Αρχικά, το GTK-Doc δημιουργούσε αρχεία προτύπων εκεί που οι προγραμματιστές εισήγαγαν την τεκμηρίωση.  Δυστυχώς, αυτή η προσέγγιση δεν ήταν ιδιαίτερα επιτυχής. Οι τελευταίες εκδόσεις του GTK-Doc επιτρέπουν τη λήψη πληροφοριών από τα σχόλια του πηγαίου κώδικα. Από την έκδοση 1.9 και μετά, τα πρότυπα αρχεία δεν είναι πλέον απαραίτητα. Σας συνιστούμε να διατηρείτε την τεκμηρίωση στον κώδικα. To <application>gtkdocize</application> υποστηρίζει πλέον την επιλογή <option>--flavour no-tmpl</option> που επιλέγει ένα αρχείο makefile που δεν χρησιμοποιεί καθόλου πρότυπα tmpl. Πέρα από την άμεση προσθήκη της επιλογής στην κλήση της εντολής, μπορεί να προστεθεί και σε μια μεταβλητή περιβάλλοντος που ονομάζεται <symbol>GTKDOCIZE_FLAGS</symbol> ή να οριστεί ως δεύτερη παράμετρος στη μακροεντολή <symbol>GTK_DOC_CHECK</symbol> στο σενάριο configure. Αν δεν έχετε κάνει ποτέ αλλαγές με το χέρι σε αρχεία προτύπων και μεταβαίνετε από μια παλιότερη έκδοση του gtkdoc, παρακαλώ αφαιρέστε τον κατάλογο (π.χ. από το σύστημα ελέγχου εκδόσεων).</para>
+    </sect1>
+
+    <sect1 id="settingup_firstrun">
+      <title>Παραγωγή της τεκμηρίωσης</title>
+
+      <para>Αφού ολοκληρωθούν τα προηγούμενα βήματα, προχωρήστε στην παραγωγή. Πρώτα, θα πρέπει να εκτελεστεί εκ νέου το <filename>autogen.sh</filename>. Αν το σενάριο εκτελεί και το configure, προσθέστε την επιλογή <option>--enable-gtk-doc</option>. Διαφορετικά, εκτελέστε εσείς το<filename>configure</filename> με αυτή την επιλογή.</para>
+      <para>Η πρώτη εκτέλεση του make δημιουργεί μια σειρά από πρόσθετα αρχεία στους καταλόγους της τεκμηρίωσης. Τα σημαντικά είναι τα: <filename>&lt;package&gt;.types</filename>, <filename>&lt;package&gt;-docs.sgml</filename>, <filename>&lt;package&gt;-sections.txt</filename>.</para>
+      <para>
+        <example><title>Παραγωγή της τεκμηρίωσης</title>
+          <programlisting>
+<![CDATA[
+./autogen.sh --enable-gtk-doc
+make
+]]>
+          </programlisting>
+        </example>
+      </para>
+      <para>Τώρα, μπορείτε να εμφανίσετε το <filename>docs/reference/&lt;package&gt;/index.html</filename> στον περιηγητή σας. Είναι αλήθεια ότι προς το παρόν το αποτέλεσμα είναι μάλλον απογοητευτικό. Μην ανησυχείτε όμως. Στο επόμενο κεφάλαιο θα μάθετε πώς μπορείτε να ζωντανέψετε τις σελίδες σας.</para>
+    </sect1>
+
+    <sect1 id="settingup_vcs">
+      <title>Ενσωμάτωση σε συστήματα ελέγχου εκδόσεων</title>
+
+      <para>Ο εμπειρικός κανόνας είναι ότι από τον έλεγχο εκδόσεων πρέπει να περάσουν τα αρχεία που επεξεργαστήκατε εσείς. Συνήθως, πρόκειται για τα αρχεία: <filename>&lt;package&gt;.types</filename><filename>&lt;package&gt;-docs.sgml</filename><filename>&lt;package&gt;-sections.txt</filename><filename>Makefile.am</filename></para>
+    </sect1>
+
+  </chapter>
+
+  <chapter id="documenting">
+    <title>Τεκμηρίωση του κώδικα</title>
+
+    <para>Το GTK-Doc χρησιμοποιεί σχόλια με ειδική σύνταξη για την προσθήκη τεκμηρίωσης στον κώδικα. Παράλληλα, ανακαλεί πληροφορίες για τη δομή του έργου σας από άλλες πηγές. Στην επόμενη ενότητα περιέχονται όλες οι λεπτομέρειες για τη σύνταξη αυτών των σχολίων.</para>
+
+    <note>
+      <title>Τοποθέτηση τεκμηρίωσης</title>
+      <para>Στο παρελθόν, η τεκμηρίωση έπρεπε να συμπληρώνεται σε αρχεία του καταλόγου <filename>tmpl</filename>. Αυτή η προσέγγιση εμφανίζει το μειονέκτημα ότι οι πληροφορίες δεν ενημερώνονται συχνά, καθώς και το ότι προκύπτουν περιοδικές συγκρούσεις με τα συστήματα ελέγχου εκδόσεων.</para>
+      <para>Για να αποφύγετε αυτά τα προβλήματα, σας προτείνουμε να ενσωματώνετε την τεκμηρίωση στον πηγαίο κώδικα. Αυτή είναι και η μόνη μέθοδος που θα περιγράψουμε σε αυτό το εγχειρίδιο.</para>
+    </note>
+
+    <para>Ο σαρωτής μπορεί να χειριστεί άνετα την πλειοψηφία των κεφαλίδων c . Σε περίπτωση που λαμβάνετε προειδοποιήσεις από τον σαρωτή οι οποίες μοιάζουν με έναν ειδικό χαρακτήρα, μπορείτε να υποδείξετε το GTK-Doc να τους παραλείψει. <example><title>Μπλοκ σχολίου GTK-Doc</title>
+        <programlisting>
+<![CDATA[
+#ifndef __GTK_DOC_IGNORE__
+/* unparseable code here */
+#endif
+]]>
+        </programlisting>
+      </example></para>
+
+    <!--  -->
+
+    <sect1 id="documenting_syntax">
+      <title>Σχόλια τεκμηρίωσης</title>
+
+      <para>Ένα σχόλιο πολλαπλών γραμμών που διαθέτει ένα επιπλέον «*» στην αρχή αποτελεί ένα μπλοκ τεκμηρίωσης που λαμβάνεται υπόψη από τα εργαλεία του GTK-Doc. <example><title>Μπλοκ σχολίου GTK-Doc</title>
+          <programlisting>
+<![CDATA[
+/**
+ * identifier:
+ * documentation ...
+ */
+]]>
+          </programlisting>
+        </example></para>
+
+      <para>Το 'αναγνωριστικό' είναι μία γραμμή που περιέχει το όνομα του στοιχείου στο οποίο αναφέρεται το σχόλιο. Η σύνταξή του εξαρτάται από τον τύπο του στοιχείου. (ΜΕΛΛΟΝΤΙΚΑ: να προστεθεί πίνακας με τα αναγνωριστικά)</para>
+
+      <para>Το μπλοκ της 'τεκμηρίωσης' επίσης διαφέρει ανάλογα με τον τύπο συμβόλου. Για τους τύπους συμβόλων που δέχονται παραμέτρους (π.χ. συναρτήσεις και μακροεντολές) προηγείται η περιγραφή των παραμέτρων και ακολουθεί μια κενή γραμμή (μόνο '*'). Ακολουθεί η λεπτομερής περιγραφή. Όλες οι γραμμές (εκτός από τον κώδικα του προγράμματος και τις ενότητες CDATA) που περιέχουν μόνο ένα ' *' (διάστημα-αστερίσκος) μετατρέπονται σε αλλαγές παραγράφου. Αν δεν επιθυμείτε αλλαγή παραγράφου, χρησιμοποιήστε το ' *  ' (διάστημα-αστερίσκος-διάστημα-διάστημα).</para>
+
+      <para>Ένα πλεονέκτημα της χρήσης υπερκειμένου αντί για απλό κείμενο είναι η δυνατότητα προσθήκης συνδέσμων στο έγγραφο. Ωστόσο, η χρήση της σωστής σύνταξης για τη δημιουργία συνδέσμων μπορεί να είναι αρκετά κουραστική διαδικασία. Το GTK-Doc σας βοηθάει, παρέχοντάς σας μια σειρά από χρήσιμες συντμήσεις.<itemizedlist>
+          <listitem>
+            <para>Χρησιμοποιήστε τη γραφή function() για αναφορές σε συναρτήσεις ή μακροεντολές που δέχονται ορίσματα.</para>
+          </listitem>
+          <listitem>
+            <para>Χρησιμοποιήστε τη γραφή @param για να αναφερθείτε σε παραμέτρους. Επίσης, χρησιμοποιήστε αυτή τη γραφή για να αναφερθείτε σε παραμέτρους άλλων συναρτήσεων, σχετικών με την περιγραφόμενη.</para>
+          </listitem>
+          <listitem>
+            <para>Χρησιμοποιήστε τη γραφή %constant για να αναφερθείτε σε σταθερές, π.χ. %G_TRAVERSE_LEAFS.</para>
+          </listitem>
+          <listitem>
+            <para>Χρησιμοποιήστε τη γραφή #symbol για να αναφερθείτε σε άλλους τύπους συμβόλων, π.χ. δομές, αριθμήσεις και μακροεντολές που δε δέχονται ορίσματα.</para>
+          </listitem>
+          <listitem>
+            <para>Χρησιμοποιήστε τη γραφή #Object::signal για να αναφερθείτε σε ένα σήμα GObject</para>
+          </listitem>
+          <listitem>
+            <para>Χρησιμοποιήστε τη γραφή #Object::property για να αναφερθείτε σε μία ιδιότητα GObject</para>
+          </listitem>
+          <listitem>
+            <para>Χρησιμοποιήστε τη γραφή #Struct.field για να αναφερθείτε σε ένα πεδίο μιας δομής.</para>
+          </listitem>
+        </itemizedlist></para>
+
+      <tip>
+	  <para>Αν θέλετε να χρησιμοποιήσετε τους ειδικούς χαρακτήρες «&lt;», «&gt;», «()», «@», «%» ή «#» στην τεκμηρίωση, χωρίς να φοβάστε ότι θα τους αλλάξει το GTK-Doc, μπορείτε να χρησιμοποιήσετε τις οντότητες XML «&amp;lt;», «&amp;gt;», «&amp;lpar;», «&amp;rpar;», «&amp;commat;», «&amp;percnt;» και «&amp;num;», αντίστοιχα, ή να χρησιμοποιήσετε την ανάποδη κάθετο «\» ως χαρακτήρα διαφυγής.</para>
+      </tip>
+
+      <para>Το DocBook σας προσφέρει και άλλες δυνατότητες πέρα από τους συνδέσμους. Μπορεί να περιλαμβάνει λίστες, πίνακες και παραδείγματα. Για να επιτρέπεται η χρήση ετικετών SGML/XML στα σχόλια τεκμηρίωσης, θα πρέπει να έχει προστεθεί η επιλογή <option>--sgml-mode</option> στη μεταβλητή <symbol>MKDB_OPTIONS</symbol> του <filename>Makefile.am</filename>.</para>
+
+      <tip>
+	<para>Όπως αναφέρθηκε και προηγουμένως το GTK-Doc αναλαμβάνει την τεκμηρίωση του δημόσιου API. Άρα, δεν μπορεί να γραφτεί τεκμηρίωση για στατικά σύμβολα. Παρόλα αυτά, συνιστάται ο σχολιασμός και αυτών των συμβόλων, γιατί βοηθά στην κατανόηση του κώδικα. Σας προτείνουμε λοιπόν να τα σχολιάζετε χρησιμοποιώντας κανονικά σχόλια (χωρίς το δεύτερο «*» στην πρώτη γραμμή). Αν αργότερα χρειαστεί να μετατραπεί η συνάρτηση σε δημόσια, το μόνο που θα πρέπει να γίνει είναι να προστεθεί άλλο ένα «*» στο μπλοκ του σχολίου, και να εισαχθεί το όνομα του συμβόλου στην κατάλληλη θέση του αρχείου ενοτήτων.</para>
+      </tip>
+    </sect1>
+
+    <sect1 id="documenting_sections">
+      <title>Ενότητες τεκμηρίωσης</title>
+
+      <para>Κάθε ενότητα της τεκμηρίωσης περιέχει πληροφορίες για μία κλάση ή ένα άρθρωμα. Για να εισάγετε το συστατικό μπορείτε να γράψετε ένα μπλοκ σχολίου ενότητας. Η σύντομη αυτή περιγραφή χρησιμοποιείται και για τον πίνακα περιεχομένων. Όλα τα πεδία @fields είναι προαιρετικά.</para>
+
+      <para>
+        <example><title>Μπλοκ σχολίου ενότητας</title>
+          <programlisting>
+<![CDATA[
+/**
+ * SECTION:meepapp
+ * @short_description: the application class
+ * @title: Meep application
+ * @section_id:
+ * @see_also: #MeepSettings
+ * @stability: Stable
+ * @include: meep/app.h
+ * @image: application.png
+ *
+ * The application class handles ...
+ */
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+      <variablelist>
+        <varlistentry>
+          <term>SECTION:&lt;name&gt;</term>
+          <listitem>
+            <para>Το name συνδέει την τεκμηρίωση της ενότητας με το αντίστοιχο μέρος στο αρχείο <filename>&lt;package&gt;-sections.txt</filename>. Το όνομα που δίνεται εδώ πρέπει να ταιριάζει με την ετικέτα &lt;FILE&gt; στο αρχείο <filename>&lt;package&gt;-sections.txt</filename>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@short_description</term>
+          <listitem>
+            <para>Περιγραφή της ενότητας σε μία γραμμή, η οποία θα εμφανίζεται, στη συνέχεια, μετά από τους συνδέσμους του πίνακα περιεχομένων και στην αρχή της σελίδας της ενότητας.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@title</term>
+          <listitem>
+            <para>Ο τίτλος της ενότητας από προεπιλογή έχει όνομα &lt;name&gt; από τη δήλωση SECTION. Μπορεί να παρακαμφθεί με το πεδίο @title.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@section_id</term>
+          <listitem>
+            <para>Παρακάμπτει τη χρήση του τίτλου ως αναγνωριστικό της ενότητας. Για αντικείμενα GOBject το &lt;title&gt; χρησιμοποιείται ως section_id και για άλλες ενότητες είναι &lt;MODULE&gt;-&lt;title&gt;.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@see_also</term>
+          <listitem>
+            <para>Λίστα συμβόλων σχετικών με αυτή την ενότητα.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@stability</term>
+          <listitem>
+            <para>Άτυπη περιγραφή του επιπέδου σταθερότητας του συγκεκριμένου API. Σας συνιστούμε να χρησιμοποιείται έναν από τους ακόλουθους όρους: <itemizedlist>
+                <listitem>
+                  <para>Σταθερή - Μια σταθερή διεπαφή επιτρέπει σε τρίτους να αναπτύσσουν εφαρμογές για τις διεπαφές αυτές, να τις δημοσιεύουν και να είναι βέβαιοι ότι οι εφαρμογές θα τρέχουν σε όλες τις ελάσσονες εκδόσεις του προϊόντος (οι οποίες θα είναι μεταγενέστερες της διεπαφής και θα ανήκουν στην ίδια μείζονα έκδοση). Ακόμη και όταν πρόκειται για μείζονες νέες εκδόσεις, οι ασυμβατότητες αναμένεται να είναι σπάνιες και να οφείλονται σε σοβαρούς λόγους.</para>
+                </listitem>
+                <listitem>
+                  <para>Ασταθής - Ασταθείς είναι οι πειραματικές ή μεταβατικές διεπαφές. Συνήθως χρησιμοποιούνται για να παρέχουν σε τρίτους πρώιμη πρόσβαση σε νέες ή διαρκώς εξελισσόμενες τεχνολογίες, ή ως ενδιάμεσες λύσεις για προβλήματα για τα οποία αναμένεται μια γενικότερη λύση. Δεν υφίσταται καμία εγγύηση συμβατότητας μεταξύ μιας ελάσσονας έκδοσης και της επόμενης.</para>
+                </listitem>
+                <listitem>
+                  <para>Ιδιωτική - Διεπαφή που μπορεί να χρησιμοποιηθεί εντός της στοίβας του GNOME, αλλά δε διαθέτει τεκμηρίωση που να απευθύνεται στους τελικούς χρήστες. Τέτοιου είδους συναρτήσεις μπορούν να χρησιμοποιούνται μόνο στο πλαίσιο σαφώς καθορισμένων και τεκμηριωμένων διαδικασιών.</para>
+                </listitem>
+                <listitem>
+                  <para>Εσωτερική - Μια διεπαφή που είναι εσωτερική σε ένα module δεν απαιτεί την ύπαρξη τεκμηρίωσης για τον τελικό χρήστη. Οι συναρτήσεις που δεν περιέχουν τεκμηρίωση θεωρείται ότι είναι εσωτερικές.</para>
+                </listitem>
+              </itemizedlist></para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@include</term>
+          <listitem>
+            <para>Αρχεία <literal>#include</literal> που εμφανίζονται στη συνοπτική παρουσίαση των ενοτήτων (λίστα αρχείων που χωρίζονται με κόμματα), αντικαθιστώντας την καθολική τιμή στο <link linkend="metafiles_sections">αρχείο ενότητας</link> ή στη γραμμή εντολών. Πρόκειται για προαιρετικό στοιχείο.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>@image</term>
+          <listitem>
+            <para>Η εικόνα που θα εμφανίζεται στο πάνω μέρος της σελίδας αναφοράς για αυτή την ενότητα. Αυτή συχνά θα είναι κάποιου είδους διάγραμμα για την απεικόνιση μια κλάσης ή ενός διαγράμματος της σχέσης της με άλλες κλάσεις. Αυτή η καταχώρηση είναι προαιρετική.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <tip>
+        <para>Για να μη χρειαστεί να κάνετε εκ νέου μεταγλώττιση μετά από αλλαγές στην τεκμηρίωση, σας προτείνουμε να ενσωματώνετε την τεκμηρίωση των ενοτήτων στο αρχείο του πηγαίου κώδικα, όπου αυτό είναι δυνατό.</para>
+      </tip>
+
+    </sect1>
+
+    <sect1 id="documenting_symbols">
+      <title>Τεκμηρίωση συμβόλων</title>
+
+      <para>Κάθε σύμβολο (συνάρτηση, μακροεντολή, δομή, αρίθμηση, σήμα, ιδιότητα) τεκμηριώνεται σε ξεχωριστό μπλοκ. Η καταλληλότερη θέση για τα μπλοκ είναι δίπλα στους ορισμούς των συμβόλων, γιατί διευκολύνει το έργο συγχρονισμού. Επομένως, η τεκμηρίωση των συναρτήσεων συνήθως βρίσκεται στο αρχείο του πηγαίου κώδικα, ενώ των μακροεντολών, δομών και αριθμήσεων στο αρχείο κεφαλίδας.</para>
+
+      <sect2><title>Γενικές ετικέτες</title>
+
+        <para>Μπορείτε να προσθέσετε πληροφορίες εκδόσεων σε οποιοδήποτε στοιχείο της τεκμηρίωσης για να πείτε πότε εισήχθηκε ένα API ή πότε έγινε πεπαλαιωμένο.</para>
+
+        <variablelist><title>Ετικέτες εκδόσεων</title>
+          <varlistentry><term>Since:</term>
+            <listitem>
+              <para>Από ποια έκδοση του κώδικα είναι διαθέσιμο το API.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry><term>Deprecated:</term>
+            <listitem>
+              <para>Παράγραφος που ενημερώνει ότι θα πρέπει να σταματήσει η χρήση της συνάρτησης. Η περιγραφή θα πρέπει να παραπέμπει τον αναγνώστη στο νέο API.</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+
+          <para>(FIXME : Πληροφορίες σταθερότητας)</para>
+
+        <example><title>Γενικές ετικέτες</title>
+          <programlisting>
+<![CDATA[
+/**
+ * foo_get_bar:
+ * @foo: some foo
+ *
+ * Retrieves @foo's bar.
+ *
+ * Returns: @foo's bar
+ *
+ * Since: 2.6
+ * Deprecated: 2.12: Use foo_baz_get_bar() instead.
+ **/
+Bar *
+foo_get_bar(Foo *foo)
+{
+...
+]]>
+          </programlisting>
+        </example>
+      </sect2>
+
+      <sect2><title>Μπλοκ σχολίου συνάρτησης</title>
+
+        <para>Παρακαλούμε να θυμηθείτε να: <itemizedlist>
+            <listitem>
+              <para>Τεκμηριώσετε κατά πόσο τα επιστρεφόμενα αντικείμενα, λίστες, συμβολοσειρές, κ.λπ, θα πρέπει να ελευθερώνονται, να μην ελευθερώνονται ή να απορρίπτονται.</para>
+            </listitem>
+            <listitem>
+              <para>Τεκμηριώσετε κατά πόσο οι παράμετροι μπορούν να είναι μηδενικές (NULL) και τι συμβαίνει αν είναι.</para>
+            </listitem>
+            <listitem>
+              <para>Αναφέρετε ενδιαφέρουσες προ-υποθέσεις και μετα-υποθέσεις όπου χρειάζεται.</para>
+            </listitem>
+          </itemizedlist></para>
+
+        <para>Το Gtk-doc θεωρεί ότι όλα τα σύμβολα (μακροεντολές, συναρτήσεις, κτλ.) που ξεκινούν με '_' είναι ιδιωτικά και τα μεταχειρίζεται σαν στατικές συναρτήσεις.</para>
+
+        <para>Επίσης, ρίξτε μια ματιά στις ετικέτες σημείωσης ενδοσκόπησης των gobject: http://live.gnome.org/GObjectIntrospection/Annotations</para>
+
+        <example><title>Μπλοκ σχολίου συνάρτησης</title>
+          <programlisting>
+<![CDATA[
+/**
+ * function_name:
+ * @par1:  description of parameter 1. These can extend over more than
+ * one line.
+ * @par2:  description of parameter 2
+ * @...: a %NULL-terminated list of bars
+ *
+ * The function description goes here. You can use @par1 to refer to parameters
+ * so that they are highlighted in the output. You can also use %constant
+ * for constants, function_name2() for functions and #GtkWidget for links to
+ * other declarations (which may be documented elsewhere).
+ *
+ * Returns: an integer.
+ *
+ * Since: 2.2
+ * Deprecated: 2.18: Use other_function() instead.
+ */
+]]>
+          </programlisting>
+        </example>
+
+        <variablelist><title>Ετικέτες συναρτήσεων</title>
+          <varlistentry><term>Returns:</term>
+            <listitem>
+              <para>Παράγραφος που περιγράφει το επιστρεφόμενο αποτέλεσμα.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry><term>@...:</term>
+            <listitem>
+              <para>Σε περίπτωση που η μεταβλητή μπορεί να δεκτεί μεταβλητό αριθμό ορισμάτων (variadic), πρέπει να χρησιμοποιήσετε αυτή την ετικέτα (η ετικέτα @Varargs: λειτουργεί επίσης, για ιστορικούς λόγους).</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+
+      </sect2>
+
+      <sect2><title>Μπλοκ σχολίου ιδιότητας</title>
+
+        <example><title>Μπλοκ σχολίου ιδιότητας</title>
+          <programlisting>
+<![CDATA[
+/**
+ * SomeWidget:some-property:
+ *
+ * Here you can document a property.
+ */
+g_object_class_install_property (object_class, PROP_SOME_PROPERTY, ...);
+]]>
+          </programlisting>
+        </example>
+
+      </sect2>
+
+      <sect2><title>Μπλοκ σχολίου σήματος</title>
+
+        <para>Παρακαλούμε να θυμηθείτε να: <itemizedlist>
+            <listitem>
+              <para>Τεκμηριώστε πότε εκπέμπεται το σήμα και αν εκπέμπεται πριν ή μετά από άλλα σήματα.</para>
+            </listitem>
+            <listitem>
+              <para>Τεκμηριώστε τι μπορεί να κάνει μια εφαρμογή στον διαχειριστή σημάτων.</para>
+            </listitem>
+          </itemizedlist></para>
+
+        <example><title>Μπλοκ σχολίου σήματος</title>
+          <programlisting>
+<![CDATA[
+/**
+ * FooWidget::foobarized:
+ * @widget: the widget that received the signal
+ * @foo: some foo
+ * @bar: some bar
+ *
+ * The ::foobarized signal is emitted each time someone tries to foobarize @widget.
+ */
+foo_signals[FOOBARIZE] =
+  g_signal_new ("foobarize",
+                ...
+]]>
+          </programlisting>
+        </example>
+
+      </sect2>
+
+      <sect2><title>Μπλοκ σχολίου δομής</title>
+        <example><title>Μπλοκ σχολίου δομής</title>
+          <programlisting>
+<![CDATA[
+/**
+ * FooWidget:
+ * @bar: some #gboolean
+ *
+ * This is the best widget, ever.
+ */
+typedef struct _FooWidget {
+  /*< private >*/
+  GtkWidget parent;
+
+  /*< public >*/
+  gboolean bar;
+} FooWidget;
+]]>
+          </programlisting>
+        </example>
+
+        <para>Χρησιμοποιήστε το <code>/*&lt; private &gt;*/</code> πριν από πεδία ιδιωτικών δομών που θέλετε να αποκρύψετε. Χρησιμοποιήστε το <code>/*&lt; public &gt;*/</code>για την αντίστροφη συμπεριφορά.</para>
+
+        <para>
+          Struct comment blocks can also be used for GObjects and GObjectClasses.
+          It is usualy a good idea to add a comment blco for a class, if it has
+          vmethods (as this is how they can be documented). For the GObject
+          itself one can use the related section docs, having a separate block
+          for the instance struct would be useful if the instance has public
+          fields. One disadvantage here is that this creates two index entries
+          of the same name (the structure and the section).
+        </para>
+
+      </sect2>
+
+      <sect2><title>Μπλοκ σχολίου Enum</title>
+        <example><title>Μπλοκ σχολίου Enum</title>
+          <programlisting>
+<![CDATA[
+/**
+ * Something:
+ * @SOMETHING_FOO: something foo
+ * @SOMETHING_BAR: something bar
+ *
+ * Enum values used for the thing, to specify the thing.
+ *
+ **/
+typedef enum {
+  SOMETHING_FOO,
+  SOMETHING_BAR,
+  /*< private >*/
+  SOMETHING_COUNT
+} Something;
+]]>
+          </programlisting>
+        </example>
+
+        <para>Χρησιμοποιήστε το <code>/*&lt; private &gt;*/</code> πριν από ιδιωτικές τιμές enum που θέλετε να αποκρύψετε. Χρησιμοποιήστε το <code>/*&lt; public &gt;*/</code> για την αντίστροφη συμπεριφορά.</para>
+
+      </sect2>
+    </sect1>
+
+    <sect1 id="documenting_docbook">
+      <title>Χρήσιμες ετικέτες DocBook</title>
+
+      <para>Ακολουθούν ορισμένες ετικέτες DocBook, ιδιαίτερα χρήσιμες για την τεκμηρίωση του κώδικα.</para>
+
+      <para>Για να συνδέσετε με μια άλλη ενότητα στην τεκμηρίωση GTK: <informalexample>
+          <programlisting>
+<![CDATA[
+<link linkend="glib-Hash-Tables">Hash Tables</link>
+]]>
+          </programlisting>
+        </informalexample> Ο προορισμός είναι το id του SGML/XML στο πρώτο στοιχείο της σελίδας στην οποία παραπέμπει ο σύνδεσμος. Για τις περισσότερες σελίδες είναι το ("gtk", "gdk", glib"), ακολουθούμενο από τον τίτλο της σελίδας («Πίνακες Hash»). Για τα γραφικά συστατικά είναι το όνομα της κλάσης. Τα διαστήματα και τα «_» μετατρέπονται σε «-» για να υπάρχει συμμόρφωση με το SGML/XML.</para>
+
+      <para>Αναφορά σε εξωτερική συνάρτηση, π.χ. τυποποιημένη συνάρτηση C: <informalexample>
+          <programlisting>
+<![CDATA[
+<function>...</function>
+]]>
+          </programlisting>
+        </informalexample></para>
+
+      <para>Συμπερίληψη παραδειγμάτων κώδικα: <informalexample>
+          <programlisting>
+<![CDATA[
+<example>
+  <title>Using a GHashTable.</title>
+  <programlisting>
+      ...
+  </programlisting>
+</example>
+]]>
+          </programlisting>
+        </informalexample> ή, ενδεχομένως, για πολύ σύντομο κώδικα που δεν χρειάζεται τίτλο: <informalexample>
+          <programlisting>
+<![CDATA[
+<informalexample>
+  <programlisting>
+  ...
+  </programlisting>
+</informalexample>
+]]>
+          </programlisting>
+        </informalexample>. Στην τελευταία περίπτωση το GTK-Doc υποστηρίζει επίσης τη σύντμηση: <![CDATA[
+|[
+  ...
+]|
+]]></para>
+
+      <para>Συμπερίληψη λιστών με κουκίδες: <informalexample>
+          <programlisting>
+<![CDATA[
+<itemizedlist>
+  <listitem>
+    <para>
+      ...
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      ...
+    </para>
+  </listitem>
+</itemizedlist>
+]]>
+          </programlisting>
+        </informalexample></para>
+
+      <para>Συμπερίληψη σημειώσεων που ξεχωρίζουν από το υπόλοιπο κείμενο: <informalexample>
+          <programlisting>
+<![CDATA[
+<note>
+  <para>
+    Make sure you free the data after use.
+  </para>
+</note>
+]]>
+          </programlisting>
+        </informalexample></para>
+
+      <para>Αναφορά σε τύπο: <informalexample>
+          <programlisting>
+<![CDATA[
+<type>unsigned char</type>
+]]>
+          </programlisting>
+        </informalexample></para>
+
+      <para>Αναφορά σε εξωτερική δομή (που δεν περιγράφεται στην τεκμηρίωση GTK): <informalexample>
+          <programlisting>
+<![CDATA[
+<structname>XFontStruct</structname>
+]]>
+          </programlisting>
+        </informalexample></para>
+
+      <para>Αναφορά σε πεδίο μιας δομής: <informalexample>
+          <programlisting>
+<![CDATA[
+<structfield>len</structfield>
+]]>
+          </programlisting>
+        </informalexample></para>
+
+      <para>Αναφορά σε όνομα κλάσης. Μία δυνατότητα είναι το : <informalexample>
+          <programlisting>
+<![CDATA[
+<classname>GtkWidget</classname>
+]]>
+          </programlisting>
+        </informalexample>, αλλά μάλλον θα χρησιμοποιήσετε το #GtkWidget (για αυτόματη δημιουργία συνδέσμου προς τη σελίδα GtkWidget, δείτε <link linkend="documenting_syntax">τις συντμήσεις</link>).</para>
+
+      <para>Χρήση έντονων χαρακτήρων: <informalexample>
+          <programlisting>
+<![CDATA[
+<emphasis>This is important</emphasis>
+]]>
+          </programlisting>
+        </informalexample></para>
+
+      <para>Ονόματα αρχείων: <informalexample>
+          <programlisting>
+<![CDATA[
+<filename>/home/user/documents</filename>
+]]>
+          </programlisting>
+        </informalexample></para>
+
+      <para>Για να αναφερθείτε σε κλειδιά χρησιμοποιήστε: <informalexample>
+          <programlisting>
+<![CDATA[
+<keycombo><keycap>Control</keycap><keycap>L</keycap></keycombo>
+]]>
+          </programlisting>
+        </informalexample></para>
+
+    </sect1>
+  </chapter>
+
+  <chapter id="metafiles">
+    <title>Συμπλήρωση επιπλέον αρχείων</title>
+
+    <para>Υπάρχουν ορισμένα επιπλέον αρχεία που πρέπει να ενημερώνονται παράλληλα με τα σχόλια εντός του πηγαίου κώδικα: <filename>&lt;package&gt;.types</filename>, <filename>&lt;package&gt;-docs.sgml</filename>, <filename>&lt;package&gt;-sections.txt</filename>.</para>
+
+    <sect1 id="metafiles_types">
+      <title>Επεξεργασία του αρχείου types</title>
+
+      <para>Αν η βιβλιοθήκη ή η εφαρμογή σας περιέχει GtkObjects/GObjects, θα θέλετε να εμφανίζονται στην τεκμηρίωση τα σήματα, τα ορίσματα, οι παράμετροι τους, καθώς και η θέση τους στην ιεραρχία. Για να το πετύχετε, απλά καταγράψτε όλες τις συναρτήσεις <function>xxx_get_type</function> μαζί με τα include τους στο αρχείο <filename>&lt;package&gt;.types</filename>.</para>
+
+      <para>
+        <example><title>Υπόδειγμα αποσπάσματος αρχείου types</title>
+          <programlisting>
+<![CDATA[
+#include <gtk/gtk.h>
+
+gtk_accel_label_get_type
+gtk_adjustment_get_type
+gtk_alignment_get_type
+gtk_arrow_get_type
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+      <para>Από την έκδοση 1.8 και μετά το <application>gtkdoc-scan</application> μπορεί να παράγει αυτόματα αυτή τη λίστα. Απλά προσθέστε την επιλογή «--rebuild-types» στο SCAN_OPTIONS του <filename>Makefile.am</filename>. Αν προτιμήσετε αυτή την προσέγγιση, θα πρέπει να μη συμπεριλάβετε το αρχείο types ούτε στη διανομή ούτε στον έλεγχο εκδόσεων.</para>
+
+    </sect1>
+
+    <sect1 id="metafiles_master">
+      <title>Επεξεργασία κύριου εγγράφου (master)</title>
+
+      <para>Το GTK-Doc παράγει τεκμηρίωση σε μορφή SGML/XML DocBook. Κατά την επεξεργασία των σχολίων εντός του πηγαίου κώδικα, τα εργαλεία του GTK-Doc παράγουν μία σελίδα τεκμηρίωσης ανά κλάση ή άρθρωμα, η οποία αποθηκεύεται ως ξεχωριστό αρχείο. Το κύριο έγγραφο συμπεριλαμβάνει αυτά τα αρχεία και τα ταξινομεί.</para>
+
+      <para>Αν και το GTK-Doc παράγει αυτόματα ένα πρότυπο κύριο έγγραφο, δεν το τροποποιεί κατά τις επόμενες εκτελέσεις. Αυτό σημαίνει ότι έχετε τη δυνατότητα να αλλάξετε τη δομή της τεκμηρίωσης. Μπορείτε να ομαδοποιήσετε κάποιες σελίδες ή να προσθέσετε νέες. Το GTK-Doc διαθέτει πλέον μια σουίτα για δοκιμές, στην οποία το κύριο έγγραφο παράγεται εκ νέου. Συνιστάται να επαναλαμβάνετε τακτικά αυτή τη διαδικασία, για να διαπιστώνετε αν έχουν προστεθεί νέα στοιχεία.</para>
+
+      <tip>
+        <para>Μη δημιουργείτε νέα έγγραφα για τους οδηγούς εκμάθησης (tutorials). Απλά προσθέστε τους ως επιπλέον κεφάλαια, δηλαδή ενσωματώστε απευθείας τον οδηγό εκμάθησης για μια βιβλιοθήκη στην τεκμηρίωση API. Το πλεονέκτημα είναι ότι έτσι διευκολύνεται η διαδικασία δημιουργίας συνδέσμων από τον οδηγό εκμάθησης προς την τεκμηρίωση των συμβόλων. Επίσης, έτσι καθίσταται πιθανότερη η ενημέρωση του οδηγού μαζί με τη βιβλιοθήκη.</para>
+      </tip>
+
+      <para>Ποιες είναι λοιπόν οι αλλαγές που πρέπει να γίνουν στο κύριο έγγραφο; Διευκρινίζουμε ότι πρόκειται για λίγες μόνο αλλαγές σε ορισμένα placeholders (κείμενα εντός αγκυλών).</para>
+
+      <para>
+        <example><title>Κεφαλίδα κύριου εγγράφου</title>
+          <programlisting>
+<![CDATA[
+<bookinfo>
+  <title>MODULENAME Reference Manual</title>
+  <releaseinfo>
+    for MODULENAME [VERSION]
+    The latest version of this documentation can be found on-line at
+    <ulink role="online-location" url="http://[SERVER]/MODULENAME/index.html">http://[SERVER]/MODULENAME/</ulink>.
+  </releaseinfo>
+</bookinfo>
+
+<chapter>
+  <title>[Insert title here]</title>
+]]>
+          </programlisting>
+        </example>
+      </para>
+
+    </sect1>
+
+    <sect1 id="metafiles_sections">
+      <title>Επεξεργασία αρχείου ενοτήτων</title>
+
+      <para>Το αρχείο ενοτήτων χρησιμεύει στην οργάνωση της τεκμηρίωσης που παράγεται από το GTK-Doc. Εδώ διευκρινίζεται σε ποιο άρθρωμα ή κλάση ανήκει κάθε σύμβολο και αποφασίζεται η ορατότητά του (αν θα είναι δημόσιο ή ιδιωτικό).</para>
+
+      <para>Το αρχείο ενοτήτων είναι ένα αρχείο απλού κειμένου που χρησιμοποιεί σύνταξη με ετικέτες, παρόμοια με την xml. Οι κενές γραμμές αγνοούνται, ενώ οι γραμμές που ξεκινούν με # αποτελούν σχόλια.</para>
+
+      <para>Η ετικέτα &lt;FILE&gt; ... &lt;/FILE&gt; χρησιμποιείται για να δηλώσει το όνομα του αρχείου χωρίς την επέκταση. Για παράδειγμα, το '&lt;FILE&gt;gnome-config&lt;/FILE&gt;' σημαίνει ότι οι δηλώσεις των ενοτήτων θα βρίσκονται στο πρότυπο αρχείο <filename>tmpl/gnome-config.sgml</filename>, το οποίο θα μετατραπεί στο αρχείο DocBook SGML/XML <filename>sgml/gnome-config.sgml</filename> ή DocBook XML <filename>xml/gnome-config.xml</filename>. (Το όνομα του αρχείου html πηγάζει από το όνομα του αρθρώματος και τον τίτλο της ενότητας, ή από το όνομα της κλάσης του gobject, αλλά με πεζούς χαρακτήρες).</para>
+
+      <para>Η ετικέτα &lt;TITLE&gt; ... &lt;/TITLE&gt; χρησιμοποιείται για να ορίσει τους τίτλους των ενοτήτων. Χρησιμεύει μόνο πριν τη δημιουργία των προτύπων, καθώς ο τίτλος που περιέχεται στα αρχεία προτύπων αντικαθιστά αυτούς τους τίτλους. Επίσης, αν χρησιμοποιείται το σχόλιο SECTION στον πηγαίο κώδικα, αυτό είναι πεπαλαιωμένο.</para>
+
+      <para>Μπορείτε να ομαδοποιείτε τα στοιχεία των ενοτήτων χρησιμοποιώντας την ετικέτα &lt;SUBSECTION&gt;. Με την τωρινή της μορφή, προσθέτει μία κενή γραμμή μεταξύ υποενοτήτων στη σύνοπτική παρουσίαση. Μπορείτε, επίσης, να χρησιμοποιήσετε την ετικέτα &lt;SUBSECTION Standard&gt; για κλασικές δηλώσεις GObject (π.χ. συναρτήσεις όπως η g_object_get_type και μακροεντολές όπως οι G_OBJECT(), G_IS_OBJECT(), κτλ.). Προς το παρόν, αυτές οι δηλώσεις μένουν εκτός τεκμηρίωσης. Τέλος, μπορείτε να χρησιμοποιήσετε την ετικέτα &lt;SUBSECTION Private&gt; για ιδιωτικές δηλώσεις που δεν πρόκειται να εμφανιστούν στην τεκμηρίωση (έτσι αποφεύγετε τις προειδοποιήσεις για δηλώσεις που δεν χρησιμοποιούνται). Αν η βιβλιοθήκη σας περιέχει ιδιωτικούς τύπους, για τους οποίους δεν επιθυμείτε να εμφανίζονται στην ιεραρχία αντικειμένων και στη λίστα υλοποιημένων ή απαιτούμενων διεπαφών, μπορείτε να τους προσθέσετε σε μία ιδιωτική υποενότητα.</para>
+
+      <para>Μπορείτε, επίσης, να χρησιμοποιείτε την ετικέτα &lt;INCLUDE&gt; ... &lt;/INCLUDE&gt; για τα αρχεία #include που περιλαμβάνονται στις ενότητες συνοπτικής παρουσίασης. Περιέχει μία λίστα με αρχεία #include, χωρισμένα με κόμματα και χωρίς τα '' </para>
+
+    </sect1>
+
+  </chapter>
+
+  <chapter id="reports">
+    <title>Έλεγχος αποτελέσματος</title>
+
+    <para>Κατά την εκτέλεση του GTK-Doc παράγονται αρχεία αναφορών που τοποθετούνται στον κατάλογο της τεκμηρίωσης. Πρόκειται για τα αρχεία: <filename>&lt;package&gt;-undocumented.txt</filename>, <filename>&lt;package&gt;-undeclared.txt</filename> και <filename>&lt;package&gt;-unused.txt</filename>. Είναι αρχεία απλού κειμένου, εύκολα στην ανάγνωση και επεξεργασία.</para>
+
+    <para>Το αρχείο <filename>&lt;package&gt;-undocumented.txt</filename> ξεκινά με μία περίληψη της κάλυψης της τεκμηρίωσης. Ακολουθούν δύο ενότητες που χωρίζονται μεταξύ τους με κενές γραμμές. Η πρώτη ενότητα αναφέρει τα σύμβολα που δε διαθέτουν τεκμηρίωση ή είναι ημιτελή. Η δεύτερη καταγράφει τα ίδια στοιχεία για την τεκμηρίωση των ενοτήτων. Ημιτελείς θεωρούνται οι καταχωρήσεις για τις οποίες υπάρχει τεκμηρίωση, αλλά στις οποίες π.χ. προστέθηκε μια νέα παράμετρος.</para>
+
+    <para>Το αρχείο <filename>&lt;package&gt;-undeclared.txt</filename> περιέχει σύμβολα που αναφέρονται στο αρχείο <filename>&lt;package&gt;-sections.txt</filename>, αλλά δε βρέθηκαν στον πηγαίο κώδικα. Θα πρέπει να ελέγξετε αν έχουν αφαιρεθεί ή αν περιέχουν συντακτικά λάθη.</para>
+
+    <para>Το αρχείο <filename>&lt;package&gt;-unused.txt</filename> περιέχει ονόματα συμβόλων για τα οποία η σάρωση του GTK-Doc βρήκε τεκμηρίωση, αλλά δεν γνωρίζει πού να την τοποθετήσει. Aυτό σημαίνει ότι τα σύμβολα δεν έχουν προστεθεί ακόμη στο αρχείο <filename>&lt;package&gt;-sections.txt</filename>.</para>
+
+    <tip>
+      <para>Ενεργοποιήστε ή προσθέστε τη γραμμή <option>TESTS=($GTKDOC_CHECK)</option> στο Makefile.am. Αν έχετε εγκατεστημένη την έκδοση 1.9 ή μεταγενέστερη, θα πραγματοποιεί διάφορους ελέγχους κατά την εκτέλεση του <command>make check</command>.</para>
+    </tip>
+
+    <para>Μπορείτε επίσης να δείτε τα αρχεία που παράγονται από το σαρωτή του πηγαίου κώδικα: <filename>&lt;package&gt;-decl-list.txt</filename> και <filename>&lt;package&gt;-decl.txt</filename>. Το πρώτο μπορεί να συγκριθεί με το αρχείο της ενότητας, αν αυτό συντηρείται χειροκίνητα. Το δεύτερο περιέχει μια λίστα με από τις κεφαλίδες. Αν ένα σύμβολο λείπει, μπορείτε να ελέγξετε αν περιέχεται σε αυτό το αρχείο.</para>
+
+    <para>Αν το έργο βασίζεται στο GObject, μπορείτε επίσης να δείτε τα αρχεία που παράγονται από το σαρωτή αντικειμένων: <filename>&lt;package&gt;.args.txt</filename>, <filename>&lt;package&gt;.hierarchy.txt</filename>, <filename>&lt;package&gt;.interfaces.txt</filename>, <filename>&lt;package&gt;.prerequisites.txt</filename> και <filename>&lt;package&gt;.signals.txt</filename>. Αν λείπουν σύμβολα από οποιοδήποτε από αυτά, μπορείτε να ζητήσετε από το gtkdoc να κρατήσει το ενδιάμεσο αρχείο σάρωσης για περαιτέρω ανάλυση, αλλά εκτελώντας το ως <command>GTK_DOC_KEEP_INTERMEDIATE=1 make</command>.</para>
+  </chapter>
+
+  <chapter id="documenting-others">
+    <title>Τεκμηρίωση άλλων επιφανειών</title>
+
+    <para>Τόσο καιρό χρησιμοποιούσαμε το GTK-Doc για να καταγράψουμε το API του κώδικα. Οι επόμενες συνεδρίες περιέχουν προτάσεις για το πώς τα εργαλεία μπορούν να χρησιμοποιηθούν ώστε να καταγράψετε και άλλες επιφάνειες.</para>
+
+    <sect1 id="commandline-interfaces">
+      <title>Commandline options and man pages</title>
+
+      <para>
+        As one can generate man pages for a docbook refentry as well, it sounds
+        like a good idea to use it for that purpose. This way the interface is
+        part of the reference and one gets the man-page for free.
+      </para>
+
+      <sect2 id="commandline-interfaces-file">
+        <title>Τεκμηρίωση του εργαλείου</title>
+
+        <para>
+          Create one refentry file per tool. Following
+          <link linkend="settingup_docfiles">our example</link> we would call it
+          <filename>meep/docs/reference/meeper/meep.xml</filename>. For the xml
+          tags that should be used and can look at generated file in the xml
+          subdirectory as well as examples e.g. in glib.
+        </para>
+      </sect2>
+
+      <sect2 id="commandline-interfaces-configure">
+        <title>Προσθήκη του έξτρα ελέγχου διαμόρφωσης</title>
+
+        <para>
+          <example><title>Έξτρα έλεγχοι διαμόρφωσης</title>
+            <programlisting>
+<![CDATA[
+AC_ARG_ENABLE(man,
+              [AC_HELP_STRING([--enable-man],
+                              [regenerate man pages from Docbook [default=no]])],enable_man=yes,
+              enable_man=no)
+
+AC_PATH_PROG([XSLTPROC], [xsltproc])
+AM_CONDITIONAL(ENABLE_MAN, test x$enable_man != xno)
+]]>
+            </programlisting>
+          </example>
+        </para>
+      </sect2>
+
+      <sect2 id="commandline-interfaces-make">
+        <title>Προσθήκη των έξτρα κανόνων makefile</title>
+
+        <para>
+          <example><title>Έξτρα έλεγχοι διαμόρφωσης</title>
+            <programlisting>
+<![CDATA[
+man_MANS = \
+       meeper.1
+
+if ENABLE_GTK_DOC
+if ENABLE_MAN
+
+%.1 : %.xml
+        @XSLTPROC@ -nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
+
+endif
+endif
+
+BUILT_EXTRA_DIST = $(man_MANS)
+EXTRA_DIST += meep.xml
+]]>
+            </programlisting>
+          </example>
+        </para>
+      </sect2>
+    </sect1>
+
+    <sect1 id="dbus-interfaces">
+      <title>DBus interfaces</title>
+
+      <para>
+        (FIXME: http://hal.freedesktop.org/docs/DeviceKit/DeviceKit.html,
+http://cgit.freedesktop.org/DeviceKit/DeviceKit/tree/doc/dbus)
+      </para>
+    </sect1>
+
+  </chapter>
+
+  <chapter id="faq">
+    <title>Συχνές ερωτήσεις</title>
+
+    <segmentedlist>
+      <?dbhtml list-presentation="list"?>
+      <segtitle>Ερώτηση</segtitle>
+      <segtitle>Απάντηση</segtitle>
+      <seglistitem>
+        <seg>Δεν υπάρχει ιεραρχία κλάσεων.</seg>
+        <seg>Η συνάρτηση αντικειμένου <function>xxx_get_type()</function> δεν έχει εισαχθεί στο αρχείο <filename>&lt;package&gt;.types</filename>.</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>Εξακολουθεί να μην υπάρχει ιεραρχία κλάσεων.</seg>
+        <seg>Απόντα ή λανθασμένα ονόματα στο αρχείο <filename>&lt;package&gt;-sections.txt</filename> (βλέπε <ulink url="http://mail.gnome.org/archives/gtk-doc-list/2003-October/msg00006.html">εξήγηση</ulink>).</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>Πάλι δεν έχω ιεραρχία κλάσεων.</seg>
+        <seg>Ελέγξτε αν το όνομα του αντικειμένου (δηλαδή το όνομα του συγκεκριμένου παραδείγματος της δομής, π.χ. <type>GtkWidget</type>) περιλαμβάνεται στην κανονική ενότητα (δεν πρέπει να βρίσκεται εντός υποενότητας Standard ή Private).</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>Δεν υπάρχει ευρετήριο συμβόλων.</seg>
+        <seg>Το <filename>&lt;package&gt;-docs.{xml,sgml}</filename> περιέχει ένα ευρετήριο το οποίο περιλαμβάνει με xi:includes το παραγόμενο ευρετήριο;</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>Δεν υπάρχουν σύνδεσμοι μεταξύ των συμβόλων και των κατάλληλων ενοτήτων της τεκμηρίωσης.</seg>
+        <seg>Το doc-comment χρησιμοποιεί σωστά τις ετικέτες (έχουν προστεθεί #,% ή ()); Ελέγξτε αν το gtkdoc-fixxref προειδοποιεί για ανεπίλυτα xrefs.</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>Μια νέα κλάση δεν εμφανίζεται στην τεκμηρίωση.</seg>
+        <seg>Συμπεριλαμβάνεται μέσω xi:included η νέα σελίδα από το <filename>&lt;package&gt;-docs.{xml,sgml}</filename>;</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>Ένα νέο σύμβολο δεν εμφανίζεται στην τεκμηρίωση.</seg>
+        <seg>Είναι το doc-comment κανονικά μορφοποιημένο; Ελέγξτε για συντακτικά λάθη στην αρχή του σχολίου. Ελέγξτε αν το gtkdoc-fixxref προειδοποιεί για ανεπίλυτα xref. Ελέγξτε αν το σύμβολο είναι σωστά καταχωρημένο στο <filename>&lt;package&gt;-sections.txt</filename> σε μια δημόσια υποενότητα.</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>Λείπει ένας τύπος από την ιεραρχία κλάσεων.</seg>
+        <seg>Αν ο τύπος υπάρχει στο <filename>&lt;package&gt;.hierarchy</filename> αλλά όχι στο <filename>xml/tree_index.sgml</filename> τότε ελέγξτε ξανά ότι ο τύπος είναι σωστά τοποθετημένος στο <filename>&lt;package&gt;-sections.txt</filename>. Αν η περίσταση του τύπου (π.χ. <type>GtkWidget</type>) δεν είναι καταχωρημένη, ή είναι κατά λάθος σημειωμένη ως ιδιωτική, τότε δε θα εμφανιστεί.</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>Λαμβάνω συνδέσμους foldoc για όλες τις σημειώσεις gobject.</seg>
+        <seg>Ελέγξτε ότι το <filename>xml/annotation-glossary.xml</filename> συμπεριλαμβάνεται με xi:included από το <filename>&lt;package&gt;-docs.{xml,sgml}</filename>.</seg>
+      </seglistitem>
+
+      <!-- gtk-doc warnings: -->
+      <seglistitem>
+        <seg>Μια παράμετρος περιγράφεται σε σχόλιο του πηγαίου κώδικα, αλλά δεν υπάρχει</seg>
+        <seg>Ελέγξτε αν το πρωτότυπο στην κεφαλίδα περιέχει διαφορετικό όνομα για την παράμετρο από αυτό που αναφέρεται στον κώδικα.</seg>
+      </seglistitem>
+
+      <!-- docbook warnings: -->
+      <seglistitem>
+        <seg>Πολλαπλά "IDs" για τον προορισμό συνδέσμου: XYZ</seg>
+        <seg>Το σύμβολο XYZ εμφανίζεται δύο φορές στο <filename>&lt;package&gt;-sections.txt</filename>.</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>Βρέθηκε το όνομα τύπου του στοιχείου στο namespace '', αλλά δεν αντιστοιχεί σε κανένα πρότυπο.</seg>
+        <seg/>
+      </seglistitem>
+    </segmentedlist>
+  </chapter>
+
+  <chapter id="contrib">
+    <title>Tools related to gtk-doc</title>
+
+    <para>
+      GtkDocPlugin - a <ulink url="http://trac-hacks.org/wiki/GtkDocPlugin">Trac GTK-Doc</ulink>
+      integration plugin, that adds api docs to a trac site and integrates with
+      the trac search.
+    </para>
+    <para>
+      Gtkdoc-depscan - a tool (part of gtk-doc) to check used API against since
+      tags in the api to determine the minimum required version.
+    </para>
+
+  </chapter>
+
+  <!-- ======== Appendix: FDL ================================== -->
+  <!--  
+     The GNU Free Documentation License 1.1 in DocBook
+     Markup by Eric Baudais <baudais@okstate.edu>
+     Maintained by the GNOME Documentation Project
+     http://developer.gnome.org/projects/gdp
+     Version: 1.0.1
+     Last Modified: Nov 16, 2000
+-->
+
+<appendix id="fdl">
+  <appendixinfo>
+    <releaseinfo>Έκδοση 1.1, Μάρτιος 2000</releaseinfo>
+    <copyright>
+      <year>2000</year><holder>Free Software Foundation, Inc.</holder>
+    </copyright>
+    <legalnotice id="fdl-legalnotice">
+      <para><address>Free Software Foundation, Inc. <street>51 Franklin Street, Fifth Floor</street>, <city>Boston</city>, <state>MA</state><postcode>02110-1301</postcode><country>USA</country></address>. Επιτρέπεται σε όλους η αντιγραφή και διανομή ακριβούς αντιγράφου του κειμένου αυτής της άδειας αλλά απαγορεύεται η αλλοίωση του περιεχομένου του.</para>
+    </legalnotice>
+  </appendixinfo>
+  <title>Άδεια Ελεύθερης Τεκμηρίωσης GNU (GFDL)</title>
+
+  <sect1 id="fdl-preamble">
+    <title>0. ΠΡΟΟΙΜΙΟ</title>
+    <para>Σκοπός της παρούσας Άδειας είναι η δημιουργία εγχειριδίων, συγγραμμάτων ή άλλων εγγράφων που είναι <quote>ελεύθερα</quote> υπό την έννοια ότι παρέχουν σε όλους πραγματική ελευθερία αντιγραφής και αναδιανομής τους, με ή χωρίς τροποποιήσεις, για εμπορικούς ή μη εμπορικούς σκοπούς. Δευτερευόντως, η παρούσα Άδεια παρέχει έναν τρόπο για να αναγνωρίζεται το έργο του συγγραφέα και του εκδότη ενός έργου, χωρίς να μπορούν να θεωρηθούν υπεύθυνοι για τροποποιήσεις που έγιναν από τρίτους.</para>
+    
+    <para>Η παρούσα Άδεια είναι άδεια τύπου <quote>copyleft</quote>, το οποίο σημαίνει ότι τα παράγωγα έργα του εγγράφου θα πρέπει να είναι και αυτά ελεύθερα υπό την ίδια έννοια. Πρόκειται για άδεια συμπληρωματική της Γενικής Άδειας Δημόσιας Χρήσης GNU, που είναι άδεια copyleft σχεδιασμένη για ελεύθερο λογισμικό.</para>
+    
+    <para>Σχεδιάσαμε αυτήν την Άδεια για χρήση με εγχειρίδια ελεύθερου λογισμικού, γιατί το ελεύθερο λογισμικό χρειάζεται και ελεύθερη τεκμηρίωση: τα ελεύθερα προγράμματα πρέπει να συνοδεύονται από εγχειρίδια που παρέχουν τις ίδιες ελευθερίες που παρέχει και το λογισμικό. Ωστόσο, αυτή η Άδεια δεν περιορίζεται στα εγχειρίδια λογισμικού· μπορεί να χρησιμοποιηθεί για οποιοδήποτε έργο κειμένου, ανεξάρτητα από το θέμα του ή από το αν εκδίδεται σε έντυπη μορφή. Συνιστούμε αυτή την Άδεια, κυρίως, για διδακτικό υλικό ή έργα αναφοράς.</para>
+  </sect1>
+  <sect1 id="fdl-section1">
+    <title>1. ΙΣΧΥΣ ΚΑΙ ΟΡΙΣΜΟΙ</title>
+    <para id="fdl-document">Η Άδεια αυτή εφαρμόζεται σε κάθε εγχειρίδιο ή άλλο έργο που περιέχει ένδειξη του δικαιούχου δικαιωμάτων πνευματικής ιδιοκτησίας, ότι επιτρέπεται η διανομή του υπό τους όρους αυτής της Άδειας. Ως <quote>Έγγραφο</quote>, κατωτέρω, αναφέρεται κάθε τέτοιο εγχειρίδιο. Ως κάτοχος της άδειας χρήσης θεωρείται κάθε άτομο, και αναφέρεται ως <quote>εσείς</quote>.</para>
+    
+    <para id="fdl-modified">Ως <quote>Τροποποιημένη Έκδοση</quote> του Εγγράφου θεωρείται κάθε έργο που περιέχει το Έγγραφο ή μέρος αυτού, είτε ως ακριβές αντίγραφο, είτε τροποποιημένο και/είτε μεταφρασμένο σε άλλη γλώσσα.</para>
+	
+    <para id="fdl-secondary">Ως <quote>Δευτερεύουσα Ενότητα</quote> θεωρείται κάθε παράρτημα ή αρχική ενότητα του <link linkend="fdl-document">Εγγράφου</link> που αναφέρεται αποκλειστικά στη σχέση των εκδοτών ή συγγραφέων του Εγγράφου με το συνολικό θέμα του Εγγράφου (ή σχετικά ζητήματα), και που δεν περιέχει οτιδήποτε μπορεί να θεωρηθεί ότι εντάσσεται άμεσα στο συνολικό αυτό θέμα. (Επί παραδείγματι, αν το Έγγραφο αποτελεί, εν μέρει, σύγγραμμα μαθηματικών, η Δευτερεύουσα Ενότητα δεν επιτρέπεται να επεξηγεί μαθηματικές έννοιες.) Η σχέση μπορεί να αποτελεί ιστορική σύνδεση με το θέμα ή σχετικά ζητήματα, ή νομική, εμπορική, φιλοσοφική, ηθική ή πολιτική θέση επί του θέματος ή σχετικών ζητημάτων.</para>
+
+    <para id="fdl-invariant"><quote>Αμετάβλητες Ενότητες</quote> είναι ορισμένες <link linkend="fdl-secondary">Δευτερεύουσες Ενότητες</link> των οποίων οι τίτλοι αναφέρονται ρητώς ως τίτλοι Αμετάβλητων Ενοτήτων στην ένδειξη όπου αναφέρεται ότι το <link linkend="fdl-document">Έγγραφο</link> δημοσιεύεται υπό τους όρους αυτής της Άδειας.</para>
+    
+    <para id="fdl-cover-texts">Τα <quote>Κείμενα Εξωφύλλου</quote> είναι σύντομα αποσπάσματα κειμένου που αναφέρονται ρητώς ως Κείμενα Εμπροσθοφύλλου ή Κείμενα Οπισθοφύλλου στην ένδειξη όπου αναφέρεται ότι το <link linkend="fdl-document">Έγγραφο</link> δημοσιεύεται υπό τους όρους αυτής της Άδειας.</para>
+	
+    <para id="fdl-transparent">Ως <quote>Διαφανές</quote> αντίγραφο του <link linkend="fdl-document">Εγγράφου</link> θεωρείται κάθε αντίγραφο σε μορφή αναγνώσιμη από μηχανή, όταν συντρέχουν οι εξής προϋποθέσεις: Οι τεχνικές προδιαγραφές τις μορφής αυτής είναι διαθέσιμες για δημόσια χρήση· τα περιεχόμενα του αντιγράφου μπορούν να προβληθούν και να τύχουν επεξεργασίας άμεσα και απλά, με χρήση γενόσημων επεξεργαστών κειμένου ή ( για εικόνες αποτελούμενες από εικονοστοιχεία) γενόσημων προγραμμάτων ζωγραφικής ή (για σχέδια) ευρέως διαθέσιμων επεξεργαστών σχεδίων· το αντίγραφο είναι κατάλληλο για είσοδο σε μορφοποιητές κειμένου ή για αυτόματη μετάφραση σε ποικίλες μορφές κατάλληλες για είσοδο σε μορφοποιητές κειμένου. Δεν θεωρείται Διαφανές ένα αντίγραφο σε Διαφανή, κατά τα λοιπά, μορφή αρχείου, του οποίου η σήμανση έχει σχεδιαστεί κατά τρόπο που να αποτρέπει ή να αποθαρρύνει τη μελλοντική τροποποίηση του αντιγράφου από τους αναγνώστες. Το αντίγραφο που δεν είναι <quote>Διαφανές</quote> ονομάζεται <quote>Αδιαφανές</quote>.</para>
+    
+    <para>Παραδείγματα μορφών κατάλληλων για τη δημιουργία Διαφανών αντιγράφων είναι η απλή ASCII χωρίς σήμανση, η μορφή εισόδου Texinfo, η μορφή εισόδου LaTeX, η SGML ή XML που χρησιμοποιούν δημοσίως διαθέσιμη DTD, και η HTML που συμμορφώνεται με πρότυπα και έχει σχεδιαστεί για τροποποίηση από τον άνθρωπο. Στις Αδιαφανείς μορφές συμπεριλαμβάνονται η PostScript, η PDF, οι ιδιοταγείς μορφές που αναγιγνώσκονται μόνο από ιδιοταγείς επεξεργαστές κειμένου, η SGML ή XML των οποίων η DTD και/ή τα εργαλεία επεξεργασίας δεν είναι δημοσίως διαθέσιμα, και η HTML με αποκλειστικό προορισμό την έξοδο που παράγουν μηχανοκίνητα ορισμένοι επεξεργαστές κειμένου.</para>
+    
+    <para id="fdl-title-page">Ως <quote>Σελίδα Τίτλου</quote> θεωρείται, για τα έντυπα βιβλία, η σελίδα τίτλου αυτή καθαυτή, καθώς και τυχόν επόμενες σελίδες που απαιτούνται για την ευανάγνωστη συμπερίληψη του υλικού που οφείλει να εμφανίζεται στη σελίδα τίτλου σύμφωνα με την παρούσα Άδεια. Για τα έργα σε μορφές που δεν περιλαμβάνουν σελίδα τίτλου αυτή καθαυτή, ως <quote>Σελίδα Τίτλου</quote> θεωρείται το κείμενο που βρίσκεται κοντά στην εμφανέστερη εμφάνιση του τίτλου του έργου και το οποίο προηγείται του σώματος του κειμένου.</para>
+  </sect1>
+    
+  <sect1 id="fdl-section2">
+    <title>2. ΑΚΡΙΒΗ ΑΝΤΙΓΡΑΦΑ</title>
+    <para>Σας χορηγείται άδεια αντιγραφής και διανομής του <link linkend="fdl-document">Εγγράφου</link> σε οποιοδήποτε μέσο, για εμπορικό ή μη εμπορικό σκοπό, με την προϋπόθεση ότι σε κάθε αντίγραφο θα συμπεριλαμβάνετε την παρούσα Άδεια, τις ενδείξεις δικαιωμάτων πνευματικής ιδιοκτησίας και την ένδειξη άδειας χρήσης που αναφέρει ότι για το έγγραφο ισχύει η παρούσα Άδεια, και με την προϋπόθεση ότι δεν θα προσθέσετε κανένα επιπρόσθετο όρο πέρα από τους όρους της Άδειας. Δεν σας επιτρέπεται να χρησιμοποιήσετε τεχνικά μέτρα για την παρεμπόδιση ή τον έλεγχο της ανάγνωσης ή περαιτέρω αντιγραφής των αντιγράφων που δημιουργείτε ή διανέμετε. Ωστόσο, μπορείτε να αποδεχτείτε αποζημίωση σε αντάλλαγμα των αντιγράφων. Αν διανέμετε επαρκή αριθμό αντιγράφων, θα πρέπει να συμμορφωθείτε και με τους όρους της <link linkend="fdl-section3">ενότητας 3</link>.</para>
+    
+    <para>Επίσης, μπορείτε να δανείζετε αντίγραφα σύμφωνα με τους ως άνω όρους και να προβάλλετε δημοσίως τα αντίγραφα.</para>
+    </sect1>
+    
+  <sect1 id="fdl-section3">
+    <title>3. ΑΝΤΙΓΡΑΦΗ ΣΕ ΜΕΓΑΛΕΣ ΠΟΣΟΤΗΤΕΣ</title>
+    <para>Αν εκδώσετε περισσότερα από 100 στον αριθμό έντυπα αντίγραφα του <link linkend="fdl-document">Εγγράφου</link>, και η ένδειξη άδειας χρήσης του Εγγράφου προϋποθέτει την ύπαρξη <link linkend="fdl-cover-texts">Κειμένων Εξωφύλλου</link>, θα πρέπει να εσωκλείσετε τα αντίγραφα σε εξώφυλλα που θα περιέχουν, με καθαρό και ευανάγνωστο τρόπο, όλα τα ακόλουθα κείμενα εξωφύλλου: Κείμενα Εμπροσθοφύλλου στο εμπροσθόφυλλο και Κείμενα Οπισθοφύλλου στο οπισθόφυλλο. Επίσης, και τα δύο εξώφυλλα θα πρέπει να αναφέρουν, καθαρά και ευανάγνωστα, εσάς ως εκδότη των αντιγράφων. Στο εμπροσθόφυλλο θα πρέπει να αναφέρεται ο πλήρης τίτλος του Εγγράφου, και όλες οι λέξεις του τίτλου θα πρέπει να είναι εξίσου προβεβλημένες και εμφανείς. Επιτρέπεται να προσθέσετε επιπρόσθετο υλικό στα εξώφυλλα. Η παραγωγή αντιγράφων που διαφέρουν μόνο ως προς τα εξώφυλλα, εφόσον διατηρείται ο τίτλος του <link linkend="fdl-document">Εγγράφου</link> και τηρούνται οι παρούσες προϋποθέσεις, μπορεί να θεωρηθεί, κατά τα λοιπά, ως παραγωγή ακριβών αντιγράφων.</para>
+    
+    <para>Αν τα απαιτούμενα κείμενα ενός ή και των δύο εξωφύλλων είναι υπερβολικά μεγάλα για να παραμείνουν ευανάγνωστα αν συμπεριληφθούν σε μία σελίδα, θα πρέπει να τοποθετήσετε τα πρώτα εξώφυλλα του καταλόγου (όσα χωρούν κανονικά) στο εξώφυλλο αυτό καθ' αυτό, και να τοποθετήσετε τα υπόλοιπα στις γειτονικές σελίδες.</para>
+    
+    <para>Αν εκδώσετε περισσότερα από 100 στον αριθμό <link linkend="fdl-transparent">Αδιαφανή</link> αντίγραφα του <link linkend="fdl-document">Εγγράφου</link>, είτε θα πρέπει να συμπεριλάβετε ένα <link linkend="fdl-transparent">Διαφανές</link> αντίγραφο (σε μορφή αναγνώσιμη από μηχανή) σε κάθε Αδιαφανές αντίγραφο, είτε θα πρέπει να αναφέρετε — μαζί ή σε κάθε Αδιαφανές αντίγραφο — μια δημοσίως προσβάσιμη τοποθεσία δικτύου υπολογιστών από την οποία θα μπορεί το ευρύ κοινό που χρησιμοποιεί δίκτυα να λάβει ανώνυμα, δωρεάν, και με χρήση πρωτοκόλλων δικτύου δημοσίων προτύπων, ένα ολοκληρωμένο Διαφανές αντίγραφο του Εγγράφου, χωρίς προσθήκες. Αν επιλέξετε τη δεύτερη επιλογή, όταν ξεκινήσετε τη διανομή των Αδιαφανών αντιγράφων, θα πρέπει να λάβετε λελογισμένα μέτρα για να διασφαλίσετε ότι το Διαφανές αντίγραφο θα παραμείνει προσβάσιμο στην ως άνωθεν τοποθεσία για τουλάχιστον ένα έτος μετά την τελευταία δημόσια διανομή Αδιαφανούς αντιγράφου αυτής της έκδοσης (είτε πρόκειται για άμεση διανομή είτε για διανομή μέσω των πρακτόρων ή λιανοπωλητών σας).</para>
+    
+    <para>Σας ζητείται, αλλά δεν απαιτείται, να επικοινωνήσετε εγκαίρως με τους συγγραφείς του <link linkend="fdl-document">Εγγράφου</link>, πριν αναδιανείμετε μεγάλο αριθμό αντιγράφων, ώστε να έχουν τη δυνατότητα να σας παράσχουν αναθεωρημένη έκδοση του Εγγράφου.</para>
+    </sect1>
+    
+  <sect1 id="fdl-section4">
+    <title>4. ΤΡΟΠΟΠΟΙΗΣΕΙΣ</title>
+    <para>Σας χορηγείται άδεια αντιγραφής και διανομής <link linkend="fdl-modified">Τροποποιημένων Εκδόσεων</link> του <link linkend="fdl-document">Εγγράφου</link> υπό τους όρους των ενοτήτων <link linkend="fdl-section2">2</link> και <link linkend="fdl-section3">3</link> ανωτέρω, με την προϋπόθεση ότι θα δημοσιεύσετε την Τροποποιημένη Έκδοση υπό την παρούσα Άδεια ως έχει, όπου ως Έγγραφο θα νοείται η Τροποποιημένη Έκδοση. Άρα, θα χορηγείται άδεια διανομής και τροποποίησης της Τροποποιημένης Έκδοσης σε οποιονδήποτε κατέχει αντίγραφό της. Επιπροσθέτως, στην Τροποποιημένη Έκδοση θα πρέπει να κάνετε τα εξής:</para>
+    
+    <itemizedlist mark="opencircle">
+      <listitem>
+	<formalpara>
+	  <title>Α</title>
+	  <para>Στη <link linkend="fdl-title-page">Σελίδα Τίτλου</link> (και τα εξώφυλλα, αν υφίστανται), χρησιμοποιήστε τίτλο διακριτό από τον τίτλο του <link linkend="fdl-document">Εγγράφου</link> και των προηγούμενων εκδόσεών του (τυχόν προηγούμενες εκδόσεις οφείλουν να αναφέρονται στην ενότητα Ιστορικού του Εγγράφου). Μπορείτε να χρησιμοποιήσετε τον ίδιο τίτλο με τον τίτλο προηγούμενης έκδοσης, αν λάβετε άδεια από τον αρχικό εκδότη της προηγούμενης έκδοσης.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>Β</title>
+	  <para>Αναφέρετε στη <link linkend="fdl-title-page">Σελίδα Τίτλου</link>, υπό την ιδιότητα του συγγραφέα, όλα τα άτομα ή τους φορείς που ευθύνονται για τη συγγραφή ή την τροποποίηση της <link linkend="fdl-modified">Τροποποιημένης Έκδοσης</link>, μαζί με τουλάχιστον πέντε από τους κύριους συγγραφείς του <link linkend="fdl-document">Εγγράφου</link> ( ή όλους τους κύριους συγγραφείς, αν είναι λιγότεροι από πέντε).</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>Γ</title>
+	  <para>Αναφέρετε στη <link linkend="fdl-title-page">Σελίδα Τίτλου</link>, υπό την ιδιότητα του εκδότη, το όνομα του εκδότη της <link linkend="fdl-modified">Τροποποιημένης Έκδοσης</link>.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>Δ</title>
+	  <para>Διατηρήστε όλες τις ενδείξεις δικαιωμάτων πνευματικής ιδιοκτησίας του <link linkend="fdl-document">Εγγράφου</link>.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>Ε</title>
+	  <para>Προσθέστε την κατάλληλη ένδειξη δικαιωμάτων πνευματικής ιδιοκτησίας για τις τροποποιήσεις σας στις υπόλοιπες ενδείξεις δικαιωμάτων πνευματικής ιδιοκτησίας.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>ΣΤ</title>
+	  <para>Συμπεριλάβετε, αμέσως μετά τις ενδείξεις δικαιωμάτων πνευματικής ιδιοκτησίας, μια ένδειξη άδειας χρήσης που θα χορηγεί δημόσια άδεια χρήσης της <link linkend="fdl-modified">Τροποποιημένης Έκδοσης</link> υπό τους όρους της παρούσας Άδειας. Η μορφή της ένδειξης αυτής παρατίθεται στο Συμπλήρωμα που ακολουθεί.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>Ζ</title>
+	  <para>Διατηρήστε σε αυτή την ένδειξη άδειας χρήσης τους πλήρεις καταλόγους <link linkend="fdl-invariant">Αμετάβλητων Ενοτήτων</link> και απαιτούμενων <link linkend="fdl-cover-texts">Κειμένων Εξωφύλλου</link> που παρατίθενται στην ένδειξη άδειας χρήσης του <link linkend="fdl-document">Εγγράφου</link>.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>Η</title>
+	  <para>Συμπεριλάβετε αντίγραφο, χωρίς τροποποιήσεις, της παρούσας Άδειας.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>Θ</title>
+	  <para>Διατηρήστε την ενότητα με τίτλο <quote>Ιστορικό</quote>, καθώς και τον τίτλο της, και προσθέστε μία εγγραφή που θα αναφέρει τουλάχιστον τον τίτλο, το έτος, τους νέους συγγραφείς και τον εκδότη της <link linkend="fdl-modified">Τροποποιημένης Έκδοσης</link>, όπως αυτά αναφέρονται στη <link linkend="fdl-title-page">Σελίδα Τίτλου</link>. Αν δεν υπάρχει ενότητα με τίτλο <quote>Ιστορικό</quote> στο <link linkend="fdl-document">Έγγραφο</link>, δημιουργήστε αυτήν την ενότητα, αναγράφοντας τον τίτλο, το έτος, τους νέους συγγραφείς και τον εκδότη του Εγγράφου, όπως αυτά αναφέρονται στη Σελίδα Τίτλου, και προσθέτοντας μία εγγραφή που θα περιγράφει την Τροποποιημένη Έκδοση σύμφωνα με την προηγούμενη πρόταση.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>Ι</title>
+	  <para>Διατηρήστε την τοποθεσία δικτύου που ενδεχομένως παρέχεται στο <link linkend="fdl-document">Έγγραφο</link> για δημόσια πρόσβαση σε <link linkend="fdl-transparent">Περατό</link> αντίγραφο του Εγγράφου, καθώς και τυχόν άλλες τοποθεσίες δικτύου που παρέχονται στο έγγραφο και αφορούν προηγούμενες εκδόσεις του. Οι τοποθεσίες αυτές μπορούν να τοποθετηθούν στην ενότητα <quote>Ιστορικό</quote>. Μπορείτε να παραλείψετε τοποθεσίες δικτύου για έργα που εκδόθηκαν τουλάχιστον τέσσερα έτη πριν από το ίδιο το Έγγραφο, ή αν ο αρχικός εκδότης της αντίστοιχης έκδοσης σας δώσει την άδεια.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>ΙΑ</title>
+	  <para>Αν υπάρχει ενότητα με τίτλο <quote>Ευχαριστίες</quote> ή <quote>Αφιέρωση</quote>, διατηρήστε τον τίτλο της ενότητας, και διατηρήστε στο σώμα της ενότητας την ουσία και το ύφος των ευχαριστιών και/ή αφιερώσεων που συμπεριλαμβάνονται σε αυτή.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>ΙΒ</title>
+	  <para>Διατηρήστε όλες τις <link linkend="fdl-invariant">Αμετάβλητες Ενότητες</link> του <link linkend="fdl-document">Εγγράφου</link>, χωρίς καμία τροποποίηση στο κείμενο και τον τίτλο τους. Η αρίθμηση των ενοτήτων, —ή άλλο ισοδύναμό της—, δεν θεωρείται τμήμα του τίτλου των ενοτήτων.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>ΙΓ</title>
+	  <para>Διαγράψτε τυχόν ενότητες με τίτλο <quote>Έγκριση</quote>. Αυτού του είδους οι ενότητες δεν επιτρέπεται να συμπεριληφθούν στην <link linkend="fdl-modified">Τροποποιημένη Έκδοση</link>.</para>
+	</formalpara>
+      </listitem>
+      
+      <listitem>
+	<formalpara>
+	  <title>ΙΔ</title>
+	  <para>Μη μετατρέπετε τον τίτλο καμίας προϋπάρχουσας ενότητας στον τίτλο <quote>Έγκριση</quote> ή σε τίτλο που συγκρούεται με τον τίτλο <link linkend="fdl-invariant">Αμετάβλητης Ενότητας</link>.</para>
+	</formalpara>
+      </listitem>
+    </itemizedlist>
+    
+    <para>Αν η <link linkend="fdl-modified">Τροποποιημένη Έκδοση</link> περιλαμβάνει νέες αρχικές ενότητες ή παραρτήματα, που εμπίπτουν στον ορισμό των <link linkend="fdl-modified">Δευτερευουσών Ενοτήτων</link>, και δεν περιέχουν υλικό που να είναι προϊόν αντιγραφής του Εγγράφου, μπορείτε, εφόσον το επιθυμείτε, να ορίσετε ορισμένες ή όλες αυτές τις ενότητες ως αμετάβλητες. Για να το πράξετε, προσθέστε τους τίτλους αυτών των ενοτήτων στον κατάλογο <link linkend="fdl-secondary">Αμετάβλητων Ενοτήτων</link> στην ένδειξη άδειας χρήσης της Τροποποιημένης Έκδοσης. Οι τίτλοι αυτοί θα πρέπει να είναι διακριτοί από τους υπόλοιπους τίτλους ενοτήτων..</para>
+    
+    <para>Μπορείτε να προσθέσετε ενότητα με τίτλο <quote>Έγκριση</quote>, με την προϋπόθεση ότι περιλαμβάνει αποκλειστικά εγκρίσεις της δικής σας <link linkend="fdl-modified">Τροποποιημένης Έκδοσης</link> από διάφορους φορείς, —επί παραδείγματι, δηλώσεις αξιολόγησης ομοτίμων ή δηλώσεις ότι το κείμενο έχει εγκριθεί από έναν οργανισμό ως έγκυρος ορισμός ενός προτύπου.</para>
+    
+    <para>Μπορείτε να προσθέσετε κείμενο μέχρι και πέντε λέξεις ως <link linkend="fdl-cover-texts">Κείμενο Εμπροσθοφύλλου</link>, καθώς και κείμενο μέχρι και 25 λέξεις ως <link linkend="fdl-cover-texts">Κείμενο Οπισθοφύλλου</link>, στο τέλος του καταλόγου <link linkend="fdl-cover-texts">Κειμένων Εξωφύλλου</link> της <link linkend="fdl-modified">Τροποποιημένης Έκδοσης</link>. Κάθε μεμονωμένος φορέας επιτρέπεται να προσθέτει μόνο ένα Κείμενο Εμπροσθοφύλλου και ένα Κείμενο Οπισθοφύλλου (ο ίδιος ή εξ ονόματος του ίδιου). Αν το <link linkend="fdl-document">Έγγραφο</link> περιέχει ήδη κείμενο εξωφύλλου για το ίδιο εξώφυλλο, —που είχατε προσθέσει προηγουμένως είτε εξ ονόματός σας είτε εξ ονόματος του φορέα που εκπροσωπείτε—, δεν σας επιτρέπεται να προσθέσετε επιπλέον εξώφυλλο· σας επιτρέπεται ωστόσο να αντικαταστήσετε το προηγούμενο, με ρητή άδεια από τον εκδότη που είχε προσθέσει το προηγούμενο εξώφυλλο.</para>
+    
+    <para>Μέσω της παρούσας άδειας, ο/οι συγγραφείς και ο/οι εκδότες του <link linkend="fdl-document">Εγγράφου</link> δεν χορηγούν άδεια χρήσης των ονομάτων τους για διαφημιστικούς σκοπούς ή για την έγκριση, —ρητή ή υπονοούμενη—, οποιασδήποτε <link linkend="fdl-modified">Τροποποιημένης Έκδοσης</link>.</para>
+  </sect1>
+    
+  <sect1 id="fdl-section5">
+    <title>5. ΣΥΝΔΥΑΣΜΟΣ ΕΓΓΡΑΦΩΝ</title>
+    <para>Μπορείτε να συνδυάσετε το <link linkend="fdl-document">Έγγραφο</link> με άλλα έγγραφα που υπόκεινται στους όρους της παρούσας Άδειας, σύμφωνα με τους ανωτέρω όρους της <link linkend="fdl-section4">ενότητας 4</link> για τις τροποποιημένες εκδόσεις, με την προϋπόθεση ότι ο συνδυασμός θα περιλαμβάνει όλες τις <link linkend="fdl-invariant">Αμετάβλητες Ενότητες</link> όλων των πρωτότυπων εγγράφων, χωρίς τροποποιήσεις, και ότι θα αναφέρονται ως Αμετάβλητες Ενότητες του συνδυασμένου έργου στην ένδειξη άδειας χρήσης του.</para>
+    
+    <para>Το συνδυασμένο έργο οφείλει να περιέχει ένα μόνο αντίγραφο της παρούσας Άδειας, και επιτρέπεται η αντικατάσταση πολλαπλών ταυτόσημων <link linkend="fdl-invariant">Αμετάβλητων Ενοτήτων</link> από ένα μόνο αντίγραφό τους. Αν υφίστανται πολλαπλές Αμετάβλητες Ενότητες με τον ίδιο τίτλο αλλά διαφορετικό περιεχόμενο, φροντίστε να κατασταθεί μοναδικός ο τίτλος κάθε ενότητας, προσθέτοντας στο τέλος του τίτλου, εντός παρενθέσεων, το όνομα του αρχικού συγγραφέα ή εκδότη της ενότητας εφόσον τα γνωρίζετε, ή, εναλλακτικά, ένα μοναδικό αριθμό. Φροντίστε να κάνετε τις ίδιες αλλαγές στους τίτλους των ενοτήτων που αναγράφονται στον κατάλογο Αμετάβλητων Ενοτήτων στην ένδειξη άδειας χρήσης του συνδυασμένου έργου.</para>
+    
+    <para>Στο συνδυασμό θα πρέπει να συνδυάσετε όλες τις ενότητες με τίτλο <quote>Ιστορικό</quote> που ενδεχομένως διαθέτουν τα πρωτότυπα έγγραφα, δημιουργώντας μία μοναδική ενότητα με τίτλο <quote>Ιστορικό</quote>. Κατά τον ίδιο τρόπο θα πρέπει να συνδυάσετε και όλες τις ενότητες με τίτλο <quote>Ευχαριστίες</quote> ή όλες τις ενότητες με τίτλο <quote>Αφιέρωση</quote>. Θα πρέπει να διαγράψετε όλες τις ενότητες με τίτλο <quote>Έγκριση</quote>.</para>
+    </sect1>
+    
+  <sect1 id="fdl-section6">
+    <title>6. ΣΥΛΛΟΓΗ ΕΓΓΡΑΦΩΝ</title>
+    <para>Μπορείτε να δημιουργήσετε συλλογή που θα περιλαμβάνει το παρόν <link linkend="fdl-document">Έγγραφο</link> μαζί με άλλα έγγραφα που υπόκεινται στους όρους της παρούσας Άδειας, και να συμπεριλάβετε στη συλλογή ένα μόνο αντίγραφο της παρούσας Άδειας, που θα αντικαθιστά τα μεμονωμένα αντίγραφά της στα διάφορα έγγραφα, με την προϋπόθεση ότι, κατά τα λοιπά, θα συμμορφωθείτε με τους κανόνες της παρούσας Άδειας για την παραγωγή πιστών αντιγράφων καθενός από αυτά τα έγγραφα.</para>
+    
+    <para>Μπορείτε να εξάγετε ένα μεμονωμένο έγγραφο από μια συλλογή τέτοιου είδους, και να το διανείμετε ξεχωριστά υπό τους όρους της παρούσας Άδειας, με την προϋπόθεση ότι θα προσθέσετε αντίγραφο της παρούσας Άδειας στο εξαχθέν έγγραφο, και ότι, κατά τα λοιπά, θα συμμορφωθείτε με τους κανόνες της παρούσας Άδειας για την παραγωγή ακριβών αντιγράφων αυτού του εγγράφου.</para>
+    </sect1>
+    
+  <sect1 id="fdl-section7">
+    <title>7. ΣΥΡΡΑΦΗ ΜΕ ΑΝΕΞΑΡΤΗΤΑ ΕΡΓΑ</title>
+    <para>Αν το <link linkend="fdl-document">Εγγράφο</link> ή τα παράγωγά του συμπεριληφθούν, μαζί με άλλα ξεχωριστά και ανεξάρτητα έγγραφα ή έργα, σε τόμο ενός μέσου αποθήκευσης ή διανομής, ο τόμος αυτός, στο σύνολό του, δεν θεωρείται <link linkend="fdl-modified">Τροποποιημένη Έκδοση</link> του εγγράφου, με την προϋπόθεση ότι δεν διεκδικούνται δικαιώματα πνευματικής ιδιοκτησίας για αυτόν. Ο εν λόγω τόμος ονομάζεται <quote>συρραφή</quote> και η παρούσα άδεια δεν ισχύει για τα υπόλοιπα αυθύπαρκτα έργα που συμπεριλαμβάνονται σε αυτόν, πέραν του Έγγραφο, απλώς και μόνο επειδή ανήκουν σε αυτή τη συρραφή, εκτός εάν αποτελούν και αυτά παράγωγα έργα του Εγγράφου. Αν για αυτά τα αντίγραφα του Εγγράφου ισχύουν οι όροι για τα <link linkend="fdl-cover-texts">Κείμενα Εξωφύλλου</link> της <link linkend="fdl-section3">ενότητας 3</link>, τότε, αν το Έγγραφο αντιστοιχεί σε λιγότερο από το ένα τέταρτο του συνόλου της συρραφής, τα Κείμενα Εξωφύλλου του Εγγράφου επιτρέπεται να τοποθετηθούν σε εξώφυλλα εντός της συρραφής που εσωκλείουν μόνο το Έγγραφο. Ειδάλλως, θα πρέπει να τοποθετηθούν σε εξώφυλλα που εσωκλείουν ολόκληρη τη συρραφή.</para>
+    </sect1>
+    
+  <sect1 id="fdl-section8">
+    <title>8. ΜΕΤΑΦΡΑΣΗ</title>
+    <para>Η μετάφραση θεωρείται μορφή τροποποίησης, άρα μπορείτε να διανέμετε μεταφράσεις του <link linkend="fdl-document">Εγγράφου</link> υπό τους όρους της <link linkend="fdl-section4">ενότητας 4</link>. Η αντικατάσταση των <link linkend="fdl-invariant">Αμετάβλητων Ενοτήτων</link> από μεταφράσεις απαιτεί ειδική άδεια από τους κατόχους των δικαιωμάτων πνευματικής ιδιοκτησίας, αλλά επιτρέπεται η συμπερίληψη στο Έγγραφο μεταφράσεων ορισμένων ή όλων των Αμετάβλητων Ενοτήτων, επιπλέον των πρωτότυπων εκδόσεων αυτών των Αμετάβλητων Ενοτήτων. Μπορείτε να προσθέσετε μεταφράσεις της παρούσας Άδειας, με την προϋπόθεση ότι θα συμπεριλάβετε και την πρωτότυπη Αγγλική έκδοση της Άδειας. Σε περίπτωση ασυμφωνίας μεταξύ μετάφρασης και πρωτότυπης Αγγλικής έκδοσης της Άδειας, ισχύει η πρωτότυπη Αγγλική έκδοση.</para>
+    </sect1>
+    
+  <sect1 id="fdl-section9">
+    <title>9. ΚΑΤΑΡΓΗΣΗ</title>
+    <para>Δεν σας επιτρέπεται η αντιγραφή, τροποποίηση, περαιτέρω παραχώρηση άδειας εκμετάλλευσης ή διανομή του <link linkend="fdl-document">Εγγράφου</link> παρά μόνο με τον τρόπο που ρητά προβλέπεται από αυτήν την Άδεια. Κάθε άλλη απόπειρα αντιγραφής, τροποποίησης, περαιτέρω παραχώρησης άδειας εκμετάλλευσης ή διανομής του Εγγράφου είναι άκυρη και αυτομάτως καταργεί τα δικαιώματα που σας παραχωρεί η παρούσα Άδεια. Ωστόσο, τα μέρη στα οποία παρείχατε αντίγραφα ή δικαιώματα υπό τους όρους της παρούσας Άδειας, δεν θα απωλέσουν τα δικαιώματα χρήσης τους, εφόσον εξακολουθούν να συμμορφώνονται πλήρως με τους όρους της Άδειας.</para>
+    </sect1>
+    
+  <sect1 id="fdl-section10">
+    <title>10. ΜΕΛΛΟΝΤΙΚΕΣ ΑΝΑΘΕΩΡΗΣΕΙΣ ΤΗΣ ΠΑΡΟΥΣΑΣ ΑΔΕΙΑΣ</title>
+    <para>Το <ulink type="http" url="http://www.gnu.org/fsf/fsf.html">Ίδρυμα Ελεύθερου Λογισμικού</ulink> έχει το δικαίωμα να δημοσιεύει περιστασιακά αναθεωρημένες ή/και νέες εκδόσεις της Ελεύθερης Άδειας Τεκμηρίωσης GNU (GFDL). Αυτές οι νέες εκδόσεις θα είναι συναφείς στο πνεύμα με την παρούσα έκδοση, όμως ενδέχεται να διαφέρουν στις λεπτομέρειες, καθώς επιλαμβάνονται νέων προβλημάτων και ζητημάτων. Βλέπε <ulink type="http" url="http://www.gnu.org/copyleft">http://www.gnu.org/copyleft/</ulink>.</para>
+    
+    <para>Σε κάθε έκδοση δίνεται ένας διακριτικός αριθμός έκδοσης. Εάν στο <link linkend="fdl-document">Έγγραφο</link> καθορίζεται ότι ισχύει ένας συγκεκριμένος αριθμός έκδοσης της παρούσας Άδειας ή <quote>οποιαδήποτε μεταγενέστερη έκδοση</quote>, μπορείτε να επιλέξετε μεταξύ των όρων και προϋποθέσεων είτε αυτής της έκδοσης, είτε οποιασδήποτε μεταγενέστερης έκδοσης έχει δημοσιευτεί (όχι με μορφή σχεδίου) από το Ίδρυμα Ελεύθερου Λογισμικού. Εάν στο Πρόγραμμα δεν καθορίζεται αριθμός έκδοσης της Άδειας, μπορείτε να επιλέξετε οποιαδήποτε έκδοση έχει δημοσιευθεί (όχι με μορφή σχεδίου) από το Ίδρυμα Ελεύθερου Λογισμικού (FSF).</para>
+  </sect1>
+
+  <sect1 id="fdl-using">
+    <title>Συμπλήρωμα</title>
+    <para>Για να χρησιμοποιήσετε την παρούσα Άδεια σε έγγραφο το οποίο συγγράψατε, θα πρέπει να συμπεριλάβετε ένα αντίγραφο της Άδειας στο έγγραφο και να τοποθετήσετε τις ακόλουθες ενδείξεις δικαιωμάτων πνευματικής ιδιοκτησίας και άδειας χρήσης αμέσως μετά τη σελίδα τίτλου: </para>
+    
+    <blockquote>
+      <para>Copyright © ΕΤΟΣ ΤΟ ΟΝΟΜΑ ΣΑΣ.</para>
+      <para>Χορηγείται άδεια αντιγραφής, διανομής και/ή τροποποίησης του παρόντος εγγράφου υπό τους όρους της έκδοσης 1.1 της Ελεύθερης Άδειας Τεκμηρίωσης GNU (GFDL), ή οποιασδήποτε μεταγενέστερης έκδοσής αυτής από το Ίδρυμα Ελεύθερου Λογισμικού (FSF)· οι <link linkend="fdl-invariant">Αμετάβλητες Ενότητες</link> είναι οι ΚΑΤΑΛΟΓΟΣ ΤΙΤΛΩΝ, τα <link linkend="fdl-cover-texts">Κείμενα εμπροσθοφύλλου</link> είναι τα ΚΑΤΑΛΟΓΟΣ, και τα <link linkend="fdl-cover-texts">Κείμενα Οπισθοφύλλου</link> είναι τα ΚΑΤΑΛΟΓΟΣ. Αντίγραφο της άδειας συμπεριλαμβάνεται στην ενότητα με τίτλο <quote>GNU Free Documentation License</quote>.</para>
+    </blockquote>
+      
+    <para>Αν δεν περιέχονται <link linkend="fdl-invariant">Αμετάβλητες Ενότητες</link>, γράψτε <quote>χωρίς Αμετάβλητες Ενότητες</quote>, αντί να απαριθμήσετε τις αμετάβλητες ενότητες. Αν δεν περιέχονται <link linkend="fdl-cover-texts">Κείμενα Εμπροσθοφύλλου</link>, γράψτε <quote>χωρίς Κείμενα Εμπροσθοφύλλου</quote> αντί για <quote>τα Κείμενα Εμπροσθοφύλλου είναι τα ΚΑΤΑΛΟΓΟΣ</quote>· ομοίως για τα <link linkend="fdl-cover-texts">Κείμενα Οπισθοφύλλου</link>.</para>
+    
+    <para>Αν το έγγραφό σας περιέχει μη ασήμαντα παραδείγματα πηγαίου κώδικα, συνιστούμε την παράλληλη δημοσίευσή τους υπό τους όρους της άδειας ελεύθερου λογισμικού της αρεσκείας σας, ώστε να επιτρέψετε τη χρήση τους σε ελεύθερο λογισμικό. Παράδειγμα τέτοιας άδειας αποτελεί η <ulink type="http" url="http://www.gnu.org/copyleft/gpl.html">Γενική Άδεια Δημόσιας Χρήσης GNU</ulink>.</para>
+  </sect1>
+</appendix>  
+
+
+
+
+
+
+
+
+</book>

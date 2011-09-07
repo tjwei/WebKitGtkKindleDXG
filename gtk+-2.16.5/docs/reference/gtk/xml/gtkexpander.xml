@@ -1,0 +1,478 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkExpander">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkExpander.top_of_page">GtkExpander</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkExpander</refname>
+<refpurpose>A container which can hide its child</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkExpander.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkExpander-struct">GtkExpander</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-expander-new">gtk_expander_new</link>                    (const <link linkend="gchar">gchar</link> *label);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-expander-new-with-mnemonic">gtk_expander_new_with_mnemonic</link>      (const <link linkend="gchar">gchar</link> *label);
+<link linkend="void">void</link>                <link linkend="gtk-expander-set-expanded">gtk_expander_set_expanded</link>           (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         <link linkend="gboolean">gboolean</link> expanded);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-expander-get-expanded">gtk_expander_get_expanded</link>           (<link linkend="GtkExpander">GtkExpander</link> *expander);
+<link linkend="void">void</link>                <link linkend="gtk-expander-set-spacing">gtk_expander_set_spacing</link>            (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         <link linkend="gint">gint</link> spacing);
+<link linkend="gint">gint</link>                <link linkend="gtk-expander-get-spacing">gtk_expander_get_spacing</link>            (<link linkend="GtkExpander">GtkExpander</link> *expander);
+<link linkend="void">void</link>                <link linkend="gtk-expander-set-label">gtk_expander_set_label</link>              (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         const <link linkend="gchar">gchar</link> *label);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-expander-get-label">gtk_expander_get_label</link>              (<link linkend="GtkExpander">GtkExpander</link> *expander);
+<link linkend="void">void</link>                <link linkend="gtk-expander-set-use-underline">gtk_expander_set_use_underline</link>      (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         <link linkend="gboolean">gboolean</link> use_underline);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-expander-get-use-underline">gtk_expander_get_use_underline</link>      (<link linkend="GtkExpander">GtkExpander</link> *expander);
+<link linkend="void">void</link>                <link linkend="gtk-expander-set-use-markup">gtk_expander_set_use_markup</link>         (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         <link linkend="gboolean">gboolean</link> use_markup);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-expander-get-use-markup">gtk_expander_get_use_markup</link>         (<link linkend="GtkExpander">GtkExpander</link> *expander);
+<link linkend="void">void</link>                <link linkend="gtk-expander-set-label-widget">gtk_expander_set_label_widget</link>       (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *label_widget);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-expander-get-label-widget">gtk_expander_get_label_widget</link>       (<link linkend="GtkExpander">GtkExpander</link> *expander);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkExpander.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----GtkExpander
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkExpander.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkExpander implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkExpander.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkExpander--expanded">expanded</link>&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write / Construct
+  &quot;<link linkend="GtkExpander--label">label</link>&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write / Construct
+  &quot;<link linkend="GtkExpander--label-widget">label-widget</link>&quot;             <link linkend="GtkWidget">GtkWidget</link>*            : Read / Write
+  &quot;<link linkend="GtkExpander--spacing">spacing</link>&quot;                  <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkExpander--use-markup">use-markup</link>&quot;               <link linkend="gboolean">gboolean</link>              : Read / Write / Construct
+  &quot;<link linkend="GtkExpander--use-underline">use-underline</link>&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write / Construct
+</synopsis>
+</refsect1>
+<refsect1 id="GtkExpander.style-properties" role="style_properties">
+<title role="style_properties.title">Style Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkExpander--s-expander-size">expander-size</link>&quot;            <link linkend="gint">gint</link>                  : Read
+  &quot;<link linkend="GtkExpander--s-expander-spacing">expander-spacing</link>&quot;         <link linkend="gint">gint</link>                  : Read
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkExpander.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkExpander-activate">activate</link>&quot;                                       : Run Last / Action
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkExpander.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A <link linkend="GtkExpander"><type>GtkExpander</type></link> allows the user to hide or show its child by clicking
+on an expander triangle similar to the triangles used in a <link linkend="GtkTreeView"><type>GtkTreeView</type></link>.
+</para>
+<para>
+Normally you use an expander as you would use any other descendant
+of <link linkend="GtkBin"><type>GtkBin</type></link>; you create the child widget and use <link linkend="gtk-container-add"><function>gtk_container_add()</function></link>
+to add it to the expander. When the expander is toggled, it will take
+care of showing and hiding the child automatically.
+</para>
+<section id="expander-special-usage">
+<title>Special Usage</title>
+<para>
+There are situations in which you may prefer to show and hide the
+expanded widget yourself, such as when you want to actually create
+the widget at expansion time. In this case, create a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+but do not add a child to it. The expander widget has an
+<literal>expanded</literal> property which can be used to monitor
+its expansion state. You should watch this property with a signal
+connection as follows:
+</para>
+<programlisting id="expander-callback-example">
+expander = gtk_expander_new_with_mnemonic ("_More Options");
+g_signal_connect (expander, "notify::expanded",
+                  G_CALLBACK (expander_callback), NULL);
+...
+static void
+expander_callback (GObject    *object,
+                   GParamSpec *param_spec,
+                   gpointer    user_data)
+{
+  GtkExpander *expander;
+  expander = GTK_EXPANDER (object);
+  if (gtk_expander_get_expanded (expander))
+    {
+      /* Show or create widgets */
+    }
+  else
+    {
+      /* Hide or destroy widgets */
+    }
+}
+</programlisting>
+</section>
+<refsect2 id="GtkExpander-BUILDER-UI">
+<title>GtkExpander as GtkBuildable</title>
+<para>
+The GtkExpander implementation of the GtkBuildable interface
+supports placing a child in the label position by specifying
+"label" as the "type" attribute of a &lt;child&gt; element.
+A normal content child can be specified without specifying
+a &lt;child&gt; type attribute.
+</para>
+<example>
+<title>A UI definition fragment with GtkExpander</title>
+<programlisting><![CDATA[
+<object class="GtkExpander">
+  <child type="label">
+    <object class="GtkLabel" id="expander-label"/>
+  </child>
+  <child>
+    <object class="GtkEntry" id="expander-content"/>
+  </child>
+</object>
+]]></programlisting>
+</example>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkExpander.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkExpander-struct" role="struct">
+<title>GtkExpander</title>
+<indexterm zone="GtkExpander-struct"><primary sortas="Expander">GtkExpander</primary></indexterm><programlisting>typedef struct _GtkExpander GtkExpander;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-expander-new" role="function" condition="since:2.4">
+<title>gtk_expander_new ()</title>
+<indexterm zone="gtk-expander-new" role="2.4"><primary sortas="expander_new">gtk_expander_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_expander_new                    (const <link linkend="gchar">gchar</link> *label);</programlisting>
+<para>
+Creates a new expander using <parameter>label</parameter> as the text of the label.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> the text of the label
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkExpander"><type>GtkExpander</type></link> widget.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-new-with-mnemonic" role="function" condition="since:2.4">
+<title>gtk_expander_new_with_mnemonic ()</title>
+<indexterm zone="gtk-expander-new-with-mnemonic" role="2.4"><primary sortas="expander_new_with_mnemonic">gtk_expander_new_with_mnemonic</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_expander_new_with_mnemonic      (const <link linkend="gchar">gchar</link> *label);</programlisting>
+<para>
+Creates a new expander using <parameter>label</parameter> as the text of the label.
+If characters in <parameter>label</parameter> are preceded by an underscore, they are underlined.
+If you need a literal underscore character in a label, use '__' (two 
+underscores). The first underlined character represents a keyboard 
+accelerator called a mnemonic.
+Pressing Alt and that key activates the button.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> the text of the label with an underscore in front of the
+        mnemonic character
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkExpander"><type>GtkExpander</type></link> widget.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-set-expanded" role="function" condition="since:2.4">
+<title>gtk_expander_set_expanded ()</title>
+<indexterm zone="gtk-expander-set-expanded" role="2.4"><primary sortas="expander_set_expanded">gtk_expander_set_expanded</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_expander_set_expanded           (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         <link linkend="gboolean">gboolean</link> expanded);</programlisting>
+<para>
+Sets the state of the expander. Set to <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, if you want
+the child widget to be revealed, and <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> if you want the
+child widget to be hidden.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>expanded</parameter>&#160;:</term>
+<listitem><simpara> whether the child widget is revealed
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-get-expanded" role="function" condition="since:2.4">
+<title>gtk_expander_get_expanded ()</title>
+<indexterm zone="gtk-expander-get-expanded" role="2.4"><primary sortas="expander_get_expanded">gtk_expander_get_expanded</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_expander_get_expanded           (<link linkend="GtkExpander">GtkExpander</link> *expander);</programlisting>
+<para>
+Queries a <link linkend="GtkExpander"><type>GtkExpander</type></link> and returns its current state. Returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>
+if the child widget is revealed.
+</para>
+<para>
+See <link linkend="gtk-expander-set-expanded"><function>gtk_expander_set_expanded()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the current state of the expander.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-set-spacing" role="function" condition="since:2.4">
+<title>gtk_expander_set_spacing ()</title>
+<indexterm zone="gtk-expander-set-spacing" role="2.4"><primary sortas="expander_set_spacing">gtk_expander_set_spacing</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_expander_set_spacing            (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         <link linkend="gint">gint</link> spacing);</programlisting>
+<para>
+Sets the spacing field of <parameter>expander</parameter>, which is the number of pixels to
+place between expander and the child.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>spacing</parameter>&#160;:</term>
+<listitem><simpara> distance between the expander and child in pixels.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-get-spacing" role="function" condition="since:2.4">
+<title>gtk_expander_get_spacing ()</title>
+<indexterm zone="gtk-expander-get-spacing" role="2.4"><primary sortas="expander_get_spacing">gtk_expander_get_spacing</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_expander_get_spacing            (<link linkend="GtkExpander">GtkExpander</link> *expander);</programlisting>
+<para>
+Gets the value set by <link linkend="gtk-expander-set-spacing"><function>gtk_expander_set_spacing()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> spacing between the expander and child.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-set-label" role="function" condition="since:2.4">
+<title>gtk_expander_set_label ()</title>
+<indexterm zone="gtk-expander-set-label" role="2.4"><primary sortas="expander_set_label">gtk_expander_set_label</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_expander_set_label              (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         const <link linkend="gchar">gchar</link> *label);</programlisting>
+<para>
+Sets the text of the label of the expander to <parameter>label</parameter>.
+</para>
+<para>
+This will also clear any previously set labels.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> a string
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-get-label" role="function" condition="since:2.4">
+<title>gtk_expander_get_label ()</title>
+<indexterm zone="gtk-expander-get-label" role="2.4"><primary sortas="expander_get_label">gtk_expander_get_label</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_expander_get_label              (<link linkend="GtkExpander">GtkExpander</link> *expander);</programlisting>
+<para>
+Fetches the text from a label widget including any embedded
+underlines indicating mnemonics and Pango markup, as set by
+<link linkend="gtk-expander-set-label"><function>gtk_expander_set_label()</function></link>. If the label text has not been set the
+return value will be <link linkend="NULL--CAPS"><literal>NULL</literal></link>. This will be the case if you create an
+empty button with <link linkend="gtk-button-new"><function>gtk_button_new()</function></link> to use as a container.
+</para>
+<para>
+Note that this function behaved differently in versions prior to
+2.14 and used to return the label text stripped of embedded
+underlines indicating mnemonics and Pango markup. This problem can
+be avoided by fetching the label text directly from the label
+widget.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The text of the label widget. This string is owned
+by the widget and must not be modified or freed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-set-use-underline" role="function" condition="since:2.4">
+<title>gtk_expander_set_use_underline ()</title>
+<indexterm zone="gtk-expander-set-use-underline" role="2.4"><primary sortas="expander_set_use_underline">gtk_expander_set_use_underline</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_expander_set_use_underline      (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         <link linkend="gboolean">gboolean</link> use_underline);</programlisting>
+<para>
+If true, an underline in the text of the expander label indicates
+the next character should be used for the mnemonic accelerator key.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>use_underline</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if underlines in the text indicate mnemonics
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-get-use-underline" role="function" condition="since:2.4">
+<title>gtk_expander_get_use_underline ()</title>
+<indexterm zone="gtk-expander-get-use-underline" role="2.4"><primary sortas="expander_get_use_underline">gtk_expander_get_use_underline</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_expander_get_use_underline      (<link linkend="GtkExpander">GtkExpander</link> *expander);</programlisting>
+<para>
+Returns whether an embedded underline in the expander label indicates a
+mnemonic. See <link linkend="gtk-expander-set-use-underline"><function>gtk_expander_set_use_underline()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if an embedded underline in the expander label
+              indicates the mnemonic accelerator keys.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-set-use-markup" role="function" condition="since:2.4">
+<title>gtk_expander_set_use_markup ()</title>
+<indexterm zone="gtk-expander-set-use-markup" role="2.4"><primary sortas="expander_set_use_markup">gtk_expander_set_use_markup</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_expander_set_use_markup         (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         <link linkend="gboolean">gboolean</link> use_markup);</programlisting>
+<para>
+Sets whether the text of the label contains markup in <link
+linkend="PangoMarkupFormat">Pango's text markup
+language</link>. See <link linkend="gtk-label-set-markup"><function>gtk_label_set_markup()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>use_markup</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the label's text should be parsed for markup
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-get-use-markup" role="function" condition="since:2.4">
+<title>gtk_expander_get_use_markup ()</title>
+<indexterm zone="gtk-expander-get-use-markup" role="2.4"><primary sortas="expander_get_use_markup">gtk_expander_get_use_markup</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_expander_get_use_markup         (<link linkend="GtkExpander">GtkExpander</link> *expander);</programlisting>
+<para>
+Returns whether the label's text is interpreted as marked up with
+the <link linkend="PangoMarkupFormat">Pango text markup
+language</link>. See <link linkend="gtk-expander-set-use-markup"><function>gtk_expander_set_use_markup()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the label's text will be parsed for markup
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-set-label-widget" role="function" condition="since:2.4">
+<title>gtk_expander_set_label_widget ()</title>
+<indexterm zone="gtk-expander-set-label-widget" role="2.4"><primary sortas="expander_set_label_widget">gtk_expander_set_label_widget</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_expander_set_label_widget       (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *label_widget);</programlisting>
+<para>
+Set the label widget for the expander. This is the widget
+that will appear embedded alongside the expander arrow.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label_widget</parameter>&#160;:</term>
+<listitem><simpara> the new label widget
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-expander-get-label-widget" role="function" condition="since:2.4">
+<title>gtk_expander_get_label_widget ()</title>
+<indexterm zone="gtk-expander-get-label-widget" role="2.4"><primary sortas="expander_get_label_widget">gtk_expander_get_label_widget</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_expander_get_label_widget       (<link linkend="GtkExpander">GtkExpander</link> *expander);</programlisting>
+<para>
+Retrieves the label widget for the frame. See
+<link linkend="gtk-expander-set-label-widget"><function>gtk_expander_set_label_widget()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkExpander"><type>GtkExpander</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the label widget, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if there is none.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkExpander.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkExpander--expanded" role="property"><title>The <literal>&quot;expanded&quot;</literal> property</title>
+<indexterm zone="GtkExpander--expanded"><primary sortas="Expander:expanded">GtkExpander:expanded</primary></indexterm><programlisting>  &quot;expanded&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write / Construct</programlisting>
+<para>Whether the expander has been opened to reveal the child widget.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkExpander--label" role="property"><title>The <literal>&quot;label&quot;</literal> property</title>
+<indexterm zone="GtkExpander--label"><primary sortas="Expander:label">GtkExpander:label</primary></indexterm><programlisting>  &quot;label&quot;                    <link linkend="gchar">gchar</link>*                : Read / Write / Construct</programlisting>
+<para>Text of the expander's label.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkExpander--label-widget" role="property"><title>The <literal>&quot;label-widget&quot;</literal> property</title>
+<indexterm zone="GtkExpander--label-widget"><primary sortas="Expander:label-widget">GtkExpander:label-widget</primary></indexterm><programlisting>  &quot;label-widget&quot;             <link linkend="GtkWidget">GtkWidget</link>*            : Read / Write</programlisting>
+<para>A widget to display in place of the usual expander label.</para></refsect2>
+<refsect2 id="GtkExpander--spacing" role="property"><title>The <literal>&quot;spacing&quot;</literal> property</title>
+<indexterm zone="GtkExpander--spacing"><primary sortas="Expander:spacing">GtkExpander:spacing</primary></indexterm><programlisting>  &quot;spacing&quot;                  <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Space to put between the label and the child.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkExpander--use-markup" role="property"><title>The <literal>&quot;use-markup&quot;</literal> property</title>
+<indexterm zone="GtkExpander--use-markup"><primary sortas="Expander:use-markup">GtkExpander:use-markup</primary></indexterm><programlisting>  &quot;use-markup&quot;               <link linkend="gboolean">gboolean</link>              : Read / Write / Construct</programlisting>
+<para>The text of the label includes XML markup. See pango_parse_markup().</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkExpander--use-underline" role="property"><title>The <literal>&quot;use-underline&quot;</literal> property</title>
+<indexterm zone="GtkExpander--use-underline"><primary sortas="Expander:use-underline">GtkExpander:use-underline</primary></indexterm><programlisting>  &quot;use-underline&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write / Construct</programlisting>
+<para>If set, an underline in the text indicates the next character should be used for the mnemonic accelerator key.</para><para>Default value: FALSE</para>
+</refsect2>
+</refsect1>
+<refsect1 id="GtkExpander.style-property-details" role="style_properties_details">
+<title role="style_properties_details.title">Style Property Details</title>
+<refsect2 id="GtkExpander--s-expander-size" role="property"><title>The <literal>&quot;expander-size&quot;</literal> style property</title>
+<indexterm zone="GtkExpander--s-expander-size"><primary sortas="Expander:expander-size">GtkExpander:expander-size</primary></indexterm><programlisting>  &quot;expander-size&quot;            <link linkend="gint">gint</link>                  : Read</programlisting>
+<para>Size of the expander arrow.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 10</para>
+</refsect2>
+<refsect2 id="GtkExpander--s-expander-spacing" role="property"><title>The <literal>&quot;expander-spacing&quot;</literal> style property</title>
+<indexterm zone="GtkExpander--s-expander-spacing"><primary sortas="Expander:expander-spacing">GtkExpander:expander-spacing</primary></indexterm><programlisting>  &quot;expander-spacing&quot;         <link linkend="gint">gint</link>                  : Read</programlisting>
+<para>Spacing around expander arrow.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 2</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkExpander.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkExpander-activate" role="signal"><title>The <literal>&quot;activate&quot;</literal> signal</title>
+<indexterm zone="GtkExpander-activate"><primary sortas="Expander::activate">GtkExpander::activate</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkExpander">GtkExpander</link> *expander,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last / Action</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>expander</parameter>&#160;:</term>
+<listitem><simpara>the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

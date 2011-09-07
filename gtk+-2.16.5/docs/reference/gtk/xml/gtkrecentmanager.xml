@@ -1,0 +1,1103 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkRecentManager">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkRecentManager.top_of_page">GtkRecentManager</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkRecentManager</refname>
+<refpurpose>Managing Recently Used Files</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkRecentManager.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkRecentManager-struct">GtkRecentManager</link>;
+                    <link linkend="GtkRecentInfo">GtkRecentInfo</link>;
+                    <link linkend="GtkRecentData">GtkRecentData</link>;
+#define             <link linkend="GTK-RECENT-MANAGER-ERROR--CAPS">GTK_RECENT_MANAGER_ERROR</link>
+enum                <link linkend="GtkRecentManagerError">GtkRecentManagerError</link>;
+<link linkend="GtkRecentManager">GtkRecentManager</link> *  <link linkend="gtk-recent-manager-new">gtk_recent_manager_new</link>              (void);
+<link linkend="GtkRecentManager">GtkRecentManager</link> *  <link linkend="gtk-recent-manager-get-default">gtk_recent_manager_get_default</link>      (void);
+<link linkend="GtkRecentManager">GtkRecentManager</link> *  <link linkend="gtk-recent-manager-get-for-screen">gtk_recent_manager_get_for_screen</link>   (<link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="void">void</link>                <link linkend="gtk-recent-manager-set-screen">gtk_recent_manager_set_screen</link>       (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-manager-add-item">gtk_recent_manager_add_item</link>         (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-manager-add-full">gtk_recent_manager_add_full</link>         (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri,
+                                                         const <link linkend="GtkRecentData">GtkRecentData</link> *recent_data);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-manager-remove-item">gtk_recent_manager_remove_item</link>      (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="GtkRecentInfo">GtkRecentInfo</link> *     <link linkend="gtk-recent-manager-lookup-item">gtk_recent_manager_lookup_item</link>      (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-manager-has-item">gtk_recent_manager_has_item</link>         (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-manager-move-item">gtk_recent_manager_move_item</link>        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri,
+                                                         const <link linkend="gchar">gchar</link> *new_uri,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="gint">gint</link>                <link linkend="gtk-recent-manager-get-limit">gtk_recent_manager_get_limit</link>        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager);
+<link linkend="void">void</link>                <link linkend="gtk-recent-manager-set-limit">gtk_recent_manager_set_limit</link>        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         <link linkend="gint">gint</link> limit);
+<link linkend="GList">GList</link> *             <link linkend="gtk-recent-manager-get-items">gtk_recent_manager_get_items</link>        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager);
+<link linkend="gint">gint</link>                <link linkend="gtk-recent-manager-purge-items">gtk_recent_manager_purge_items</link>      (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         <link linkend="GError">GError</link> **error);
+
+<link linkend="GtkRecentInfo">GtkRecentInfo</link> *     <link linkend="gtk-recent-info-ref">gtk_recent_info_ref</link>                 (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="void">void</link>                <link linkend="gtk-recent-info-unref">gtk_recent_info_unref</link>               (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-recent-info-get-uri">gtk_recent_info_get_uri</link>             (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-recent-info-get-display-name">gtk_recent_info_get_display_name</link>    (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-recent-info-get-description">gtk_recent_info_get_description</link>     (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-recent-info-get-mime-type">gtk_recent_info_get_mime_type</link>       (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="time-t">time_t</link>              <link linkend="gtk-recent-info-get-added">gtk_recent_info_get_added</link>           (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="time-t">time_t</link>              <link linkend="gtk-recent-info-get-modified">gtk_recent_info_get_modified</link>        (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="time-t">time_t</link>              <link linkend="gtk-recent-info-get-visited">gtk_recent_info_get_visited</link>         (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-info-get-private-hint">gtk_recent_info_get_private_hint</link>    (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-info-get-application-info">gtk_recent_info_get_application_info</link>
+                                                        (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         const <link linkend="gchar">gchar</link> *app_name,
+                                                         <link linkend="gchar">gchar</link> **app_exec,
+                                                         <link linkend="guint">guint</link> *count,
+                                                         <link linkend="time-t">time_t</link> *time_);
+<link linkend="gchar">gchar</link> **            <link linkend="gtk-recent-info-get-applications">gtk_recent_info_get_applications</link>    (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         <link linkend="gsize">gsize</link> *length);
+<link linkend="gchar">gchar</link> *             <link linkend="gtk-recent-info-last-application">gtk_recent_info_last_application</link>    (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="gchar">gchar</link> **            <link linkend="gtk-recent-info-get-groups">gtk_recent_info_get_groups</link>          (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         <link linkend="gsize">gsize</link> *length);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-info-has-group">gtk_recent_info_has_group</link>           (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         const <link linkend="gchar">gchar</link> *group_name);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-info-has-application">gtk_recent_info_has_application</link>     (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         const <link linkend="gchar">gchar</link> *app_name);
+<link linkend="GdkPixbuf">GdkPixbuf</link> *         <link linkend="gtk-recent-info-get-icon">gtk_recent_info_get_icon</link>            (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         <link linkend="gint">gint</link> size);
+<link linkend="gchar">gchar</link> *             <link linkend="gtk-recent-info-get-short-name">gtk_recent_info_get_short_name</link>      (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="gchar">gchar</link> *             <link linkend="gtk-recent-info-get-uri-display">gtk_recent_info_get_uri_display</link>     (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="gint">gint</link>                <link linkend="gtk-recent-info-get-age">gtk_recent_info_get_age</link>             (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-info-is-local">gtk_recent_info_is_local</link>            (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-info-exists">gtk_recent_info_exists</link>              (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-info-match">gtk_recent_info_match</link>               (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info_a,
+                                                         <link linkend="GtkRecentInfo">GtkRecentInfo</link> *info_b);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkRecentManager.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkRecentManager
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkRecentManager.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkRecentManager--filename">filename</link>&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write / Construct Only
+  &quot;<link linkend="GtkRecentManager--limit">limit</link>&quot;                    <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkRecentManager--size">size</link>&quot;                     <link linkend="gint">gint</link>                  : Read
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkRecentManager.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkRecentManager-changed">changed</link>&quot;                                        : Run First
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkRecentManager.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> provides a facility for adding, removing and
+looking up recently used files.  Each recently used file is
+identified by its URI, and has meta-data associated to it, like
+the names and command lines of the applications that have
+registered it, the number of time each application has registered
+the same file, the mime type of the file and whether the file
+should be displayed only by the applications that have
+registered it.
+</para>
+<para>
+The <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> acts like a database of all the recently
+used files.  You can create new <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> objects, but
+it is more efficient to use the standard recent manager for
+the <link linkend="GdkScreen"><type>GdkScreen</type></link> so that informations about the recently used
+files is shared with other people using them.  In case the
+default screen is being used, adding a new recently used
+file is as simple as:
+</para>
+<informalexample>
+  <programlisting>
+GtkRecentManager *manager;
+manager = gtk_recent_manager_get_default ();
+gtk_recent_manager_add_item (manager, file_uri);
+  </programlisting>
+</informalexample>
+While looking up a recently used file is as simple as:
+<informalexample>
+  <programlisting>
+GtkRecentManager *manager;
+GtkRecentInfo *info;
+GError *error = NULL;
+manager = gtk_recent_manager_get_default ();
+info = gtk_recent_manager_lookup_item (manager, file_uri, &amp;error);
+if (error)
+  {
+    g_warning ("Could not find the file: &percnt;s", error-&gt;message);
+    g_error_free (error);
+  }
+else
+  {
+    /* Use the info object */
+    gtk_recent_info_unref (info);
+  }
+  </programlisting>
+</informalexample>
+<para>
+Recently used files are supported since GTK+ 2.10.
+</para>
+</refsect1>
+
+<refsect1 id="GtkRecentManager.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkRecentManager-struct" role="struct">
+<title>GtkRecentManager</title>
+<indexterm zone="GtkRecentManager-struct"><primary sortas="RecentManager">GtkRecentManager</primary></indexterm><programlisting>typedef struct _GtkRecentManager GtkRecentManager;</programlisting>
+<para>
+Acts as a database of information about the list of recently
+used files.  Normally, you retrieve the recent manager for a
+particular screen using <link linkend="gtk-recent-manager-get-for-screen"><function>gtk_recent_manager_get_for_screen()</function></link>
+and it will contain information about current recent manager
+for that screen.</para></refsect2>
+<refsect2 id="GtkRecentInfo" role="struct">
+<title>GtkRecentInfo</title>
+<indexterm zone="GtkRecentInfo"><primary sortas="RecentInfo">GtkRecentInfo</primary></indexterm><programlisting>typedef struct _GtkRecentInfo GtkRecentInfo;</programlisting>
+<para>
+Contains informations found when looking up an entry of the
+recently used files list.
+</para></refsect2>
+<refsect2 id="GtkRecentData" role="struct">
+<title>GtkRecentData</title>
+<indexterm zone="GtkRecentData"><primary sortas="RecentData">GtkRecentData</primary></indexterm><programlisting>typedef struct {
+  gchar *display_name;
+  gchar *description;
+
+  gchar *mime_type;
+
+  gchar *app_name;
+  gchar *app_exec;
+
+  gchar **groups;
+
+  gboolean is_private;
+} GtkRecentData;
+</programlisting>
+<para>
+Meta-data to be passed to <link linkend="gtk-recent-manager-add-full"><function>gtk_recent_manager_add_full()</function></link> when
+registering a recently used resource.</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>display_name</structfield>;</term>
+<listitem><simpara> a UTF-8 encoded string, containing the name of the recently
+  used resource to be displayed, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>;
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>description</structfield>;</term>
+<listitem><simpara> a UTF-8 encoded string, containing a short description of
+  the resource, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>;
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>mime_type</structfield>;</term>
+<listitem><simpara> the MIME type of the resource;
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>app_name</structfield>;</term>
+<listitem><simpara> the name of the application that is registering this recently
+  used resource;
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>app_exec</structfield>;</term>
+<listitem><simpara> command line used to launch this resource; may contain the
+  "&percnt;f" and "&percnt;u" escape characters which will be expanded
+  to the resource file path and URI respectively when the command line
+  is retrieved;
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;**<structfield>groups</structfield>;</term>
+<listitem><simpara> a vector of strings containing groups names;
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gboolean">gboolean</link>&#160;<structfield>is_private</structfield>;</term>
+<listitem><simpara> whether this resource should be displayed only by the
+  applications that have registered it or not.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GTK-RECENT-MANAGER-ERROR--CAPS" role="macro">
+<title>GTK_RECENT_MANAGER_ERROR</title>
+<indexterm zone="GTK-RECENT-MANAGER-ERROR--CAPS"><primary sortas="RECENT_MANAGER_ERROR">GTK_RECENT_MANAGER_ERROR</primary></indexterm><programlisting>#define GTK_RECENT_MANAGER_ERROR	(gtk_recent_manager_error_quark ())
+</programlisting>
+<para>
+The <link linkend="GQuark"><type>GQuark</type></link> used for <link linkend="GtkRecentManagerError"><type>GtkRecentManagerError</type></link> errors.
+</para></refsect2>
+<refsect2 id="GtkRecentManagerError" role="enum">
+<title>enum GtkRecentManagerError</title>
+<indexterm zone="GtkRecentManagerError"><primary sortas="RecentManagerError">GtkRecentManagerError</primary></indexterm><programlisting>typedef enum
+{
+  GTK_RECENT_MANAGER_ERROR_NOT_FOUND,
+  GTK_RECENT_MANAGER_ERROR_INVALID_URI,
+  GTK_RECENT_MANAGER_ERROR_INVALID_ENCODING,
+  GTK_RECENT_MANAGER_ERROR_NOT_REGISTERED,
+  GTK_RECENT_MANAGER_ERROR_READ,
+  GTK_RECENT_MANAGER_ERROR_WRITE,
+  GTK_RECENT_MANAGER_ERROR_UNKNOWN
+} GtkRecentManagerError;
+</programlisting>
+<para>
+Error codes for GtkRecentManager operations</para>
+<para>
+</para><variablelist role="enum">
+<varlistentry id="GTK-RECENT-MANAGER-ERROR-NOT-FOUND--CAPS" role="constant">
+<term><literal>GTK_RECENT_MANAGER_ERROR_NOT_FOUND</literal></term>
+<listitem><simpara> the URI specified does not exists in
+  the recently used resources list.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-MANAGER-ERROR-INVALID-URI--CAPS" role="constant">
+<term><literal>GTK_RECENT_MANAGER_ERROR_INVALID_URI</literal></term>
+<listitem><simpara> the URI specified is not valid.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-MANAGER-ERROR-INVALID-ENCODING--CAPS" role="constant">
+<term><literal>GTK_RECENT_MANAGER_ERROR_INVALID_ENCODING</literal></term>
+<listitem><simpara> the supplied string is not
+  UTF-8 encoded.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-MANAGER-ERROR-NOT-REGISTERED--CAPS" role="constant">
+<term><literal>GTK_RECENT_MANAGER_ERROR_NOT_REGISTERED</literal></term>
+<listitem><simpara> no application has registered
+  the specified item.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-MANAGER-ERROR-READ--CAPS" role="constant">
+<term><literal>GTK_RECENT_MANAGER_ERROR_READ</literal></term>
+<listitem><simpara> failure while reading the recently used
+  resources file.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-MANAGER-ERROR-WRITE--CAPS" role="constant">
+<term><literal>GTK_RECENT_MANAGER_ERROR_WRITE</literal></term>
+<listitem><simpara> failure while writing the recently used
+  resources file.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-MANAGER-ERROR-UNKNOWN--CAPS" role="constant">
+<term><literal>GTK_RECENT_MANAGER_ERROR_UNKNOWN</literal></term>
+<listitem><simpara> unspecified error.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-recent-manager-new" role="function" condition="since:2.10">
+<title>gtk_recent_manager_new ()</title>
+<indexterm zone="gtk-recent-manager-new" role="2.10"><primary sortas="recent_manager_new">gtk_recent_manager_new</primary></indexterm><programlisting><link linkend="GtkRecentManager">GtkRecentManager</link> *  gtk_recent_manager_new              (void);</programlisting>
+<para>
+Creates a new recent manager object.  Recent manager objects are used to
+handle the list of recently used resources.  A <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> object
+monitors the recently used resources list, and emits the "changed" signal
+each time something inside the list changes.
+</para>
+<para>
+<link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> objects are expensive: be sure to create them only when
+needed. You should use <link linkend="gtk-recent-manager-get-default"><function>gtk_recent_manager_get_default()</function></link> instead.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A newly created <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> object.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-get-default" role="function" condition="since:2.10">
+<title>gtk_recent_manager_get_default ()</title>
+<indexterm zone="gtk-recent-manager-get-default" role="2.10"><primary sortas="recent_manager_get_default">gtk_recent_manager_get_default</primary></indexterm><programlisting><link linkend="GtkRecentManager">GtkRecentManager</link> *  gtk_recent_manager_get_default      (void);</programlisting>
+<para>
+Gets a unique instance of <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>, that you can share
+in your application without caring about memory management. The
+returned instance will be freed when you application terminates.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A unique <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>. Do not ref or unref it.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-get-for-screen" role="function" condition="deprecated|since:2.10">
+<title>gtk_recent_manager_get_for_screen ()</title>
+<indexterm zone="gtk-recent-manager-get-for-screen" role="deprecated"><primary sortas="recent_manager_get_for_screen">gtk_recent_manager_get_for_screen</primary></indexterm><indexterm zone="gtk-recent-manager-get-for-screen" role="2.10"><primary sortas="recent_manager_get_for_screen">gtk_recent_manager_get_for_screen</primary></indexterm><programlisting><link linkend="GtkRecentManager">GtkRecentManager</link> *  gtk_recent_manager_get_for_screen   (<link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<warning><para><literal>gtk_recent_manager_get_for_screen</literal> has been deprecated since version 2.12 and should not be used in newly-written code. This function has been deprecated and should
+  not be used in newly written code. Calling this function is
+  equivalent to calling <link linkend="gtk-recent-manager-get-default"><function>gtk_recent_manager_get_default()</function></link>.</para></warning>
+<para>
+Gets the recent manager object associated with <parameter>screen</parameter>; if this
+function has not previously been called for the given screen,
+a new recent manager object will be created and associated with
+the screen. Recent manager objects are fairly expensive to create,
+so using this function is usually a better choice than calling 
+<link linkend="gtk-recent-manager-new"><function>gtk_recent_manager_new()</function></link> and setting the screen yourself; by using
+this function a single recent manager object will be shared between
+users.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A unique <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> associated with the given
+  screen. This recent manager is associated to the with the screen
+  and can be used as long as the screen is open. Do not ref or
+  unref it.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-set-screen" role="function" condition="deprecated|since:2.10">
+<title>gtk_recent_manager_set_screen ()</title>
+<indexterm zone="gtk-recent-manager-set-screen" role="deprecated"><primary sortas="recent_manager_set_screen">gtk_recent_manager_set_screen</primary></indexterm><indexterm zone="gtk-recent-manager-set-screen" role="2.10"><primary sortas="recent_manager_set_screen">gtk_recent_manager_set_screen</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_manager_set_screen       (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<warning><para><literal>gtk_recent_manager_set_screen</literal> has been deprecated since version 2.12 and should not be used in newly-written code. This function has been deprecated and should
+  not be used in newly written code. Calling this function has
+  no effect.</para></warning>
+<para>
+Sets the screen for a recent manager; the screen is used to
+track the user's currently configured recently used documents
+storage.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-add-item" role="function" condition="since:2.10">
+<title>gtk_recent_manager_add_item ()</title>
+<indexterm zone="gtk-recent-manager-add-item" role="2.10"><primary sortas="recent_manager_add_item">gtk_recent_manager_add_item</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_manager_add_item         (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri);</programlisting>
+<para>
+Adds a new resource, pointed by <parameter>uri</parameter>, into the recently used
+resources list.
+</para>
+<para>
+This function automatically retrieves some of the needed
+metadata and setting other metadata to common default values; it
+then feeds the data to <link linkend="gtk-recent-manager-add-full"><function>gtk_recent_manager_add_full()</function></link>.
+</para>
+<para>
+See <link linkend="gtk-recent-manager-add-full"><function>gtk_recent_manager_add_full()</function></link> if you want to explicitly
+define the metadata for the resource pointed by <parameter>uri</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> a valid URI
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the new item was successfully added
+  to the recently used resources list
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-add-full" role="function" condition="since:2.10">
+<title>gtk_recent_manager_add_full ()</title>
+<indexterm zone="gtk-recent-manager-add-full" role="2.10"><primary sortas="recent_manager_add_full">gtk_recent_manager_add_full</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_manager_add_full         (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri,
+                                                         const <link linkend="GtkRecentData">GtkRecentData</link> *recent_data);</programlisting>
+<para>
+Adds a new resource, pointed by <parameter>uri</parameter>, into the recently used
+resources list, using the metadata specified inside the <link linkend="GtkRecentData"><type>GtkRecentData</type></link>
+structure passed in <parameter>recent_data</parameter>.
+</para>
+<para>
+The passed URI will be used to identify this resource inside the
+list.
+</para>
+<para>
+In order to register the new recently used resource, metadata about
+the resource must be passed as well as the URI; the metadata is
+stored in a <link linkend="GtkRecentData"><type>GtkRecentData</type></link> structure, which must contain the MIME
+type of the resource pointed by the URI; the name of the application
+that is registering the item, and a command line to be used when
+launching the item.
+</para>
+<para>
+Optionally, a <link linkend="GtkRecentData"><type>GtkRecentData</type></link> structure might contain a UTF-8 string
+to be used when viewing the item instead of the last component of the
+URI; a short description of the item; whether the item should be
+considered private - that is, should be displayed only by the
+applications that have registered it.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> a valid URI
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>recent_data</parameter>&#160;:</term>
+<listitem><simpara> metadata of the resource
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the new item was successfully added to the
+recently used resources list, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-remove-item" role="function" condition="since:2.10">
+<title>gtk_recent_manager_remove_item ()</title>
+<indexterm zone="gtk-recent-manager-remove-item" role="2.10"><primary sortas="recent_manager_remove_item">gtk_recent_manager_remove_item</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_manager_remove_item      (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Removes a resource pointed by <parameter>uri</parameter> from the recently used resources
+list handled by a recent manager.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the URI of the item you wish to remove
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the item pointed by <parameter>uri</parameter> has been successfully
+  removed by the recently used resources list, and <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-lookup-item" role="function" condition="since:2.10">
+<title>gtk_recent_manager_lookup_item ()</title>
+<indexterm zone="gtk-recent-manager-lookup-item" role="2.10"><primary sortas="recent_manager_lookup_item">gtk_recent_manager_lookup_item</primary></indexterm><programlisting><link linkend="GtkRecentInfo">GtkRecentInfo</link> *     gtk_recent_manager_lookup_item      (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Searches for a URI inside the recently used resources list, and
+returns a structure containing informations about the resource
+like its MIME type, or its display name.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> a URI
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> a return location for a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link> structure containing information
+  about the resource pointed by <parameter>uri</parameter>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if the URI was
+  not registered in the recently used resources list.  Free with
+  <link linkend="gtk-recent-info-unref"><function>gtk_recent_info_unref()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-has-item" role="function" condition="since:2.10">
+<title>gtk_recent_manager_has_item ()</title>
+<indexterm zone="gtk-recent-manager-has-item" role="2.10"><primary sortas="recent_manager_has_item">gtk_recent_manager_has_item</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_manager_has_item         (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri);</programlisting>
+<para>
+Checks whether there is a recently used resource registered
+with <parameter>uri</parameter> inside the recent manager.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> a URI
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the resource was found, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-move-item" role="function" condition="since:2.10">
+<title>gtk_recent_manager_move_item ()</title>
+<indexterm zone="gtk-recent-manager-move-item" role="2.10"><primary sortas="recent_manager_move_item">gtk_recent_manager_move_item</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_manager_move_item        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         const <link linkend="gchar">gchar</link> *uri,
+                                                         const <link linkend="gchar">gchar</link> *new_uri,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Changes the location of a recently used resource from <parameter>uri</parameter> to <parameter>new_uri</parameter>.
+</para>
+<para>
+Please note that this function will not affect the resource pointed
+by the URIs, but only the URI used in the recently used resources list.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the URI of a recently used resource
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>new_uri</parameter>&#160;:</term>
+<listitem><simpara> the new URI of the recently used resource, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> to
+   remove the item pointed by <parameter>uri</parameter> in the list
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> a return location for a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-get-limit" role="function" condition="since:2.10">
+<title>gtk_recent_manager_get_limit ()</title>
+<indexterm zone="gtk-recent-manager-get-limit" role="2.10"><primary sortas="recent_manager_get_limit">gtk_recent_manager_get_limit</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_recent_manager_get_limit        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager);</programlisting>
+<para>
+Gets the maximum number of items that the <link linkend="gtk-recent-manager-get-items"><function>gtk_recent_manager_get_items()</function></link>
+function should return.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the number of items to return, or -1 for every item.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-set-limit" role="function" condition="since:2.10">
+<title>gtk_recent_manager_set_limit ()</title>
+<indexterm zone="gtk-recent-manager-set-limit" role="2.10"><primary sortas="recent_manager_set_limit">gtk_recent_manager_set_limit</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_manager_set_limit        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         <link linkend="gint">gint</link> limit);</programlisting>
+<para>
+Sets the maximum number of item that the <link linkend="gtk-recent-manager-get-items"><function>gtk_recent_manager_get_items()</function></link>
+function should return.  If <parameter>limit</parameter> is set to -1, then return all the
+items.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>limit</parameter>&#160;:</term>
+<listitem><simpara> the maximum number of items to return, or -1.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-get-items" role="function" condition="since:2.10">
+<title>gtk_recent_manager_get_items ()</title>
+<indexterm zone="gtk-recent-manager-get-items" role="2.10"><primary sortas="recent_manager_get_items">gtk_recent_manager_get_items</primary></indexterm><programlisting><link linkend="GList">GList</link> *             gtk_recent_manager_get_items        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager);</programlisting>
+<para>
+Gets the list of recently used resources.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a list of newly allocated <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link> objects. Use
+  <link linkend="gtk-recent-info-unref"><function>gtk_recent_info_unref()</function></link> on each item inside the list, and then
+  free the list itself using <link linkend="g-list-free"><function>g_list_free()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-manager-purge-items" role="function" condition="since:2.10">
+<title>gtk_recent_manager_purge_items ()</title>
+<indexterm zone="gtk-recent-manager-purge-items" role="2.10"><primary sortas="recent_manager_purge_items">gtk_recent_manager_purge_items</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_recent_manager_purge_items      (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Purges every item from the recently used resources list.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> a return location for a <link linkend="GError"><type>GError</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the number of items that have been removed from the
+  recently used resources list.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-ref" role="function" condition="since:2.10">
+<title>gtk_recent_info_ref ()</title>
+<indexterm zone="gtk-recent-info-ref" role="2.10"><primary sortas="recent_info_ref">gtk_recent_info_ref</primary></indexterm><programlisting><link linkend="GtkRecentInfo">GtkRecentInfo</link> *     gtk_recent_info_ref                 (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Increases the reference count of <parameter>recent_info</parameter> by one.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the recent info object with its reference count increased
+  by one.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-unref" role="function" condition="since:2.10">
+<title>gtk_recent_info_unref ()</title>
+<indexterm zone="gtk-recent-info-unref" role="2.10"><primary sortas="recent_info_unref">gtk_recent_info_unref</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_info_unref               (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Decreases the reference count of <parameter>info</parameter> by one.  If the reference
+count reaches zero, <parameter>info</parameter> is deallocated, and the memory freed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-uri" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_uri ()</title>
+<indexterm zone="gtk-recent-info-get-uri" role="2.10"><primary sortas="recent_info_get_uri">gtk_recent_info_get_uri</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_recent_info_get_uri             (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets the URI of the resource.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the URI of the resource.  The returned string is
+  owned by the recent manager, and should not be freed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-display-name" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_display_name ()</title>
+<indexterm zone="gtk-recent-info-get-display-name" role="2.10"><primary sortas="recent_info_get_display_name">gtk_recent_info_get_display_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_recent_info_get_display_name    (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets the name of the resource.  If none has been defined, the basename
+of the resource is obtained.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the display name of the resource.  The returned string
+  is owned by the recent manager, and should not be freed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-description" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_description ()</title>
+<indexterm zone="gtk-recent-info-get-description" role="2.10"><primary sortas="recent_info_get_description">gtk_recent_info_get_description</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_recent_info_get_description     (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets the (short) description of the resource.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the description of the resource.  The returned string
+  is owned by the recent manager, and should not be freed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-mime-type" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_mime_type ()</title>
+<indexterm zone="gtk-recent-info-get-mime-type" role="2.10"><primary sortas="recent_info_get_mime_type">gtk_recent_info_get_mime_type</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_recent_info_get_mime_type       (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets the MIME type of the resource.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the MIME type of the resource.  The returned string
+  is owned by the recent manager, and should not be freed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-added" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_added ()</title>
+<indexterm zone="gtk-recent-info-get-added" role="2.10"><primary sortas="recent_info_get_added">gtk_recent_info_get_added</primary></indexterm><programlisting><link linkend="time-t">time_t</link>              gtk_recent_info_get_added           (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets the timestamp (seconds from system's Epoch) when the resource
+was added to the recently used resources list.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the number of seconds elapsed from system's Epoch when
+  the resource was added to the list, or -1 on failure.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-modified" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_modified ()</title>
+<indexterm zone="gtk-recent-info-get-modified" role="2.10"><primary sortas="recent_info_get_modified">gtk_recent_info_get_modified</primary></indexterm><programlisting><link linkend="time-t">time_t</link>              gtk_recent_info_get_modified        (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets the timestamp (seconds from system's Epoch) when the resource
+was last modified.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the number of seconds elapsed from system's Epoch when
+  the resource was last modified, or -1 on failure.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-visited" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_visited ()</title>
+<indexterm zone="gtk-recent-info-get-visited" role="2.10"><primary sortas="recent_info_get_visited">gtk_recent_info_get_visited</primary></indexterm><programlisting><link linkend="time-t">time_t</link>              gtk_recent_info_get_visited         (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets the timestamp (seconds from system's Epoch) when the resource
+was last visited.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the number of seconds elapsed from system's Epoch when
+  the resource was last visited, or -1 on failure.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-private-hint" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_private_hint ()</title>
+<indexterm zone="gtk-recent-info-get-private-hint" role="2.10"><primary sortas="recent_info_get_private_hint">gtk_recent_info_get_private_hint</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_info_get_private_hint    (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets the value of the "private" flag.  Resources in the recently used
+list that have this flag set to <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> should only be displayed by the
+applications that have registered them.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the private flag was found, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-application-info" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_application_info ()</title>
+<indexterm zone="gtk-recent-info-get-application-info" role="2.10"><primary sortas="recent_info_get_application_info">gtk_recent_info_get_application_info</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_info_get_application_info
+                                                        (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         const <link linkend="gchar">gchar</link> *app_name,
+                                                         <link linkend="gchar">gchar</link> **app_exec,
+                                                         <link linkend="guint">guint</link> *count,
+                                                         <link linkend="time-t">time_t</link> *time_);</programlisting>
+<para>
+Gets the data regarding the application that has registered the resource
+pointed by <parameter>info</parameter>.
+</para>
+<para>
+If the command line contains any escape characters defined inside the
+storage specification, they will be expanded.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>app_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the application that has registered this item
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>app_exec</parameter>&#160;:</term>
+<listitem><simpara> return location for the string containing the command line
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>count</parameter>&#160;:</term>
+<listitem><simpara> return location for the number of times this item was registered
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>time_</parameter>&#160;:</term>
+<listitem><simpara> return location for the timestamp this item was last registered
+   for this application
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if an application with <parameter>app_name</parameter> has registered this
+  resource inside the recently used list, or <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.  You should
+  free the returned command line using <link linkend="g-free"><function>g_free()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-applications" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_applications ()</title>
+<indexterm zone="gtk-recent-info-get-applications" role="2.10"><primary sortas="recent_info_get_applications">gtk_recent_info_get_applications</primary></indexterm><programlisting><link linkend="gchar">gchar</link> **            gtk_recent_info_get_applications    (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         <link linkend="gsize">gsize</link> *length);</programlisting>
+<para>
+Retrieves the list of applications that have registered this resource.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> return location for the length of the returned list, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly allocated <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated array of strings.
+  Use <link linkend="g-strfreev"><function>g_strfreev()</function></link> to free it.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-last-application" role="function" condition="since:2.10">
+<title>gtk_recent_info_last_application ()</title>
+<indexterm zone="gtk-recent-info-last-application" role="2.10"><primary sortas="recent_info_last_application">gtk_recent_info_last_application</primary></indexterm><programlisting><link linkend="gchar">gchar</link> *             gtk_recent_info_last_application    (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets the name of the last application that have registered the
+recently used resource represented by <parameter>info</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an application name.  Use <link linkend="g-free"><function>g_free()</function></link> to free it.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-groups" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_groups ()</title>
+<indexterm zone="gtk-recent-info-get-groups" role="2.10"><primary sortas="recent_info_get_groups">gtk_recent_info_get_groups</primary></indexterm><programlisting><link linkend="gchar">gchar</link> **            gtk_recent_info_get_groups          (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         <link linkend="gsize">gsize</link> *length);</programlisting>
+<para>
+Returns all groups registered for the recently used item <parameter>info</parameter>.  The
+array of returned group names will be <link linkend="NULL--CAPS"><literal>NULL</literal></link> terminated, so length might
+optionally be <link linkend="NULL--CAPS"><literal>NULL</literal></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> return location for the number of groups returned, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly allocated <link linkend="NULL--CAPS"><literal>NULL</literal></link> terminated array of strings.  Use
+  <link linkend="g-strfreev"><function>g_strfreev()</function></link> to free it.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-has-group" role="function" condition="since:2.10">
+<title>gtk_recent_info_has_group ()</title>
+<indexterm zone="gtk-recent-info-has-group" role="2.10"><primary sortas="recent_info_has_group">gtk_recent_info_has_group</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_info_has_group           (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         const <link linkend="gchar">gchar</link> *group_name);</programlisting>
+<para>
+Checks whether <parameter>group_name</parameter> appears inside the groups registered for the
+recently used item <parameter>info</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group_name</parameter>&#160;:</term>
+<listitem><simpara> name of a group
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the group was found.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-has-application" role="function" condition="since:2.10">
+<title>gtk_recent_info_has_application ()</title>
+<indexterm zone="gtk-recent-info-has-application" role="2.10"><primary sortas="recent_info_has_application">gtk_recent_info_has_application</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_info_has_application     (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         const <link linkend="gchar">gchar</link> *app_name);</programlisting>
+<para>
+Checks whether an application registered this resource using <parameter>app_name</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>app_name</parameter>&#160;:</term>
+<listitem><simpara> a string containing an application name
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if an application with name <parameter>app_name</parameter> was found,
+  <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-icon" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_icon ()</title>
+<indexterm zone="gtk-recent-info-get-icon" role="2.10"><primary sortas="recent_info_get_icon">gtk_recent_info_get_icon</primary></indexterm><programlisting><link linkend="GdkPixbuf">GdkPixbuf</link> *         gtk_recent_info_get_icon            (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info,
+                                                         <link linkend="gint">gint</link> size);</programlisting>
+<para>
+Retrieves the icon of size <parameter>size</parameter> associated to the resource MIME type.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> the size of the icon in pixels
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> containing the icon, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>. Use
+  <link linkend="g-object-unref"><function>g_object_unref()</function></link> when finished using the icon.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-short-name" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_short_name ()</title>
+<indexterm zone="gtk-recent-info-get-short-name" role="2.10"><primary sortas="recent_info_get_short_name">gtk_recent_info_get_short_name</primary></indexterm><programlisting><link linkend="gchar">gchar</link> *             gtk_recent_info_get_short_name      (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Computes a valid UTF-8 string that can be used as the name of the item in a
+menu or list.  For example, calling this function on an item that refers to
+"file:///foo/bar.txt" will yield "bar.txt".</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> an <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A newly-allocated string in UTF-8 encoding; free it with
+  <link linkend="g-free"><function>g_free()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-uri-display" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_uri_display ()</title>
+<indexterm zone="gtk-recent-info-get-uri-display" role="2.10"><primary sortas="recent_info_get_uri_display">gtk_recent_info_get_uri_display</primary></indexterm><programlisting><link linkend="gchar">gchar</link> *             gtk_recent_info_get_uri_display     (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets a displayable version of the resource's URI.  If the resource
+is local, it returns a local path; if the resource is not local,
+it returns the UTF-8 encoded content of <link linkend="gtk-recent-info-get-uri"><function>gtk_recent_info_get_uri()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly allocated UTF-8 string containing the
+  resource's URI or <link linkend="NULL--CAPS"><literal>NULL</literal></link>. Use <link linkend="g-free"><function>g_free()</function></link> when done using it.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-get-age" role="function" condition="since:2.10">
+<title>gtk_recent_info_get_age ()</title>
+<indexterm zone="gtk-recent-info-get-age" role="2.10"><primary sortas="recent_info_get_age">gtk_recent_info_get_age</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_recent_info_get_age             (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Gets the number of days elapsed since the last update of the resource
+pointed by <parameter>info</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a positive integer containing the number of days elapsed
+  since the time this resource was last modified.  
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-is-local" role="function" condition="since:2.10">
+<title>gtk_recent_info_is_local ()</title>
+<indexterm zone="gtk-recent-info-is-local" role="2.10"><primary sortas="recent_info_is_local">gtk_recent_info_is_local</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_info_is_local            (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Checks whether the resource is local or not by looking at the
+scheme of its URI.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the resource is local.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-exists" role="function" condition="since:2.10">
+<title>gtk_recent_info_exists ()</title>
+<indexterm zone="gtk-recent-info-exists" role="2.10"><primary sortas="recent_info_exists">gtk_recent_info_exists</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_info_exists              (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info);</programlisting>
+<para>
+Checks whether the resource pointed by <parameter>info</parameter> still exists.  At
+the moment this check is done only on resources pointing to local files.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the resource exists
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-info-match" role="function" condition="since:2.10">
+<title>gtk_recent_info_match ()</title>
+<indexterm zone="gtk-recent-info-match" role="2.10"><primary sortas="recent_info_match">gtk_recent_info_match</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_info_match               (<link linkend="GtkRecentInfo">GtkRecentInfo</link> *info_a,
+                                                         <link linkend="GtkRecentInfo">GtkRecentInfo</link> *info_b);</programlisting>
+<para>
+Checks whether two <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link> structures point to the same
+resource.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>info_a</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>info_b</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if both <link linkend="GtkRecentInfo"><type>GtkRecentInfo</type></link> structures point to se same
+  resource, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkRecentManager.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkRecentManager--filename" role="property"><title>The <literal>&quot;filename&quot;</literal> property</title>
+<indexterm zone="GtkRecentManager--filename" role="2.10"><primary sortas="RecentManager:filename">GtkRecentManager:filename</primary></indexterm><programlisting>  &quot;filename&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write / Construct Only</programlisting>
+<para>
+The full path to the file to be used to store and read the recently
+used resources list</para>
+<para>
+</para><para>Default value: NULL</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkRecentManager--limit" role="property"><title>The <literal>&quot;limit&quot;</literal> property</title>
+<indexterm zone="GtkRecentManager--limit" role="2.10"><primary sortas="RecentManager:limit">GtkRecentManager:limit</primary></indexterm><programlisting>  &quot;limit&quot;                    <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>
+The maximum number of items to be returned by the
+<link linkend="gtk-recent-manager-get-items"><function>gtk_recent_manager_get_items()</function></link> function.</para>
+<para>
+</para><para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: -1</para>
+<para>Since 2.10</para>
+</refsect2>
+<refsect2 id="GtkRecentManager--size" role="property"><title>The <literal>&quot;size&quot;</literal> property</title>
+<indexterm zone="GtkRecentManager--size" role="2.10"><primary sortas="RecentManager:size">GtkRecentManager:size</primary></indexterm><programlisting>  &quot;size&quot;                     <link linkend="gint">gint</link>                  : Read</programlisting>
+<para>
+The size of the recently used resources list.</para>
+<para>
+</para><para>Allowed values: &gt;= G_MAXULONG</para>
+<para>Default value: 0</para>
+<para>Since 2.10</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkRecentManager.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkRecentManager-changed" role="signal"><title>The <literal>&quot;changed&quot;</literal> signal</title>
+<indexterm zone="GtkRecentManager-changed" role="2.10"><primary sortas="RecentManager::changed">GtkRecentManager::changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkRecentManager">GtkRecentManager</link> *recent_manager,
+                                                        <link linkend="gpointer">gpointer</link>          user_data)           : Run First</programlisting>
+<para>
+Emitted when the current recently used resources manager changes its
+contents.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>recent_manager</parameter>&#160;:</term>
+<listitem><simpara> the recent manager
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.10</para></refsect2>
+</refsect1>
+
+
+
+</refentry>

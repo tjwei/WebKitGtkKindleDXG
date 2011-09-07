@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkStatusbar">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkStatusbar.top_of_page">GtkStatusbar</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkStatusbar</refname>
+<refpurpose>Report messages of minor importance to the user</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkStatusbar.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkStatusbar-struct">GtkStatusbar</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-statusbar-new">gtk_statusbar_new</link>                   (void);
+<link linkend="guint">guint</link>               <link linkend="gtk-statusbar-get-context-id">gtk_statusbar_get_context_id</link>        (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                         const <link linkend="gchar">gchar</link> *context_description);
+<link linkend="guint">guint</link>               <link linkend="gtk-statusbar-push">gtk_statusbar_push</link>                  (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                         <link linkend="guint">guint</link> context_id,
+                                                         const <link linkend="gchar">gchar</link> *text);
+<link linkend="void">void</link>                <link linkend="gtk-statusbar-pop">gtk_statusbar_pop</link>                   (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                         <link linkend="guint">guint</link> context_id);
+<link linkend="void">void</link>                <link linkend="gtk-statusbar-remove">gtk_statusbar_remove</link>                (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                         <link linkend="guint">guint</link> context_id,
+                                                         <link linkend="guint">guint</link> message_id);
+<link linkend="void">void</link>                <link linkend="gtk-statusbar-set-has-resize-grip">gtk_statusbar_set_has_resize_grip</link>   (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                         <link linkend="gboolean">gboolean</link> setting);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-statusbar-get-has-resize-grip">gtk_statusbar_get_has_resize_grip</link>   (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkStatusbar.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBox">GtkBox</link>
+                                 +----<link linkend="GtkHBox">GtkHBox</link>
+                                       +----GtkStatusbar
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkStatusbar.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkStatusbar implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkStatusbar.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkStatusbar--has-resize-grip">has-resize-grip</link>&quot;          <link linkend="gboolean">gboolean</link>              : Read / Write
+</synopsis>
+</refsect1>
+<refsect1 id="GtkStatusbar.style-properties" role="style_properties">
+<title role="style_properties.title">Style Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkStatusbar--s-shadow-type">shadow-type</link>&quot;              <link linkend="GtkShadowType">GtkShadowType</link>         : Read
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkStatusbar.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkStatusbar-text-popped">text-popped</link>&quot;                                    : Run Last
+  &quot;<link linkend="GtkStatusbar-text-pushed">text-pushed</link>&quot;                                    : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkStatusbar.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A <link linkend="GtkStatusbar"><type>GtkStatusbar</type></link> is usually placed along the bottom of an application's main
+<link linkend="GtkWindow"><type>GtkWindow</type></link>. It may provide a regular commentary of the application's status
+(as is usually the case in a web browser, for example), or may be used to
+simply output a message when the status changes, (when an upload is complete
+in an FTP client, for example).
+It may also have a resize grip (a triangular area in the lower right corner)
+which can be clicked on to resize the window containing the statusbar.
+</para>
+<para>
+Status bars in GTK+ maintain a stack of messages. The message at
+the top of the each bar's stack is the one that will currently be displayed.
+</para>
+<para>
+Any messages added to a statusbar's stack must specify a <emphasis>context
+id</emphasis> that is used to uniquely identify the source of a message.
+This context id can be generated by <link linkend="gtk-statusbar-get-context-id"><function>gtk_statusbar_get_context_id()</function></link>, given a
+message and the statusbar that it will be added to. Note that messages are
+stored in a stack, and when choosing which message to display, the stack
+structure is adhered to, regardless of the context identifier of a message.
+</para>
+<para>
+One could say that a statusbar maintains one stack of messages for display
+purposes, but allows multiple message producers to maintain sub-stacks of
+the messages they produced (via context ids).
+</para>
+<para>
+Status bars are created using <link linkend="gtk-statusbar-new"><function>gtk_statusbar_new()</function></link>.
+</para>
+<para>
+Messages are added to the bar's stack with <link linkend="gtk-statusbar-push"><function>gtk_statusbar_push()</function></link>.
+</para>
+<para>
+The message at the top of the stack can be removed using <link linkend="gtk-statusbar-pop"><function>gtk_statusbar_pop()</function></link>.
+A message can be removed from anywhere in the stack if its message_id was
+recorded at the time it was added. This is done using <link linkend="gtk-statusbar-remove"><function>gtk_statusbar_remove()</function></link>.
+</para>
+</refsect1>
+
+<refsect1 id="GtkStatusbar.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkStatusbar-struct" role="struct">
+<title>GtkStatusbar</title>
+<indexterm zone="GtkStatusbar-struct"><primary sortas="Statusbar">GtkStatusbar</primary></indexterm><programlisting>typedef struct _GtkStatusbar GtkStatusbar;</programlisting>
+<para>
+Contains private data that should be modified with the functions described
+below.
+</para></refsect2>
+<refsect2 id="gtk-statusbar-new" role="function">
+<title>gtk_statusbar_new ()</title>
+<indexterm zone="gtk-statusbar-new"><primary sortas="statusbar_new">gtk_statusbar_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_statusbar_new                   (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkStatusbar"><type>GtkStatusbar</type></link> ready for messages.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="GtkStatusbar"><type>GtkStatusbar</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-statusbar-get-context-id" role="function">
+<title>gtk_statusbar_get_context_id ()</title>
+<indexterm zone="gtk-statusbar-get-context-id"><primary sortas="statusbar_get_context_id">gtk_statusbar_get_context_id</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_statusbar_get_context_id        (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                         const <link linkend="gchar">gchar</link> *context_description);</programlisting>
+<para>
+Returns a new context identifier, given a description 
+of the actual context. Note that the description is 
+<emphasis>not</emphasis> shown in the UI.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>statusbar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkStatusbar"><type>GtkStatusbar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>context_description</parameter>&#160;:</term>
+<listitem><simpara> textual description of what context 
+                      the new message is being used in
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an integer id
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-statusbar-push" role="function">
+<title>gtk_statusbar_push ()</title>
+<indexterm zone="gtk-statusbar-push"><primary sortas="statusbar_push">gtk_statusbar_push</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_statusbar_push                  (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                         <link linkend="guint">guint</link> context_id,
+                                                         const <link linkend="gchar">gchar</link> *text);</programlisting>
+<para>
+Pushes a new message onto a statusbar's stack.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>statusbar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkStatusbar"><type>GtkStatusbar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>context_id</parameter>&#160;:</term>
+<listitem><simpara> the message's context id, as returned by
+             <link linkend="gtk-statusbar-get-context-id"><function>gtk_statusbar_get_context_id()</function></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> the message to add to the statusbar
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a message id that can be used with 
+         <link linkend="gtk-statusbar-remove"><function>gtk_statusbar_remove()</function></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-statusbar-pop" role="function">
+<title>gtk_statusbar_pop ()</title>
+<indexterm zone="gtk-statusbar-pop"><primary sortas="statusbar_pop">gtk_statusbar_pop</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_statusbar_pop                   (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                         <link linkend="guint">guint</link> context_id);</programlisting>
+<para>
+Removes the first message in the <link linkend="GtkStatusBar"><type>GtkStatusBar</type></link>'s stack
+with the given context id. 
+</para>
+<para>
+Note that this may not change the displayed message, if 
+the message at the top of the stack has a different 
+context id.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>statusbar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkStatusBar"><type>GtkStatusBar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>context_id</parameter>&#160;:</term>
+<listitem><simpara> a context identifier
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-statusbar-remove" role="function">
+<title>gtk_statusbar_remove ()</title>
+<indexterm zone="gtk-statusbar-remove"><primary sortas="statusbar_remove">gtk_statusbar_remove</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_statusbar_remove                (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                         <link linkend="guint">guint</link> context_id,
+                                                         <link linkend="guint">guint</link> message_id);</programlisting>
+<para>
+Forces the removal of a message from a statusbar's stack. 
+The exact <parameter>context_id</parameter> and <parameter>message_id</parameter> must be specified.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>statusbar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkStatusBar"><type>GtkStatusBar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>context_id</parameter>&#160;:</term>
+<listitem><simpara> a context identifier
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>message_id</parameter>&#160;:</term>
+<listitem><simpara> a message identifier, as returned by <link linkend="gtk-statusbar-push"><function>gtk_statusbar_push()</function></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-statusbar-set-has-resize-grip" role="function">
+<title>gtk_statusbar_set_has_resize_grip ()</title>
+<indexterm zone="gtk-statusbar-set-has-resize-grip"><primary sortas="statusbar_set_has_resize_grip">gtk_statusbar_set_has_resize_grip</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_statusbar_set_has_resize_grip   (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                         <link linkend="gboolean">gboolean</link> setting);</programlisting>
+<para>
+Sets whether the statusbar has a resize grip. 
+<link linkend="TRUE--CAPS"><literal>TRUE</literal></link> by default.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>statusbar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkStatusBar"><type>GtkStatusBar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>setting</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> to have a resize grip
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-statusbar-get-has-resize-grip" role="function">
+<title>gtk_statusbar_get_has_resize_grip ()</title>
+<indexterm zone="gtk-statusbar-get-has-resize-grip"><primary sortas="statusbar_get_has_resize_grip">gtk_statusbar_get_has_resize_grip</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_statusbar_get_has_resize_grip   (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar);</programlisting>
+<para>
+Returns whether the statusbar has a resize grip.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>statusbar</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkStatusBar"><type>GtkStatusBar</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the statusbar has a resize grip.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkStatusbar.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkStatusbar--has-resize-grip" role="property"><title>The <literal>&quot;has-resize-grip&quot;</literal> property</title>
+<indexterm zone="GtkStatusbar--has-resize-grip" role="2.4"><primary sortas="Statusbar:has-resize-grip">GtkStatusbar:has-resize-grip</primary></indexterm><programlisting>  &quot;has-resize-grip&quot;          <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether the statusbar has a grip for resizing the toplevel window.</para>
+<para>
+</para><para>Default value: TRUE</para>
+<para>Since 2.4</para>
+</refsect2>
+</refsect1>
+<refsect1 id="GtkStatusbar.style-property-details" role="style_properties_details">
+<title role="style_properties_details.title">Style Property Details</title>
+<refsect2 id="GtkStatusbar--s-shadow-type" role="property"><title>The <literal>&quot;shadow-type&quot;</literal> style property</title>
+<indexterm zone="GtkStatusbar--s-shadow-type"><primary sortas="Statusbar:shadow-type">GtkStatusbar:shadow-type</primary></indexterm><programlisting>  &quot;shadow-type&quot;              <link linkend="GtkShadowType">GtkShadowType</link>         : Read</programlisting>
+<para>Style of bevel around the statusbar text.</para><para>Default value: GTK_SHADOW_IN</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkStatusbar.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkStatusbar-text-popped" role="signal"><title>The <literal>&quot;text-popped&quot;</literal> signal</title>
+<indexterm zone="GtkStatusbar-text-popped"><primary sortas="Statusbar::text-popped">GtkStatusbar::text-popped</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                        <link linkend="guint">guint</link>         context_id,
+                                                        <link linkend="gchar">gchar</link>        *text,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)       : Run Last</programlisting>
+<para>
+Is emitted whenever a new message is popped off a statusbar's stack.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>statusbar</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>context_id</parameter>&#160;:</term>
+<listitem><simpara> the context id of the relevant message/statusbar.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> the message that was just popped.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2><refsect2 id="GtkStatusbar-text-pushed" role="signal"><title>The <literal>&quot;text-pushed&quot;</literal> signal</title>
+<indexterm zone="GtkStatusbar-text-pushed"><primary sortas="Statusbar::text-pushed">GtkStatusbar::text-pushed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkStatusbar">GtkStatusbar</link> *statusbar,
+                                                        <link linkend="guint">guint</link>         context_id,
+                                                        <link linkend="gchar">gchar</link>        *text,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)       : Run Last</programlisting>
+<para>
+Is emitted whenever a new message gets pushed onto a statusbar's stack.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>statusbar</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>context_id</parameter>&#160;:</term>
+<listitem><simpara> the context id of the relevant message/statusbar.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>text</parameter>&#160;:</term>
+<listitem><simpara> the message that was pushed.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

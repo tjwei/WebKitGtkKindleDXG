@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-09-03 21:07+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/support.c:90 src/support.c:114
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr ""
+
+#: src/interface.c:70
+msgid "GTKTerm2"
+msgstr ""
+
+#: src/interface.c:99
+msgid "File"
+msgstr ""
+
+#: src/interface.c:108
+msgid "New Tab"
+msgstr ""
+
+#: src/interface.c:124
+msgid "Close Tab"
+msgstr ""
+
+#: src/interface.c:134
+msgid "Close Window"
+msgstr ""
+
+#: src/interface.c:144
+msgid "View"
+msgstr ""
+
+#: src/interface.c:153
+msgid "Full Screen"
+msgstr ""
+
+#. hide_menu = gtk_menu_item_new_with_mnemonic (_("Hide menu"));
+#. gtk_widget_set_name (hide_menu, "hide_menu");
+#. gtk_widget_show (hide_menu);
+#. gtk_container_add (GTK_CONTAINER (menuitem3_menu), hide_menu);
+#: src/interface.c:168
+msgid "Help"
+msgstr ""
+
+#: src/interface.c:177
+msgid "Info"
+msgstr ""
+
+#: src/interface.c:285
+msgid "About GTKTerm2"
+msgstr ""
+
+#: src/interface.c:305
+msgid "GTKTerm2 (v "
+msgstr ""
+
+#: src/interface.c:305
+msgid ""
+")\n"
+"Copyright (c) 2004 Oliver Feige"
+msgstr ""
+
+#: src/interface.c:315
+msgid "Information"
+msgstr ""
+
+#. label6 = gtk_label_new (_("Programmiert:\nOliver Feige <ofeige@gmx.de>\n\nIdee:\nOliver Feige <ofeige@gmx.de>\nStefan Bambach <sbambach@gmx.de>"));
+#: src/interface.c:322
+msgid ""
+"Programmer:\n"
+"Oliver Feige <ofeige@gmx.de>\n"
+"\n"
+"Idea:\n"
+"Oliver Feige <ofeige@gmx.de>\n"
+"Stefan Bambach <sbambach@gmx.de>"
+msgstr ""
+
+#: src/interface.c:331
+msgid "Program of"
+msgstr ""
+
+#: src/callbacks.c:182
+msgid "_Full screen"
+msgstr ""
+
+#: src/callbacks.c:188
+msgid "_Restore normal size"
+msgstr ""

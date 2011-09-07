@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkIMMulticontext">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkIMMulticontext.top_of_page">GtkIMMulticontext</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkIMMulticontext</refname>
+<refpurpose>An input method context supporting multiple, loadable input methods</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkIMMulticontext.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkIMMulticontext-struct">GtkIMMulticontext</link>;
+<link linkend="GtkIMContext">GtkIMContext</link> *      <link linkend="gtk-im-multicontext-new">gtk_im_multicontext_new</link>             (void);
+<link linkend="void">void</link>                <link linkend="gtk-im-multicontext-append-menuitems">gtk_im_multicontext_append_menuitems</link>
+                                                        (<link linkend="GtkIMMulticontext">GtkIMMulticontext</link> *context,
+                                                         <link linkend="GtkMenuShell">GtkMenuShell</link> *menushell);
+const <link linkend="char">char</link> *        <link linkend="gtk-im-multicontext-get-context-id">gtk_im_multicontext_get_context_id</link>  (<link linkend="GtkIMMulticontext">GtkIMMulticontext</link> *context);
+<link linkend="void">void</link>                <link linkend="gtk-im-multicontext-set-context-id">gtk_im_multicontext_set_context_id</link>  (<link linkend="GtkIMMulticontext">GtkIMMulticontext</link> *context,
+                                                         const <link linkend="char">char</link> *context_id);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkIMMulticontext.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GtkIMContext">GtkIMContext</link>
+         +----GtkIMMulticontext
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+
+
+<refsect1 id="GtkIMMulticontext.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GtkIMMulticontext.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkIMMulticontext-struct" role="struct">
+<title>GtkIMMulticontext</title>
+<indexterm zone="GtkIMMulticontext-struct"><primary sortas="IMMulticontext">GtkIMMulticontext</primary></indexterm><programlisting>typedef struct _GtkIMMulticontext GtkIMMulticontext;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-im-multicontext-new" role="function">
+<title>gtk_im_multicontext_new ()</title>
+<indexterm zone="gtk-im-multicontext-new"><primary sortas="im_multicontext_new">gtk_im_multicontext_new</primary></indexterm><programlisting><link linkend="GtkIMContext">GtkIMContext</link> *      gtk_im_multicontext_new             (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkIMMulticontext"><type>GtkIMMulticontext</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkIMMulticontext"><type>GtkIMMulticontext</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-multicontext-append-menuitems" role="function">
+<title>gtk_im_multicontext_append_menuitems ()</title>
+<indexterm zone="gtk-im-multicontext-append-menuitems"><primary sortas="im_multicontext_append_menuitems">gtk_im_multicontext_append_menuitems</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_multicontext_append_menuitems
+                                                        (<link linkend="GtkIMMulticontext">GtkIMMulticontext</link> *context,
+                                                         <link linkend="GtkMenuShell">GtkMenuShell</link> *menushell);</programlisting>
+<para>
+Add menuitems for various available input methods to a menu;
+the menuitems, when selected, will switch the input method
+for the context and the global default input method.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMMulticontext"><type>GtkIMMulticontext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>menushell</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkMenuShell"><type>GtkMenuShell</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-im-multicontext-get-context-id" role="function" condition="since:2.16">
+<title>gtk_im_multicontext_get_context_id ()</title>
+<indexterm zone="gtk-im-multicontext-get-context-id" role="2.16"><primary sortas="im_multicontext_get_context_id">gtk_im_multicontext_get_context_id</primary></indexterm><programlisting>const <link linkend="char">char</link> *        gtk_im_multicontext_get_context_id  (<link linkend="GtkIMMulticontext">GtkIMMulticontext</link> *context);</programlisting>
+<para>
+Gets the id of the currently active slave of the <parameter>context</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMMulticontext"><type>GtkIMMulticontext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the id of the currently active slave
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="gtk-im-multicontext-set-context-id" role="function" condition="since:2.16">
+<title>gtk_im_multicontext_set_context_id ()</title>
+<indexterm zone="gtk-im-multicontext-set-context-id" role="2.16"><primary sortas="im_multicontext_set_context_id">gtk_im_multicontext_set_context_id</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_im_multicontext_set_context_id  (<link linkend="GtkIMMulticontext">GtkIMMulticontext</link> *context,
+                                                         const <link linkend="char">char</link> *context_id);</programlisting>
+<para>
+Sets the context id for <parameter>context</parameter>.
+</para>
+<para>
+This causes the currently active slave of <parameter>context</parameter> to be
+replaced by the slave corresponding to the new context id.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkIMMulticontext"><type>GtkIMMulticontext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>context_id</parameter>&#160;:</term>
+<listitem><simpara> the id to use 
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

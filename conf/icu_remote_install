@@ -1,0 +1,9 @@
+cd source
+cp host/bin/pkgdata bin || exit 1
+XPATH=/scratchbox/compilers/"`/scratchbox/tools/bin/sb-conf show -c`"/bin/:$PATH
+DESTDIR=`pwd`/tmpdest
+rm -fr "$DESTDIR"
+PATH="$XPATH" make install LD_LIBRARY_PATH=`pwd`/host/lib DESTDIR="$DESTDIR" || exit 1
+cp arm/bin/pkgdata $DESTDIR/usr/local/bin
+cp arm/bin/pkgdata bin 
+cd ..

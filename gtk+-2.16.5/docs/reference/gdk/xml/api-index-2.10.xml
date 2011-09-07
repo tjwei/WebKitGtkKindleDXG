@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>A</title>
+<indexentry><primaryie linkends="gdk-atom-intern-static-string"><link linkend="gdk-atom-intern-static-string">gdk_atom_intern_static_string</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="gdk-cairo-set-source-pixmap"><link linkend="gdk-cairo-set-source-pixmap">gdk_cairo_set_source_pixmap</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="gdk-display-supports-input-shapes"><link linkend="gdk-display-supports-input-shapes">gdk_display_supports_input_shapes</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-supports-shapes"><link linkend="gdk-display-supports-shapes">gdk_display_supports_shapes</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="gdk-pixmap-foreign-new-for-screen"><link linkend="gdk-pixmap-foreign-new-for-screen">gdk_pixmap_foreign_new_for_screen</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="GdkScreen-composited-changed"><link linkend="GdkScreen-composited-changed">GdkScreen::composited-changed</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-active-window"><link linkend="gdk-screen-get-active-window">gdk_screen_get_active_window</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-font-options"><link linkend="gdk-screen-get-font-options">gdk_screen_get_font_options</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-resolution"><link linkend="gdk-screen-get-resolution">gdk_screen_get_resolution</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-get-window-stack"><link linkend="gdk-screen-get-window-stack">gdk_screen_get_window_stack</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-is-composited"><link linkend="gdk-screen-is-composited">gdk_screen_is_composited</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-set-font-options"><link linkend="gdk-screen-set-font-options">gdk_screen_set_font_options</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-screen-set-resolution"><link linkend="gdk-screen-set-resolution">gdk_screen_set_resolution</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="gdk-window-get-type-hint"><link linkend="gdk-window-get-type-hint">gdk_window_get_type_hint</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-input-shape-combine-mask"><link linkend="gdk-window-input-shape-combine-mask">gdk_window_input_shape_combine_mask</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-input-shape-combine-region"><link linkend="gdk-window-input-shape-combine-region">gdk_window_input_shape_combine_region</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-merge-child-input-shapes"><link linkend="gdk-window-merge-child-input-shapes">gdk_window_merge_child_input_shapes</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-child-input-shapes"><link linkend="gdk-window-set-child-input-shapes">gdk_window_set_child_input_shapes</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

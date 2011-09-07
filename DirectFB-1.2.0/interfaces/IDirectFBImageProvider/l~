@@ -1,0 +1,1 @@
+../../libtool  --mode=relink gcc -O3 -ffast-math -pipe -D_GNU_SOURCE -Werror-implicit-function-declaration -o libidirectfbimageprovider_png.la -rpath /usr/local/lib/directfb-1.2-0/interfaces/IDirectFBImageProvider -avoid-version -module idirectfbimageprovider_png.lo ../../lib/direct/libdirect.la ../../src/libdirectfb.la -lpng14 -ldl -lpthread )  

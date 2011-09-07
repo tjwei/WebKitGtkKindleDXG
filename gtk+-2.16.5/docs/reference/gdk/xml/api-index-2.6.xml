@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="gdk-display-request-selection-notification"><link linkend="gdk-display-request-selection-notification">gdk_display_request_selection_notification</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-store-clipboard"><link linkend="gdk-display-store-clipboard">gdk_display_store_clipboard</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-supports-clipboard-persistence"><link linkend="gdk-display-supports-clipboard-persistence">gdk_display_supports_clipboard_persistence</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-display-supports-selection-notification"><link linkend="gdk-display-supports-selection-notification">gdk_display_supports_selection_notification</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drag-drop-succeeded"><link linkend="gdk-drag-drop-succeeded">gdk_drag_drop_succeeded</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-draw-glyphs-transformed"><link linkend="gdk-draw-glyphs-transformed">gdk_draw_glyphs_transformed</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-draw-trapezoids"><link linkend="gdk-draw-trapezoids">gdk_draw_trapezoids</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="GdkEventOwnerChange"><link linkend="GdkEventOwnerChange">GdkEventOwnerChange</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="GdkPangoRenderer-struct"><link linkend="GdkPangoRenderer-struct">GdkPangoRenderer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPangoRendererClass"><link linkend="GdkPangoRendererClass">GdkPangoRendererClass</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pango-renderer-get-default"><link linkend="gdk-pango-renderer-get-default">gdk_pango_renderer_get_default</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pango-renderer-new"><link linkend="gdk-pango-renderer-new">gdk_pango_renderer_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pango-renderer-set-drawable"><link linkend="gdk-pango-renderer-set-drawable">gdk_pango_renderer_set_drawable</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pango-renderer-set-gc"><link linkend="gdk-pango-renderer-set-gc">gdk_pango_renderer_set_gc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pango-renderer-set-override-color"><link linkend="gdk-pango-renderer-set-override-color">gdk_pango_renderer_set_override_color</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pango-renderer-set-stipple"><link linkend="gdk-pango-renderer-set-stipple">gdk_pango_renderer_set_stipple</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="gdk-window-configure-finished"><link linkend="gdk-window-configure-finished">gdk_window_configure_finished</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-enable-synchronized-configure"><link linkend="gdk-window-enable-synchronized-configure">gdk_window_enable_synchronized_configure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-focus-on-map"><link linkend="gdk-window-set-focus-on-map">gdk_window_set_focus_on_map</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>X</title>
+<indexentry><primaryie linkends="gdk-x11-window-set-user-time"><link linkend="gdk-x11-window-set-user-time">gdk_x11_window_set_user_time</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

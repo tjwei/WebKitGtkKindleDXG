@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkInvisible">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkInvisible.top_of_page">GtkInvisible</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkInvisible</refname>
+<refpurpose>A widget which is not displayed</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkInvisible.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkInvisible-struct">GtkInvisible</link>;
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-invisible-new">gtk_invisible_new</link>                   (void);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-invisible-new-for-screen">gtk_invisible_new_for_screen</link>        (<link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="void">void</link>                <link linkend="gtk-invisible-set-screen">gtk_invisible_set_screen</link>            (<link linkend="GtkInvisible">GtkInvisible</link> *invisible,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="GdkScreen">GdkScreen</link>*          <link linkend="gtk-invisible-get-screen">gtk_invisible_get_screen</link>            (<link linkend="GtkInvisible">GtkInvisible</link> *invisible);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkInvisible.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----GtkInvisible
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkInvisible.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkInvisible implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkInvisible.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkInvisible--screen">screen</link>&quot;                   <link linkend="GdkScreen">GdkScreen</link>*            : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkInvisible.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The <link linkend="GtkInvisible"><type>GtkInvisible</type></link> widget is used internally in GTK+, and is probably not
+very useful for application developers.
+</para>
+<para>
+It is used for reliable pointer grabs and selection handling in the code
+for drag-and-drop.
+</para>
+</refsect1>
+
+<refsect1 id="GtkInvisible.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkInvisible-struct" role="struct">
+<title>GtkInvisible</title>
+<indexterm zone="GtkInvisible-struct"><primary sortas="Invisible">GtkInvisible</primary></indexterm><programlisting>typedef struct _GtkInvisible GtkInvisible;</programlisting>
+<para>
+The <link linkend="GtkInvisible-struct"><type>GtkInvisible</type></link> struct contains no public fields.
+</para></refsect2>
+<refsect2 id="gtk-invisible-new" role="function">
+<title>gtk_invisible_new ()</title>
+<indexterm zone="gtk-invisible-new"><primary sortas="invisible_new">gtk_invisible_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_invisible_new                   (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkInvisible"><type>GtkInvisible</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkInvisible"><type>GtkInvisible</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-invisible-new-for-screen" role="function" condition="since:2.2">
+<title>gtk_invisible_new_for_screen ()</title>
+<indexterm zone="gtk-invisible-new-for-screen" role="2.2"><primary sortas="invisible_new_for_screen">gtk_invisible_new_for_screen</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_invisible_new_for_screen        (<link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<para>
+Creates a new <link linkend="GtkInvisible"><type>GtkInvisible</type></link> object for a specified screen</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link> which identifies on which
+    the new <link linkend="GtkInvisible"><type>GtkInvisible</type></link> will be created.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly created <link linkend="GtkInvisible"><type>GtkInvisible</type></link> object
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gtk-invisible-set-screen" role="function" condition="since:2.2">
+<title>gtk_invisible_set_screen ()</title>
+<indexterm zone="gtk-invisible-set-screen" role="2.2"><primary sortas="invisible_set_screen">gtk_invisible_set_screen</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_invisible_set_screen            (<link linkend="GtkInvisible">GtkInvisible</link> *invisible,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<para>
+Sets the <link linkend="GdkScreen"><type>GdkScreen</type></link> where the <link linkend="GtkInvisible"><type>GtkInvisible</type></link> object will be displayed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>invisible</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkInvisible"><type>GtkInvisible</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gtk-invisible-get-screen" role="function" condition="since:2.2">
+<title>gtk_invisible_get_screen ()</title>
+<indexterm zone="gtk-invisible-get-screen" role="2.2"><primary sortas="invisible_get_screen">gtk_invisible_get_screen</primary></indexterm><programlisting><link linkend="GdkScreen">GdkScreen</link>*          gtk_invisible_get_screen            (<link linkend="GtkInvisible">GtkInvisible</link> *invisible);</programlisting>
+<para>
+Returns the <link linkend="GdkScreen"><type>GdkScreen</type></link> object associated with <parameter>invisible</parameter></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>invisible</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkInvisible"><type>GtkInvisible</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the associated <link linkend="GdkScreen"><type>GdkScreen</type></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkInvisible.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkInvisible--screen" role="property"><title>The <literal>&quot;screen&quot;</literal> property</title>
+<indexterm zone="GtkInvisible--screen"><primary sortas="Invisible:screen">GtkInvisible:screen</primary></indexterm><programlisting>  &quot;screen&quot;                   <link linkend="GdkScreen">GdkScreen</link>*            : Read / Write</programlisting>
+<para>The screen where this window will be displayed.</para></refsect2>
+</refsect1>
+
+
+
+
+</refentry>

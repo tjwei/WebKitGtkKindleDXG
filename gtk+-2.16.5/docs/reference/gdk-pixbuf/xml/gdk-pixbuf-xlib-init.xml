@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+
+<!ENTITY gdk-pixbuf "<application>gdk-pixbuf</application>">
+<!ENTITY Imlib "<application>Imlib</application>">
+]>
+<refentry id="gdk-pixbuf-gdk-pixbuf-xlib-init">
+<refmeta>
+<refentrytitle role="top_of_page" id="gdk-pixbuf-gdk-pixbuf-xlib-init.top_of_page">&gdk-pixbuf; Xlib initialization</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK-PIXBUF Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>&gdk-pixbuf; Xlib initialization</refname>
+<refpurpose>Initializing the &gdk-pixbuf; Xlib library.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gdk-pixbuf-gdk-pixbuf-xlib-init.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gdk-pixbuf/gdk-pixbuf.h&gt;
+
+<link linkend="void">void</link>                <link linkend="gdk-pixbuf-xlib-init">gdk_pixbuf_xlib_init</link>                (<link linkend="Display">Display</link> *display,
+                                                         <link linkend="int">int</link> screen_num);
+<link linkend="void">void</link>                <link linkend="gdk-pixbuf-xlib-init-with-depth">gdk_pixbuf_xlib_init_with_depth</link>     (<link linkend="Display">Display</link> *display,
+                                                         <link linkend="int">int</link> screen_num,
+                                                         <link linkend="int">int</link> prefDepth);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gdk-pixbuf-gdk-pixbuf-xlib-init.description" role="desc">
+<title role="desc.title">Description</title>
+  <para>
+    In addition to the normal Gdk-specific functions, the &gdk-pixbuf;
+    package provides a small library that lets Xlib-only applications
+    use <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> structures and render them to X drawables.  The
+    functions in this section are used to initialize the &gdk-pixbuf;
+    Xlib library.  This library must be initialized near the beginning
+    of the program or before calling any of the other &gdk-pixbuf;
+    Xlib functions.
+  </para>
+</refsect1>
+
+<refsect1 id="gdk-pixbuf-gdk-pixbuf-xlib-init.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="gdk-pixbuf-xlib-init" role="function">
+<title>gdk_pixbuf_xlib_init ()</title>
+<indexterm zone="gdk-pixbuf-xlib-init"><primary sortas="xlib_init">gdk_pixbuf_xlib_init</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_pixbuf_xlib_init                (<link linkend="Display">Display</link> *display,
+                                                         <link linkend="int">int</link> screen_num);</programlisting>
+<para>
+Initializes the gdk-pixbuf Xlib machinery by calling <link linkend="xlib-rgb-init"><function>xlib_rgb_init()</function></link>.  This
+function should be called near the beginning of your program, or before using
+any of the gdk-pixbuf-xlib functions.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> X display to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen_num</parameter>&#160;:</term>
+<listitem><simpara> Screen number.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pixbuf-xlib-init-with-depth" role="function">
+<title>gdk_pixbuf_xlib_init_with_depth ()</title>
+<indexterm zone="gdk-pixbuf-xlib-init-with-depth"><primary sortas="xlib_init_with_depth">gdk_pixbuf_xlib_init_with_depth</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_pixbuf_xlib_init_with_depth     (<link linkend="Display">Display</link> *display,
+                                                         <link linkend="int">int</link> screen_num,
+                                                         <link linkend="int">int</link> prefDepth);</programlisting>
+<para>
+Similar to <link linkend="gdk-pixbuf-xlib-init"><function>gdk_pixbuf_xlib_init()</function></link>, but also lets you specify the preferred
+depth for XlibRGB if you do not want it to use the default depth it picks.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> X display to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen_num</parameter>&#160;:</term>
+<listitem><simpara> Screen number.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>prefDepth</parameter>&#160;:</term>
+<listitem><simpara> Preferred depth for XlibRGB.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="gdk-pixbuf-gdk-pixbuf-xlib-init.see-also">
+<title>See Also</title>
+  <para>
+    XlibRGB
+  </para>
+</refsect1>
+
+</refentry>

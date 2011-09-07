@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkRecentAction">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkRecentAction.top_of_page">GtkRecentAction</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkRecentAction</refname>
+<refpurpose>An action of which represents a list of recently used files</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkRecentAction.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkRecentAction-struct">GtkRecentAction</link>;
+<link linkend="GtkAction">GtkAction</link> *         <link linkend="gtk-recent-action-new">gtk_recent_action_new</link>               (const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *label,
+                                                         const <link linkend="gchar">gchar</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *stock_id);
+<link linkend="GtkAction">GtkAction</link> *         <link linkend="gtk-recent-action-new-for-manager">gtk_recent_action_new_for_manager</link>   (const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *label,
+                                                         const <link linkend="gchar">gchar</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkRecentManager">GtkRecentManager</link> *manager);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-action-get-show-numbers">gtk_recent_action_get_show_numbers</link>  (<link linkend="GtkRecentAction">GtkRecentAction</link> *action);
+<link linkend="void">void</link>                <link linkend="gtk-recent-action-set-show-numbers">gtk_recent_action_set_show_numbers</link>  (<link linkend="GtkRecentAction">GtkRecentAction</link> *action,
+                                                         <link linkend="gboolean">gboolean</link> show_numbers);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkRecentAction.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GtkAction">GtkAction</link>
+         +----GtkRecentAction
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkRecentAction.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkRecentAction implements
+ <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkRecentChooser">GtkRecentChooser</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkRecentAction.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkRecentAction--show-numbers">show-numbers</link>&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkRecentAction.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A GtkRecentAction represents a list of recently used files, which
+can be shown by widgets such as <link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link> or
+<link linkend="GtkRecentChooserMenu"><type>GtkRecentChooserMenu</type></link>.
+</para>
+<para>
+To construct a submenu showing recently used files, use a GtkRecentAction
+as the action for a &lt;menuitem&gt;. To construct a menu toolbutton showing
+the recently used files in the popup menu, use a GtkRecentAction as the
+action for a &lt;toolitem&gt; element.
+</para>
+</refsect1>
+
+<refsect1 id="GtkRecentAction.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkRecentAction-struct" role="struct">
+<title>GtkRecentAction</title>
+<indexterm zone="GtkRecentAction-struct"><primary sortas="RecentAction">GtkRecentAction</primary></indexterm><programlisting>typedef struct _GtkRecentAction GtkRecentAction;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-recent-action-new" role="function" condition="since:2.12">
+<title>gtk_recent_action_new ()</title>
+<indexterm zone="gtk-recent-action-new" role="2.12"><primary sortas="recent_action_new">gtk_recent_action_new</primary></indexterm><programlisting><link linkend="GtkAction">GtkAction</link> *         gtk_recent_action_new               (const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *label,
+                                                         const <link linkend="gchar">gchar</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *stock_id);</programlisting>
+<para>
+Creates a new <link linkend="GtkRecentAction"><type>GtkRecentAction</type></link> object. To add the action to
+a <link linkend="GtkActionGroup"><type>GtkActionGroup</type></link> and set the accelerator for the action,
+call <link linkend="gtk-action-group-add-action-with-accel"><function>gtk_action_group_add_action_with_accel()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> a unique name for the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> the label displayed in menu items and on buttons, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tooltip</parameter>&#160;:</term>
+<listitem><simpara> a tooltip for the action, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> the stock icon to display in widgets representing the
+  action, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the newly created <link linkend="GtkRecentAction"><type>GtkRecentAction</type></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-recent-action-new-for-manager" role="function" condition="since:2.12">
+<title>gtk_recent_action_new_for_manager ()</title>
+<indexterm zone="gtk-recent-action-new-for-manager" role="2.12"><primary sortas="recent_action_new_for_manager">gtk_recent_action_new_for_manager</primary></indexterm><programlisting><link linkend="GtkAction">GtkAction</link> *         gtk_recent_action_new_for_manager   (const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *label,
+                                                         const <link linkend="gchar">gchar</link> *tooltip,
+                                                         const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkRecentManager">GtkRecentManager</link> *manager);</programlisting>
+<para>
+Creates a new <link linkend="GtkRecentAction"><type>GtkRecentAction</type></link> object. To add the action to
+a <link linkend="GtkActionGroup"><type>GtkActionGroup</type></link> and set the accelerator for the action,
+call <link linkend="gtk-action-group-add-action-with-accel"><function>gtk_action_group_add_action_with_accel()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> a unique name for the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> the label displayed in menu items and on buttons, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tooltip</parameter>&#160;:</term>
+<listitem><simpara> a tooltip for the action, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> the stock icon to display in widgets representing the
+  action, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> for using the default
+  <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the newly created <link linkend="GtkRecentAction"><type>GtkRecentAction</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-recent-action-get-show-numbers" role="function" condition="since:2.12">
+<title>gtk_recent_action_get_show_numbers ()</title>
+<indexterm zone="gtk-recent-action-get-show-numbers" role="2.12"><primary sortas="recent_action_get_show_numbers">gtk_recent_action_get_show_numbers</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_action_get_show_numbers  (<link linkend="GtkRecentAction">GtkRecentAction</link> *action);</programlisting>
+<para>
+Returns the value set by <link linkend="gtk-recent-chooser-menu-set-show-numbers"><function>gtk_recent_chooser_menu_set_show_numbers()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentAction"><type>GtkRecentAction</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if numbers should be shown.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-recent-action-set-show-numbers" role="function" condition="since:2.12">
+<title>gtk_recent_action_set_show_numbers ()</title>
+<indexterm zone="gtk-recent-action-set-show-numbers" role="2.12"><primary sortas="recent_action_set_show_numbers">gtk_recent_action_set_show_numbers</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_action_set_show_numbers  (<link linkend="GtkRecentAction">GtkRecentAction</link> *action,
+                                                         <link linkend="gboolean">gboolean</link> show_numbers);</programlisting>
+<para>
+Sets whether a number should be added to the items shown by the
+widgets representing <parameter>action</parameter>. The numbers are shown to provide
+a unique character for a mnemonic to be used inside the menu item's
+label. Only the first ten items get a number to avoid clashes.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentAction"><type>GtkRecentAction</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>show_numbers</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the shown items should be numbered
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkRecentAction.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkRecentAction--show-numbers" role="property"><title>The <literal>&quot;show-numbers&quot;</literal> property</title>
+<indexterm zone="GtkRecentAction--show-numbers"><primary sortas="RecentAction:show-numbers">GtkRecentAction:show-numbers</primary></indexterm><programlisting>  &quot;show-numbers&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the items should be displayed with a number.</para><para>Default value: FALSE</para>
+</refsect2>
+</refsect1>
+
+
+
+
+</refentry>

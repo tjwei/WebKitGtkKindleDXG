@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkImageMenuItem">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkImageMenuItem.top_of_page">GtkImageMenuItem</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkImageMenuItem</refname>
+<refpurpose>A menu item with an icon</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkImageMenuItem.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkImageMenuItem-struct">GtkImageMenuItem</link>;
+<link linkend="void">void</link>                <link linkend="gtk-image-menu-item-set-image">gtk_image_menu_item_set_image</link>       (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *image);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-menu-item-get-image">gtk_image_menu_item_get_image</link>       (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-menu-item-new">gtk_image_menu_item_new</link>             (void);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-menu-item-new-from-stock">gtk_image_menu_item_new_from_stock</link>  (const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkAccelGroup">GtkAccelGroup</link> *accel_group);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-menu-item-new-with-label">gtk_image_menu_item_new_with_label</link>  (const <link linkend="gchar">gchar</link> *label);
+<link linkend="GtkWidget">GtkWidget</link>*          <link linkend="gtk-image-menu-item-new-with-mnemonic">gtk_image_menu_item_new_with_mnemonic</link>
+                                                        (const <link linkend="gchar">gchar</link> *label);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-image-menu-item-get-use-stock">gtk_image_menu_item_get_use_stock</link>   (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item);
+<link linkend="void">void</link>                <link linkend="gtk-image-menu-item-set-use-stock">gtk_image_menu_item_set_use_stock</link>   (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item,
+                                                         <link linkend="gboolean">gboolean</link> use_stock);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-image-menu-item-get-always-show-image">gtk_image_menu_item_get_always_show_image</link>
+                                                        (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item);
+<link linkend="void">void</link>                <link linkend="gtk-image-menu-item-set-always-show-image">gtk_image_menu_item_set_always_show_image</link>
+                                                        (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item,
+                                                         <link linkend="gboolean">gboolean</link> always_show);
+<link linkend="void">void</link>                <link linkend="gtk-image-menu-item-set-accel-group">gtk_image_menu_item_set_accel_group</link> (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item,
+                                                         <link linkend="GtkAccelGroup">GtkAccelGroup</link> *accel_group);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkImageMenuItem.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkItem">GtkItem</link>
+                                       +----<link linkend="GtkMenuItem">GtkMenuItem</link>
+                                             +----GtkImageMenuItem
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkImageMenuItem.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkImageMenuItem implements
+ <link linkend="GtkActivatable">GtkActivatable</link>,  <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkImageMenuItem.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkImageMenuItem--accel-group">accel-group</link>&quot;              <link linkend="GtkAccelGroup">GtkAccelGroup</link>*        : Write
+  &quot;<link linkend="GtkImageMenuItem--always-show-image">always-show-image</link>&quot;        <link linkend="gboolean">gboolean</link>              : Read / Write / Construct
+  &quot;<link linkend="GtkImageMenuItem--image">image</link>&quot;                    <link linkend="GtkWidget">GtkWidget</link>*            : Read / Write
+  &quot;<link linkend="GtkImageMenuItem--use-stock">use-stock</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write / Construct
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkImageMenuItem.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A GtkImageMenuItem is a menu item which has an icon next to the text label.
+</para>
+<para>
+Note that the user can disable display of menu icons, so make sure to still
+fill in the text label.
+</para>
+</refsect1>
+
+<refsect1 id="GtkImageMenuItem.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkImageMenuItem-struct" role="struct">
+<title>GtkImageMenuItem</title>
+<indexterm zone="GtkImageMenuItem-struct"><primary sortas="ImageMenuItem">GtkImageMenuItem</primary></indexterm><programlisting>typedef struct _GtkImageMenuItem GtkImageMenuItem;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-image-menu-item-set-image" role="function">
+<title>gtk_image_menu_item_set_image ()</title>
+<indexterm zone="gtk-image-menu-item-set-image"><primary sortas="image_menu_item_set_image">gtk_image_menu_item_set_image</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_menu_item_set_image       (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item,
+                                                         <link linkend="GtkWidget">GtkWidget</link> *image);</programlisting>
+<para>
+Sets the image of <parameter>image_menu_item</parameter> to the given widget.
+Note that it depends on the show-menu-images setting whether
+the image will be displayed or not.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image_menu_item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> a widget to set as the image for the menu item.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-menu-item-get-image" role="function">
+<title>gtk_image_menu_item_get_image ()</title>
+<indexterm zone="gtk-image-menu-item-get-image"><primary sortas="image_menu_item_get_image">gtk_image_menu_item_get_image</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_menu_item_get_image       (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item);</programlisting>
+<para>
+Gets the widget that is currently set as the image of <parameter>image_menu_item</parameter>.
+See <link linkend="gtk-image-menu-item-set-image"><function>gtk_image_menu_item_set_image()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image_menu_item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the widget set as image of <parameter>image_menu_item</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-menu-item-new" role="function">
+<title>gtk_image_menu_item_new ()</title>
+<indexterm zone="gtk-image-menu-item-new"><primary sortas="image_menu_item_new">gtk_image_menu_item_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_menu_item_new             (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link> with an empty label.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-menu-item-new-from-stock" role="function">
+<title>gtk_image_menu_item_new_from_stock ()</title>
+<indexterm zone="gtk-image-menu-item-new-from-stock"><primary sortas="image_menu_item_new_from_stock">gtk_image_menu_item_new_from_stock</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_menu_item_new_from_stock  (const <link linkend="gchar">gchar</link> *stock_id,
+                                                         <link linkend="GtkAccelGroup">GtkAccelGroup</link> *accel_group);</programlisting>
+<para>
+Creates a new <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link> containing the image and text from a 
+stock item. Some stock ids have preprocessor macros like <link linkend="GTK-STOCK-OK--CAPS"><type>GTK_STOCK_OK</type></link> 
+and <link linkend="GTK-STOCK-APPLY--CAPS"><type>GTK_STOCK_APPLY</type></link>.
+</para>
+<para>
+If you want this menu item to have changeable accelerators, then pass in
+<link linkend="NULL--CAPS"><literal>NULL</literal></link> for accel_group. Next call <link linkend="gtk-menu-item-set-accel-path"><function>gtk_menu_item_set_accel_path()</function></link> with an
+appropriate path for the menu item, use <link linkend="gtk-stock-lookup"><function>gtk_stock_lookup()</function></link> to look up the
+standard accelerator for the stock item, and if one is found, call
+<link linkend="gtk-accel-map-add-entry"><function>gtk_accel_map_add_entry()</function></link> to register it.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>stock_id</parameter>&#160;:</term>
+<listitem><simpara> the name of the stock item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>accel_group</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkAccelGroup"><type>GtkAccelGroup</type></link> to add the menu items accelerator to,
+  or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-menu-item-new-with-label" role="function">
+<title>gtk_image_menu_item_new_with_label ()</title>
+<indexterm zone="gtk-image-menu-item-new-with-label"><primary sortas="image_menu_item_new_with_label">gtk_image_menu_item_new_with_label</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_menu_item_new_with_label  (const <link linkend="gchar">gchar</link> *label);</programlisting>
+<para>
+Creates a new <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link> containing a label.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> the text of the menu item.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-menu-item-new-with-mnemonic" role="function">
+<title>gtk_image_menu_item_new_with_mnemonic ()</title>
+<indexterm zone="gtk-image-menu-item-new-with-mnemonic"><primary sortas="image_menu_item_new_with_mnemonic">gtk_image_menu_item_new_with_mnemonic</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link>*          gtk_image_menu_item_new_with_mnemonic
+                                                        (const <link linkend="gchar">gchar</link> *label);</programlisting>
+<para>
+Creates a new <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link> containing a label. The label
+will be created using <link linkend="gtk-label-new-with-mnemonic"><function>gtk_label_new_with_mnemonic()</function></link>, so underscores
+in <parameter>label</parameter> indicate the mnemonic for the menu item.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>label</parameter>&#160;:</term>
+<listitem><simpara> the text of the menu item, with an underscore in front of the
+        mnemonic character
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-image-menu-item-get-use-stock" role="function" condition="since:2.16">
+<title>gtk_image_menu_item_get_use_stock ()</title>
+<indexterm zone="gtk-image-menu-item-get-use-stock" role="2.16"><primary sortas="image_menu_item_get_use_stock">gtk_image_menu_item_get_use_stock</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_image_menu_item_get_use_stock   (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item);</programlisting>
+<para>
+Checks whether the label set in the menuitem is used as a
+stock id to select the stock item for the item.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image_menu_item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the label set in the menuitem is used as a
+    stock id to select the stock item for the item
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="gtk-image-menu-item-set-use-stock" role="function" condition="since:2.16">
+<title>gtk_image_menu_item_set_use_stock ()</title>
+<indexterm zone="gtk-image-menu-item-set-use-stock" role="2.16"><primary sortas="image_menu_item_set_use_stock">gtk_image_menu_item_set_use_stock</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_menu_item_set_use_stock   (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item,
+                                                         <link linkend="gboolean">gboolean</link> use_stock);</programlisting>
+<para>
+If <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, the label set in the menuitem is used as a
+stock id to select the stock item for the item.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image_menu_item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>use_stock</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the menuitem should use a stock item
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="gtk-image-menu-item-get-always-show-image" role="function" condition="since:2.16">
+<title>gtk_image_menu_item_get_always_show_image ()</title>
+<indexterm zone="gtk-image-menu-item-get-always-show-image" role="2.16"><primary sortas="image_menu_item_get_always_show_image">gtk_image_menu_item_get_always_show_image</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_image_menu_item_get_always_show_image
+                                                        (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item);</programlisting>
+<para>
+Returns whether the menu item will ignore the <link linkend="GtkSettings--gtk-menu-images"><type>"gtk-menu-images"</type></link> 
+setting and always show the image, if available.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image_menu_item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the menu item will always show the image
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="gtk-image-menu-item-set-always-show-image" role="function" condition="since:2.16">
+<title>gtk_image_menu_item_set_always_show_image ()</title>
+<indexterm zone="gtk-image-menu-item-set-always-show-image" role="2.16"><primary sortas="image_menu_item_set_always_show_image">gtk_image_menu_item_set_always_show_image</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_menu_item_set_always_show_image
+                                                        (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item,
+                                                         <link linkend="gboolean">gboolean</link> always_show);</programlisting>
+<para>
+If <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, the menu item will ignore the <link linkend="GtkSettings--gtk-menu-images"><type>"gtk-menu-images"</type></link> 
+setting and always show the image, if available.
+</para>
+<para>
+Use this property if the menuitem would be useless or hard to use
+without the image.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image_menu_item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>always_show</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the menuitem should always show the image
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+<refsect2 id="gtk-image-menu-item-set-accel-group" role="function" condition="since:2.16">
+<title>gtk_image_menu_item_set_accel_group ()</title>
+<indexterm zone="gtk-image-menu-item-set-accel-group" role="2.16"><primary sortas="image_menu_item_set_accel_group">gtk_image_menu_item_set_accel_group</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_image_menu_item_set_accel_group (<link linkend="GtkImageMenuItem">GtkImageMenuItem</link> *image_menu_item,
+                                                         <link linkend="GtkAccelGroup">GtkAccelGroup</link> *accel_group);</programlisting>
+<para>
+Specifies an <parameter>accel_group</parameter> to add the menu items accelerator to
+(this only applies to stock items so a stock item must already
+be set, make sure to call <link linkend="gtk-image-menu-item-set-use-stock"><function>gtk_image_menu_item_set_use_stock()</function></link>
+and <link linkend="gtk-menu-item-set-label"><function>gtk_menu_item_set_label()</function></link> with a valid stock item first).
+</para>
+<para>
+If you want this menu item to have changeable accelerators then
+you shouldnt need this (see <link linkend="gtk-image-menu-item-new-from-stock"><function>gtk_image_menu_item_new_from_stock()</function></link>).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>image_menu_item</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkImageMenuItem"><type>GtkImageMenuItem</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>accel_group</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkAccelGroup"><type>GtkAccelGroup</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.16</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkImageMenuItem.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkImageMenuItem--accel-group" role="property"><title>The <literal>&quot;accel-group&quot;</literal> property</title>
+<indexterm zone="GtkImageMenuItem--accel-group" role="2.16"><primary sortas="ImageMenuItem:accel-group">GtkImageMenuItem:accel-group</primary></indexterm><programlisting>  &quot;accel-group&quot;              <link linkend="GtkAccelGroup">GtkAccelGroup</link>*        : Write</programlisting>
+<para>
+The Accel Group to use for stock accelerator keys</para>
+<para>
+</para><para>Since 2.16</para>
+</refsect2>
+<refsect2 id="GtkImageMenuItem--always-show-image" role="property"><title>The <literal>&quot;always-show-image&quot;</literal> property</title>
+<indexterm zone="GtkImageMenuItem--always-show-image" role="2.16"><primary sortas="ImageMenuItem:always-show-image">GtkImageMenuItem:always-show-image</primary></indexterm><programlisting>  &quot;always-show-image&quot;        <link linkend="gboolean">gboolean</link>              : Read / Write / Construct</programlisting>
+<para>
+If <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, the menu item will ignore the <link linkend="GtkSettings--gtk-menu-images"><type>"gtk-menu-images"</type></link>
+setting and always show the image, if available.
+</para>
+<para>
+Use this property if the menuitem would be useless or hard to use
+without the image.</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.16</para>
+</refsect2>
+<refsect2 id="GtkImageMenuItem--image" role="property"><title>The <literal>&quot;image&quot;</literal> property</title>
+<indexterm zone="GtkImageMenuItem--image"><primary sortas="ImageMenuItem:image">GtkImageMenuItem:image</primary></indexterm><programlisting>  &quot;image&quot;                    <link linkend="GtkWidget">GtkWidget</link>*            : Read / Write</programlisting>
+<para>Child widget to appear next to the menu text.</para></refsect2>
+<refsect2 id="GtkImageMenuItem--use-stock" role="property"><title>The <literal>&quot;use-stock&quot;</literal> property</title>
+<indexterm zone="GtkImageMenuItem--use-stock" role="2.16"><primary sortas="ImageMenuItem:use-stock">GtkImageMenuItem:use-stock</primary></indexterm><programlisting>  &quot;use-stock&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write / Construct</programlisting>
+<para>
+If <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, the label set in the menuitem is used as a
+stock id to select the stock item for the item.</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.16</para>
+</refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

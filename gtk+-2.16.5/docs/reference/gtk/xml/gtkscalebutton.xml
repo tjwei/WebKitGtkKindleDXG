@@ -1,0 +1,396 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkScaleButton">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkScaleButton.top_of_page">GtkScaleButton</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkScaleButton</refname>
+<refpurpose>A button which pops up a scale</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkScaleButton.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkScaleButton-struct">GtkScaleButton</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-scale-button-new">gtk_scale_button_new</link>                (<link linkend="GtkIconSize">GtkIconSize</link> size,
+                                                         <link linkend="gdouble">gdouble</link> min,
+                                                         <link linkend="gdouble">gdouble</link> max,
+                                                         <link linkend="gdouble">gdouble</link> step,
+                                                         const <link linkend="gchar">gchar</link> **icons);
+<link linkend="void">void</link>                <link linkend="gtk-scale-button-set-adjustment">gtk_scale_button_set_adjustment</link>     (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);
+<link linkend="void">void</link>                <link linkend="gtk-scale-button-set-icons">gtk_scale_button_set_icons</link>          (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                         const <link linkend="gchar">gchar</link> **icons);
+<link linkend="void">void</link>                <link linkend="gtk-scale-button-set-value">gtk_scale_button_set_value</link>          (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                         <link linkend="gdouble">gdouble</link> value);
+<link linkend="GtkAdjustment">GtkAdjustment</link> *     <link linkend="gtk-scale-button-get-adjustment">gtk_scale_button_get_adjustment</link>     (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-scale-button-get-value">gtk_scale_button_get_value</link>          (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-scale-button-get-popup">gtk_scale_button_get_popup</link>          (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-scale-button-get-plus-button">gtk_scale_button_get_plus_button</link>    (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-scale-button-get-minus-button">gtk_scale_button_get_minus_button</link>   (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);
+<link linkend="void">void</link>                <link linkend="gtk-scale-button-set-orientation">gtk_scale_button_set_orientation</link>    (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                         <link linkend="GtkOrientation">GtkOrientation</link> orientation);
+<link linkend="GtkOrientation">GtkOrientation</link>      <link linkend="gtk-scale-button-get-orientation">gtk_scale_button_get_orientation</link>    (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkScaleButton.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBin">GtkBin</link>
+                                 +----<link linkend="GtkButton">GtkButton</link>
+                                       +----GtkScaleButton
+                                             +----<link linkend="GtkVolumeButton">GtkVolumeButton</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkScaleButton.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkScaleButton implements
+ <link linkend="GtkActivatable">GtkActivatable</link>,  <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkScaleButton.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkScaleButton--adjustment">adjustment</link>&quot;               <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write
+  &quot;<link linkend="GtkScaleButton--icons">icons</link>&quot;                    <link linkend="GStrv">GStrv</link>*                : Read / Write
+  &quot;<link linkend="GtkScaleButton--size">size</link>&quot;                     <link linkend="GtkIconSize">GtkIconSize</link>           : Read / Write
+  &quot;<link linkend="GtkScaleButton--value">value</link>&quot;                    <link linkend="gdouble">gdouble</link>               : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkScaleButton.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkScaleButton-popdown">popdown</link>&quot;                                        : Run Last / Action
+  &quot;<link linkend="GtkScaleButton-popup">popup</link>&quot;                                          : Run Last / Action
+  &quot;<link linkend="GtkScaleButton-value-changed">value-changed</link>&quot;                                  : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkScaleButton.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkScaleButton"><type>GtkScaleButton</type></link> provides a button which pops up a scale widget.
+This kind of widget is commonly used for volume controls in multimedia
+applications, and GTK+ provides a <link linkend="GtkVolumeButton"><type>GtkVolumeButton</type></link> subclass that
+is tailored for this use case.
+</para>
+</refsect1>
+
+<refsect1 id="GtkScaleButton.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkScaleButton-struct" role="struct">
+<title>GtkScaleButton</title>
+<indexterm zone="GtkScaleButton-struct"><primary sortas="ScaleButton">GtkScaleButton</primary></indexterm><programlisting>typedef struct _GtkScaleButton GtkScaleButton;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-scale-button-new" role="function" condition="since:2.12">
+<title>gtk_scale_button_new ()</title>
+<indexterm zone="gtk-scale-button-new" role="2.12"><primary sortas="scale_button_new">gtk_scale_button_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_scale_button_new                (<link linkend="GtkIconSize">GtkIconSize</link> size,
+                                                         <link linkend="gdouble">gdouble</link> min,
+                                                         <link linkend="gdouble">gdouble</link> max,
+                                                         <link linkend="gdouble">gdouble</link> step,
+                                                         const <link linkend="gchar">gchar</link> **icons);</programlisting>
+<para>
+Creates a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>, with a range between <parameter>min</parameter> and <parameter>max</parameter>, with
+a stepping of <parameter>step</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>size</parameter>&#160;:</term>
+<listitem><simpara> a stock icon size
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>min</parameter>&#160;:</term>
+<listitem><simpara> the minimum value of the scale (usually 0)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max</parameter>&#160;:</term>
+<listitem><simpara> the maximum value of the scale (usually 100)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>step</parameter>&#160;:</term>
+<listitem><simpara> the stepping of value when a scroll-wheel event,
+       or up/down arrow event occurs (usually 2)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icons</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated array of icon names, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if
+        you want to set the list later with <link linkend="gtk-scale-button-set-icons"><function>gtk_scale_button_set_icons()</function></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-scale-button-set-adjustment" role="function" condition="since:2.12">
+<title>gtk_scale_button_set_adjustment ()</title>
+<indexterm zone="gtk-scale-button-set-adjustment" role="2.12"><primary sortas="scale_button_set_adjustment">gtk_scale_button_set_adjustment</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_scale_button_set_adjustment     (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);</programlisting>
+<para>
+Sets the <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link> to be used as a model
+for the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>'s scale.
+See <link linkend="gtk-range-set-adjustment"><function>gtk_range_set_adjustment()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>adjustment</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-scale-button-set-icons" role="function" condition="since:2.12">
+<title>gtk_scale_button_set_icons ()</title>
+<indexterm zone="gtk-scale-button-set-icons" role="2.12"><primary sortas="scale_button_set_icons">gtk_scale_button_set_icons</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_scale_button_set_icons          (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                         const <link linkend="gchar">gchar</link> **icons);</programlisting>
+<para>
+Sets the icons to be used by the scale button.
+For details, see the <link linkend="GtkScaleButton--icons"><type>"icons"</type></link> property.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icons</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated array of icon names
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-scale-button-set-value" role="function" condition="since:2.12">
+<title>gtk_scale_button_set_value ()</title>
+<indexterm zone="gtk-scale-button-set-value" role="2.12"><primary sortas="scale_button_set_value">gtk_scale_button_set_value</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_scale_button_set_value          (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                         <link linkend="gdouble">gdouble</link> value);</programlisting>
+<para>
+Sets the current value of the scale; if the value is outside
+the minimum or maximum range values, it will be clamped to fit
+inside them. The scale button emits the <link linkend="GtkScaleButton-value-changed"><type>"value-changed"</type></link>
+signal if the value changes.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> new value of the scale button
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-scale-button-get-adjustment" role="function" condition="since:2.12">
+<title>gtk_scale_button_get_adjustment ()</title>
+<indexterm zone="gtk-scale-button-get-adjustment" role="2.12"><primary sortas="scale_button_get_adjustment">gtk_scale_button_get_adjustment</primary></indexterm><programlisting><link linkend="GtkAdjustment">GtkAdjustment</link> *     gtk_scale_button_get_adjustment     (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);</programlisting>
+<para>
+Gets the <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link> associated with the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>'s scale.
+See <link linkend="gtk-range-get-adjustment"><function>gtk_range_get_adjustment()</function></link> for details.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the adjustment associated with the scale
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-scale-button-get-value" role="function" condition="since:2.12">
+<title>gtk_scale_button_get_value ()</title>
+<indexterm zone="gtk-scale-button-get-value" role="2.12"><primary sortas="scale_button_get_value">gtk_scale_button_get_value</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_scale_button_get_value          (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);</programlisting>
+<para>
+Gets the current value of the scale button.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> current value of the scale button
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-scale-button-get-popup" role="function" condition="since:2.14">
+<title>gtk_scale_button_get_popup ()</title>
+<indexterm zone="gtk-scale-button-get-popup" role="2.14"><primary sortas="scale_button_get_popup">gtk_scale_button_get_popup</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_scale_button_get_popup          (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);</programlisting>
+<para>
+Retrieves the popup of the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the popup of the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-scale-button-get-plus-button" role="function" condition="since:2.14">
+<title>gtk_scale_button_get_plus_button ()</title>
+<indexterm zone="gtk-scale-button-get-plus-button" role="2.14"><primary sortas="scale_button_get_plus_button">gtk_scale_button_get_plus_button</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_scale_button_get_plus_button    (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);</programlisting>
+<para>
+Retrieves the plus button of the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the plus button of the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-scale-button-get-minus-button" role="function" condition="since:2.14">
+<title>gtk_scale_button_get_minus_button ()</title>
+<indexterm zone="gtk-scale-button-get-minus-button" role="2.14"><primary sortas="scale_button_get_minus_button">gtk_scale_button_get_minus_button</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_scale_button_get_minus_button   (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);</programlisting>
+<para>
+Retrieves the minus button of the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the minus button of the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-scale-button-set-orientation" role="function" condition="deprecated:2.16: Use gtk_orientable_set_orientation() instead.|since:2.14">
+<title>gtk_scale_button_set_orientation ()</title>
+<indexterm zone="gtk-scale-button-set-orientation" role="deprecated"><primary sortas="scale_button_set_orientation">gtk_scale_button_set_orientation</primary></indexterm><indexterm zone="gtk-scale-button-set-orientation" role="2.14"><primary sortas="scale_button_set_orientation">gtk_scale_button_set_orientation</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_scale_button_set_orientation    (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                         <link linkend="GtkOrientation">GtkOrientation</link> orientation);</programlisting>
+<warning><para><literal>gtk_scale_button_set_orientation</literal> has been deprecated since version 2.16 and should not be used in newly-written code. Use <link linkend="gtk-orientable-set-orientation"><function>gtk_orientable_set_orientation()</function></link> instead.</para></warning>
+<para>
+Sets the orientation of the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>'s popup window.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>orientation</parameter>&#160;:</term>
+<listitem><simpara> the new orientation
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gtk-scale-button-get-orientation" role="function" condition="deprecated:2.16: Use gtk_orientable_get_orientation() instead.|since:2.14">
+<title>gtk_scale_button_get_orientation ()</title>
+<indexterm zone="gtk-scale-button-get-orientation" role="deprecated"><primary sortas="scale_button_get_orientation">gtk_scale_button_get_orientation</primary></indexterm><indexterm zone="gtk-scale-button-get-orientation" role="2.14"><primary sortas="scale_button_get_orientation">gtk_scale_button_get_orientation</primary></indexterm><programlisting><link linkend="GtkOrientation">GtkOrientation</link>      gtk_scale_button_get_orientation    (<link linkend="GtkScaleButton">GtkScaleButton</link> *button);</programlisting>
+<warning><para><literal>gtk_scale_button_get_orientation</literal> has been deprecated since version 2.16 and should not be used in newly-written code. Use <link linkend="gtk-orientable-get-orientation"><function>gtk_orientable_get_orientation()</function></link> instead.</para></warning>
+<para>
+Gets the orientation of the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>'s popup window.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the <link linkend="GtkScaleButton"><type>GtkScaleButton</type></link>'s orientation.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkScaleButton.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkScaleButton--adjustment" role="property"><title>The <literal>&quot;adjustment&quot;</literal> property</title>
+<indexterm zone="GtkScaleButton--adjustment"><primary sortas="ScaleButton:adjustment">GtkScaleButton:adjustment</primary></indexterm><programlisting>  &quot;adjustment&quot;               <link linkend="GtkAdjustment">GtkAdjustment</link>*        : Read / Write</programlisting>
+<para>The GtkAdjustment that contains the current value of this scale button object.</para></refsect2>
+<refsect2 id="GtkScaleButton--icons" role="property"><title>The <literal>&quot;icons&quot;</literal> property</title>
+<indexterm zone="GtkScaleButton--icons" role="2.12"><primary sortas="ScaleButton:icons">GtkScaleButton:icons</primary></indexterm><programlisting>  &quot;icons&quot;                    <link linkend="GStrv">GStrv</link>*                : Read / Write</programlisting>
+<para>
+The names of the icons to be used by the scale button.
+The first item in the array will be used in the button
+when the current value is the lowest value, the second
+item for the highest value. All the subsequent icons will
+be used for all the other values, spread evenly over the
+range of values.
+</para>
+<para>
+If there's only one icon name in the <parameter>icons</parameter> array, it will
+be used for all the values. If only two icon names are in
+the <parameter>icons</parameter> array, the first one will be used for the bottom
+50% of the scale, and the second one for the top 50%.
+</para>
+<para>
+It is recommended to use at least 3 icons so that the
+<link linkend="GtkScaleButton"><type>GtkScaleButton</type></link> reflects the current value of the scale
+better for the users.</para>
+<para>
+</para><para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkScaleButton--size" role="property"><title>The <literal>&quot;size&quot;</literal> property</title>
+<indexterm zone="GtkScaleButton--size"><primary sortas="ScaleButton:size">GtkScaleButton:size</primary></indexterm><programlisting>  &quot;size&quot;                     <link linkend="GtkIconSize">GtkIconSize</link>           : Read / Write</programlisting>
+<para>The icon size.</para><para>Default value: GTK_ICON_SIZE_SMALL_TOOLBAR</para>
+</refsect2>
+<refsect2 id="GtkScaleButton--value" role="property"><title>The <literal>&quot;value&quot;</literal> property</title>
+<indexterm zone="GtkScaleButton--value"><primary sortas="ScaleButton:value">GtkScaleButton:value</primary></indexterm><programlisting>  &quot;value&quot;                    <link linkend="gdouble">gdouble</link>               : Read / Write</programlisting>
+<para>The value of the scale.</para><para>Default value: 0</para>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkScaleButton.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkScaleButton-popdown" role="signal"><title>The <literal>&quot;popdown&quot;</literal> signal</title>
+<indexterm zone="GtkScaleButton-popdown" role="2.12"><primary sortas="ScaleButton::popdown">GtkScaleButton::popdown</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)      : Run Last / Action</programlisting>
+<para>
+The ::popdown signal is a
+<link linkend="keybinding-signals">keybinding signal</link>
+which gets emitted to popdown the scale widget.
+</para>
+<para>
+The default binding for this signal is Escape.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.12</para></refsect2><refsect2 id="GtkScaleButton-popup" role="signal"><title>The <literal>&quot;popup&quot;</literal> signal</title>
+<indexterm zone="GtkScaleButton-popup" role="2.12"><primary sortas="ScaleButton::popup">GtkScaleButton::popup</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)      : Run Last / Action</programlisting>
+<para>
+The ::popup signal is a
+<link linkend="keybinding-signals">keybinding signal</link>
+which gets emitted to popup the scale widget.
+</para>
+<para>
+The default bindings for this signal are Space, Enter and Return.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.12</para></refsect2><refsect2 id="GtkScaleButton-value-changed" role="signal"><title>The <literal>&quot;value-changed&quot;</literal> signal</title>
+<indexterm zone="GtkScaleButton-value-changed" role="2.12"><primary sortas="ScaleButton::value-changed">GtkScaleButton::value-changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkScaleButton">GtkScaleButton</link> *button,
+                                                        <link linkend="gdouble">gdouble</link>         value,
+                                                        <link linkend="gpointer">gpointer</link>        user_data)      : Run Last</programlisting>
+<para>
+The ::value-changed signal is emitted when the value field has
+changed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>button</parameter>&#160;:</term>
+<listitem><simpara> the object which received the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> the new value
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.12</para></refsect2>
+</refsect1>
+
+
+
+</refentry>

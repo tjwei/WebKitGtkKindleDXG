@@ -1,0 +1,8 @@
+if [ ! -e ./configure ]
+then
+	echo do make
+	make
+fi
+echo do configure
+LDFLAGS="-Xlinker -rpath -Xlinker /usr/local/lib" ./configure  $ARGS
+

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libsoup-24-soup-gnome-features">
+<refmeta>
+<refentrytitle role="top_of_page" id="libsoup-24-soup-gnome-features.top_of_page">soup-gnome-features</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>soup-gnome-features</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libsoup-24-soup-gnome-features.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+#define             <link linkend="SOUP-TYPE-GNOME-FEATURES-2-26--CAPS">SOUP_TYPE_GNOME_FEATURES_2_26</link>
+#define             <link linkend="SOUP-TYPE-PROXY-RESOLVER-GNOME--CAPS">SOUP_TYPE_PROXY_RESOLVER_GNOME</link>
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libsoup-24-soup-gnome-features.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libsoup-24-soup-gnome-features.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SOUP-TYPE-GNOME-FEATURES-2-26--CAPS" role="macro" condition="since:2.26">
+<title>SOUP_TYPE_GNOME_FEATURES_2_26</title>
+<indexterm zone="SOUP-TYPE-GNOME-FEATURES-2-26--CAPS" role="2.26"><primary sortas="SOUP_TYPE_GNOME_FEATURES_2_26">SOUP_TYPE_GNOME_FEATURES_2_26</primary></indexterm><programlisting>#define SOUP_TYPE_GNOME_FEATURES_2_26 (soup_gnome_features_2_26_get_type ())
+</programlisting>
+<para>
+This returns the <link linkend="GType"><type>GType</type></link> of a <link linkend="SoupSessionFeature"><type>SoupSessionFeature</type></link> that automatically
+adds all of the GNOME features defined for libsoup 2.26 (which is
+just <link linkend="SOUP-TYPE-PROXY-RESOLVER-GNOME--CAPS"><literal>SOUP_TYPE_PROXY_RESOLVER_GNOME</literal></link>).
+</para>
+<para>
+You can add this to a session using
+<link linkend="soup-session-add-feature-by-type"><function>soup_session_add_feature_by_type()</function></link> or by using the
+<link linkend="SOUP-SESSION-ADD-FEATURE-BY-TYPE--CAPS"><literal>SOUP_SESSION_ADD_FEATURE_BY_TYPE</literal></link> construct-time property.</para>
+<para>
+</para><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="SOUP-TYPE-PROXY-RESOLVER-GNOME--CAPS" role="macro" condition="since:2.26">
+<title>SOUP_TYPE_PROXY_RESOLVER_GNOME</title>
+<indexterm zone="SOUP-TYPE-PROXY-RESOLVER-GNOME--CAPS" role="2.26"><primary sortas="SOUP_TYPE_PROXY_RESOLVER_GNOME">SOUP_TYPE_PROXY_RESOLVER_GNOME</primary></indexterm><programlisting>#define SOUP_TYPE_PROXY_RESOLVER_GNOME (soup_proxy_resolver_gnome_get_type ())
+</programlisting>
+<para>
+This returns the <link linkend="GType"><type>GType</type></link> of a <link linkend="SoupProxyResolver"><type>SoupProxyResolver</type></link> that can be used to
+resolve HTTP proxies for GNOME applications. You can add this to
+a session using <link linkend="soup-session-add-feature-by-type"><function>soup_session_add_feature_by_type()</function></link> or by using the
+<link linkend="SOUP-SESSION-ADD-FEATURE-BY-TYPE--CAPS"><literal>SOUP_SESSION_ADD_FEATURE_BY_TYPE</literal></link> construct-time property.
+</para>
+<para>
+This feature is included in <link linkend="SOUP-TYPE-GNOME-FEATURES-2-26--CAPS"><literal>SOUP_TYPE_GNOME_FEATURES_2_26</literal></link>, so if
+you are using that feature, you do not need to include this feature
+separately.</para>
+<para>
+</para><para role="since">Since 2.26</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

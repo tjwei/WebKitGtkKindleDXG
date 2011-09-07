@@ -1,0 +1,472 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkRecentFilter">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkRecentFilter.top_of_page">GtkRecentFilter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkRecentFilter</refname>
+<refpurpose>A filter for selecting a subset of recently used files</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkRecentFilter.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkRecentFilter-struct">GtkRecentFilter</link>;
+                    <link linkend="GtkRecentFilterInfo">GtkRecentFilterInfo</link>;
+enum                <link linkend="GtkRecentFilterFlags">GtkRecentFilterFlags</link>;
+<link linkend="gboolean">gboolean</link>            (<link linkend="GtkRecentFilterFunc">*GtkRecentFilterFunc</link>)              (const <link linkend="GtkRecentFilterInfo">GtkRecentFilterInfo</link> *filter_info,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="GtkRecentFilter">GtkRecentFilter</link> *   <link linkend="gtk-recent-filter-new">gtk_recent_filter_new</link>               (void);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-recent-filter-get-name">gtk_recent_filter_get_name</link>          (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter);
+<link linkend="void">void</link>                <link linkend="gtk-recent-filter-set-name">gtk_recent_filter_set_name</link>          (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *name);
+<link linkend="void">void</link>                <link linkend="gtk-recent-filter-add-mime-type">gtk_recent_filter_add_mime_type</link>     (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *mime_type);
+<link linkend="void">void</link>                <link linkend="gtk-recent-filter-add-pattern">gtk_recent_filter_add_pattern</link>       (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *pattern);
+<link linkend="void">void</link>                <link linkend="gtk-recent-filter-add-pixbuf-formats">gtk_recent_filter_add_pixbuf_formats</link>
+                                                        (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter);
+<link linkend="void">void</link>                <link linkend="gtk-recent-filter-add-application">gtk_recent_filter_add_application</link>   (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *application);
+<link linkend="void">void</link>                <link linkend="gtk-recent-filter-add-group">gtk_recent_filter_add_group</link>         (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *group);
+<link linkend="void">void</link>                <link linkend="gtk-recent-filter-add-age">gtk_recent_filter_add_age</link>           (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         <link linkend="gint">gint</link> days);
+<link linkend="void">void</link>                <link linkend="gtk-recent-filter-add-custom">gtk_recent_filter_add_custom</link>        (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         <link linkend="GtkRecentFilterFlags">GtkRecentFilterFlags</link> needed,
+                                                         <link linkend="GtkRecentFilterFunc">GtkRecentFilterFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> data_destroy);
+<link linkend="GtkRecentFilterFlags">GtkRecentFilterFlags</link>  <link linkend="gtk-recent-filter-get-needed">gtk_recent_filter_get_needed</link>      (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-recent-filter-filter">gtk_recent_filter_filter</link>            (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="GtkRecentFilterInfo">GtkRecentFilterInfo</link> *filter_info);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkRecentFilter.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----GtkRecentFilter
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+
+
+<refsect1 id="GtkRecentFilter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link> can be used to restrict the files being shown
+in a <link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>.  Files can be filtered based on their name
+(with <link linkend="gtk-recent-filter-add-pattern"><function>gtk_recent_filter_add_pattern()</function></link>), on their mime type (with
+<link linkend="gtk-file-filter-add-mime-type"><function>gtk_file_filter_add_mime_type()</function></link>), on the application that has
+registered them (with <link linkend="gtk-recent-filter-add-application"><function>gtk_recent_filter_add_application()</function></link>), or by
+a custom filter function (with <link linkend="gtk-recent-filter-add-custom"><function>gtk_recent_filter_add_custom()</function></link>).
+</para>
+<para>
+Filtering by mime type handles aliasing and subclassing of mime
+types; e.g. a filter for text/plain also matches a file with mime
+type application/rtf, since application/rtf is a subclass of text/plain.
+Note that <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link> allows wildcards for the subtype of a
+mime type, so you can e.g. filter for image/*.
+</para>
+<para>
+Normally, filters are used by adding them to a <link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>,
+see <link linkend="gtk-recent-chooser-add-filter"><function>gtk_recent_chooser_add_filter()</function></link>, but it is also possible to
+manually use a filter on a file with <link linkend="gtk-recent-filter-filter"><function>gtk_recent_filter_filter()</function></link>.
+</para>
+<para>
+Recently used files are supported since GTK+ 2.10.
+</para>
+</refsect1>
+
+<refsect1 id="GtkRecentFilter.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkRecentFilter-struct" role="struct">
+<title>GtkRecentFilter</title>
+<indexterm zone="GtkRecentFilter-struct"><primary sortas="RecentFilter">GtkRecentFilter</primary></indexterm><programlisting>typedef struct _GtkRecentFilter GtkRecentFilter;</programlisting>
+<para>
+The <structname>GtkRecentFilter</structname> struct contains
+only private fields and should not be directly accessed.
+</para></refsect2>
+<refsect2 id="GtkRecentFilterInfo" role="struct">
+<title>GtkRecentFilterInfo</title>
+<indexterm zone="GtkRecentFilterInfo"><primary sortas="RecentFilterInfo">GtkRecentFilterInfo</primary></indexterm><programlisting>typedef struct {
+  GtkRecentFilterFlags contains;
+
+  const gchar *uri;
+  const gchar *display_name;
+  const gchar *mime_type;
+  const gchar **applications;
+  const gchar **groups;
+
+  gint age;
+} GtkRecentFilterInfo;
+</programlisting>
+<para>
+A <structname>GtkRecentFilterInfo</structname> struct is used
+to pass information about the tested file to <link linkend="gtk-recent-filter-filter"><function>gtk_recent_filter_filter()</function></link>.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GtkRecentFilterFlags">GtkRecentFilterFlags</link>&#160;<structfield>contains</structfield>;</term>
+<listitem><simpara>Flags indicating which of the following fields need
+  are filled
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>uri</structfield>;</term>
+<listitem><simpara>the URI of the file being tested
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>display_name</structfield>;</term>
+<listitem><simpara>the string that will be used to display the file
+  in the recent chooser
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;*<structfield>mime_type</structfield>;</term>
+<listitem><simpara>the mime type of the file
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;**<structfield>applications</structfield>;</term>
+<listitem><simpara>the list of applications that have registered the file
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>const&#160;<link linkend="gchar">gchar</link>&#160;**<structfield>groups</structfield>;</term>
+<listitem><simpara>the groups to which the file belongs to
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>age</structfield>;</term>
+<listitem><simpara>the number of days elapsed since the file has been registered
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkRecentFilterFlags" role="enum">
+<title>enum GtkRecentFilterFlags</title>
+<indexterm zone="GtkRecentFilterFlags"><primary sortas="RecentFilterFlags">GtkRecentFilterFlags</primary></indexterm><programlisting>typedef enum {
+  GTK_RECENT_FILTER_URI          = 1 &lt;&lt; 0,
+  GTK_RECENT_FILTER_DISPLAY_NAME = 1 &lt;&lt; 1,
+  GTK_RECENT_FILTER_MIME_TYPE    = 1 &lt;&lt; 2,
+  GTK_RECENT_FILTER_APPLICATION  = 1 &lt;&lt; 3,
+  GTK_RECENT_FILTER_GROUP        = 1 &lt;&lt; 4,
+  GTK_RECENT_FILTER_AGE          = 1 &lt;&lt; 5
+} GtkRecentFilterFlags;
+</programlisting>
+<para>
+These flags indicate what parts of a <link linkend="GtkRecentFilterInfo"><type>GtkRecentFilterInfo</type></link> struct
+are filled or need to be filled.
+</para><variablelist role="enum">
+<varlistentry id="GTK-RECENT-FILTER-URI--CAPS" role="constant">
+<term><literal>GTK_RECENT_FILTER_URI</literal></term>
+<listitem><simpara>the URI of the file being tested
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-FILTER-DISPLAY-NAME--CAPS" role="constant">
+<term><literal>GTK_RECENT_FILTER_DISPLAY_NAME</literal></term>
+<listitem><simpara>the string that will be used to
+  display the file in the recent chooser
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-FILTER-MIME-TYPE--CAPS" role="constant">
+<term><literal>GTK_RECENT_FILTER_MIME_TYPE</literal></term>
+<listitem><simpara>the mime type of the file
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-FILTER-APPLICATION--CAPS" role="constant">
+<term><literal>GTK_RECENT_FILTER_APPLICATION</literal></term>
+<listitem><simpara>the list of applications that have
+  registered the file
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-FILTER-GROUP--CAPS" role="constant">
+<term><literal>GTK_RECENT_FILTER_GROUP</literal></term>
+<listitem><simpara>the groups to which the file belongs to
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-RECENT-FILTER-AGE--CAPS" role="constant">
+<term><literal>GTK_RECENT_FILTER_AGE</literal></term>
+<listitem><simpara>the number of days elapsed since the file
+  has been registered
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkRecentFilterFunc" role="function">
+<title>GtkRecentFilterFunc ()</title>
+<indexterm zone="GtkRecentFilterFunc"><primary sortas="RecentFilterFunc">GtkRecentFilterFunc</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            (*GtkRecentFilterFunc)              (const <link linkend="GtkRecentFilterInfo">GtkRecentFilterInfo</link> *filter_info,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+The type of function that is used with custom filters,
+see <link linkend="gtk-recent-filter-add-custom"><function>gtk_recent_filter_add_custom()</function></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter_info</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkRecentFilterInfo"><type>GtkRecentFilterInfo</type></link> that is filled according
+  to the <parameter>needed</parameter> flags passed to <link linkend="gtk-recent-filter-add-custom"><function>gtk_recent_filter_add_custom()</function></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data passed to <link linkend="gtk-recent-filter-add-custom"><function>gtk_recent_filter_add_custom()</function></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>%TRUE if the file should be displayed
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-recent-filter-new" role="function" condition="since:2.10">
+<title>gtk_recent_filter_new ()</title>
+<indexterm zone="gtk-recent-filter-new" role="2.10"><primary sortas="recent_filter_new">gtk_recent_filter_new</primary></indexterm><programlisting><link linkend="GtkRecentFilter">GtkRecentFilter</link> *   gtk_recent_filter_new               (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link> with no rules added to it.
+Such filter does not accept any recently used resources, so is not
+particularly useful until you add rules with
+<link linkend="gtk-recent-filter-add-pattern"><function>gtk_recent_filter_add_pattern()</function></link>, <link linkend="gtk-recent-filter-add-mime-type"><function>gtk_recent_filter_add_mime_type()</function></link>,
+<link linkend="gtk-recent-filter-add-application"><function>gtk_recent_filter_add_application()</function></link>, <link linkend="gtk-recent-filter-add-age"><function>gtk_recent_filter_add_age()</function></link>.
+To create a filter that accepts any recently used resource, use:
+<informalexample><programlisting>
+GtkRecentFilter *filter = gtk_recent_filter_new ();
+gtk_recent_filter_add_pattern (filter, "*");
+</programlisting></informalexample></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-get-name" role="function" condition="since:2.10">
+<title>gtk_recent_filter_get_name ()</title>
+<indexterm zone="gtk-recent-filter-get-name" role="2.10"><primary sortas="recent_filter_get_name">gtk_recent_filter_get_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_recent_filter_get_name          (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter);</programlisting>
+<para>
+Gets the human-readable name for the filter.
+See <link linkend="gtk-recent-filter-set-name"><function>gtk_recent_filter_set_name()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the name of the filter, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>.  The returned string
+  is owned by the filter object and should not be freed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-set-name" role="function" condition="since:2.10">
+<title>gtk_recent_filter_set_name ()</title>
+<indexterm zone="gtk-recent-filter-set-name" role="2.10"><primary sortas="recent_filter_set_name">gtk_recent_filter_set_name</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_filter_set_name          (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *name);</programlisting>
+<para>
+Sets the human-readable name of the filter; this is the string
+that will be displayed in the recently used resources selector
+user interface if there is a selectable list of filters.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> then human readable name of <parameter>filter</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-add-mime-type" role="function" condition="since:2.10">
+<title>gtk_recent_filter_add_mime_type ()</title>
+<indexterm zone="gtk-recent-filter-add-mime-type" role="2.10"><primary sortas="recent_filter_add_mime_type">gtk_recent_filter_add_mime_type</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_filter_add_mime_type     (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *mime_type);</programlisting>
+<para>
+Adds a rule that allows resources based on their registered MIME type.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mime_type</parameter>&#160;:</term>
+<listitem><simpara> a MIME type
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-add-pattern" role="function" condition="since:2.10">
+<title>gtk_recent_filter_add_pattern ()</title>
+<indexterm zone="gtk-recent-filter-add-pattern" role="2.10"><primary sortas="recent_filter_add_pattern">gtk_recent_filter_add_pattern</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_filter_add_pattern       (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *pattern);</programlisting>
+<para>
+Adds a rule that allows resources based on a pattern matching their
+display name.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pattern</parameter>&#160;:</term>
+<listitem><simpara> a file pattern
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-add-pixbuf-formats" role="function" condition="since:2.10">
+<title>gtk_recent_filter_add_pixbuf_formats ()</title>
+<indexterm zone="gtk-recent-filter-add-pixbuf-formats" role="2.10"><primary sortas="recent_filter_add_pixbuf_formats">gtk_recent_filter_add_pixbuf_formats</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_filter_add_pixbuf_formats
+                                                        (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter);</programlisting>
+<para>
+Adds a rule allowing image files in the formats supported
+by GdkPixbuf.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-add-application" role="function" condition="since:2.10">
+<title>gtk_recent_filter_add_application ()</title>
+<indexterm zone="gtk-recent-filter-add-application" role="2.10"><primary sortas="recent_filter_add_application">gtk_recent_filter_add_application</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_filter_add_application   (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *application);</programlisting>
+<para>
+Adds a rule that allows resources based on the name of the application
+that has registered them.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>application</parameter>&#160;:</term>
+<listitem><simpara> an application name
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-add-group" role="function" condition="since:2.10">
+<title>gtk_recent_filter_add_group ()</title>
+<indexterm zone="gtk-recent-filter-add-group" role="2.10"><primary sortas="recent_filter_add_group">gtk_recent_filter_add_group</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_filter_add_group         (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="gchar">gchar</link> *group);</programlisting>
+<para>
+Adds a rule that allows resources based on the name of the group
+to which they belong</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>group</parameter>&#160;:</term>
+<listitem><simpara> a group name
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-add-age" role="function" condition="since:2.10">
+<title>gtk_recent_filter_add_age ()</title>
+<indexterm zone="gtk-recent-filter-add-age" role="2.10"><primary sortas="recent_filter_add_age">gtk_recent_filter_add_age</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_filter_add_age           (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         <link linkend="gint">gint</link> days);</programlisting>
+<para>
+Adds a rule that allows resources based on their age - that is, the number
+of days elapsed since they were last modified.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>days</parameter>&#160;:</term>
+<listitem><simpara> number of days
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-add-custom" role="function" condition="since:2.10">
+<title>gtk_recent_filter_add_custom ()</title>
+<indexterm zone="gtk-recent-filter-add-custom" role="2.10"><primary sortas="recent_filter_add_custom">gtk_recent_filter_add_custom</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_recent_filter_add_custom        (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         <link linkend="GtkRecentFilterFlags">GtkRecentFilterFlags</link> needed,
+                                                         <link linkend="GtkRecentFilterFunc">GtkRecentFilterFunc</link> func,
+                                                         <link linkend="gpointer">gpointer</link> data,
+                                                         <link linkend="GDestroyNotify">GDestroyNotify</link> data_destroy);</programlisting>
+<para>
+Adds a rule to a filter that allows resources based on a custom callback
+function. The bitfield <parameter>needed</parameter> which is passed in provides information
+about what sorts of information that the filter function needs;
+this allows GTK+ to avoid retrieving expensive information when
+it isn't needed by the filter.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>needed</parameter>&#160;:</term>
+<listitem><simpara> bitfield of flags indicating the information that the custom
+         filter function needs.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>func</parameter>&#160;:</term>
+<listitem><simpara> callback function; if the function returns <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, then
+  the file will be displayed.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> data to pass to <parameter>func</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data_destroy</parameter>&#160;:</term>
+<listitem><simpara> function to call to free <parameter>data</parameter> when it is no longer needed.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-get-needed" role="function" condition="since:2.10">
+<title>gtk_recent_filter_get_needed ()</title>
+<indexterm zone="gtk-recent-filter-get-needed" role="2.10"><primary sortas="recent_filter_get_needed">gtk_recent_filter_get_needed</primary></indexterm><programlisting><link linkend="GtkRecentFilterFlags">GtkRecentFilterFlags</link>  gtk_recent_filter_get_needed      (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter);</programlisting>
+<para>
+Gets the fields that need to be filled in for the structure
+passed to <link linkend="gtk-recent-filter-filter"><function>gtk_recent_filter_filter()</function></link>
+</para>
+<para>
+This function will not typically be used by applications; it
+is intended principally for use in the implementation of
+<link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> bitfield of flags indicating needed fields when
+  calling <link linkend="gtk-recent-filter-filter"><function>gtk_recent_filter_filter()</function></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-filter-filter" role="function" condition="since:2.10">
+<title>gtk_recent_filter_filter ()</title>
+<indexterm zone="gtk-recent-filter-filter" role="2.10"><primary sortas="recent_filter_filter">gtk_recent_filter_filter</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_recent_filter_filter            (<link linkend="GtkRecentFilter">GtkRecentFilter</link> *filter,
+                                                         const <link linkend="GtkRecentFilterInfo">GtkRecentFilterInfo</link> *filter_info);</programlisting>
+<para>
+Tests whether a file should be displayed according to <parameter>filter</parameter>.
+The <link linkend="GtkRecentFilterInfo"><type>GtkRecentFilterInfo</type></link> structure <parameter>filter_info</parameter> should include
+the fields returned from <link linkend="gtk-recent-filter-get-needed"><function>gtk_recent_filter_get_needed()</function></link>.
+</para>
+<para>
+This function will not typically be used by applications; it
+is intended principally for use in the implementation of
+<link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilter"><type>GtkRecentFilter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filter_info</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentFilterInfo"><type>GtkRecentFilterInfo</type></link> structure containing information
+  about a recently used resource
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if the file should be displayed
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkRecentFilter.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>
+</para>
+</refsect1>
+
+</refentry>

@@ -1,0 +1,6 @@
+ssh root@kindle /etc/init.d/framework stop
+ssh root@kindle umount /usr/local
+ssh root@kindle umount /var/tmp/root
+ssh root@kindle mount -o loop /mnt/us/loopfs /usr/local/
+ssh root@kindle mount -o bind /usr/local/root /var/tmp/root
+

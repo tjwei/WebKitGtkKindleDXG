@@ -1,0 +1,110 @@
+#!/bin/sh
+colormap_leav="1;32"
+colormap_erro="1;31;47"
+colormap_usin="1;34"
+hecho(){
+	COLORCODE="1;36"
+	cvariable=colormap_${1:0:4}
+	ccode=${!cvariable}
+	if [ -n "$ccode" ] 
+	then
+		COLORCODE=$ccode
+	fi
+	echo -ne "\E[${COLORCODE}m"
+	echo -n $@
+	tput sgr0
+	echo
+}
+abort(){
+	hecho "$1"
+	exit 1
+}
+autoconfigure(){
+	if [ -e configure ]
+	then
+					./configure $ARGS 
+	elif [ -e autogen.sh ]
+	then
+					./autogen.sh $ARGS
+	else
+		aclocal && autoheader && autoconf && automake && ./configure $ARGS
+	fi
+}
+do_(){
+	hecho "$1 $2"
+ 	BASENAME=`basename "$2"`
+	PKGNAME=${BASENAME%-[.0-9a-z]*}
+	CURRENT_DIR=`pwd`
+	CMDPREFIX="$MYCONFDIR/$PKGNAME-"
+	CMD="$CMDPREFIX$1"
+	DEFAULT_CMD="$3"
+	cd "$2"
+	if [ -e $CMD ] 
+	then 
+		hecho "using custom $1 $2 $CMD"
+		eval '. $CMD' $BUILD_OUTPUT_OPT || abort "error my$1 $2" 
+	else
+		eval '$DEFAULT_CMD $ARGS' $BUILD_OUTPUT_OPT || abort "error $1 $2" 
+	fi
+	hecho "leaving " "$2"
+	cd "$CURRENT_DIR"
+}
+do_cmi(){ 
+		do_configure "$1" 
+		do_make "$1"
+		do_install "$1"
+}
+do_echo(){      do_ "echo" "$1" 'for i in $CMDPREFIX*;do echo -e "\\t" $i;done';}
+do_make(){      do_ "make" "$1" "make -j12" ;}
+do_clean(){	do_ "clean" "$1" "make clean";}
+do_install(){	do_ "install" "$1"  "make -j12 install DESTDIR=\"$DESTDIR\"";}
+do_automake(){	do_ "automake" "$1" ". $MYCONFDIR/preset/aaaa";}
+do_uninstall(){	do_ "uninstall" "$1" "make uninstall";}
+do_configure(){ do_ "configure" "$1" 'autoconfigure --prefix=/usr/local --disable-static';}
+do_act(){
+	if [ -z "$ACT" ] 
+	then
+		abort "usage ./buildtool clean|install|make|uninstall|cmi [options]"
+	else
+		do_$ACT $1
+	fi
+}
+
+
+if [ `uname -m` != "arm" ]
+then
+	echo "run this script in scratchbox"
+	exit
+fi
+
+DIRNAME=`dirname $0`
+export MYCONFDIR=`realpath "$DIRNAME/conf"`
+export PATH=`realpath "$DIRNAME"`:/usr/local/bin:$PATH
+PROGNAME=`basename $0`
+	
+if [ "x$DESTDIR" == "x" ] 
+then
+	DESTDIR="/"
+fi
+export DESTDIR
+if [ "x$SRCDIRS" == "x" ] 
+then
+	SRCDIRS="`pwd`"
+fi
+export CFLAGS="-O2 -march=armv6j -mtune=arm1136jf-s -pipe -fomit-frame-pointer -fno-stack-protector"
+export CXXFLAGS="-O2 -march=armv6j -mtune=arm1136jf-s -pipe -fomit-frame-pointer -fno-stack-protector"
+export PYTHON="/usr/local/bin/python2.7"
+export SBOX_DEFAULT_AUTOMAKE=1.9
+export PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/local/lib/pkgconfig"
+if [ "$PROGNAME" == buildtool ]
+then 
+	ACT=$1
+	shift
+else
+	ACT=${PROGNAME:2}
+fi
+ARGS="$@"
+for i in $SRCDIRS
+do
+	do_act "$i"
+done

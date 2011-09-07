@@ -1,0 +1,103 @@
+#!/bin/sh
+
+# Copyright (C) 2010 Free Software Foundation, Inc.
+#
+# Author: Nikos Mavrogiannopoulos
+#
+# This file is part of GnuTLS.
+#
+# GnuTLS is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 3 of the License, or (at
+# your option) any later version.
+#
+# GnuTLS is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with GnuTLS; if not, write to the Free Software Foundation,
+# Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+srcdir="${srcdir:-.}"
+SERV="${SERV:-../../src/gnutls-serv$EXEEXT} -q"
+CLI="${CLI:-../../src/gnutls-cli$EXEEXT}"
+PORT="${PORT:-5558}"
+unset RETCODE
+
+fail() {
+   echo "Failure: $1" >&2
+   RETCODE=${RETCODE:-${2:-1}}
+}
+
+echo "Checking Safe renegotiation"
+
+$SERV -p $PORT --echo --priority NORMAL:+ANON-DH:%PARTIAL_RENEGOTIATION --dhparams $srcdir/params.dh >/dev/null 2>&1 &
+pid=$!
+
+# give the server a chance to initialize
+sleep 2
+
+$CLI -p $PORT 127.0.0.1 --rehandshake --priority NONE:+AES-128-CBC:+MD5:+SHA1:+VERS-SSL3.0:+ANON-DH:+COMP-NULL:%SAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 || \
+  fail "0. Renegotiation should have succeeded!"
+
+$CLI -p $PORT 127.0.0.1 --rehandshake --priority NORMAL:+ANON-DH:%SAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 || \
+  fail "1. Safe rehandshake should have succeeded!"
+
+$CLI -p $PORT 127.0.0.1 --rehandshake --priority NORMAL:+ANON-DH:%UNSAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 || \
+  fail "2. Unsafe rehandshake should have succeeded!"
+
+$CLI -p $PORT 127.0.0.1 --priority NORMAL:+ANON-DH:%DISABLE_SAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 || \
+  fail "3. Unsafe negotiation should have succeeded!"
+
+$CLI -p $PORT 127.0.0.1 --rehandshake --priority NORMAL:+ANON-DH:%DISABLE_SAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 && \
+  fail "4. Unsafe renegotiation should have failed!"
+
+
+kill $pid
+wait
+
+$SERV -p $PORT --echo --priority NORMAL:+ANON-DH:%SAFE_RENEGOTIATION --dhparams $srcdir/params.dh >/dev/null 2>&1 &
+pid=$!
+
+# give the server a chance to initialize
+sleep 2
+
+$CLI -p $PORT 127.0.0.1 --rehandshake --priority NORMAL:+ANON-DH:%SAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 || \
+  fail "5. Safe rehandshake should have succeeded!"
+
+$CLI -p $PORT 127.0.0.1 --rehandshake --priority NORMAL:+ANON-DH:%UNSAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 || \
+  fail "6. Unsafe rehandshake should have succeeded!"
+
+$CLI -p $PORT 127.0.0.1 --priority NORMAL:+ANON-DH:%DISABLE_SAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 && \
+  fail "7. Unsafe negotiation should have failed!"
+
+$CLI -p $PORT 127.0.0.1 --rehandshake --priority NORMAL:+ANON-DH:%DISABLE_SAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 && \
+  fail "8. Unsafe renegotiation should have failed!"
+
+kill $pid
+wait
+
+$SERV -p $PORT --echo --priority NORMAL:+ANON-DH:%DISABLE_SAFE_RENEGOTIATION --dhparams $srcdir/params.dh >/dev/null 2>&1 &
+pid=$!
+
+# give the server a chance to initialize
+sleep 2
+
+$CLI -p $PORT 127.0.0.1 --priority NORMAL:+ANON-DH:%SAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 && \
+  fail "9. Initial connection should have failed!"
+
+$CLI -p $PORT 127.0.0.1 --priority NORMAL:+ANON-DH:%UNSAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 || \
+  fail "10. Unsafe connection should have succeeded!"
+
+$CLI -p $PORT 127.0.0.1 --priority NORMAL:+ANON-DH:%DISABLE_SAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 || \
+  fail "11. Unsafe negotiation should have succeeded!"
+
+$CLI -p $PORT 127.0.0.1 --rehandshake --priority NORMAL:+ANON-DH:%DISABLE_SAFE_RENEGOTIATION </dev/null >/dev/null 2>&1 || \
+  fail "12. Unsafe renegotiation should have succeeded!"
+
+kill $pid
+wait
+
+exit ${RETCODE:-0}

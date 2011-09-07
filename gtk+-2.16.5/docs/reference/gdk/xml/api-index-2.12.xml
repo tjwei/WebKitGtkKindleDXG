@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="gdk-color-to-string"><link linkend="gdk-color-to-string">gdk_color_to_string</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="gdk-display-supports-composite"><link linkend="gdk-display-supports-composite">gdk_display_supports_composite</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="gdk-event-request-motions"><link linkend="gdk-event-request-motions">gdk_event_request_motions</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>K</title>
+<indexentry><primaryie linkends="gdk-keymap-have-bidi-layouts"><link linkend="gdk-keymap-have-bidi-layouts">gdk_keymap_have_bidi_layouts</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>N</title>
+<indexentry><primaryie linkends="gdk-notify-startup-complete-with-id"><link linkend="gdk-notify-startup-complete-with-id">gdk_notify_startup_complete_with_id</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="gdk-pango-attr-emboss-color-new"><link linkend="gdk-pango-attr-emboss-color-new">gdk_pango_attr_emboss_color_new</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="gdk-threads-add-idle"><link linkend="gdk-threads-add-idle">gdk_threads_add_idle</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-threads-add-idle-full"><link linkend="gdk-threads-add-idle-full">gdk_threads_add_idle_full</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-threads-add-timeout"><link linkend="gdk-threads-add-timeout">gdk_threads_add_timeout</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-threads-add-timeout-full"><link linkend="gdk-threads-add-timeout-full">gdk_threads_add_timeout_full</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="gdk-window-beep"><link linkend="gdk-window-beep">gdk_window_beep</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-composited"><link linkend="gdk-window-set-composited">gdk_window_set_composited</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-opacity"><link linkend="gdk-window-set-opacity">gdk_window_set_opacity</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-startup-id"><link linkend="gdk-window-set-startup-id">gdk_window_set_startup_id</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>X</title>
+<indexentry><primaryie linkends="gdk-x11-display-broadcast-startup-message"><link linkend="gdk-x11-display-broadcast-startup-message">gdk_x11_display_broadcast_startup_message</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-display-get-startup-notification-id"><link linkend="gdk-x11-display-get-startup-notification-id">gdk_x11_display_get_startup_notification_id</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

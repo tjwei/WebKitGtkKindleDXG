@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkFileChooserWidget">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkFileChooserWidget.top_of_page">GtkFileChooserWidget</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkFileChooserWidget</refname>
+<refpurpose>File chooser widget that can be embedded in other widgets</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkFileChooserWidget.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkFileChooserWidget-struct">GtkFileChooserWidget</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-file-chooser-widget-new">gtk_file_chooser_widget_new</link>         (<link linkend="GtkFileChooserAction">GtkFileChooserAction</link> action);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-file-chooser-widget-new-with-backend">gtk_file_chooser_widget_new_with_backend</link>
+                                                        (<link linkend="GtkFileChooserAction">GtkFileChooserAction</link> action,
+                                                         const <link linkend="gchar">gchar</link> *backend);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkFileChooserWidget.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBox">GtkBox</link>
+                                 +----<link linkend="GtkVBox">GtkVBox</link>
+                                       +----GtkFileChooserWidget
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkFileChooserWidget.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkFileChooserWidget implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link>,  <link linkend="GtkOrientable">GtkOrientable</link>,  <link linkend="GtkFileChooser">GtkFileChooser</link> and  <link linkend="GtkFileChooserEmbed">GtkFileChooserEmbed</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkFileChooserWidget.description" role="desc">
+<title role="desc.title">Description</title>
+    <para>
+      <link linkend="GtkFileChooserWidget"><type>GtkFileChooserWidget</type></link> is a widget suitable for selecting files.
+      It is the main building block of a <link linkend="GtkFileChooserDialog"><type>GtkFileChooserDialog</type></link>.  Most
+      applications will only need to use the latter; you can use
+      <link linkend="GtkFileChooserWidget"><type>GtkFileChooserWidget</type></link> as part of a larger window if you have
+      special needs.
+    </para>
+    <para>
+      Note that <link linkend="GtkFileChooserWidget"><type>GtkFileChooserWidget</type></link> does not have any methods of its
+      own.  Instead, you should use the functions that work on a
+      <link linkend="GtkFileChooser"><type>GtkFileChooser</type></link>.
+    </para>
+</refsect1>
+
+<refsect1 id="GtkFileChooserWidget.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkFileChooserWidget-struct" role="struct">
+<title>GtkFileChooserWidget</title>
+<indexterm zone="GtkFileChooserWidget-struct"><primary sortas="FileChooserWidget">GtkFileChooserWidget</primary></indexterm><programlisting>typedef struct _GtkFileChooserWidget GtkFileChooserWidget;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-file-chooser-widget-new" role="function" condition="since:2.4">
+<title>gtk_file_chooser_widget_new ()</title>
+<indexterm zone="gtk-file-chooser-widget-new" role="2.4"><primary sortas="file_chooser_widget_new">gtk_file_chooser_widget_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_file_chooser_widget_new         (<link linkend="GtkFileChooserAction">GtkFileChooserAction</link> action);</programlisting>
+<para>
+Creates a new <link linkend="GtkFileChooserWidget"><type>GtkFileChooserWidget</type></link>.  This is a file chooser widget that can
+be embedded in custom windows, and it is the same widget that is used by
+<link linkend="GtkFileChooserDialog"><type>GtkFileChooserDialog</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> Open or save mode for the widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkFileChooserWidget"><type>GtkFileChooserWidget</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-file-chooser-widget-new-with-backend" role="function" condition="deprecated:2.14|since:2.4">
+<title>gtk_file_chooser_widget_new_with_backend ()</title>
+<indexterm zone="gtk-file-chooser-widget-new-with-backend" role="deprecated"><primary sortas="file_chooser_widget_new_with_backend">gtk_file_chooser_widget_new_with_backend</primary></indexterm><indexterm zone="gtk-file-chooser-widget-new-with-backend" role="2.4"><primary sortas="file_chooser_widget_new_with_backend">gtk_file_chooser_widget_new_with_backend</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_file_chooser_widget_new_with_backend
+                                                        (<link linkend="GtkFileChooserAction">GtkFileChooserAction</link> action,
+                                                         const <link linkend="gchar">gchar</link> *backend);</programlisting>
+<warning><para><literal>gtk_file_chooser_widget_new_with_backend</literal> is deprecated and should not be used in newly-written code. 2.14</para></warning>
+<para>
+Creates a new <link linkend="GtkFileChooserWidget"><type>GtkFileChooserWidget</type></link> with a specified backend.  This is
+especially useful if you use <link linkend="gtk-file-chooser-set-local-only"><function>gtk_file_chooser_set_local_only()</function></link> to allow
+non-local files.  This is a file chooser widget that can be embedded in
+custom windows and it is the same widget that is used by
+<link linkend="GtkFileChooserDialog"><type>GtkFileChooserDialog</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> Open or save mode for the widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>backend</parameter>&#160;:</term>
+<listitem><simpara> The name of the specific filesystem backend to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkFileChooserWidget"><type>GtkFileChooserWidget</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkFileChooserWidget.see-also">
+<title>See Also</title>
+    <para>
+      <link linkend="GtkFileChooser"><type>GtkFileChooser</type></link>, <link linkend="GtkFileChooserDialog"><type>GtkFileChooserDialog</type></link>
+    </para>
+</refsect1>
+
+</refentry>

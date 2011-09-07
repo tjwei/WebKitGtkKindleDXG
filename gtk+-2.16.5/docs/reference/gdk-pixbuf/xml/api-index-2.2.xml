@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+
+<!ENTITY gdk-pixbuf "<application>gdk-pixbuf</application>">
+<!ENTITY Imlib "<application>Imlib</application>">
+]>
+<indexdiv>
+<indexdiv><title>F</title>
+<indexentry><primaryie linkends="gdk-pixbuf-format-get-description"><link linkend="gdk-pixbuf-format-get-description">gdk_pixbuf_format_get_description</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-get-extensions"><link linkend="gdk-pixbuf-format-get-extensions">gdk_pixbuf_format_get_extensions</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-get-mime-types"><link linkend="gdk-pixbuf-format-get-mime-types">gdk_pixbuf_format_get_mime_types</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-get-name"><link linkend="gdk-pixbuf-format-get-name">gdk_pixbuf_format_get_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-is-writable"><link linkend="gdk-pixbuf-format-is-writable">gdk_pixbuf_format_is_writable</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="GdkPixbufFormat"><link linkend="GdkPixbufFormat">GdkPixbufFormat</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufFormatFlags"><link linkend="GdkPixbufFormatFlags">GdkPixbufFormatFlags</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModuleFillInfoFunc"><link linkend="GdkPixbufModuleFillInfoFunc">GdkPixbufModuleFillInfoFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModuleFillVtableFunc"><link linkend="GdkPixbufModuleFillVtableFunc">GdkPixbufModuleFillVtableFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModulePattern"><link linkend="GdkPixbufModulePattern">GdkPixbufModulePattern</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModulePreparedFunc"><link linkend="GdkPixbufModulePreparedFunc">GdkPixbufModulePreparedFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModuleSizeFunc"><link linkend="GdkPixbufModuleSizeFunc">GdkPixbufModuleSizeFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModuleUpdatedFunc"><link linkend="GdkPixbufModuleUpdatedFunc">GdkPixbufModuleUpdatedFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-formats"><link linkend="gdk-pixbuf-get-formats">gdk_pixbuf_get_formats</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>L</title>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-get-format"><link linkend="gdk-pixbuf-loader-get-format">gdk_pixbuf_loader_get_format</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-set-size"><link linkend="gdk-pixbuf-loader-set-size">gdk_pixbuf_loader_set_size</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="gdk-pixbuf-set-option"><link linkend="gdk-pixbuf-set-option">gdk_pixbuf_set_option</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

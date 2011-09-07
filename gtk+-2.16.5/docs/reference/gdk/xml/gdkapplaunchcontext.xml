@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<refentry id="gdk-Application-launching">
+<refmeta>
+<refentrytitle role="top_of_page" id="gdk-Application-launching.top_of_page">Application launching</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Application launching</refname>
+<refpurpose>Startup notification for applications</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gdk-Application-launching.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gdk/gdk.h&gt;
+
+typedef             <link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link>;
+<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> * <link linkend="gdk-app-launch-context-new">gdk_app_launch_context_new</link>        (void);
+<link linkend="void">void</link>                <link linkend="gdk-app-launch-context-set-display">gdk_app_launch_context_set_display</link>  (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         <link linkend="GdkDisplay">GdkDisplay</link> *display);
+<link linkend="void">void</link>                <link linkend="gdk-app-launch-context-set-screen">gdk_app_launch_context_set_screen</link>   (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen);
+<link linkend="void">void</link>                <link linkend="gdk-app-launch-context-set-desktop">gdk_app_launch_context_set_desktop</link>  (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         <link linkend="gint">gint</link> desktop);
+<link linkend="void">void</link>                <link linkend="gdk-app-launch-context-set-timestamp">gdk_app_launch_context_set_timestamp</link>
+                                                        (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         <link linkend="guint32">guint32</link> timestamp);
+<link linkend="void">void</link>                <link linkend="gdk-app-launch-context-set-icon">gdk_app_launch_context_set_icon</link>     (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         <link linkend="GIcon">GIcon</link> *icon);
+<link linkend="void">void</link>                <link linkend="gdk-app-launch-context-set-icon-name">gdk_app_launch_context_set_icon_name</link>
+                                                        (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         const <link linkend="char">char</link> *icon_name);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gdk-Application-launching.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+GdkAppLaunchContext is an implementation of <link linkend="GAppLaunchContext"><type>GAppLaunchContext</type></link> that
+handles launching an application in a graphical context. It provides
+startup notification and allows to launch applications on a specific
+screen or workspace.
+</para>
+<example>
+<title>Launching an application</title>
+<programlisting>
+GdkAppLaunchContext *context;
+context = gdk_app_launch_context_new (<!-- -->);
+gdk_app_launch_context_set_screen (my_screen);
+gdk_app_launch_context_set_timestamp (event-&gt;time);
+if (!g_app_info_launch_default_for_uri ("http://www.gtk.org", context, &amp;error))
+  g_warning ("Launching failed: %s\n", error-&gt;message);
+g_object_unref (context);
+</programlisting>
+</example>
+</refsect1>
+
+<refsect1 id="gdk-Application-launching.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GdkAppLaunchContext" role="typedef">
+<title>GdkAppLaunchContext</title>
+<indexterm zone="GdkAppLaunchContext"><primary sortas="AppLaunchContext">GdkAppLaunchContext</primary></indexterm><programlisting>typedef struct GdkAppLaunchContext	      GdkAppLaunchContext;
+</programlisting>
+<para>
+An opaque structure representing an application launch context.
+</para></refsect2>
+<refsect2 id="gdk-app-launch-context-new" role="function" condition="since:2.14">
+<title>gdk_app_launch_context_new ()</title>
+<indexterm zone="gdk-app-launch-context-new" role="2.14"><primary sortas="app_launch_context_new">gdk_app_launch_context_new</primary></indexterm><programlisting><link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> * gdk_app_launch_context_new        (void);</programlisting>
+<para>
+Creates a new <link linkend="GdkAppLaunchContext"><type>GdkAppLaunchContext</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GdkAppLaunchContext"><type>GdkAppLaunchContext</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gdk-app-launch-context-set-display" role="function" condition="since:2.14">
+<title>gdk_app_launch_context_set_display ()</title>
+<indexterm zone="gdk-app-launch-context-set-display" role="2.14"><primary sortas="app_launch_context_set_display">gdk_app_launch_context_set_display</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_app_launch_context_set_display  (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         <link linkend="GdkDisplay">GdkDisplay</link> *display);</programlisting>
+<para>
+Sets the display on which applications will be launched when
+using this context. See also <link linkend="gdk-app-launch-context-set-screen"><function>gdk_app_launch_context_set_screen()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkAppLaunchContext"><type>GdkAppLaunchContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkDisplay"><type>GdkDisplay</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gdk-app-launch-context-set-screen" role="function" condition="since:2.14">
+<title>gdk_app_launch_context_set_screen ()</title>
+<indexterm zone="gdk-app-launch-context-set-screen" role="2.14"><primary sortas="app_launch_context_set_screen">gdk_app_launch_context_set_screen</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_app_launch_context_set_screen   (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         <link linkend="GdkScreen">GdkScreen</link> *screen);</programlisting>
+<para>
+Sets the screen on which applications will be launched when
+using this context. See also <link linkend="gdk-app-launch-context-set-display"><function>gdk_app_launch_context_set_display()</function></link>.
+</para>
+<para>
+If both <parameter>screen</parameter> and <parameter>display</parameter> are set, the <parameter>screen</parameter> takes priority.
+If neither <parameter>screen</parameter> or <parameter>display</parameter> are set, the default screen and
+display are used.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkAppLaunchContext"><type>GdkAppLaunchContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkScreen"><type>GdkScreen</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gdk-app-launch-context-set-desktop" role="function" condition="since:2.14">
+<title>gdk_app_launch_context_set_desktop ()</title>
+<indexterm zone="gdk-app-launch-context-set-desktop" role="2.14"><primary sortas="app_launch_context_set_desktop">gdk_app_launch_context_set_desktop</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_app_launch_context_set_desktop  (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         <link linkend="gint">gint</link> desktop);</programlisting>
+<para>
+Sets the workspace on which applications will be launched when
+using this context when running under a window manager that 
+supports multiple workspaces, as described in the 
+<ulink url="http://www.freedesktop.org/Standards/wm-spec">Extended 
+Window Manager Hints</ulink>. 
+</para>
+<para>
+When the workspace is not specified or <parameter>desktop</parameter> is set to -1, 
+it is up to the window manager to pick one, typically it will
+be the current workspace.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkAppLaunchContext"><type>GdkAppLaunchContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>desktop</parameter>&#160;:</term>
+<listitem><simpara> the number of a workspace, or -1
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gdk-app-launch-context-set-timestamp" role="function" condition="since:2.14">
+<title>gdk_app_launch_context_set_timestamp ()</title>
+<indexterm zone="gdk-app-launch-context-set-timestamp" role="2.14"><primary sortas="app_launch_context_set_timestamp">gdk_app_launch_context_set_timestamp</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_app_launch_context_set_timestamp
+                                                        (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         <link linkend="guint32">guint32</link> timestamp);</programlisting>
+<para>
+Sets the timestamp of <parameter>context</parameter>. The timestamp should ideally
+be taken from the event that triggered the launch. 
+</para>
+<para>
+Window managers can use this information to avoid moving the
+focus to the newly launched application when the user is busy
+typing in another window. This is also known as 'focus stealing
+prevention'.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkAppLaunchContext"><type>GdkAppLaunchContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>timestamp</parameter>&#160;:</term>
+<listitem><simpara> a timestamp
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gdk-app-launch-context-set-icon" role="function" condition="since:2.14">
+<title>gdk_app_launch_context_set_icon ()</title>
+<indexterm zone="gdk-app-launch-context-set-icon" role="2.14"><primary sortas="app_launch_context_set_icon">gdk_app_launch_context_set_icon</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_app_launch_context_set_icon     (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         <link linkend="GIcon">GIcon</link> *icon);</programlisting>
+<para>
+Sets the icon for applications that are launched with this
+context.
+</para>
+<para>
+Window Managers can use this information when displaying startup
+notification.
+</para>
+<para>
+See also <link linkend="gdk-app-launch-context-set-icon-name"><function>gdk_app_launch_context_set_icon_name()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkAppLaunchContext"><type>GdkAppLaunchContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GIcon"><type>GIcon</type></link>, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+<refsect2 id="gdk-app-launch-context-set-icon-name" role="function" condition="since:2.14">
+<title>gdk_app_launch_context_set_icon_name ()</title>
+<indexterm zone="gdk-app-launch-context-set-icon-name" role="2.14"><primary sortas="app_launch_context_set_icon_name">gdk_app_launch_context_set_icon_name</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_app_launch_context_set_icon_name
+                                                        (<link linkend="GdkAppLaunchContext">GdkAppLaunchContext</link> *context,
+                                                         const <link linkend="char">char</link> *icon_name);</programlisting>
+<para>
+Sets the icon for applications that are launched with this context. 
+The <parameter>icon_name</parameter> will be interpreted in the same way as the Icon field 
+in desktop files. See also <link linkend="gdk-app-launch-context-set-icon"><function>gdk_app_launch_context_set_icon()</function></link>. 
+</para>
+<para>
+If both <parameter>icon</parameter> and <parameter>icon_name</parameter> are set, the <parameter>icon_name</parameter> takes priority.
+If neither <parameter>icon</parameter> or <parameter>icon_name</parameter> is set, the icon is taken from either 
+the file that is passed to launched application or from the <link linkend="GAppInfo"><type>GAppInfo</type></link> 
+for the launched application itself.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>context</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkAppLaunchContext"><type>GdkAppLaunchContext</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>icon_name</parameter>&#160;:</term>
+<listitem><simpara> an icon name, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.14</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

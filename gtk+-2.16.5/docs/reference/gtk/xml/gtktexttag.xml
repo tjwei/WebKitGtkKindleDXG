@@ -1,0 +1,871 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkTextTag">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkTextTag.top_of_page">GtkTextTag</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkTextTag</refname>
+<refpurpose>A tag that can be applied to text in a GtkTextBuffer</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkTextTag.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkTextTag-struct">GtkTextTag</link>;
+enum                <link linkend="GtkWrapMode">GtkWrapMode</link>;
+                    <link linkend="GtkTextAttributes">GtkTextAttributes</link>;
+<link linkend="GtkTextTag">GtkTextTag</link> *        <link linkend="gtk-text-tag-new">gtk_text_tag_new</link>                    (const <link linkend="gchar">gchar</link> *name);
+<link linkend="gint">gint</link>                <link linkend="gtk-text-tag-get-priority">gtk_text_tag_get_priority</link>           (<link linkend="GtkTextTag">GtkTextTag</link> *tag);
+<link linkend="void">void</link>                <link linkend="gtk-text-tag-set-priority">gtk_text_tag_set_priority</link>           (<link linkend="GtkTextTag">GtkTextTag</link> *tag,
+                                                         <link linkend="gint">gint</link> priority);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-text-tag-event">gtk_text_tag_event</link>                  (<link linkend="GtkTextTag">GtkTextTag</link> *tag,
+                                                         <link linkend="GObject">GObject</link> *event_object,
+                                                         <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         const <link linkend="GtkTextIter">GtkTextIter</link> *iter);
+                    <link linkend="GtkTextAppearance">GtkTextAppearance</link>;
+<link linkend="GtkTextAttributes">GtkTextAttributes</link>*  <link linkend="gtk-text-attributes-new">gtk_text_attributes_new</link>             (void);
+<link linkend="GtkTextAttributes">GtkTextAttributes</link>*  <link linkend="gtk-text-attributes-copy">gtk_text_attributes_copy</link>            (<link linkend="GtkTextAttributes">GtkTextAttributes</link> *src);
+<link linkend="void">void</link>                <link linkend="gtk-text-attributes-copy-values">gtk_text_attributes_copy_values</link>     (<link linkend="GtkTextAttributes">GtkTextAttributes</link> *src,
+                                                         <link linkend="GtkTextAttributes">GtkTextAttributes</link> *dest);
+<link linkend="void">void</link>                <link linkend="gtk-text-attributes-unref">gtk_text_attributes_unref</link>           (<link linkend="GtkTextAttributes">GtkTextAttributes</link> *values);
+<link linkend="GtkTextAttributes">GtkTextAttributes</link> * <link linkend="gtk-text-attributes-ref">gtk_text_attributes_ref</link>             (<link linkend="GtkTextAttributes">GtkTextAttributes</link> *values);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkTextTag.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkTextTag
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkTextTag.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkTextTag--accumulative-margin">accumulative-margin</link>&quot;      <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--background">background</link>&quot;               <link linkend="gchar">gchar</link>*                : Write
+  &quot;<link linkend="GtkTextTag--background-full-height">background-full-height</link>&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--background-full-height-set">background-full-height-set</link>&quot; <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--background-gdk">background-gdk</link>&quot;           <link linkend="GdkColor">GdkColor</link>*             : Read / Write
+  &quot;<link linkend="GtkTextTag--background-set">background-set</link>&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--background-stipple">background-stipple</link>&quot;       <link linkend="GdkPixmap">GdkPixmap</link>*            : Read / Write
+  &quot;<link linkend="GtkTextTag--background-stipple-set">background-stipple-set</link>&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--direction">direction</link>&quot;                <link linkend="GtkTextDirection">GtkTextDirection</link>      : Read / Write
+  &quot;<link linkend="GtkTextTag--editable">editable</link>&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--editable-set">editable-set</link>&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--family">family</link>&quot;                   <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkTextTag--family-set">family-set</link>&quot;               <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--font">font</link>&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkTextTag--font-desc">font-desc</link>&quot;                <link linkend="PangoFontDescription">PangoFontDescription</link>*  : Read / Write
+  &quot;<link linkend="GtkTextTag--foreground">foreground</link>&quot;               <link linkend="gchar">gchar</link>*                : Write
+  &quot;<link linkend="GtkTextTag--foreground-gdk">foreground-gdk</link>&quot;           <link linkend="GdkColor">GdkColor</link>*             : Read / Write
+  &quot;<link linkend="GtkTextTag--foreground-set">foreground-set</link>&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--foreground-stipple">foreground-stipple</link>&quot;       <link linkend="GdkPixmap">GdkPixmap</link>*            : Read / Write
+  &quot;<link linkend="GtkTextTag--foreground-stipple-set">foreground-stipple-set</link>&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--indent">indent</link>&quot;                   <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextTag--indent-set">indent-set</link>&quot;               <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--invisible">invisible</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--invisible-set">invisible-set</link>&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--justification">justification</link>&quot;            <link linkend="GtkJustification">GtkJustification</link>      : Read / Write
+  &quot;<link linkend="GtkTextTag--justification-set">justification-set</link>&quot;        <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--language">language</link>&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write
+  &quot;<link linkend="GtkTextTag--language-set">language-set</link>&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--left-margin">left-margin</link>&quot;              <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextTag--left-margin-set">left-margin-set</link>&quot;          <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--name">name</link>&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write / Construct Only
+  &quot;<link linkend="GtkTextTag--paragraph-background">paragraph-background</link>&quot;     <link linkend="gchar">gchar</link>*                : Write
+  &quot;<link linkend="GtkTextTag--paragraph-background-gdk">paragraph-background-gdk</link>&quot; <link linkend="GdkColor">GdkColor</link>*             : Read / Write
+  &quot;<link linkend="GtkTextTag--paragraph-background-set">paragraph-background-set</link>&quot; <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--pixels-above-lines">pixels-above-lines</link>&quot;       <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextTag--pixels-above-lines-set">pixels-above-lines-set</link>&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--pixels-below-lines">pixels-below-lines</link>&quot;       <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextTag--pixels-below-lines-set">pixels-below-lines-set</link>&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--pixels-inside-wrap">pixels-inside-wrap</link>&quot;       <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextTag--pixels-inside-wrap-set">pixels-inside-wrap-set</link>&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--right-margin">right-margin</link>&quot;             <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextTag--right-margin-set">right-margin-set</link>&quot;         <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--rise">rise</link>&quot;                     <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextTag--rise-set">rise-set</link>&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--scale">scale</link>&quot;                    <link linkend="gdouble">gdouble</link>               : Read / Write
+  &quot;<link linkend="GtkTextTag--scale-set">scale-set</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--size">size</link>&quot;                     <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextTag--size-points">size-points</link>&quot;              <link linkend="gdouble">gdouble</link>               : Read / Write
+  &quot;<link linkend="GtkTextTag--size-set">size-set</link>&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--stretch">stretch</link>&quot;                  <link linkend="PangoStretch">PangoStretch</link>          : Read / Write
+  &quot;<link linkend="GtkTextTag--stretch-set">stretch-set</link>&quot;              <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--strikethrough">strikethrough</link>&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--strikethrough-set">strikethrough-set</link>&quot;        <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--style">style</link>&quot;                    <link linkend="PangoStyle">PangoStyle</link>            : Read / Write
+  &quot;<link linkend="GtkTextTag--style-set">style-set</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--tabs">tabs</link>&quot;                     <link linkend="PangoTabArray">PangoTabArray</link>*        : Read / Write
+  &quot;<link linkend="GtkTextTag--tabs-set">tabs-set</link>&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--underline">underline</link>&quot;                <link linkend="PangoUnderline">PangoUnderline</link>        : Read / Write
+  &quot;<link linkend="GtkTextTag--underline-set">underline-set</link>&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--variant">variant</link>&quot;                  <link linkend="PangoVariant">PangoVariant</link>          : Read / Write
+  &quot;<link linkend="GtkTextTag--variant-set">variant-set</link>&quot;              <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--weight">weight</link>&quot;                   <link linkend="gint">gint</link>                  : Read / Write
+  &quot;<link linkend="GtkTextTag--weight-set">weight-set</link>&quot;               <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkTextTag--wrap-mode">wrap-mode</link>&quot;                <link linkend="GtkWrapMode">GtkWrapMode</link>           : Read / Write
+  &quot;<link linkend="GtkTextTag--wrap-mode-set">wrap-mode-set</link>&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkTextTag.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkTextTag-event">event</link>&quot;                                          : Run Last
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkTextTag.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+You may wish to begin by reading the <link linkend="TextWidget">text widget
+conceptual overview</link> which gives an overview of all the objects and data
+types related to the text widget and how they work together.
+</para>
+<para>
+Tags should be in the <link linkend="GtkTextTagTable"><type>GtkTextTagTable</type></link> for a given <link linkend="GtkTextBuffer"><type>GtkTextBuffer</type></link>
+before using them with that buffer.
+</para>
+<para>
+<link linkend="gtk-text-buffer-create-tag"><function>gtk_text_buffer_create_tag()</function></link> is the best way to create tags.
+See <application>gtk-demo</application> for numerous examples.
+</para>
+<para>
+The "invisible" property was not implemented for GTK+ 2.0; it's
+planned to be implemented in future releases.
+</para>
+</refsect1>
+
+<refsect1 id="GtkTextTag.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkTextTag-struct" role="struct">
+<title>GtkTextTag</title>
+<indexterm zone="GtkTextTag-struct"><primary sortas="TextTag">GtkTextTag</primary></indexterm><programlisting>typedef struct _GtkTextTag GtkTextTag;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkWrapMode" role="enum">
+<title>enum GtkWrapMode</title>
+<indexterm zone="GtkWrapMode"><primary sortas="WrapMode">GtkWrapMode</primary></indexterm><programlisting>typedef enum
+{
+  GTK_WRAP_NONE,
+  GTK_WRAP_CHAR,
+  GTK_WRAP_WORD,
+  GTK_WRAP_WORD_CHAR
+} GtkWrapMode;
+</programlisting>
+<para>
+Describes a type of line wrapping.
+</para><variablelist role="enum">
+<varlistentry id="GTK-WRAP-NONE--CAPS" role="constant">
+<term><literal>GTK_WRAP_NONE</literal></term>
+<listitem><simpara>do not wrap lines; just make the text area wider
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-WRAP-CHAR--CAPS" role="constant">
+<term><literal>GTK_WRAP_CHAR</literal></term>
+<listitem><simpara>wrap text, breaking lines anywhere the cursor can
+                appear (between characters, usually - if you want to
+                be technical, between graphemes, see
+                <link linkend="pango-get-log-attrs"><function>pango_get_log_attrs()</function></link>)
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-WRAP-WORD--CAPS" role="constant">
+<term><literal>GTK_WRAP_WORD</literal></term>
+<listitem><simpara>wrap text, breaking lines in between words
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-WRAP-WORD-CHAR--CAPS" role="constant">
+<term><literal>GTK_WRAP_WORD_CHAR</literal></term>
+<listitem><simpara>wrap text, breaking lines in between words, or if 
+                that is not enough, also between graphemes.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkTextAttributes" role="struct">
+<title>GtkTextAttributes</title>
+<indexterm zone="GtkTextAttributes"><primary sortas="TextAttributes">GtkTextAttributes</primary></indexterm><programlisting>typedef struct {
+  GtkTextAppearance appearance;
+
+  GtkJustification justification;
+  GtkTextDirection direction;
+
+  /* Individual chunks of this can be set/unset as a group */
+  PangoFontDescription *font;
+
+  gdouble font_scale;
+  
+  gint left_margin;
+
+  gint indent;  
+
+  gint right_margin;
+
+  gint pixels_above_lines;
+
+  gint pixels_below_lines;
+
+  gint pixels_inside_wrap;
+
+  PangoTabArray *tabs;
+
+  GtkWrapMode wrap_mode;        /* How to handle wrap-around for this tag.
+                                 * Must be GTK_WRAPMODE_CHAR,
+                                 * GTK_WRAPMODE_NONE, GTK_WRAPMODE_WORD
+                                 */
+
+  PangoLanguage *language;
+
+  /* hide the text  */
+  guint invisible : 1;
+
+  /* Background is fit to full line height rather than
+   * baseline +/- ascent/descent (font height)
+   */
+  guint bg_full_height : 1;
+
+  /* can edit this text */
+  guint editable : 1;
+
+  /* colors are allocated etc. */
+  guint realized : 1;
+} GtkTextAttributes;
+</programlisting>
+<para>
+Using <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link> directly should rarely be necessary. It's
+primarily useful with <link linkend="gtk-text-iter-get-attributes"><function>gtk_text_iter_get_attributes()</function></link>. As with most
+GTK+ structs, the fields in this struct should only be read, never
+modified directly.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GtkTextAppearance">GtkTextAppearance</link>&#160;<structfield>appearance</structfield>;</term>
+<listitem><simpara>pointer to sub-struct containing certain attributes
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkJustification">GtkJustification</link>&#160;<structfield>justification</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkTextDirection">GtkTextDirection</link>&#160;<structfield>direction</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="PangoFontDescription">PangoFontDescription</link>&#160;*<structfield>font</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gdouble">gdouble</link>&#160;<structfield>font_scale</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>left_margin</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>indent</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>right_margin</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>pixels_above_lines</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>pixels_below_lines</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gint">gint</link>&#160;<structfield>pixels_inside_wrap</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="PangoTabArray">PangoTabArray</link>&#160;*<structfield>tabs</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GtkWrapMode">GtkWrapMode</link>&#160;<structfield>wrap_mode</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="PangoLanguage">PangoLanguage</link>&#160;*<structfield>language</structfield>;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>invisible</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>bg_full_height</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>editable</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint">guint</link>&#160;<structfield>realized</structfield>&#160;:&#160;1;</term>
+<listitem><simpara>
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-tag-new" role="function">
+<title>gtk_text_tag_new ()</title>
+<indexterm zone="gtk-text-tag-new"><primary sortas="text_tag_new">gtk_text_tag_new</primary></indexterm><programlisting><link linkend="GtkTextTag">GtkTextTag</link> *        gtk_text_tag_new                    (const <link linkend="gchar">gchar</link> *name);</programlisting>
+<para>
+Creates a <link linkend="GtkTextTag"><type>GtkTextTag</type></link>. Configure the tag using object arguments,
+i.e. using <link linkend="g-object-set"><function>g_object_set()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> tag name, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkTextTag"><type>GtkTextTag</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-tag-get-priority" role="function">
+<title>gtk_text_tag_get_priority ()</title>
+<indexterm zone="gtk-text-tag-get-priority"><primary sortas="text_tag_get_priority">gtk_text_tag_get_priority</primary></indexterm><programlisting><link linkend="gint">gint</link>                gtk_text_tag_get_priority           (<link linkend="GtkTextTag">GtkTextTag</link> *tag);</programlisting>
+<para>
+Get the tag priority.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tag</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextTag"><type>GtkTextTag</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The tag's priority.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-tag-set-priority" role="function">
+<title>gtk_text_tag_set_priority ()</title>
+<indexterm zone="gtk-text-tag-set-priority"><primary sortas="text_tag_set_priority">gtk_text_tag_set_priority</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_tag_set_priority           (<link linkend="GtkTextTag">GtkTextTag</link> *tag,
+                                                         <link linkend="gint">gint</link> priority);</programlisting>
+<para>
+Sets the priority of a <link linkend="GtkTextTag"><type>GtkTextTag</type></link>. Valid priorities are
+start at 0 and go to one less than <link linkend="gtk-text-tag-table-get-size"><function>gtk_text_tag_table_get_size()</function></link>.
+Each tag in a table has a unique priority; setting the priority
+of one tag shifts the priorities of all the other tags in the
+table to maintain a unique priority for each tag. Higher priority
+tags "win" if two tags both set the same text attribute. When adding
+a tag to a tag table, it will be assigned the highest priority in
+the table by default; so normally the precedence of a set of tags
+is the order in which they were added to the table, or created with
+<link linkend="gtk-text-buffer-create-tag"><function>gtk_text_buffer_create_tag()</function></link>, which adds the tag to the buffer's table
+automatically.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tag</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextTag"><type>GtkTextTag</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>priority</parameter>&#160;:</term>
+<listitem><simpara> the new priority
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-tag-event" role="function">
+<title>gtk_text_tag_event ()</title>
+<indexterm zone="gtk-text-tag-event"><primary sortas="text_tag_event">gtk_text_tag_event</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_text_tag_event                  (<link linkend="GtkTextTag">GtkTextTag</link> *tag,
+                                                         <link linkend="GObject">GObject</link> *event_object,
+                                                         <link linkend="GdkEvent">GdkEvent</link> *event,
+                                                         const <link linkend="GtkTextIter">GtkTextIter</link> *iter);</programlisting>
+<para>
+Emits the "event" signal on the <link linkend="GtkTextTag"><type>GtkTextTag</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tag</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextTag"><type>GtkTextTag</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>event_object</parameter>&#160;:</term>
+<listitem><simpara> object that received the event, such as a widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> the event
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> location where the event was received
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> result of signal emission (whether the event was handled)
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GtkTextAppearance" role="struct">
+<title>GtkTextAppearance</title>
+<indexterm zone="GtkTextAppearance"><primary sortas="TextAppearance">GtkTextAppearance</primary></indexterm><programlisting>typedef struct {
+  GdkColor bg_color;
+  GdkColor fg_color;
+  GdkBitmap *bg_stipple;
+  GdkBitmap *fg_stipple;
+
+  /* super/subscript rise, can be negative */
+  gint rise;
+
+  guint underline : 4;          /* PangoUnderline */
+  guint strikethrough : 1;
+
+  /* Whether to use background-related values; this is irrelevant for
+   * the values struct when in a tag, but is used for the composite
+   * values struct; it's true if any of the tags being composited
+   * had background stuff set.
+   */
+  guint draw_bg : 1;
+  
+  /* These are only used when we are actually laying out and rendering
+   * a paragraph; not when a GtkTextAppearance is part of a
+   * GtkTextAttributes.
+   */
+  guint inside_selection : 1;
+  guint is_text : 1;
+} GtkTextAppearance;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-text-attributes-new" role="function">
+<title>gtk_text_attributes_new ()</title>
+<indexterm zone="gtk-text-attributes-new"><primary sortas="text_attributes_new">gtk_text_attributes_new</primary></indexterm><programlisting><link linkend="GtkTextAttributes">GtkTextAttributes</link>*  gtk_text_attributes_new             (void);</programlisting>
+<para>
+Creates a <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link>, which describes
+a set of properties on some text.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-attributes-copy" role="function">
+<title>gtk_text_attributes_copy ()</title>
+<indexterm zone="gtk-text-attributes-copy"><primary sortas="text_attributes_copy">gtk_text_attributes_copy</primary></indexterm><programlisting><link linkend="GtkTextAttributes">GtkTextAttributes</link>*  gtk_text_attributes_copy            (<link linkend="GtkTextAttributes">GtkTextAttributes</link> *src);</programlisting>
+<para>
+Copies <parameter>src</parameter> and returns a new <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>src</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link> to be copied
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a copy of <parameter>src</parameter>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-attributes-copy-values" role="function">
+<title>gtk_text_attributes_copy_values ()</title>
+<indexterm zone="gtk-text-attributes-copy-values"><primary sortas="text_attributes_copy_values">gtk_text_attributes_copy_values</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_attributes_copy_values     (<link linkend="GtkTextAttributes">GtkTextAttributes</link> *src,
+                                                         <link linkend="GtkTextAttributes">GtkTextAttributes</link> *dest);</programlisting>
+<para>
+Copies the values from <parameter>src</parameter> to <parameter>dest</parameter> so that <parameter>dest</parameter> has the same values
+as <parameter>src</parameter>. Frees existing values in <parameter>dest</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>src</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dest</parameter>&#160;:</term>
+<listitem><simpara> another <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-attributes-unref" role="function">
+<title>gtk_text_attributes_unref ()</title>
+<indexterm zone="gtk-text-attributes-unref"><primary sortas="text_attributes_unref">gtk_text_attributes_unref</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_text_attributes_unref           (<link linkend="GtkTextAttributes">GtkTextAttributes</link> *values);</programlisting>
+<para>
+Decrements the reference count on <parameter>values</parameter>, freeing the structure
+if the reference count reaches 0.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>values</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-text-attributes-ref" role="function">
+<title>gtk_text_attributes_ref ()</title>
+<indexterm zone="gtk-text-attributes-ref"><primary sortas="text_attributes_ref">gtk_text_attributes_ref</primary></indexterm><programlisting><link linkend="GtkTextAttributes">GtkTextAttributes</link> * gtk_text_attributes_ref             (<link linkend="GtkTextAttributes">GtkTextAttributes</link> *values);</programlisting>
+<para>
+Increments the reference count on <parameter>values</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>values</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the <link linkend="GtkTextAttributes"><type>GtkTextAttributes</type></link> that were passed in
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkTextTag.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkTextTag--accumulative-margin" role="property"><title>The <literal>&quot;accumulative-margin&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--accumulative-margin" role="2.12"><primary sortas="TextTag:accumulative-margin">GtkTextTag:accumulative-margin</primary></indexterm><programlisting>  &quot;accumulative-margin&quot;      <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether the margins accumulate or override each other.
+</para>
+<para>
+When set to <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> the margins of this tag are added to the margins
+of any other non-accumulative margins present. When set to <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> 
+the margins override one another (the default).</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.12</para>
+</refsect2>
+<refsect2 id="GtkTextTag--background" role="property"><title>The <literal>&quot;background&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--background"><primary sortas="TextTag:background">GtkTextTag:background</primary></indexterm><programlisting>  &quot;background&quot;               <link linkend="gchar">gchar</link>*                : Write</programlisting>
+<para>Background color as a string.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkTextTag--background-full-height" role="property"><title>The <literal>&quot;background-full-height&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--background-full-height"><primary sortas="TextTag:background-full-height">GtkTextTag:background-full-height</primary></indexterm><programlisting>  &quot;background-full-height&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the background color fills the entire line height or only the height of the tagged characters.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--background-full-height-set" role="property"><title>The <literal>&quot;background-full-height-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--background-full-height-set"><primary sortas="TextTag:background-full-height-set">GtkTextTag:background-full-height-set</primary></indexterm><programlisting>  &quot;background-full-height-set&quot; <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects background height.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--background-gdk" role="property"><title>The <literal>&quot;background-gdk&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--background-gdk"><primary sortas="TextTag:background-gdk">GtkTextTag:background-gdk</primary></indexterm><programlisting>  &quot;background-gdk&quot;           <link linkend="GdkColor">GdkColor</link>*             : Read / Write</programlisting>
+<para>Background color as a (possibly unallocated) GdkColor.</para></refsect2>
+<refsect2 id="GtkTextTag--background-set" role="property"><title>The <literal>&quot;background-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--background-set"><primary sortas="TextTag:background-set">GtkTextTag:background-set</primary></indexterm><programlisting>  &quot;background-set&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the background color.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--background-stipple" role="property"><title>The <literal>&quot;background-stipple&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--background-stipple"><primary sortas="TextTag:background-stipple">GtkTextTag:background-stipple</primary></indexterm><programlisting>  &quot;background-stipple&quot;       <link linkend="GdkPixmap">GdkPixmap</link>*            : Read / Write</programlisting>
+<para>Bitmap to use as a mask when drawing the text background.</para></refsect2>
+<refsect2 id="GtkTextTag--background-stipple-set" role="property"><title>The <literal>&quot;background-stipple-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--background-stipple-set"><primary sortas="TextTag:background-stipple-set">GtkTextTag:background-stipple-set</primary></indexterm><programlisting>  &quot;background-stipple-set&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the background stipple.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--direction" role="property"><title>The <literal>&quot;direction&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--direction"><primary sortas="TextTag:direction">GtkTextTag:direction</primary></indexterm><programlisting>  &quot;direction&quot;                <link linkend="GtkTextDirection">GtkTextDirection</link>      : Read / Write</programlisting>
+<para>Text direction, e.g. right-to-left or left-to-right.</para><para>Default value: GTK_TEXT_DIR_NONE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--editable" role="property"><title>The <literal>&quot;editable&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--editable"><primary sortas="TextTag:editable">GtkTextTag:editable</primary></indexterm><programlisting>  &quot;editable&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the text can be modified by the user.</para><para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--editable-set" role="property"><title>The <literal>&quot;editable-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--editable-set"><primary sortas="TextTag:editable-set">GtkTextTag:editable-set</primary></indexterm><programlisting>  &quot;editable-set&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects text editability.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--family" role="property"><title>The <literal>&quot;family&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--family"><primary sortas="TextTag:family">GtkTextTag:family</primary></indexterm><programlisting>  &quot;family&quot;                   <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>Name of the font family, e.g. Sans, Helvetica, Times, Monospace.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkTextTag--family-set" role="property"><title>The <literal>&quot;family-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--family-set"><primary sortas="TextTag:family-set">GtkTextTag:family-set</primary></indexterm><programlisting>  &quot;family-set&quot;               <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the font family.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--font" role="property"><title>The <literal>&quot;font&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--font"><primary sortas="TextTag:font">GtkTextTag:font</primary></indexterm><programlisting>  &quot;font&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+Font description as string, e.g. \"Sans Italic 12\". 
+</para>
+<para>
+Note that the initial value of this property depends on
+the internals of <link linkend="PangoFontDescription"><type>PangoFontDescription</type></link>.</para>
+<para>
+</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkTextTag--font-desc" role="property"><title>The <literal>&quot;font-desc&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--font-desc"><primary sortas="TextTag:font-desc">GtkTextTag:font-desc</primary></indexterm><programlisting>  &quot;font-desc&quot;                <link linkend="PangoFontDescription">PangoFontDescription</link>*  : Read / Write</programlisting>
+<para>Font description as a PangoFontDescription struct.</para></refsect2>
+<refsect2 id="GtkTextTag--foreground" role="property"><title>The <literal>&quot;foreground&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--foreground"><primary sortas="TextTag:foreground">GtkTextTag:foreground</primary></indexterm><programlisting>  &quot;foreground&quot;               <link linkend="gchar">gchar</link>*                : Write</programlisting>
+<para>Foreground color as a string.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkTextTag--foreground-gdk" role="property"><title>The <literal>&quot;foreground-gdk&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--foreground-gdk"><primary sortas="TextTag:foreground-gdk">GtkTextTag:foreground-gdk</primary></indexterm><programlisting>  &quot;foreground-gdk&quot;           <link linkend="GdkColor">GdkColor</link>*             : Read / Write</programlisting>
+<para>Foreground color as a (possibly unallocated) GdkColor.</para></refsect2>
+<refsect2 id="GtkTextTag--foreground-set" role="property"><title>The <literal>&quot;foreground-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--foreground-set"><primary sortas="TextTag:foreground-set">GtkTextTag:foreground-set</primary></indexterm><programlisting>  &quot;foreground-set&quot;           <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the foreground color.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--foreground-stipple" role="property"><title>The <literal>&quot;foreground-stipple&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--foreground-stipple"><primary sortas="TextTag:foreground-stipple">GtkTextTag:foreground-stipple</primary></indexterm><programlisting>  &quot;foreground-stipple&quot;       <link linkend="GdkPixmap">GdkPixmap</link>*            : Read / Write</programlisting>
+<para>Bitmap to use as a mask when drawing the text foreground.</para></refsect2>
+<refsect2 id="GtkTextTag--foreground-stipple-set" role="property"><title>The <literal>&quot;foreground-stipple-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--foreground-stipple-set"><primary sortas="TextTag:foreground-stipple-set">GtkTextTag:foreground-stipple-set</primary></indexterm><programlisting>  &quot;foreground-stipple-set&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the foreground stipple.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--indent" role="property"><title>The <literal>&quot;indent&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--indent"><primary sortas="TextTag:indent">GtkTextTag:indent</primary></indexterm><programlisting>  &quot;indent&quot;                   <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Amount to indent the paragraph, in pixels.</para><para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextTag--indent-set" role="property"><title>The <literal>&quot;indent-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--indent-set"><primary sortas="TextTag:indent-set">GtkTextTag:indent-set</primary></indexterm><programlisting>  &quot;indent-set&quot;               <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects indentation.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--invisible" role="property"><title>The <literal>&quot;invisible&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--invisible" role="2.8"><primary sortas="TextTag:invisible">GtkTextTag:invisible</primary></indexterm><programlisting>  &quot;invisible&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+Whether this text is hidden.
+</para>
+<para>
+Note that there may still be problems with the support for invisible 
+text, in particular when navigating programmatically inside a buffer
+containing invisible segments.</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.8</para>
+</refsect2>
+<refsect2 id="GtkTextTag--invisible-set" role="property"><title>The <literal>&quot;invisible-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--invisible-set"><primary sortas="TextTag:invisible-set">GtkTextTag:invisible-set</primary></indexterm><programlisting>  &quot;invisible-set&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects text visibility.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--justification" role="property"><title>The <literal>&quot;justification&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--justification"><primary sortas="TextTag:justification">GtkTextTag:justification</primary></indexterm><programlisting>  &quot;justification&quot;            <link linkend="GtkJustification">GtkJustification</link>      : Read / Write</programlisting>
+<para>Left, right, or center justification.</para><para>Default value: GTK_JUSTIFY_LEFT</para>
+</refsect2>
+<refsect2 id="GtkTextTag--justification-set" role="property"><title>The <literal>&quot;justification-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--justification-set"><primary sortas="TextTag:justification-set">GtkTextTag:justification-set</primary></indexterm><programlisting>  &quot;justification-set&quot;        <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects paragraph justification.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--language" role="property"><title>The <literal>&quot;language&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--language"><primary sortas="TextTag:language">GtkTextTag:language</primary></indexterm><programlisting>  &quot;language&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write</programlisting>
+<para>
+The language this text is in, as an ISO code. Pango can use this as a 
+hint when rendering the text. If not set, an appropriate default will be 
+used.
+</para>
+<para>
+Note that the initial value of this property depends on the current
+locale, see also <link linkend="gtk-get-default-language"><function>gtk_get_default_language()</function></link>.</para>
+<para>
+</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkTextTag--language-set" role="property"><title>The <literal>&quot;language-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--language-set"><primary sortas="TextTag:language-set">GtkTextTag:language-set</primary></indexterm><programlisting>  &quot;language-set&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the language the text is rendered as.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--left-margin" role="property"><title>The <literal>&quot;left-margin&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--left-margin"><primary sortas="TextTag:left-margin">GtkTextTag:left-margin</primary></indexterm><programlisting>  &quot;left-margin&quot;              <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Width of the left margin in pixels.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextTag--left-margin-set" role="property"><title>The <literal>&quot;left-margin-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--left-margin-set"><primary sortas="TextTag:left-margin-set">GtkTextTag:left-margin-set</primary></indexterm><programlisting>  &quot;left-margin-set&quot;          <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the left margin.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--name" role="property"><title>The <literal>&quot;name&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--name"><primary sortas="TextTag:name">GtkTextTag:name</primary></indexterm><programlisting>  &quot;name&quot;                     <link linkend="gchar">gchar</link>*                : Read / Write / Construct Only</programlisting>
+<para>Name used to refer to the text tag. NULL for anonymous tags.</para><para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GtkTextTag--paragraph-background" role="property"><title>The <literal>&quot;paragraph-background&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--paragraph-background" role="2.8"><primary sortas="TextTag:paragraph-background">GtkTextTag:paragraph-background</primary></indexterm><programlisting>  &quot;paragraph-background&quot;     <link linkend="gchar">gchar</link>*                : Write</programlisting>
+<para>
+The paragraph background color as a string.</para>
+<para>
+</para><para>Default value: NULL</para>
+<para>Since 2.8</para>
+</refsect2>
+<refsect2 id="GtkTextTag--paragraph-background-gdk" role="property"><title>The <literal>&quot;paragraph-background-gdk&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--paragraph-background-gdk" role="2.8"><primary sortas="TextTag:paragraph-background-gdk">GtkTextTag:paragraph-background-gdk</primary></indexterm><programlisting>  &quot;paragraph-background-gdk&quot; <link linkend="GdkColor">GdkColor</link>*             : Read / Write</programlisting>
+<para>
+The paragraph background color as a as a (possibly unallocated) 
+<link linkend="GdkColor"><type>GdkColor</type></link>.</para>
+<para>
+</para><para>Since 2.8</para>
+</refsect2>
+<refsect2 id="GtkTextTag--paragraph-background-set" role="property"><title>The <literal>&quot;paragraph-background-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--paragraph-background-set"><primary sortas="TextTag:paragraph-background-set">GtkTextTag:paragraph-background-set</primary></indexterm><programlisting>  &quot;paragraph-background-set&quot; <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the paragraph background color.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--pixels-above-lines" role="property"><title>The <literal>&quot;pixels-above-lines&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--pixels-above-lines"><primary sortas="TextTag:pixels-above-lines">GtkTextTag:pixels-above-lines</primary></indexterm><programlisting>  &quot;pixels-above-lines&quot;       <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Pixels of blank space above paragraphs.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextTag--pixels-above-lines-set" role="property"><title>The <literal>&quot;pixels-above-lines-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--pixels-above-lines-set"><primary sortas="TextTag:pixels-above-lines-set">GtkTextTag:pixels-above-lines-set</primary></indexterm><programlisting>  &quot;pixels-above-lines-set&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the number of pixels above lines.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--pixels-below-lines" role="property"><title>The <literal>&quot;pixels-below-lines&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--pixels-below-lines"><primary sortas="TextTag:pixels-below-lines">GtkTextTag:pixels-below-lines</primary></indexterm><programlisting>  &quot;pixels-below-lines&quot;       <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Pixels of blank space below paragraphs.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextTag--pixels-below-lines-set" role="property"><title>The <literal>&quot;pixels-below-lines-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--pixels-below-lines-set"><primary sortas="TextTag:pixels-below-lines-set">GtkTextTag:pixels-below-lines-set</primary></indexterm><programlisting>  &quot;pixels-below-lines-set&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the number of pixels above lines.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--pixels-inside-wrap" role="property"><title>The <literal>&quot;pixels-inside-wrap&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--pixels-inside-wrap"><primary sortas="TextTag:pixels-inside-wrap">GtkTextTag:pixels-inside-wrap</primary></indexterm><programlisting>  &quot;pixels-inside-wrap&quot;       <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Pixels of blank space between wrapped lines in a paragraph.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextTag--pixels-inside-wrap-set" role="property"><title>The <literal>&quot;pixels-inside-wrap-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--pixels-inside-wrap-set"><primary sortas="TextTag:pixels-inside-wrap-set">GtkTextTag:pixels-inside-wrap-set</primary></indexterm><programlisting>  &quot;pixels-inside-wrap-set&quot;   <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the number of pixels between wrapped lines.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--right-margin" role="property"><title>The <literal>&quot;right-margin&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--right-margin"><primary sortas="TextTag:right-margin">GtkTextTag:right-margin</primary></indexterm><programlisting>  &quot;right-margin&quot;             <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Width of the right margin in pixels.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextTag--right-margin-set" role="property"><title>The <literal>&quot;right-margin-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--right-margin-set"><primary sortas="TextTag:right-margin-set">GtkTextTag:right-margin-set</primary></indexterm><programlisting>  &quot;right-margin-set&quot;         <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the right margin.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--rise" role="property"><title>The <literal>&quot;rise&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--rise"><primary sortas="TextTag:rise">GtkTextTag:rise</primary></indexterm><programlisting>  &quot;rise&quot;                     <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Offset of text above the baseline (below the baseline if rise is negative) in Pango units.</para><para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextTag--rise-set" role="property"><title>The <literal>&quot;rise-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--rise-set"><primary sortas="TextTag:rise-set">GtkTextTag:rise-set</primary></indexterm><programlisting>  &quot;rise-set&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the rise.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--scale" role="property"><title>The <literal>&quot;scale&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--scale"><primary sortas="TextTag:scale">GtkTextTag:scale</primary></indexterm><programlisting>  &quot;scale&quot;                    <link linkend="gdouble">gdouble</link>               : Read / Write</programlisting>
+<para>Font size as a scale factor relative to the default font size. This properly adapts to theme changes etc. so is recommended. Pango predefines some scales such as PANGO_SCALE_X_LARGE.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GtkTextTag--scale-set" role="property"><title>The <literal>&quot;scale-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--scale-set"><primary sortas="TextTag:scale-set">GtkTextTag:scale-set</primary></indexterm><programlisting>  &quot;scale-set&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag scales the font size by a factor.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--size" role="property"><title>The <literal>&quot;size&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--size"><primary sortas="TextTag:size">GtkTextTag:size</primary></indexterm><programlisting>  &quot;size&quot;                     <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Font size in Pango units.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextTag--size-points" role="property"><title>The <literal>&quot;size-points&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--size-points"><primary sortas="TextTag:size-points">GtkTextTag:size-points</primary></indexterm><programlisting>  &quot;size-points&quot;              <link linkend="gdouble">gdouble</link>               : Read / Write</programlisting>
+<para>Font size in points.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 0</para>
+</refsect2>
+<refsect2 id="GtkTextTag--size-set" role="property"><title>The <literal>&quot;size-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--size-set"><primary sortas="TextTag:size-set">GtkTextTag:size-set</primary></indexterm><programlisting>  &quot;size-set&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the font size.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--stretch" role="property"><title>The <literal>&quot;stretch&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--stretch"><primary sortas="TextTag:stretch">GtkTextTag:stretch</primary></indexterm><programlisting>  &quot;stretch&quot;                  <link linkend="PangoStretch">PangoStretch</link>          : Read / Write</programlisting>
+<para>Font stretch as a PangoStretch, e.g. PANGO_STRETCH_CONDENSED.</para><para>Default value: PANGO_STRETCH_NORMAL</para>
+</refsect2>
+<refsect2 id="GtkTextTag--stretch-set" role="property"><title>The <literal>&quot;stretch-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--stretch-set"><primary sortas="TextTag:stretch-set">GtkTextTag:stretch-set</primary></indexterm><programlisting>  &quot;stretch-set&quot;              <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the font stretch.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--strikethrough" role="property"><title>The <literal>&quot;strikethrough&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--strikethrough"><primary sortas="TextTag:strikethrough">GtkTextTag:strikethrough</primary></indexterm><programlisting>  &quot;strikethrough&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether to strike through the text.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--strikethrough-set" role="property"><title>The <literal>&quot;strikethrough-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--strikethrough-set"><primary sortas="TextTag:strikethrough-set">GtkTextTag:strikethrough-set</primary></indexterm><programlisting>  &quot;strikethrough-set&quot;        <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects strikethrough.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--style" role="property"><title>The <literal>&quot;style&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--style"><primary sortas="TextTag:style">GtkTextTag:style</primary></indexterm><programlisting>  &quot;style&quot;                    <link linkend="PangoStyle">PangoStyle</link>            : Read / Write</programlisting>
+<para>Font style as a PangoStyle, e.g. PANGO_STYLE_ITALIC.</para><para>Default value: PANGO_STYLE_NORMAL</para>
+</refsect2>
+<refsect2 id="GtkTextTag--style-set" role="property"><title>The <literal>&quot;style-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--style-set"><primary sortas="TextTag:style-set">GtkTextTag:style-set</primary></indexterm><programlisting>  &quot;style-set&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the font style.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--tabs" role="property"><title>The <literal>&quot;tabs&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--tabs"><primary sortas="TextTag:tabs">GtkTextTag:tabs</primary></indexterm><programlisting>  &quot;tabs&quot;                     <link linkend="PangoTabArray">PangoTabArray</link>*        : Read / Write</programlisting>
+<para>Custom tabs for this text.</para></refsect2>
+<refsect2 id="GtkTextTag--tabs-set" role="property"><title>The <literal>&quot;tabs-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--tabs-set"><primary sortas="TextTag:tabs-set">GtkTextTag:tabs-set</primary></indexterm><programlisting>  &quot;tabs-set&quot;                 <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects tabs.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--underline" role="property"><title>The <literal>&quot;underline&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--underline"><primary sortas="TextTag:underline">GtkTextTag:underline</primary></indexterm><programlisting>  &quot;underline&quot;                <link linkend="PangoUnderline">PangoUnderline</link>        : Read / Write</programlisting>
+<para>Style of underline for this text.</para><para>Default value: PANGO_UNDERLINE_NONE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--underline-set" role="property"><title>The <literal>&quot;underline-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--underline-set"><primary sortas="TextTag:underline-set">GtkTextTag:underline-set</primary></indexterm><programlisting>  &quot;underline-set&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects underlining.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--variant" role="property"><title>The <literal>&quot;variant&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--variant"><primary sortas="TextTag:variant">GtkTextTag:variant</primary></indexterm><programlisting>  &quot;variant&quot;                  <link linkend="PangoVariant">PangoVariant</link>          : Read / Write</programlisting>
+<para>Font variant as a PangoVariant, e.g. PANGO_VARIANT_SMALL_CAPS.</para><para>Default value: PANGO_VARIANT_NORMAL</para>
+</refsect2>
+<refsect2 id="GtkTextTag--variant-set" role="property"><title>The <literal>&quot;variant-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--variant-set"><primary sortas="TextTag:variant-set">GtkTextTag:variant-set</primary></indexterm><programlisting>  &quot;variant-set&quot;              <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the font variant.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--weight" role="property"><title>The <literal>&quot;weight&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--weight"><primary sortas="TextTag:weight">GtkTextTag:weight</primary></indexterm><programlisting>  &quot;weight&quot;                   <link linkend="gint">gint</link>                  : Read / Write</programlisting>
+<para>Font weight as an integer, see predefined values in PangoWeight; for example, PANGO_WEIGHT_BOLD.</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 400</para>
+</refsect2>
+<refsect2 id="GtkTextTag--weight-set" role="property"><title>The <literal>&quot;weight-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--weight-set"><primary sortas="TextTag:weight-set">GtkTextTag:weight-set</primary></indexterm><programlisting>  &quot;weight-set&quot;               <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects the font weight.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--wrap-mode" role="property"><title>The <literal>&quot;wrap-mode&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--wrap-mode"><primary sortas="TextTag:wrap-mode">GtkTextTag:wrap-mode</primary></indexterm><programlisting>  &quot;wrap-mode&quot;                <link linkend="GtkWrapMode">GtkWrapMode</link>           : Read / Write</programlisting>
+<para>Whether to wrap lines never, at word boundaries, or at character boundaries.</para><para>Default value: GTK_WRAP_NONE</para>
+</refsect2>
+<refsect2 id="GtkTextTag--wrap-mode-set" role="property"><title>The <literal>&quot;wrap-mode-set&quot;</literal> property</title>
+<indexterm zone="GtkTextTag--wrap-mode-set"><primary sortas="TextTag:wrap-mode-set">GtkTextTag:wrap-mode-set</primary></indexterm><programlisting>  &quot;wrap-mode-set&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether this tag affects line wrap mode.</para><para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+
+<refsect1 id="GtkTextTag.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkTextTag-event" role="signal"><title>The <literal>&quot;event&quot;</literal> signal</title>
+<indexterm zone="GtkTextTag-event"><primary sortas="TextTag::event">GtkTextTag::event</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            user_function                      (<link linkend="GtkTextTag">GtkTextTag</link>  *tag,
+                                                        <link linkend="GObject">GObject</link>     *object,
+                                                        <link linkend="GdkEvent">GdkEvent</link>    *event,
+                                                        <link linkend="GtkTextIter">GtkTextIter</link> *iter,
+                                                        <link linkend="gpointer">gpointer</link>     user_data)      : Run Last</programlisting>
+<para>
+The ::event signal is emitted when an event occurs on a region of the
+buffer marked with this tag.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>tag</parameter>&#160;:</term>
+<listitem><simpara> the <link linkend="GtkTextTag"><type>GtkTextTag</type></link> on which the signal is emitted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>object</parameter>&#160;:</term>
+<listitem><simpara> the object the event was fired from (typically a <link linkend="GtkTextView"><type>GtkTextView</type></link>)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>event</parameter>&#160;:</term>
+<listitem><simpara> the event which triggered the signal
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>iter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkTextIter"><type>GtkTextIter</type></link> pointing at the location the event occured
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> to stop other handlers from being invoked for the
+event. <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> to propagate the event further.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+</refsect1>
+
+
+
+</refentry>

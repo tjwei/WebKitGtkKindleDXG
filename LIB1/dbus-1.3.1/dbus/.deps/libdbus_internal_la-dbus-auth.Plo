@@ -1,0 +1,103 @@
+libdbus_internal_la-dbus-auth.lo: dbus-auth.c ../config.h dbus-auth.h \
+  ../dbus/dbus-macros.h ../dbus/dbus-errors.h ../dbus/dbus-types.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h \
+  ../dbus/dbus-arch-deps.h ../dbus/dbus-protocol.h ../dbus/dbus-string.h \
+  ../dbus/dbus-memory.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  ../dbus/dbus-sysdeps.h /usr/include/stdint.h /usr/include/features.h \
+  /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /usr/include/bits/wchar.h ../dbus/dbus-file.h /usr/include/string.h \
+  /usr/include/xlocale.h /usr/include/bits/string.h \
+  /usr/include/bits/string2.h /usr/include/stdlib.h \
+  /usr/include/sys/poll.h /usr/include/bits/poll.h \
+  /usr/include/bits/sigset.h /usr/include/time.h \
+  /usr/include/bits/types.h /usr/include/bits/typesizes.h dbus-string.h \
+  dbus-list.h ../dbus/dbus-internals.h ../dbus/dbus-threads-internal.h \
+  ../dbus/dbus-threads.h dbus-internals.h dbus-keyring.h \
+  ../dbus/dbus-credentials.h dbus-sha.h dbus-protocol.h \
+  dbus-credentials.h
+
+../config.h:
+
+dbus-auth.h:
+
+../dbus/dbus-macros.h:
+
+../dbus/dbus-errors.h:
+
+../dbus/dbus-types.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:
+
+../dbus/dbus-arch-deps.h:
+
+../dbus/dbus-protocol.h:
+
+../dbus/dbus-string.h:
+
+../dbus/dbus-memory.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+../dbus/dbus-sysdeps.h:
+
+/usr/include/stdint.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/bits/wchar.h:
+
+../dbus/dbus-file.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/poll.h:
+
+/usr/include/bits/poll.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/time.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+dbus-string.h:
+
+dbus-list.h:
+
+../dbus/dbus-internals.h:
+
+../dbus/dbus-threads-internal.h:
+
+../dbus/dbus-threads.h:
+
+dbus-internals.h:
+
+dbus-keyring.h:
+
+../dbus/dbus-credentials.h:
+
+dbus-sha.h:
+
+dbus-protocol.h:
+
+dbus-credentials.h:

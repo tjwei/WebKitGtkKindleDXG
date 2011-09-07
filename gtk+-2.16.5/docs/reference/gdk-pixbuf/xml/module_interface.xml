@@ -1,0 +1,781 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+
+<!ENTITY gdk-pixbuf "<application>gdk-pixbuf</application>">
+<!ENTITY Imlib "<application>Imlib</application>">
+]>
+<refentry id="gdk-pixbuf-Module-Interface">
+<refmeta>
+<refentrytitle role="top_of_page" id="gdk-pixbuf-Module-Interface.top_of_page">Module Interface</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK-PIXBUF Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Module Interface</refname>
+<refpurpose>Extending &gdk-pixbuf;</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gdk-pixbuf-Module-Interface.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gdk-pixbuf/gdk-pixbuf.h&gt;
+
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-set-option">gdk_pixbuf_set_option</link>               (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         const <link linkend="gchar">gchar</link> *value);
+<link linkend="GSList">GSList</link> *            <link linkend="gdk-pixbuf-get-formats">gdk_pixbuf_get_formats</link>              (void);
+<link linkend="gchar">gchar</link> *             <link linkend="gdk-pixbuf-format-get-name">gdk_pixbuf_format_get_name</link>          (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);
+<link linkend="gchar">gchar</link> *             <link linkend="gdk-pixbuf-format-get-description">gdk_pixbuf_format_get_description</link>   (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);
+<link linkend="gchar">gchar</link> **            <link linkend="gdk-pixbuf-format-get-mime-types">gdk_pixbuf_format_get_mime_types</link>    (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);
+<link linkend="gchar">gchar</link> **            <link linkend="gdk-pixbuf-format-get-extensions">gdk_pixbuf_format_get_extensions</link>    (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-format-is-writable">gdk_pixbuf_format_is_writable</link>       (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-format-is-scalable">gdk_pixbuf_format_is_scalable</link>       (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-format-is-disabled">gdk_pixbuf_format_is_disabled</link>       (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);
+<link linkend="void">void</link>                <link linkend="gdk-pixbuf-format-set-disabled">gdk_pixbuf_format_set_disabled</link>      (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format,
+                                                         <link linkend="gboolean">gboolean</link> disabled);
+<link linkend="gchar">gchar</link> *             <link linkend="gdk-pixbuf-format-get-license">gdk_pixbuf_format_get_license</link>       (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);
+                    <link linkend="GdkPixbufFormat">GdkPixbufFormat</link>;
+enum                <link linkend="GdkPixbufFormatFlags">GdkPixbufFormatFlags</link>;
+                    <link linkend="GdkPixbufModulePattern">GdkPixbufModulePattern</link>;
+<link linkend="void">void</link>                (<link linkend="GdkPixbufModuleFillVtableFunc">*GdkPixbufModuleFillVtableFunc</link>)    (<link linkend="GdkPixbufModule">GdkPixbufModule</link> *module);
+<link linkend="void">void</link>                (<link linkend="GdkPixbufModuleFillInfoFunc">*GdkPixbufModuleFillInfoFunc</link>)      (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *info);
+<link linkend="void">void</link>                (<link linkend="GdkPixbufModuleSizeFunc">*GdkPixbufModuleSizeFunc</link>)          (<link linkend="gint">gint</link> *width,
+                                                         <link linkend="gint">gint</link> *height,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                (<link linkend="GdkPixbufModulePreparedFunc">*GdkPixbufModulePreparedFunc</link>)      (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="GdkPixbufAnimation">GdkPixbufAnimation</link> *anim,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+<link linkend="void">void</link>                (<link linkend="GdkPixbufModuleUpdatedFunc">*GdkPixbufModuleUpdatedFunc</link>)       (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="gpointer">gpointer</link> user_data);
+                    <link linkend="GdkPixbufModule">GdkPixbufModule</link>;
+
+                    <link linkend="GdkPixbufAnimationClass">GdkPixbufAnimationClass</link>;
+                    <link linkend="GdkPixbufAnimationIterClass">GdkPixbufAnimationIterClass</link>;
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gdk-pixbuf-Module-Interface.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+If &gdk-pixbuf; has been compiled with GModule support, it can be extended by
+modules which can load (and perhaps also save) new image and animation
+formats. Each loadable module must export a
+<link linkend="GdkPixbufModuleFillInfoFunc"><type>GdkPixbufModuleFillInfoFunc</type></link> function named <function>fill_info</function> and
+a <link linkend="GdkPixbufModuleFillVtableFunc"><type>GdkPixbufModuleFillVtableFunc</type></link> function named
+<function>fill_vtable</function>.
+</para>
+<para>
+In order to make format-checking work before actually loading the modules
+(which may require dlopening image libraries), modules export their
+signatures (and other information) via the <function>fill_info</function>
+function. An external utility, <command>gdk-pixbuf-query-loaders</command>,
+uses this to create a text file containing a list of all available loaders and
+their signatures. This file is then read at runtime by &gdk-pixbuf; to obtain
+the list of available loaders and their signatures.
+</para>
+<para>
+Modules may only implement a subset of the functionality available via
+<link linkend="GdkPixbufModule"><type>GdkPixbufModule</type></link>. If a particular functionality is not implemented, the
+<function>fill_vtable</function> function will simply not set the corresponding
+function pointers of the <link linkend="GdkPixbufModule"><type>GdkPixbufModule</type></link> structure. If a module supports
+incremental loading (i.e. provides <link linkend="begin-load"><type>begin_load</type></link>, <link linkend="stop-load"><type>stop_load</type></link> and
+<link linkend="load-increment"><type>load_increment</type></link>), it doesn't have to implement <link linkend="load"><type>load</type></link>, since &gdk-pixbuf; can
+supply a generic <link linkend="load"><type>load</type></link> implementation wrapping the incremental loading.
+</para>
+<para>
+Installing a module is a two-step process:
+<itemizedlist>
+<listitem><para>copy the module file(s) to the loader directory (normally
+<filename><replaceable>libdir</replaceable>/gtk-2.0/<replaceable>version</replaceable>/loaders</filename>,
+unless overridden by the environment variable
+<envar>GDK_PIXBUF_MODULEDIR</envar>)
+</para></listitem>
+<listitem><para>call <command>gdk-pixbuf-query-loaders</command> to update the
+module file (normally
+<filename><replaceable>sysconfdir</replaceable>/gtk-2.0/gdk-pixbuf.loaders</filename>,
+unless overridden by the environment variable
+<envar>GDK_PIXBUF_MODULE_FILE</envar>)
+</para></listitem>
+</itemizedlist>
+</para>
+<para>
+The &gdk-pixbuf; interfaces needed for implementing modules are contained in
+<filename>gdk-pixbuf-io.h</filename> (and
+<filename>gdk-pixbuf-animation.h</filename> if the module supports animations).
+They are not covered by the same stability guarantees as the regular
+&gdk-pixbuf; API. To underline this fact, they are protected by
+<literal>#ifdef GDK_PIXBUF_ENABLE_BACKEND</literal>.
+</para>
+</refsect1>
+
+<refsect1 id="gdk-pixbuf-Module-Interface.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="gdk-pixbuf-set-option" role="function" condition="since:2.2">
+<title>gdk_pixbuf_set_option ()</title>
+<indexterm zone="gdk-pixbuf-set-option" role="2.2"><primary sortas="set_option">gdk_pixbuf_set_option</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_set_option               (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         const <link linkend="gchar">gchar</link> *key,
+                                                         const <link linkend="gchar">gchar</link> *value);</programlisting>
+<para>
+Attaches a key/value pair as an option to a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>. If <link linkend="key"><literal>key</literal></link> already
+exists in the list of options attached to <parameter>pixbuf</parameter>, the new value is 
+ignored and <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> is returned.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a nul-terminated string.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> a nul-terminated string.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> on success.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-pixbuf-get-formats" role="function" condition="since:2.2">
+<title>gdk_pixbuf_get_formats ()</title>
+<indexterm zone="gdk-pixbuf-get-formats" role="2.2"><primary sortas="get_formats">gdk_pixbuf_get_formats</primary></indexterm><programlisting><link linkend="GSList">GSList</link> *            gdk_pixbuf_get_formats              (void);</programlisting>
+<para>
+Obtains the available information about the image formats supported
+by GdkPixbuf.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A list of <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link><!-- -->s describing the supported 
+image formats.  The list should be freed when it is no longer needed, 
+but the structures themselves are owned by <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> and should not be 
+freed.  
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-pixbuf-format-get-name" role="function" condition="since:2.2">
+<title>gdk_pixbuf_format_get_name ()</title>
+<indexterm zone="gdk-pixbuf-format-get-name" role="2.2"><primary sortas="format_get_name">gdk_pixbuf_format_get_name</primary></indexterm><programlisting><link linkend="gchar">gchar</link> *             gdk_pixbuf_format_get_name          (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);</programlisting>
+<para>
+Returns the name of the format.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the name of the format. 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-pixbuf-format-get-description" role="function" condition="since:2.2">
+<title>gdk_pixbuf_format_get_description ()</title>
+<indexterm zone="gdk-pixbuf-format-get-description" role="2.2"><primary sortas="format_get_description">gdk_pixbuf_format_get_description</primary></indexterm><programlisting><link linkend="gchar">gchar</link> *             gdk_pixbuf_format_get_description   (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);</programlisting>
+<para>
+Returns a description of the format.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a description of the format.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-pixbuf-format-get-mime-types" role="function" condition="since:2.2">
+<title>gdk_pixbuf_format_get_mime_types ()</title>
+<indexterm zone="gdk-pixbuf-format-get-mime-types" role="2.2"><primary sortas="format_get_mime_types">gdk_pixbuf_format_get_mime_types</primary></indexterm><programlisting><link linkend="gchar">gchar</link> **            gdk_pixbuf_format_get_mime_types    (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);</programlisting>
+<para>
+Returns the mime types supported by the format.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated array of mime types which must be freed with 
+<link linkend="g-strfreev"><function>g_strfreev()</function></link> when it is no longer needed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-pixbuf-format-get-extensions" role="function" condition="since:2.2">
+<title>gdk_pixbuf_format_get_extensions ()</title>
+<indexterm zone="gdk-pixbuf-format-get-extensions" role="2.2"><primary sortas="format_get_extensions">gdk_pixbuf_format_get_extensions</primary></indexterm><programlisting><link linkend="gchar">gchar</link> **            gdk_pixbuf_format_get_extensions    (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);</programlisting>
+<para>
+Returns the filename extensions typically used for files in the 
+given format.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated array of filename extensions which must be
+freed with <link linkend="g-strfreev"><function>g_strfreev()</function></link> when it is no longer needed.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-pixbuf-format-is-writable" role="function" condition="since:2.2">
+<title>gdk_pixbuf_format_is_writable ()</title>
+<indexterm zone="gdk-pixbuf-format-is-writable" role="2.2"><primary sortas="format_is_writable">gdk_pixbuf_format_is_writable</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_format_is_writable       (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);</programlisting>
+<para>
+Returns whether pixbufs can be saved in the given format.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether pixbufs can be saved in the given format.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="gdk-pixbuf-format-is-scalable" role="function" condition="since:2.6">
+<title>gdk_pixbuf_format_is_scalable ()</title>
+<indexterm zone="gdk-pixbuf-format-is-scalable" role="2.6"><primary sortas="format_is_scalable">gdk_pixbuf_format_is_scalable</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_format_is_scalable       (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);</programlisting>
+<para>
+Returns whether this image format is scalable. If a file is in a 
+scalable format, it is preferable to load it at the desired size, 
+rather than loading it at the default size and scaling the 
+resulting pixbuf to the desired size.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether this image format is scalable.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-pixbuf-format-is-disabled" role="function" condition="since:2.6">
+<title>gdk_pixbuf_format_is_disabled ()</title>
+<indexterm zone="gdk-pixbuf-format-is-disabled" role="2.6"><primary sortas="format_is_disabled">gdk_pixbuf_format_is_disabled</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_format_is_disabled       (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);</programlisting>
+<para>
+Returns whether this image format is disabled. See
+<link linkend="gdk-pixbuf-format-set-disabled"><function>gdk_pixbuf_format_set_disabled()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether this image format is disabled.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-pixbuf-format-set-disabled" role="function" condition="since:2.6">
+<title>gdk_pixbuf_format_set_disabled ()</title>
+<indexterm zone="gdk-pixbuf-format-set-disabled" role="2.6"><primary sortas="format_set_disabled">gdk_pixbuf_format_set_disabled</primary></indexterm><programlisting><link linkend="void">void</link>                gdk_pixbuf_format_set_disabled      (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format,
+                                                         <link linkend="gboolean">gboolean</link> disabled);</programlisting>
+<para>
+Disables or enables an image format. If a format is disabled, 
+gdk-pixbuf won't use the image loader for this format to load 
+images. Applications can use this to avoid using image loaders 
+with an inappropriate license, see <link linkend="gdk-pixbuf-format-get-license"><function>gdk_pixbuf_format_get_license()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>disabled</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> to disable the format <parameter>format</parameter>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="gdk-pixbuf-format-get-license" role="function" condition="since:2.6">
+<title>gdk_pixbuf_format_get_license ()</title>
+<indexterm zone="gdk-pixbuf-format-get-license" role="2.6"><primary sortas="format_get_license">gdk_pixbuf_format_get_license</primary></indexterm><programlisting><link linkend="gchar">gchar</link> *             gdk_pixbuf_format_get_license       (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *format);</programlisting>
+<para>
+Returns information about the license of the image loader for the format. The
+returned string should be a shorthand for a wellknown license, e.g. "LGPL",
+"GPL", "QPL", "GPL/QPL", or "other" to indicate some other license.  This
+string should be freed with <link linkend="g-free"><function>g_free()</function></link> when it's no longer needed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a string describing the license of <parameter>format</parameter>. 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.6</para></refsect2>
+<refsect2 id="GdkPixbufFormat" role="struct" condition="since:2.2">
+<title>GdkPixbufFormat</title>
+<indexterm zone="GdkPixbufFormat" role="2.2"><primary>GdkPixbufFormat</primary></indexterm><programlisting>typedef struct {
+  gchar *name;
+  GdkPixbufModulePattern *signature;
+  gchar *domain;
+  gchar *description;
+  gchar **mime_types;
+  gchar **extensions;
+  guint32 flags;
+  gboolean disabled;
+  gchar *license;
+} GdkPixbufFormat;
+</programlisting>
+<para>
+A <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link> contains information about the image format accepted by a
+module. Only modules should access the fields directly, applications should
+use the <function>gdk_pixbuf_format_*</function> functions.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>name</structfield>;</term>
+<listitem><simpara>the name of the image format.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GdkPixbufModulePattern">GdkPixbufModulePattern</link>&#160;*<structfield>signature</structfield>;</term>
+<listitem><simpara>the signature of the module.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>domain</structfield>;</term>
+<listitem><simpara>the message domain for the <parameter>description</parameter>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>description</structfield>;</term>
+<listitem><simpara>a description of the image format.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;**<structfield>mime_types</structfield>;</term>
+<listitem><simpara>a <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated array of MIME types for the image format.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;**<structfield>extensions</structfield>;</term>
+<listitem><simpara>a <link linkend="NULL--CAPS"><literal>NULL</literal></link>-terminated array of typical filename extensions for the
+image format.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="guint32">guint32</link>&#160;<structfield>flags</structfield>;</term>
+<listitem><simpara>a combination of <link linkend="GdkPixbufFormatFlags"><type>GdkPixbufFormatFlags</type></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gboolean">gboolean</link>&#160;<structfield>disabled</structfield>;</term>
+<listitem><simpara>a boolean determining whether the loader is disabled.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>license</structfield>;</term>
+<listitem><simpara>a string containing license information, typically set to 
+ shorthands like "GPL", "LGPL", etc.
+</simpara></listitem>
+</varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GdkPixbufFormatFlags" role="enum" condition="since:2.2">
+<title>enum GdkPixbufFormatFlags</title>
+<indexterm zone="GdkPixbufFormatFlags" role="2.2"><primary>GdkPixbufFormatFlags</primary></indexterm><programlisting>typedef enum /*&lt; skip &gt;*/
+{
+  GDK_PIXBUF_FORMAT_WRITABLE = 1 &lt;&lt; 0,
+  GDK_PIXBUF_FORMAT_SCALABLE = 1 &lt;&lt; 1,
+  GDK_PIXBUF_FORMAT_THREADSAFE = 1 &lt;&lt; 2
+} GdkPixbufFormatFlags;
+</programlisting>
+<para>
+Flags which allow a module to specify further details about the supported
+operations.
+</para><variablelist role="enum">
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GdkPixbufModulePattern" role="struct" condition="since:2.2">
+<title>GdkPixbufModulePattern</title>
+<indexterm zone="GdkPixbufModulePattern" role="2.2"><primary>GdkPixbufModulePattern</primary></indexterm><programlisting>typedef struct {
+	char *prefix;
+	char *mask;
+	int relevance;
+} GdkPixbufModulePattern;
+</programlisting>
+<para>
+The signature of a module is a set of prefixes. Prefixes are encoded as
+pairs of ordinary strings, where the second string, called the mask, if
+not <link linkend="NULL--CAPS"><literal>NULL</literal></link>, must be of the same length as the first one and may contain
+' ', '!', 'x', 'z', and 'n' to indicate bytes that must be matched,
+not matched, "don't-care"-bytes, zeros and non-zeros.
+Each prefix has an associated integer that describes the relevance of
+the prefix, with 0 meaning a mismatch and 100 a "perfect match".
+</para>
+<para>
+Starting with &gdk-pixbuf; 2.8, the first byte of the mask may be '*',
+indicating an unanchored pattern that matches not only at the beginning,
+but also in the middle. Versions prior to 2.8 will interpret the '*'
+like an 'x'.
+</para>
+<para>
+The signature of a module is stored as an array of
+<link linkend="GdkPixbufModulePattern"><type>GdkPixbufModulePattern</type></link><!-- -->s. The array is terminated by a pattern
+where the <parameter>prefix</parameter> is <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</para>
+<informalexample><programlisting>
+GdkPixbufModulePattern *signature[] = {
+  { "abcdx", " !x z", 100 },
+  { "bla", NULL,  90 },
+  { NULL, NULL, 0 }
+};
+</programlisting>
+The example matches e.g. "auud\0" with relevance 100, and "blau" with
+relevance 90.</informalexample><variablelist role="struct">
+<varlistentry>
+<term><link linkend="char">char</link>&#160;*<structfield>prefix</structfield>;</term>
+<listitem><simpara>the prefix for this pattern
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="char">char</link>&#160;*<structfield>mask</structfield>;</term>
+<listitem><simpara>mask containing bytes which modify how the prefix is matched against
+  test data
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="int">int</link>&#160;<structfield>relevance</structfield>;</term>
+<listitem><simpara>relevance of this pattern
+</simpara></listitem>
+</varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GdkPixbufModuleFillVtableFunc" role="function" condition="since:2.2">
+<title>GdkPixbufModuleFillVtableFunc ()</title>
+<indexterm zone="GdkPixbufModuleFillVtableFunc" role="2.2"><primary>GdkPixbufModuleFillVtableFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GdkPixbufModuleFillVtableFunc)    (<link linkend="GdkPixbufModule">GdkPixbufModule</link> *module);</programlisting>
+<para>
+Defines the type of the function used to set the vtable of a
+<link linkend="GdkPixbufModule"><type>GdkPixbufModule</type></link> when it is loaded.
+</para><variablelist role="params">
+<varlistentry><term><parameter>module</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GdkPixbufModule"><type>GdkPixbufModule</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GdkPixbufModuleFillInfoFunc" role="function" condition="since:2.2">
+<title>GdkPixbufModuleFillInfoFunc ()</title>
+<indexterm zone="GdkPixbufModuleFillInfoFunc" role="2.2"><primary>GdkPixbufModuleFillInfoFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GdkPixbufModuleFillInfoFunc)      (<link linkend="GdkPixbufFormat">GdkPixbufFormat</link> *info);</programlisting>
+<para>
+Defines the type of the function used to fill a
+<link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link> structure with information about a module.
+</para><variablelist role="params">
+<varlistentry><term><parameter>info</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GdkPixbufModuleSizeFunc" role="function" condition="since:2.2">
+<title>GdkPixbufModuleSizeFunc ()</title>
+<indexterm zone="GdkPixbufModuleSizeFunc" role="2.2"><primary>GdkPixbufModuleSizeFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GdkPixbufModuleSizeFunc)          (<link linkend="gint">gint</link> *width,
+                                                         <link linkend="gint">gint</link> *height,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+Defines the type of the function that gets called once the size
+of the loaded image is known.
+</para>
+<para>
+The function is expected to set <parameter>width</parameter> and <parameter>height</parameter> to the desired
+size to which the image should be scaled. If a module has no efficient
+way to achieve the desired scaling during the loading of the image, it may
+either ignore the size request, or only approximate it -- &gdk-pixbuf; will
+then perform the required scaling on the completely loaded image.
+</para>
+<para>
+If the function sets <parameter>width</parameter> or <parameter>height</parameter> to zero, the module should interpret
+this as a hint that it will be closed soon and shouldn't allocate further
+resources. This convention is used to implement <link linkend="gdk-pixbuf-get-file-info"><function>gdk_pixbuf_get_file_info()</function></link>
+efficiently.
+</para><variablelist role="params">
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara>pointer to a location containing the current image width
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara>pointer to a location containing the current image height
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>the loader.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GdkPixbufModulePreparedFunc" role="function" condition="since:2.2">
+<title>GdkPixbufModulePreparedFunc ()</title>
+<indexterm zone="GdkPixbufModulePreparedFunc" role="2.2"><primary>GdkPixbufModulePreparedFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GdkPixbufModulePreparedFunc)      (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="GdkPixbufAnimation">GdkPixbufAnimation</link> *anim,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+Defines the type of the function that gets called once the initial
+setup of <parameter>pixbuf</parameter> is done.
+</para>
+<para>
+<link linkend="GdkPixbufLoader"><type>GdkPixbufLoader</type></link> uses a function of this type to emit the
+"<link linkend="GdkPixbufLoader-area-prepared">area_prepared</link>"
+signal.
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> that is currently being loaded.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>anim</parameter>&#160;:</term>
+<listitem><simpara>if an animation is being loaded, the <link linkend="GdkPixbufAnimation"><type>GdkPixbufAnimation</type></link>, else <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>the loader.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GdkPixbufModuleUpdatedFunc" role="function" condition="since:2.2">
+<title>GdkPixbufModuleUpdatedFunc ()</title>
+<indexterm zone="GdkPixbufModuleUpdatedFunc" role="2.2"><primary>GdkPixbufModuleUpdatedFunc</primary></indexterm><programlisting><link linkend="void">void</link>                (*GdkPixbufModuleUpdatedFunc)       (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="gpointer">gpointer</link> user_data);</programlisting>
+<para>
+Defines the type of the function that gets called every time a region
+of <parameter>pixbuf</parameter> is updated.
+</para>
+<para>
+<link linkend="GdkPixbufLoader"><type>GdkPixbufLoader</type></link> uses a function of this type to emit the
+"<link linkend="GdkPixbufLoader-area-updated">area_updated</link>"
+signal.
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> that is currently being loaded.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara>the X origin of the updated area.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara>the Y origin of the updated area.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara>the width of the updated area.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara>the height of the updated area.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>the loader.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.2</para></refsect2>
+<refsect2 id="GdkPixbufModule" role="struct">
+<title>GdkPixbufModule</title>
+<indexterm zone="GdkPixbufModule"><primary>GdkPixbufModule</primary></indexterm><programlisting>typedef struct {
+	char *module_name;
+	char *module_path;
+	GModule *module;
+	GdkPixbufFormat *info;
+	
+        GdkPixbuf *(* load) (FILE    *f,
+                             GError **error);
+        GdkPixbuf *(* load_xpm_data) (const char **data);
+
+        /* Incremental loading */
+
+        gpointer (* begin_load)     (GdkPixbufModuleSizeFunc size_func,
+                                     GdkPixbufModulePreparedFunc prepare_func,
+                                     GdkPixbufModuleUpdatedFunc update_func,
+                                     gpointer user_data,
+                                     GError **error);
+        gboolean (* stop_load)      (gpointer context,
+                                     GError **error);
+        gboolean (* load_increment) (gpointer      context,
+                                     const guchar *buf,
+                                     guint         size,
+                                     GError      **error);
+
+	/* Animation loading */
+	GdkPixbufAnimation *(* load_animation) (FILE    *f,
+                                                GError **error);
+
+        /* Saving */
+        gboolean (* save) (FILE      *f,
+                           GdkPixbuf *pixbuf,
+                           gchar    **param_keys,
+                           gchar    **param_values,
+                           GError   **error);
+
+        gboolean (*save_to_callback) (GdkPixbufSaveFunc save_func,
+				      gpointer user_data,
+				      GdkPixbuf *pixbuf,
+				      gchar **option_keys,
+				      gchar **option_values,
+				      GError **error);
+} GdkPixbufModule;
+</programlisting>
+<para>
+A <link linkend="GdkPixbufModule"><type>GdkPixbufModule</type></link> contains the necessary functions to load and save
+images in a certain file format.
+</para>
+<para>
+A <link linkend="GdkPixbufModule"><type>GdkPixbufModule</type></link> can be loaded dynamically from a <link linkend="GModule"><type>GModule</type></link>.
+Each loadable module must contain a <link linkend="GdkPixbufModuleFillVtableFunc"><type>GdkPixbufModuleFillVtableFunc</type></link> function
+named <function>fill_vtable</function>, which will get called when the module
+is loaded and must set the function pointers of the <link linkend="GdkPixbufModule"><type>GdkPixbufModule</type></link>.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="char">char</link>&#160;*<structfield>module_name</structfield>;</term>
+<listitem><simpara>the name of the module, usually the same as the
+  usual file extension for images of this type, eg. "xpm", "jpeg" or "png".
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="char">char</link>&#160;*<structfield>module_path</structfield>;</term>
+<listitem><simpara>the path from which the module is loaded.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GModule">GModule</link>&#160;*<structfield>module</structfield>;</term>
+<listitem><simpara>the loaded <link linkend="GModule"><type>GModule</type></link>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GdkPixbufFormat">GdkPixbufFormat</link>&#160;*<structfield>info</structfield>;</term>
+<listitem><simpara>a <link linkend="GdkPixbufFormat"><type>GdkPixbufFormat</type></link> holding information about the module.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>load</structfield>&#160;()</term>
+<listitem><simpara>loads an image from a file.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>load_xpm_data</structfield>&#160;()</term>
+<listitem><simpara>loads an image from data in memory.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>begin_load</structfield>&#160;()</term>
+<listitem><simpara>begins an incremental load.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>stop_load</structfield>&#160;()</term>
+<listitem><simpara>stops an incremental load.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>load_increment</structfield>&#160;()</term>
+<listitem><simpara>continues an incremental load.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>load_animation</structfield>&#160;()</term>
+<listitem><simpara>loads an animation from a file.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>save</structfield>&#160;()</term>
+<listitem><simpara>saves a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> to a file.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>save_to_callback</structfield>&#160;()</term>
+<listitem><simpara>saves a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link> by calling the given <link linkend="GdkPixbufSaveFunc"><type>GdkPixbufSaveFunc</type></link>.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkPixbufAnimationClass" role="struct">
+<title>GdkPixbufAnimationClass</title>
+<indexterm zone="GdkPixbufAnimationClass"><primary>GdkPixbufAnimationClass</primary></indexterm><programlisting>typedef struct {
+        GObjectClass parent_class;
+
+
+        gboolean                (*is_static_image)  (GdkPixbufAnimation *anim);
+
+        GdkPixbuf*              (*get_static_image) (GdkPixbufAnimation *anim);
+        
+        void                    (*get_size) (GdkPixbufAnimation *anim,
+                                             int                 *width,
+                                             int                 *height);
+        
+        GdkPixbufAnimationIter* (*get_iter) (GdkPixbufAnimation *anim,
+                                             const GTimeVal     *start_time);
+} GdkPixbufAnimationClass;
+</programlisting>
+<para>
+Modules supporting animations must derive a type from
+<link linkend="GdkPixbufAnimation"><type>GdkPixbufAnimation</type></link>, providing suitable implementations of the
+virtual functions.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GObjectClass">GObjectClass</link>&#160;<structfield>parent_class</structfield>;</term>
+<listitem><simpara>the parent class
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>is_static_image</structfield>&#160;()</term>
+<listitem><simpara>returns whether the given animation is just a static image.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_static_image</structfield>&#160;()</term>
+<listitem><simpara>returns a static image representing the given animation.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_size</structfield>&#160;()</term>
+<listitem><simpara>fills <parameter>width</parameter> and <parameter>height</parameter> with the frame size of the animation.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_iter</structfield>&#160;()</term>
+<listitem><simpara>returns an iterator for the given animation.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkPixbufAnimationIterClass" role="struct">
+<title>GdkPixbufAnimationIterClass</title>
+<indexterm zone="GdkPixbufAnimationIterClass"><primary>GdkPixbufAnimationIterClass</primary></indexterm><programlisting>typedef struct {
+        GObjectClass parent_class;
+
+
+        int        (*get_delay_time)   (GdkPixbufAnimationIter *iter);
+
+        GdkPixbuf* (*get_pixbuf)       (GdkPixbufAnimationIter *iter);
+
+        gboolean   (*on_currently_loading_frame) (GdkPixbufAnimationIter *iter);
+
+        gboolean   (*advance)          (GdkPixbufAnimationIter *iter,
+                                        const GTimeVal         *current_time);
+} GdkPixbufAnimationIterClass;
+</programlisting>
+<para>
+Modules supporting animations must derive a type from
+<link linkend="GdkPixbufAnimationIter"><type>GdkPixbufAnimationIter</type></link>, providing suitable implementations of the
+virtual functions.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GObjectClass">GObjectClass</link>&#160;<structfield>parent_class</structfield>;</term>
+<listitem><simpara>the parent class
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_delay_time</structfield>&#160;()</term>
+<listitem><simpara>returns the time in milliseconds that the current frame 
+  should be shown.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_pixbuf</structfield>&#160;()</term>
+<listitem><simpara>returns the current frame.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>on_currently_loading_frame</structfield>&#160;()</term>
+<listitem><simpara>returns whether the current frame of <parameter>iter</parameter> is 
+being loaded.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>advance</structfield>&#160;()</term>
+<listitem><simpara>advances the iterator to <parameter>current_time</parameter>, possibly changing the 
+current frame.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,663 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+
+<!ENTITY gdk-pixbuf "<application>gdk-pixbuf</application>">
+<!ENTITY Imlib "<application>Imlib</application>">
+]>
+<refentry id="gdk-pixbuf-gdk-pixbuf-xlib-rgb">
+<refmeta>
+<refentrytitle role="top_of_page" id="gdk-pixbuf-gdk-pixbuf-xlib-rgb.top_of_page">XlibRGB</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK-PIXBUF Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>XlibRGB</refname>
+<refpurpose>Rendering RGB buffers to X drawables.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gdk-pixbuf-gdk-pixbuf-xlib-rgb.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gdk-pixbuf/gdk-pixbuf.h&gt;
+
+                    <link linkend="XlibRgbCmap">XlibRgbCmap</link>;
+enum                <link linkend="XlibRgbDither">XlibRgbDither</link>;
+<link linkend="void">void</link>                <link linkend="xlib-rgb-init">xlib_rgb_init</link>                       (<link linkend="Display">Display</link> *display,
+                                                         <link linkend="Screen">Screen</link> *screen);
+<link linkend="void">void</link>                <link linkend="xlib-rgb-init-with-depth">xlib_rgb_init_with_depth</link>            (<link linkend="Display">Display</link> *display,
+                                                         <link linkend="Screen">Screen</link> *screen,
+                                                         <link linkend="int">int</link> prefDepth);
+unsigned <link linkend="long">long</link>       <link linkend="xlib-rgb-xpixel-from-rgb">xlib_rgb_xpixel_from_rgb</link>            (<link linkend="guint32">guint32</link> rgb);
+<link linkend="void">void</link>                <link linkend="xlib-rgb-gc-set-foreground">xlib_rgb_gc_set_foreground</link>          (<link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="guint32">guint32</link> rgb);
+<link linkend="void">void</link>                <link linkend="xlib-rgb-gc-set-background">xlib_rgb_gc_set_background</link>          (<link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="guint32">guint32</link> rgb);
+<link linkend="void">void</link>                <link linkend="xlib-draw-rgb-image">xlib_draw_rgb_image</link>                 (<link linkend="Drawable">Drawable</link> drawable,
+                                                         <link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="XlibRgbDither">XlibRgbDither</link> dith,
+                                                         unsigned <link linkend="char">char</link> *rgb_buf,
+                                                         <link linkend="int">int</link> rowstride);
+<link linkend="void">void</link>                <link linkend="xlib-draw-rgb-image-dithalign">xlib_draw_rgb_image_dithalign</link>       (<link linkend="Drawable">Drawable</link> drawable,
+                                                         <link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="XlibRgbDither">XlibRgbDither</link> dith,
+                                                         unsigned <link linkend="char">char</link> *rgb_buf,
+                                                         <link linkend="int">int</link> rowstride,
+                                                         <link linkend="int">int</link> xdith,
+                                                         <link linkend="int">int</link> ydith);
+<link linkend="void">void</link>                <link linkend="xlib-draw-rgb-32-image">xlib_draw_rgb_32_image</link>              (<link linkend="Drawable">Drawable</link> drawable,
+                                                         <link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="XlibRgbDither">XlibRgbDither</link> dith,
+                                                         unsigned <link linkend="char">char</link> *buf,
+                                                         <link linkend="int">int</link> rowstride);
+<link linkend="void">void</link>                <link linkend="xlib-draw-gray-image">xlib_draw_gray_image</link>                (<link linkend="Drawable">Drawable</link> drawable,
+                                                         <link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="XlibRgbDither">XlibRgbDither</link> dith,
+                                                         unsigned <link linkend="char">char</link> *buf,
+                                                         <link linkend="int">int</link> rowstride);
+<link linkend="XlibRgbCmap">XlibRgbCmap</link> *       <link linkend="xlib-rgb-cmap-new">xlib_rgb_cmap_new</link>                   (<link linkend="guint32">guint32</link> *colors,
+                                                         <link linkend="int">int</link> n_colors);
+<link linkend="void">void</link>                <link linkend="xlib-rgb-cmap-free">xlib_rgb_cmap_free</link>                  (<link linkend="XlibRgbCmap">XlibRgbCmap</link> *cmap);
+<link linkend="void">void</link>                <link linkend="xlib-draw-indexed-image">xlib_draw_indexed_image</link>             (<link linkend="Drawable">Drawable</link> drawable,
+                                                         <link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="XlibRgbDither">XlibRgbDither</link> dith,
+                                                         unsigned <link linkend="char">char</link> *buf,
+                                                         <link linkend="int">int</link> rowstride,
+                                                         <link linkend="XlibRgbCmap">XlibRgbCmap</link> *cmap);
+<link linkend="Bool">Bool</link>                <link linkend="xlib-rgb-ditherable">xlib_rgb_ditherable</link>                 (void);
+<link linkend="void">void</link>                <link linkend="xlib-rgb-set-verbose">xlib_rgb_set_verbose</link>                (<link linkend="Bool">Bool</link> verbose);
+<link linkend="void">void</link>                <link linkend="xlib-rgb-set-install">xlib_rgb_set_install</link>                (<link linkend="Bool">Bool</link> install);
+<link linkend="void">void</link>                <link linkend="xlib-rgb-set-min-colors">xlib_rgb_set_min_colors</link>             (<link linkend="int">int</link> min_colors);
+<link linkend="Colormap">Colormap</link>            <link linkend="xlib-rgb-get-cmap">xlib_rgb_get_cmap</link>                   (void);
+<link linkend="Visual">Visual</link> *            <link linkend="xlib-rgb-get-visual">xlib_rgb_get_visual</link>                 (void);
+<link linkend="XVisualInfo">XVisualInfo</link> *       <link linkend="xlib-rgb-get-visual-info">xlib_rgb_get_visual_info</link>            (void);
+<link linkend="int">int</link>                 <link linkend="xlib-rgb-get-depth">xlib_rgb_get_depth</link>                  (void);
+<link linkend="Display">Display</link> *           <link linkend="xlib-rgb-get-display">xlib_rgb_get_display</link>                (void);
+<link linkend="Screen">Screen</link> *            <link linkend="xlib-rgb-get-screen">xlib_rgb_get_screen</link>                 (void);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="gdk-pixbuf-gdk-pixbuf-xlib-rgb.description" role="desc">
+<title role="desc.title">Description</title>
+  <para>
+    The XlibRGB set of functions is a port of the <link linkend="GdkRGB"><type>GdkRGB</type></link> library to
+    use plain Xlib and X drawables.  You can use these functions to
+    render RGB buffers into drawables very quickly with high-quality
+    dithering.
+  </para>
+</refsect1>
+
+<refsect1 id="gdk-pixbuf-gdk-pixbuf-xlib-rgb.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="XlibRgbCmap" role="struct">
+<title>XlibRgbCmap</title>
+<indexterm zone="XlibRgbCmap"><primary>XlibRgbCmap</primary></indexterm><programlisting>typedef struct {
+  unsigned int colors[256];
+  unsigned char lut[256]; /* for 8-bit modes */
+} XlibRgbCmap;
+</programlisting>
+  <para>
+    FIXME: Describe this.
+  </para><variablelist role="struct">
+<varlistentry>
+<term>unsigned&#160;<link linkend="int">int</link>&#160;<structfield>colors</structfield>[256];</term>
+<listitem><simpara>FIXME.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term>unsigned&#160;<link linkend="char">char</link>&#160;<structfield>lut</structfield>[256];</term>
+<listitem><simpara>FIXME.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="XlibRgbDither" role="enum">
+<title>enum XlibRgbDither</title>
+<indexterm zone="XlibRgbDither"><primary>XlibRgbDither</primary></indexterm><programlisting>typedef enum
+{
+  XLIB_RGB_DITHER_NONE,
+  XLIB_RGB_DITHER_NORMAL,
+  XLIB_RGB_DITHER_MAX
+} XlibRgbDither;
+</programlisting>
+  <para>
+    These values are used to specify which dithering method should be
+    used.  <symbol>XLIB_RGB_DITHER_NONE</symbol> will use no dithering
+    and simply map the colors in an RGB buffer to the closest colors
+    that the display can provide.
+    <symbol>XLIB_RGB_DITHER_NORMAL</symbol> will provide dithering
+    only on pseudocolor displays.
+    <symbol>XLIB_RGB_DITHER_MAX</symbol> will provide dithering on
+    pseudocolor and 16-bit truecolor or &ldquo;high color&rdquo;
+    displays.
+  </para><variablelist role="enum">
+<varlistentry id="XLIB-RGB-DITHER-NONE--CAPS" role="constant">
+<term><literal>XLIB_RGB_DITHER_NONE</literal></term>
+<listitem><simpara>Specifies no dithering.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="XLIB-RGB-DITHER-NORMAL--CAPS" role="constant">
+<term><literal>XLIB_RGB_DITHER_NORMAL</literal></term>
+<listitem><simpara>Specifies dithering only on pseudocolor
+displays.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="XLIB-RGB-DITHER-MAX--CAPS" role="constant">
+<term><literal>XLIB_RGB_DITHER_MAX</literal></term>
+<listitem><simpara>Specifies dithering on high color displays.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-init" role="function">
+<title>xlib_rgb_init ()</title>
+<indexterm zone="xlib-rgb-init"><primary>xlib_rgb_init</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_rgb_init                       (<link linkend="Display">Display</link> *display,
+                                                         <link linkend="Screen">Screen</link> *screen);</programlisting>
+<para>
+Initializes the XlibRGB machinery with the default depth.  If you use this
+function XlibRGB will automatically pick the best visual available on your
+display.  This function or <link linkend="xlib-rgb-init-with-depth"><function>xlib_rgb_init_with_depth()</function></link> must be called before
+using any of the other functions in XlibRGB.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> X Display to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> Screen to use.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-init-with-depth" role="function">
+<title>xlib_rgb_init_with_depth ()</title>
+<indexterm zone="xlib-rgb-init-with-depth"><primary>xlib_rgb_init_with_depth</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_rgb_init_with_depth            (<link linkend="Display">Display</link> *display,
+                                                         <link linkend="Screen">Screen</link> *screen,
+                                                         <link linkend="int">int</link> prefDepth);</programlisting>
+<para>
+Initializes the XlibRGB machinery with a particular depth you specify,
+instead of automatically picking the best depth in the display.  This
+function or <link linkend="xlib-rgb-init"><function>xlib_rgb_init()</function></link> must be called before using any of the other
+functions in XlibRGB.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>display</parameter>&#160;:</term>
+<listitem><simpara> X display to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>screen</parameter>&#160;:</term>
+<listitem><simpara> Screen to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>prefDepth</parameter>&#160;:</term>
+<listitem><simpara> Visual depth to use for color substitution tables.  This must
+be one of the supported visual depths in the specified <parameter>display</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-xpixel-from-rgb" role="function">
+<title>xlib_rgb_xpixel_from_rgb ()</title>
+<indexterm zone="xlib-rgb-xpixel-from-rgb"><primary>xlib_rgb_xpixel_from_rgb</primary></indexterm><programlisting>unsigned <link linkend="long">long</link>       xlib_rgb_xpixel_from_rgb            (<link linkend="guint32">guint32</link> rgb);</programlisting>
+<para>
+Converts an RGB triplet into the closest color that XlibRGB visual can
+handle.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>rgb</parameter>&#160;:</term>
+<listitem><simpara> 32-bit representation of an RGB value, specified as 0x00RRGGBB.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> X pixel value that corresponds to the closest color in the
+XlibRGB visual and colormap.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-gc-set-foreground" role="function">
+<title>xlib_rgb_gc_set_foreground ()</title>
+<indexterm zone="xlib-rgb-gc-set-foreground"><primary>xlib_rgb_gc_set_foreground</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_rgb_gc_set_foreground          (<link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="guint32">guint32</link> rgb);</programlisting>
+<para>
+This is a convenience function to set the foreground of a GC from an RGB
+triplet.  It calls <link linkend="xlib-rgb-xpixel-from-rgb"><function>xlib_rgb_xpixel_from_rgb()</function></link> internally and uses the
+returned pixel value to set the GC's foreground.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gc</parameter>&#160;:</term>
+<listitem><simpara> A graphic context.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rgb</parameter>&#160;:</term>
+<listitem><simpara> 32-bit representation of an RGB value, specified as 0x00RRGGBB.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-gc-set-background" role="function">
+<title>xlib_rgb_gc_set_background ()</title>
+<indexterm zone="xlib-rgb-gc-set-background"><primary>xlib_rgb_gc_set_background</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_rgb_gc_set_background          (<link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="guint32">guint32</link> rgb);</programlisting>
+<para>
+This is a convenience function to set the background of a GC from an RGB
+triplet.  It calls <link linkend="xlib-rgb-xpixel-from-rgb"><function>xlib_rgb_xpixel_from_rgb()</function></link> internally and uses the
+returned pixel value to set the GC's background.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>gc</parameter>&#160;:</term>
+<listitem><simpara> A graphic context.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rgb</parameter>&#160;:</term>
+<listitem><simpara> 32-bit representation of an RGB value, specified as 0x00RRGGBB.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-draw-rgb-image" role="function">
+<title>xlib_draw_rgb_image ()</title>
+<indexterm zone="xlib-draw-rgb-image"><primary>xlib_draw_rgb_image</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_draw_rgb_image                 (<link linkend="Drawable">Drawable</link> drawable,
+                                                         <link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="XlibRgbDither">XlibRgbDither</link> dith,
+                                                         unsigned <link linkend="char">char</link> *rgb_buf,
+                                                         <link linkend="int">int</link> rowstride);</programlisting>
+<para>
+Renders an RGB buffer to a drawable.  Pixels are specified as RGB triplets
+with 8 bits per channel.  An image will thus look like an RGBRGBRGBRGB
+sequence of 8-bit values.  This function does not let you specify dither
+offsets; applications that need to render partial regions of a buffer to
+build the final image should use <link linkend="xlib-draw-rgb-image-dithalign"><function>xlib_draw_rgb_image_dithalign()</function></link> instead.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>drawable</parameter>&#160;:</term>
+<listitem><simpara> Destination drawable.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gc</parameter>&#160;:</term>
+<listitem><simpara> A graphic context.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> Leftmost coordinate of the destination rectangle.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> Upper coordinate of the destination rectangle.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> Width of the destination rectangle, in pixels.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> Height of the destination rectangle, in pixels.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dith</parameter>&#160;:</term>
+<listitem><simpara> Dithering method to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rgb_buf</parameter>&#160;:</term>
+<listitem><simpara> Pointer to the pixel in the RGB buffer that corresponds to the
+upper-left corner of the rectangular region to render.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rowstride</parameter>&#160;:</term>
+<listitem><simpara> Offset between pixel rows in the RGB buffer, in bytes.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-draw-rgb-image-dithalign" role="function">
+<title>xlib_draw_rgb_image_dithalign ()</title>
+<indexterm zone="xlib-draw-rgb-image-dithalign"><primary>xlib_draw_rgb_image_dithalign</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_draw_rgb_image_dithalign       (<link linkend="Drawable">Drawable</link> drawable,
+                                                         <link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="XlibRgbDither">XlibRgbDither</link> dith,
+                                                         unsigned <link linkend="char">char</link> *rgb_buf,
+                                                         <link linkend="int">int</link> rowstride,
+                                                         <link linkend="int">int</link> xdith,
+                                                         <link linkend="int">int</link> ydith);</programlisting>
+<para>
+Renders an RGB buffer to a drawable.  Pixels are specified as RGB triplets
+with 8 bits per channel.  An image will thus look like an RGBRGBRGBRGB
+sequence of 8-bit values.  This function lets you specify a pair of dither
+offsets.  It should be used when you need to render regions of an RGB buffer
+separately to form the final image; the dither offsets let you align the
+dither mask appropriately.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>drawable</parameter>&#160;:</term>
+<listitem><simpara> Destination drawable.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gc</parameter>&#160;:</term>
+<listitem><simpara> A graphic context.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> Leftmost coordinate of the destination rectangle.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> Upper coordinate of the destination rectangle.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> Width of the destination rectangle, in pixels.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> Height of the destination rectangle, in pixels.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dith</parameter>&#160;:</term>
+<listitem><simpara> Dithering method to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rgb_buf</parameter>&#160;:</term>
+<listitem><simpara> Pointer to the pixel in the RGB buffer that corresponds to the
+upper-left corner of the rectangular region to render.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rowstride</parameter>&#160;:</term>
+<listitem><simpara> Offset between pixel rows in the RGB buffer, in bytes.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>xdith</parameter>&#160;:</term>
+<listitem><simpara> X offset for the dither mask.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ydith</parameter>&#160;:</term>
+<listitem><simpara> Y offset for the dither mask.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-draw-rgb-32-image" role="function">
+<title>xlib_draw_rgb_32_image ()</title>
+<indexterm zone="xlib-draw-rgb-32-image"><primary>xlib_draw_rgb_32_image</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_draw_rgb_32_image              (<link linkend="Drawable">Drawable</link> drawable,
+                                                         <link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="XlibRgbDither">XlibRgbDither</link> dith,
+                                                         unsigned <link linkend="char">char</link> *buf,
+                                                         <link linkend="int">int</link> rowstride);</programlisting>
+<para>
+This function is analogous to <link linkend="xlib-draw-rgb-image"><function>xlib_draw_rgb_image()</function></link>, but it lets you use
+32-bit RGB buffers with pixels specified as 0xRRGGBB00.  The
+least-significant 8 bits are actually discarded.  This function can lead to
+faster results than <link linkend="xlib-draw-rgb-image"><function>xlib_draw_rgb_image()</function></link> since the pixels are aligned on
+32-bit boundaries.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>drawable</parameter>&#160;:</term>
+<listitem><simpara> Destination drawable.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gc</parameter>&#160;:</term>
+<listitem><simpara> A graphic context.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> Leftmost coordinate of the destination rectangle.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> Upper coordinate of the destination rectangle.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> Width of the destination rectangle, in pixels.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> Height of the destination rectangle, in pixels.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dith</parameter>&#160;:</term>
+<listitem><simpara> Dithering method to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> Pointer to the pixel in the RGB buffer that corresponds to the
+upper-left corner of the rectangular region to render.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rowstride</parameter>&#160;:</term>
+<listitem><simpara> Offset between pixel rows in the RGB buffer, in bytes.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-draw-gray-image" role="function">
+<title>xlib_draw_gray_image ()</title>
+<indexterm zone="xlib-draw-gray-image"><primary>xlib_draw_gray_image</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_draw_gray_image                (<link linkend="Drawable">Drawable</link> drawable,
+                                                         <link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="XlibRgbDither">XlibRgbDither</link> dith,
+                                                         unsigned <link linkend="char">char</link> *buf,
+                                                         <link linkend="int">int</link> rowstride);</programlisting>
+<para>
+Renders a grayscale buffer to a drawable.  Pixels are specified as 8-bit
+intensity values.  An image will thus look as a GGGGGG sequence of 8-bit
+values.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>drawable</parameter>&#160;:</term>
+<listitem><simpara> Destination drawable.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gc</parameter>&#160;:</term>
+<listitem><simpara> A graphic context.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> Leftmost coordinate of the destination rectangle.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> Upper coordinate of the destination rectangle.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> Width of the destination rectangle, in pixels.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> Height of thd destination rectangle, in pixels.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dith</parameter>&#160;:</term>
+<listitem><simpara> Dithering method to use.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> Pointer to the pixel in the grayscale buffer that corresponds to the
+upper-left corner of the rectangular region to render.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rowstride</parameter>&#160;:</term>
+<listitem><simpara> Offset between pixel rows in the grayscale buffer, in pixels.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-cmap-new" role="function">
+<title>xlib_rgb_cmap_new ()</title>
+<indexterm zone="xlib-rgb-cmap-new"><primary>xlib_rgb_cmap_new</primary></indexterm><programlisting><link linkend="XlibRgbCmap">XlibRgbCmap</link> *       xlib_rgb_cmap_new                   (<link linkend="guint32">guint32</link> *colors,
+                                                         <link linkend="int">int</link> n_colors);</programlisting>
+<para>
+FIXME</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>colors</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>n_colors</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-cmap-free" role="function">
+<title>xlib_rgb_cmap_free ()</title>
+<indexterm zone="xlib-rgb-cmap-free"><primary>xlib_rgb_cmap_free</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_rgb_cmap_free                  (<link linkend="XlibRgbCmap">XlibRgbCmap</link> *cmap);</programlisting>
+<para>
+Frees an XlibRGB colormap.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>cmap</parameter>&#160;:</term>
+<listitem><simpara> An XlibRGB colormap.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-draw-indexed-image" role="function">
+<title>xlib_draw_indexed_image ()</title>
+<indexterm zone="xlib-draw-indexed-image"><primary>xlib_draw_indexed_image</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_draw_indexed_image             (<link linkend="Drawable">Drawable</link> drawable,
+                                                         <link linkend="GC--CAPS">GC</link> gc,
+                                                         <link linkend="int">int</link> x,
+                                                         <link linkend="int">int</link> y,
+                                                         <link linkend="int">int</link> width,
+                                                         <link linkend="int">int</link> height,
+                                                         <link linkend="XlibRgbDither">XlibRgbDither</link> dith,
+                                                         unsigned <link linkend="char">char</link> *buf,
+                                                         <link linkend="int">int</link> rowstride,
+                                                         <link linkend="XlibRgbCmap">XlibRgbCmap</link> *cmap);</programlisting>
+<para>
+FIXME</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>drawable</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>gc</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dith</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>rowstride</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cmap</parameter>&#160;:</term>
+<listitem><simpara> FIXME
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-ditherable" role="function">
+<title>xlib_rgb_ditherable ()</title>
+<indexterm zone="xlib-rgb-ditherable"><primary>xlib_rgb_ditherable</primary></indexterm><programlisting><link linkend="Bool">Bool</link>                xlib_rgb_ditherable                 (void);</programlisting>
+<para>
+Queries whether XlibRGB supports dithering for its chosen visual.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> TRUE if dithering can be performed for the visual that XlibRGB
+is using, FALSE otherwise.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-set-verbose" role="function">
+<title>xlib_rgb_set_verbose ()</title>
+<indexterm zone="xlib-rgb-set-verbose"><primary>xlib_rgb_set_verbose</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_rgb_set_verbose                (<link linkend="Bool">Bool</link> verbose);</programlisting>
+<para>
+Enables/disables debug spew.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>verbose</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="True"><literal>True</literal></link> to be verbose
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-set-install" role="function">
+<title>xlib_rgb_set_install ()</title>
+<indexterm zone="xlib-rgb-set-install"><primary>xlib_rgb_set_install</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_rgb_set_install                (<link linkend="Bool">Bool</link> install);</programlisting>
+<para>
+Sets whether we install an RGB colormap.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>install</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="True"><literal>True</literal></link> to install a colormap
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-set-min-colors" role="function">
+<title>xlib_rgb_set_min_colors ()</title>
+<indexterm zone="xlib-rgb-set-min-colors"><primary>xlib_rgb_set_min_colors</primary></indexterm><programlisting><link linkend="void">void</link>                xlib_rgb_set_min_colors             (<link linkend="int">int</link> min_colors);</programlisting>
+<para>
+Sets the minimum number of colors in the color cube.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>min_colors</parameter>&#160;:</term>
+<listitem><simpara> minimum colors to use
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-get-cmap" role="function">
+<title>xlib_rgb_get_cmap ()</title>
+<indexterm zone="xlib-rgb-get-cmap"><primary>xlib_rgb_get_cmap</primary></indexterm><programlisting><link linkend="Colormap">Colormap</link>            xlib_rgb_get_cmap                   (void);</programlisting>
+<para>
+Queries the X colormap that XlibRGB is using.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> An X colormap.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-get-visual" role="function">
+<title>xlib_rgb_get_visual ()</title>
+<indexterm zone="xlib-rgb-get-visual"><primary>xlib_rgb_get_visual</primary></indexterm><programlisting><link linkend="Visual">Visual</link> *            xlib_rgb_get_visual                 (void);</programlisting>
+<para>
+Queries the visual that XlibRGB is using.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> An X visual.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-get-visual-info" role="function">
+<title>xlib_rgb_get_visual_info ()</title>
+<indexterm zone="xlib-rgb-get-visual-info"><primary>xlib_rgb_get_visual_info</primary></indexterm><programlisting><link linkend="XVisualInfo">XVisualInfo</link> *       xlib_rgb_get_visual_info            (void);</programlisting>
+<para>
+Queries the visual info structure for the visual that XlibRGB is using.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> An XVisualInfo structure.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-get-depth" role="function">
+<title>xlib_rgb_get_depth ()</title>
+<indexterm zone="xlib-rgb-get-depth"><primary>xlib_rgb_get_depth</primary></indexterm><programlisting><link linkend="int">int</link>                 xlib_rgb_get_depth                  (void);</programlisting>
+<para>
+Queries the depth of the visual that XlibRGB is using.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Bit depth.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-get-display" role="function">
+<title>xlib_rgb_get_display ()</title>
+<indexterm zone="xlib-rgb-get-display"><primary>xlib_rgb_get_display</primary></indexterm><programlisting><link linkend="Display">Display</link> *           xlib_rgb_get_display                (void);</programlisting>
+<para>
+Queries the X display that XlibRGB is using.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> An X display.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="xlib-rgb-get-screen" role="function">
+<title>xlib_rgb_get_screen ()</title>
+<indexterm zone="xlib-rgb-get-screen"><primary>xlib_rgb_get_screen</primary></indexterm><programlisting><link linkend="Screen">Screen</link> *            xlib_rgb_get_screen                 (void);</programlisting>
+<para>
+Queries the screen that XlibRGB is using.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> An X screen.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="gdk-pixbuf-gdk-pixbuf-xlib-rgb.see-also">
+<title>See Also</title>
+  <para>
+    GdkRGB
+  </para>
+</refsect1>
+
+</refentry>

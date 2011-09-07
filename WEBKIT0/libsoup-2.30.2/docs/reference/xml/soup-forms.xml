@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libsoup-24-HTML-Form-Support">
+<refmeta>
+<refentrytitle role="top_of_page" id="libsoup-24-HTML-Form-Support.top_of_page">HTML Form Support</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>HTML Form Support</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libsoup-24-HTML-Form-Support.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+#define             <link linkend="SOUP-FORM-MIME-TYPE-MULTIPART--CAPS">SOUP_FORM_MIME_TYPE_MULTIPART</link>
+#define             <link linkend="SOUP-FORM-MIME-TYPE-URLENCODED--CAPS">SOUP_FORM_MIME_TYPE_URLENCODED</link>
+<link linkend="GHashTable">GHashTable</link> *        <link linkend="soup-form-decode">soup_form_decode</link>                    (const <link linkend="char">char</link> *encoded_form);
+<link linkend="GHashTable">GHashTable</link> *        <link linkend="soup-form-decode-multipart">soup_form_decode_multipart</link>          (<link linkend="SoupMessage">SoupMessage</link> *msg,
+                                                         const <link linkend="char">char</link> *file_control_name,
+                                                         <link linkend="char">char</link> **filename,
+                                                         <link linkend="char">char</link> **content_type,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> **file);
+<link linkend="char">char</link> *              <link linkend="soup-form-encode">soup_form_encode</link>                    (const <link linkend="char">char</link> *first_field,
+                                                         ...);
+<link linkend="char">char</link> *              <link linkend="soup-form-encode-datalist">soup_form_encode_datalist</link>           (<link linkend="GData">GData</link> **form_data_set);
+<link linkend="char">char</link> *              <link linkend="soup-form-encode-hash">soup_form_encode_hash</link>               (<link linkend="GHashTable">GHashTable</link> *form_data_set);
+<link linkend="char">char</link> *              <link linkend="soup-form-encode-valist">soup_form_encode_valist</link>             (const <link linkend="char">char</link> *first_field,
+                                                         <link linkend="va-list">va_list</link> args);
+<link linkend="SoupMessage">SoupMessage</link> *       <link linkend="soup-form-request-new">soup_form_request_new</link>               (const <link linkend="char">char</link> *method,
+                                                         const <link linkend="char">char</link> *uri,
+                                                         const <link linkend="char">char</link> *first_field,
+                                                         ...);
+<link linkend="SoupMessage">SoupMessage</link> *       <link linkend="soup-form-request-new-from-datalist">soup_form_request_new_from_datalist</link> (const <link linkend="char">char</link> *method,
+                                                         const <link linkend="char">char</link> *uri,
+                                                         <link linkend="GData">GData</link> **form_data_set);
+<link linkend="SoupMessage">SoupMessage</link> *       <link linkend="soup-form-request-new-from-hash">soup_form_request_new_from_hash</link>     (const <link linkend="char">char</link> *method,
+                                                         const <link linkend="char">char</link> *uri,
+                                                         <link linkend="GHashTable">GHashTable</link> *form_data_set);
+<link linkend="SoupMessage">SoupMessage</link> *       <link linkend="soup-form-request-new-from-multipart">soup_form_request_new_from_multipart</link>
+                                                        (const <link linkend="char">char</link> *uri,
+                                                         <link linkend="SoupMultipart">SoupMultipart</link> *multipart);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libsoup-24-HTML-Form-Support.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libsoup-24-HTML-Form-Support.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SOUP-FORM-MIME-TYPE-MULTIPART--CAPS" role="macro" condition="since:2.26">
+<title>SOUP_FORM_MIME_TYPE_MULTIPART</title>
+<indexterm zone="SOUP-FORM-MIME-TYPE-MULTIPART--CAPS" role="2.26"><primary sortas="SOUP_FORM_MIME_TYPE_MULTIPART">SOUP_FORM_MIME_TYPE_MULTIPART</primary></indexterm><programlisting>#define SOUP_FORM_MIME_TYPE_MULTIPART  "multipart/form-data"
+</programlisting>
+<para>
+A macro containing the value
+<literal>"multipart/form-data"</literal>; the MIME type used for
+posting form data that contains files to be uploaded.</para>
+<para>
+</para><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="SOUP-FORM-MIME-TYPE-URLENCODED--CAPS" role="macro" condition="since:2.26">
+<title>SOUP_FORM_MIME_TYPE_URLENCODED</title>
+<indexterm zone="SOUP-FORM-MIME-TYPE-URLENCODED--CAPS" role="2.26"><primary sortas="SOUP_FORM_MIME_TYPE_URLENCODED">SOUP_FORM_MIME_TYPE_URLENCODED</primary></indexterm><programlisting>#define SOUP_FORM_MIME_TYPE_URLENCODED "application/x-www-form-urlencoded"
+</programlisting>
+<para>
+A macro containing the value
+<literal>"application/x-www-form-urlencoded"</literal>; the default
+MIME type for POSTing HTML form data.</para>
+<para>
+</para><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-form-decode" role="function">
+<title>soup_form_decode ()</title>
+<indexterm zone="soup-form-decode"><primary sortas="soup_form_decode">soup_form_decode</primary></indexterm><programlisting><link linkend="GHashTable">GHashTable</link> *        soup_form_decode                    (const <link linkend="char">char</link> *encoded_form);</programlisting>
+<para>
+Decodes <parameter>form</parameter>, which is an urlencoded dataset as defined in the
+HTML 4.01 spec.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>encoded_form</parameter>&#160;:</term>
+<listitem><simpara> data of type "application/x-www-form-urlencoded"
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a hash table containing the name/value pairs from
+<parameter>encoded_form</parameter>, which you can free with <link linkend="g-hash-table-destroy"><function>g_hash_table_destroy()</function></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-form-decode-multipart" role="function" condition="since:2.26">
+<title>soup_form_decode_multipart ()</title>
+<indexterm zone="soup-form-decode-multipart" role="2.26"><primary sortas="soup_form_decode_multipart">soup_form_decode_multipart</primary></indexterm><programlisting><link linkend="GHashTable">GHashTable</link> *        soup_form_decode_multipart          (<link linkend="SoupMessage">SoupMessage</link> *msg,
+                                                         const <link linkend="char">char</link> *file_control_name,
+                                                         <link linkend="char">char</link> **filename,
+                                                         <link linkend="char">char</link> **content_type,
+                                                         <link linkend="SoupBuffer">SoupBuffer</link> **file);</programlisting>
+<para>
+Decodes the "multipart/form-data" request in <parameter>msg</parameter>; this is a
+convenience method for the case when you have a single file upload
+control in a form. (Or when you don't have any file upload
+controls, but are still using "multipart/form-data" anyway.) Pass
+the name of the file upload control in <parameter>file_control_name</parameter>, and
+<link linkend="soup-form-decode-multipart"><function>soup_form_decode_multipart()</function></link> will extract the uploaded file data
+into <parameter>filename</parameter>, <parameter>content_type</parameter>, and <parameter>file</parameter>. All of the other form
+control data will be returned (as strings, as with
+<link linkend="soup-form-decode"><function>soup_form_decode()</function></link>) in the returned <link linkend="GHashTable"><type>GHashTable</type></link>.
+</para>
+<para>
+You may pass <link linkend="NULL--CAPS"><literal>NULL</literal></link> for <parameter>filename</parameter> and/or <parameter>content_type</parameter> if you do not
+care about those fields. <link linkend="soup-form-decode-multipart"><function>soup_form_decode_multipart()</function></link> may also
+return <link linkend="NULL--CAPS"><literal>NULL</literal></link> in those fields if the client did not provide that
+information. You must free the returned filename and content-type
+with <link linkend="g-free"><function>g_free()</function></link>, and the returned file data with <link linkend="soup-buffer-free"><function>soup_buffer_free()</function></link>.
+</para>
+<para>
+If you have a form with more than one file upload control, you will
+need to decode it manually, using <link linkend="soup-multipart-new-from-message"><function>soup_multipart_new_from_message()</function></link>
+and <link linkend="soup-multipart-get-part"><function>soup_multipart_get_part()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>msg</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="SoupMessage"><type>SoupMessage</type></link> containing a "multipart/form-data" request body
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>file_control_name</parameter>&#160;:</term>
+<listitem><simpara> the name of the HTML file upload control, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> return location for the name of the uploaded file
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>content_type</parameter>&#160;:</term>
+<listitem><simpara> return location for the MIME type of the uploaded file
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>file</parameter>&#160;:</term>
+<listitem><simpara> return location for the uploaded file data
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a hash table containing the name/value pairs (other
+than <parameter>file_control_name</parameter>) from <parameter>msg</parameter>, which you can free with
+<link linkend="g-hash-table-destroy"><function>g_hash_table_destroy()</function></link>. On error, it will return <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="soup-form-encode" role="function">
+<title>soup_form_encode ()</title>
+<indexterm zone="soup-form-encode"><primary sortas="soup_form_encode">soup_form_encode</primary></indexterm><programlisting><link linkend="char">char</link> *              soup_form_encode                    (const <link linkend="char">char</link> *first_field,
+                                                         ...);</programlisting>
+<para>
+Encodes the given field names and values into a value of type
+"application/x-www-form-urlencoded", as defined in the HTML 4.01
+spec.
+</para>
+<para>
+This method requires you to know the names of the form fields (or
+at the very least, the total number of fields) at compile time; for
+working with dynamic forms, use <link linkend="soup-form-encode-hash"><function>soup_form_encode_hash()</function></link> or
+<link linkend="soup-form-encode-datalist"><function>soup_form_encode_datalist()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>first_field</parameter>&#160;:</term>
+<listitem><simpara> name of the first form field
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> value of <parameter>first_field</parameter>, followed by additional field names
+and values, terminated by <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the encoded form
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-form-encode-datalist" role="function">
+<title>soup_form_encode_datalist ()</title>
+<indexterm zone="soup-form-encode-datalist"><primary sortas="soup_form_encode_datalist">soup_form_encode_datalist</primary></indexterm><programlisting><link linkend="char">char</link> *              soup_form_encode_datalist           (<link linkend="GData">GData</link> **form_data_set);</programlisting>
+<para>
+Encodes <parameter>form_data_set</parameter> into a value of type
+"application/x-www-form-urlencoded", as defined in the HTML 4.01
+spec. Unlike <link linkend="soup-form-encode-hash"><function>soup_form_encode_hash()</function></link>, this preserves the ordering
+of the form elements, which may be required in some situations.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>form_data_set</parameter>&#160;:</term>
+<listitem><simpara> a datalist containing name/value pairs
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the encoded form
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-form-encode-hash" role="function">
+<title>soup_form_encode_hash ()</title>
+<indexterm zone="soup-form-encode-hash"><primary sortas="soup_form_encode_hash">soup_form_encode_hash</primary></indexterm><programlisting><link linkend="char">char</link> *              soup_form_encode_hash               (<link linkend="GHashTable">GHashTable</link> *form_data_set);</programlisting>
+<para>
+Encodes <parameter>form_data_set</parameter> into a value of type
+"application/x-www-form-urlencoded", as defined in the HTML 4.01
+spec.
+</para>
+<para>
+Note that the HTML spec states that "The control names/values are
+listed in the order they appear in the document." Since this method
+takes a hash table, it cannot enforce that; if you care about the
+ordering of the form fields, use <link linkend="soup-form-encode-datalist"><function>soup_form_encode_datalist()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>form_data_set</parameter>&#160;:</term>
+<listitem><simpara> a hash table containing name/value pairs (as strings)
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the encoded form
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-form-encode-valist" role="function">
+<title>soup_form_encode_valist ()</title>
+<indexterm zone="soup-form-encode-valist"><primary sortas="soup_form_encode_valist">soup_form_encode_valist</primary></indexterm><programlisting><link linkend="char">char</link> *              soup_form_encode_valist             (const <link linkend="char">char</link> *first_field,
+                                                         <link linkend="va-list">va_list</link> args);</programlisting>
+<para>
+See <link linkend="soup-form-encode"><function>soup_form_encode()</function></link>. This is mostly an internal method, used by
+various other methods such as <link linkend="soup-uri-set-query-from-fields"><function>soup_uri_set_query_from_fields()</function></link> and
+<link linkend="soup-form-request-new"><function>soup_form_request_new()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>first_field</parameter>&#160;:</term>
+<listitem><simpara> name of the first form field
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>args</parameter>&#160;:</term>
+<listitem><simpara> pointer to additional values, as in <link linkend="soup-form-encode"><function>soup_form_encode()</function></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the encoded form
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-form-request-new" role="function">
+<title>soup_form_request_new ()</title>
+<indexterm zone="soup-form-request-new"><primary sortas="soup_form_request_new">soup_form_request_new</primary></indexterm><programlisting><link linkend="SoupMessage">SoupMessage</link> *       soup_form_request_new               (const <link linkend="char">char</link> *method,
+                                                         const <link linkend="char">char</link> *uri,
+                                                         const <link linkend="char">char</link> *first_field,
+                                                         ...);</programlisting>
+<para>
+Creates a new <link linkend="SoupMessage"><literal>SoupMessage</literal></link> and sets it up to send the given data
+to <parameter>uri</parameter> via <parameter>method</parameter>. (That is, if <parameter>method</parameter> is "GET", it will encode
+the form data into <parameter>uri</parameter>'s query field, and if <parameter>method</parameter> is "POST", it
+will encode it into the <link linkend="SoupMessage"><literal>SoupMessage</literal></link>'s request_body.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>method</parameter>&#160;:</term>
+<listitem><simpara> the HTTP method, either "GET" or "POST"
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the URI to send the form data to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>first_field</parameter>&#160;:</term>
+<listitem><simpara> name of the first form field
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>...</parameter>&#160;:</term>
+<listitem><simpara> value of <parameter>first_field</parameter>, followed by additional field names
+and values, terminated by <link linkend="NULL--CAPS"><literal>NULL</literal></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="SoupMessage"><literal>SoupMessage</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-form-request-new-from-datalist" role="function">
+<title>soup_form_request_new_from_datalist ()</title>
+<indexterm zone="soup-form-request-new-from-datalist"><primary sortas="soup_form_request_new_from_datalist">soup_form_request_new_from_datalist</primary></indexterm><programlisting><link linkend="SoupMessage">SoupMessage</link> *       soup_form_request_new_from_datalist (const <link linkend="char">char</link> *method,
+                                                         const <link linkend="char">char</link> *uri,
+                                                         <link linkend="GData">GData</link> **form_data_set);</programlisting>
+<para>
+Creates a new <link linkend="SoupMessage"><literal>SoupMessage</literal></link> and sets it up to send <parameter>form_data_set</parameter> to
+<parameter>uri</parameter> via <parameter>method</parameter>, as with <link linkend="soup-form-request-new"><function>soup_form_request_new()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>method</parameter>&#160;:</term>
+<listitem><simpara> the HTTP method, either "GET" or "POST"
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the URI to send the form data to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>form_data_set</parameter>&#160;:</term>
+<listitem><simpara> the data to send to <parameter>uri</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="SoupMessage"><literal>SoupMessage</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-form-request-new-from-hash" role="function">
+<title>soup_form_request_new_from_hash ()</title>
+<indexterm zone="soup-form-request-new-from-hash"><primary sortas="soup_form_request_new_from_hash">soup_form_request_new_from_hash</primary></indexterm><programlisting><link linkend="SoupMessage">SoupMessage</link> *       soup_form_request_new_from_hash     (const <link linkend="char">char</link> *method,
+                                                         const <link linkend="char">char</link> *uri,
+                                                         <link linkend="GHashTable">GHashTable</link> *form_data_set);</programlisting>
+<para>
+Creates a new <link linkend="SoupMessage"><literal>SoupMessage</literal></link> and sets it up to send <parameter>form_data_set</parameter> to
+<parameter>uri</parameter> via <parameter>method</parameter>, as with <link linkend="soup-form-request-new"><function>soup_form_request_new()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>method</parameter>&#160;:</term>
+<listitem><simpara> the HTTP method, either "GET" or "POST"
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the URI to send the form data to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>form_data_set</parameter>&#160;:</term>
+<listitem><simpara> the data to send to <parameter>uri</parameter>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="SoupMessage"><literal>SoupMessage</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="soup-form-request-new-from-multipart" role="function" condition="since:2.26">
+<title>soup_form_request_new_from_multipart ()</title>
+<indexterm zone="soup-form-request-new-from-multipart" role="2.26"><primary sortas="soup_form_request_new_from_multipart">soup_form_request_new_from_multipart</primary></indexterm><programlisting><link linkend="SoupMessage">SoupMessage</link> *       soup_form_request_new_from_multipart
+                                                        (const <link linkend="char">char</link> *uri,
+                                                         <link linkend="SoupMultipart">SoupMultipart</link> *multipart);</programlisting>
+<para>
+Creates a new <link linkend="SoupMessage"><literal>SoupMessage</literal></link> and sets it up to send <parameter>multipart</parameter> to
+<parameter>uri</parameter> via POST.
+</para>
+<para>
+To send a <literal>"multipart/form-data"</literal> POST, first
+create a <link linkend="SoupMultipart"><type>SoupMultipart</type></link>, using <link linkend="SOUP-FORM-MIME-TYPE-MULTIPART--CAPS"><literal>SOUP_FORM_MIME_TYPE_MULTIPART</literal></link> as
+the MIME type. Then use <link linkend="soup-multipart-append-form-string"><function>soup_multipart_append_form_string()</function></link> and
+<link linkend="soup-multipart-append-form-file"><function>soup_multipart_append_form_file()</function></link> to add the value of each form
+control to the multipart. (These are just convenience methods, and
+you can use <link linkend="soup-multipart-append-part"><function>soup_multipart_append_part()</function></link> if you need greater
+control over the part headers.) Finally, call
+<link linkend="soup-form-request-new-from-multipart"><function>soup_form_request_new_from_multipart()</function></link> to serialize the multipart
+structure and create a <link linkend="SoupMessage"><type>SoupMessage</type></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uri</parameter>&#160;:</term>
+<listitem><simpara> the URI to send the form data to
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>multipart</parameter>&#160;:</term>
+<listitem><simpara> a "multipart/form-data" <link linkend="SoupMultipart"><type>SoupMultipart</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="SoupMessage"><literal>SoupMessage</literal></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

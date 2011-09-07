@@ -1,0 +1,406 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>Search Window - GQview User Manual</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040805;23590500">
+	<META NAME="CHANGED" CONTENT="20041227;15443800">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="5_image_search.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER>Search Window - Image Search</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="5_2_finding_duplicates.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</CENTER>
+<HR>
+<H1>5.1 Search Window</H1>
+<P>GQview provides a utility to find one or more images based on
+various parameters.</P>
+<P>To display a new Search Window press F3 or select Search from the
+File menu.</P>
+<P><BR><BR>
+</P>
+<P>To start a search activate the Find button. A search in progress
+can be stopped by activating the Stop button.</P>
+<P>The progress of an active search is displayed as a progress bar at
+the bottom of the window. The progress bar will also display the
+total files that match the search parameters, and the total number of
+files searched.</P>
+<P>When a search is completed, the total number of files found and
+their total size will be displayed in the status bar.</P>
+<P><BR><BR>
+</P>
+<P><U>Search location</U></P>
+<P STYLE="margin-left: 0.79in">One of several locations can be chosen
+as the source to use in the search.</P>
+<P STYLE="margin-left: 0.79in"><B>Path:</B> The search will include
+files located in the selected folder, enable the Recurse check box to
+include the contents of all sub folders.</P>
+<P STYLE="margin-left: 0.79in"><B>Comments:</B> The search will
+include all files that have a keyword or comment associated to it.</P>
+<P STYLE="margin-left: 1.58in">Note: Only keyword and comment
+associations stored in the user's home folder are included in this
+search type.</P>
+<P STYLE="margin-left: 0.79in"><B>Results:</B> The search will
+include all files currently listed in the results list, use this to
+refine a previous search.</P>
+<P><BR><BR>
+</P>
+<P><U>Search parameters</U></P>
+<P STYLE="margin-left: 0.79in">Each search parameter can be enabled
+or disabled with the check box to it's left. For a file to be a
+match, all enabled parameters must be true.</P>
+<P STYLE="margin-left: 0.79in"><B>File name:</B> The search will
+match if the entered text appears within the file name, or if the
+text exactly matches the file name, depending on the method selected
+from the drop down menu. The text comparison can be made to be case
+sensitive by enabling the Match case checkbox.</P>
+<P STYLE="margin-left: 0.79in"><B>File size:</B> The search will
+match if the file size on disk is equal to, less than, greater than,
+or between the entered value, depending on the method selected from
+the drop down menu. The between test is inclusive, for example a file
+of size 10 will match if the size parameters are between 10 and 15.</P>
+<P STYLE="margin-left: 0.79in"><B>File date:</B> The search will
+match if the file modification time on disk is equal to, before,
+after, or between the entered date, depending on the method selected
+from the drop down menu. The between test is inclusive, for example a
+file with date of 10/04/2003 will match if the date parameters are
+between 10/04/2003 and 12/31/2003.</P>
+<P STYLE="margin-left: 0.79in">For convenience, the button with the
+down arrow displays a pop up calendar to enter the date.</P>
+<P STYLE="margin-left: 0.79in"><B>Image dimensions:</B> The search
+will match if the image dimensions are equal to, less than, greater
+than, or between the entered values, depending on the method selected
+from the drop down menu. The between test is inclusive.</P>
+<P STYLE="margin-left: 0.79in">The image dimensions test is simple,
+both width and height must be within the allowed values for a match.</P>
+<P STYLE="margin-left: 0.79in"><B>Image content:</B> The search will
+match if the image contents are similar within the percentage value,
+inclusive. This uses the same test and data that is used to determine
+image similarity when <A HREF="5_2_finding_duplicates.html">Finding
+Duplicates</A>. The entry is for entering the path for the image to
+use in this test.</P>
+<P STYLE="margin-left: 0.79in"><B>Keywords:</B> The search will match
+if the file's associated keywords match all, match any, or exclude
+the entered keywords, depending on the method selected from the drop
+down menu. Keywords can be separated with a space, comma, or tab
+character.</P>
+<P><BR><BR>
+</P>
+<P><U>Results list</U></P>
+<P STYLE="margin-left: 0.79in">Files that match the parameters of the
+search are shown in the list. By default they are displayed in the
+order that they are found, to sort the results list by a column
+activate or click the column title. Activating a column that is
+already used to sort the list will toggle between increasing and
+decreasing sort order.</P>
+<P STYLE="margin-left: 0.79in">A <B>context menu</B> is available for
+the result list by right clicking the mouse or pressing the Menu key
+when a row has the focus.</P>
+<P STYLE="margin-left: 0.79in"><B>Keyboard shortcuts</B> available in
+the results list:</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=1 BORDERCOLOR="#cccccc" CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=64*>
+		<COL WIDTH=64*>
+		<COL WIDTH=128*>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><B>Shortcut</B></P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><B>Context menu name</B></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><B>Description</B></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Enter</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>View</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Opens selected image in main window.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>V</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>View in new window</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Opens selected image in a new window.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + A</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Select all</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Selects all images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + Shift + A</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Select none</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Clear the image selection.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + 1 through<BR>Control + 0</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Edit sub menu</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Executes the respective editor command.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + P</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Properties</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Opens a properties window for selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>C</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Add to new collection</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Creates a new collection containing the selected
+				images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Print</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Opens a print dialog for selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + C</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Copy</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Copy selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + M</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Move</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Move selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + R</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Rename</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Rename selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + D</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Delete</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Delete selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Delete</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Remove</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Remove selected images from result list.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + Delete</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Clear</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Cleared the result list.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Menu</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Displays the context menu.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + T</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Toggle display of thumbnails.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + W</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Close window.</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<P STYLE="margin-left: 0.79in">The <B>selection</B> can be changed
+using the keyboard and mouse the same as in a <A HREF="2_4_file_pane.html">file
+pane</A> of the main window.</P>
+<P STYLE="margin-left: 0.79in">The image Dimensions column of the
+result list will only contain dimension information when dimensions
+are included in the search parameters.</P>
+<P><BR><BR>
+</P>
+<P><U>Status bar</U></P>
+<P STYLE="margin-left: 0.79in">At the bottom of the search window is
+an area that includes the following items from left to right:</P>
+<P STYLE="margin-left: 0.79in"><B>Thumbnails:</B> Enable this check
+box to display a thumbnail next to each image in the results list.</P>
+<P STYLE="margin-left: 0.79in"><B>File count display:</B> Displays
+the total count of files in the results list, and their size on disk.
+The count of selected files will appear in parenthesis.</P>
+<P STYLE="margin-left: 0.79in"><B>Search progress:</B> When a search
+is active, the text &ldquo;Searching...&rdquo; will appear here. Two
+numbers in parenthesis will also be displayed, the first number is
+the number of files that match the search parameters and the second
+number is the total number of files that were searched.</P>
+<P STYLE="margin-left: 0.79in"><B>Find:</B> Activate the find button
+to start a search with the selected parameters.</P>
+<P STYLE="margin-left: 0.79in"><B>Stop:</B> Activate the stop button
+to end a search that is in progress.</P>
+<P><BR><BR>
+</P>
+<P><U>Drag and Drop</U></P>
+<P STYLE="margin-left: 0.79in">Drag and drop can be initiated with
+the primary or middle mouse buttons. Dragging a file that is selected
+will include all selected files in the drag. Dragging a file that is
+not selected will first change the selection to the dragged file, and
+clear the previous selection.</P>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<HR>
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="5_image_search.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><A HREF="index.html">Contents</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="5_2_finding_duplicates.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT>GQview User Manual</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>

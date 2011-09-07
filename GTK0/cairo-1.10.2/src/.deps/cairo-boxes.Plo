@@ -1,0 +1,235 @@
+cairo-boxes.lo: cairo-boxes.c cairoint.h ../config.h \
+  /usr/include/assert.h /usr/include/features.h \
+  /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /usr/include/stdlib.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h \
+  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+  /usr/include/endian.h /usr/include/bits/endian.h /usr/include/xlocale.h \
+  /usr/include/sys/types.h /usr/include/bits/types.h \
+  /usr/include/bits/typesizes.h /usr/include/time.h \
+  /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/alloca.h /usr/include/bits/stdlib.h /usr/include/string.h \
+  /usr/include/bits/string.h /usr/include/bits/string2.h \
+  /usr/include/bits/string3.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h \
+  /usr/include/math.h /usr/include/bits/huge_val.h \
+  /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+  /usr/include/bits/inf.h /usr/include/bits/nan.h \
+  /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
+  /usr/include/bits/mathinline.h /usr/include/limits.h \
+  /scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h \
+  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/xopen_lim.h /usr/include/bits/stdio_lim.h \
+  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+  /usr/include/wchar.h /usr/include/bits/wchar.h /usr/include/gconv.h \
+  /usr/include/bits/sys_errlist.h /usr/include/bits/stdio.h \
+  /usr/include/bits/stdio2.h cairo.h cairo-version.h cairo-features.h \
+  cairo-deprecated.h /usr/local/include/pixman-1/pixman.h \
+  /usr/local/include/pixman-1/pixman-version.h /usr/include/stdint.h \
+  cairo-compiler-private.h cairo-types-private.h \
+  cairo-fixed-type-private.h cairo-wideint-type-private.h \
+  /usr/include/byteswap.h /usr/include/bits/byteswap.h \
+  cairo-list-private.h cairo-reference-count-private.h \
+  cairo-atomic-private.h cairo-cache-private.h cairo-spans-private.h \
+  cairo-scaled-font-private.h cairo-mutex-type-private.h \
+  cairo-mutex-impl-private.h /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/bits/sched.h /usr/include/signal.h \
+  /usr/include/bits/setjmp.h cairo-surface-private.h cairo-clip-private.h \
+  cairo-path-fixed-private.h cairo-mutex-private.h \
+  cairo-mutex-list-private.h cairo-fixed-private.h \
+  cairo-wideint-private.h cairo-malloc-private.h cairo-hash-private.h \
+  cairo-boxes-private.h cairo-error-private.h
+
+cairoint.h:
+
+../config.h:
+
+/usr/include/assert.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/stdlib.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stddef.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/include/bits/string3.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include/stdarg.h:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathinline.h:
+
+/usr/include/limits.h:
+
+/scratchbox/compilers/cs2007q3-glibc2.5-arm6/bin/../lib/gcc/arm-none-linux-gnueabi/4.2.1/include-fixed/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/gconv.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/stdio2.h:
+
+cairo.h:
+
+cairo-version.h:
+
+cairo-features.h:
+
+cairo-deprecated.h:
+
+/usr/local/include/pixman-1/pixman.h:
+
+/usr/local/include/pixman-1/pixman-version.h:
+
+/usr/include/stdint.h:
+
+cairo-compiler-private.h:
+
+cairo-types-private.h:
+
+cairo-fixed-type-private.h:
+
+cairo-wideint-type-private.h:
+
+/usr/include/byteswap.h:
+
+/usr/include/bits/byteswap.h:
+
+cairo-list-private.h:
+
+cairo-reference-count-private.h:
+
+cairo-atomic-private.h:
+
+cairo-cache-private.h:
+
+cairo-spans-private.h:
+
+cairo-scaled-font-private.h:
+
+cairo-mutex-type-private.h:
+
+cairo-mutex-impl-private.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sched.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/signal.h:
+
+/usr/include/bits/setjmp.h:
+
+cairo-surface-private.h:
+
+cairo-clip-private.h:
+
+cairo-path-fixed-private.h:
+
+cairo-mutex-private.h:
+
+cairo-mutex-list-private.h:
+
+cairo-fixed-private.h:
+
+cairo-wideint-private.h:
+
+cairo-malloc-private.h:
+
+cairo-hash-private.h:
+
+cairo-boxes-private.h:
+
+cairo-error-private.h:

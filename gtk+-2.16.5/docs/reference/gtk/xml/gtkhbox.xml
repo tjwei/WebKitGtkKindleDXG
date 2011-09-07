@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkHBox">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkHBox.top_of_page">GtkHBox</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkHBox</refname>
+<refpurpose>A horizontal container box</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkHBox.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkHBox-struct">GtkHBox</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-hbox-new">gtk_hbox_new</link>                        (<link linkend="gboolean">gboolean</link> homogeneous,
+                                                         <link linkend="gint">gint</link> spacing);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkHBox.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBox">GtkBox</link>
+                                 +----GtkHBox
+                                       +----<link linkend="GtkCombo">GtkCombo</link>
+                                       +----<link linkend="GtkFileChooserButton">GtkFileChooserButton</link>
+                                       +----<link linkend="GtkStatusbar">GtkStatusbar</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkHBox.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkHBox implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link> and  <link linkend="GtkOrientable">GtkOrientable</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkHBox.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+GtkHBox is a container that organizes child widgets into a single row.
+</para>
+<para>
+Use the <link linkend="GtkBox"><type>GtkBox</type></link> packing interface to determine the arrangement,
+spacing, width, and alignment of GtkHBox children.
+</para>
+<para>
+All children are allocated the same height.
+</para>
+</refsect1>
+
+<refsect1 id="GtkHBox.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkHBox-struct" role="struct">
+<title>GtkHBox</title>
+<indexterm zone="GtkHBox-struct"><primary sortas="HBox">GtkHBox</primary></indexterm><programlisting>typedef struct _GtkHBox GtkHBox;</programlisting>
+</refsect2>
+<refsect2 id="gtk-hbox-new" role="function">
+<title>gtk_hbox_new ()</title>
+<indexterm zone="gtk-hbox-new"><primary sortas="hbox_new">gtk_hbox_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_hbox_new                        (<link linkend="gboolean">gboolean</link> homogeneous,
+                                                         <link linkend="gint">gint</link> spacing);</programlisting>
+<para>
+Creates a new GtkHBox.
+</para><variablelist role="params">
+<varlistentry><term><parameter>homogeneous</parameter>&#160;:</term>
+<listitem><simpara>%TRUE if all children are to be given equal space allotments.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>spacing</parameter>&#160;:</term>
+<listitem><simpara>the number of pixels to place by default between children.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a new GtkHBox.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkHBox.see-also">
+<title>See Also</title>
+<para>
+<variablelist>
+<varlistentry>
+<term><link linkend="GtkVBox"><type>GtkVBox</type></link></term>
+<listitem><para>a sister class that organizes widgets into a column.</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</refsect1>
+
+</refentry>

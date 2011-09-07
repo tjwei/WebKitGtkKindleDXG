@@ -1,0 +1,76 @@
+Summary: Graphics file browser utility.
+Summary(fr): Explorateur de fichiers graphiques
+Summary(es): Navegador de archivos gráficos
+Summary(it): Visualizzatore di archivi grafici
+Name: gqview
+Version: @VERSION@
+Release: 1
+License: GPL
+Group: Applications/Multimedia
+Source: http://prdownloads.sourceforge.net/gqview/gqview-%{version}.tar.gz
+BuildRoot: %{_tmppath}/%{name}-%{version}-root
+
+URL: http://gqview.sourceforge.net
+
+Requires: gtk2 >= 2.4.0
+
+%description
+GQview is a browser for graphics files.
+Offering single click viewing of your graphics files.
+Includes thumbnail view, zoom and filtering features.
+And external editor support.
+
+%description -l fr
+GQview est un explorateur de fichiers graphiques.
+Il permet d'un simple clic l'affichage de vos fichiers graphiques.
+Les capacités suivantes sont incluses: vue d'imagettes, zoom,
+filtres et support d'éditeurs externes.
+
+%description -l es
+GQview es un navegador de archivos gráficos.
+Ofrece visualizar sus archivos gráficos con sólo hacer un clic.
+Incluye visualización de miniaturas, zoom, filtros y soporte para
+editores externos.
+
+%description -l it
+GQView è un visualizzatore di archivi grafici.
+Offre la possibilità di visualizzare i tuoi files grafici grazie ad un singolo
+click.
+Include la rappresentazione tramite miniature e gli strumenti di zoom e
+filtraggio.
+Supporta anche l'uso di editor grafici esterni.
+
+%prep
+%setup
+
+%build
+if [ ! -f configure ]; then
+  CFLAGS="$MYCFLAGS" ./autogen.sh $MYARCH_FLAGS --prefix=%{_prefix}
+else
+  CFLAGS="$MYCFLAGS" ./configure $MYARCH_FLAGS --prefix=%{_prefix}
+fi
+
+make
+
+mkdir html
+cp doc/*.html doc/*.txt html/.
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+make mandir=$RPM_BUILD_ROOT%{_mandir} bindir=$RPM_BUILD_ROOT%{_bindir} \
+ prefix=$RPM_BUILD_ROOT%{_prefix} install
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(-, root, root)
+
+%doc README COPYING TODO html
+%{_bindir}/gqview
+%{_datadir}/locale/*/*/*
+%{_datadir}/applications/gqview.desktop
+%{_datadir}/pixmaps/gqview.png
+%{_mandir}/man?/*
+

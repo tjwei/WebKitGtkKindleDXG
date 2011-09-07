@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkAccessible">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkAccessible.top_of_page">GtkAccessible</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkAccessible</refname>
+<refpurpose>Accessibility support for widgets</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkAccessible.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkAccessible-struct">GtkAccessible</link>;
+<link linkend="void">void</link>                <link linkend="gtk-accessible-connect-widget-destroyed">gtk_accessible_connect_widget_destroyed</link>
+                                                        (<link linkend="GtkAccessible">GtkAccessible</link> *accessible);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkAccessible.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="AtkObject">AtkObject</link>
+         +----GtkAccessible
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+
+
+<refsect1 id="GtkAccessible.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="GtkAccessible.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkAccessible-struct" role="struct">
+<title>GtkAccessible</title>
+<indexterm zone="GtkAccessible-struct"><primary sortas="Accessible">GtkAccessible</primary></indexterm><programlisting>typedef struct _GtkAccessible GtkAccessible;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-accessible-connect-widget-destroyed" role="function">
+<title>gtk_accessible_connect_widget_destroyed ()</title>
+<indexterm zone="gtk-accessible-connect-widget-destroyed"><primary sortas="accessible_connect_widget_destroyed">gtk_accessible_connect_widget_destroyed</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_accessible_connect_widget_destroyed
+                                                        (<link linkend="GtkAccessible">GtkAccessible</link> *accessible);</programlisting>
+<para>
+This function specifies the callback function to be called when the widget
+corresponding to a GtkAccessible is destroyed.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>accessible</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkAccessible"><type>GtkAccessible</type></link>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

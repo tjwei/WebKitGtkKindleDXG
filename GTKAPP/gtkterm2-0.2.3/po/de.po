@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GTKTerm2 0.2.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-09-03 21:07+0200\n"
+"PO-Revision-Date: 2004-07-30 23:33+0100\n"
+"Last-Translator: Oliver Feige <ofeige@gmx.de>\n"
+"Language-Team: de <ofeige@gmx.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/support.c:90 src/support.c:114
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Kann die Bilddatei nicht finden: %s"
+
+#: src/interface.c:70
+msgid "GTKTerm2"
+msgstr "GTKTerm2"
+
+#: src/interface.c:99
+msgid "File"
+msgstr "Datei"
+
+#: src/interface.c:108
+msgid "New Tab"
+msgstr "Neuer Reiter"
+
+#: src/interface.c:124
+msgid "Close Tab"
+msgstr "Schliesse Reiter"
+
+#: src/interface.c:134
+msgid "Close Window"
+msgstr "Schliesse Fenster"
+
+#: src/interface.c:144
+msgid "View"
+msgstr "Ansicht"
+
+#: src/interface.c:153
+msgid "Full Screen"
+msgstr "Vollbildschirm"
+
+#. hide_menu = gtk_menu_item_new_with_mnemonic (_("Hide menu"));
+#. gtk_widget_set_name (hide_menu, "hide_menu");
+#. gtk_widget_show (hide_menu);
+#. gtk_container_add (GTK_CONTAINER (menuitem3_menu), hide_menu);
+#: src/interface.c:168
+msgid "Help"
+msgstr "Hilfe"
+
+#: src/interface.c:177
+msgid "Info"
+msgstr "Info"
+
+#: src/interface.c:285
+msgid "About GTKTerm2"
+msgstr "Über GTKTerm2"
+
+#: src/interface.c:305
+msgid "GTKTerm2 (v "
+msgstr "GTKTerm2 (v "
+
+#: src/interface.c:305
+msgid ""
+")\n"
+"Copyright (c) 2004 Oliver Feige"
+msgstr ""
+")\n"
+"Copyright (c) 2004 Oliver Feige"
+
+#: src/interface.c:315
+msgid "Information"
+msgstr "Information"
+
+#. label6 = gtk_label_new (_("Programmiert:\nOliver Feige <ofeige@gmx.de>\n\nIdee:\nOliver Feige <ofeige@gmx.de>\nStefan Bambach <sbambach@gmx.de>"));
+#: src/interface.c:322
+msgid ""
+"Programmer:\n"
+"Oliver Feige <ofeige@gmx.de>\n"
+"\n"
+"Idea:\n"
+"Oliver Feige <ofeige@gmx.de>\n"
+"Stefan Bambach <sbambach@gmx.de>"
+msgstr ""
+"Programmierer:\n"
+"Oliver Feige <ofeige@gmx.de>\n"
+"\n"
+"Idee:\n"
+"Oliver Feige <ofeige@gmx.de>\n"
+"Stefan Bambach <sbambach@gmx.de>"
+
+#: src/interface.c:331
+msgid "Program of"
+msgstr "Programm von"
+
+#: src/callbacks.c:182
+msgid "_Full screen"
+msgstr "Vollbildschirm"
+
+#: src/callbacks.c:188
+msgid "_Restore normal size"
+msgstr "Vollbild beenden"

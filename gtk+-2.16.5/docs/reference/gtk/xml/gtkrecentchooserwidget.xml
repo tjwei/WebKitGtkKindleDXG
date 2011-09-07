@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkRecentChooserWidget">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkRecentChooserWidget.top_of_page">GtkRecentChooserWidget</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkRecentChooserWidget</refname>
+<refpurpose>Displays recently used files</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkRecentChooserWidget.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkRecentChooserWidget-struct">GtkRecentChooserWidget</link>;
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-recent-chooser-widget-new">gtk_recent_chooser_widget_new</link>       (void);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-recent-chooser-widget-new-for-manager">gtk_recent_chooser_widget_new_for_manager</link>
+                                                        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkRecentChooserWidget.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----<link linkend="GtkContainer">GtkContainer</link>
+                           +----<link linkend="GtkBox">GtkBox</link>
+                                 +----<link linkend="GtkVBox">GtkVBox</link>
+                                       +----GtkRecentChooserWidget
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkRecentChooserWidget.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkRecentChooserWidget implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link>,  <link linkend="GtkBuildable">GtkBuildable</link>,  <link linkend="GtkOrientable">GtkOrientable</link> and  <link linkend="GtkRecentChooser">GtkRecentChooser</link>.</para>
+</refsect1>
+
+
+
+
+
+<refsect1 id="GtkRecentChooserWidget.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="GtkRecentChooserWidget"><type>GtkRecentChooserWidget</type></link> is a widget suitable for selecting recently used
+files.  It is the main building block of a <link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link>.  Most
+applications will only need to use the latter; you can use
+<link linkend="GtkRecentChooserWidget"><type>GtkRecentChooserWidget</type></link> as part of a larger window if you have special needs.
+</para>
+<para>
+Note that <link linkend="GtkRecentChooserWidget"><type>GtkRecentChooserWidget</type></link> does not have any methods of its own.
+Instead, you should use the functions that work on a <link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>.
+</para>
+<para>
+Recently used files are supported since GTK+ 2.10.
+</para>
+</refsect1>
+
+<refsect1 id="GtkRecentChooserWidget.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkRecentChooserWidget-struct" role="struct">
+<title>GtkRecentChooserWidget</title>
+<indexterm zone="GtkRecentChooserWidget-struct"><primary sortas="RecentChooserWidget">GtkRecentChooserWidget</primary></indexterm><programlisting>typedef struct _GtkRecentChooserWidget GtkRecentChooserWidget;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="gtk-recent-chooser-widget-new" role="function" condition="since:2.10">
+<title>gtk_recent_chooser_widget_new ()</title>
+<indexterm zone="gtk-recent-chooser-widget-new" role="2.10"><primary sortas="recent_chooser_widget_new">gtk_recent_chooser_widget_new</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_recent_chooser_widget_new       (void);</programlisting>
+<para>
+Creates a new <link linkend="GtkRecentChooserWidget"><type>GtkRecentChooserWidget</type></link> object.  This is an embeddable widget
+used to access the recently used resources list.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkRecentChooserWidget"><type>GtkRecentChooserWidget</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+<refsect2 id="gtk-recent-chooser-widget-new-for-manager" role="function" condition="since:2.10">
+<title>gtk_recent_chooser_widget_new_for_manager ()</title>
+<indexterm zone="gtk-recent-chooser-widget-new-for-manager" role="2.10"><primary sortas="recent_chooser_widget_new_for_manager">gtk_recent_chooser_widget_new_for_manager</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_recent_chooser_widget_new_for_manager
+                                                        (<link linkend="GtkRecentManager">GtkRecentManager</link> *manager);</programlisting>
+<para>
+Creates a new <link linkend="GtkRecentChooserWidget"><type>GtkRecentChooserWidget</type></link> with a specified recent manager.
+</para>
+<para>
+This is useful if you have implemented your own recent manager, or if you
+have a customized instance of a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link> object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>manager</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkRecentManager"><type>GtkRecentManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new <link linkend="GtkRecentChooserWidget"><type>GtkRecentChooserWidget</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.10</para></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="GtkRecentChooserWidget.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkRecentChooser"><type>GtkRecentChooser</type></link>, <link linkend="GtkRecentChooserDialog"><type>GtkRecentChooserDialog</type></link>
+</para>
+</refsect1>
+
+</refentry>

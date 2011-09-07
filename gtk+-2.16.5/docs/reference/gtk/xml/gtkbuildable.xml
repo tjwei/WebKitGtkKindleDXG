@@ -1,0 +1,499 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="gtk-gtkbuildable">
+<refmeta>
+<refentrytitle role="top_of_page" id="gtk-gtkbuildable.top_of_page">GtkBuildable</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkBuildable</refname>
+<refpurpose>Interface for objects that can be built by GtkBuilder</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gtk-gtkbuildable.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+<anchor id="GtkBuildable"/>
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkBuildable-struct">GtkBuildable</link>;
+                    <link linkend="GtkBuildableIface">GtkBuildableIface</link>;
+<link linkend="void">void</link>                <link linkend="gtk-buildable-set-name">gtk_buildable_set_name</link>              (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         const <link linkend="gchar">gchar</link> *name);
+const <link linkend="gchar">gchar</link> *       <link linkend="gtk-buildable-get-name">gtk_buildable_get_name</link>              (<link linkend="GtkBuildable">GtkBuildable</link> *buildable);
+<link linkend="void">void</link>                <link linkend="gtk-buildable-add-child">gtk_buildable_add_child</link>             (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GObject">GObject</link> *child,
+                                                         const <link linkend="gchar">gchar</link> *type);
+<link linkend="void">void</link>                <link linkend="gtk-buildable-set-buildable-property">gtk_buildable_set_buildable_property</link>
+                                                        (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="GValue">GValue</link> *value);
+<link linkend="GObject">GObject</link> *           <link linkend="gtk-buildable-construct-child">gtk_buildable_construct_child</link>       (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *name);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-buildable-custom-tag-start">gtk_buildable_custom_tag_start</link>      (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GObject">GObject</link> *child,
+                                                         const <link linkend="gchar">gchar</link> *tagname,
+                                                         <link linkend="GMarkupParser">GMarkupParser</link> *parser,
+                                                         <link linkend="gpointer">gpointer</link> *data);
+<link linkend="void">void</link>                <link linkend="gtk-buildable-custom-tag-end">gtk_buildable_custom_tag_end</link>        (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GObject">GObject</link> *child,
+                                                         const <link linkend="gchar">gchar</link> *tagname,
+                                                         <link linkend="gpointer">gpointer</link> *data);
+<link linkend="void">void</link>                <link linkend="gtk-buildable-custom-finished">gtk_buildable_custom_finished</link>       (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GObject">GObject</link> *child,
+                                                         const <link linkend="gchar">gchar</link> *tagname,
+                                                         <link linkend="gpointer">gpointer</link> data);
+<link linkend="void">void</link>                <link linkend="gtk-buildable-parser-finished">gtk_buildable_parser_finished</link>       (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder);
+<link linkend="GObject">GObject</link> *           <link linkend="gtk-buildable-get-internal-child">gtk_buildable_get_internal_child</link>    (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *childname);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="gtk-gtkbuildable.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GInterface">GInterface</link>
+   +----GtkBuildable
+</synopsis>
+</refsect1>
+
+
+
+
+<refsect1 id="gtk-gtkbuildable.implementations" role="implementations">
+<title role="implementations.title">Known Implementations</title>
+<para>
+GtkBuildable is implemented by
+ <link linkend="GtkListItem">GtkListItem</link>,  <link linkend="GtkBin">GtkBin</link>,  <link linkend="GtkTreeView">GtkTreeView</link>,  <link linkend="GtkButtonBox">GtkButtonBox</link>,  <link linkend="GtkPaned">GtkPaned</link>,  <link linkend="GtkColorSelectionDialog">GtkColorSelectionDialog</link>,  <link linkend="GtkVButtonBox">GtkVButtonBox</link>,  <link linkend="GtkTearoffMenuItem">GtkTearoffMenuItem</link>,  <link linkend="GtkEntry">GtkEntry</link>,  <link linkend="GtkOptionMenu">GtkOptionMenu</link>,  <link linkend="GtkImage">GtkImage</link>,  <link linkend="GtkCalendar">GtkCalendar</link>,  <link linkend="GtkFixed">GtkFixed</link>,  <link linkend="GtkLinkButton">GtkLinkButton</link>,  <link linkend="GtkHButtonBox">GtkHButtonBox</link>,  <link linkend="GtkInputDialog">GtkInputDialog</link>,  <link linkend="GtkRadioButton">GtkRadioButton</link>,  <link linkend="GtkVRuler">GtkVRuler</link>,  <link linkend="GtkVSeparator">GtkVSeparator</link>,  <link linkend="GtkVBox">GtkVBox</link>,  <link linkend="GtkCurve">GtkCurve</link>,  <link linkend="GtkRadioToolButton">GtkRadioToolButton</link>,  <link linkend="GtkHRuler">GtkHRuler</link>,  <link linkend="GtkToggleButton">GtkToggleButton</link>,  <link linkend="GtkSeparatorMenuItem">GtkSeparatorMenuItem</link>,  <link linkend="GtkHScale">GtkHScale</link>,  <link linkend="GtkTable">GtkTable</link>,  <link linkend="GtkTreeViewColumn">GtkTreeViewColumn</link>,  <link linkend="GtkImageMenuItem">GtkImageMenuItem</link>,  <link linkend="GtkFileChooserButton">GtkFileChooserButton</link>,  <link linkend="GtkCheckButton">GtkCheckButton</link>,  <link linkend="GtkRadioMenuItem">GtkRadioMenuItem</link>,  <link linkend="GtkMenuShell">GtkMenuShell</link>,  <link linkend="GtkStatusbar">GtkStatusbar</link>,  <link linkend="GtkDrawingArea">GtkDrawingArea</link>,  <link linkend="GtkButton">GtkButton</link>,  <link linkend="GtkIconView">GtkIconView</link>,  <link linkend="GtkNotebook">GtkNotebook</link>,  <link linkend="GtkUIManager">GtkUIManager</link>,  <link linkend="GtkTree">GtkTree</link>,  <link linkend="GtkSocket">GtkSocket</link>,  <link linkend="GtkVScale">GtkVScale</link>,  <link linkend="GtkProgress">GtkProgress</link>,  <link linkend="GtkGammaCurve">GtkGammaCurve</link>,  <link linkend="GtkText">GtkText</link>,  <link linkend="GtkCList">GtkCList</link>,  <link linkend="GtkAlignment">GtkAlignment</link>,  <link linkend="GtkMenuToolButton">GtkMenuToolButton</link>,  <link linkend="GtkMenuItem">GtkMenuItem</link>,  <link linkend="GtkPageSetupUnixDialog">GtkPageSetupUnixDialog</link>,  <link linkend="GtkRecentChooserMenu">GtkRecentChooserMenu</link>,  <link linkend="GtkToolItem">GtkToolItem</link>,  <link linkend="GtkHSeparator">GtkHSeparator</link>,  <link linkend="GtkProgressBar">GtkProgressBar</link>,  <link linkend="GtkCTree">GtkCTree</link>,  <link linkend="GtkActionGroup">GtkActionGroup</link>,  <link linkend="GtkRange">GtkRange</link>,  <link linkend="GtkAssistant">GtkAssistant</link>,  <link linkend="GtkFileSelection">GtkFileSelection</link>,  <link linkend="GtkToolbar">GtkToolbar</link>,  <link linkend="GtkTreeItem">GtkTreeItem</link>,  <link linkend="GtkAccelLabel">GtkAccelLabel</link>,  <link linkend="GtkPreview">GtkPreview</link>,  <link linkend="GtkRecentChooserDialog">GtkRecentChooserDialog</link>,  <link linkend="GtkExpander">GtkExpander</link>,  <link linkend="GtkScale">GtkScale</link>,  <link linkend="GtkTreeStore">GtkTreeStore</link>,  <link linkend="GtkMessageDialog">GtkMessageDialog</link>,  <link linkend="GtkSeparator">GtkSeparator</link>,  <link linkend="GtkLayout">GtkLayout</link>,  <link linkend="GtkFontSelection">GtkFontSelection</link>,  <link linkend="GtkCellView">GtkCellView</link>,  <link linkend="GtkInvisible">GtkInvisible</link>,  <link linkend="GtkWindow">GtkWindow</link>,  <link linkend="GtkSeparatorToolItem">GtkSeparatorToolItem</link>,  <link linkend="GtkFileChooserWidget">GtkFileChooserWidget</link>,  <link linkend="GtkCheckMenuItem">GtkCheckMenuItem</link>,  <link linkend="GtkToolButton">GtkToolButton</link>,  <link linkend="GtkMisc">GtkMisc</link>,  <link linkend="GtkEventBox">GtkEventBox</link>,  <link linkend="GtkFontButton">GtkFontButton</link>,  <link linkend="GtkEntryCompletion">GtkEntryCompletion</link>,  <link linkend="GtkDialog">GtkDialog</link>,  <link linkend="GtkHBox">GtkHBox</link>,  <link linkend="GtkCombo">GtkCombo</link>,  <link linkend="GtkOldEditable">GtkOldEditable</link>,  <link linkend="GtkAspectFrame">GtkAspectFrame</link>,  <link linkend="GtkAboutDialog">GtkAboutDialog</link>,  <link linkend="GtkHScrollbar">GtkHScrollbar</link>,  <link linkend="GtkListStore">GtkListStore</link>,  <link linkend="GtkScaleButton">GtkScaleButton</link>,  <link linkend="GtkRecentChooserWidget">GtkRecentChooserWidget</link>,  <link linkend="GtkToggleToolButton">GtkToggleToolButton</link>,  <link linkend="GtkComboBox">GtkComboBox</link>,  <link linkend="GtkVScrollbar">GtkVScrollbar</link>,  <link linkend="GtkFrame">GtkFrame</link>,  <link linkend="GtkSpinButton">GtkSpinButton</link>,  <link linkend="GtkList">GtkList</link>,  <link linkend="GtkLabel">GtkLabel</link>,  <link linkend="GtkFontSelectionDialog">GtkFontSelectionDialog</link>,  <link linkend="GtkTipsQuery">GtkTipsQuery</link>,  <link linkend="GtkColorSelection">GtkColorSelection</link>,  <link linkend="GtkItem">GtkItem</link>,  <link linkend="GtkWidget">GtkWidget</link>,  <link linkend="GtkIconFactory">GtkIconFactory</link>,  <link linkend="GtkRecentAction">GtkRecentAction</link>,  <link linkend="GtkVolumeButton">GtkVolumeButton</link>,  <link linkend="GtkMenuBar">GtkMenuBar</link>,  <link linkend="GtkTextView">GtkTextView</link>,  <link linkend="GtkArrow">GtkArrow</link>,  <link linkend="GtkToggleAction">GtkToggleAction</link>,  <link linkend="GtkRadioAction">GtkRadioAction</link>,  <link linkend="GtkPlug">GtkPlug</link>,  <link linkend="GtkHPaned">GtkHPaned</link>,  <link linkend="GtkBox">GtkBox</link>,  <link linkend="GtkMenu">GtkMenu</link>,  <link linkend="GtkHSV">GtkHSV</link>,  <link linkend="GtkAction">GtkAction</link>,  <link linkend="GtkPrintUnixDialog">GtkPrintUnixDialog</link>,  <link linkend="GtkComboBoxEntry">GtkComboBoxEntry</link>,  <link linkend="GtkColorButton">GtkColorButton</link>,  <link linkend="GtkPixmap">GtkPixmap</link>,  <link linkend="GtkFileChooserDialog">GtkFileChooserDialog</link>,  <link linkend="GtkRuler">GtkRuler</link>,  <link linkend="GtkVPaned">GtkVPaned</link>,  <link linkend="GtkHandleBox">GtkHandleBox</link>,  <link linkend="GtkScrollbar">GtkScrollbar</link>,  <link linkend="GtkContainer">GtkContainer</link>,  <link linkend="GtkSizeGroup">GtkSizeGroup</link>,  <link linkend="GtkViewport">GtkViewport</link> and  <link linkend="GtkScrolledWindow">GtkScrolledWindow</link>.</para>
+</refsect1>
+
+
+
+
+<refsect1 id="gtk-gtkbuildable.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+In order to allow construction from a <link linkend="BUILDER-UI">GtkBuilder
+UI description</link>, an object class must implement the
+GtkBuildable interface. The interface includes methods for setting
+names and properties of objects, parsing custom tags, constructing
+child objects.
+</para>
+<para>
+The GtkBuildable interface is implemented by all widgets and
+many of the non-widget objects that are provided by GTK+. The
+main user of this interface is <link linkend="GtkBuilder"><type>GtkBuilder</type></link>, there should be
+very little need for applications to call any
+<function>gtk_buildable_...</function> functions.
+</para>
+</refsect1>
+
+<refsect1 id="gtk-gtkbuildable.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkBuildable-struct" role="struct">
+<title>GtkBuildable</title>
+<indexterm zone="GtkBuildable-struct"><primary sortas="Buildable">GtkBuildable</primary></indexterm><programlisting>typedef struct _GtkBuildable GtkBuildable;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GtkBuildableIface" role="struct">
+<title>GtkBuildableIface</title>
+<indexterm zone="GtkBuildableIface"><primary sortas="BuildableIface">GtkBuildableIface</primary></indexterm><programlisting>typedef struct {
+  GTypeInterface g_iface;
+
+  /* virtual table */
+  void          (* set_name)               (GtkBuildable  *buildable,
+                                            const gchar   *name);
+  const gchar * (* get_name)               (GtkBuildable  *buildable);
+  void          (* add_child)              (GtkBuildable  *buildable,
+					    GtkBuilder    *builder,
+					    GObject       *child,
+					    const gchar   *type);
+  void          (* set_buildable_property) (GtkBuildable  *buildable,
+					    GtkBuilder    *builder,
+					    const gchar   *name,
+					    const GValue  *value);
+  GObject *     (* construct_child)        (GtkBuildable  *buildable,
+					    GtkBuilder    *builder,
+					    const gchar   *name);
+  gboolean      (* custom_tag_start)       (GtkBuildable  *buildable,
+					    GtkBuilder    *builder,
+					    GObject       *child,
+					    const gchar   *tagname,
+					    GMarkupParser *parser,
+					    gpointer      *data);
+  void          (* custom_tag_end)         (GtkBuildable  *buildable,
+					    GtkBuilder    *builder,
+					    GObject       *child,
+					    const gchar   *tagname,
+					    gpointer      *data);
+  void          (* custom_finished)        (GtkBuildable  *buildable,
+					    GtkBuilder    *builder,
+					    GObject       *child,
+					    const gchar   *tagname,
+					    gpointer       data);
+  void          (* parser_finished)        (GtkBuildable  *buildable,
+					    GtkBuilder    *builder);
+
+  GObject *     (* get_internal_child)     (GtkBuildable  *buildable,
+					    GtkBuilder    *builder,
+					    const gchar   *childname);
+} GtkBuildableIface;
+</programlisting>
+<para>
+The GtkBuildableIface interface contains method that are
+necessary to allow <link linkend="GtkBuilder"><type>GtkBuilder</type></link> to construct an object from
+a GtkBuilder UI definition.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GTypeInterface">GTypeInterface</link>&#160;<structfield>g_iface</structfield>;</term>
+<listitem><simpara>the parent class
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>set_name</structfield>&#160;()</term>
+<listitem><simpara>Stores the name attribute given in the GtkBuilder UI definition.
+  <link linkend="GtkWidget"><type>GtkWidget</type></link> maps this to the <link linkend="GtkWidget--name"><type>"name"</type></link> property, and
+  <link linkend="gtk-buildable-set-name"><function>gtk_buildable_set_name()</function></link> has a fallback implementation that stores
+  the name as object data. Implement this method if your object
+  has some notion of "name" and it makes sense to map the XML name
+  attribute to it.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_name</structfield>&#160;()</term>
+<listitem><simpara>The getter corresponding to <parameter>set_name</parameter>. Implement this
+  if you implement <parameter>set_name</parameter>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>add_child</structfield>&#160;()</term>
+<listitem><simpara>Adds a child. The <parameter>type</parameter> parameter can be used to 
+  differentiate the kind of child. <link linkend="GtkContainer"><type>GtkContainer</type></link> implements this
+  to add add a child widget to the container, <link linkend="GtkNotebook"><type>GtkNotebook</type></link> uses
+  the <parameter>type</parameter> to distinguish between page labels (of type "page-label")
+  and normal children.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>set_buildable_property</structfield>&#160;()</term>
+<listitem><simpara>Sets a property of a buildable object.
+  It is normally not necessary to implement this, <link linkend="g-object-set-property"><function>g_object_set_property()</function></link>
+  is used by default. <link linkend="GtkWindow"><type>GtkWindow</type></link> implements this to delay showing itself
+  (i.e. setting the <link linkend="GtkWidget--visible"><type>"visible"</type></link> property) until the whole interface
+  is created.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>construct_child</structfield>&#160;()</term>
+<listitem><simpara>Constructs a child of a buildable that has been
+  specified as "constructor" in the UI definition. <link linkend="GtkUIManager"><type>GtkUIManager</type></link> implements
+  this to reference to a widget created in a &lt;ui&gt; tag which is outside
+  of the normal GtkBuilder UI definition hierarchy.  A reference to the
+  constructed object is returned and becomes owned by the caller.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>custom_tag_start</structfield>&#160;()</term>
+<listitem><simpara>Implement this if the buildable needs to parse 
+  content below &lt;child&gt;. To handle an element, the implementation
+  must fill in the <parameter>parser</parameter> structure and <parameter>user_data</parameter> and return <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>.
+  <link linkend="GtkWidget"><type>GtkWidget</type></link> implements this to parse keyboard accelerators specified
+  in &lt;accelerator&gt; elements. <link linkend="GtkContainer"><type>GtkContainer</type></link> implements it to map
+  properties defined via &lt;packing&gt; elements to child properties.
+  Note that <parameter>user_data</parameter> must be freed in <parameter>custom_tag_end</parameter> or <parameter>custom_finished</parameter>.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>custom_tag_end</structfield>&#160;()</term>
+<listitem><simpara>Called for the end tag of each custom element that is
+  handled by the buildable (see <parameter>custom_tag_start</parameter>).
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>custom_finished</structfield>&#160;()</term>
+<listitem><simpara>Called for each custom tag handled by the buildable
+  when the builder finishes parsing (see <parameter>custom_tag_start</parameter>)
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>parser_finished</structfield>&#160;()</term>
+<listitem><simpara>Called when a builder finishes the parsing
+  of a UI definition. It is normally not necessary to implement this,
+  unless you need to perform special cleanup actions. <link linkend="GtkWindow"><type>GtkWindow</type></link> sets
+  the <link linkend="GtkWidget--visible"><type>"visible"</type></link> property here.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><structfield>get_internal_child</structfield>&#160;()</term>
+<listitem><simpara>Returns an internal child of a buildable. 
+  <link linkend="GtkDialog"><type>GtkDialog</type></link> implements this to give access to its <parameter>vbox</parameter>, making
+  it possible to add children to the vbox in a UI definition.
+  Implement this if the buildable has internal children that may
+  need to be accessed from a UI definition.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-buildable-set-name" role="function" condition="since:2.12">
+<title>gtk_buildable_set_name ()</title>
+<indexterm zone="gtk-buildable-set-name" role="2.12"><primary sortas="buildable_set_name">gtk_buildable_set_name</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_buildable_set_name              (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         const <link linkend="gchar">gchar</link> *name);</programlisting>
+<para>
+Sets the name of the <parameter>buildable</parameter> object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buildable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuildable"><type>GtkBuildable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> name to set
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-buildable-get-name" role="function" condition="since:2.12">
+<title>gtk_buildable_get_name ()</title>
+<indexterm zone="gtk-buildable-get-name" role="2.12"><primary sortas="buildable_get_name">gtk_buildable_get_name</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gtk_buildable_get_name              (<link linkend="GtkBuildable">GtkBuildable</link> *buildable);</programlisting>
+<para>
+Gets the name of the <parameter>buildable</parameter> object. 
+</para>
+<para>
+<link linkend="GtkBuilder"><type>GtkBuilder</type></link> sets the name based on the the 
+<link linkend="BUILDER-UI">GtkBuilder UI definition</link> 
+used to construct the <parameter>buildable</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buildable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuildable"><type>GtkBuildable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the name set with <link linkend="gtk-buildable-set-name"><function>gtk_buildable_set_name()</function></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-buildable-add-child" role="function" condition="since:2.12">
+<title>gtk_buildable_add_child ()</title>
+<indexterm zone="gtk-buildable-add-child" role="2.12"><primary sortas="buildable_add_child">gtk_buildable_add_child</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_buildable_add_child             (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GObject">GObject</link> *child,
+                                                         const <link linkend="gchar">gchar</link> *type);</programlisting>
+<para>
+Adds a child to <parameter>buildable</parameter>. <parameter>type</parameter> is an optional string
+describing how the child should be added.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buildable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuildable"><type>GtkBuildable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> child to add
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> kind of child or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-buildable-set-buildable-property" role="function" condition="since:2.12">
+<title>gtk_buildable_set_buildable_property ()</title>
+<indexterm zone="gtk-buildable-set-buildable-property" role="2.12"><primary sortas="buildable_set_buildable_property">gtk_buildable_set_buildable_property</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_buildable_set_buildable_property
+                                                        (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="GValue">GValue</link> *value);</programlisting>
+<para>
+Sets the property name <parameter>name</parameter> to <parameter>value</parameter> on the <parameter>buildable</parameter> object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buildable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuildable"><type>GtkBuildable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> name of property
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara> value of property
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-buildable-construct-child" role="function" condition="since:2.12">
+<title>gtk_buildable_construct_child ()</title>
+<indexterm zone="gtk-buildable-construct-child" role="2.12"><primary sortas="buildable_construct_child">gtk_buildable_construct_child</primary></indexterm><programlisting><link linkend="GObject">GObject</link> *           gtk_buildable_construct_child       (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *name);</programlisting>
+<para>
+Constructs a child of <parameter>buildable</parameter> with the name <parameter>name</parameter>. 
+</para>
+<para>
+<link linkend="GtkBuilder"><type>GtkBuilder</type></link> calls this function if a "constructor" has been
+specified in the UI definition.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buildable</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GtkBuildable"><type>GtkBuildable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="GtkBuilder"><type>GtkBuilder</type></link> used to construct this object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> name of child to construct
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the constructed child
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-buildable-custom-tag-start" role="function" condition="since:2.12">
+<title>gtk_buildable_custom_tag_start ()</title>
+<indexterm zone="gtk-buildable-custom-tag-start" role="2.12"><primary sortas="buildable_custom_tag_start">gtk_buildable_custom_tag_start</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_buildable_custom_tag_start      (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GObject">GObject</link> *child,
+                                                         const <link linkend="gchar">gchar</link> *tagname,
+                                                         <link linkend="GMarkupParser">GMarkupParser</link> *parser,
+                                                         <link linkend="gpointer">gpointer</link> *data);</programlisting>
+<para>
+This is called for each unknown element under &lt;child&gt;.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buildable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuildable"><type>GtkBuildable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link> used to construct this object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> child object or <link linkend="NULL--CAPS"><literal>NULL</literal></link> for non-child tags
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tagname</parameter>&#160;:</term>
+<listitem><simpara> name of tag
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parser</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GMarkupParser"><type>GMarkupParser</type></link> structure to fill in
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> return location for user data that will be passed in 
+  to parser functions
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if a object has a custom implementation, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>
+         if it doesn't.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-buildable-custom-tag-end" role="function" condition="since:2.12">
+<title>gtk_buildable_custom_tag_end ()</title>
+<indexterm zone="gtk-buildable-custom-tag-end" role="2.12"><primary sortas="buildable_custom_tag_end">gtk_buildable_custom_tag_end</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_buildable_custom_tag_end        (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GObject">GObject</link> *child,
+                                                         const <link linkend="gchar">gchar</link> *tagname,
+                                                         <link linkend="gpointer">gpointer</link> *data);</programlisting>
+<para>
+This is called at the end of each custom element handled by 
+the buildable.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buildable</parameter>&#160;:</term>
+<listitem><simpara> A <link linkend="GtkBuildable"><type>GtkBuildable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="GtkBuilder"><type>GtkBuilder</type></link> used to construct this object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> child object or <link linkend="NULL--CAPS"><literal>NULL</literal></link> for non-child tags
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tagname</parameter>&#160;:</term>
+<listitem><simpara> name of tag
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> user data that will be passed in to parser functions
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-buildable-custom-finished" role="function" condition="since:2.12">
+<title>gtk_buildable_custom_finished ()</title>
+<indexterm zone="gtk-buildable-custom-finished" role="2.12"><primary sortas="buildable_custom_finished">gtk_buildable_custom_finished</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_buildable_custom_finished       (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         <link linkend="GObject">GObject</link> *child,
+                                                         const <link linkend="gchar">gchar</link> *tagname,
+                                                         <link linkend="gpointer">gpointer</link> data);</programlisting>
+<para>
+This is similar to <link linkend="gtk-buildable-parser-finished"><function>gtk_buildable_parser_finished()</function></link> but is
+called once for each custom tag handled by the <parameter>buildable</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buildable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuildable"><type>GtkBuildable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>child</parameter>&#160;:</term>
+<listitem><simpara> child object or <link linkend="NULL--CAPS"><literal>NULL</literal></link> for non-child tags
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tagname</parameter>&#160;:</term>
+<listitem><simpara> the name of the tag
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data</parameter>&#160;:</term>
+<listitem><simpara> user data created in custom_tag_start
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-buildable-parser-finished" role="function" condition="since:2.12">
+<title>gtk_buildable_parser_finished ()</title>
+<indexterm zone="gtk-buildable-parser-finished" role="2.12"><primary sortas="buildable_parser_finished">gtk_buildable_parser_finished</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_buildable_parser_finished       (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder);</programlisting>
+<para>
+Called when the builder finishes the parsing of a 
+<link linkend="BUILDER-UI">GtkBuilder UI definition</link>. 
+Note that this will be called once for each time 
+<link linkend="gtk-builder-add-from-file"><function>gtk_builder_add_from_file()</function></link> or <link linkend="gtk-builder-add-from-string"><function>gtk_builder_add_from_string()</function></link> 
+is called on a builder.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buildable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuildable"><type>GtkBuildable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+<refsect2 id="gtk-buildable-get-internal-child" role="function" condition="since:2.12">
+<title>gtk_buildable_get_internal_child ()</title>
+<indexterm zone="gtk-buildable-get-internal-child" role="2.12"><primary sortas="buildable_get_internal_child">gtk_buildable_get_internal_child</primary></indexterm><programlisting><link linkend="GObject">GObject</link> *           gtk_buildable_get_internal_child    (<link linkend="GtkBuildable">GtkBuildable</link> *buildable,
+                                                         <link linkend="GtkBuilder">GtkBuilder</link> *builder,
+                                                         const <link linkend="gchar">gchar</link> *childname);</programlisting>
+<para>
+Get the internal child called <parameter>childname</parameter> of the <parameter>buildable</parameter> object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buildable</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuildable"><type>GtkBuildable</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>builder</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>childname</parameter>&#160;:</term>
+<listitem><simpara> name of child
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the internal child of the buildable object 
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.12</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

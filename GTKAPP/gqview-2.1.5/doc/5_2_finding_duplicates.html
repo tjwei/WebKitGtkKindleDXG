@@ -1,0 +1,429 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>Finding Duplicates - GQview User Manual</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040805;23590500">
+	<META NAME="CHANGED" CONTENT="20041227;15451200">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="5_1_search.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER>Finding Duplicates - Image Search</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="6_collections.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</CENTER>
+<HR>
+<H1>5.2 Finding Duplicates</H1>
+<P>GQview provides a utility to find images that have similar
+attributes or content.</P>
+<P>To display a new Find Duplicates Window press D or select Find
+duplicates from the File menu.</P>
+<P><BR><BR>
+</P>
+<P><U>Adding files to be compared</U></P>
+<P STYLE="margin-left: 0.79in">Add files to be compared using drag
+and drop. Drop files or folders onto the Find Duplicates window to
+add them to the list of files to compare. When one or more folders
+are dropped onto the window a menu will appear allowing you to choose
+the desired action:</P>
+<P STYLE="margin-left: 1.58in"><B>Add contents:</B> The contents of
+dropped folders will added to the window. <BR><B>Add contents
+recursive:</B> The contents of dropped folders and all sub folders
+will be added to the window.<BR><B>Skip folders:</B> Ignore folders
+contained in the drop list.</P>
+<P STYLE="margin-left: 0.79in">When files are added to the window,
+the comparison is restarted to include the new files.</P>
+<P><BR><BR>
+</P>
+<P><U>Comparison methods</U></P>
+<P STYLE="margin-left: 0.79in">The attribute to use for two images to
+match can be selected with the &ldquo;Compare by:&rdquo; drop down
+menu. Each method is explained below:</P>
+<P STYLE="margin-left: 0.79in"><B>Name:</B> The file name.</P>
+<P STYLE="margin-left: 0.79in"><B>Size:</B> The file size.</P>
+<P STYLE="margin-left: 0.79in"><B>Date:</B> The file date.</P>
+<P STYLE="margin-left: 0.79in"><B>Dimensions:</B> The image
+dimensions.</P>
+<P STYLE="margin-left: 0.79in"><B>Checksum:</B> The MD5 file
+checksum.</P>
+<P STYLE="margin-left: 0.79in"><B>Path:</B> The complete path to
+file.</P>
+<P STYLE="margin-left: 0.79in"><B>Similarity (high):</B> Very similar
+image content.</P>
+<P STYLE="margin-left: 0.79in"><B>Similarity:</B> Similar image
+content.</P>
+<P STYLE="margin-left: 0.79in"><B>Similarity (low):</B> Slightly
+similar image content.</P>
+<P STYLE="margin-left: 0.79in"><B>Similarity (custom):</B> Similar
+image content, the value to use to consider two images a match is
+configured in the <A HREF="10_6_advanced.html">Advanced tab</A> of
+the preferences dialog by setting the &ldquo;Custom similarity
+threshold&rdquo;.</P>
+<P><BR><BR>
+</P>
+<P><U>Results list</U></P>
+<P STYLE="margin-left: 0.79in">Files that match with the selected
+comparison method will appear in the list. Matching files are grouped
+in alternating color.</P>
+<P STYLE="margin-left: 0.79in">The order of the result list can not
+be changed, files will appear in the order of the search. When
+comparing by image content similarity, the matching groups will be
+sorted by order of rank starting with the files that are most
+similar.</P>
+<P STYLE="margin-left: 0.79in">A <B>context menu</B> is available for
+the result list by right clicking the mouse or pressing the Menu key
+when a row has the focus.</P>
+<P STYLE="margin-left: 0.79in"><B>Keyboard shortcuts</B> available in
+the results list:</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=1 BORDERCOLOR="#cccccc" CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=64*>
+		<COL WIDTH=64*>
+		<COL WIDTH=128*>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><B>Shortcut</B></P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><B>Context menu name</B></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER><B>Description</B></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Enter</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>View</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Opens selected image in main window.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>V</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>View in new window</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Opens selected image in a new window.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + A</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Select all</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Selects all images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + Shift + A</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Select none</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Clear the image selection.</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=25% VALIGN=BOTTOM SDVAL="1" SDNUM="1033;">
+				<P ALIGN=CENTER>1</P>
+			</TD>
+			<TD WIDTH=25% VALIGN=TOP>
+				<P ALIGN=CENTER>Select group 1 duplicates</P>
+			</TD>
+			<TD WIDTH=50% VALIGN=TOP>
+				<P ALIGN=CENTER>Selects the first image from each match group.</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=25% VALIGN=BOTTOM SDVAL="2" SDNUM="1033;">
+				<P ALIGN=CENTER>2</P>
+			</TD>
+			<TD WIDTH=25% VALIGN=TOP>
+				<P ALIGN=CENTER>Select group 2 duplicates</P>
+			</TD>
+			<TD WIDTH=50% VALIGN=TOP>
+				<P ALIGN=CENTER>Selects all but the first image from each match
+				group.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + 1 through<BR>Control + 0</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Edit sub menu</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Executes the respective editor command.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + P</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Properties</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Opens a properties window for selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>C</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Add to new collection</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Creates a new collection containing the selected
+				images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Print</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Opens a print dialog for selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + C</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Copy</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Copy selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + M</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Move</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Move selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + R</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Rename</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Rename selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + D</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Delete</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Delete selected images.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Delete</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Remove</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Remove selected images from result list.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + Delete</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Clear</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Cleared the result list.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Menu</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Displays the context menu.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + T</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Toggle display of thumbnails.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER>Control + W</P>
+			</TD>
+			<TD WIDTH=25%>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P ALIGN=CENTER>Close window.</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-left: 0.79in"><BR><BR>
+</P>
+<P STYLE="margin-left: 0.79in">The <B>selection</B> can be changed
+using the keyboard and mouse the same as in a <A HREF="2_4_file_pane.html">file
+pane</A> of the main window.</P>
+<P STYLE="margin-left: 0.79in">The image Dimensions column of the
+result list will only contain dimension information when comparing by
+dimensions, or when the data is easily available from memory or has
+been read from the cache.</P>
+<P><BR><BR>
+</P>
+<P><U>Status bar</U></P>
+<P STYLE="margin-left: 0.79in">Along the bottom of the Find
+Duplicates window is an area that displays the count of files
+contained in the window, and the number of files in the result list.</P>
+<P STYLE="margin-left: 0.79in">The status bar will also display the
+status of an active compare operation using the progress bar. A
+compare operation involves 2 or 3 stages, depending on the type of
+comparison. These are the stages in order:</P>
+<P STYLE="margin-left: 1.58in">1) If necessary, extra data is read
+into memory for the comparison stage, the progress bar will indicate
+this stage with text that resembles &ldquo;reading dimensions...&rdquo;,
+&ldquo;reading checksums...&rdquo;, or &ldquo;reading similarity
+data...&rdquo;. <BR>2) The images are compared using the selected
+method, the progress bar will indicate this stage with the text
+&ldquo;comparing...&rdquo;.<BR>3) The results are sorted for display,
+the progress bar will indicate this stage with the text &ldquo;sorting...&rdquo;.</P>
+<P STYLE="margin-left: 0.79in">Stage 1 is only used for the
+Dimensions, Checksum, and Similarity compare methods.</P>
+<P STYLE="margin-left: 0.79in">If the time to complete a stage will
+be significant, an estimated time to completion will also be
+displayed in the progress bar. The estimated time only refers to the
+current stage, other stages are not included in the estimate. The
+time estimate is displayed using the format MINUTES:SECONDS.</P>
+<P><BR><BR>
+</P>
+<P><U>Thumbnails</U></P>
+<P STYLE="margin-left: 0.79in">Thumbnails can be displayed beside
+each image in the result list by enabling the Thumbnails check box.</P>
+<P><BR><BR>
+</P>
+<P><U>Compare two file sets</U></P>
+<P STYLE="margin-left: 0.79in">Sometimes it is useful to compare one
+group of files to another, different group of files. Enable this
+check box to compare two groups of files. When enabled a second list
+will appear, files can be added to this list using the same methods
+for the main list.</P>
+<P STYLE="margin-left: 0.79in">When comparing two file sets the
+results list will display matches between the two lists. For each
+match group, the first file is always from the main group, and the
+remaining files are always from the second group.</P>
+<P><BR><BR>
+</P>
+<P><U>Drag and Drop</U></P>
+<P STYLE="margin-left: 0.79in">Drag and drop can be initiated with
+the primary or middle mouse buttons. Dragging a file that is selected
+will include all selected files in the drag. Dragging a file that is
+not selected will first change the selection to the dragged file, and
+clear the previous selection.</P>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<HR>
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="5_1_search.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><A HREF="index.html">Contents</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="6_collections.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT>GQview User Manual</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,384 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkProgress">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkProgress.top_of_page">GtkProgress</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkProgress</refname>
+<refpurpose>Base class for GtkProgressBar</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkProgress.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkProgress-struct">GtkProgress</link>;
+<link linkend="void">void</link>                <link linkend="gtk-progress-set-show-text">gtk_progress_set_show_text</link>          (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gboolean">gboolean</link> show_text);
+<link linkend="void">void</link>                <link linkend="gtk-progress-set-text-alignment">gtk_progress_set_text_alignment</link>     (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gfloat">gfloat</link> x_align,
+                                                         <link linkend="gfloat">gfloat</link> y_align);
+<link linkend="void">void</link>                <link linkend="gtk-progress-set-format-string">gtk_progress_set_format_string</link>      (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         const <link linkend="gchar">gchar</link> *format);
+<link linkend="void">void</link>                <link linkend="gtk-progress-set-adjustment">gtk_progress_set_adjustment</link>         (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);
+<link linkend="void">void</link>                <link linkend="gtk-progress-set-percentage">gtk_progress_set_percentage</link>         (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gdouble">gdouble</link> percentage);
+<link linkend="void">void</link>                <link linkend="gtk-progress-set-value">gtk_progress_set_value</link>              (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gdouble">gdouble</link> value);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-progress-get-value">gtk_progress_get_value</link>              (<link linkend="GtkProgress">GtkProgress</link> *progress);
+<link linkend="void">void</link>                <link linkend="gtk-progress-set-activity-mode">gtk_progress_set_activity_mode</link>      (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gboolean">gboolean</link> activity_mode);
+<link linkend="gchar">gchar</link>*              <link linkend="gtk-progress-get-current-text">gtk_progress_get_current_text</link>       (<link linkend="GtkProgress">GtkProgress</link> *progress);
+<link linkend="gchar">gchar</link>*              <link linkend="gtk-progress-get-text-from-value">gtk_progress_get_text_from_value</link>    (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gdouble">gdouble</link> value);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-progress-get-current-percentage">gtk_progress_get_current_percentage</link> (<link linkend="GtkProgress">GtkProgress</link> *progress);
+<link linkend="gdouble">gdouble</link>             <link linkend="gtk-progress-get-percentage-from-value">gtk_progress_get_percentage_from_value</link>
+                                                        (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gdouble">gdouble</link> value);
+<link linkend="void">void</link>                <link linkend="gtk-progress-configure">gtk_progress_configure</link>              (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gdouble">gdouble</link> value,
+                                                         <link linkend="gdouble">gdouble</link> min,
+                                                         <link linkend="gdouble">gdouble</link> max);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkProgress.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="GInitiallyUnowned">GInitiallyUnowned</link>
+         +----<link linkend="GtkObject">GtkObject</link>
+               +----<link linkend="GtkWidget">GtkWidget</link>
+                     +----GtkProgress
+                           +----<link linkend="GtkProgressBar">GtkProgressBar</link>
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkProgress.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkProgress implements
+ <link linkend="AtkImplementorIface">AtkImplementorIface</link> and  <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkProgress.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkProgress--activity-mode">activity-mode</link>&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkProgress--show-text">show-text</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkProgress--text-xalign">text-xalign</link>&quot;              <link linkend="gfloat">gfloat</link>                : Read / Write
+  &quot;<link linkend="GtkProgress--text-yalign">text-yalign</link>&quot;              <link linkend="gfloat">gfloat</link>                : Read / Write
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkProgress.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A <link linkend="GtkProgress"><type>GtkProgress</type></link> is the abstract base class used to derive
+a <link linkend="GtkProgressBar"><type>GtkProgressBar</type></link> which provides a visual representation of
+the progress of a long running operation.
+</para>
+</refsect1>
+
+<refsect1 id="GtkProgress.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkProgress-struct" role="struct">
+<title>GtkProgress</title>
+<indexterm zone="GtkProgress-struct"><primary sortas="Progress">GtkProgress</primary></indexterm><programlisting>typedef struct _GtkProgress GtkProgress;</programlisting>
+<para>
+The <link linkend="GtkProgress-struct"><type>GtkProgress</type></link> struct contains private data only.
+and should be accessed using the functions below.
+</para></refsect2>
+<refsect2 id="gtk-progress-set-show-text" role="function" condition="deprecated:">
+<title>gtk_progress_set_show_text ()</title>
+<indexterm zone="gtk-progress-set-show-text" role="deprecated"><primary sortas="progress_set_show_text">gtk_progress_set_show_text</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_progress_set_show_text          (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gboolean">gboolean</link> show_text);</programlisting>
+<warning><para><literal>gtk_progress_set_show_text</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Controls whether progress text is shown.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>show_text</parameter>&#160;:</term>
+<listitem><simpara>a boolean indicating whether the progress text
+is shown.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-set-text-alignment" role="function" condition="deprecated:">
+<title>gtk_progress_set_text_alignment ()</title>
+<indexterm zone="gtk-progress-set-text-alignment" role="deprecated"><primary sortas="progress_set_text_alignment">gtk_progress_set_text_alignment</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_progress_set_text_alignment     (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gfloat">gfloat</link> x_align,
+                                                         <link linkend="gfloat">gfloat</link> y_align);</programlisting>
+<warning><para><literal>gtk_progress_set_text_alignment</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Controls the alignment of the text within the progress bar area.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>x_align</parameter>&#160;:</term>
+<listitem><simpara>a number between 0.0 and 1.0 indicating the horizontal
+alignment of the progress text within the <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>y_align</parameter>&#160;:</term>
+<listitem><simpara>a number between 0.0 and 1.0 indicating the vertical
+alignment of the progress text within the <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-set-format-string" role="function" condition="deprecated:">
+<title>gtk_progress_set_format_string ()</title>
+<indexterm zone="gtk-progress-set-format-string" role="deprecated"><primary sortas="progress_set_format_string">gtk_progress_set_format_string</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_progress_set_format_string      (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         const <link linkend="gchar">gchar</link> *format);</programlisting>
+<warning><para><literal>gtk_progress_set_format_string</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets a format string used to display text indicating the
+current progress.  The string can contain the following substitution characters:
+<itemizedlist>
+<listitem>
+<para>
+&percnt;v - the current progress value.
+</para>
+</listitem>
+<listitem>
+<para>
+&percnt;l - the lower bound for the progress value.
+</para>
+</listitem>
+<listitem>
+<para>
+&percnt;u - the upper bound for the progress value.
+</para>
+</listitem>
+<listitem>
+<para>
+&percnt;p - the current progress percentage.
+</para>
+</listitem>
+</itemizedlist>
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>format</parameter>&#160;:</term>
+<listitem><simpara>a string used to display progress text, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+         to restore to the default format.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-set-adjustment" role="function" condition="deprecated:">
+<title>gtk_progress_set_adjustment ()</title>
+<indexterm zone="gtk-progress-set-adjustment" role="deprecated"><primary sortas="progress_set_adjustment">gtk_progress_set_adjustment</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_progress_set_adjustment         (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="GtkAdjustment">GtkAdjustment</link> *adjustment);</programlisting>
+<warning><para><literal>gtk_progress_set_adjustment</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Associates a <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link> with the <link linkend="GtkProgress"><type>GtkProgress</type></link>.  A <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link>
+is used to represent the upper and lower bounds and the step interval
+of the underlying value for which progress is shown.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>adjustment</parameter>&#160;:</term>
+<listitem><simpara>the <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link> to be associated with the <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-set-percentage" role="function" condition="deprecated:">
+<title>gtk_progress_set_percentage ()</title>
+<indexterm zone="gtk-progress-set-percentage" role="deprecated"><primary sortas="progress_set_percentage">gtk_progress_set_percentage</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_progress_set_percentage         (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gdouble">gdouble</link> percentage);</programlisting>
+<warning><para><literal>gtk_progress_set_percentage</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the current percentage completion for the <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>percentage</parameter>&#160;:</term>
+<listitem><simpara>the percentage complete which must be between 0.0
+and 1.0.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-set-value" role="function" condition="deprecated:">
+<title>gtk_progress_set_value ()</title>
+<indexterm zone="gtk-progress-set-value" role="deprecated"><primary sortas="progress_set_value">gtk_progress_set_value</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_progress_set_value              (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gdouble">gdouble</link> value);</programlisting>
+<warning><para><literal>gtk_progress_set_value</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Sets the value within the <link linkend="GtkProgress"><type>GtkProgress</type></link> to an absolute value.
+The value must be within the valid range of values for the
+underlying <link linkend="GtkAdjustment"><type>GtkAdjustment</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara>the value indicating the current completed amount.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-get-value" role="function" condition="deprecated:">
+<title>gtk_progress_get_value ()</title>
+<indexterm zone="gtk-progress-get-value" role="deprecated"><primary sortas="progress_get_value">gtk_progress_get_value</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_progress_get_value              (<link linkend="GtkProgress">GtkProgress</link> *progress);</programlisting>
+<warning><para><literal>gtk_progress_get_value</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Returns the current progress complete value.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>the current progress complete value.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-set-activity-mode" role="function" condition="deprecated:">
+<title>gtk_progress_set_activity_mode ()</title>
+<indexterm zone="gtk-progress-set-activity-mode" role="deprecated"><primary sortas="progress_set_activity_mode">gtk_progress_set_activity_mode</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_progress_set_activity_mode      (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gboolean">gboolean</link> activity_mode);</programlisting>
+<warning><para><literal>gtk_progress_set_activity_mode</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+A <link linkend="GtkProgress"><type>GtkProgress</type></link> can be in one of two different modes: percentage
+mode (the default) and activity mode.  In activity mode, the
+progress is simply indicated as activity rather than as a percentage
+complete.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>activity_mode</parameter>&#160;:</term>
+<listitem><simpara>a boolean, <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> for activity mode.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-get-current-text" role="function" condition="deprecated:">
+<title>gtk_progress_get_current_text ()</title>
+<indexterm zone="gtk-progress-get-current-text" role="deprecated"><primary sortas="progress_get_current_text">gtk_progress_get_current_text</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              gtk_progress_get_current_text       (<link linkend="GtkProgress">GtkProgress</link> *progress);</programlisting>
+<warning><para><literal>gtk_progress_get_current_text</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Returns the current text associated with the <link linkend="GtkProgress"><type>GtkProgress</type></link>.  This
+text is the based on the underlying format string after any substitutions
+are made.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>the text indicating the current progress.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-get-text-from-value" role="function" condition="deprecated:">
+<title>gtk_progress_get_text_from_value ()</title>
+<indexterm zone="gtk-progress-get-text-from-value" role="deprecated"><primary sortas="progress_get_text_from_value">gtk_progress_get_text_from_value</primary></indexterm><programlisting><link linkend="gchar">gchar</link>*              gtk_progress_get_text_from_value    (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gdouble">gdouble</link> value);</programlisting>
+<warning><para><literal>gtk_progress_get_text_from_value</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Returns the text indicating the progress based on the supplied value.
+The current value for the <link linkend="GtkProgress"><type>GtkProgress</type></link> remains unchanged.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara>an absolute progress value to use when formatting the progress text.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a string indicating the progress.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-get-current-percentage" role="function" condition="deprecated:">
+<title>gtk_progress_get_current_percentage ()</title>
+<indexterm zone="gtk-progress-get-current-percentage" role="deprecated"><primary sortas="progress_get_current_percentage">gtk_progress_get_current_percentage</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_progress_get_current_percentage (<link linkend="GtkProgress">GtkProgress</link> *progress);</programlisting>
+<warning><para><literal>gtk_progress_get_current_percentage</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Returns the current progress as a percentage.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a number between 0.0 and 1.0 indicating the percentage complete.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-get-percentage-from-value" role="function" condition="deprecated:">
+<title>gtk_progress_get_percentage_from_value ()</title>
+<indexterm zone="gtk-progress-get-percentage-from-value" role="deprecated"><primary sortas="progress_get_percentage_from_value">gtk_progress_get_percentage_from_value</primary></indexterm><programlisting><link linkend="gdouble">gdouble</link>             gtk_progress_get_percentage_from_value
+                                                        (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gdouble">gdouble</link> value);</programlisting>
+<warning><para><literal>gtk_progress_get_percentage_from_value</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Returns the progress as a percentage calculated from the supplied
+absolute progress value.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara>an absolute progress value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>a number between 0.0 and 1.0 indicating the percentage complete
+represented by <parameter>value</parameter>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-progress-configure" role="function" condition="deprecated:">
+<title>gtk_progress_configure ()</title>
+<indexterm zone="gtk-progress-configure" role="deprecated"><primary sortas="progress_configure">gtk_progress_configure</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_progress_configure              (<link linkend="GtkProgress">GtkProgress</link> *progress,
+                                                         <link linkend="gdouble">gdouble</link> value,
+                                                         <link linkend="gdouble">gdouble</link> min,
+                                                         <link linkend="gdouble">gdouble</link> max);</programlisting>
+<warning><para><literal>gtk_progress_configure</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+Allows the configuration of the minimum, maximum, and current values for
+the <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</para><variablelist role="params">
+<varlistentry><term><parameter>progress</parameter>&#160;:</term>
+<listitem><simpara>a <link linkend="GtkProgress"><type>GtkProgress</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>value</parameter>&#160;:</term>
+<listitem><simpara>the current progress value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>min</parameter>&#160;:</term>
+<listitem><simpara>the minimum progress value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max</parameter>&#160;:</term>
+<listitem><simpara>the maximum progress value.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="GtkProgress.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkProgress--activity-mode" role="property"><title>The <literal>&quot;activity-mode&quot;</literal> property</title>
+<indexterm zone="GtkProgress--activity-mode"><primary sortas="Progress:activity-mode">GtkProgress:activity-mode</primary></indexterm><programlisting>  &quot;activity-mode&quot;            <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>If TRUE, the GtkProgress is in activity mode, meaning that it signals something is happening, but not how much of the activity is finished. This is used when you're doing something but don't know how long it will take.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkProgress--show-text" role="property"><title>The <literal>&quot;show-text&quot;</literal> property</title>
+<indexterm zone="GtkProgress--show-text"><primary sortas="Progress:show-text">GtkProgress:show-text</primary></indexterm><programlisting>  &quot;show-text&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>Whether the progress is shown as text.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GtkProgress--text-xalign" role="property"><title>The <literal>&quot;text-xalign&quot;</literal> property</title>
+<indexterm zone="GtkProgress--text-xalign"><primary sortas="Progress:text-xalign">GtkProgress:text-xalign</primary></indexterm><programlisting>  &quot;text-xalign&quot;              <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>The horizontal text alignment, from 0 (left) to 1 (right). Reversed for RTL layouts.</para><para>Allowed values: [0,1]</para>
+<para>Default value: 0.5</para>
+</refsect2>
+<refsect2 id="GtkProgress--text-yalign" role="property"><title>The <literal>&quot;text-yalign&quot;</literal> property</title>
+<indexterm zone="GtkProgress--text-yalign"><primary sortas="Progress:text-yalign">GtkProgress:text-yalign</primary></indexterm><programlisting>  &quot;text-yalign&quot;              <link linkend="gfloat">gfloat</link>                : Read / Write</programlisting>
+<para>The vertical text alignment, from 0 (top) to 1 (bottom).</para><para>Allowed values: [0,1]</para>
+<para>Default value: 0.5</para>
+</refsect2>
+</refsect1>
+
+
+
+
+</refentry>

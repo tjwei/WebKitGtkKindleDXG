@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>Cache and Data Management - GQview User Manual</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040805;23590500">
+	<META NAME="CHANGED" CONTENT="20050208;15085100">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="11_3_thumbnails.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER>Cache and Data Management - Reference</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="12_credits.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</CENTER>
+<HR>
+<H1>11.4 Cache and Data Maintenance</H1>
+<P>Thumbnails and other cached data can be maintained from the dialog
+accessible by selecting Thumbnail maintenance from the Edit menu of
+the main window.</P>
+<P><BR><BR>
+</P>
+<P><U>GQview thumbnail cache</U></P>
+<P STYLE="margin-left: 0.79in">The utilities listed here operate on
+the GQview caching mechanism. This also includes the data cached for
+the <A HREF="5_1_search.html">search</A> and <A HREF="5_2_finding_duplicates.html">find
+duplicates</A> utilities.</P>
+<P STYLE="margin-left: 0.79in"><B>Clean up</B>: Removes thumbnails
+and data for which the source image is no longer present, or has been
+modified since the thumbnail was generated.</P>
+<P STYLE="margin-left: 0.79in"><B>Clear cache:</B> Removes all
+thumbnails and data stored in the user's home folder:
+$HOME/.gqview/thumbnails.</P>
+<P><BR><BR>
+</P>
+<P><U>Shared thumbnail cache</U></P>
+<P STYLE="margin-left: 0.79in">The utilities listed here operate on
+the shared thumbnail mechanism.</P>
+<P STYLE="margin-left: 0.79in"><B>Clean up:</B> Removes thumbnails
+for which the source image is no longer present, or has been modified
+since the thumbnail was generated.</P>
+<P STYLE="margin-left: 0.79in"><B>Clear cache:</B> Removes all
+thumbnails stored in the user's home folder: $HOME/.thumbnails.</P>
+<P><BR><BR>
+</P>
+<P><U>Create thumbnails</U></P>
+<P STYLE="margin-left: 0.79in">This utility will render thumbnails
+using the current thumbnail caching mechanism, as determined in
+<A HREF="10_1_general.html">preferences</A>.</P>
+<P STYLE="margin-left: 0.79in"><B>Render:</B> Pre-render thumbnails
+for a specific folder, the utility has the following options:</P>
+<P STYLE="margin-left: 1.58in"><B>Include subfolders:</B> Enable to
+include all images contained in the subfolders of folder.</P>
+<P STYLE="margin-left: 1.58in"><B>Store thumbnails local to source
+images:</B> The generated thumbnails will be stored local to the
+source images, if you have the permissions to write to the folder
+containing the images.</P>
+<P><BR><BR>
+</P>
+<P><U>Metadata</U></P>
+<P STYLE="margin-left: 0.79in">This utility operates on the data
+store for <A HREF="7_3_keywords.html">keywords and comments</A>
+located in the user's home folder: $HOME/.gqview/metadata.</P>
+<P STYLE="margin-left: 0.79in"><B>Clean up:</B> Removes keywords and
+comments for which the source image is no longer present.</P>
+<P><BR><BR>
+</P>
+<P><U>File locations</U></P>
+<P STYLE="margin-left: 0.79in">The various file locations and their
+use are listed below. <I>&lt;HOME&gt;</I> refers to your home folder
+and <I>&lt;SOURCE&gt;</I> refers to the folder containing the image.</P>
+<CENTER>
+	<TABLE WIDTH=80% BORDER=1 BORDERCOLOR="#cccccc" CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=128*>
+		<COL WIDTH=128*>
+		<TR VALIGN=TOP>
+			<TH WIDTH=50%>
+				<P>Folder or File name</P>
+			</TH>
+			<TH WIDTH=50%>
+				<P>Description</P>
+			</TH>
+		</TR>
+		<TR>
+			<TD COLSPAN=2 WIDTH=100% VALIGN=TOP>
+				<P><B>Thumbnails</B></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><I>&lt;HOME&gt;</I>/.thumbnails</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>Shared thumbnail cache folder.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><I>&lt;HOME&gt;</I>/.gqview/thumbnails</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>Classic GQview thumbnail cache folder. Also used to cache data
+				used for the search and find duplicates utilities to increase the
+				speed for subsequent searches.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><I>&lt;SOURCE&gt;/.</I><SPAN STYLE="font-style: normal">thumbnails</SPAN></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>Local thumbnail cache folder.</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD COLSPAN=2 WIDTH=100% VALIGN=TOP>
+				<P><B>Metadata</B><SPAN STYLE="font-weight: medium"> (keywords
+				and comments)</SPAN></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><I>&lt;HOME&gt;</I>/.gqview/metadata</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>Metadata stored in user's home folder.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><I>&lt;SOURCE&gt;</I>/.metadata</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>Metadata stored local to source image. Requires option to be
+				enabled in advanced preferences.</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD COLSPAN=2 WIDTH=100% VALIGN=TOP>
+				<P><B>Collections</B></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><I>&lt;HOME&gt;</I>/.gqview/collections</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>Default location for GQview collections, collections in this
+				folder will appear in the <A HREF="7_2_sort_manager.html">sort
+				manager</A> sidebar.</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD COLSPAN=2 WIDTH=100% VALIGN=TOP>
+				<P><B>Preferences</B></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><I>&lt;HOME&gt;</I>/.gqview</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>GQview preferences folder.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><I>&lt;HOME&gt;</I>/.gqview/gqviewrc</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>GQview preferences rc file.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><I>&lt;HOME&gt;</I>/.gqview/history</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>Historic data such as last several folders visited, bookmarks,
+				and recently used collections. Also contains default print
+				settings.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><I>&lt;HOME&gt;</I>/.gqview/accels</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>Keyboard shortcut mapping.</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><B>Safe Delete</B></P>
+			</TD>
+			<TD WIDTH=50%>
+				<P><BR>
+				</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=50%>
+				<P><SPAN STYLE="font-weight: medium"><I>&lt;HOME&gt;</I></SPAN>/.gqview/trash</P>
+			</TD>
+			<TD WIDTH=50%>
+				<P>Default location of the safe delete folder.</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<HR>
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="11_3_thumbnails.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><A HREF="index.html">Contents</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="12_credits.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT>GQview User Manual</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>

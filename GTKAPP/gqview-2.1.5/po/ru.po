@@ -1,0 +1,3420 @@
+# gqview ru.po file. Russian locale definition for gqview.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Oleg Andryuschenko <oandr@itek.com.ua>, 1999.
+# Edited by Michael Bravo <mbravo@acm.org>, 2000.
+# Edited by drF_ckoff <dfo@antex.ru>, 2001.
+# Edited by Oleg Andryuschenko <oandr@itek.com.ua>, 2002.
+# Edited by drF_ckoff <dfo@antex.ru>, 2003-2004.
+# Edited by Vitaly Lipatov <lav@altlinux.ru>, 2005.
+#
+# $Id: ru.po,v 1.68 2006/11/04 22:20:24 johne Exp $
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gqview-1.5.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-02 20:43-0500\n"
+"PO-Revision-Date: 2005-09-01 03:28+0400\n"
+"Last-Translator: Vitaly Lipatov <lav@altlinux.ru>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/bar_info.c:30
+msgid "Favorite"
+msgstr "Любимое"
+
+#: src/bar_info.c:31
+msgid "Todo"
+msgstr "Доделать"
+
+#: src/bar_info.c:32
+msgid "People"
+msgstr "Люди"
+
+#: src/bar_info.c:33
+msgid "Places"
+msgstr "Места"
+
+#: src/bar_info.c:34
+msgid "Art"
+msgstr "Искусство"
+
+#: src/bar_info.c:35
+msgid "Nature"
+msgstr "Природа"
+
+#: src/bar_info.c:36
+msgid "Possessions"
+msgstr "Собственность"
+
+#: src/bar_info.c:505
+msgid "Keyword Presets"
+msgstr "Предустановки ключевых слов"
+
+#: src/bar_info.c:508
+msgid "Favorite keywords list"
+msgstr "Список любимых ключевых слов"
+
+#: src/bar_info.c:992 src/info.c:167 src/search.c:2683
+msgid "Keywords"
+msgstr "Ключевые слова"
+
+#: src/bar_info.c:1006 src/info.c:722 src/pan-view.c:1521 src/print.c:2614
+msgid "Filename:"
+msgstr "Название файла:"
+
+#: src/bar_info.c:1007 src/info.c:366
+msgid "File date:"
+msgstr "Время файла:"
+
+#: src/bar_info.c:1027
+msgid "Keywords:"
+msgstr "Ключевые слова"
+
+#: src/bar_info.c:1095
+msgid "Comment:"
+msgstr "Комментарий:"
+
+#: src/bar_info.c:1119
+msgid "Edit favorite keywords list."
+msgstr "Редактирование списка любимых ключевых слов"
+
+#: src/bar_info.c:1123
+msgid "Add keywords to selected files"
+msgstr "Добавить ключевые слова в выбранные файлы"
+
+#: src/bar_info.c:1126
+msgid "Add keywords to selected files, replacing the existing ones."
+msgstr "Добавить ключевые слова в выбранные файлы, заменяя существующие"
+
+#: src/bar_info.c:1130
+msgid "Save comment now"
+msgstr "Сохранить комментарий сейчас"
+
+#: src/bar_exif.c:436
+msgid "Tag"
+msgstr "Поле"
+
+#: src/bar_exif.c:437 src/dupe.c:2589 src/dupe.c:3112 src/print.c:3205
+#: src/search.c:2744 src/utilops.c:2779 src/view_file_list.c:1655
+msgid "Name"
+msgstr "Название"
+
+#: src/bar_exif.c:438
+msgid "Value"
+msgstr "Значение"
+
+#: src/bar_exif.c:439
+msgid "Format"
+msgstr "Формат"
+
+#: src/bar_exif.c:440
+msgid "Elements"
+msgstr "Элементы"
+
+#: src/bar_exif.c:441 src/preferences.c:1063
+msgid "Description"
+msgstr "Описание"
+
+#: src/bar_exif.c:562 src/info.c:106
+msgid "Exif"
+msgstr "Данные Exif"
+
+#: src/bar_exif.c:635
+msgid "Advanced view"
+msgstr "Расширенный вид"
+
+#: src/bar_sort.c:217
+#, fuzzy, c-format
+msgid ""
+"Unable to remove symbolic link:\n"
+"%s"
+msgstr ""
+"Невозможно переместить файл:\n"
+"%s\n"
+"в:\n"
+"%s"
+
+#: src/bar_sort.c:218
+msgid "Unlink failed"
+msgstr "Удаление ссылки не удалось"
+
+#: src/bar_sort.c:297
+#, fuzzy, c-format
+msgid ""
+"Unable to create symbolic link:\n"
+"%s"
+msgstr ""
+"Невозможно создать каталог:\n"
+"%s"
+
+#: src/bar_sort.c:298
+msgid "Link failed"
+msgstr "Создание ссылки не удалось"
+
+#: src/bar_sort.c:435
+#, c-format
+msgid ""
+"The collection:\n"
+"%s\n"
+"already exists."
+msgstr ""
+"Коллекция:\n"
+"%s\n"
+"уже существует."
+
+#: src/bar_sort.c:436
+msgid "Collection exists"
+msgstr "Коллекция уже существует"
+
+#: src/bar_sort.c:450 src/collect.c:1057 src/collect-dlg.c:84
+#, c-format
+msgid ""
+"Failed to save the collection:\n"
+"%s"
+msgstr ""
+"Не удалось сохранить коллекцию:\n"
+"%s"
+
+#: src/bar_sort.c:451 src/collect.c:1058 src/collect-dlg.c:85
+msgid "Save Failed"
+msgstr "Не удалось сохранить"
+
+#: src/bar_sort.c:485 src/bar_sort.c:611
+msgid "Add Bookmark"
+msgstr "Добавить закладку"
+
+#: src/bar_sort.c:489
+msgid "Add Collection"
+msgstr "Добавить коллекцию"
+
+#: src/bar_sort.c:506 src/ui_bookmark.c:603
+msgid "Name:"
+msgstr "Название:"
+
+#: src/bar_sort.c:568
+msgid "Sort Manager"
+msgstr "Менеджер сортировки"
+
+#: src/bar_sort.c:577 src/pan-view.c:2378 src/ui_pathsel.c:1094
+msgid "Folders"
+msgstr "Каталоги"
+
+#: src/bar_sort.c:578 src/main.c:1125
+msgid "Collections"
+msgstr "Коллекции"
+
+#: src/bar_sort.c:586
+msgid "Copy"
+msgstr "Копировать"
+
+#: src/bar_sort.c:589
+msgid "Move"
+msgstr "Переместить"
+
+#: src/bar_sort.c:592
+msgid "Link"
+msgstr "Создать ссылку"
+
+#: src/bar_sort.c:598
+msgid "Add image"
+msgstr "Добавить изображение"
+
+#: src/bar_sort.c:601
+msgid "Add selection"
+msgstr "Добавить выделение"
+
+#: src/bar_sort.c:614
+msgid "Undo last image"
+msgstr "Отменить последнее изображение"
+
+#: src/cache_maint.c:126 src/cache_maint.c:680 src/cache_maint.c:893
+#: src/editors.c:437
+msgid "done"
+msgstr "готово"
+
+#: src/cache_maint.c:303
+msgid "Removing old metadata..."
+msgstr "Удаляем старые метаданные..."
+
+#: src/cache_maint.c:307
+msgid "Clearing cached thumbnails..."
+msgstr "Очищаем кэшированные миниатюры..."
+
+#: src/cache_maint.c:311 src/cache_maint.c:1047
+msgid "Removing old thumbnails..."
+msgstr "Удаляем старые миниатюры..."
+
+#: src/cache_maint.c:314 src/cache_maint.c:1050
+msgid "Maintenance"
+msgstr "Управление"
+
+#: src/cache_maint.c:791 src/utilops.c:952
+msgid "Invalid folder"
+msgstr "Неправильный каталог"
+
+#: src/cache_maint.c:792
+msgid "The specified folder can not be found."
+msgstr "Выбранный каталог не может быть найден."
+
+#: src/cache_maint.c:820 src/cache_maint.c:834 src/cache_maint.c:1215
+msgid "Create thumbnails"
+msgstr "Создание миниатюр"
+
+#: src/cache_maint.c:828 src/cache_maint.c:1057
+msgid "S_tart"
+msgstr "_Начать"
+
+#: src/cache_maint.c:841 src/preferences.c:1200
+msgid "Folder:"
+msgstr "Каталог:"
+
+#: src/cache_maint.c:844
+msgid "Select folder"
+msgstr "Выбрать каталог"
+
+#: src/cache_maint.c:848
+msgid "Include subfolders"
+msgstr "Включать подкаталоги"
+
+#: src/cache_maint.c:849
+msgid "Store thumbnails local to source images"
+msgstr "Сохранять миниатюры там же, где и исходные изображения"
+
+#: src/cache_maint.c:858 src/cache_maint.c:1066
+msgid "click start to begin"
+msgstr "нажмите начать для запуска"
+
+#: src/cache_maint.c:996 src/editors.c:585
+msgid "running..."
+msgstr "выполняю..."
+
+#: src/cache_maint.c:1042
+msgid "Clearing thumbnails..."
+msgstr "Очищаем миниатюры..."
+
+#: src/cache_maint.c:1108 src/cache_maint.c:1111 src/cache_maint.c:1190
+#: src/cache_maint.c:1210
+msgid "Clear cache"
+msgstr "Очистить кэш"
+
+#: src/cache_maint.c:1112
+msgid ""
+"This will remove all thumbnails that have\n"
+"been saved to disk, continue?"
+msgstr ""
+"Это операция удалит все миниатюры, которые\n"
+"были сохранены на диск, продолжить?"
+
+#: src/cache_maint.c:1162
+msgid "Cache Maintenance - GQview"
+msgstr "Управление кэшем - GQview"
+
+#: src/cache_maint.c:1172
+msgid "Cache and Data Maintenance"
+msgstr "Управление кэшем и данными"
+
+#: src/cache_maint.c:1176
+msgid "GQview thumbnail cache"
+msgstr "Кэш миниатюр GQview"
+
+#: src/cache_maint.c:1178 src/cache_maint.c:1198 src/cache_maint.c:1226
+#: src/pan-view.c:1523 src/pan-view.c:2367 src/preferences.c:1177
+#: src/utilops.c:1571
+msgid "Location:"
+msgstr "Местоположение:"
+
+#: src/cache_maint.c:1185 src/cache_maint.c:1205 src/cache_maint.c:1233
+msgid "Clean up"
+msgstr "Очистить"
+
+#: src/cache_maint.c:1188 src/cache_maint.c:1208
+msgid "Remove orphaned or outdated thumbnails."
+msgstr "Удалить осиротевшие или устаревшие миниатюры."
+
+#: src/cache_maint.c:1193 src/cache_maint.c:1213
+msgid "Delete all cached thumbnails."
+msgstr "Удалить все кэшированные миниатюры."
+
+#: src/cache_maint.c:1196
+msgid "Shared thumbnail cache"
+msgstr "Общий кэш миниатюр"
+
+#: src/cache_maint.c:1219
+msgid "Render"
+msgstr "Создать"
+
+#: src/cache_maint.c:1222
+msgid "Render thumbnails for a specific folder."
+msgstr "Создать миниатюры для выбранного каталога."
+
+#: src/cache_maint.c:1224
+msgid "Metadata"
+msgstr "Метаданные"
+
+#: src/cache_maint.c:1236
+msgid "Remove orphaned keywords and comments."
+msgstr "Удалить осиротевшие ключевые слова и комментарии."
+
+#: src/collect.c:350 src/image.c:151 src/image-overlay.c:110
+#: src/image-overlay.c:152
+#, c-format
+msgid "Untitled"
+msgstr "Безымянный"
+
+#: src/collect.c:354
+#, c-format
+msgid "Untitled (%d)"
+msgstr "Безымянный (%d)"
+
+#: src/collect.c:976
+#, c-format
+msgid "%s - GQview Collection"
+msgstr "%s - коллекция GQview"
+
+#: src/collect.c:1094 src/collect.c:1098
+msgid "Close collection"
+msgstr "Закрыть коллекцию"
+
+#: src/collect.c:1099
+msgid ""
+"Collection has been modified.\n"
+"Save first?"
+msgstr ""
+"Коллекция была изменена.\n"
+"Сохранить сначала?"
+
+#: src/collect.c:1102
+msgid "_Discard"
+msgstr "_Отказаться"
+
+#: src/collect-dlg.c:58
+#, c-format
+msgid ""
+"Specified path:\n"
+"%s\n"
+"is a folder, collections are files"
+msgstr ""
+"Указанный путь:\n"
+"%s\n"
+"является каталогом, а коллекции - файлы"
+
+#: src/collect-dlg.c:59
+msgid "Invalid filename"
+msgstr "Неправильное название файла"
+
+#: src/collect-dlg.c:68
+msgid "Overwrite File"
+msgstr "Перезаписать файл"
+
+#: src/collect-dlg.c:73
+msgid "Overwrite existing file?"
+msgstr "Заменить существующий файл?"
+
+#: src/collect-dlg.c:75 src/utilops.c:514 src/utilops.c:835 src/utilops.c:1725
+#: src/utilops.c:2447
+msgid "_Overwrite"
+msgstr "_Перезаписать"
+
+#: src/collect-dlg.c:169
+msgid "Save collection"
+msgstr "Сохранить коллекцию"
+
+#: src/collect-dlg.c:176
+msgid "Open collection"
+msgstr "Открыть коллекцию"
+
+#: src/collect-dlg.c:184
+msgid "Append collection"
+msgstr "Добавить коллекцию"
+
+#: src/collect-dlg.c:185
+msgid "_Append"
+msgstr "_Добавить"
+
+#: src/collect-dlg.c:203
+msgid "Collection Files"
+msgstr "Файлы коллекций"
+
+#: src/collect-dlg.c:221
+msgid "Collection empty"
+msgstr "Коллекция пустая"
+
+#: src/collect-dlg.c:222
+msgid "The current collection is empty, save aborted."
+msgstr "Текущая коллекция пустая, сохранение отменено."
+
+#: src/collect-table.c:164 src/layout.c:372 src/layout_util.c:737
+msgid "Empty"
+msgstr "Пусто"
+
+#: src/collect-table.c:168
+#, c-format
+msgid "%d images (%d)"
+msgstr "%d изображений (%d)"
+
+#: src/collect-table.c:172
+#, c-format
+msgid "%d images"
+msgstr "%d изображений"
+
+#: src/collect-table.c:186 src/dupe.c:1296 src/search.c:303
+#: src/view_file_icon.c:1776 src/view_file_icon.c:1891
+#: src/view_file_list.c:916 src/view_file_list.c:1021
+msgid "Loading thumbs..."
+msgstr "Загружаем миниатюры..."
+
+#: src/collect-table.c:773 src/dupe.c:2187 src/dupe.c:2497
+#: src/layout_util.c:780 src/search.c:969
+msgid "_View"
+msgstr "Пр_осмотр"
+
+#: src/collect-table.c:775 src/dupe.c:2189 src/dupe.c:2499 src/img-view.c:1251
+#: src/layout_image.c:735 src/pan-view.c:2788 src/search.c:971
+#: src/view_file_icon.c:287 src/view_file_list.c:398
+msgid "View in _new window"
+msgstr "Просмотр в _новом окне"
+
+#: src/collect-table.c:778 src/dupe.c:2219 src/dupe.c:2507 src/search.c:997
+msgid "Rem_ove"
+msgstr "Уд_алить"
+
+#: src/collect-table.c:781
+msgid "Append from file list"
+msgstr "Добавить из списка файлов"
+
+#: src/collect-table.c:783
+msgid "Append from collection..."
+msgstr "Добавить из коллекции..."
+
+#: src/collect-table.c:786 src/dupe.c:2192 src/dupe.c:2502 src/search.c:974
+msgid "Select all"
+msgstr "Выделить всё"
+
+#: src/collect-table.c:788 src/dupe.c:2194 src/dupe.c:2504 src/search.c:976
+msgid "Select none"
+msgstr "Снять выделение"
+
+#: src/collect-table.c:796 src/dupe.c:2203 src/img-view.c:1249
+#: src/layout_image.c:732 src/layout_util.c:815 src/pan-view.c:2785
+#: src/search.c:981 src/view_file_icon.c:284 src/view_file_list.c:396
+msgid "_Properties"
+msgstr "_Свойства"
+
+#: src/collect-table.c:799 src/dupe.c:2210 src/img-view.c:1254
+#: src/layout_image.c:740 src/layout_util.c:792 src/pan-view.c:2792
+#: src/search.c:988 src/view_file_icon.c:291 src/view_file_list.c:402
+msgid "_Copy..."
+msgstr "_Копировать..."
+
+#: src/collect-table.c:801 src/dupe.c:2212 src/img-view.c:1255
+#: src/layout_image.c:742 src/layout_util.c:793 src/pan-view.c:2794
+#: src/search.c:990 src/view_file_icon.c:293 src/view_file_list.c:404
+msgid "_Move..."
+msgstr "_Переместить..."
+
+#: src/collect-table.c:803 src/dupe.c:2214 src/img-view.c:1256
+#: src/layout_image.c:744 src/layout_util.c:794 src/pan-view.c:2796
+#: src/search.c:992 src/view_dir_list.c:415 src/view_dir_tree.c:514
+#: src/view_file_icon.c:295 src/view_file_list.c:406
+msgid "_Rename..."
+msgstr "Пере_именовать..."
+
+#: src/collect-table.c:805 src/dupe.c:2216 src/img-view.c:1257
+#: src/layout_image.c:746 src/layout_util.c:795 src/pan-view.c:2798
+#: src/search.c:994 src/view_dir_list.c:417 src/view_dir_tree.c:516
+#: src/view_file_icon.c:297 src/view_file_list.c:408
+msgid "_Delete..."
+msgstr "_Удалить..."
+
+#: src/collect-table.c:810 src/view_file_icon.c:313
+msgid "Show filename _text"
+msgstr "Показать _названия файлов"
+
+#: src/collect-table.c:813
+msgid "_Save collection"
+msgstr "_Сохранить коллекцию"
+
+#: src/collect-table.c:815
+msgid "Save collection _as..."
+msgstr "Сохранить коллекцию _как..."
+
+#: src/collect-table.c:818 src/layout_util.c:788
+msgid "_Find duplicates..."
+msgstr "На_йти повторяющиеся..."
+
+#: src/collect-table.c:820 src/dupe.c:2207 src/search.c:985
+msgid "Print..."
+msgstr "Напечатать..."
+
+#: src/collect-table.c:1972 src/dupe.c:3300 src/img-view.c:1411
+msgid "Dropped list includes folders."
+msgstr "Перенесённый список включает каталоги."
+
+#: src/collect-table.c:1974 src/dupe.c:3302 src/img-view.c:1413
+msgid "_Add contents"
+msgstr "_Добавить содержимое"
+
+#: src/collect-table.c:1976 src/dupe.c:3303 src/img-view.c:1414
+msgid "Add contents _recursive"
+msgstr "_Рекурсивно добавить содержимое"
+
+#: src/collect-table.c:1978 src/dupe.c:3304 src/img-view.c:1415
+msgid "_Skip folders"
+msgstr "_Пропустить каталоги"
+
+#: src/collect-table.c:1981 src/dupe.c:3306 src/img-view.c:1417
+#: src/view_dir_list.c:214 src/view_dir_tree.c:306
+msgid "Cancel"
+msgstr "Отменить"
+
+#: src/dupe.c:96
+msgid "Drop files to compare them."
+msgstr "Перетащите файлы для их сравнения."
+
+#: src/dupe.c:100
+#, c-format
+msgid "%d files"
+msgstr "%d файлов"
+
+#: src/dupe.c:104
+#, c-format
+msgid "%d matches found in %d files"
+msgstr "%d совпадений найдено в %d файлах"
+
+#: src/dupe.c:109
+msgid "[set 1]"
+msgstr "[набор 1]"
+
+#: src/dupe.c:1422
+msgid "Reading checksums..."
+msgstr "Загружаем контрольные суммы..."
+
+#: src/dupe.c:1455
+msgid "Reading dimensions..."
+msgstr "Загружаем размеры..."
+
+#: src/dupe.c:1489
+msgid "Reading similarity data..."
+msgstr "Загружаем данные о подобии..."
+
+#: src/dupe.c:1524 src/dupe.c:1555
+msgid "Comparing..."
+msgstr "Сравниваем..."
+
+#: src/dupe.c:1535 src/pan-view.c:1080
+msgid "Sorting..."
+msgstr "Сортируем..."
+
+#: src/dupe.c:2196
+msgid "Select group _1 duplicates"
+msgstr "Выбрать повторяющуюся группу _1"
+
+#: src/dupe.c:2198
+msgid "Select group _2 duplicates"
+msgstr "Выбрать повторяющуюся группу _2"
+
+#: src/dupe.c:2205 src/search.c:983
+msgid "Add to new collection"
+msgstr "Добавить в новую коллекцию"
+
+#: src/dupe.c:2221 src/dupe.c:2509 src/search.c:999
+msgid "C_lear"
+msgstr "_Очистить"
+
+#: src/dupe.c:2224 src/dupe.c:2512
+msgid "Close _window"
+msgstr "_Закрыть окно"
+
+#: src/dupe.c:2382
+#, c-format
+msgid "%d files (set 2)"
+msgstr "%d файлов (набор 2)"
+
+#: src/dupe.c:2590 src/dupe.c:3113 src/preferences.c:982 src/print.c:3209
+#: src/search.c:2745 src/view_file_list.c:1656
+msgid "Size"
+msgstr "Размер"
+
+#: src/dupe.c:2591 src/dupe.c:3114 src/exif.c:296 src/exif.c:417
+#: src/print.c:3207 src/search.c:2746 src/view_file_list.c:1657
+msgid "Date"
+msgstr "Дата"
+
+#: src/dupe.c:2592 src/dupe.c:3115 src/print.c:3211 src/search.c:2747
+msgid "Dimensions"
+msgstr "Размерность"
+
+#: src/dupe.c:2593
+msgid "Checksum"
+msgstr "Контрольная сумма"
+
+#: src/dupe.c:2594 src/dupe.c:3116 src/search.c:2748 src/ui_pathsel.c:1106
+msgid "Path"
+msgstr "Путь"
+
+#: src/dupe.c:2595
+msgid "Similarity (high)"
+msgstr "Похожесть (высокая)"
+
+#: src/dupe.c:2596
+msgid "Similarity"
+msgstr "Похожесть"
+
+#: src/dupe.c:2597
+msgid "Similarity (low)"
+msgstr "Похожесть (низкая)"
+
+#: src/dupe.c:2598
+msgid "Similarity (custom)"
+msgstr "Похожесть (заданная)"
+
+#: src/dupe.c:3076
+msgid "Find duplicates - GQview"
+msgstr "Поиск повторяющихся - GQview"
+
+#: src/dupe.c:3148
+msgid "Compare to:"
+msgstr "Сравнить с:"
+
+#: src/dupe.c:3161
+msgid "Compare by:"
+msgstr "Сравнить по:"
+
+#: src/dupe.c:3169 src/preferences.c:870 src/search.c:2761
+msgid "Thumbnails"
+msgstr "Миниатюры"
+
+#: src/dupe.c:3176
+msgid "Compare two file sets"
+msgstr "Сравнить два набора файлов"
+
+#: src/editors.c:50
+msgid "The Gimp"
+msgstr "The Gimp"
+
+#: src/editors.c:51
+msgid "XV"
+msgstr "XV"
+
+#: src/editors.c:52
+msgid "Xpaint"
+msgstr "Xpaint"
+
+#: src/editors.c:58
+msgid "Rotate jpeg clockwise"
+msgstr "Повернуть jpeg по часовой стрелке"
+
+#: src/editors.c:59
+msgid "Rotate jpeg counterclockwise"
+msgstr "Повернуть jpeg против часовой стрелки"
+
+#: src/editors.c:104
+msgid "stopping..."
+msgstr "останавливаю..."
+
+#: src/editors.c:131
+msgid "Edit command results"
+msgstr "Редактировать результат команды"
+
+#: src/editors.c:134
+#, c-format
+msgid "Output of %s"
+msgstr "Вывод %s"
+
+#: src/editors.c:303
+#, c-format
+msgid ""
+"Failed to run command:\n"
+"%s\n"
+msgstr ""
+"Невозможно выполнить команду:\n"
+"%s\n"
+
+#: src/editors.c:441
+msgid "stopped by user"
+msgstr "остановлено пользователем"
+
+#: src/exif.c:111 src/exif.c:124 src/exif.c:138 src/exif.c:163 src/exif.c:572
+#: src/exif.c:1626 src/exif.c:1629 src/exif.c:1694
+msgid "unknown"
+msgstr "неизвестно"
+
+#: src/exif.c:112
+msgid "top left"
+msgstr "сверху слева"
+
+#: src/exif.c:113
+msgid "top right"
+msgstr "сверху справа"
+
+#: src/exif.c:114
+msgid "bottom right"
+msgstr "снизу справа"
+
+#: src/exif.c:115
+msgid "bottom left"
+msgstr "снизу слева"
+
+#: src/exif.c:116
+msgid "left top"
+msgstr "слева сверху"
+
+#: src/exif.c:117
+msgid "right top"
+msgstr "справа сверху"
+
+#: src/exif.c:118
+msgid "right bottom"
+msgstr "справа снизу"
+
+#: src/exif.c:119
+msgid "left bottom"
+msgstr "слева снизу"
+
+#: src/exif.c:126
+msgid "inch"
+msgstr "дюйм"
+
+#: src/exif.c:127
+msgid "centimeter"
+msgstr "сантиметр"
+
+#: src/exif.c:139
+msgid "average"
+msgstr "средний"
+
+#: src/exif.c:140
+msgid "center weighted"
+msgstr "средневзвешенный"
+
+#: src/exif.c:141
+msgid "spot"
+msgstr "точечный"
+
+#: src/exif.c:142
+msgid "multi-spot"
+msgstr "многоточечный"
+
+#: src/exif.c:143
+msgid "multi-segment"
+msgstr "многосегментный"
+
+#: src/exif.c:144
+msgid "partial"
+msgstr "частичный"
+
+#: src/exif.c:145 src/exif.c:183
+msgid "other"
+msgstr "другой"
+
+#: src/exif.c:150
+msgid "not defined"
+msgstr "не определена"
+
+#: src/exif.c:151
+msgid "manual"
+msgstr "ручная"
+
+#: src/exif.c:152
+msgid "normal"
+msgstr "нормальная"
+
+#: src/exif.c:153
+msgid "aperture"
+msgstr "апертура"
+
+#: src/exif.c:154
+msgid "shutter"
+msgstr "затвор"
+
+#: src/exif.c:155
+msgid "creative"
+msgstr "творчество"
+
+#: src/exif.c:156
+msgid "action"
+msgstr "действие"
+
+#: src/exif.c:157
+msgid "portrait"
+msgstr "портрет"
+
+#: src/exif.c:158
+msgid "landscape"
+msgstr "ландшафт"
+
+#: src/exif.c:164
+msgid "daylight"
+msgstr "дневной свет"
+
+#: src/exif.c:165
+msgid "fluorescent"
+msgstr "флуоресцентный"
+
+#: src/exif.c:166
+msgid "tungsten (incandescent)"
+msgstr "вольфрам (раскалённый)"
+
+#: src/exif.c:167
+msgid "flash"
+msgstr "вспышка"
+
+#: src/exif.c:188 src/exif.c:1649 src/info.c:232
+msgid "no"
+msgstr "нет"
+
+#. flash fired (bit 0)
+#: src/exif.c:189 src/exif.c:1649 src/info.c:232
+msgid "yes"
+msgstr "да"
+
+#: src/exif.c:190
+msgid "yes, not detected by strobe"
+msgstr "да, не обнаруженный стробом"
+
+#: src/exif.c:191
+msgid "yes, detected by strobe"
+msgstr "да, обнаруженный стробом"
+
+#: src/exif.c:288
+msgid "Image description"
+msgstr "Описание изображения"
+
+#: src/exif.c:291
+msgid "Orientation"
+msgstr "Ориентация"
+
+#: src/exif.c:302
+msgid "Copyright"
+msgstr "Авторское право"
+
+#: src/exif.c:307
+msgid "Exposure program"
+msgstr "Программа экспозиции"
+
+#: src/exif.c:309 src/exif.c:345 src/exif.c:421
+msgid "ISO sensitivity"
+msgstr "Чувствительность ISO"
+
+#: src/exif.c:312
+msgid "Date original"
+msgstr "Дата съемки"
+
+#: src/exif.c:313
+msgid "Date digitized"
+msgstr "Дата оцифровки"
+
+#: src/exif.c:316 src/exif.c:418
+msgid "Shutter speed"
+msgstr "Скорость затвора"
+
+#: src/exif.c:317 src/exif.c:419
+msgid "Aperture"
+msgstr "Апертура"
+
+#: src/exif.c:319 src/exif.c:420
+msgid "Exposure bias"
+msgstr "Смещение экспозиции"
+
+#: src/exif.c:321 src/exif.c:423
+msgid "Subject distance"
+msgstr "Расстояние до объекта"
+
+#: src/exif.c:322
+msgid "Metering mode"
+msgstr "Метод измерения"
+
+#: src/exif.c:323
+msgid "Light source"
+msgstr "Источник света"
+
+#: src/exif.c:324 src/exif.c:424
+msgid "Flash"
+msgstr "Вспышка"
+
+#: src/exif.c:325 src/exif.c:422
+msgid "Focal length"
+msgstr "Фокусное расстояние"
+
+#. ExifImageWidth, ExifImageHeight can also be unsigned short
+#: src/exif.c:335
+msgid "Width"
+msgstr "Ширина"
+
+#: src/exif.c:336
+msgid "Height"
+msgstr "Высота"
+
+#: src/exif.c:416
+msgid "Camera"
+msgstr "Камера"
+
+#: src/exif.c:425
+msgid "Resolution"
+msgstr "Разрешение"
+
+#: src/exif.c:1625
+msgid "infinity"
+msgstr "бесконечность"
+
+#: src/exif.c:1653
+msgid "mode:"
+msgstr "режим:"
+
+#: src/exif.c:1657 src/utilops.c:1300
+msgid "on"
+msgstr "включен"
+
+#: src/exif.c:1660 src/utilops.c:1300
+msgid "off"
+msgstr "выключен"
+
+#: src/exif.c:1663
+msgid "auto"
+msgstr "автоматически"
+
+#: src/exif.c:1669
+msgid "not detected by strobe"
+msgstr "не обнаружено стробом"
+
+#: src/exif.c:1670
+msgid "detected by strobe"
+msgstr "обнаружено стробом"
+
+#. we ignore flash function (bit 5)
+#. red-eye (bit 6)
+#: src/exif.c:1675
+msgid "red-eye reduction"
+msgstr "снижение эффекта красных глаз"
+
+#: src/exif.c:1694
+msgid "dot"
+msgstr "точка"
+
+#: src/filelist.c:523
+#, c-format
+msgid "%d bytes"
+msgstr "%d байт"
+
+#: src/filelist.c:527
+#, c-format
+msgid "%.1f K"
+msgstr "%.1f К"
+
+#: src/filelist.c:531
+#, c-format
+msgid "%.1f MB"
+msgstr "%.1f Мб"
+
+#: src/filelist.c:536
+#, c-format
+msgid "%.1f GB"
+msgstr "%.1f Гб"
+
+#: src/fullscreen.c:267
+msgid "GQview full screen"
+msgstr "GQview на весь экран"
+
+#: src/fullscreen.c:397
+msgid "Full size"
+msgstr "Полный размер"
+
+#: src/fullscreen.c:402
+msgid "Monitor"
+msgstr "Монитор"
+
+#: src/fullscreen.c:407 src/layout.c:452
+msgid "Screen"
+msgstr "Экран"
+
+#: src/fullscreen.c:644
+msgid "Stay above other windows"
+msgstr "Располагаться поверх всех окон"
+
+#: src/fullscreen.c:651
+msgid "Determined by Window Manager"
+msgstr "Определяется менеджером окон"
+
+#: src/fullscreen.c:652
+msgid "Active screen"
+msgstr "Активный экран"
+
+#: src/fullscreen.c:654
+msgid "Active monitor"
+msgstr "Активный монитор"
+
+#: src/img-view.c:1237 src/layout_image.c:719 src/layout_util.c:822
+#: src/pan-view.c:2774
+msgid "Zoom _in"
+msgstr "Масштаб _+"
+
+#: src/img-view.c:1238 src/layout_image.c:720 src/layout_util.c:823
+#: src/pan-view.c:2776
+msgid "Zoom _out"
+msgstr "Масштаб _-"
+
+#: src/img-view.c:1239 src/layout_image.c:721 src/layout_util.c:824
+#: src/pan-view.c:2778
+msgid "Zoom _1:1"
+msgstr "Масштаб _1:1"
+
+#: src/img-view.c:1240 src/layout_image.c:722
+msgid "Fit image to _window"
+msgstr "Масштабировать к _размеру окна"
+
+#: src/img-view.c:1245 src/layout_image.c:728 src/layout_util.c:820
+msgid "Set as _wallpaper"
+msgstr "_Установить в качестве обоев"
+
+#: src/img-view.c:1263 src/layout_image.c:753
+msgid "_Stop slideshow"
+msgstr "_Остановить просмотр слайдов"
+
+#: src/img-view.c:1266 src/layout_image.c:756
+msgid "Continue slides_how"
+msgstr "_Продолжить просмотр слайдов"
+
+#: src/img-view.c:1271 src/img-view.c:1279 src/layout_image.c:761
+#: src/layout_image.c:768
+msgid "Pause slides_how"
+msgstr "Пр_иостановить просмотр слайдов"
+
+#: src/img-view.c:1277 src/layout_image.c:767
+msgid "_Start slideshow"
+msgstr "_Начать просмотр слайдов"
+
+#: src/img-view.c:1285 src/layout_image.c:778 src/pan-view.c:2844
+msgid "Exit _full screen"
+msgstr "_Выйти из полного экрана"
+
+#: src/img-view.c:1289 src/layout_image.c:774 src/pan-view.c:2848
+msgid "_Full screen"
+msgstr "На весь _экран"
+
+#: src/img-view.c:1293 src/layout_util.c:796 src/pan-view.c:2852
+msgid "C_lose window"
+msgstr "_Закрыть окно"
+
+#: src/info.c:367
+msgid "File size:"
+msgstr "Размер файла:"
+
+#: src/info.c:369
+msgid "Dimensions:"
+msgstr "Размерность:"
+
+#: src/info.c:370
+msgid "Transparent:"
+msgstr "Прозрачность:"
+
+#: src/info.c:371 src/print.c:3386
+msgid "Image size:"
+msgstr "Размер изображения:"
+
+#: src/info.c:373
+msgid "Compress ratio:"
+msgstr "Коэффициент сжатия:"
+
+#: src/info.c:374
+msgid "File type:"
+msgstr "Тип файла:"
+
+#: src/info.c:376
+msgid "Owner:"
+msgstr "Владелец:"
+
+#: src/info.c:377
+msgid "Group:"
+msgstr "Группа:"
+
+#: src/info.c:380 src/preferences.c:851
+msgid "General"
+msgstr "Общие"
+
+#: src/info.c:461
+#, c-format
+msgid "Image %d of %d"
+msgstr "Изображение %d из %d"
+
+#: src/info.c:684
+msgid "Image properties - GQview"
+msgstr "Свойства изображения - GQview"
+
+#: src/layout.c:274 src/view_file_icon.c:305 src/view_file_list.c:416
+msgid "Ascending"
+msgstr "По увеличению"
+
+#: src/layout.c:399
+#, fuzzy
+msgid "Color profiles not supported"
+msgstr "Каталог не найден"
+
+#: src/layout.c:400
+msgid ""
+"This installation of GQview was not built with support for color profiles."
+msgstr ""
+
+#: src/layout.c:410
+msgid "Use _color profiles"
+msgstr ""
+
+#: src/layout.c:415
+msgid "Use profile from _image"
+msgstr ""
+
+#: src/layout.c:419 src/layout.c:436
+#, c-format
+msgid "Input _%d:"
+msgstr ""
+
+#: src/layout.c:461
+msgid "_Screen profile"
+msgstr ""
+
+#: src/layout.c:528
+msgid " Slideshow"
+msgstr " Просмотр слайдов"
+
+#: src/layout.c:532
+msgid " Paused"
+msgstr " Приостановлено"
+
+#: src/layout.c:549
+#, c-format
+msgid "%s, %d files (%s, %d)%s"
+msgstr "%s, %d файлов (%s, %d)%s"
+
+#: src/layout.c:556
+#, c-format
+msgid "%s, %d files%s"
+msgstr "%s, %d файлов%s"
+
+#: src/layout.c:561
+#, c-format
+msgid "%d files%s"
+msgstr "%d файлов%s"
+
+#: src/layout.c:590
+#, c-format
+msgid "(no read permission) %s bytes"
+msgstr "(нет прав на чтение) %s байт"
+
+#: src/layout.c:594
+#, c-format
+msgid "( ? x ? ) %s bytes"
+msgstr "( ? x ? ) %s байт"
+
+#: src/layout.c:602
+#, c-format
+msgid "( %d x %d ) %s bytes"
+msgstr "( %d x %d ) %s байт"
+
+#: src/layout.c:1304
+msgid "GQview Tools"
+msgstr "GQview Инструменты"
+
+#: src/layout.c:1934
+#, fuzzy
+msgid "Invalid geometry\n"
+msgstr "Неправильный каталог"
+
+#: src/layout_config.c:57
+msgid "Tools"
+msgstr "Инструменты"
+
+#: src/layout_config.c:57 src/ui_pathsel.c:1174
+msgid "Files"
+msgstr "Файлы"
+
+#: src/layout_config.c:57 src/preferences.c:916 src/print.c:114
+msgid "Image"
+msgstr "Изображение"
+
+#: src/layout_config.c:363
+msgid "(drag to change order)"
+msgstr "(смена номера панели - перетягиванием)"
+
+#: src/layout_image.c:783
+msgid "Hide file _list"
+msgstr "Спрят_ать список файлов"
+
+#: src/layout_util.c:654 src/menu.c:74
+#, c-format
+msgid "in %s..."
+msgstr "в %s..."
+
+#: src/layout_util.c:658 src/menu.c:76
+msgid "in (unknown)..."
+msgstr "в (неизвестно)..."
+
+#: src/layout_util.c:666
+msgid "empty"
+msgstr "пусто"
+
+#: src/layout_util.c:777
+msgid "_File"
+msgstr "_Файл"
+
+#: src/layout_util.c:778 src/menu.c:91
+msgid "_Edit"
+msgstr "Пр_авка"
+
+#: src/layout_util.c:779 src/menu.c:259
+msgid "_Adjust"
+msgstr "_Изменить"
+
+#: src/layout_util.c:781
+msgid "_Help"
+msgstr "_Помощь"
+
+#: src/layout_util.c:783
+msgid "New _window"
+msgstr "Создать новое _окно"
+
+#: src/layout_util.c:784
+msgid "_New collection"
+msgstr "_Создать коллекцию"
+
+#: src/layout_util.c:785
+msgid "_Open collection..."
+msgstr "Откр_ыть коллекцию..."
+
+#: src/layout_util.c:786
+msgid "Open _recent"
+msgstr "Открыть н_едавнее"
+
+#: src/layout_util.c:787
+msgid "_Search..."
+msgstr "_Найти..."
+
+#: src/layout_util.c:789
+#, fuzzy
+msgid "Pan _view"
+msgstr "Расширенный вид"
+
+#: src/layout_util.c:790
+msgid "_Print..."
+msgstr "Напе_чатать..."
+
+#: src/layout_util.c:791
+msgid "N_ew folder..."
+msgstr "Создать _каталог..."
+
+#: src/layout_util.c:797
+msgid "_Quit"
+msgstr "_Выйти"
+
+#: src/layout_util.c:809 src/menu.c:201
+msgid "_Rotate clockwise"
+msgstr "Повернуть по _часовой стрелке"
+
+#: src/layout_util.c:810 src/menu.c:204
+msgid "Rotate _counterclockwise"
+msgstr "Повернуть п_ротив часовой стрелки"
+
+#: src/layout_util.c:811
+msgid "Rotate 1_80"
+msgstr "Повернуть на 1_80"
+
+#: src/layout_util.c:812 src/menu.c:210
+msgid "_Mirror"
+msgstr "ОТразить _зеркально"
+
+#: src/layout_util.c:813 src/menu.c:213
+msgid "_Flip"
+msgstr "_Перевернуть"
+
+#: src/layout_util.c:814 src/menu.c:216
+msgid "_Grayscale"
+msgstr ""
+
+#: src/layout_util.c:816
+msgid "Select _all"
+msgstr "Выделить вс_ё"
+
+#: src/layout_util.c:817
+msgid "Select _none"
+msgstr "Снять в_ыделение"
+
+#: src/layout_util.c:818
+msgid "P_references..."
+msgstr "_Настройки..."
+
+#: src/layout_util.c:819
+msgid "_Thumbnail maintenance..."
+msgstr "У_правление миниатюрами"
+
+#: src/layout_util.c:825
+msgid "_Zoom to fit"
+msgstr "Масштаб к размеру _окна"
+
+#: src/layout_util.c:826
+msgid "F_ull screen"
+msgstr "Полный _экран"
+
+#: src/layout_util.c:827
+msgid "_Hide file list"
+msgstr "Спрят_ать список файлов"
+
+#: src/layout_util.c:828
+msgid "Toggle _slideshow"
+msgstr "Переключить просмотр сла_йдов"
+
+#: src/layout_util.c:829
+msgid "_Refresh"
+msgstr "О_бновить"
+
+#: src/layout_util.c:831
+msgid "_Contents"
+msgstr "_Содержание"
+
+#: src/layout_util.c:832
+msgid "_Keyboard shortcuts"
+msgstr "_Горячие клавиши"
+
+#: src/layout_util.c:833
+msgid "_Release notes"
+msgstr "_Информация о версии"
+
+#: src/layout_util.c:834
+msgid "_About"
+msgstr "_О программе..."
+
+#: src/layout_util.c:838 src/layout_util.c:1086
+msgid "_Thumbnails"
+msgstr "_Пиктограммы"
+
+#: src/layout_util.c:839
+msgid "Tr_ee"
+msgstr "_Дерево"
+
+#: src/layout_util.c:840
+msgid "_Float file list"
+msgstr "Освободить список _файлов"
+
+#: src/layout_util.c:841
+msgid "Hide tool_bar"
+msgstr "Спрятать инс_трументы"
+
+#: src/layout_util.c:842
+msgid "_Keywords"
+msgstr "Кл_ючевые слова"
+
+#: src/layout_util.c:843
+msgid "E_xif data"
+msgstr "Данные _exif"
+
+#: src/layout_util.c:844
+msgid "Sort _manager"
+msgstr "_Менеджер сортировки"
+
+#: src/layout_util.c:848
+msgid "_List"
+msgstr "_Список"
+
+#: src/layout_util.c:849
+msgid "I_cons"
+msgstr "М_иниатюры"
+
+#: src/layout_util.c:1087
+msgid "Show thumbnails"
+msgstr "Показать миниатюры"
+
+#: src/layout_util.c:1092
+msgid "Change to home folder"
+msgstr "Перейти в домашний каталог"
+
+#: src/layout_util.c:1094
+msgid "Refresh file list"
+msgstr "Обновить список файлов"
+
+#: src/layout_util.c:1096
+msgid "Zoom in"
+msgstr "Масштаб +"
+
+#: src/layout_util.c:1098
+msgid "Zoom out"
+msgstr "Масштаб -"
+
+#: src/layout_util.c:1100 src/preferences.c:945
+msgid "Fit image to window"
+msgstr "Масштабировать к размеру окна"
+
+#: src/layout_util.c:1102
+msgid "Set zoom 1:1"
+msgstr "Масштаб 1:1"
+
+#: src/layout_util.c:1104
+msgid "Configure options"
+msgstr "Конфигурация"
+
+#: src/layout_util.c:1105
+#, fuzzy
+msgid "_Float"
+msgstr "Формат"
+
+#: src/layout_util.c:1106
+msgid "Float Controls"
+msgstr "прикрепить/освободить инструменты"
+
+#: src/main.c:237
+msgid "Help - GQview"
+msgstr "Помощь - GQview"
+
+#: src/main.c:460 src/main.c:1376
+msgid "Command line"
+msgstr "Командная строка"
+
+#. short, long                  callback,               extra, prefer,description
+#: src/main.c:498
+msgid "next image"
+msgstr "следующее изображение"
+
+#: src/main.c:499
+msgid "previous image"
+msgstr "предыдущее изображение"
+
+#: src/main.c:500
+msgid "first image"
+msgstr "первое изображение"
+
+#: src/main.c:501
+msgid "last image"
+msgstr "последнее изображение"
+
+#: src/main.c:502
+msgid "toggle full screen"
+msgstr "переключить полноэкранный режим"
+
+#: src/main.c:503
+msgid "start full screen"
+msgstr "войти в полноэкранный режим"
+
+#: src/main.c:504
+msgid "stop full screen"
+msgstr "выйти из полноэкранного режима"
+
+#: src/main.c:505
+msgid "toggle slide show"
+msgstr "переключить просмотр слайдов"
+
+#: src/main.c:506
+msgid "start slide show"
+msgstr "начать просмотр слайдов"
+
+#: src/main.c:507
+msgid "stop slide show"
+msgstr "остановить просмотр слайдов"
+
+#: src/main.c:508
+msgid "start recursive slide show"
+msgstr "начать рекурсивный просмотр слайдов"
+
+#: src/main.c:509
+msgid "set slide show delay in seconds"
+msgstr "установить задержку просмотра слайдов (в секундах)"
+
+#: src/main.c:510
+msgid "show tools"
+msgstr "показать инструменты"
+
+#: src/main.c:511
+msgid "hide tools"
+msgstr "спрятать инструменты"
+
+#: src/main.c:512
+msgid "quit"
+msgstr "выйти"
+
+#: src/main.c:513
+msgid "open file"
+msgstr "открыть файл"
+
+#: src/main.c:514
+msgid "open file in new window"
+msgstr "открыть файл в новом окне"
+
+#: src/main.c:580
+msgid "Remote command list:\n"
+msgstr "Список команд удалённого доступа:\n"
+
+#: src/main.c:638
+msgid "Remote GQview not running, starting..."
+msgstr "Удалённый GQview не запущен, запускаем..."
+
+#: src/main.c:773
+msgid "Remote not available\n"
+msgstr "Удалённый доступ не доступен\n"
+
+#: src/main.c:991
+msgid ""
+"Usage: gqview [options] [path]\n"
+"\n"
+msgstr ""
+"Использование: gqview [параметры] [путь]\n"
+"\n"
+
+#: src/main.c:992
+msgid "valid options are:\n"
+msgstr "допустимые параметры:\n"
+
+#: src/main.c:993
+msgid "  +t, --with-tools           force show of tools\n"
+msgstr "  +t, --with-tools           показывать окно инструментов\n"
+
+#: src/main.c:994
+msgid "  -t, --without-tools        force hide of tools\n"
+msgstr "  -t, --without-tools        спрятать окно инструментов\n"
+
+#: src/main.c:995
+msgid "  -f, --fullscreen           start in full screen mode\n"
+msgstr "  -f, --fullscreen           запускаться в полноэкранном режиме\n"
+
+#: src/main.c:996
+msgid "  -s, --slideshow            start in slideshow mode\n"
+msgstr "  -s, --slideshow            запускаться в режиме показа слайдов\n"
+
+#: src/main.c:997
+msgid "  -l, --list                 open collection window for command line\n"
+msgstr ""
+"  -l, --list                 открыть окно коллекций для командной строки\n"
+
+#: src/main.c:998
+msgid "      --geometry=GEOMETRY    set main window location\n"
+msgstr ""
+
+#: src/main.c:999
+msgid "  -r, --remote               send following commands to open window\n"
+msgstr ""
+"  -r, --remote               отправить указанные команды в открытое окно\n"
+
+#: src/main.c:1000
+msgid "  -rh,--remote-help          print remote command list\n"
+msgstr "  -rh,--remote-help          показать список удаленных команд\n"
+
+#: src/main.c:1001
+msgid "  --debug                    turn on debug output\n"
+msgstr "  --debug                    выводить отладочную информацию\n"
+
+#: src/main.c:1002
+msgid "  -v, --version              print version info\n"
+msgstr "  -v, --version              показать информацию о версии\n"
+
+#: src/main.c:1003
+msgid ""
+"  -h, --help                 show this message\n"
+"\n"
+msgstr ""
+"  -h, --help                 показать это сообщение\n"
+"\n"
+
+#: src/main.c:1017
+#, c-format
+msgid ""
+"invalid or ignored: %s\n"
+"Use --help for options\n"
+msgstr ""
+"неправильно или игнорировано: %s\n"
+"Используйте -help для списка параметров.\n"
+
+#: src/main.c:1093
+#, c-format
+msgid "Creating GQview dir:%s\n"
+msgstr "Создаём каталог GQview%s\n"
+
+#: src/main.c:1099
+#, c-format
+msgid "Could not create dir:%s\n"
+msgstr "Невозможно создать каталог:%s\n"
+
+#: src/main.c:1120 src/ui_bookmark.c:858 src/ui_pathsel.c:1042
+msgid "Home"
+msgstr "Домашний каталог"
+
+#: src/main.c:1122 src/ui_bookmark.c:865
+msgid "Desktop"
+msgstr "Десктоп"
+
+#: src/main.c:1222
+msgid "GQview - exit"
+msgstr "GQview - выход"
+
+#: src/main.c:1226
+msgid "Quit GQview"
+msgstr "Выйти из GQview"
+
+#: src/main.c:1226
+msgid "Collections have been modified. Quit anyway?"
+msgstr "Коллекции были изменены. Всё равно выйти?"
+
+#: src/menu.c:115
+msgid "Sort by size"
+msgstr "Сортировать по размеру"
+
+#: src/menu.c:118
+msgid "Sort by date"
+msgstr "Сортировать по дате"
+
+#: src/menu.c:121
+msgid "Unsorted"
+msgstr "Не сортировать"
+
+#: src/menu.c:124
+msgid "Sort by path"
+msgstr "Сортировать по пути"
+
+#: src/menu.c:127
+msgid "Sort by number"
+msgstr "Сортировать по номеру"
+
+#: src/menu.c:131
+msgid "Sort by name"
+msgstr "Сортировать по имени"
+
+#: src/menu.c:182
+msgid "Sort"
+msgstr "Сортировать"
+
+#: src/menu.c:207
+msgid "Rotate _180"
+msgstr "Повернуть на _180"
+
+#: src/pan-view.c:467
+#, fuzzy, c-format
+msgid "%d images, %s"
+msgstr "%d изображений"
+
+#: src/pan-view.c:477
+#, c-format
+msgid "The pan view does not support the folder \"%s\"."
+msgstr ""
+
+#: src/pan-view.c:478
+#, fuzzy
+msgid "Folder not supported"
+msgstr "Каталог не найден"
+
+#: src/pan-view.c:1070 src/pan-view.c:1086
+#, fuzzy
+msgid "Reading image data..."
+msgstr "Загружаем данные о подобии..."
+
+#: src/pan-view.c:1145
+#, fuzzy
+msgid "Sorting images..."
+msgstr "Сортируем..."
+
+#: src/pan-view.c:1525 src/pan-view.c:1891
+#, fuzzy
+msgid "Date:"
+msgstr "Дата"
+
+#: src/pan-view.c:1527 src/preferences.c:873 src/print.c:3216 src/print.c:3423
+msgid "Size:"
+msgstr "Размер:"
+
+#: src/pan-view.c:1629
+msgid "path found"
+msgstr ""
+
+#: src/pan-view.c:1629
+#, fuzzy
+msgid "filename found"
+msgstr "Файл не найден"
+
+#: src/pan-view.c:1677
+#, fuzzy
+msgid "partial match"
+msgstr "частичный"
+
+#: src/pan-view.c:1888 src/pan-view.c:1921
+msgid "no match"
+msgstr ""
+
+#: src/pan-view.c:2247 src/search.c:2131
+msgid "Folder not found"
+msgstr "Каталог не найден"
+
+#: src/pan-view.c:2248
+msgid "The entered path is not a folder"
+msgstr ""
+
+#: src/pan-view.c:2354
+#, fuzzy
+msgid "Pan View - GQview"
+msgstr "Печать - GQview"
+
+#: src/pan-view.c:2376
+#, fuzzy
+msgid "Timeline"
+msgstr "Билинейный"
+
+#: src/pan-view.c:2377
+#, fuzzy
+msgid "Calendar"
+msgstr "_Очистить"
+
+#: src/pan-view.c:2379
+#, fuzzy
+msgid "Folders (flower)"
+msgstr "Каталоги"
+
+#: src/pan-view.c:2380
+msgid "Grid"
+msgstr ""
+
+#: src/pan-view.c:2389
+#, fuzzy
+msgid "Dots"
+msgstr "точки"
+
+#: src/pan-view.c:2390
+#, fuzzy
+msgid "No Images"
+msgstr "Изображение"
+
+#: src/pan-view.c:2391
+#, fuzzy
+msgid "Small Thumbnails"
+msgstr "Миниатюры"
+
+#: src/pan-view.c:2392
+#, fuzzy
+msgid "Normal Thumbnails"
+msgstr "Миниатюры"
+
+#: src/pan-view.c:2393
+#, fuzzy
+msgid "Large Thumbnails"
+msgstr "Миниатюры"
+
+#: src/pan-view.c:2394 src/pan-view.c:2834
+msgid "1:10 (10%)"
+msgstr ""
+
+#: src/pan-view.c:2395 src/pan-view.c:2830
+msgid "1:4 (25%)"
+msgstr ""
+
+#: src/pan-view.c:2396 src/pan-view.c:2826
+msgid "1:3 (33%)"
+msgstr ""
+
+#: src/pan-view.c:2397 src/pan-view.c:2822
+msgid "1:2 (50%)"
+msgstr ""
+
+#: src/pan-view.c:2398
+msgid "1:1 (100%)"
+msgstr ""
+
+#: src/pan-view.c:2446
+#, fuzzy
+msgid "Find:"
+msgstr "Файл:"
+
+#: src/pan-view.c:2489
+#, fuzzy
+msgid "Use Exif date"
+msgstr "Данные _exif"
+
+#: src/pan-view.c:2502
+msgid "Find"
+msgstr ""
+
+#: src/pan-view.c:2569
+msgid "Pan View Performance"
+msgstr ""
+
+#: src/pan-view.c:2576
+msgid "Pan view performance may be poor."
+msgstr ""
+
+#: src/pan-view.c:2577
+msgid ""
+"To improve performance of thumbnails in the pan view the following options "
+"can be enabled. Note that both options must be enabled to notice a change in "
+"performance."
+msgstr ""
+
+#: src/pan-view.c:2585 src/preferences.c:876
+msgid "Cache thumbnails"
+msgstr "Кэшировать миниатюры"
+
+#: src/pan-view.c:2587 src/preferences.c:882
+msgid "Use shared thumbnail cache"
+msgstr "Использовать обший кэш миниатюр"
+
+#: src/pan-view.c:2593
+msgid "Do not show this dialog again"
+msgstr ""
+
+#: src/pan-view.c:2802
+#, fuzzy
+msgid "Sort by E_xif date"
+msgstr "Сортировать по дате"
+
+#: src/pan-view.c:2808
+msgid "_Show Exif information"
+msgstr ""
+
+#: src/pan-view.c:2810
+#, fuzzy
+msgid "Show im_age"
+msgstr "Показать скрытые"
+
+#: src/pan-view.c:2814
+#, fuzzy
+msgid "_None"
+msgstr "Нет"
+
+#: src/pan-view.c:2818
+#, fuzzy
+msgid "_Full size"
+msgstr "Полный размер"
+
+#: src/preferences.c:414
+msgid "Nearest (worst, but fastest)"
+msgstr "Ближайший (худший, но быстрый)"
+
+#: src/preferences.c:416
+msgid "Tiles"
+msgstr "Плитки"
+
+#: src/preferences.c:418
+msgid "Bilinear"
+msgstr "Билинейный"
+
+#: src/preferences.c:420
+msgid "Hyper (best, but slowest)"
+msgstr "Гипер (лучший, но медленный)"
+
+#: src/preferences.c:448
+msgid "None"
+msgstr "Нет"
+
+#: src/preferences.c:449
+msgid "Normal"
+msgstr "Нормальный"
+
+#: src/preferences.c:450
+msgid "Best"
+msgstr "Лучший"
+
+#: src/preferences.c:528 src/print.c:369
+msgid "Custom"
+msgstr "Выбранный"
+
+#: src/preferences.c:692 src/preferences.c:695
+msgid "Reset filters"
+msgstr "Вернуть в первоначальное состояние"
+
+#: src/preferences.c:696
+msgid ""
+"This will reset the file filters to the defaults.\n"
+"Continue?"
+msgstr ""
+"Список расширений для отбора будет возвращён в первоначальное состояние.\n"
+"Продолжить ?"
+
+#: src/preferences.c:729 src/preferences.c:732
+msgid "Reset editors"
+msgstr "Сбросить редакторы"
+
+#: src/preferences.c:733
+msgid ""
+"This will reset the edit commands to the defaults.\n"
+"Continue?"
+msgstr ""
+"Команды редактирования будут сброшены в первоначальное состояние.\n"
+"Продолжить ?"
+
+#: src/preferences.c:757 src/preferences.c:760
+msgid "Clear trash"
+msgstr "Очистить корзину"
+
+#: src/preferences.c:761
+msgid "This will remove the trash contents."
+msgstr "Содержимое корзины будет удалено."
+
+#: src/preferences.c:800
+msgid "GQview Preferences"
+msgstr "GQview Настройки"
+
+#: src/preferences.c:854
+msgid "Startup"
+msgstr "При запуске"
+
+#: src/preferences.c:856
+msgid "Change to folder:"
+msgstr "Перейти в каталог:"
+
+#: src/preferences.c:867
+msgid "Use current"
+msgstr "Использовать текущий"
+
+#: src/preferences.c:874 src/preferences.c:925
+msgid "Quality:"
+msgstr "Качество:"
+
+#: src/preferences.c:888
+msgid "Cache thumbnails into .thumbnails"
+msgstr "Кэшировать миниатюры в .thumbnails"
+
+#: src/preferences.c:892
+msgid "Use xvpics thumbnails when found (read only)"
+msgstr "Использовать иконки от xvpics, если найдены (только чтение)"
+
+#: src/preferences.c:896
+msgid "Faster jpeg thumbnailing (may reduce quality)"
+msgstr ""
+
+#: src/preferences.c:899
+msgid "Slide show"
+msgstr "Просмотр слайдов"
+
+#: src/preferences.c:902
+msgid "Delay between image change:"
+msgstr "Пауза перед сменой картинки:"
+
+#: src/preferences.c:902
+msgid "seconds"
+msgstr "секунд"
+
+#: src/preferences.c:908
+msgid "Random"
+msgstr "Случайно"
+
+#: src/preferences.c:909
+msgid "Repeat"
+msgstr "Повторять в цикле"
+
+#: src/preferences.c:919
+msgid "Zoom"
+msgstr "Масштаб"
+
+#: src/preferences.c:922
+msgid "Dithering method:"
+msgstr "Метод размывания:"
+
+#: src/preferences.c:927
+msgid "Two pass zooming"
+msgstr "Двухпроходное масштабирование"
+
+#: src/preferences.c:930
+msgid "Allow enlargement of image for zoom to fit"
+msgstr "Разрешить увеличение изображения при масштабировании к размеру окна"
+
+#: src/preferences.c:934
+msgid "Zoom increment:"
+msgstr "Увеличение масштаба:"
+
+#: src/preferences.c:939
+msgid "When new image is selected:"
+msgstr "При выборе нового изображения:"
+
+#: src/preferences.c:942
+msgid "Zoom to original size"
+msgstr "Масштабировать к размеру оригинала"
+
+#: src/preferences.c:948
+msgid "Leave Zoom at previous setting"
+msgstr "Использовать последний заданный масштаб"
+
+#: src/preferences.c:952
+msgid "Appearance"
+msgstr "Внешний вид"
+
+#: src/preferences.c:954
+msgid "Black background"
+msgstr "Выводить изображения на черном фоне"
+
+#: src/preferences.c:957
+msgid "Convenience"
+msgstr "Удобства"
+
+#: src/preferences.c:959
+msgid "Refresh on file change"
+msgstr "Обновить при изменении файла"
+
+#: src/preferences.c:961
+msgid "Preload next image"
+msgstr "Заранее загружать следующее изображение"
+
+#: src/preferences.c:963
+msgid "Auto rotate image using Exif information"
+msgstr "Автоматически вращать изображение по информации Exif"
+
+#: src/preferences.c:972
+msgid "Windows"
+msgstr "Окна"
+
+#: src/preferences.c:975
+msgid "State"
+msgstr "Состояние"
+
+#: src/preferences.c:977
+msgid "Remember window positions"
+msgstr "Помнить расположение окон"
+
+#: src/preferences.c:979
+msgid "Remember tool state (float/hidden)"
+msgstr "Помнить расположение инструментов (свободное/спрятанное)"
+
+#: src/preferences.c:984
+msgid "Fit window to image when tools are hidden/floating"
+msgstr ""
+"Подбирать размеры окна к изображению\n"
+"когда инструменты спрятаны/свободны"
+
+#: src/preferences.c:988
+msgid "Limit size when auto-sizing window (%):"
+msgstr "Ограничивать размер при авто-подборе размера окна (%):"
+
+#: src/preferences.c:995 src/print.c:3371 src/print.c:3378
+msgid "Layout"
+msgstr "Размещение"
+
+#: src/preferences.c:1008
+msgid "Filtering"
+msgstr "Отбор"
+
+#: src/preferences.c:1013
+msgid "Show entries that begin with a dot"
+msgstr "Показывать файлы, начинающиеся с точки"
+
+#: src/preferences.c:1015
+msgid "Case sensitive sort"
+msgstr "Чувствительная к регистру сортировка"
+
+#: src/preferences.c:1018
+msgid "Disable File Filtering"
+msgstr "Выключить отбор файлов"
+
+#: src/preferences.c:1021
+msgid "File types"
+msgstr "Типы файлов"
+
+#: src/preferences.c:1043
+msgid "Filter"
+msgstr "Расширение"
+
+#: src/preferences.c:1080 src/preferences.c:1144
+msgid "Defaults"
+msgstr "По умолчанию"
+
+#: src/preferences.c:1101
+msgid "Editors"
+msgstr "Редакторы"
+
+#: src/preferences.c:1107
+msgid "#"
+msgstr "#"
+
+#: src/preferences.c:1110 src/preferences.c:1264
+msgid "Menu name"
+msgstr "Название в меню"
+
+#: src/preferences.c:1113
+#, fuzzy
+msgid "Command Line"
+msgstr "Командная строка"
+
+#: src/preferences.c:1160
+msgid "Advanced"
+msgstr "Расширенные"
+
+#: src/preferences.c:1173
+msgid "Full screen"
+msgstr "Полный экран"
+
+#: src/preferences.c:1181
+msgid "Smooth image flip"
+msgstr "Сглаженный поворот изображения"
+
+#: src/preferences.c:1183
+msgid "Disable screen saver"
+msgstr "Отключить хранитель экрана"
+
+#: src/preferences.c:1186
+msgid "Delete"
+msgstr "Удаление"
+
+#: src/preferences.c:1188
+msgid "Confirm file delete"
+msgstr "Подтверждать удаление файлов"
+
+#: src/preferences.c:1190
+msgid "Enable Delete key"
+msgstr "Включить кнопку 'Удалить'"
+
+#: src/preferences.c:1193
+msgid "Safe delete"
+msgstr "Безопасное удаление"
+
+#: src/preferences.c:1211
+msgid "Maximum size:"
+msgstr "Максимальный размер:"
+
+#: src/preferences.c:1211
+msgid "MB"
+msgstr "МБ"
+
+#: src/preferences.c:1214
+msgid "View"
+msgstr "Просмотр"
+
+#: src/preferences.c:1224
+msgid "Behavior"
+msgstr "Поведение"
+
+#: src/preferences.c:1226
+msgid "Rectangular selection in icon view"
+msgstr "Прямоугольное выделение в просмотре иконок"
+
+#: src/preferences.c:1229
+msgid "Descend folders in tree view"
+msgstr "Разворачивать содержимое дерева списка папок"
+
+#: src/preferences.c:1232
+msgid "In place renaming"
+msgstr "Переименование в списке"
+
+#: src/preferences.c:1235
+msgid "Navigation"
+msgstr "Навигация"
+
+#: src/preferences.c:1237
+msgid "Progressive keyboard scrolling"
+msgstr "Нарастающий клавиатурный скроллинг"
+
+#: src/preferences.c:1239
+msgid "Mouse wheel scrolls image"
+msgstr "Колёсико мышки двигает изображение"
+
+#: src/preferences.c:1242
+msgid "Miscellaneous"
+msgstr "Разное"
+
+#: src/preferences.c:1244
+msgid "Store keywords and comments local to source images"
+msgstr ""
+"Сохранять ключевые слова и комментарии там же, где и исходные изображения"
+
+#: src/preferences.c:1247
+msgid "Custom similarity threshold:"
+msgstr "Значение порога похожести:"
+
+#: src/preferences.c:1250
+msgid "Offscreen cache size (Mb per image):"
+msgstr "Размер кэша вне экрана (Mb на изображение):"
+
+#: src/preferences.c:1253
+#, fuzzy
+msgid "Color profiles"
+msgstr "Все файлы"
+
+#: src/preferences.c:1261
+msgid "Type"
+msgstr ""
+
+#: src/preferences.c:1267
+#, fuzzy
+msgid "File"
+msgstr "Файл:"
+
+#: src/preferences.c:1289 src/preferences.c:1300
+#, fuzzy
+msgid "Select color profile"
+msgstr "Выбрать каталог"
+
+#: src/preferences.c:1297
+#, fuzzy
+msgid "Screen:"
+msgstr "Экран"
+
+#: src/preferences.c:1380
+msgid "About - GQview"
+msgstr "О программе - GQview"
+
+#: src/preferences.c:1393
+#, c-format
+msgid ""
+"GQview %s\n"
+"\n"
+"Copyright (c) %s John Ellis\n"
+"website: %s\n"
+"email: %s\n"
+"\n"
+"Released under the GNU General Public License"
+msgstr ""
+"GQview %s\n"
+"\n"
+"Все права защищены (c) %s John Ellis\n"
+"website: %s\n"
+"email: %s\n"
+"\n"
+"Распространяется под свободной лицензией GNU"
+
+#: src/preferences.c:1411
+msgid "Credits..."
+msgstr "Список разработчиков..."
+
+#: src/print.c:115
+msgid "Selection"
+msgstr "Выделение"
+
+#: src/print.c:116
+msgid "All"
+msgstr "Все"
+
+#: src/print.c:127
+msgid "One image per page"
+msgstr "Одно изображение на страницу"
+
+#: src/print.c:128
+msgid "Proof sheet"
+msgstr "Контрольная карта"
+
+#: src/print.c:141
+msgid "Default printer"
+msgstr "Принтер по умолчанию"
+
+#: src/print.c:142
+msgid "Custom printer"
+msgstr "Выбранный принтер"
+
+#: src/print.c:143
+msgid "PostScript file"
+msgstr "Файл PostScript"
+
+#: src/print.c:144
+msgid "Image file"
+msgstr "Графический файл"
+
+#: src/print.c:158
+msgid "jpeg, low quality"
+msgstr "jpeg, низкое качество"
+
+#: src/print.c:159
+msgid "jpeg, normal quality"
+msgstr "jpeg, нормальное качество"
+
+#: src/print.c:160
+msgid "jpeg, high quality"
+msgstr "jpeg, высокое качество"
+
+#: src/print.c:354 src/print.c:3216
+msgid "points"
+msgstr "точки"
+
+#: src/print.c:355
+msgid "millimeters"
+msgstr "миллиметры"
+
+#: src/print.c:356
+msgid "centimeters"
+msgstr "сантиметры"
+
+#: src/print.c:357
+msgid "inches"
+msgstr "дюймы"
+
+#: src/print.c:358
+msgid "picas"
+msgstr "пики"
+
+#: src/print.c:363
+msgid "Portrait"
+msgstr "Портрет"
+
+#: src/print.c:364
+msgid "Landscape"
+msgstr "Пейзаж"
+
+#: src/print.c:370
+msgid "Letter"
+msgstr "Письмо"
+
+#. in 8.5 x 11
+#: src/print.c:371
+msgid "Legal"
+msgstr "Юридический"
+
+#. in 8.5 x 14
+#: src/print.c:372
+msgid "Executive"
+msgstr "Исполнительный"
+
+#. in 7.25x 10.5
+#. mm 841 x 1189
+#. mm 594 x 841
+#. mm 420 x 594
+#. mm 297 x 420
+#. mm 210 x 297
+#. mm 148 x 210
+#. mm 105 x 148
+#. mm 353 x 500
+#. mm 250 x 353
+#. mm 176 x 250
+#. mm 125 x 176
+#: src/print.c:384
+msgid "Envelope #10"
+msgstr "Конверт #10"
+
+#. in 4.125 x 9.5
+#: src/print.c:385
+msgid "Envelope #9"
+msgstr "Конверт #9"
+
+#. in 3.875 x 8.875
+#: src/print.c:386
+msgid "Envelope C4"
+msgstr "Конверт C4"
+
+#. mm 229 x 324
+#: src/print.c:387
+msgid "Envelope C5"
+msgstr "Конверт C5"
+
+#. mm 162 x 229
+#: src/print.c:388
+msgid "Envelope C6"
+msgstr "Конверт C6"
+
+#. mm 114 x 162
+#: src/print.c:389
+msgid "Photo 6x4"
+msgstr "Фотография  6x4"
+
+#. in 6   x 4
+#: src/print.c:390
+msgid "Photo 8x10"
+msgstr "Фотография 8x10"
+
+#. in 8   x 10
+#: src/print.c:391
+msgid "Postcard"
+msgstr "Почтовая открытка"
+
+#. mm 100 x 148
+#: src/print.c:392
+msgid "Tabloid"
+msgstr "Конспект"
+
+#: src/print.c:548
+#, c-format
+msgid "page %d of %d"
+msgstr "страница %d из %d"
+
+#: src/print.c:740 src/utilops.c:2287
+msgid "Preview"
+msgstr "Предпросмотр"
+
+#: src/print.c:1048
+#, c-format
+msgid ""
+"Unable to open pipe for writing.\n"
+"\"%s\""
+msgstr ""
+"Не могу открыть канал для печати.\n"
+"\"%s\""
+
+#: src/print.c:1063 src/print.c:1503 src/ui_pathsel.c:423
+#: src/view_file_list.c:456
+#, c-format
+msgid "A file with name %s already exists."
+msgstr "Файл с именем %s уже существует."
+
+#: src/print.c:1078 src/print.c:1558
+#, c-format
+msgid "Failure writing to file %s"
+msgstr "Ошибка записи в файл %s"
+
+#: src/print.c:1132 src/print.c:1169 src/print.c:1205 src/print.c:1322
+#: src/print.c:1413 src/print.c:1444
+msgid "SIGPIPE error writing to printer."
+msgstr "Ошибка SIGPIPE при записи на принтер."
+
+#: src/print.c:1979
+#, c-format
+msgid "Page %d"
+msgstr "Страница %d"
+
+#: src/print.c:2001 src/print.c:2006
+msgid "Printing error"
+msgstr "Ошибка печати"
+
+#: src/print.c:2005
+#, c-format
+msgid "An error occured printing to %s."
+msgstr "Произошла ошибка при печати в %s."
+
+#: src/print.c:2009
+msgid "Details"
+msgstr "Подробности"
+
+#: src/print.c:2602 src/print.c:3347
+msgid "Print - GQview"
+msgstr "Печать - GQview"
+
+#: src/print.c:2606
+#, c-format
+msgid "Printing %d pages to %s."
+msgstr "Печатаю %d страниц в %s."
+
+#: src/print.c:2706
+msgid "Format:"
+msgstr "Формат:"
+
+#: src/print.c:2781
+msgid "Units:"
+msgstr "Единицы:"
+
+#: src/print.c:2825
+msgid "Orientation:"
+msgstr "Ориентация:"
+
+#: src/print.c:2957
+msgid "Destination:"
+msgstr "Назначение:"
+
+#: src/print.c:3005
+msgid "<printer name>"
+msgstr "<название принтера>"
+
+#: src/print.c:3094
+msgid "Unlimited"
+msgstr "Неограниченно"
+
+#: src/print.c:3203
+msgid "Show"
+msgstr "Показать"
+
+#: src/print.c:3214
+msgid "Font"
+msgstr "Шрифт"
+
+#: src/print.c:3374
+msgid "Source"
+msgstr "Источник"
+
+#: src/print.c:3390
+msgid "Proof size:"
+msgstr "Контрольный размер:"
+
+#: src/print.c:3406
+msgid "Text"
+msgstr "Текст"
+
+#: src/print.c:3416
+msgid "Paper"
+msgstr "Бумага"
+
+#: src/print.c:3439
+msgid "Margins"
+msgstr "Отступы"
+
+#: src/print.c:3441
+msgid "Left:"
+msgstr "Слева:"
+
+#: src/print.c:3444
+msgid "Right:"
+msgstr "Справа:"
+
+#: src/print.c:3447
+msgid "Top:"
+msgstr "Сверху:"
+
+#: src/print.c:3450
+msgid "Bottom:"
+msgstr "Снизу:"
+
+#: src/print.c:3459
+msgid "Printer"
+msgstr "Принтер"
+
+#: src/print.c:3465
+msgid "Custom printer:"
+msgstr "Свой принтер:"
+
+#: src/print.c:3474
+msgid "File:"
+msgstr "Файл:"
+
+#: src/print.c:3483
+msgid "File format:"
+msgstr "Формат файла:"
+
+#: src/print.c:3488
+msgid "DPI:"
+msgstr "Разрешение:"
+
+#: src/print.c:3496
+msgid "Remember print settings"
+msgstr "Запомнить установки печати"
+
+#: src/rcfile.c:185
+#, c-format
+msgid "error saving config file: %s\n"
+msgstr "ошибка записи файла конфигурации: %s\n"
+
+#: src/search.c:200
+msgid "folder"
+msgstr "каталог"
+
+#: src/search.c:201
+msgid "comments"
+msgstr "комментарии"
+
+#: src/search.c:202
+msgid "results"
+msgstr "результаты"
+
+#: src/search.c:206
+msgid "contains"
+msgstr "содержит"
+
+#: src/search.c:207
+msgid "is"
+msgstr "соответствует"
+
+#: src/search.c:211 src/search.c:218
+msgid "equal to"
+msgstr "соответствует"
+
+#: src/search.c:212
+msgid "less than"
+msgstr "меньше чем"
+
+#: src/search.c:213
+msgid "greater than"
+msgstr "больше чем"
+
+#: src/search.c:214 src/search.c:221
+msgid "between"
+msgstr "между"
+
+#: src/search.c:219
+msgid "before"
+msgstr "перед"
+
+#: src/search.c:220
+msgid "after"
+msgstr "после"
+
+#: src/search.c:225
+msgid "match all"
+msgstr "соответствует всем"
+
+#: src/search.c:226
+msgid "match any"
+msgstr "соответствует любому"
+
+#: src/search.c:227
+msgid "exclude"
+msgstr "исключая"
+
+#: src/search.c:277
+#, c-format
+msgid "%s, %d files (%s, %d)"
+msgstr "%s, %d файлов (%s, %d)"
+
+#: src/search.c:284
+#, c-format
+msgid "%s, %d files"
+msgstr "%s, %d файлов"
+
+#: src/search.c:301
+msgid "Searching..."
+msgstr "Ищем..."
+
+#: src/search.c:2084
+msgid "File not found"
+msgstr "Файл не найден"
+
+#: src/search.c:2085
+msgid "Please enter an existing file for image content."
+msgstr "Пожалуйста, выберите существующий файл для содержимого изображения."
+
+#: src/search.c:2132
+msgid "Please enter an existing folder to search."
+msgstr "Пожалуйста, выберите существующий каталог для поиска."
+
+#: src/search.c:2561
+msgid "Image search - GQview"
+msgstr "Поиск изображений - GQview"
+
+#: src/search.c:2590
+msgid "Search:"
+msgstr "Поиск:"
+
+#: src/search.c:2604
+msgid "Recurse"
+msgstr "Рекурсивный"
+
+#: src/search.c:2608
+msgid "File name"
+msgstr "Название файла"
+
+#: src/search.c:2614
+msgid "Match case"
+msgstr "Учитывать регистр"
+
+#: src/search.c:2618
+msgid "File size is"
+msgstr "Размер файла"
+
+#: src/search.c:2625 src/search.c:2640 src/search.c:2658
+msgid "and"
+msgstr "и"
+
+#: src/search.c:2630
+msgid "File date is"
+msgstr "Время файла"
+
+#: src/search.c:2647
+msgid "Image dimensions are"
+msgstr "Размер изображения"
+
+#: src/search.c:2667
+msgid "Image content is"
+msgstr "Содержимое изображения"
+
+#: src/search.c:2673
+#, no-c-format
+msgid "% similar to"
+msgstr "% похожести на"
+
+#: src/search.c:2742
+msgid "Rank"
+msgstr "Ранг"
+
+#: src/thumb.c:379
+msgid "Thumbnail image in cache failed to load, trying to recreate.\n"
+msgstr "Не удалось загрузить миниатюры из кэша, пытаемся пересоздать.\n"
+
+#: src/ui_bookmark.c:148
+#, c-format
+msgid "Unable to write history lists to: %s\n"
+msgstr "Невозможно записать список истории в:%s\n"
+
+#: src/ui_bookmark.c:445 src/ui_bookmark.c:508
+msgid "New Bookmark"
+msgstr "Создать закладку"
+
+#: src/ui_bookmark.c:591 src/ui_bookmark.c:597
+msgid "Edit Bookmark"
+msgstr "Редактировать закладку"
+
+#: src/ui_bookmark.c:612
+msgid "Path:"
+msgstr "Путь:"
+
+#: src/ui_bookmark.c:621
+msgid "Icon:"
+msgstr "Пиктограмма:"
+
+#: src/ui_bookmark.c:627
+msgid "Select icon"
+msgstr "Выбрать пиктограмму"
+
+#: src/ui_bookmark.c:718
+msgid "_Properties..."
+msgstr "_Свойства..."
+
+#: src/ui_bookmark.c:720
+msgid "Move _up"
+msgstr "Переместить _вверх"
+
+#: src/ui_bookmark.c:722
+msgid "Move _down"
+msgstr "Переместить в_низ"
+
+#: src/ui_bookmark.c:724
+msgid "_Remove"
+msgstr "_Удалить"
+
+#: src/ui_help.c:111
+#, c-format
+msgid ""
+"Unable to load:\n"
+"%s"
+msgstr ""
+"Не могу загрузить:\n"
+"%s"
+
+#: src/ui_pathsel.c:429 src/utilops.c:2675
+#, c-format
+msgid "Failed to rename %s to %s."
+msgstr "Невозможно переименовать файл %s в %s."
+
+#: src/ui_pathsel.c:485 src/utilops.c:1354 src/utilops.c:1527
+#, c-format
+msgid ""
+"Unable to delete file:\n"
+"%s"
+msgstr ""
+"Невозможно удалить файл:\n"
+"%s"
+
+#: src/ui_pathsel.c:486 src/utilops.c:1528
+msgid "File deletion failed"
+msgstr "Удаление файла не прошло"
+
+#: src/ui_pathsel.c:528 src/ui_pathsel.c:536
+msgid "Delete file"
+msgstr "Удалить файл"
+
+#: src/ui_pathsel.c:534
+#, c-format
+msgid ""
+"About to delete the file:\n"
+" %s"
+msgstr ""
+"Собираемся удалить файл:\n"
+" %s"
+
+#: src/ui_pathsel.c:625 src/ui_pathsel.c:633 src/utilops.c:2253
+#: src/utilops.c:2509
+msgid "_Rename"
+msgstr "_Переименовать"
+
+#: src/ui_pathsel.c:627 src/ui_pathsel.c:637
+msgid "Add _Bookmark"
+msgstr "Добавить _закладку"
+
+#: src/ui_pathsel.c:635
+msgid "_Delete"
+msgstr "_Удалить"
+
+#: src/ui_pathsel.c:739 src/ui_pathsel.c:1044
+msgid "New folder"
+msgstr "Создать каталог"
+
+#: src/ui_pathsel.c:749 src/utilops.c:2581 src/view_dir_list.c:330
+#: src/view_dir_tree.c:426
+#, c-format
+msgid ""
+"Unable to create folder:\n"
+"%s"
+msgstr ""
+"Невозможно создать каталог:\n"
+"%s"
+
+#: src/ui_pathsel.c:750 src/utilops.c:2582 src/view_dir_list.c:331
+#: src/view_dir_tree.c:427
+msgid "Error creating folder"
+msgstr "Ошибка создания каталога"
+
+#: src/ui_pathsel.c:971
+msgid "All Files"
+msgstr "Все файлы"
+
+#: src/ui_pathsel.c:1047
+msgid "Show hidden"
+msgstr "Показать скрытые"
+
+#: src/ui_pathsel.c:1131
+msgid "Filter:"
+msgstr "Фильтр:"
+
+#: src/ui_tabcomp.c:857
+msgid "Select path"
+msgstr "Выделить путь"
+
+#: src/ui_tabcomp.c:873
+msgid "All files"
+msgstr "Все файлы"
+
+#: src/utilops.c:505 src/utilops.c:826 src/utilops.c:1716 src/utilops.c:2438
+msgid "Overwrite file"
+msgstr "Перезаписать файл"
+
+#: src/utilops.c:510 src/utilops.c:831 src/utilops.c:1721 src/utilops.c:2443
+msgid "Overwrite file?"
+msgstr "Перезаписать файл?"
+
+#: src/utilops.c:511 src/utilops.c:832
+msgid "Replace existing file with new file."
+msgstr "Заменить существующий файл новым."
+
+#: src/utilops.c:515
+msgid "Overwrite _all"
+msgstr "_Перезаписать все"
+
+#: src/utilops.c:517
+msgid "S_kip all"
+msgstr "П_ропустить все"
+
+#: src/utilops.c:518
+msgid "_Skip"
+msgstr "Пр_опустить"
+
+#: src/utilops.c:519 src/utilops.c:836 src/utilops.c:1727 src/utilops.c:2449
+msgid "Existing file"
+msgstr "Существующий файл"
+
+#: src/utilops.c:519 src/utilops.c:836 src/utilops.c:1728 src/utilops.c:2450
+msgid "New file"
+msgstr "Новый файл"
+
+#: src/utilops.c:529 src/utilops.c:845 src/utilops.c:1862 src/utilops.c:1918
+#: src/utilops.c:1994 src/utilops.c:2326
+msgid "Auto rename"
+msgstr "Автоматически переименовывать"
+
+#: src/utilops.c:537 src/utilops.c:853
+msgid "Rename"
+msgstr "Переименовать"
+
+#: src/utilops.c:578
+msgid "Source to copy matches destination"
+msgstr "Исходник для копирования совпадает с целевым"
+
+#: src/utilops.c:579
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to itself."
+msgstr ""
+"Невозможно скопировать файл:\n"
+"%s\n"
+"сам в себя."
+
+#: src/utilops.c:583
+msgid "Source to move matches destination"
+msgstr "Исходник для перемещения совпадает с целевым"
+
+#: src/utilops.c:584
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to itself."
+msgstr ""
+"Невозможно переместить файл:\n"
+"%s\n"
+"сам в себя."
+
+#: src/utilops.c:592 src/utilops.c:679 src/utilops.c:1346
+msgid "Co_ntinue"
+msgstr "_Продолжить"
+
+#: src/utilops.c:665 src/utilops.c:893
+msgid "Error copying file"
+msgstr "Ошибка копирования файла"
+
+#: src/utilops.c:666
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to:\n"
+"%s\n"
+"during multiple file copy."
+msgstr ""
+"Невозможно скопировать файл:\n"
+"%s\n"
+"в:\n"
+"%s\n"
+"во время копирования нескольких файлов."
+
+#: src/utilops.c:670 src/utilops.c:898
+msgid "Error moving file"
+msgstr "Ошибка перемещения файла"
+
+#: src/utilops.c:671
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to:\n"
+"%s\n"
+"during multiple file move."
+msgstr ""
+"Не могу переместить файл:\n"
+"%s\n"
+"в:\n"
+"%s\n"
+"во время перемещения нескольких файлов."
+
+#: src/utilops.c:817
+msgid "Source matches destination"
+msgstr "Исходник совпадает с целью"
+
+#: src/utilops.c:818
+msgid "Source and destination are the same, operation cancelled."
+msgstr "Исходник совпадает с целью, операция отменена."
+
+#: src/utilops.c:894
+#, c-format
+msgid ""
+"Unable to copy file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Невозможно скопировать файл:\n"
+"%s\n"
+"в:\n"
+"%s"
+
+#: src/utilops.c:899
+#, c-format
+msgid ""
+"Unable to move file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Невозможно переместить файл:\n"
+"%s\n"
+"в:\n"
+"%s"
+
+#: src/utilops.c:947
+msgid "Invalid destination"
+msgstr "Неправильное назначение"
+
+#: src/utilops.c:948
+msgid ""
+"When operating with multiple files, please select\n"
+"a folder, not a file."
+msgstr ""
+"Когда операция производится над несколькими файлами,\n"
+"пожалуйста, задайте каталог, а не файл."
+
+#: src/utilops.c:953
+msgid "Please select an existing folder."
+msgstr "Пожалуйста, выберите существующий каталог."
+
+#: src/utilops.c:1022
+msgid "Copy - GQview"
+msgstr "Копирование - GQview"
+
+#: src/utilops.c:1023 src/view_dir_list.c:209 src/view_dir_tree.c:301
+msgid "_Copy"
+msgstr "_Копировать"
+
+#: src/utilops.c:1026
+msgid "Copy file"
+msgstr "Копировать файл"
+
+#: src/utilops.c:1030
+msgid "Copy multiple files"
+msgstr "Копировать несколько файлов"
+
+#: src/utilops.c:1036
+msgid "Move - GQview"
+msgstr "Перемещение - GQview"
+
+#: src/utilops.c:1037 src/view_dir_list.c:211 src/view_dir_tree.c:303
+msgid "_Move"
+msgstr "Перемес_тить"
+
+#: src/utilops.c:1040
+msgid "Move file"
+msgstr "Переместить файл"
+
+#: src/utilops.c:1044
+msgid "Move multiple files"
+msgstr "Переместить несколько файлов"
+
+#: src/utilops.c:1058 src/utilops.c:1568
+msgid "File name:"
+msgstr "Название файла:"
+
+#: src/utilops.c:1062
+msgid "Choose the destination folder."
+msgstr "Выбрать каталог назначения."
+
+#: src/utilops.c:1189 src/utilops.c:1338 src/utilops.c:1355 src/utilops.c:2902
+#: src/utilops.c:2953 src/utilops.c:3041 src/utilops.c:3052
+msgid "Delete failed"
+msgstr "Ошибка удаления"
+
+#: src/utilops.c:1190
+msgid "Unable to remove old file from trash folder"
+msgstr "Невозможно удалить старый файл из корзины"
+
+#: src/utilops.c:1246 src/utilops.c:2574
+msgid "Could not create folder"
+msgstr "Невозможно создать каталог"
+
+#: src/utilops.c:1268
+msgid "Permission denied"
+msgstr "В доступе отказано"
+
+#: src/utilops.c:1278
+#, c-format
+msgid ""
+"Unable to access or create the trash folder.\n"
+"\"%s\""
+msgstr ""
+"Невозможно получить доступ или создать каталог корзины.\n"
+"\"%s\""
+
+#: src/utilops.c:1282
+msgid "Turn off safe delete"
+msgstr "Выключить безопасное удаление"
+
+#: src/utilops.c:1300
+#, c-format
+msgid "Safe delete: %s"
+msgstr "Безопасное удаление файлов: %s"
+
+#: src/utilops.c:1342
+#, c-format
+msgid ""
+"Unable to delete file:\n"
+" %s\n"
+" Continue multiple delete operation?"
+msgstr ""
+"Невозможно удалить файл:\n"
+" %s\n"
+" Продолжать операцию удаления для оставшихся файлов?"
+
+#: src/utilops.c:1413
+#, c-format
+msgid "File %d of %d"
+msgstr "Файл %d из %d"
+
+#: src/utilops.c:1482
+msgid "Delete files - GQview"
+msgstr "Удаление файлов - GQview"
+
+#: src/utilops.c:1486
+msgid "Delete multiple files"
+msgstr "Удалить несколько файлов"
+
+#: src/utilops.c:1504
+#, c-format
+msgid "Review %d files"
+msgstr "Просмотр %d файлов"
+
+#: src/utilops.c:1560
+msgid "Delete file - GQview"
+msgstr "Удаление файла - GQview"
+
+#: src/utilops.c:1564
+msgid "Delete file?"
+msgstr "Удалить файл?"
+
+#: src/utilops.c:1722 src/utilops.c:2444
+msgid "Replace existing file by renaming new file."
+msgstr "Заменить существующий файл при переименовании нового."
+
+#: src/utilops.c:1739
+#, c-format
+msgid ""
+"Unable to rename file:\n"
+"%s\n"
+" to:\n"
+"%s"
+msgstr ""
+"Невозможно переименовать файл:\n"
+"%s\n"
+" в:\n"
+"%s"
+
+#: src/utilops.c:1742 src/utilops.c:2461 src/view_file_list.c:451
+#: src/view_file_list.c:457 src/view_file_list.c:463
+msgid "Error renaming file"
+msgstr "Ошибка переименования файла"
+
+#: src/utilops.c:1863
+msgid "Format must include at least one of the symbol characters '*' or '#'.\n"
+msgstr ""
+
+#: src/utilops.c:1919
+msgid ""
+"Can not auto rename with the selected\n"
+"number set, one or more files exist that\n"
+"match the resulting name list.\n"
+msgstr ""
+"Невозможно автоматически переименовать с выбранным\n"
+"набором чисел, существует один или больше файлов,\n"
+"совпадающих с полученным списком названий.\n"
+
+#: src/utilops.c:1993
+#, c-format
+msgid ""
+"Failed to rename\n"
+"%s\n"
+"The number was %d."
+msgstr ""
+"Невозможно переименовать файл\n"
+"%s\n"
+"Номер %d."
+
+#: src/utilops.c:2249 src/utilops.c:2503
+msgid "Rename - GQview"
+msgstr "Переименование - GQview"
+
+#: src/utilops.c:2252
+msgid "Rename multiple files"
+msgstr "Переименовать несколько файлов"
+
+#: src/utilops.c:2286
+msgid "Original Name"
+msgstr "Оригинальное название"
+
+#: src/utilops.c:2324
+#, fuzzy
+msgid "Manual rename"
+msgstr "Название в меню"
+
+#: src/utilops.c:2325
+msgid "Formatted rename"
+msgstr ""
+
+#: src/utilops.c:2338 src/utilops.c:2516
+msgid "Original name:"
+msgstr "Оригинальное название:"
+
+#: src/utilops.c:2341 src/utilops.c:2519
+msgid "New name:"
+msgstr "Новое название:"
+
+#: src/utilops.c:2359
+msgid "Begin text"
+msgstr "Текст в начале"
+
+#: src/utilops.c:2367 src/utilops.c:2399
+msgid "Start #"
+msgstr "Начальный номер"
+
+#: src/utilops.c:2373
+msgid "End text"
+msgstr "Текст в конце"
+
+#: src/utilops.c:2381
+msgid "Padding:"
+msgstr "Заполнение:"
+
+#: src/utilops.c:2391
+msgid "Format (* = original name, ## = numbers)"
+msgstr ""
+
+#: src/utilops.c:2460 src/view_file_list.c:462
+#, c-format
+msgid ""
+"Unable to rename file:\n"
+"%s\n"
+"to:\n"
+"%s"
+msgstr ""
+"Невозможно переименовать файл:\n"
+"%s\n"
+"в:\n"
+"%s"
+
+#: src/utilops.c:2506
+msgid "Rename file"
+msgstr "Переименовать файл"
+
+#: src/utilops.c:2567 src/utilops.c:2657
+#, c-format
+msgid ""
+"The folder:\n"
+"%s\n"
+"already exists."
+msgstr ""
+"Каталог:\n"
+"%s\n"
+"уже существует."
+
+#: src/utilops.c:2568 src/utilops.c:2658
+msgid "Folder exists"
+msgstr "Каталог существует"
+
+#: src/utilops.c:2573 src/utilops.c:2666
+#, c-format
+msgid ""
+"The path:\n"
+"%s\n"
+"already exists as a file."
+msgstr ""
+"Путь:\n"
+"%s\n"
+"уже существует как файл."
+
+#: src/utilops.c:2625
+msgid "New folder - GQview"
+msgstr "Новый каталог - GQview"
+
+#: src/utilops.c:2628
+#, c-format
+msgid ""
+"Create folder in:\n"
+"%s\n"
+"named:"
+msgstr ""
+"Создать каталог в:\n"
+"%s\n"
+"с именем:"
+
+#: src/utilops.c:2667 src/utilops.c:2676
+#, fuzzy
+msgid "Rename failed"
+msgstr "Переименовать файл"
+
+#: src/utilops.c:2775
+#, fuzzy
+msgid "Location"
+msgstr "Местоположение:"
+
+#: src/utilops.c:2952
+#, fuzzy, c-format
+msgid ""
+"Unable to delete folder:\n"
+"\n"
+"%s"
+msgstr ""
+"Невозможно удалить файл:\n"
+"%s"
+
+#: src/utilops.c:2959
+#, c-format
+msgid ""
+"Removal of folder contents failed at this file:\n"
+"\n"
+"%s"
+msgstr ""
+
+#: src/utilops.c:3016 src/utilops.c:3100
+#, fuzzy
+msgid "Delete folder"
+msgstr "Выбрать каталог"
+
+#: src/utilops.c:3020
+#, c-format
+msgid ""
+"This will delete the symbolic link:\n"
+"\n"
+"%s\n"
+"\n"
+"The folder this link points to will not be deleted."
+msgstr ""
+
+#: src/utilops.c:3024
+msgid "Delete symbolic link to folder?"
+msgstr ""
+
+#: src/utilops.c:3039
+#, fuzzy, c-format
+msgid ""
+"Unable to remove folder %s\n"
+"Permissions do not allow writing to the folder."
+msgstr "Невозможно удалить старый файл из корзины"
+
+#: src/utilops.c:3051
+#, fuzzy, c-format
+msgid "Unable to list contents of folder %s"
+msgstr ""
+"Невозможно создать каталог:\n"
+"%s"
+
+#: src/utilops.c:3065 src/utilops.c:3073
+#, fuzzy
+msgid "Folder contains subfolders"
+msgstr "Включать подкаталоги"
+
+#: src/utilops.c:3069
+#, c-format
+msgid ""
+"Unable to delete the folder:\n"
+"\n"
+"%s\n"
+"\n"
+"This folder contains subfolders which must be moved before it can be deleted."
+msgstr ""
+
+#: src/utilops.c:3077
+#, fuzzy
+msgid "Subfolders:"
+msgstr "каталог"
+
+#: src/utilops.c:3104
+#, c-format
+msgid ""
+"This will delete the folder:\n"
+"\n"
+"%s\n"
+"\n"
+"The contents of this folder will also be deleted."
+msgstr ""
+
+#: src/utilops.c:3108
+#, fuzzy
+msgid "Delete folder?"
+msgstr "Удалить файл?"
+
+#: src/utilops.c:3112
+#, fuzzy
+msgid "Contents:"
+msgstr "_Содержание"
+
+#: src/view_dir_list.c:321 src/view_dir_tree.c:417
+msgid "new_folder"
+msgstr "новый_каталог"
+
+#: src/view_dir_list.c:387 src/view_dir_tree.c:491
+msgid "_Up to parent"
+msgstr "На _уровень выше"
+
+#: src/view_dir_list.c:392 src/view_dir_tree.c:496
+msgid "_Slideshow"
+msgstr "Просмотр _слайдов"
+
+#: src/view_dir_list.c:394 src/view_dir_tree.c:498
+msgid "Slideshow recursive"
+msgstr "Рекурсивный просмотр слайдов"
+
+#: src/view_dir_list.c:398 src/view_dir_tree.c:502
+msgid "Find _duplicates..."
+msgstr "Найти _повторяющиеся..."
+
+#: src/view_dir_list.c:400 src/view_dir_tree.c:504
+msgid "Find duplicates recursive..."
+msgstr "Рекурсивный поиск повторяющихся..."
+
+#: src/view_dir_list.c:407 src/view_dir_tree.c:511
+msgid "_New folder..."
+msgstr "_Создать каталог..."
+
+#: src/view_dir_list.c:421 src/view_dir_tree.c:520
+msgid "View as _tree"
+msgstr "Проказать как _дерево"
+
+#: src/view_dir_list.c:423 src/view_dir_tree.c:522 src/view_file_icon.c:315
+#: src/view_file_list.c:426
+msgid "Re_fresh"
+msgstr "О_бновить"
+
+#: src/view_file_icon.c:308 src/view_file_list.c:419
+msgid "_Sort"
+msgstr "Со_ртировать"
+
+#: src/view_file_icon.c:311 src/view_file_list.c:422
+msgid "View as _icons"
+msgstr "Показать как _пиктограммы"
+
+#: src/view_file_list.c:424
+msgid "Show _thumbnails"
+msgstr "Показать м_иниаютры"
+
+#: src/view_file_list.c:450
+#, c-format
+msgid ""
+"Invalid file name:\n"
+"%s"
+msgstr ""
+"Неправильное название файла:\n"
+"%s"

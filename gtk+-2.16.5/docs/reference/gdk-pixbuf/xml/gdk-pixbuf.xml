@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+
+<!ENTITY gdk-pixbuf "<application>gdk-pixbuf</application>">
+<!ENTITY Imlib "<application>Imlib</application>">
+]>
+<refentry id="gdk-pixbuf-gdk-pixbuf">
+<refmeta>
+<refentrytitle role="top_of_page" id="gdk-pixbuf-gdk-pixbuf.top_of_page">The GdkPixbuf Structure</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GDK-PIXBUF Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>The GdkPixbuf Structure</refname>
+<refpurpose>Information that describes an image.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="gdk-pixbuf-gdk-pixbuf.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+<anchor id="GdkPixbuf"/>
+<synopsis>
+
+#include &lt;gdk-pixbuf/gdk-pixbuf.h&gt;
+
+enum                <link linkend="GdkPixbufError">GdkPixbufError</link>;
+#define             <link linkend="GDK-PIXBUF-ERROR--CAPS">GDK_PIXBUF_ERROR</link>
+enum                <link linkend="GdkColorspace">GdkColorspace</link>;
+enum                <link linkend="GdkPixbufAlphaMode">GdkPixbufAlphaMode</link>;
+                    <link linkend="GdkPixbuf-struct">GdkPixbuf</link>;
+<link linkend="GdkColorspace">GdkColorspace</link>       <link linkend="gdk-pixbuf-get-colorspace">gdk_pixbuf_get_colorspace</link>           (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="int">int</link>                 <link linkend="gdk-pixbuf-get-n-channels">gdk_pixbuf_get_n_channels</link>           (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="gboolean">gboolean</link>            <link linkend="gdk-pixbuf-get-has-alpha">gdk_pixbuf_get_has_alpha</link>            (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="int">int</link>                 <link linkend="gdk-pixbuf-get-bits-per-sample">gdk_pixbuf_get_bits_per_sample</link>      (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="guchar">guchar</link> *            <link linkend="gdk-pixbuf-get-pixels">gdk_pixbuf_get_pixels</link>               (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="int">int</link>                 <link linkend="gdk-pixbuf-get-width">gdk_pixbuf_get_width</link>                (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="int">int</link>                 <link linkend="gdk-pixbuf-get-height">gdk_pixbuf_get_height</link>               (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+<link linkend="int">int</link>                 <link linkend="gdk-pixbuf-get-rowstride">gdk_pixbuf_get_rowstride</link>            (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);
+const <link linkend="gchar">gchar</link> *       <link linkend="gdk-pixbuf-get-option">gdk_pixbuf_get_option</link>               (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         const <link linkend="gchar">gchar</link> *key);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="gdk-pixbuf-gdk-pixbuf.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GdkPixbuf
+</synopsis>
+</refsect1>
+
+
+
+
+
+<refsect1 id="gdk-pixbuf-gdk-pixbuf.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GdkPixbuf--bits-per-sample">bits-per-sample</link>&quot;          <link linkend="gint">gint</link>                  : Read / Write / Construct Only
+  &quot;<link linkend="GdkPixbuf--colorspace">colorspace</link>&quot;               <link linkend="GdkColorspace">GdkColorspace</link>         : Read / Write / Construct Only
+  &quot;<link linkend="GdkPixbuf--has-alpha">has-alpha</link>&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write / Construct Only
+  &quot;<link linkend="GdkPixbuf--height">height</link>&quot;                   <link linkend="gint">gint</link>                  : Read / Write / Construct Only
+  &quot;<link linkend="GdkPixbuf--n-channels">n-channels</link>&quot;               <link linkend="gint">gint</link>                  : Read / Write / Construct Only
+  &quot;<link linkend="GdkPixbuf--pixels">pixels</link>&quot;                   <link linkend="gpointer">gpointer</link>              : Read / Write / Construct Only
+  &quot;<link linkend="GdkPixbuf--rowstride">rowstride</link>&quot;                <link linkend="gint">gint</link>                  : Read / Write / Construct Only
+  &quot;<link linkend="GdkPixbuf--width">width</link>&quot;                    <link linkend="gint">gint</link>                  : Read / Write / Construct Only
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="gdk-pixbuf-gdk-pixbuf.description" role="desc">
+<title role="desc.title">Description</title>
+  <para>
+    The <structname>GdkPixbuf</structname> structure contains
+    information that describes an image in memory.
+  </para>
+  <section id="image-data">
+    <title>Image Data</title>
+    <para>
+      Image data in a pixbuf is stored in memory in uncompressed,
+      packed format.  Rows in the image are stored top to bottom, and
+      in each row pixels are stored from left to right.  There may be
+      padding at the end of a row.  The "rowstride" value of a pixbuf,
+      as returned by <link linkend="gdk-pixbuf-get-rowstride"><function>gdk_pixbuf_get_rowstride()</function></link>, indicates the number
+      of bytes between rows.
+    </para>
+    <example id="put-pixel">
+      <title>put_pixel(<!-- -->) example</title>
+      <para>
+	The following code illustrates a simple put_pixel(<!-- -->)
+	function for RGB pixbufs with 8 bits per channel with an alpha
+	channel.  It is not included in the gdk-pixbuf library for
+	performance reasons; rather than making several function calls
+	for each pixel, your own code can take shortcuts.
+      </para>
+      <programlisting>
+static void
+put_pixel (GdkPixbuf *pixbuf, int x, int y, guchar red, guchar green, guchar blue, guchar alpha)
+{
+  int width, height, rowstride, n_channels;
+  guchar *pixels, *p;
+  n_channels = gdk_pixbuf_get_n_channels (pixbuf);
+  g_assert (gdk_pixbuf_get_colorspace (pixbuf) == GDK_COLORSPACE_RGB);
+  g_assert (gdk_pixbuf_get_bits_per_sample (pixbuf) == 8);
+  g_assert (gdk_pixbuf_get_has_alpha (pixbuf));
+  g_assert (n_channels == 4);
+  width = gdk_pixbuf_get_width (pixbuf);
+  height = gdk_pixbuf_get_height (pixbuf);
+  g_assert (x &gt;= 0 &amp;&amp; x &lt; width);
+  g_assert (y &gt;= 0 &amp;&amp; y &lt; height);
+  rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+  pixels = gdk_pixbuf_get_pixels (pixbuf);
+  p = pixels + y * rowstride + x * n_channels;
+  p[0] = red;
+  p[1] = green;
+  p[2] = blue;
+  p[3] = alpha;
+}
+      </programlisting>
+      <para>
+	This function will not work for pixbufs with images that are
+	other than 8 bits per sample or channel, but it will work for
+	most of the pixbufs that GTK+ uses.
+      </para>
+    </example>
+    <note>
+      <para>
+	If you are doing <link linkend="memcpy"><function>memcpy()</function></link> of raw pixbuf data, note that the
+	last row in the pixbuf may not be as wide as the full
+	rowstride, but rather just as wide as the pixel data needs to
+	be.  That is, it is unsafe to do <literal>memcpy (dest,
+	pixels, rowstride * height)</literal> to copy a whole pixbuf.
+	Use <link linkend="gdk-pixbuf-copy"><function>gdk_pixbuf_copy()</function></link> instead, or compute the width in bytes
+	of the last row as <literal>width * ((n_channels *
+	bits_per_sample + 7) / 8)</literal>.
+      </para>
+    </note>
+  </section>
+</refsect1>
+
+<refsect1 id="gdk-pixbuf-gdk-pixbuf.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GdkPixbufError" role="enum">
+<title>enum GdkPixbufError</title>
+<indexterm zone="GdkPixbufError"><primary>GdkPixbufError</primary></indexterm><programlisting>typedef enum {
+        /* image data hosed */
+        GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+        /* no mem to load image */
+        GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
+        /* bad option passed to save routine */
+        GDK_PIXBUF_ERROR_BAD_OPTION,
+        /* unsupported image type (sort of an ENOSYS) */
+        GDK_PIXBUF_ERROR_UNKNOWN_TYPE,
+        /* unsupported operation (load, save) for image type */
+        GDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION,
+        GDK_PIXBUF_ERROR_FAILED
+} GdkPixbufError;
+</programlisting>
+<para>
+An error code in the <link linkend="GDK-PIXBUF-ERROR--CAPS"><type>GDK_PIXBUF_ERROR</type></link> domain. Many &gdk-pixbuf;
+operations can cause errors in this domain, or in the <link linkend="G-FILE-ERROR--CAPS"><type>G_FILE_ERROR</type></link>
+domain.
+</para><variablelist role="enum">
+<varlistentry id="GDK-PIXBUF-ERROR-CORRUPT-IMAGE--CAPS" role="constant">
+<term><literal>GDK_PIXBUF_ERROR_CORRUPT_IMAGE</literal></term>
+<listitem><simpara>An image file was broken somehow.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PIXBUF-ERROR-INSUFFICIENT-MEMORY--CAPS" role="constant">
+<term><literal>GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY</literal></term>
+<listitem><simpara>Not enough memory.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PIXBUF-ERROR-BAD-OPTION--CAPS" role="constant">
+<term><literal>GDK_PIXBUF_ERROR_BAD_OPTION</literal></term>
+<listitem><simpara>A bad option was passed to a pixbuf save module.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PIXBUF-ERROR-UNKNOWN-TYPE--CAPS" role="constant">
+<term><literal>GDK_PIXBUF_ERROR_UNKNOWN_TYPE</literal></term>
+<listitem><simpara>Unknown image type.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PIXBUF-ERROR-UNSUPPORTED-OPERATION--CAPS" role="constant">
+<term><literal>GDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION</literal></term>
+<listitem><simpara>Don't know how to perform the
+given operation on the type of image at hand.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PIXBUF-ERROR-FAILED--CAPS" role="constant">
+<term><literal>GDK_PIXBUF_ERROR_FAILED</literal></term>
+<listitem><simpara>Generic failure code, something went wrong.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GDK-PIXBUF-ERROR--CAPS" role="macro">
+<title>GDK_PIXBUF_ERROR</title>
+<indexterm zone="GDK-PIXBUF-ERROR--CAPS"><primary sortas="ERROR">GDK_PIXBUF_ERROR</primary></indexterm><programlisting>#define GDK_PIXBUF_ERROR gdk_pixbuf_error_quark ()
+</programlisting>
+<para>
+Error domain used for pixbuf operations. Indicates that the error code
+will be in the <link linkend="GdkPixbufError"><type>GdkPixbufError</type></link> enumeration. See <link linkend="GError"><type>GError</type></link> for
+information on error domains and error codes.
+</para></refsect2>
+<refsect2 id="GdkColorspace" role="enum">
+<title>enum GdkColorspace</title>
+<indexterm zone="GdkColorspace"><primary>GdkColorspace</primary></indexterm><programlisting>typedef enum {
+	GDK_COLORSPACE_RGB
+} GdkColorspace;
+</programlisting>
+  <para>
+    This enumeration defines the color spaces that are supported by
+    the &gdk-pixbuf; library.  Currently only RGB is supported.
+  </para><variablelist role="enum">
+<varlistentry id="GDK-COLORSPACE-RGB--CAPS" role="constant">
+<term><literal>GDK_COLORSPACE_RGB</literal></term>
+<listitem><simpara>Indicates a red/green/blue additive color space.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkPixbufAlphaMode" role="enum">
+<title>enum GdkPixbufAlphaMode</title>
+<indexterm zone="GdkPixbufAlphaMode"><primary>GdkPixbufAlphaMode</primary></indexterm><programlisting>typedef enum
+{
+        GDK_PIXBUF_ALPHA_BILEVEL,
+        GDK_PIXBUF_ALPHA_FULL
+} GdkPixbufAlphaMode;
+</programlisting>
+  <para>
+    These values can be passed to
+    <link linkend="gdk-pixbuf-render-to-drawable-alpha"><function>gdk_pixbuf_render_to_drawable_alpha()</function></link> to control how the alpha
+    channel of an image should be handled.  This function can create a
+    bilevel clipping mask (black and white) and use it while painting
+    the image.  In the future, when the X Window System gets an alpha
+    channel extension, it will be possible to do full alpha
+    compositing onto arbitrary drawables.  For now both cases fall
+    back to a bilevel clipping mask.
+  </para><variablelist role="enum">
+<varlistentry id="GDK-PIXBUF-ALPHA-BILEVEL--CAPS" role="constant">
+<term><literal>GDK_PIXBUF_ALPHA_BILEVEL</literal></term>
+<listitem><simpara>A bilevel clipping mask (black and white)
+will be created and used to draw the image.  Pixels below 0.5 opacity
+will be considered fully transparent, and all others will be
+considered fully opaque.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GDK-PIXBUF-ALPHA-FULL--CAPS" role="constant">
+<term><literal>GDK_PIXBUF_ALPHA_FULL</literal></term>
+<listitem><simpara>For now falls back to <link linkend="GDK-PIXBUF-ALPHA-BILEVEL--CAPS"><type>GDK_PIXBUF_ALPHA_BILEVEL</type></link>.
+In the future it will do full alpha compositing.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="GdkPixbuf-struct" role="struct">
+<title>GdkPixbuf</title>
+<indexterm zone="GdkPixbuf-struct"><primary>GdkPixbuf</primary></indexterm><programlisting>typedef struct _GdkPixbuf GdkPixbuf;</programlisting>
+  <para>
+    This is the main structure in the &gdk-pixbuf; library.  It is
+    used to represent images.  It contains information about the
+    image's pixel data, its color space, bits per sample, width and
+    height, and the rowstride (the number of bytes between the start of
+    one row and the start of the next).
+  </para></refsect2>
+<refsect2 id="gdk-pixbuf-get-colorspace" role="function">
+<title>gdk_pixbuf_get_colorspace ()</title>
+<indexterm zone="gdk-pixbuf-get-colorspace"><primary sortas="get_colorspace">gdk_pixbuf_get_colorspace</primary></indexterm><programlisting><link linkend="GdkColorspace">GdkColorspace</link>       gdk_pixbuf_get_colorspace           (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Queries the color space of a pixbuf.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> A pixbuf.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Color space.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pixbuf-get-n-channels" role="function">
+<title>gdk_pixbuf_get_n_channels ()</title>
+<indexterm zone="gdk-pixbuf-get-n-channels"><primary sortas="get_n_channels">gdk_pixbuf_get_n_channels</primary></indexterm><programlisting><link linkend="int">int</link>                 gdk_pixbuf_get_n_channels           (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Queries the number of channels of a pixbuf.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> A pixbuf.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Number of channels.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pixbuf-get-has-alpha" role="function">
+<title>gdk_pixbuf_get_has_alpha ()</title>
+<indexterm zone="gdk-pixbuf-get-has-alpha"><primary sortas="get_has_alpha">gdk_pixbuf_get_has_alpha</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gdk_pixbuf_get_has_alpha            (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Queries whether a pixbuf has an alpha channel (opacity information).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> A pixbuf.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if it has an alpha channel, <link linkend="FALSE--CAPS"><literal>FALSE</literal></link> otherwise.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pixbuf-get-bits-per-sample" role="function">
+<title>gdk_pixbuf_get_bits_per_sample ()</title>
+<indexterm zone="gdk-pixbuf-get-bits-per-sample"><primary sortas="get_bits_per_sample">gdk_pixbuf_get_bits_per_sample</primary></indexterm><programlisting><link linkend="int">int</link>                 gdk_pixbuf_get_bits_per_sample      (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Queries the number of bits per color sample in a pixbuf.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> A pixbuf.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Number of bits per color sample.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pixbuf-get-pixels" role="function">
+<title>gdk_pixbuf_get_pixels ()</title>
+<indexterm zone="gdk-pixbuf-get-pixels"><primary sortas="get_pixels">gdk_pixbuf_get_pixels</primary></indexterm><programlisting><link linkend="guchar">guchar</link> *            gdk_pixbuf_get_pixels               (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Queries a pointer to the pixel data of a pixbuf.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> A pixbuf.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A pointer to the pixbuf's pixel data.  Please see <xref linkend="image-data"/>
+for information about how the pixel data is stored in
+memory.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pixbuf-get-width" role="function">
+<title>gdk_pixbuf_get_width ()</title>
+<indexterm zone="gdk-pixbuf-get-width"><primary sortas="get_width">gdk_pixbuf_get_width</primary></indexterm><programlisting><link linkend="int">int</link>                 gdk_pixbuf_get_width                (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Queries the width of a pixbuf.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> A pixbuf.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Width in pixels.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pixbuf-get-height" role="function">
+<title>gdk_pixbuf_get_height ()</title>
+<indexterm zone="gdk-pixbuf-get-height"><primary sortas="get_height">gdk_pixbuf_get_height</primary></indexterm><programlisting><link linkend="int">int</link>                 gdk_pixbuf_get_height               (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Queries the height of a pixbuf.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> A pixbuf.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Height in pixels.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pixbuf-get-rowstride" role="function">
+<title>gdk_pixbuf_get_rowstride ()</title>
+<indexterm zone="gdk-pixbuf-get-rowstride"><primary sortas="get_rowstride">gdk_pixbuf_get_rowstride</primary></indexterm><programlisting><link linkend="int">int</link>                 gdk_pixbuf_get_rowstride            (const <link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf);</programlisting>
+<para>
+Queries the rowstride of a pixbuf, which is the number of bytes between the start of a row
+and the start of the next row.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> A pixbuf.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Distance between row starts.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gdk-pixbuf-get-option" role="function">
+<title>gdk_pixbuf_get_option ()</title>
+<indexterm zone="gdk-pixbuf-get-option"><primary sortas="get_option">gdk_pixbuf_get_option</primary></indexterm><programlisting>const <link linkend="gchar">gchar</link> *       gdk_pixbuf_get_option               (<link linkend="GdkPixbuf">GdkPixbuf</link> *pixbuf,
+                                                         const <link linkend="gchar">gchar</link> *key);</programlisting>
+<para>
+Looks up <parameter>key</parameter> in the list of options that may have been attached to the
+<parameter>pixbuf</parameter> when it was loaded, or that may have been attached by another
+function using <link linkend="gdk-pixbuf-set-option"><function>gdk_pixbuf_set_option()</function></link>.
+</para>
+<para>
+For instance, the ANI loader provides "Title" and "Artist" options. 
+The ICO, XBM, and XPM loaders provide "x_hot" and "y_hot" hot-spot 
+options for cursor definitions. The PNG loader provides the tEXt ancillary
+chunk key/value pairs as options. Since 2.12, the TIFF and JPEG loaders
+return an "orientation" option string that corresponds to the embedded 
+TIFF/Exif orientation tag (if present).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>pixbuf</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GdkPixbuf"><type>GdkPixbuf</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>key</parameter>&#160;:</term>
+<listitem><simpara> a nul-terminated string.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the value associated with <parameter>key</parameter>. This is a nul-terminated 
+string that should not be freed or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if <parameter>key</parameter> was not found.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+<refsect1 id="gdk-pixbuf-gdk-pixbuf.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GdkPixbuf--bits-per-sample" role="property"><title>The <literal>&quot;bits-per-sample&quot;</literal> property</title>
+<indexterm zone="GdkPixbuf--bits-per-sample"><primary>GdkPixbuf:bits-per-sample</primary></indexterm><programlisting>  &quot;bits-per-sample&quot;          <link linkend="gint">gint</link>                  : Read / Write / Construct Only</programlisting>
+<para>
+The number of bits per sample.
+Currently only 8 bit per sample are supported.</para>
+<para>
+</para><para>Allowed values: [1,16]</para>
+<para>Default value: 8</para>
+</refsect2>
+<refsect2 id="GdkPixbuf--colorspace" role="property"><title>The <literal>&quot;colorspace&quot;</literal> property</title>
+<indexterm zone="GdkPixbuf--colorspace"><primary>GdkPixbuf:colorspace</primary></indexterm><programlisting>  &quot;colorspace&quot;               <link linkend="GdkColorspace">GdkColorspace</link>         : Read / Write / Construct Only</programlisting>
+<para>The colorspace in which the samples are interpreted.</para><para>Default value: GDK_COLORSPACE_RGB</para>
+</refsect2>
+<refsect2 id="GdkPixbuf--has-alpha" role="property"><title>The <literal>&quot;has-alpha&quot;</literal> property</title>
+<indexterm zone="GdkPixbuf--has-alpha"><primary>GdkPixbuf:has-alpha</primary></indexterm><programlisting>  &quot;has-alpha&quot;                <link linkend="gboolean">gboolean</link>              : Read / Write / Construct Only</programlisting>
+<para>Whether the pixbuf has an alpha channel.</para><para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GdkPixbuf--height" role="property"><title>The <literal>&quot;height&quot;</literal> property</title>
+<indexterm zone="GdkPixbuf--height"><primary>GdkPixbuf:height</primary></indexterm><programlisting>  &quot;height&quot;                   <link linkend="gint">gint</link>                  : Read / Write / Construct Only</programlisting>
+<para>The number of rows of the pixbuf.</para><para>Allowed values: &gt;= 1</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GdkPixbuf--n-channels" role="property"><title>The <literal>&quot;n-channels&quot;</literal> property</title>
+<indexterm zone="GdkPixbuf--n-channels"><primary>GdkPixbuf:n-channels</primary></indexterm><programlisting>  &quot;n-channels&quot;               <link linkend="gint">gint</link>                  : Read / Write / Construct Only</programlisting>
+<para>
+The number of samples per pixel. 
+Currently, only 3 or 4 samples per pixel are supported.</para>
+<para>
+</para><para>Allowed values: &gt;= 0</para>
+<para>Default value: 3</para>
+</refsect2>
+<refsect2 id="GdkPixbuf--pixels" role="property"><title>The <literal>&quot;pixels&quot;</literal> property</title>
+<indexterm zone="GdkPixbuf--pixels"><primary>GdkPixbuf:pixels</primary></indexterm><programlisting>  &quot;pixels&quot;                   <link linkend="gpointer">gpointer</link>              : Read / Write / Construct Only</programlisting>
+<para>A pointer to the pixel data of the pixbuf.</para></refsect2>
+<refsect2 id="GdkPixbuf--rowstride" role="property"><title>The <literal>&quot;rowstride&quot;</literal> property</title>
+<indexterm zone="GdkPixbuf--rowstride"><primary>GdkPixbuf:rowstride</primary></indexterm><programlisting>  &quot;rowstride&quot;                <link linkend="gint">gint</link>                  : Read / Write / Construct Only</programlisting>
+<para>
+The number of bytes between the start of a row and 
+the start of the next row. This number must (obviously)
+be at least as large as the width of the pixbuf.</para>
+<para>
+</para><para>Allowed values: &gt;= 1</para>
+<para>Default value: 1</para>
+</refsect2>
+<refsect2 id="GdkPixbuf--width" role="property"><title>The <literal>&quot;width&quot;</literal> property</title>
+<indexterm zone="GdkPixbuf--width"><primary>GdkPixbuf:width</primary></indexterm><programlisting>  &quot;width&quot;                    <link linkend="gint">gint</link>                  : Read / Write / Construct Only</programlisting>
+<para>The number of columns of the pixbuf.</para><para>Allowed values: &gt;= 1</para>
+<para>Default value: 1</para>
+</refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

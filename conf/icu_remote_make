@@ -1,0 +1,22 @@
+cd source
+make distclean
+rm -fr host arm
+mkdir -p host
+mkdir -p arm
+./configure --disable-threads  
+make  || exit 1
+cp -r bin data lib tools host
+XPATH=/scratchbox/compilers/"`/scratchbox/tools/bin/sb-conf show -c`"/bin/:$PATH
+make distclean
+CPPFLAGS="-O2 -march=armv6j -mtune=arm1136jf-s -pipe -fomit-frame-pointer -fno-stack-protector" \
+PATH="$XPATH" ./configure --host=arm-none-linux-gnueabi
+PATH="$XPATH" make 
+echo "It is ok to have error here" > /dev/stderr
+cp -r bin data arm
+cp -r host/bin/* bin
+cp -r host/data/* data
+PATH="$XPATH" LD_LIBRARY_PATH=`pwd`/host/lib make  || exit 1
+rm bin/uconv
+PATH="$XPATH" LD_LIBRARY_PATH=`pwd`/host/lib make  || exit 1
+cp arm/bin/* bin
+cd ..

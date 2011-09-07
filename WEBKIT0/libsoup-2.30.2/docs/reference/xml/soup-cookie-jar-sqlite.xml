@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="SoupCookieJarSqlite">
+<refmeta>
+<refentrytitle role="top_of_page" id="SoupCookieJarSqlite.top_of_page">SoupCookieJarSqlite</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBSOUP-2.4 Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>SoupCookieJarSqlite</refname>
+<refpurpose>SQLite-based Cookie Jar</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="SoupCookieJarSqlite.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+                    <link linkend="SoupCookieJarSqlite-struct">SoupCookieJarSqlite</link>;
+<link linkend="SoupCookieJar">SoupCookieJar</link> *     <link linkend="soup-cookie-jar-sqlite-new">soup_cookie_jar_sqlite_new</link>          (const <link linkend="char">char</link> *filename,
+                                                         <link linkend="gboolean">gboolean</link> read_only);
+
+#define             <link linkend="SOUP-COOKIE-JAR-SQLITE-FILENAME--CAPS">SOUP_COOKIE_JAR_SQLITE_FILENAME</link>
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="SoupCookieJarSqlite.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----<link linkend="SoupCookieJar">SoupCookieJar</link>
+         +----SoupCookieJarSqlite
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="SoupCookieJarSqlite.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+SoupCookieJarSqlite implements
+ <link linkend="SoupSessionFeature">SoupSessionFeature</link>.</para>
+</refsect1>
+
+
+<refsect1 id="SoupCookieJarSqlite.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="SoupCookieJarSqlite--filename">filename</link>&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write / Construct Only
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="SoupCookieJarSqlite.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+<link linkend="SoupCookieJarSqlite"><type>SoupCookieJarSqlite</type></link> is a <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link> that reads cookies from and
+writes them to an SQLite file in the new Mozilla format.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="SoupCookieJarSqlite.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="SoupCookieJarSqlite-struct" role="struct">
+<title>SoupCookieJarSqlite</title>
+<indexterm zone="SoupCookieJarSqlite-struct"><primary sortas="SoupCookieJarSqlite">SoupCookieJarSqlite</primary></indexterm><programlisting>typedef struct _SoupCookieJarSqlite SoupCookieJarSqlite;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="soup-cookie-jar-sqlite-new" role="function" condition="since:2.26">
+<title>soup_cookie_jar_sqlite_new ()</title>
+<indexterm zone="soup-cookie-jar-sqlite-new" role="2.26"><primary sortas="soup_cookie_jar_sqlite_new">soup_cookie_jar_sqlite_new</primary></indexterm><programlisting><link linkend="SoupCookieJar">SoupCookieJar</link> *     soup_cookie_jar_sqlite_new          (const <link linkend="char">char</link> *filename,
+                                                         <link linkend="gboolean">gboolean</link> read_only);</programlisting>
+<para>
+Creates a <link linkend="SoupCookieJarSqlite"><type>SoupCookieJarSqlite</type></link>.
+</para>
+<para>
+<parameter>filename</parameter> will be read in at startup to create an initial set of
+cookies. If <parameter>read_only</parameter> is <link linkend="FALSE--CAPS"><literal>FALSE</literal></link>, then the non-session cookies will
+be written to <parameter>filename</parameter> when the 'changed' signal is emitted from
+the jar. (If <parameter>read_only</parameter> is <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, then the cookie jar will only be
+used for this session, and changes made to it will be lost when the
+jar is destroyed.)</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> the filename to read to/write from, or <link linkend="NULL--CAPS"><literal>NULL</literal></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>read_only</parameter>&#160;:</term>
+<listitem><simpara> <link linkend="TRUE--CAPS"><literal>TRUE</literal></link> if <parameter>filename</parameter> is read-only
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the new <link linkend="SoupCookieJar"><type>SoupCookieJar</type></link>
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.26</para></refsect2>
+<refsect2 id="SOUP-COOKIE-JAR-SQLITE-FILENAME--CAPS" role="macro">
+<title>SOUP_COOKIE_JAR_SQLITE_FILENAME</title>
+<indexterm zone="SOUP-COOKIE-JAR-SQLITE-FILENAME--CAPS"><primary sortas="SOUP_COOKIE_JAR_SQLITE_FILENAME">SOUP_COOKIE_JAR_SQLITE_FILENAME</primary></indexterm><programlisting>#define SOUP_COOKIE_JAR_SQLITE_FILENAME  "filename"
+</programlisting>
+<para>
+Alias for the <link linkend="SoupCookieJarSqlite--filename"><type>"filename"</type></link> property. (The
+cookie-storage filename.)</para>
+<para>
+</para></refsect2>
+
+</refsect1>
+<refsect1 id="SoupCookieJarSqlite.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="SoupCookieJarSqlite--filename" role="property"><title>The <literal>&quot;filename&quot;</literal> property</title>
+<indexterm zone="SoupCookieJarSqlite--filename"><primary sortas="SoupCookieJarSqlite:filename">SoupCookieJarSqlite:filename</primary></indexterm><programlisting>  &quot;filename&quot;                 <link linkend="gchar">gchar</link>*                : Read / Write / Construct Only</programlisting>
+<para>Cookie-storage filename.</para><para>Default value: NULL</para>
+</refsect2>
+</refsect1>
+
+
+
+
+</refentry>

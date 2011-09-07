@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<indexdiv>
+<indexdiv><title>A</title>
+<indexentry><primaryie linkends="GtkAboutDialog--artists"><link linkend="GtkAboutDialog--artists">GtkAboutDialog:artists</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--authors"><link linkend="GtkAboutDialog--authors">GtkAboutDialog:authors</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--comments"><link linkend="GtkAboutDialog--comments">GtkAboutDialog:comments</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--copyright"><link linkend="GtkAboutDialog--copyright">GtkAboutDialog:copyright</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--documenters"><link linkend="GtkAboutDialog--documenters">GtkAboutDialog:documenters</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--license"><link linkend="GtkAboutDialog--license">GtkAboutDialog:license</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--logo"><link linkend="GtkAboutDialog--logo">GtkAboutDialog:logo</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--logo-icon-name"><link linkend="GtkAboutDialog--logo-icon-name">GtkAboutDialog:logo-icon-name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--translator-credits"><link linkend="GtkAboutDialog--translator-credits">GtkAboutDialog:translator-credits</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--version"><link linkend="GtkAboutDialog--version">GtkAboutDialog:version</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--website"><link linkend="GtkAboutDialog--website">GtkAboutDialog:website</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAboutDialog--website-label"><link linkend="GtkAboutDialog--website-label">GtkAboutDialog:website-label</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-artists"><link linkend="gtk-about-dialog-get-artists">gtk_about_dialog_get_artists</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-authors"><link linkend="gtk-about-dialog-get-authors">gtk_about_dialog_get_authors</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-comments"><link linkend="gtk-about-dialog-get-comments">gtk_about_dialog_get_comments</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-copyright"><link linkend="gtk-about-dialog-get-copyright">gtk_about_dialog_get_copyright</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-documenters"><link linkend="gtk-about-dialog-get-documenters">gtk_about_dialog_get_documenters</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-license"><link linkend="gtk-about-dialog-get-license">gtk_about_dialog_get_license</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-logo"><link linkend="gtk-about-dialog-get-logo">gtk_about_dialog_get_logo</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-logo-icon-name"><link linkend="gtk-about-dialog-get-logo-icon-name">gtk_about_dialog_get_logo_icon_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-name"><link linkend="gtk-about-dialog-get-name">gtk_about_dialog_get_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-translator-credits"><link linkend="gtk-about-dialog-get-translator-credits">gtk_about_dialog_get_translator_credits</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-version"><link linkend="gtk-about-dialog-get-version">gtk_about_dialog_get_version</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-website"><link linkend="gtk-about-dialog-get-website">gtk_about_dialog_get_website</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-get-website-label"><link linkend="gtk-about-dialog-get-website-label">gtk_about_dialog_get_website_label</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-new"><link linkend="gtk-about-dialog-new">gtk_about_dialog_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-artists"><link linkend="gtk-about-dialog-set-artists">gtk_about_dialog_set_artists</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-authors"><link linkend="gtk-about-dialog-set-authors">gtk_about_dialog_set_authors</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-comments"><link linkend="gtk-about-dialog-set-comments">gtk_about_dialog_set_comments</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-copyright"><link linkend="gtk-about-dialog-set-copyright">gtk_about_dialog_set_copyright</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-documenters"><link linkend="gtk-about-dialog-set-documenters">gtk_about_dialog_set_documenters</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-email-hook"><link linkend="gtk-about-dialog-set-email-hook">gtk_about_dialog_set_email_hook</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-license"><link linkend="gtk-about-dialog-set-license">gtk_about_dialog_set_license</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-logo"><link linkend="gtk-about-dialog-set-logo">gtk_about_dialog_set_logo</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-logo-icon-name"><link linkend="gtk-about-dialog-set-logo-icon-name">gtk_about_dialog_set_logo_icon_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-name"><link linkend="gtk-about-dialog-set-name">gtk_about_dialog_set_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-translator-credits"><link linkend="gtk-about-dialog-set-translator-credits">gtk_about_dialog_set_translator_credits</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-url-hook"><link linkend="gtk-about-dialog-set-url-hook">gtk_about_dialog_set_url_hook</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-version"><link linkend="gtk-about-dialog-set-version">gtk_about_dialog_set_version</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-website"><link linkend="gtk-about-dialog-set-website">gtk_about_dialog_set_website</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-about-dialog-set-website-label"><link linkend="gtk-about-dialog-set-website-label">gtk_about_dialog_set_website_label</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-accelerator-get-label"><link linkend="gtk-accelerator-get-label">gtk_accelerator_get_label</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkAction--visible-overflown"><link linkend="GtkAction--visible-overflown">GtkAction:visible-overflown</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-action-get-accel-path"><link linkend="gtk-action-get-accel-path">gtk_action_get_accel_path</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-action-group-translate-string"><link linkend="gtk-action-group-translate-string">gtk_action_group_translate_string</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-action-set-sensitive"><link linkend="gtk-action-set-sensitive">gtk_action_set_sensitive</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-action-set-visible"><link linkend="gtk-action-set-visible">gtk_action_set_visible</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-alternative-dialog-button-order"><link linkend="gtk-alternative-dialog-button-order">gtk_alternative_dialog_button_order</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>B</title>
+<indexentry><primaryie linkends="GtkButton--s-displace-focus"><link linkend="GtkButton--s-displace-focus">GtkButton:displace-focus</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-button-get-image"><link linkend="gtk-button-get-image">gtk_button_get_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-button-set-image"><link linkend="gtk-button-set-image">gtk_button_set_image</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="GtkCellRenderer-editing-started"><link linkend="GtkCellRenderer-editing-started">GtkCellRenderer::editing-started</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkCellRendererCombo--has-entry"><link linkend="GtkCellRendererCombo--has-entry">GtkCellRendererCombo:has-entry</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkCellRendererCombo--model"><link linkend="GtkCellRendererCombo--model">GtkCellRendererCombo:model</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkCellRendererCombo--text-column"><link linkend="GtkCellRendererCombo--text-column">GtkCellRendererCombo:text-column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkCellRendererProgress--text"><link linkend="GtkCellRendererProgress--text">GtkCellRendererProgress:text</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkCellRendererProgress--value"><link linkend="GtkCellRendererProgress--value">GtkCellRendererProgress:value</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkCellRendererText--ellipsize"><link linkend="GtkCellRendererText--ellipsize">GtkCellRendererText:ellipsize</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkCellRendererText--width-chars"><link linkend="GtkCellRendererText--width-chars">GtkCellRendererText:width-chars</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-renderer-combo-new"><link linkend="gtk-cell-renderer-combo-new">gtk_cell_renderer_combo_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-renderer-progress-new"><link linkend="gtk-cell-renderer-progress-new">gtk_cell_renderer_progress_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-renderer-stop-editing"><link linkend="gtk-cell-renderer-stop-editing">gtk_cell_renderer_stop_editing</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-view-get-cell-renderers"><link linkend="gtk-cell-view-get-cell-renderers">gtk_cell_view_get_cell_renderers</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-view-get-displayed-row"><link linkend="gtk-cell-view-get-displayed-row">gtk_cell_view_get_displayed_row</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-view-get-size-of-row"><link linkend="gtk-cell-view-get-size-of-row">gtk_cell_view_get_size_of_row</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-view-new"><link linkend="gtk-cell-view-new">gtk_cell_view_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-view-new-with-markup"><link linkend="gtk-cell-view-new-with-markup">gtk_cell_view_new_with_markup</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-view-new-with-pixbuf"><link linkend="gtk-cell-view-new-with-pixbuf">gtk_cell_view_new_with_pixbuf</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-view-new-with-text"><link linkend="gtk-cell-view-new-with-text">gtk_cell_view_new_with_text</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-view-set-background-color"><link linkend="gtk-cell-view-set-background-color">gtk_cell_view_set_background_color</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-view-set-displayed-row"><link linkend="gtk-cell-view-set-displayed-row">gtk_cell_view_set_displayed_row</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-cell-view-set-model"><link linkend="gtk-cell-view-set-model">gtk_cell_view_set_model</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkClipboard-owner-change"><link linkend="GtkClipboard-owner-change">GtkClipboard::owner-change</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkClipboardImageReceivedFunc"><link linkend="GtkClipboardImageReceivedFunc">GtkClipboardImageReceivedFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-clipboard-request-image"><link linkend="gtk-clipboard-request-image">gtk_clipboard_request_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-clipboard-set-can-store"><link linkend="gtk-clipboard-set-can-store">gtk_clipboard_set_can_store</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-clipboard-set-image"><link linkend="gtk-clipboard-set-image">gtk_clipboard_set_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-clipboard-store"><link linkend="gtk-clipboard-store">gtk_clipboard_store</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-clipboard-wait-for-image"><link linkend="gtk-clipboard-wait-for-image">gtk_clipboard_wait_for_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-clipboard-wait-is-image-available"><link linkend="gtk-clipboard-wait-is-image-available">gtk_clipboard_wait_is_image_available</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-clipboard-wait-is-target-available"><link linkend="gtk-clipboard-wait-is-target-available">gtk_clipboard_wait_is_target_available</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkComboBox--add-tearoffs"><link linkend="GtkComboBox--add-tearoffs">GtkComboBox:add-tearoffs</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkComboBox--has-frame"><link linkend="GtkComboBox--has-frame">GtkComboBox:has-frame</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-combo-box-get-active-text"><link linkend="gtk-combo-box-get-active-text">gtk_combo_box_get_active_text</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-combo-box-get-column-span-column"><link linkend="gtk-combo-box-get-column-span-column">gtk_combo_box_get_column_span_column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-combo-box-get-focus-on-click"><link linkend="gtk-combo-box-get-focus-on-click">gtk_combo_box_get_focus_on_click</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-combo-box-get-popup-accessible"><link linkend="gtk-combo-box-get-popup-accessible">gtk_combo_box_get_popup_accessible</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-combo-box-get-row-separator-func"><link linkend="gtk-combo-box-get-row-separator-func">gtk_combo_box_get_row_separator_func</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-combo-box-get-row-span-column"><link linkend="gtk-combo-box-get-row-span-column">gtk_combo_box_get_row_span_column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-combo-box-get-wrap-width"><link linkend="gtk-combo-box-get-wrap-width">gtk_combo_box_get_wrap_width</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-combo-box-set-add-tearoffs"><link linkend="gtk-combo-box-set-add-tearoffs">gtk_combo_box_set_add_tearoffs</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-combo-box-set-focus-on-click"><link linkend="gtk-combo-box-set-focus-on-click">gtk_combo_box_set_focus_on_click</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-combo-box-set-row-separator-func"><link linkend="gtk-combo-box-set-row-separator-func">gtk_combo_box_set_row_separator_func</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="gtk-dialog-set-alternative-button-order"><link linkend="gtk-dialog-set-alternative-button-order">gtk_dialog_set_alternative_button_order</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-dialog-set-alternative-button-order-from-array"><link linkend="gtk-dialog-set-alternative-button-order-from-array">gtk_dialog_set_alternative_button_order_from_array</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-drag-dest-add-image-targets"><link linkend="gtk-drag-dest-add-image-targets">gtk_drag_dest_add_image_targets</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-drag-dest-add-text-targets"><link linkend="gtk-drag-dest-add-text-targets">gtk_drag_dest_add_text_targets</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-drag-dest-add-uri-targets"><link linkend="gtk-drag-dest-add-uri-targets">gtk_drag_dest_add_uri_targets</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-drag-source-add-image-targets"><link linkend="gtk-drag-source-add-image-targets">gtk_drag_source_add_image_targets</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-drag-source-add-text-targets"><link linkend="gtk-drag-source-add-text-targets">gtk_drag_source_add_text_targets</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-drag-source-add-uri-targets"><link linkend="gtk-drag-source-add-uri-targets">gtk_drag_source_add_uri_targets</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="GtkEntryCompletion-insert-prefix"><link linkend="GtkEntryCompletion-insert-prefix">GtkEntryCompletion::insert-prefix</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkEntryCompletion--inline-completion"><link linkend="GtkEntryCompletion--inline-completion">GtkEntryCompletion:inline-completion</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkEntryCompletion--popup-completion"><link linkend="GtkEntryCompletion--popup-completion">GtkEntryCompletion:popup-completion</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkEntryCompletion--text-column"><link linkend="GtkEntryCompletion--text-column">GtkEntryCompletion:text-column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-entry-completion-get-inline-completion"><link linkend="gtk-entry-completion-get-inline-completion">gtk_entry_completion_get_inline_completion</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-entry-completion-get-popup-completion"><link linkend="gtk-entry-completion-get-popup-completion">gtk_entry_completion_get_popup_completion</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-entry-completion-get-text-column"><link linkend="gtk-entry-completion-get-text-column">gtk_entry_completion_get_text_column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-entry-completion-insert-prefix"><link linkend="gtk-entry-completion-insert-prefix">gtk_entry_completion_insert_prefix</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-entry-completion-set-inline-completion"><link linkend="gtk-entry-completion-set-inline-completion">gtk_entry_completion_set_inline_completion</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-entry-completion-set-popup-completion"><link linkend="gtk-entry-completion-set-popup-completion">gtk_entry_completion_set_popup_completion</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>F</title>
+<indexentry><primaryie linkends="GtkFileChooserButton--dialog"><link linkend="GtkFileChooserButton--dialog">GtkFileChooserButton:dialog</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkFileChooserButton--title"><link linkend="GtkFileChooserButton--title">GtkFileChooserButton:title</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkFileChooserButton--width-chars"><link linkend="GtkFileChooserButton--width-chars">GtkFileChooserButton:width-chars</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-file-chooser-button-get-title"><link linkend="gtk-file-chooser-button-get-title">gtk_file_chooser_button_get_title</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-file-chooser-button-get-width-chars"><link linkend="gtk-file-chooser-button-get-width-chars">gtk_file_chooser_button_get_width_chars</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-file-chooser-button-new"><link linkend="gtk-file-chooser-button-new">gtk_file_chooser_button_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-file-chooser-button-new-with-backend"><link linkend="gtk-file-chooser-button-new-with-backend">gtk_file_chooser_button_new_with_backend</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-file-chooser-button-new-with-dialog"><link linkend="gtk-file-chooser-button-new-with-dialog">gtk_file_chooser_button_new_with_dialog</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-file-chooser-button-set-title"><link linkend="gtk-file-chooser-button-set-title">gtk_file_chooser_button_set_title</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-file-chooser-button-set-width-chars"><link linkend="gtk-file-chooser-button-set-width-chars">gtk_file_chooser_button_set_width_chars</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-file-chooser-get-show-hidden"><link linkend="gtk-file-chooser-get-show-hidden">gtk_file_chooser_get_show_hidden</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-file-chooser-set-show-hidden"><link linkend="gtk-file-chooser-set-show-hidden">gtk_file_chooser_set_show_hidden</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-file-filter-add-pixbuf-formats"><link linkend="gtk-file-filter-add-pixbuf-formats">gtk_file_filter_add_pixbuf_formats</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="gtk-get-option-group"><link linkend="gtk-get-option-group">gtk_get_option_group</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>I</title>
+<indexentry><primaryie linkends="GtkIconView--column-spacing"><link linkend="GtkIconView--column-spacing">GtkIconView:column-spacing</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkIconView--columns"><link linkend="GtkIconView--columns">GtkIconView:columns</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkIconView--item-width"><link linkend="GtkIconView--item-width">GtkIconView:item-width</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkIconView--margin"><link linkend="GtkIconView--margin">GtkIconView:margin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkIconView--markup-column"><link linkend="GtkIconView--markup-column">GtkIconView:markup-column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkIconView--orientation"><link linkend="GtkIconView--orientation">GtkIconView:orientation</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkIconView--pixbuf-column"><link linkend="GtkIconView--pixbuf-column">GtkIconView:pixbuf-column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkIconView--row-spacing"><link linkend="GtkIconView--row-spacing">GtkIconView:row-spacing</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkIconView--selection-mode"><link linkend="GtkIconView--selection-mode">GtkIconView:selection-mode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkIconView--spacing"><link linkend="GtkIconView--spacing">GtkIconView:spacing</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkIconView--text-column"><link linkend="GtkIconView--text-column">GtkIconView:text-column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-theme-get-icon-sizes"><link linkend="gtk-icon-theme-get-icon-sizes">gtk_icon_theme_get_icon_sizes</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-columns"><link linkend="gtk-icon-view-get-columns">gtk_icon_view_get_columns</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-column-spacing"><link linkend="gtk-icon-view-get-column-spacing">gtk_icon_view_get_column_spacing</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-item-width"><link linkend="gtk-icon-view-get-item-width">gtk_icon_view_get_item_width</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-margin"><link linkend="gtk-icon-view-get-margin">gtk_icon_view_get_margin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-markup-column"><link linkend="gtk-icon-view-get-markup-column">gtk_icon_view_get_markup_column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-model"><link linkend="gtk-icon-view-get-model">gtk_icon_view_get_model</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-orientation"><link linkend="gtk-icon-view-get-orientation">gtk_icon_view_get_orientation</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-path-at-pos"><link linkend="gtk-icon-view-get-path-at-pos">gtk_icon_view_get_path_at_pos</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-pixbuf-column"><link linkend="gtk-icon-view-get-pixbuf-column">gtk_icon_view_get_pixbuf_column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-row-spacing"><link linkend="gtk-icon-view-get-row-spacing">gtk_icon_view_get_row_spacing</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-selected-items"><link linkend="gtk-icon-view-get-selected-items">gtk_icon_view_get_selected_items</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-selection-mode"><link linkend="gtk-icon-view-get-selection-mode">gtk_icon_view_get_selection_mode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-spacing"><link linkend="gtk-icon-view-get-spacing">gtk_icon_view_get_spacing</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-get-text-column"><link linkend="gtk-icon-view-get-text-column">gtk_icon_view_get_text_column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-item-activated"><link linkend="gtk-icon-view-item-activated">gtk_icon_view_item_activated</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-new"><link linkend="gtk-icon-view-new">gtk_icon_view_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-new-with-model"><link linkend="gtk-icon-view-new-with-model">gtk_icon_view_new_with_model</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-path-is-selected"><link linkend="gtk-icon-view-path-is-selected">gtk_icon_view_path_is_selected</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-selected-foreach"><link linkend="gtk-icon-view-selected-foreach">gtk_icon_view_selected_foreach</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-select-all"><link linkend="gtk-icon-view-select-all">gtk_icon_view_select_all</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-select-path"><link linkend="gtk-icon-view-select-path">gtk_icon_view_select_path</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-columns"><link linkend="gtk-icon-view-set-columns">gtk_icon_view_set_columns</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-column-spacing"><link linkend="gtk-icon-view-set-column-spacing">gtk_icon_view_set_column_spacing</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-item-width"><link linkend="gtk-icon-view-set-item-width">gtk_icon_view_set_item_width</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-margin"><link linkend="gtk-icon-view-set-margin">gtk_icon_view_set_margin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-markup-column"><link linkend="gtk-icon-view-set-markup-column">gtk_icon_view_set_markup_column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-model"><link linkend="gtk-icon-view-set-model">gtk_icon_view_set_model</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-orientation"><link linkend="gtk-icon-view-set-orientation">gtk_icon_view_set_orientation</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-pixbuf-column"><link linkend="gtk-icon-view-set-pixbuf-column">gtk_icon_view_set_pixbuf_column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-row-spacing"><link linkend="gtk-icon-view-set-row-spacing">gtk_icon_view_set_row_spacing</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-selection-mode"><link linkend="gtk-icon-view-set-selection-mode">gtk_icon_view_set_selection_mode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-spacing"><link linkend="gtk-icon-view-set-spacing">gtk_icon_view_set_spacing</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-set-text-column"><link linkend="gtk-icon-view-set-text-column">gtk_icon_view_set_text_column</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-unselect-all"><link linkend="gtk-icon-view-unselect-all">gtk_icon_view_unselect_all</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-icon-view-unselect-path"><link linkend="gtk-icon-view-unselect-path">gtk_icon_view_unselect_path</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkImage--icon-name"><link linkend="GtkImage--icon-name">GtkImage:icon-name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkImage--pixel-size"><link linkend="GtkImage--pixel-size">GtkImage:pixel-size</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-image-get-icon-name"><link linkend="gtk-image-get-icon-name">gtk_image_get_icon_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-image-get-pixel-size"><link linkend="gtk-image-get-pixel-size">gtk_image_get_pixel_size</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-image-new-from-icon-name"><link linkend="gtk-image-new-from-icon-name">gtk_image_new_from_icon_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-image-set-from-icon-name"><link linkend="gtk-image-set-from-icon-name">gtk_image_set_from_icon_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-image-set-pixel-size"><link linkend="gtk-image-set-pixel-size">gtk_image_set_pixel_size</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-init-with-args"><link linkend="gtk-init-with-args">gtk_init_with_args</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>L</title>
+<indexentry><primaryie linkends="GtkLabel--angle"><link linkend="GtkLabel--angle">GtkLabel:angle</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkLabel--ellipsize"><link linkend="GtkLabel--ellipsize">GtkLabel:ellipsize</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkLabel--max-width-chars"><link linkend="GtkLabel--max-width-chars">GtkLabel:max-width-chars</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkLabel--single-line-mode"><link linkend="GtkLabel--single-line-mode">GtkLabel:single-line-mode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkLabel--width-chars"><link linkend="GtkLabel--width-chars">GtkLabel:width-chars</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-label-get-angle"><link linkend="gtk-label-get-angle">gtk_label_get_angle</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-label-get-ellipsize"><link linkend="gtk-label-get-ellipsize">gtk_label_get_ellipsize</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-label-get-max-width-chars"><link linkend="gtk-label-get-max-width-chars">gtk_label_get_max_width_chars</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-label-get-single-line-mode"><link linkend="gtk-label-get-single-line-mode">gtk_label_get_single_line_mode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-label-get-width-chars"><link linkend="gtk-label-get-width-chars">gtk_label_get_width_chars</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-label-set-angle"><link linkend="gtk-label-set-angle">gtk_label_set_angle</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-label-set-ellipsize"><link linkend="gtk-label-set-ellipsize">gtk_label_set_ellipsize</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-label-set-max-width-chars"><link linkend="gtk-label-set-max-width-chars">gtk_label_set_max_width_chars</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-label-set-single-line-mode"><link linkend="gtk-label-set-single-line-mode">gtk_label_set_single_line_mode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-label-set-width-chars"><link linkend="gtk-label-set-width-chars">gtk_label_set_width_chars</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-list-store-insert-with-values"><link linkend="gtk-list-store-insert-with-values">gtk_list_store_insert_with_values</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-list-store-insert-with-valuesv"><link linkend="gtk-list-store-insert-with-valuesv">gtk_list_store_insert_with_valuesv</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>M</title>
+<indexentry><primaryie linkends="GtkMenu--tearoff-state"><link linkend="GtkMenu--tearoff-state">GtkMenu:tearoff-state</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-menu-get-for-attach-widget"><link linkend="gtk-menu-get-for-attach-widget">gtk_menu_get_for_attach_widget</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-menu-tool-button-get-menu"><link linkend="gtk-menu-tool-button-get-menu">gtk_menu_tool_button_get_menu</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-menu-tool-button-new"><link linkend="gtk-menu-tool-button-new">gtk_menu_tool_button_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-menu-tool-button-new-from-stock"><link linkend="gtk-menu-tool-button-new-from-stock">gtk_menu_tool_button_new_from_stock</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-menu-tool-button-set-arrow-tooltip"><link linkend="gtk-menu-tool-button-set-arrow-tooltip">gtk_menu_tool_button_set_arrow_tooltip</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-menu-tool-button-set-menu"><link linkend="gtk-menu-tool-button-set-menu">gtk_menu_tool_button_set_menu</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-message-dialog-format-secondary-markup"><link linkend="gtk-message-dialog-format-secondary-markup">gtk_message_dialog_format_secondary_markup</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-message-dialog-format-secondary-text"><link linkend="gtk-message-dialog-format-secondary-text">gtk_message_dialog_format_secondary_text</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="GtkProgressBar--ellipsize"><link linkend="GtkProgressBar--ellipsize">GtkProgressBar:ellipsize</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-progress-bar-get-ellipsize"><link linkend="gtk-progress-bar-get-ellipsize">gtk_progress_bar_get_ellipsize</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-progress-bar-set-ellipsize"><link linkend="gtk-progress-bar-set-ellipsize">gtk_progress_bar_set_ellipsize</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>R</title>
+<indexentry><primaryie linkends="GtkRange-change-value"><link linkend="GtkRange-change-value">GtkRange::change-value</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="gtk-selection-data-get-pixbuf"><link linkend="gtk-selection-data-get-pixbuf">gtk_selection_data_get_pixbuf</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-selection-data-get-uris"><link linkend="gtk-selection-data-get-uris">gtk_selection_data_get_uris</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-selection-data-set-pixbuf"><link linkend="gtk-selection-data-set-pixbuf">gtk_selection_data_set_pixbuf</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-selection-data-set-uris"><link linkend="gtk-selection-data-set-uris">gtk_selection_data_set_uris</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-selection-data-targets-include-image"><link linkend="gtk-selection-data-targets-include-image">gtk_selection_data_targets_include_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-show-about-dialog"><link linkend="gtk-show-about-dialog">gtk_show_about_dialog</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-ABOUT--CAPS"><link linkend="GTK-STOCK-ABOUT--CAPS">GTK_STOCK_ABOUT</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-CONNECT--CAPS"><link linkend="GTK-STOCK-CONNECT--CAPS">GTK_STOCK_CONNECT</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-DIRECTORY--CAPS"><link linkend="GTK-STOCK-DIRECTORY--CAPS">GTK_STOCK_DIRECTORY</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-DISCONNECT--CAPS"><link linkend="GTK-STOCK-DISCONNECT--CAPS">GTK_STOCK_DISCONNECT</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-EDIT--CAPS"><link linkend="GTK-STOCK-EDIT--CAPS">GTK_STOCK_EDIT</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-FILE--CAPS"><link linkend="GTK-STOCK-FILE--CAPS">GTK_STOCK_FILE</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-MEDIA-FORWARD--CAPS"><link linkend="GTK-STOCK-MEDIA-FORWARD--CAPS">GTK_STOCK_MEDIA_FORWARD</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-MEDIA-NEXT--CAPS"><link linkend="GTK-STOCK-MEDIA-NEXT--CAPS">GTK_STOCK_MEDIA_NEXT</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-MEDIA-PAUSE--CAPS"><link linkend="GTK-STOCK-MEDIA-PAUSE--CAPS">GTK_STOCK_MEDIA_PAUSE</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-MEDIA-PLAY--CAPS"><link linkend="GTK-STOCK-MEDIA-PLAY--CAPS">GTK_STOCK_MEDIA_PLAY</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-MEDIA-PREVIOUS--CAPS"><link linkend="GTK-STOCK-MEDIA-PREVIOUS--CAPS">GTK_STOCK_MEDIA_PREVIOUS</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-MEDIA-RECORD--CAPS"><link linkend="GTK-STOCK-MEDIA-RECORD--CAPS">GTK_STOCK_MEDIA_RECORD</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-MEDIA-REWIND--CAPS"><link linkend="GTK-STOCK-MEDIA-REWIND--CAPS">GTK_STOCK_MEDIA_REWIND</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GTK-STOCK-MEDIA-STOP--CAPS"><link linkend="GTK-STOCK-MEDIA-STOP--CAPS">GTK_STOCK_MEDIA_STOP</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="gtk-target-list-add-image-targets"><link linkend="gtk-target-list-add-image-targets">gtk_target_list_add_image_targets</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-target-list-add-text-targets"><link linkend="gtk-target-list-add-text-targets">gtk_target_list_add_text_targets</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-target-list-add-uri-targets"><link linkend="gtk-target-list-add-uri-targets">gtk_target_list_add_uri_targets</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-text-buffer-backspace"><link linkend="gtk-text-buffer-backspace">gtk_text_buffer_backspace</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-text-view-get-iter-at-position"><link linkend="gtk-text-view-get-iter-at-position">gtk_text_view_get_iter_at_position</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-tool-item-rebuild-menu"><link linkend="gtk-tool-item-rebuild-menu">gtk_tool_item_rebuild_menu</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkTreeView--hover-expand"><link linkend="GtkTreeView--hover-expand">GtkTreeView:hover-expand</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GtkTreeView--hover-selection"><link linkend="GtkTreeView--hover-selection">GtkTreeView:hover-selection</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-tree-view-get-fixed-height-mode"><link linkend="gtk-tree-view-get-fixed-height-mode">gtk_tree_view_get_fixed_height_mode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-tree-view-get-hover-expand"><link linkend="gtk-tree-view-get-hover-expand">gtk_tree_view_get_hover_expand</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-tree-view-get-hover-selection"><link linkend="gtk-tree-view-get-hover-selection">gtk_tree_view_get_hover_selection</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-tree-view-get-row-separator-func"><link linkend="gtk-tree-view-get-row-separator-func">gtk_tree_view_get_row_separator_func</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-tree-view-set-fixed-height-mode"><link linkend="gtk-tree-view-set-fixed-height-mode">gtk_tree_view_set_fixed_height_mode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-tree-view-set-hover-expand"><link linkend="gtk-tree-view-set-hover-expand">gtk_tree_view_set_hover_expand</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-tree-view-set-hover-selection"><link linkend="gtk-tree-view-set-hover-selection">gtk_tree_view_set_hover_selection</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-tree-view-set-row-separator-func"><link linkend="gtk-tree-view-set-row-separator-func">gtk_tree_view_set_row_separator_func</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="GtkWindow--icon-name"><link linkend="GtkWindow--icon-name">GtkWindow:icon-name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-window-get-focus-on-map"><link linkend="gtk-window-get-focus-on-map">gtk_window_get_focus_on_map</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-window-get-icon-name"><link linkend="gtk-window-get-icon-name">gtk_window_get_icon_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-window-set-default-icon-name"><link linkend="gtk-window-set-default-icon-name">gtk_window_set_default_icon_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-window-set-focus-on-map"><link linkend="gtk-window-set-focus-on-map">gtk_window_set_focus_on_map</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gtk-window-set-icon-name"><link linkend="gtk-window-set-icon-name">gtk_window_set_icon_name</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

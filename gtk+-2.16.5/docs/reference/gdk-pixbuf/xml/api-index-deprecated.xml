@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+
+<!ENTITY gdk-pixbuf "<application>gdk-pixbuf</application>">
+<!ENTITY Imlib "<application>Imlib</application>">
+]>
+<indexdiv>
+<indexdiv><title>A</title>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-ref"><link linkend="gdk-pixbuf-animation-ref">gdk_pixbuf_animation_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-unref"><link linkend="gdk-pixbuf-animation-unref">gdk_pixbuf_animation_unref</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>R</title>
+<indexentry><primaryie linkends="gdk-pixbuf-ref"><link linkend="gdk-pixbuf-ref">gdk_pixbuf_ref</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>U</title>
+<indexentry><primaryie linkends="gdk-pixbuf-unref"><link linkend="gdk-pixbuf-unref">gdk_pixbuf_unref</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<indexdiv>
+<indexdiv><title>B</title>
+<indexentry><primaryie linkends="gdk-bitmap-ref"><link linkend="gdk-bitmap-ref">gdk_bitmap_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-bitmap-unref"><link linkend="gdk-bitmap-unref">gdk_bitmap_unref</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="gdk-char-height"><link linkend="gdk-char-height">gdk_char_height</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-char-measure"><link linkend="gdk-char-measure">gdk_char_measure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-char-width"><link linkend="gdk-char-width">gdk_char_width</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-char-width-wc"><link linkend="gdk-char-width-wc">gdk_char_width_wc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-colormap-change"><link linkend="gdk-colormap-change">gdk_colormap_change</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-colormap-get-system-size"><link linkend="gdk-colormap-get-system-size">gdk_colormap_get_system_size</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-colormap-ref"><link linkend="gdk-colormap-ref">gdk_colormap_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-colormap-unref"><link linkend="gdk-colormap-unref">gdk_colormap_unref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-colors-alloc"><link linkend="gdk-colors-alloc">gdk_colors_alloc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-colors-free"><link linkend="gdk-colors-free">gdk_colors_free</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-colors-store"><link linkend="gdk-colors-store">gdk_colors_store</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-color-alloc"><link linkend="gdk-color-alloc">gdk_color_alloc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-color-black"><link linkend="gdk-color-black">gdk_color_black</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-color-change"><link linkend="gdk-color-change">gdk_color_change</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-color-white"><link linkend="gdk-color-white">gdk_color_white</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-cursor-destroy"><link linkend="gdk-cursor-destroy">gdk_cursor_destroy</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>D</title>
+<indexentry><primaryie linkends="GdkDestroyNotify"><link linkend="GdkDestroyNotify">GdkDestroyNotify</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drag-context-ref"><link linkend="gdk-drag-context-ref">gdk_drag_context_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drag-context-unref"><link linkend="gdk-drag-context-unref">gdk_drag_context_unref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drawable-get-data"><link linkend="gdk-drawable-get-data">gdk_drawable_get_data</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drawable-ref"><link linkend="gdk-drawable-ref">gdk_drawable_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drawable-set-data"><link linkend="gdk-drawable-set-data">gdk_drawable_set_data</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-drawable-unref"><link linkend="gdk-drawable-unref">gdk_drawable_unref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-draw-pixmap"><link linkend="gdk-draw-pixmap">gdk_draw_pixmap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-draw-string"><link linkend="gdk-draw-string">gdk_draw_string</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-draw-text"><link linkend="gdk-draw-text">gdk_draw_text</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-draw-text-wc"><link linkend="gdk-draw-text-wc">gdk_draw_text_wc</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="gdk-exit"><link linkend="gdk-exit">gdk_exit</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>F</title>
+<indexentry><primaryie linkends="GdkFont"><link linkend="GdkFont">GdkFont</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-fontset-load"><link linkend="gdk-fontset-load">gdk_fontset_load</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-fontset-load-for-display"><link linkend="gdk-fontset-load-for-display">gdk_fontset_load_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkFontType"><link linkend="GdkFontType">GdkFontType</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-equal"><link linkend="gdk-font-equal">gdk_font_equal</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-from-description"><link linkend="gdk-font-from-description">gdk_font_from_description</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-from-description-for-display"><link linkend="gdk-font-from-description-for-display">gdk_font_from_description_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-get-display"><link linkend="gdk-font-get-display">gdk_font_get_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-id"><link linkend="gdk-font-id">gdk_font_id</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-load"><link linkend="gdk-font-load">gdk_font_load</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-load-for-display"><link linkend="gdk-font-load-for-display">gdk_font_load_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-lookup"><link linkend="gdk-font-lookup">gdk_font_lookup</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-lookup-for-display"><link linkend="gdk-font-lookup-for-display">gdk_font_lookup_for_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-ref"><link linkend="gdk-font-ref">gdk_font_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-font-unref"><link linkend="gdk-font-unref">gdk_font_unref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GDK-FONT-XDISPLAY--CAPS"><link linkend="GDK-FONT-XDISPLAY--CAPS">GDK_FONT_XDISPLAY</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GDK-FONT-XFONT--CAPS"><link linkend="GDK-FONT-XFONT--CAPS">GDK_FONT_XFONT</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="gdk-gc-destroy"><link linkend="gdk-gc-destroy">gdk_gc_destroy</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-gc-ref"><link linkend="gdk-gc-ref">gdk_gc_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-gc-set-font"><link linkend="gdk-gc-set-font">gdk_gc_set_font</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-gc-unref"><link linkend="gdk-gc-unref">gdk_gc_unref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-get-use-xshm"><link linkend="gdk-get-use-xshm">gdk_get_use_xshm</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>I</title>
+<indexentry><primaryie linkends="gdk-image-destroy"><link linkend="gdk-image-destroy">gdk_image_destroy</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-image-get"><link linkend="gdk-image-get">gdk_image_get</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-image-new-bitmap"><link linkend="gdk-image-new-bitmap">gdk_image_new_bitmap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-image-ref"><link linkend="gdk-image-ref">gdk_image_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-image-unref"><link linkend="gdk-image-unref">gdk_image_unref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-input-add"><link linkend="gdk-input-add">gdk_input_add</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-input-add-full"><link linkend="gdk-input-add-full">gdk_input_add_full</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-input-remove"><link linkend="gdk-input-remove">gdk_input_remove</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>M</title>
+<indexentry><primaryie linkends="gdk-mbstowcs"><link linkend="gdk-mbstowcs">gdk_mbstowcs</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="gdk-pango-context-set-colormap"><link linkend="gdk-pango-context-set-colormap">gdk_pango_context_set_colormap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-render-to-drawable"><link linkend="gdk-pixbuf-render-to-drawable">gdk_pixbuf_render_to_drawable</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-render-to-drawable-alpha"><link linkend="gdk-pixbuf-render-to-drawable-alpha">gdk_pixbuf_render_to_drawable_alpha</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixmap-ref"><link linkend="gdk-pixmap-ref">gdk_pixmap_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixmap-unref"><link linkend="gdk-pixmap-unref">gdk_pixmap_unref</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>R</title>
+<indexentry><primaryie linkends="gdk-rgb-gc-set-background"><link linkend="gdk-rgb-gc-set-background">gdk_rgb_gc_set_background</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-rgb-gc-set-foreground"><link linkend="gdk-rgb-gc-set-foreground">gdk_rgb_gc_set_foreground</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-rgb-get-cmap"><link linkend="gdk-rgb-get-cmap">gdk_rgb_get_cmap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-rgb-init"><link linkend="gdk-rgb-init">gdk_rgb_init</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-rgb-xpixel-from-rgb"><link linkend="gdk-rgb-xpixel-from-rgb">gdk_rgb_xpixel_from_rgb</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GDK-ROOT-PARENT--CAPS"><link linkend="GDK-ROOT-PARENT--CAPS">GDK_ROOT_PARENT</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="GdkSelection"><link linkend="GdkSelection">GdkSelection</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkSelectionType"><link linkend="GdkSelectionType">GdkSelectionType</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-set-use-xshm"><link linkend="gdk-set-use-xshm">gdk_set_use_xshm</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-string-extents"><link linkend="gdk-string-extents">gdk_string_extents</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-string-height"><link linkend="gdk-string-height">gdk_string_height</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-string-measure"><link linkend="gdk-string-measure">gdk_string_measure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-string-width"><link linkend="gdk-string-width">gdk_string_width</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>T</title>
+<indexentry><primaryie linkends="GdkTarget"><link linkend="GdkTarget">GdkTarget</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-text-extents"><link linkend="gdk-text-extents">gdk_text_extents</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-text-extents-wc"><link linkend="gdk-text-extents-wc">gdk_text_extents_wc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-text-height"><link linkend="gdk-text-height">gdk_text_height</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-text-measure"><link linkend="gdk-text-measure">gdk_text_measure</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-text-width"><link linkend="gdk-text-width">gdk_text_width</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-text-width-wc"><link linkend="gdk-text-width-wc">gdk_text_width_wc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-threads-mutex"><link linkend="gdk-threads-mutex">gdk_threads_mutex</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>V</title>
+<indexentry><primaryie linkends="gdk-visual-ref"><link linkend="gdk-visual-ref">gdk_visual_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-visual-unref"><link linkend="gdk-visual-unref">gdk_visual_unref</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="gdk-wcstombs"><link linkend="gdk-wcstombs">gdk_wcstombs</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-copy-area"><link linkend="gdk-window-copy-area">gdk_window_copy_area</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-get-colormap"><link linkend="gdk-window-get-colormap">gdk_window_get_colormap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-get-deskrelative-origin"><link linkend="gdk-window-get-deskrelative-origin">gdk_window_get_deskrelative_origin</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-get-size"><link linkend="gdk-window-get-size">gdk_window_get_size</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-get-toplevels"><link linkend="gdk-window-get-toplevels">gdk_window_get_toplevels</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-get-type"><link linkend="gdk-window-get-type">gdk_window_get_type</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-get-visual"><link linkend="gdk-window-get-visual">gdk_window_get_visual</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-ref"><link linkend="gdk-window-ref">gdk_window_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-colormap"><link linkend="gdk-window-set-colormap">gdk_window_set_colormap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-set-hints"><link linkend="gdk-window-set-hints">gdk_window_set_hints</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-window-unref"><link linkend="gdk-window-unref">gdk_window_unref</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>X</title>
+<indexentry><primaryie linkends="gdk-x11-font-get-name"><link linkend="gdk-x11-font-get-name">gdk_x11_font_get_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-font-get-xdisplay"><link linkend="gdk-x11-font-get-xdisplay">gdk_x11_font_get_xdisplay</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-x11-font-get-xfont"><link linkend="gdk-x11-font-get-xfont">gdk_x11_font_get_xfont</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdkx-colormap-get"><link linkend="gdkx-colormap-get">gdkx_colormap_get</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>Chapter - GQview User Manual</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.0  (Linux)">
+	<META NAME="CREATED" CONTENT="20040805;23590500">
+	<META NAME="CHANGED" CONTENT="20040917;13584000">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="index.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER>Frequently Asked Questions</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="1_introduction.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</CENTER>
+<HR>
+<H1>Frequently Asked Questions</H1>
+<P STYLE="margin-top: 0.17in; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>1.
+Image viewing</FONT></FONT></P>
+<P><B>1.1 How do I keep images smaller than the visible area from
+enlarging when the zoom is set to &ldquo;fit to window&rdquo; ?</B></P>
+<P STYLE="margin-left: 0.79in">In the preferences dialog, under the
+&ldquo;Image&rdquo; tab, disable &ldquo;Allow enlargement of image
+for zoom to fit&rdquo;.</P>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<P STYLE="margin-top: 0.17in; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>9.
+Command line</FONT></FONT></P>
+<P><B>9.1 How do I open an image in an existing GQview application ?</B></P>
+<P STYLE="margin-left: 0.79in">Use the &ldquo;-r&rdquo; command line
+option to send commands to an existing GQview, for a list of commands
+supported by the remote switch run:</P>
+<PRE STYLE="margin-left: 1.58in">gqview --remote-help</PRE><P>
+<BR><BR>
+</P>
+<P><B>9.2 How do I set the slide show delay when starting GQview in
+slide show from the command line ?</B></P>
+<P STYLE="margin-left: 0.79in">The delay can not be set when used
+with the standard -s command line switch, as -s uses the delay stored
+in the configuration file. For this use the remote command -ss to
+start the slide show after setting the delay with -d, the order of
+the command line is important, for example a 12 second slide show
+delay:</P>
+<PRE STYLE="margin-left: 1.58in">gqview -r -d12 -ss</PRE><P STYLE="margin-left: 0.79in">
+<BR><BR>
+</P>
+<P STYLE="margin-left: 0.79in">Note that if gqview is running prior
+to this command, the slide show should also be stopped prior to
+changing the delay:</P>
+<PRE STYLE="margin-left: 1.58in">gqview -r -sS -d12 -ss</PRE><P>
+<BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<P STYLE="margin-top: 0.17in; page-break-after: avoid"><FONT FACE="Albany, sans-serif"><FONT SIZE=4>10.
+Miscellaneous</FONT></FONT></P>
+<P><B>10.1 I want to be able to edit images with GQview</B></P>
+<P STYLE="margin-left: 0.79in">GQview is an image <I>viewer</I>.
+There is, and never will be, a plan to add editing features. I
+recommend gimp for image editing.</P>
+<P><BR><BR>
+</P>
+<HR>
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="index.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><A HREF="index.html">Contents</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="introduction.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT>GQview User Manual</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>

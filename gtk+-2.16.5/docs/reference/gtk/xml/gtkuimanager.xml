@@ -1,0 +1,947 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+]>
+<!--ENTITY index-Objects-Grouped SYSTEM "objects_grouped.sgml"-->
+<refentry id="GtkUIManager">
+<refmeta>
+<refentrytitle role="top_of_page" id="GtkUIManager.top_of_page">GtkUIManager</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GTK Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GtkUIManager</refname>
+<refpurpose>Constructing menus and toolbars from an XML description</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="GtkUIManager.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;gtk/gtk.h&gt;
+
+                    <link linkend="GtkUIManager-struct">GtkUIManager</link>;
+<link linkend="GtkUIManager">GtkUIManager</link> *      <link linkend="gtk-ui-manager-new">gtk_ui_manager_new</link>                  (void);
+<link linkend="void">void</link>                <link linkend="gtk-ui-manager-set-add-tearoffs">gtk_ui_manager_set_add_tearoffs</link>     (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="gboolean">gboolean</link> add_tearoffs);
+<link linkend="gboolean">gboolean</link>            <link linkend="gtk-ui-manager-get-add-tearoffs">gtk_ui_manager_get_add_tearoffs</link>     (<link linkend="GtkUIManager">GtkUIManager</link> *self);
+<link linkend="void">void</link>                <link linkend="gtk-ui-manager-insert-action-group">gtk_ui_manager_insert_action_group</link>  (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="gint">gint</link> pos);
+<link linkend="void">void</link>                <link linkend="gtk-ui-manager-remove-action-group">gtk_ui_manager_remove_action_group</link>  (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="GtkActionGroup">GtkActionGroup</link> *action_group);
+<link linkend="GList">GList</link> *             <link linkend="gtk-ui-manager-get-action-groups">gtk_ui_manager_get_action_groups</link>    (<link linkend="GtkUIManager">GtkUIManager</link> *self);
+<link linkend="GtkAccelGroup">GtkAccelGroup</link> *     <link linkend="gtk-ui-manager-get-accel-group">gtk_ui_manager_get_accel_group</link>      (<link linkend="GtkUIManager">GtkUIManager</link> *self);
+<link linkend="GtkWidget">GtkWidget</link> *         <link linkend="gtk-ui-manager-get-widget">gtk_ui_manager_get_widget</link>           (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *path);
+<link linkend="GSList">GSList</link> *            <link linkend="gtk-ui-manager-get-toplevels">gtk_ui_manager_get_toplevels</link>        (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="GtkUIManagerItemType">GtkUIManagerItemType</link> types);
+<link linkend="GtkAction">GtkAction</link> *         <link linkend="gtk-ui-manager-get-action">gtk_ui_manager_get_action</link>           (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *path);
+<link linkend="guint">guint</link>               <link linkend="gtk-ui-manager-add-ui-from-string">gtk_ui_manager_add_ui_from_string</link>   (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *buffer,
+                                                         <link linkend="gssize">gssize</link> length,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="guint">guint</link>               <link linkend="gtk-ui-manager-add-ui-from-file">gtk_ui_manager_add_ui_from_file</link>     (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *filename,
+                                                         <link linkend="GError">GError</link> **error);
+<link linkend="guint">guint</link>               <link linkend="gtk-ui-manager-new-merge-id">gtk_ui_manager_new_merge_id</link>         (<link linkend="GtkUIManager">GtkUIManager</link> *self);
+enum                <link linkend="GtkUIManagerItemType">GtkUIManagerItemType</link>;
+<link linkend="void">void</link>                <link linkend="gtk-ui-manager-add-ui">gtk_ui_manager_add_ui</link>               (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="guint">guint</link> merge_id,
+                                                         const <link linkend="gchar">gchar</link> *path,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *action,
+                                                         <link linkend="GtkUIManagerItemType">GtkUIManagerItemType</link> type,
+                                                         <link linkend="gboolean">gboolean</link> top);
+<link linkend="void">void</link>                <link linkend="gtk-ui-manager-remove-ui">gtk_ui_manager_remove_ui</link>            (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="guint">guint</link> merge_id);
+<link linkend="gchar">gchar</link> *             <link linkend="gtk-ui-manager-get-ui">gtk_ui_manager_get_ui</link>               (<link linkend="GtkUIManager">GtkUIManager</link> *self);
+<link linkend="void">void</link>                <link linkend="gtk-ui-manager-ensure-update">gtk_ui_manager_ensure_update</link>        (<link linkend="GtkUIManager">GtkUIManager</link> *self);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="GtkUIManager.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----GtkUIManager
+</synopsis>
+</refsect1>
+
+
+
+<refsect1 id="GtkUIManager.implemented-interfaces" role="impl_interfaces">
+<title role="impl_interfaces.title">Implemented Interfaces</title>
+<para>
+GtkUIManager implements
+ <link linkend="GtkBuildable">GtkBuildable</link>.</para>
+</refsect1>
+
+
+<refsect1 id="GtkUIManager.properties" role="properties">
+<title role="properties.title">Properties</title>
+<synopsis>
+  &quot;<link linkend="GtkUIManager--add-tearoffs">add-tearoffs</link>&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write
+  &quot;<link linkend="GtkUIManager--ui">ui</link>&quot;                       <link linkend="gchar">gchar</link>*                : Read
+</synopsis>
+</refsect1>
+
+<refsect1 id="GtkUIManager.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<synopsis>
+  &quot;<link linkend="GtkUIManager-actions-changed">actions-changed</link>&quot;                                : Run First / No Recursion
+  &quot;<link linkend="GtkUIManager-add-widget">add-widget</link>&quot;                                     : Run First / No Recursion
+  &quot;<link linkend="GtkUIManager-connect-proxy">connect-proxy</link>&quot;                                  : Run First / No Recursion
+  &quot;<link linkend="GtkUIManager-disconnect-proxy">disconnect-proxy</link>&quot;                               : Run First / No Recursion
+  &quot;<link linkend="GtkUIManager-post-activate">post-activate</link>&quot;                                  : Run First / No Recursion
+  &quot;<link linkend="GtkUIManager-pre-activate">pre-activate</link>&quot;                                   : Run First / No Recursion
+</synopsis>
+</refsect1>
+
+
+<refsect1 id="GtkUIManager.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+A <link linkend="GtkUIManager"><type>GtkUIManager</type></link> constructs a user interface (menus and toolbars) from
+one or more UI definitions, which reference actions from one or more
+action groups.
+</para>
+<refsect2 id="XML-UI"><title>UI Definitions</title>
+<para>
+The UI definitions are specified in an XML format which can be
+roughly described by the following DTD.
+</para>
+<para>
+Do not confuse the GtkUIManager UI Definitions described here with
+the similarly named <link linkend="BUILDER-UI">GtkBuilder UI
+Definitions</link>.
+</para>
+<para>
+<programlisting><![CDATA[
+<!ELEMENT ui          (menubar|toolbar|popup|accelerator)* >
+<!ELEMENT menubar     (menuitem|separator|placeholder|menu)* >
+<!ELEMENT menu        (menuitem|separator|placeholder|menu)* >
+<!ELEMENT popup       (menuitem|separator|placeholder|menu)* >
+<!ELEMENT toolbar     (toolitem|separator|placeholder)* >
+<!ELEMENT placeholder (menuitem|toolitem|separator|placeholder|menu)* >
+<!ELEMENT menuitem     EMPTY >
+<!ELEMENT toolitem     (menu?) >
+<!ELEMENT separator    EMPTY >
+<!ELEMENT accelerator  EMPTY >
+<!ATTLIST menubar      name                      &num;IMPLIED
+                       action                    &num;IMPLIED >
+<!ATTLIST toolbar      name                      &num;IMPLIED
+                       action                    &num;IMPLIED >
+<!ATTLIST popup        name                      &num;IMPLIED
+                       action                    &num;IMPLIED
+                       accelerators (true|false) &num;IMPLIED >
+<!ATTLIST placeholder  name                      &num;IMPLIED
+                       action                    &num;IMPLIED >
+<!ATTLIST separator    name                      &num;IMPLIED
+                       action                    &num;IMPLIED
+                       expand       (true|false) &num;IMPLIED >
+<!ATTLIST menu         name                      &num;IMPLIED
+                       action                    &num;REQUIRED
+                       position     (top|bot)    &num;IMPLIED >
+<!ATTLIST menuitem     name                      &num;IMPLIED
+                       action                    &num;REQUIRED
+                       position     (top|bot)    &num;IMPLIED >
+<!ATTLIST toolitem     name                      &num;IMPLIED
+                       action                    &num;REQUIRED
+                       position     (top|bot)    &num;IMPLIED >
+<!ATTLIST accelerator  name                      &num;IMPLIED
+                       action                    &num;REQUIRED >
+]]></programlisting>
+There are some additional restrictions beyond those specified in the
+DTD, e.g. every toolitem must have a toolbar in its anchestry and
+every menuitem must have a menubar or popup in its anchestry. Since
+a <link linkend="GMarkup"><type>GMarkup</type></link> parser is used to parse the UI description, it must not only
+be valid XML, but valid <link linkend="GMarkup"><type>GMarkup</type></link>.
+</para>
+<para>
+If a name is not specified, it defaults to the action. If an action is
+not specified either, the element name is used. The name and action
+attributes must not contain '/' characters after parsing (since that
+would mess up path lookup) and must be usable as XML attributes when
+enclosed in doublequotes, thus they must not '"' characters or references
+to the &amp;quot; entity.
+</para>
+<example>
+<title>A UI definition</title>
+<programlisting>
+&lt;ui&gt;
+  &lt;menubar&gt;
+    &lt;menu name="FileMenu" action="FileMenuAction"&gt;
+      &lt;menuitem name="New" action="New2Action" /&gt;
+      &lt;placeholder name="FileMenuAdditions" /&gt;
+    &lt;/menu&gt;
+    &lt;menu name="JustifyMenu" action="JustifyMenuAction"&gt;
+      &lt;menuitem name="Left" action="justify-left"/&gt;
+      &lt;menuitem name="Centre" action="justify-center"/&gt;
+      &lt;menuitem name="Right" action="justify-right"/&gt;
+      &lt;menuitem name="Fill" action="justify-fill"/&gt;
+    &lt;/menu&gt;
+  &lt;/menubar&gt;
+  &lt;toolbar action="toolbar1"&gt;
+    &lt;placeholder name="JustifyToolItems"&gt;
+      &lt;separator/&gt;
+      &lt;toolitem name="Left" action="justify-left"/&gt;
+      &lt;toolitem name="Centre" action="justify-center"/&gt;
+      &lt;toolitem name="Right" action="justify-right"/&gt;
+      &lt;toolitem name="Fill" action="justify-fill"/&gt;
+      &lt;separator/&gt;
+    &lt;/placeholder&gt;
+  &lt;/toolbar&gt;
+&lt;/ui&gt;
+</programlisting>
+</example>
+<para>
+The constructed widget hierarchy is very similar to the element tree
+of the XML, with the exception that placeholders are merged into their
+parents. The correspondence of XML elements to widgets should be
+almost obvious:
+<variablelist>
+<varlistentry><term>menubar</term>
+<listitem><para>a <link linkend="GtkMenuBar"><type>GtkMenuBar</type></link></para></listitem>
+</varlistentry>
+<varlistentry><term>toolbar</term>
+<listitem><para>a <link linkend="GtkToolbar"><type>GtkToolbar</type></link></para></listitem>
+</varlistentry>
+<varlistentry><term>popup</term>
+<listitem><para>a toplevel <link linkend="GtkMenu"><type>GtkMenu</type></link></para></listitem>
+</varlistentry>
+<varlistentry><term>menu</term>
+<listitem><para>a <link linkend="GtkMenu"><type>GtkMenu</type></link> attached to a menuitem</para></listitem>
+</varlistentry>
+<varlistentry><term>menuitem</term>
+<listitem><para>a <link linkend="GtkMenuItem"><type>GtkMenuItem</type></link> subclass, the exact type depends on the
+action</para></listitem>
+</varlistentry>
+<varlistentry><term>toolitem</term>
+<listitem><para>a <link linkend="GtkToolItem"><type>GtkToolItem</type></link> subclass, the exact type depends on the
+action. Note that toolitem elements may contain a menu element, but only
+if their associated action specifies a <link linkend="GtkMenuToolButton"><type>GtkMenuToolButton</type></link> as proxy.</para></listitem>
+</varlistentry>
+<varlistentry><term>separator</term>
+<listitem><para>a <link linkend="GtkSeparatorMenuItem"><type>GtkSeparatorMenuItem</type></link> or
+<link linkend="GtkSeparatorToolItem"><type>GtkSeparatorToolItem</type></link></para></listitem>
+</varlistentry>
+<varlistentry><term>accelerator</term>
+<listitem><para>a keyboard accelerator</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+<para>
+The "position" attribute determines where a constructed widget is positioned
+wrt. to its siblings in the partially constructed tree. If it is
+"top", the widget is prepended, otherwise it is appended.
+</para>
+</refsect2>
+<refsect2 id="UI-Merging">
+<title>UI Merging</title>
+<para>
+The most remarkable feature of <link linkend="GtkUIManager"><type>GtkUIManager</type></link> is that it can overlay a set
+of menuitems and toolitems over another one, and demerge them later.
+</para>
+<para>
+Merging is done based on the names of the XML elements. Each element is
+identified by a path which consists of the names of its anchestors, separated
+by slashes. For example, the menuitem named "Left" in the example above
+has the path <literal>/ui/menubar/JustifyMenu/Left</literal> and the
+toolitem with the same name has path
+<literal>/ui/toolbar1/JustifyToolItems/Left</literal>.
+</para>
+</refsect2>
+<refsect2>
+<title>Accelerators</title>
+<para>
+Every action has an accelerator path. Accelerators are installed together with
+menuitem proxies, but they can also be explicitly added with &lt;accelerator&gt;
+elements in the UI definition. This makes it possible to have accelerators for
+actions even if they have no visible proxies.
+</para>
+</refsect2>
+<refsect2 id="Smart-Separators">
+<title>Smart Separators</title>
+<para>
+The separators created by <link linkend="GtkUIManager"><type>GtkUIManager</type></link> are "smart", i.e. they do not show up
+in the UI unless they end up between two visible menu or tool items. Separators
+which are located at the very beginning or end of the menu or toolbar
+containing them, or multiple separators next to each other, are hidden. This
+is a useful feature, since the merging of UI elements from multiple sources
+can make it hard or impossible to determine in advance whether a separator
+will end up in such an unfortunate position.
+</para>
+<para>
+For separators in toolbars, you can set <literal>expand="true"</literal> to
+turn them from a small, visible separator to an expanding, invisible one.
+Toolitems following an expanding separator are effectively right-aligned.
+</para>
+</refsect2>
+<refsect2>
+<title>Empty Menus</title>
+<para>
+Submenus pose similar problems to separators inconnection with merging. It is
+impossible to know in advance whether they will end up empty after merging.
+<link linkend="GtkUIManager"><type>GtkUIManager</type></link> offers two ways to treat empty submenus:
+<itemizedlist>
+<listitem><para>make them disappear by hiding the menu item they're attached to
+</para></listitem>
+<listitem><para>add an insensitive "Empty" item
+</para></listitem>
+</itemizedlist>
+The behaviour is chosen based on the "hide_if_empty" property of the action
+to which the submenu is associated.
+</para>
+</refsect2>
+<refsect2 id="GtkUIManager-BUILDER-UI">
+<title>GtkUIManager as GtkBuildable</title>
+<para>
+The GtkUIManager implementation of the GtkBuildable interface accepts
+GtkActionGroup objects as &lt;child&gt; elements in UI definitions.
+</para>
+<para>
+A GtkUIManager UI definition as described above can be embedded in
+an GtkUIManager &lt;object&gt; element in a GtkBuilder UI definition.
+</para>
+<para>
+The widgets that are constructed by a GtkUIManager can be embedded in
+other parts of the constructed user interface with the help of the
+"constructor" attribute. See the example below.
+</para>
+<example>
+<title>An embedded GtkUIManager UI definition</title>
+<programlisting><![CDATA[
+<object class="GtkUIManager" id="uiman">
+  <child>
+    <object class="GtkActionGroup" id="actiongroup">
+      <child>
+        <object class="GtkAction" id="file">
+          <property name="label">_File</property>
+        </object>
+      </child>
+    </object>
+  </child>
+  <ui>
+    <menubar name="menubar1">
+      <menu action="file">
+      </menu>
+    </menubar>
+  </ui>
+</object>
+<object class="GtkWindow" id="main-window">
+  <child>
+    <object class="GtkMenuBar" id="menubar1" constructor="uiman"/>
+  </child>
+</object>
+]]></programlisting>
+</example>
+</refsect2>
+</refsect1>
+
+<refsect1 id="GtkUIManager.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GtkUIManager-struct" role="struct">
+<title>GtkUIManager</title>
+<indexterm zone="GtkUIManager-struct"><primary sortas="UIManager">GtkUIManager</primary></indexterm><programlisting>typedef struct _GtkUIManager GtkUIManager;</programlisting>
+<para>
+The <structname>GtkUIManager</structname> struct contains only private
+members and should not be accessed directly.
+</para></refsect2>
+<refsect2 id="gtk-ui-manager-new" role="function" condition="since:2.4">
+<title>gtk_ui_manager_new ()</title>
+<indexterm zone="gtk-ui-manager-new" role="2.4"><primary sortas="ui_manager_new">gtk_ui_manager_new</primary></indexterm><programlisting><link linkend="GtkUIManager">GtkUIManager</link> *      gtk_ui_manager_new                  (void);</programlisting>
+<para>
+Creates a new ui manager object.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a new ui manager object.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-set-add-tearoffs" role="function" condition="since:2.4">
+<title>gtk_ui_manager_set_add_tearoffs ()</title>
+<indexterm zone="gtk-ui-manager-set-add-tearoffs" role="2.4"><primary sortas="ui_manager_set_add_tearoffs">gtk_ui_manager_set_add_tearoffs</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_ui_manager_set_add_tearoffs     (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="gboolean">gboolean</link> add_tearoffs);</programlisting>
+<para>
+Sets the "add_tearoffs" property, which controls whether menus 
+generated by this <link linkend="GtkUIManager"><type>GtkUIManager</type></link> will have tearoff menu items. 
+</para>
+<para>
+Note that this only affects regular menus. Generated popup 
+menus never have tearoff menu items.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>add_tearoffs</parameter>&#160;:</term>
+<listitem><simpara> whether tearoff menu items are added
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-get-add-tearoffs" role="function" condition="since:2.4">
+<title>gtk_ui_manager_get_add_tearoffs ()</title>
+<indexterm zone="gtk-ui-manager-get-add-tearoffs" role="2.4"><primary sortas="ui_manager_get_add_tearoffs">gtk_ui_manager_get_add_tearoffs</primary></indexterm><programlisting><link linkend="gboolean">gboolean</link>            gtk_ui_manager_get_add_tearoffs     (<link linkend="GtkUIManager">GtkUIManager</link> *self);</programlisting>
+<para>
+Returns whether menus generated by this <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+will have tearoff menu items.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> whether tearoff menu items are added
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-insert-action-group" role="function" condition="since:2.4">
+<title>gtk_ui_manager_insert_action_group ()</title>
+<indexterm zone="gtk-ui-manager-insert-action-group" role="2.4"><primary sortas="ui_manager_insert_action_group">gtk_ui_manager_insert_action_group</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_ui_manager_insert_action_group  (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="GtkActionGroup">GtkActionGroup</link> *action_group,
+                                                         <link linkend="gint">gint</link> pos);</programlisting>
+<para>
+Inserts an action group into the list of action groups associated 
+with <parameter>self</parameter>. Actions in earlier groups hide actions with the same 
+name in later groups.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group to be inserted
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pos</parameter>&#160;:</term>
+<listitem><simpara> the position at which the group will be inserted.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-remove-action-group" role="function" condition="since:2.4">
+<title>gtk_ui_manager_remove_action_group ()</title>
+<indexterm zone="gtk-ui-manager-remove-action-group" role="2.4"><primary sortas="ui_manager_remove_action_group">gtk_ui_manager_remove_action_group</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_ui_manager_remove_action_group  (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="GtkActionGroup">GtkActionGroup</link> *action_group);</programlisting>
+<para>
+Removes an action group from the list of action groups associated 
+with <parameter>self</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action_group</parameter>&#160;:</term>
+<listitem><simpara> the action group to be removed
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-get-action-groups" role="function" condition="since:2.4">
+<title>gtk_ui_manager_get_action_groups ()</title>
+<indexterm zone="gtk-ui-manager-get-action-groups" role="2.4"><primary sortas="ui_manager_get_action_groups">gtk_ui_manager_get_action_groups</primary></indexterm><programlisting><link linkend="GList">GList</link> *             gtk_ui_manager_get_action_groups    (<link linkend="GtkUIManager">GtkUIManager</link> *self);</programlisting>
+<para>
+Returns the list of action groups associated with <parameter>self</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a <link linkend="GList"><type>GList</type></link> of action groups. The list is owned by GTK+ 
+  and should not be modified.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-get-accel-group" role="function" condition="since:2.4">
+<title>gtk_ui_manager_get_accel_group ()</title>
+<indexterm zone="gtk-ui-manager-get-accel-group" role="2.4"><primary sortas="ui_manager_get_accel_group">gtk_ui_manager_get_accel_group</primary></indexterm><programlisting><link linkend="GtkAccelGroup">GtkAccelGroup</link> *     gtk_ui_manager_get_accel_group      (<link linkend="GtkUIManager">GtkUIManager</link> *self);</programlisting>
+<para>
+Returns the <link linkend="GtkAccelGroup"><type>GtkAccelGroup</type></link> associated with <parameter>self</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the <link linkend="GtkAccelGroup"><type>GtkAccelGroup</type></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-get-widget" role="function" condition="since:2.4">
+<title>gtk_ui_manager_get_widget ()</title>
+<indexterm zone="gtk-ui-manager-get-widget" role="2.4"><primary sortas="ui_manager_get_widget">gtk_ui_manager_get_widget</primary></indexterm><programlisting><link linkend="GtkWidget">GtkWidget</link> *         gtk_ui_manager_get_widget           (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *path);</programlisting>
+<para>
+Looks up a widget by following a path. 
+The path consists of the names specified in the XML description of the UI. 
+separated by '/'. Elements which don't have a name or action attribute in 
+the XML (e.g. &lt;popup&gt;) can be addressed by their XML element name 
+(e.g. "popup"). The root element ("/ui") can be omitted in the path.
+</para>
+<para>
+Note that the widget found by following a path that ends in a &lt;menu&gt;
+element is the menuitem to which the menu is attached, not the menu itself.
+</para>
+<para>
+Also note that the widgets constructed by a ui manager are not tied to 
+the lifecycle of the ui manager. If you add the widgets returned by this 
+function to some container or explicitly ref them, they will survive the
+destruction of the ui manager.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>path</parameter>&#160;:</term>
+<listitem><simpara> a path
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the widget found by following the path, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if no widget
+  was found.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-get-toplevels" role="function" condition="since:2.4">
+<title>gtk_ui_manager_get_toplevels ()</title>
+<indexterm zone="gtk-ui-manager-get-toplevels" role="2.4"><primary sortas="ui_manager_get_toplevels">gtk_ui_manager_get_toplevels</primary></indexterm><programlisting><link linkend="GSList">GSList</link> *            gtk_ui_manager_get_toplevels        (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="GtkUIManagerItemType">GtkUIManagerItemType</link> types);</programlisting>
+<para>
+Obtains a list of all toplevel widgets of the requested types.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>types</parameter>&#160;:</term>
+<listitem><simpara> specifies the types of toplevel widgets to include. Allowed
+  types are <link linkend="GTK-UI-MANAGER-MENUBAR--CAPS"><type>GTK_UI_MANAGER_MENUBAR</type></link>, <link linkend="GTK-UI-MANAGER-TOOLBAR--CAPS"><type>GTK_UI_MANAGER_TOOLBAR</type></link> and
+  <link linkend="GTK-UI-MANAGER-POPUP--CAPS"><type>GTK_UI_MANAGER_POPUP</type></link>.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a newly-allocated <link linkend="GSList"><type>GSList</type></link> of all toplevel widgets of the
+requested types.  Free the returned list with <link linkend="g-slist-free"><function>g_slist_free()</function></link>.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-get-action" role="function" condition="since:2.4">
+<title>gtk_ui_manager_get_action ()</title>
+<indexterm zone="gtk-ui-manager-get-action" role="2.4"><primary sortas="ui_manager_get_action">gtk_ui_manager_get_action</primary></indexterm><programlisting><link linkend="GtkAction">GtkAction</link> *         gtk_ui_manager_get_action           (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *path);</programlisting>
+<para>
+Looks up an action by following a path. See <link linkend="gtk-ui-manager-get-widget"><function>gtk_ui_manager_get_widget()</function></link>
+for more information about paths.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>path</parameter>&#160;:</term>
+<listitem><simpara> a path
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the action whose proxy widget is found by following the path, 
+    or <link linkend="NULL--CAPS"><literal>NULL</literal></link> if no widget was found.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-add-ui-from-string" role="function" condition="since:2.4">
+<title>gtk_ui_manager_add_ui_from_string ()</title>
+<indexterm zone="gtk-ui-manager-add-ui-from-string" role="2.4"><primary sortas="ui_manager_add_ui_from_string">gtk_ui_manager_add_ui_from_string</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_ui_manager_add_ui_from_string   (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *buffer,
+                                                         <link linkend="gssize">gssize</link> length,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Parses a string containing a <link linkend="XML-UI">UI definition</link> and 
+merges it with the current contents of <parameter>self</parameter>. An enclosing &lt;ui&gt; 
+element is added if it is missing.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buffer</parameter>&#160;:</term>
+<listitem><simpara> the string to parse
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>length</parameter>&#160;:</term>
+<listitem><simpara> the length of <parameter>buffer</parameter> (may be -1 if <parameter>buffer</parameter> is nul-terminated)
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The merge id for the merged UI. The merge id can be used
+  to unmerge the UI with <link linkend="gtk-ui-manager-remove-ui"><function>gtk_ui_manager_remove_ui()</function></link>. If an error occurred,
+  the return value is 0.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-add-ui-from-file" role="function" condition="since:2.4">
+<title>gtk_ui_manager_add_ui_from_file ()</title>
+<indexterm zone="gtk-ui-manager-add-ui-from-file" role="2.4"><primary sortas="ui_manager_add_ui_from_file">gtk_ui_manager_add_ui_from_file</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_ui_manager_add_ui_from_file     (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         const <link linkend="gchar">gchar</link> *filename,
+                                                         <link linkend="GError">GError</link> **error);</programlisting>
+<para>
+Parses a file containing a <link linkend="XML-UI">UI definition</link> and 
+merges it with the current contents of <parameter>self</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> the name of the file to parse 
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara> return location for an error
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> The merge id for the merged UI. The merge id can be used
+  to unmerge the UI with <link linkend="gtk-ui-manager-remove-ui"><function>gtk_ui_manager_remove_ui()</function></link>. If an error occurred,
+  the return value is 0.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-new-merge-id" role="function" condition="since:2.4">
+<title>gtk_ui_manager_new_merge_id ()</title>
+<indexterm zone="gtk-ui-manager-new-merge-id" role="2.4"><primary sortas="ui_manager_new_merge_id">gtk_ui_manager_new_merge_id</primary></indexterm><programlisting><link linkend="guint">guint</link>               gtk_ui_manager_new_merge_id         (<link linkend="GtkUIManager">GtkUIManager</link> *self);</programlisting>
+<para>
+Returns an unused merge id, suitable for use with 
+<link linkend="gtk-ui-manager-add-ui"><function>gtk_ui_manager_add_ui()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> an unused merge id.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="GtkUIManagerItemType" role="enum">
+<title>enum GtkUIManagerItemType</title>
+<indexterm zone="GtkUIManagerItemType"><primary sortas="UIManagerItemType">GtkUIManagerItemType</primary></indexterm><programlisting>typedef enum {
+  GTK_UI_MANAGER_AUTO              = 0,
+  GTK_UI_MANAGER_MENUBAR           = 1 &lt;&lt; 0,
+  GTK_UI_MANAGER_MENU              = 1 &lt;&lt; 1,
+  GTK_UI_MANAGER_TOOLBAR           = 1 &lt;&lt; 2,
+  GTK_UI_MANAGER_PLACEHOLDER       = 1 &lt;&lt; 3,
+  GTK_UI_MANAGER_POPUP             = 1 &lt;&lt; 4,
+  GTK_UI_MANAGER_MENUITEM          = 1 &lt;&lt; 5,
+  GTK_UI_MANAGER_TOOLITEM          = 1 &lt;&lt; 6,
+  GTK_UI_MANAGER_SEPARATOR         = 1 &lt;&lt; 7,
+  GTK_UI_MANAGER_ACCELERATOR       = 1 &lt;&lt; 8,
+  GTK_UI_MANAGER_POPUP_WITH_ACCELS = 1 &lt;&lt; 9
+} GtkUIManagerItemType;
+</programlisting>
+<para>
+These enumeration values are used by <link linkend="gtk-ui-manager-add-ui"><function>gtk_ui_manager_add_ui()</function></link> to determine
+what UI element to create.
+</para><variablelist role="enum">
+<varlistentry id="GTK-UI-MANAGER-AUTO--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_AUTO</literal></term>
+<listitem><simpara>Pick the type of the UI element according to context.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-UI-MANAGER-MENUBAR--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_MENUBAR</literal></term>
+<listitem><simpara>Create a menubar.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-UI-MANAGER-MENU--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_MENU</literal></term>
+<listitem><simpara>Create a menu.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-UI-MANAGER-TOOLBAR--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_TOOLBAR</literal></term>
+<listitem><simpara>Create a toolbar.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-UI-MANAGER-PLACEHOLDER--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_PLACEHOLDER</literal></term>
+<listitem><simpara>Insert a placeholder.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-UI-MANAGER-POPUP--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_POPUP</literal></term>
+<listitem><simpara>Create a popup menu.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-UI-MANAGER-MENUITEM--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_MENUITEM</literal></term>
+<listitem><simpara>Create a menuitem.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-UI-MANAGER-TOOLITEM--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_TOOLITEM</literal></term>
+<listitem><simpara>Create a toolitem.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-UI-MANAGER-SEPARATOR--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_SEPARATOR</literal></term>
+<listitem><simpara>Create a separator.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-UI-MANAGER-ACCELERATOR--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_ACCELERATOR</literal></term>
+<listitem><simpara>Install an accelerator.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="GTK-UI-MANAGER-POPUP-WITH-ACCELS--CAPS" role="constant">
+<term><literal>GTK_UI_MANAGER_POPUP_WITH_ACCELS</literal></term>
+<listitem><simpara>Same as <link linkend="GTK-UI-MANAGER-POPUP--CAPS"><literal>GTK_UI_MANAGER_POPUP</literal></link>, but the actions' accelerators are shown.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="gtk-ui-manager-add-ui" role="function" condition="since:2.4">
+<title>gtk_ui_manager_add_ui ()</title>
+<indexterm zone="gtk-ui-manager-add-ui" role="2.4"><primary sortas="ui_manager_add_ui">gtk_ui_manager_add_ui</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_ui_manager_add_ui               (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="guint">guint</link> merge_id,
+                                                         const <link linkend="gchar">gchar</link> *path,
+                                                         const <link linkend="gchar">gchar</link> *name,
+                                                         const <link linkend="gchar">gchar</link> *action,
+                                                         <link linkend="GtkUIManagerItemType">GtkUIManagerItemType</link> type,
+                                                         <link linkend="gboolean">gboolean</link> top);</programlisting>
+<para>
+Adds a UI element to the current contents of <parameter>self</parameter>. 
+</para>
+<para>
+If <parameter>type</parameter> is <link linkend="GTK-UI-MANAGER-AUTO--CAPS"><literal>GTK_UI_MANAGER_AUTO</literal></link>, GTK+ inserts a menuitem, toolitem or 
+separator if such an element can be inserted at the place determined by 
+<parameter>path</parameter>. Otherwise <parameter>type</parameter> must indicate an element that can be inserted at 
+the place determined by <parameter>path</parameter>.
+</para>
+<para>
+If <parameter>path</parameter> points to a menuitem or toolitem, the new element will be inserted
+before or after this item, depending on <parameter>top</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>merge_id</parameter>&#160;:</term>
+<listitem><simpara> the merge id for the merged UI, see <link linkend="gtk-ui-manager-new-merge-id"><function>gtk_ui_manager_new_merge_id()</function></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>path</parameter>&#160;:</term>
+<listitem><simpara> a path
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara> the name for the added UI element
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the name of the action to be proxied, or <link linkend="NULL--CAPS"><literal>NULL</literal></link> to add a separator
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>type</parameter>&#160;:</term>
+<listitem><simpara> the type of UI element to add.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>top</parameter>&#160;:</term>
+<listitem><simpara> if <link linkend="TRUE--CAPS"><literal>TRUE</literal></link>, the UI element is added before its siblings, otherwise it 
+  is added after its siblings.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-remove-ui" role="function" condition="since:2.4">
+<title>gtk_ui_manager_remove_ui ()</title>
+<indexterm zone="gtk-ui-manager-remove-ui" role="2.4"><primary sortas="ui_manager_remove_ui">gtk_ui_manager_remove_ui</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_ui_manager_remove_ui            (<link linkend="GtkUIManager">GtkUIManager</link> *self,
+                                                         <link linkend="guint">guint</link> merge_id);</programlisting>
+<para>
+Unmerges the part of <parameter>self</parameter><!-- -->s content identified by <parameter>merge_id</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link> object
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>merge_id</parameter>&#160;:</term>
+<listitem><simpara> a merge id as returned by <link linkend="gtk-ui-manager-add-ui-from-string"><function>gtk_ui_manager_add_ui_from_string()</function></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-get-ui" role="function" condition="since:2.4">
+<title>gtk_ui_manager_get_ui ()</title>
+<indexterm zone="gtk-ui-manager-get-ui" role="2.4"><primary sortas="ui_manager_get_ui">gtk_ui_manager_get_ui</primary></indexterm><programlisting><link linkend="gchar">gchar</link> *             gtk_ui_manager_get_ui               (<link linkend="GtkUIManager">GtkUIManager</link> *self);</programlisting>
+<para>
+Creates a <link linkend="XML-UI">UI definition</link> of the merged UI.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A newly allocated string containing an XML representation of 
+the merged UI.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+<refsect2 id="gtk-ui-manager-ensure-update" role="function" condition="since:2.4">
+<title>gtk_ui_manager_ensure_update ()</title>
+<indexterm zone="gtk-ui-manager-ensure-update" role="2.4"><primary sortas="ui_manager_ensure_update">gtk_ui_manager_ensure_update</primary></indexterm><programlisting><link linkend="void">void</link>                gtk_ui_manager_ensure_update        (<link linkend="GtkUIManager">GtkUIManager</link> *self);</programlisting>
+<para>
+Makes sure that all pending updates to the UI have been completed.
+</para>
+<para>
+This may occasionally be necessary, since <link linkend="GtkUIManager"><type>GtkUIManager</type></link> updates the 
+UI in an idle function. A typical example where this function is
+useful is to enforce that the menubar and toolbar have been added to 
+the main window before showing it:
+<informalexample><programlisting>
+gtk_container_add (GTK_CONTAINER (window), vbox); 
+g_signal_connect (merge, "add-widget", 
+                  G_CALLBACK (add_widget), vbox);
+gtk_ui_manager_add_ui_from_file (merge, "my-menus");
+gtk_ui_manager_add_ui_from_file (merge, "my-toolbars");
+gtk_ui_manager_ensure_update (merge);  
+gtk_widget_show (window);
+</programlisting></informalexample></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>self</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.4</para></refsect2>
+
+</refsect1>
+<refsect1 id="GtkUIManager.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GtkUIManager--add-tearoffs" role="property"><title>The <literal>&quot;add-tearoffs&quot;</literal> property</title>
+<indexterm zone="GtkUIManager--add-tearoffs" role="2.4"><primary sortas="UIManager:add-tearoffs">GtkUIManager:add-tearoffs</primary></indexterm><programlisting>  &quot;add-tearoffs&quot;             <link linkend="gboolean">gboolean</link>              : Read / Write</programlisting>
+<para>
+The "add-tearoffs" property controls whether generated menus
+have tearoff menu items. 
+</para>
+<para>
+Note that this only affects regular menus. Generated popup 
+menus never have tearoff menu items.</para>
+<para>
+</para><para>Default value: FALSE</para>
+<para>Since 2.4</para>
+</refsect2>
+<refsect2 id="GtkUIManager--ui" role="property"><title>The <literal>&quot;ui&quot;</literal> property</title>
+<indexterm zone="GtkUIManager--ui"><primary sortas="UIManager:ui">GtkUIManager:ui</primary></indexterm><programlisting>  &quot;ui&quot;                       <link linkend="gchar">gchar</link>*                : Read</programlisting>
+<para>An XML string describing the merged UI.</para><para>Default value: "&lt;ui&gt;\n&lt;/ui&gt;\n"</para>
+</refsect2>
+
+</refsect1>
+
+<refsect1 id="GtkUIManager.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GtkUIManager-actions-changed" role="signal"><title>The <literal>&quot;actions-changed&quot;</literal> signal</title>
+<indexterm zone="GtkUIManager-actions-changed" role="2.4"><primary sortas="UIManager::actions-changed">GtkUIManager::actions-changed</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkUIManager">GtkUIManager</link> *merge,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run First / No Recursion</programlisting>
+<para>
+The "actions-changed" signal is emitted whenever the set of actions
+changes.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>merge</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2><refsect2 id="GtkUIManager-add-widget" role="signal"><title>The <literal>&quot;add-widget&quot;</literal> signal</title>
+<indexterm zone="GtkUIManager-add-widget" role="2.4"><primary sortas="UIManager::add-widget">GtkUIManager::add-widget</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkUIManager">GtkUIManager</link> *merge,
+                                                        <link linkend="GtkWidget">GtkWidget</link>    *widget,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run First / No Recursion</programlisting>
+<para>
+The add_widget signal is emitted for each generated menubar and toolbar.
+It is not emitted for generated popup menus, which can be obtained by
+<link linkend="gtk-ui-manager-get-widget"><function>gtk_ui_manager_get_widget()</function></link>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>merge</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="GtkUIManager"><type>GtkUIManager</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>widget</parameter>&#160;:</term>
+<listitem><simpara> the added widget
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2><refsect2 id="GtkUIManager-connect-proxy" role="signal"><title>The <literal>&quot;connect-proxy&quot;</literal> signal</title>
+<indexterm zone="GtkUIManager-connect-proxy" role="2.4"><primary sortas="UIManager::connect-proxy">GtkUIManager::connect-proxy</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkUIManager">GtkUIManager</link> *uimanager,
+                                                        <link linkend="GtkAction">GtkAction</link>    *action,
+                                                        <link linkend="GtkWidget">GtkWidget</link>    *proxy,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run First / No Recursion</programlisting>
+<para>
+The connect_proxy signal is emitted after connecting a proxy to 
+an action in the group. 
+</para>
+<para>
+This is intended for simple customizations for which a custom action
+class would be too clumsy, e.g. showing tooltips for menuitems in the
+statusbar.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uimanager</parameter>&#160;:</term>
+<listitem><simpara> the ui manager
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>proxy</parameter>&#160;:</term>
+<listitem><simpara> the proxy
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2><refsect2 id="GtkUIManager-disconnect-proxy" role="signal"><title>The <literal>&quot;disconnect-proxy&quot;</literal> signal</title>
+<indexterm zone="GtkUIManager-disconnect-proxy" role="2.4"><primary sortas="UIManager::disconnect-proxy">GtkUIManager::disconnect-proxy</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkUIManager">GtkUIManager</link> *uimanager,
+                                                        <link linkend="GtkAction">GtkAction</link>    *action,
+                                                        <link linkend="GtkWidget">GtkWidget</link>    *proxy,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run First / No Recursion</programlisting>
+<para>
+The disconnect_proxy signal is emitted after disconnecting a proxy 
+from an action in the group.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uimanager</parameter>&#160;:</term>
+<listitem><simpara> the ui manager
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>proxy</parameter>&#160;:</term>
+<listitem><simpara> the proxy
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2><refsect2 id="GtkUIManager-post-activate" role="signal"><title>The <literal>&quot;post-activate&quot;</literal> signal</title>
+<indexterm zone="GtkUIManager-post-activate" role="2.4"><primary sortas="UIManager::post-activate">GtkUIManager::post-activate</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkUIManager">GtkUIManager</link> *uimanager,
+                                                        <link linkend="GtkAction">GtkAction</link>    *action,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run First / No Recursion</programlisting>
+<para>
+The post_activate signal is emitted just after the <parameter>action</parameter>
+is activated.
+</para>
+<para>
+This is intended for applications to get notification
+just after any action is activated.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uimanager</parameter>&#160;:</term>
+<listitem><simpara> the ui manager
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2><refsect2 id="GtkUIManager-pre-activate" role="signal"><title>The <literal>&quot;pre-activate&quot;</literal> signal</title>
+<indexterm zone="GtkUIManager-pre-activate" role="2.4"><primary sortas="UIManager::pre-activate">GtkUIManager::pre-activate</primary></indexterm><programlisting><link linkend="void">void</link>                user_function                      (<link linkend="GtkUIManager">GtkUIManager</link> *uimanager,
+                                                        <link linkend="GtkAction">GtkAction</link>    *action,
+                                                        <link linkend="gpointer">gpointer</link>      user_data)      : Run First / No Recursion</programlisting>
+<para>
+The pre_activate signal is emitted just before the <parameter>action</parameter>
+is activated.
+</para>
+<para>
+This is intended for applications to get notification
+just before any action is activated.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>uimanager</parameter>&#160;:</term>
+<listitem><simpara> the ui manager
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>action</parameter>&#160;:</term>
+<listitem><simpara> the action
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>user_data</parameter>&#160;:</term>
+<listitem><simpara>user data set when the signal handler was connected.</simpara></listitem></varlistentry>
+</variablelist><para>Since 2.4</para></refsect2>
+</refsect1>
+
+
+<refsect1 id="GtkUIManager.see-also">
+<title>See Also</title>
+<para>
+<link linkend="GtkBuilder"><type>GtkBuilder</type></link>
+</para>
+</refsect1>
+
+</refentry>

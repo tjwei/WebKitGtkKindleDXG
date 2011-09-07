@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>General Options - GQview User Manual</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20040805;23590500">
+	<META NAME="CHANGED" CONTENT="20050131;8415300">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0 STYLE="page-break-before: always">
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="10_options.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER>General - Options Explained</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="10_2_image.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</CENTER>
+<HR>
+<H1>10.1 General Options</H1>
+<P>This section describes the options presented under the General Tab
+of the preferences dialog.</P>
+<P><BR><BR>
+</P>
+<P><U>Startup</U></P>
+<P STYLE="margin-left: 0.79in"><B>Change to folder</B>: Enabling this
+will cause GQview to initially open to the specified folder.</P>
+<P STYLE="margin-left: 0.79in"><B>Use Current</B>: Activate this
+button to change the setting to the current folder.</P>
+<DL>
+	<DD STYLE="margin-left: 0in; margin-bottom: 0.2in"><BR><BR>
+	</DD></DL>
+<P>
+<U>Thumbnails</U></P>
+<DL>
+	<DL>
+		<DD STYLE="margin-bottom: 0.2in; text-decoration: none"><B>Size</B>:
+		Selects the size of the thumbnails displayed throughout GQview,
+		dimensions are width by height in pixels.</DD><DD STYLE="margin-bottom: 0.2in; text-decoration: none">
+		<B>Quality</B>: Selects the method to use when scaling an image
+		down for thumbnails.</DD></DL>
+</DL>
+<P STYLE="margin-left: 1.58in">
+<B>Nearest</B>: Fastest scaler, but results in poor thumbnail
+quality.<BR><B>Tiles</B>: Thumbnail results are very close to
+bilinear, with better speed.<BR><B>Bilinear</B>: High quality
+results, moderately fast.<BR><B>Hyper</B>: Slowest scaler, sometimes
+gives better results than bilinear.</P>
+<DL>
+	<DL>
+		<DD STYLE="margin-bottom: 0.2in"><B>Cache thumbnails</B>: Enable
+		this to save thumbnails to disk, subsequent requests for a
+		thumbnail will be faster. Thumbnails are cached into
+		($HOME)/.gqview/thumbnails. Refer to <A HREF="11_3_thumbnails.html">11.3
+		thumbnails</A> for details.</DD><DD STYLE="margin-bottom: 0.2in">
+		<B>Use shared thumbnail cache:</B> This will use a thumbnail
+		caching method that is compatible with applications that use the
+		standard thumbnail specification. When this option is enabled
+		thumbnails will be stored in ($HOME)/.thumbnails</DD><DD STYLE="margin-bottom: 0.2in">
+		<B>Cache thumbnails into .thumbnails</B>: When enabled, GQview
+		attempts to store cached thumbnails closer to the source image.
+		This way multiple users can benefit from a single cache, thereby
+		reducing wasted disk space. The resulting location is the source
+		image's folder, in a sub folder with the name <B>.thumbnails</B>.
+		When the image source folder cannot be written, GQview falls back
+		to saving the thumbnail in the user's home folder.</DD><DD STYLE="margin-bottom: 0.2in; text-decoration: none">
+		<B>Use xvpics thumbnails when found</B>: xvpics is a common
+		thumbnail caching format used by several applications. Thumbnails
+		are stored locally to the source image in a sub folder with the
+		name <B>.xvpics</B>. Enabling this option will allow GQview to read
+		thumbnails saved in the xvpics format.</DD><DL>
+			<DL>
+				<DD STYLE="margin-bottom: 0.2in; text-decoration: none">
+				<I>Note:</I> Support for xvpics is read only, GQview can not
+				generate thumbnails in this format.</DD></DL>
+		</DL>
+	</DL>
+</DL>
+<P>
+<BR><BR>
+</P>
+<P><U>Slide show</U></P>
+<DL>
+	<DL>
+		<DD STYLE="margin-bottom: 0.2in; text-decoration: none"><B>Delay
+		between image change</B>: Specifies the delay between images for
+		slide shows, in seconds.</DD><DD STYLE="margin-bottom: 0.2in; text-decoration: none">
+		<B>Random</B>: When enabled, slide show images will appear in
+		random order.</DD><DL>
+			<DL>
+				<DD STYLE="margin-bottom: 0.2in; text-decoration: none">
+				<I>Note:</I> Random images are displayed such that each image
+				appears once per cycle of all images. When the slide show repeat
+				option is enabled, the image order is randomized after completing
+				each cycle.</DD></DL>
+		</DL>
+		<DD STYLE="margin-bottom: 0.2in; text-decoration: none">
+		<B>Repeat</B>: When enabled, slide shows will continue at the
+		beginning after the last image is displayed.</DD></DL>
+	<DD STYLE="margin-left: 0in; margin-bottom: 0.2in; text-decoration: none">
+	<BR><BR>
+	</DD></DL>
+<P>
+<BR><BR>
+</P>
+<HR>
+<CENTER>
+	<TABLE WIDTH=100% BORDER=0 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<COL WIDTH=85*>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><A HREF="10_options.html">Previous</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><A HREF="index.html">Contents</A></P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT><A HREF="10_2_image.html">Next</A></P>
+				</TD>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=33%>
+					<P><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=33%>
+					<P ALIGN=RIGHT>GQview User Manual</P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>

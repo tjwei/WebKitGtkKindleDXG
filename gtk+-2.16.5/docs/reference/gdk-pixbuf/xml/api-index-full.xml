@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+<!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+<!ENTITY version SYSTEM "version.xml">
+
+<!ENTITY gdk-pixbuf "<application>gdk-pixbuf</application>">
+<!ENTITY Imlib "<application>Imlib</application>">
+]>
+<indexdiv>
+<indexdiv><title>A</title>
+<indexentry><primaryie linkends="gdk-pixbuf-add-alpha"><link linkend="gdk-pixbuf-add-alpha">gdk_pixbuf_add_alpha</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-get-height"><link linkend="gdk-pixbuf-animation-get-height">gdk_pixbuf_animation_get_height</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-get-iter"><link linkend="gdk-pixbuf-animation-get-iter">gdk_pixbuf_animation_get_iter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-get-static-image"><link linkend="gdk-pixbuf-animation-get-static-image">gdk_pixbuf_animation_get_static_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-get-width"><link linkend="gdk-pixbuf-animation-get-width">gdk_pixbuf_animation_get_width</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-is-static-image"><link linkend="gdk-pixbuf-animation-is-static-image">gdk_pixbuf_animation_is_static_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-iter-advance"><link linkend="gdk-pixbuf-animation-iter-advance">gdk_pixbuf_animation_iter_advance</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-iter-get-delay-time"><link linkend="gdk-pixbuf-animation-iter-get-delay-time">gdk_pixbuf_animation_iter_get_delay_time</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-iter-get-pixbuf"><link linkend="gdk-pixbuf-animation-iter-get-pixbuf">gdk_pixbuf_animation_iter_get_pixbuf</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-iter-on-currently-loading-frame"><link linkend="gdk-pixbuf-animation-iter-on-currently-loading-frame">gdk_pixbuf_animation_iter_on_currently_loading_frame</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-new-from-file"><link linkend="gdk-pixbuf-animation-new-from-file">gdk_pixbuf_animation_new_from_file</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-ref"><link linkend="gdk-pixbuf-animation-ref">gdk_pixbuf_animation_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-animation-unref"><link linkend="gdk-pixbuf-animation-unref">gdk_pixbuf_animation_unref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-apply-embedded-orientation"><link linkend="gdk-pixbuf-apply-embedded-orientation">gdk_pixbuf_apply_embedded_orientation</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="gdk-pixbuf-composite"><link linkend="gdk-pixbuf-composite">gdk_pixbuf_composite</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-composite-color"><link linkend="gdk-pixbuf-composite-color">gdk_pixbuf_composite_color</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-composite-color-simple"><link linkend="gdk-pixbuf-composite-color-simple">gdk_pixbuf_composite_color_simple</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-copy"><link linkend="gdk-pixbuf-copy">gdk_pixbuf_copy</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-copy-area"><link linkend="gdk-pixbuf-copy-area">gdk_pixbuf_copy_area</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>E</title>
+<indexentry><primaryie linkends="GDK-PIXBUF-ERROR--CAPS"><link linkend="GDK-PIXBUF-ERROR--CAPS">GDK_PIXBUF_ERROR</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>F</title>
+<indexentry><primaryie linkends="gdk-pixbuf-fill"><link linkend="gdk-pixbuf-fill">gdk_pixbuf_fill</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-flip"><link linkend="gdk-pixbuf-flip">gdk_pixbuf_flip</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-get-description"><link linkend="gdk-pixbuf-format-get-description">gdk_pixbuf_format_get_description</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-get-extensions"><link linkend="gdk-pixbuf-format-get-extensions">gdk_pixbuf_format_get_extensions</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-get-license"><link linkend="gdk-pixbuf-format-get-license">gdk_pixbuf_format_get_license</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-get-mime-types"><link linkend="gdk-pixbuf-format-get-mime-types">gdk_pixbuf_format_get_mime_types</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-get-name"><link linkend="gdk-pixbuf-format-get-name">gdk_pixbuf_format_get_name</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-is-disabled"><link linkend="gdk-pixbuf-format-is-disabled">gdk_pixbuf_format_is_disabled</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-is-scalable"><link linkend="gdk-pixbuf-format-is-scalable">gdk_pixbuf_format_is_scalable</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-is-writable"><link linkend="gdk-pixbuf-format-is-writable">gdk_pixbuf_format_is_writable</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-format-set-disabled"><link linkend="gdk-pixbuf-format-set-disabled">gdk_pixbuf_format_set_disabled</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-from-pixdata"><link linkend="gdk-pixbuf-from-pixdata">gdk_pixbuf_from_pixdata</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>G</title>
+<indexentry><primaryie linkends="GdkColorspace"><link linkend="GdkColorspace">GdkColorspace</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkInterpType"><link linkend="GdkInterpType">GdkInterpType</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbuf-struct"><link linkend="GdkPixbuf-struct">GdkPixbuf</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbuf--bits-per-sample"><link linkend="GdkPixbuf--bits-per-sample">GdkPixbuf:bits-per-sample</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbuf--colorspace"><link linkend="GdkPixbuf--colorspace">GdkPixbuf:colorspace</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbuf--has-alpha"><link linkend="GdkPixbuf--has-alpha">GdkPixbuf:has-alpha</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbuf--height"><link linkend="GdkPixbuf--height">GdkPixbuf:height</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbuf--n-channels"><link linkend="GdkPixbuf--n-channels">GdkPixbuf:n-channels</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbuf--pixels"><link linkend="GdkPixbuf--pixels">GdkPixbuf:pixels</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbuf--rowstride"><link linkend="GdkPixbuf--rowstride">GdkPixbuf:rowstride</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbuf--width"><link linkend="GdkPixbuf--width">GdkPixbuf:width</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufAlphaMode"><link linkend="GdkPixbufAlphaMode">GdkPixbufAlphaMode</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufAnimation-struct"><link linkend="GdkPixbufAnimation-struct">GdkPixbufAnimation</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufAnimationClass"><link linkend="GdkPixbufAnimationClass">GdkPixbufAnimationClass</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufAnimationIter-struct"><link linkend="GdkPixbufAnimationIter-struct">GdkPixbufAnimationIter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufAnimationIterClass"><link linkend="GdkPixbufAnimationIterClass">GdkPixbufAnimationIterClass</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufDestroyNotify"><link linkend="GdkPixbufDestroyNotify">GdkPixbufDestroyNotify</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufError"><link linkend="GdkPixbufError">GdkPixbufError</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufFormat"><link linkend="GdkPixbufFormat">GdkPixbufFormat</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufFormatFlags"><link linkend="GdkPixbufFormatFlags">GdkPixbufFormatFlags</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufLoader-struct"><link linkend="GdkPixbufLoader-struct">GdkPixbufLoader</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufLoader-area-prepared"><link linkend="GdkPixbufLoader-area-prepared">GdkPixbufLoader::area-prepared</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufLoader-area-updated"><link linkend="GdkPixbufLoader-area-updated">GdkPixbufLoader::area-updated</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufLoader-closed"><link linkend="GdkPixbufLoader-closed">GdkPixbufLoader::closed</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufLoader-size-prepared"><link linkend="GdkPixbufLoader-size-prepared">GdkPixbufLoader::size-prepared</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModule"><link linkend="GdkPixbufModule">GdkPixbufModule</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModuleFillInfoFunc"><link linkend="GdkPixbufModuleFillInfoFunc">GdkPixbufModuleFillInfoFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModuleFillVtableFunc"><link linkend="GdkPixbufModuleFillVtableFunc">GdkPixbufModuleFillVtableFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModulePattern"><link linkend="GdkPixbufModulePattern">GdkPixbufModulePattern</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModulePreparedFunc"><link linkend="GdkPixbufModulePreparedFunc">GdkPixbufModulePreparedFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModuleSizeFunc"><link linkend="GdkPixbufModuleSizeFunc">GdkPixbufModuleSizeFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufModuleUpdatedFunc"><link linkend="GdkPixbufModuleUpdatedFunc">GdkPixbufModuleUpdatedFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufRotation"><link linkend="GdkPixbufRotation">GdkPixbufRotation</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufSaveFunc"><link linkend="GdkPixbufSaveFunc">GdkPixbufSaveFunc</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixbufSimpleAnim"><link linkend="GdkPixbufSimpleAnim">GdkPixbufSimpleAnim</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixdata"><link linkend="GdkPixdata">GdkPixdata</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixdataDumpType"><link linkend="GdkPixdataDumpType">GdkPixdataDumpType</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GdkPixdataType"><link linkend="GdkPixdataType">GdkPixdataType</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixdata-deserialize"><link linkend="gdk-pixdata-deserialize">gdk_pixdata_deserialize</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixdata-from-pixbuf"><link linkend="gdk-pixdata-from-pixbuf">gdk_pixdata_from_pixbuf</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GDK-PIXDATA-HEADER-LENGTH--CAPS"><link linkend="GDK-PIXDATA-HEADER-LENGTH--CAPS">GDK_PIXDATA_HEADER_LENGTH</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixdata-serialize"><link linkend="gdk-pixdata-serialize">gdk_pixdata_serialize</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixdata-to-csource"><link linkend="gdk-pixdata-to-csource">gdk_pixdata_to_csource</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-bits-per-sample"><link linkend="gdk-pixbuf-get-bits-per-sample">gdk_pixbuf_get_bits_per_sample</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-colorspace"><link linkend="gdk-pixbuf-get-colorspace">gdk_pixbuf_get_colorspace</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-file-info"><link linkend="gdk-pixbuf-get-file-info">gdk_pixbuf_get_file_info</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-formats"><link linkend="gdk-pixbuf-get-formats">gdk_pixbuf_get_formats</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-has-alpha"><link linkend="gdk-pixbuf-get-has-alpha">gdk_pixbuf_get_has_alpha</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-height"><link linkend="gdk-pixbuf-get-height">gdk_pixbuf_get_height</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-n-channels"><link linkend="gdk-pixbuf-get-n-channels">gdk_pixbuf_get_n_channels</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-option"><link linkend="gdk-pixbuf-get-option">gdk_pixbuf_get_option</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-pixels"><link linkend="gdk-pixbuf-get-pixels">gdk_pixbuf_get_pixels</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-rowstride"><link linkend="gdk-pixbuf-get-rowstride">gdk_pixbuf_get_rowstride</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-get-width"><link linkend="gdk-pixbuf-get-width">gdk_pixbuf_get_width</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>L</title>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-close"><link linkend="gdk-pixbuf-loader-close">gdk_pixbuf_loader_close</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-get-animation"><link linkend="gdk-pixbuf-loader-get-animation">gdk_pixbuf_loader_get_animation</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-get-format"><link linkend="gdk-pixbuf-loader-get-format">gdk_pixbuf_loader_get_format</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-get-pixbuf"><link linkend="gdk-pixbuf-loader-get-pixbuf">gdk_pixbuf_loader_get_pixbuf</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-new"><link linkend="gdk-pixbuf-loader-new">gdk_pixbuf_loader_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-new-with-mime-type"><link linkend="gdk-pixbuf-loader-new-with-mime-type">gdk_pixbuf_loader_new_with_mime_type</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-new-with-type"><link linkend="gdk-pixbuf-loader-new-with-type">gdk_pixbuf_loader_new_with_type</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-set-size"><link linkend="gdk-pixbuf-loader-set-size">gdk_pixbuf_loader_set_size</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-loader-write"><link linkend="gdk-pixbuf-loader-write">gdk_pixbuf_loader_write</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>M</title>
+<indexentry><primaryie linkends="GDK-PIXBUF-MAGIC-NUMBER--CAPS"><link linkend="GDK-PIXBUF-MAGIC-NUMBER--CAPS">GDK_PIXBUF_MAGIC_NUMBER</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GDK-PIXBUF-MAJOR--CAPS"><link linkend="GDK-PIXBUF-MAJOR--CAPS">GDK_PIXBUF_MAJOR</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-major-version"><link linkend="gdk-pixbuf-major-version">gdk_pixbuf_major_version</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GDK-PIXBUF-MICRO--CAPS"><link linkend="GDK-PIXBUF-MICRO--CAPS">GDK_PIXBUF_MICRO</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-micro-version"><link linkend="gdk-pixbuf-micro-version">gdk_pixbuf_micro_version</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GDK-PIXBUF-MINOR--CAPS"><link linkend="GDK-PIXBUF-MINOR--CAPS">GDK_PIXBUF_MINOR</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-minor-version"><link linkend="gdk-pixbuf-minor-version">gdk_pixbuf_minor_version</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>N</title>
+<indexentry><primaryie linkends="gdk-pixbuf-new"><link linkend="gdk-pixbuf-new">gdk_pixbuf_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-new-from-data"><link linkend="gdk-pixbuf-new-from-data">gdk_pixbuf_new_from_data</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-new-from-file"><link linkend="gdk-pixbuf-new-from-file">gdk_pixbuf_new_from_file</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-new-from-file-at-scale"><link linkend="gdk-pixbuf-new-from-file-at-scale">gdk_pixbuf_new_from_file_at_scale</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-new-from-file-at-size"><link linkend="gdk-pixbuf-new-from-file-at-size">gdk_pixbuf_new_from_file_at_size</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-new-from-inline"><link linkend="gdk-pixbuf-new-from-inline">gdk_pixbuf_new_from_inline</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-new-from-stream"><link linkend="gdk-pixbuf-new-from-stream">gdk_pixbuf_new_from_stream</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-new-from-stream-at-scale"><link linkend="gdk-pixbuf-new-from-stream-at-scale">gdk_pixbuf_new_from_stream_at_scale</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-new-from-xpm-data"><link linkend="gdk-pixbuf-new-from-xpm-data">gdk_pixbuf_new_from_xpm_data</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-new-subpixbuf"><link linkend="gdk-pixbuf-new-subpixbuf">gdk_pixbuf_new_subpixbuf</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>R</title>
+<indexentry><primaryie linkends="gdk-pixbuf-ref"><link linkend="gdk-pixbuf-ref">gdk_pixbuf_ref</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-rotate-simple"><link linkend="gdk-pixbuf-rotate-simple">gdk_pixbuf_rotate_simple</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="gdk-pixbuf-saturate-and-pixelate"><link linkend="gdk-pixbuf-saturate-and-pixelate">gdk_pixbuf_saturate_and_pixelate</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-save"><link linkend="gdk-pixbuf-save">gdk_pixbuf_save</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-savev"><link linkend="gdk-pixbuf-savev">gdk_pixbuf_savev</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-save-to-buffer"><link linkend="gdk-pixbuf-save-to-buffer">gdk_pixbuf_save_to_buffer</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-save-to-bufferv"><link linkend="gdk-pixbuf-save-to-bufferv">gdk_pixbuf_save_to_bufferv</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-save-to-callback"><link linkend="gdk-pixbuf-save-to-callback">gdk_pixbuf_save_to_callback</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-save-to-callbackv"><link linkend="gdk-pixbuf-save-to-callbackv">gdk_pixbuf_save_to_callbackv</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-save-to-stream"><link linkend="gdk-pixbuf-save-to-stream">gdk_pixbuf_save_to_stream</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-scale"><link linkend="gdk-pixbuf-scale">gdk_pixbuf_scale</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-scale-simple"><link linkend="gdk-pixbuf-scale-simple">gdk_pixbuf_scale_simple</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-set-option"><link linkend="gdk-pixbuf-set-option">gdk_pixbuf_set_option</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-simple-anim-add-frame"><link linkend="gdk-pixbuf-simple-anim-add-frame">gdk_pixbuf_simple_anim_add_frame</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-simple-anim-new"><link linkend="gdk-pixbuf-simple-anim-new">gdk_pixbuf_simple_anim_new</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>U</title>
+<indexentry><primaryie linkends="gdk-pixbuf-unref"><link linkend="gdk-pixbuf-unref">gdk_pixbuf_unref</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>V</title>
+<indexentry><primaryie linkends="GDK-PIXBUF-VERSION--CAPS"><link linkend="GDK-PIXBUF-VERSION--CAPS">GDK_PIXBUF_VERSION</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-version"><link linkend="gdk-pixbuf-version">gdk_pixbuf_version</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>X</title>
+<indexentry><primaryie linkends="XlibRgbCmap"><link linkend="XlibRgbCmap">XlibRgbCmap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="XlibRgbDither"><link linkend="XlibRgbDither">XlibRgbDither</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-draw-gray-image"><link linkend="xlib-draw-gray-image">xlib_draw_gray_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-draw-indexed-image"><link linkend="xlib-draw-indexed-image">xlib_draw_indexed_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-draw-rgb-32-image"><link linkend="xlib-draw-rgb-32-image">xlib_draw_rgb_32_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-draw-rgb-image"><link linkend="xlib-draw-rgb-image">xlib_draw_rgb_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-draw-rgb-image-dithalign"><link linkend="xlib-draw-rgb-image-dithalign">xlib_draw_rgb_image_dithalign</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-xlib-get-from-drawable"><link linkend="gdk-pixbuf-xlib-get-from-drawable">gdk_pixbuf_xlib_get_from_drawable</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-xlib-init"><link linkend="gdk-pixbuf-xlib-init">gdk_pixbuf_xlib_init</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-xlib-init-with-depth"><link linkend="gdk-pixbuf-xlib-init-with-depth">gdk_pixbuf_xlib_init_with_depth</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-xlib-render-pixmap-and-mask"><link linkend="gdk-pixbuf-xlib-render-pixmap-and-mask">gdk_pixbuf_xlib_render_pixmap_and_mask</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-xlib-render-threshold-alpha"><link linkend="gdk-pixbuf-xlib-render-threshold-alpha">gdk_pixbuf_xlib_render_threshold_alpha</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-xlib-render-to-drawable"><link linkend="gdk-pixbuf-xlib-render-to-drawable">gdk_pixbuf_xlib_render_to_drawable</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gdk-pixbuf-xlib-render-to-drawable-alpha"><link linkend="gdk-pixbuf-xlib-render-to-drawable-alpha">gdk_pixbuf_xlib_render_to_drawable_alpha</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-cmap-free"><link linkend="xlib-rgb-cmap-free">xlib_rgb_cmap_free</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-cmap-new"><link linkend="xlib-rgb-cmap-new">xlib_rgb_cmap_new</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-ditherable"><link linkend="xlib-rgb-ditherable">xlib_rgb_ditherable</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-gc-set-background"><link linkend="xlib-rgb-gc-set-background">xlib_rgb_gc_set_background</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-gc-set-foreground"><link linkend="xlib-rgb-gc-set-foreground">xlib_rgb_gc_set_foreground</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-get-cmap"><link linkend="xlib-rgb-get-cmap">xlib_rgb_get_cmap</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-get-depth"><link linkend="xlib-rgb-get-depth">xlib_rgb_get_depth</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-get-display"><link linkend="xlib-rgb-get-display">xlib_rgb_get_display</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-get-screen"><link linkend="xlib-rgb-get-screen">xlib_rgb_get_screen</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-get-visual"><link linkend="xlib-rgb-get-visual">xlib_rgb_get_visual</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-get-visual-info"><link linkend="xlib-rgb-get-visual-info">xlib_rgb_get_visual_info</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-init"><link linkend="xlib-rgb-init">xlib_rgb_init</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-init-with-depth"><link linkend="xlib-rgb-init-with-depth">xlib_rgb_init_with_depth</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-set-install"><link linkend="xlib-rgb-set-install">xlib_rgb_set_install</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-set-min-colors"><link linkend="xlib-rgb-set-min-colors">xlib_rgb_set_min_colors</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-set-verbose"><link linkend="xlib-rgb-set-verbose">xlib_rgb_set_verbose</link></primaryie></indexentry>
+<indexentry><primaryie linkends="xlib-rgb-xpixel-from-rgb"><link linkend="xlib-rgb-xpixel-from-rgb">xlib_rgb_xpixel_from_rgb</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>
