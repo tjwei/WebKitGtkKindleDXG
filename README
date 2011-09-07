@@ -37,3 +37,7 @@ and
 7 Run SRCDIRS="GTK1/* GTKAPP/*" ./mycmi to build vte, lefpad, gtkterm2, gqview
 8 To build a single package, cd to the package root and run myconfigure, mymake and myinstall scripts.  
 9 Copy /usr/local to your kindle and set LD_LIBRARY_PATH=/usr/local/lib.
+
+Precompiled binary files
+It is older than the source code release, but a precompiled binary can be found at
+https://sites.google.com/site/xmktjw/Home/files/WebKitGtkKindleDXG.tar.xz?attredirects=0&d=1
