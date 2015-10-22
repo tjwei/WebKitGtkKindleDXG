@@ -45,7 +45,24 @@ my %tags = ();
 my %attrs = ();
 my %parameters = ();
 my $extraDefines = 0;
-my $preprocessor = "/usr/bin/gcc -E -P -x c++";
+
+my $ccLocation = "";
+if ($ENV{CC}) {
+    $ccLocation = $ENV{CC};
+} elsif (($Config::Config{"osname"}) =~ /solaris/i) {
+    $ccLocation = "/usr/sfw/bin/gcc";
+} elsif ($Config::Config{"osname"} eq "darwin" && $ENV{SDKROOT}) {
+    chomp($ccLocation = `xcrun -find cc -sdk '$ENV{SDKROOT}'`);
+} else {
+    $ccLocation = "/usr/bin/cc";
+}
+
+my $preprocessor = "";
+if ($Config::Config{"osname"} eq "MSWin32") {
+    $preprocessor = "\"$ccLocation\" /EP";
+} else {
+    $preprocessor = $ccLocation . " -E -x c++";
+}
 
 GetOptions('tags=s' => \$tagsFile, 
     'attrs=s' => \$attrsFile,

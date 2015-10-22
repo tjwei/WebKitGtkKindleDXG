@@ -74,7 +74,7 @@ void DateInstance::msToGregorianDateTime(double milli, bool outputIsUTC, Gregori
 bool DateInstance::getTime(GregorianDateTime& t, int& offset) const
 {
     double milli = internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return false;
     
     msToGregorianDateTime(milli, false, t);
@@ -85,7 +85,7 @@ bool DateInstance::getTime(GregorianDateTime& t, int& offset) const
 bool DateInstance::getUTCTime(GregorianDateTime& t) const
 {
     double milli = internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return false;
     
     msToGregorianDateTime(milli, true, t);
@@ -95,7 +95,7 @@ bool DateInstance::getUTCTime(GregorianDateTime& t) const
 bool DateInstance::getTime(double& milli, int& offset) const
 {
     milli = internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return false;
     
     GregorianDateTime t;
@@ -107,7 +107,7 @@ bool DateInstance::getTime(double& milli, int& offset) const
 bool DateInstance::getUTCTime(double& milli) const
 {
     milli = internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return false;
     
     return true;

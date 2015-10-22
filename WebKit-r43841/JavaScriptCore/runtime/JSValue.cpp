@@ -36,7 +36,7 @@ double JSValue::toInteger(ExecState* exec) const
     if (isInt32Fast())
         return getInt32Fast();
     double d = toNumber(exec);
-    return isnan(d) ? 0.0 : trunc(d);
+    return std::isnan(d) ? 0.0 : trunc(d);
 }
 
 double JSValue::toIntegerPreserveNaN(ExecState* exec) const
@@ -53,7 +53,7 @@ int32_t toInt32SlowCase(double d, bool& ok)
     if (d >= -D32 / 2 && d < D32 / 2)
         return static_cast<int32_t>(d);
 
-    if (isnan(d) || isinf(d)) {
+    if (std::isnan(d) || std::isinf(d)) {
         ok = false;
         return 0;
     }
@@ -73,7 +73,7 @@ uint32_t toUInt32SlowCase(double d, bool& ok)
     if (d >= 0.0 && d < D32)
         return static_cast<uint32_t>(d);
 
-    if (isnan(d) || isinf(d)) {
+    if (std::isnan(d) || std::isinf(d)) {
         ok = false;
         return 0;
     }

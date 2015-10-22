@@ -31,6 +31,7 @@
 #include <wtf/Assertions.h>
 #include <wtf/MathExtras.h>
 #include <wtf/Vector.h>
+#include <cmath>
 
 namespace JSC {
 
@@ -154,7 +155,7 @@ JSValue JSC_HOST_CALL numberProtoFuncToString(ExecState* exec, JSObject*, JSValu
     char s[2048 + 3];
     const char* lastCharInString = s + sizeof(s) - 1;
     double x = v.uncheckedGetNumber();
-    if (isnan(x) || isinf(x))
+    if (std::isnan(x) || std::isinf(x))
         return jsString(exec, UString::from(x));
 
     bool isNegative = x < 0.0;
@@ -230,7 +231,7 @@ JSValue JSC_HOST_CALL numberProtoFuncToFixed(ExecState* exec, JSObject*, JSValue
     int f = static_cast<int>(df);
 
     double x = v.uncheckedGetNumber();
-    if (isnan(x))
+    if (std::isnan(x))
         return jsNontrivialString(exec, "NaN");
 
     UString s;
@@ -310,7 +311,7 @@ JSValue JSC_HOST_CALL numberProtoFuncToExponential(ExecState* exec, JSObject*, J
 
     double x = v.uncheckedGetNumber();
 
-    if (isnan(x) || isinf(x))
+    if (std::isnan(x) || std::isinf(x))
         return jsString(exec, UString::from(x));
 
     JSValue fractionalDigitsValue = args.at(0);
@@ -336,7 +337,7 @@ JSValue JSC_HOST_CALL numberProtoFuncToExponential(ExecState* exec, JSObject*, J
         decimalAdjust = static_cast<int>(logx);
     }
 
-    if (isnan(x))
+    if (std::isnan(x))
         return jsNontrivialString(exec, "NaN");
 
     if (x == -0.0) // (-0.0).toExponential() should print as 0 instead of -0
@@ -379,7 +380,7 @@ JSValue JSC_HOST_CALL numberProtoFuncToPrecision(ExecState* exec, JSObject*, JSV
 
     double doublePrecision = args.at(0).toIntegerPreserveNaN(exec);
     double x = v.uncheckedGetNumber();
-    if (args.at(0).isUndefined() || isnan(x) || isinf(x))
+    if (args.at(0).isUndefined() || std::isnan(x) || std::isinf(x))
         return jsString(exec, v.toString(exec));
 
     UString s;

@@ -788,7 +788,7 @@ PassRefPtr<UString::Rep> concatenate(UString::Rep* rep, int i)
 PassRefPtr<UString::Rep> concatenate(UString::Rep* rep, double d)
 {
     // avoid ever printing -NaN, in JS conceptually there is only one NaN value
-    if (isnan(d))
+    if (std::isnan(d))
         return concatenate(rep, "NaN");
 
     if (d == 0.0) // stringify -0 as 0
@@ -932,7 +932,7 @@ UString UString::from(long l)
 UString UString::from(double d)
 {
     // avoid ever printing -NaN, in JS conceptually there is only one NaN value
-    if (isnan(d))
+    if (std::isnan(d))
         return "NaN";
 
     char buf[80];

@@ -44,7 +44,7 @@ using namespace JSC;
 #endif
 
 #include "Lookup.h"
-#include "Lexer.lut.h"
+#include "../DerivedSources/JavaScriptCore/Lexer.lut.h"
 
 // A bridge for yacc from the C world to the C++ world.
 int jscyylex(void* lvalp, void* llocp, void* globalData)

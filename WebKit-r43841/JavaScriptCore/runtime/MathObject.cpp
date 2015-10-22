@@ -28,6 +28,7 @@
 #include <wtf/MathExtras.h>
 #include <wtf/RandomNumber.h>
 #include <wtf/RandomNumberSeed.h>
+#include <cmath>
 
 namespace JSC {
 
@@ -54,7 +55,7 @@ static JSValue JSC_HOST_CALL mathProtoFuncTan(ExecState*, JSObject*, JSValue, co
 
 }
 
-#include "MathObject.lut.h"
+#include "DerivedSources/JavaScriptCore/MathObject.lut.h"
 
 namespace JSC {
 
@@ -171,7 +172,7 @@ JSValue JSC_HOST_CALL mathProtoFuncMax(ExecState* exec, JSObject*, JSValue, cons
     double result = -Inf;
     for (unsigned k = 0; k < argsCount; ++k) {
         double val = args.at(k).toNumber(exec);
-        if (isnan(val)) {
+        if (std::isnan(val)) {
             result = NaN;
             break;
         }
@@ -187,7 +188,7 @@ JSValue JSC_HOST_CALL mathProtoFuncMin(ExecState* exec, JSObject*, JSValue, cons
     double result = +Inf;
     for (unsigned k = 0; k < argsCount; ++k) {
         double val = args.at(k).toNumber(exec);
-        if (isnan(val)) {
+        if (std::isnan(val)) {
             result = NaN;
             break;
         }
@@ -204,9 +205,9 @@ JSValue JSC_HOST_CALL mathProtoFuncPow(ExecState* exec, JSObject*, JSValue, cons
     double arg = args.at(0).toNumber(exec);
     double arg2 = args.at(1).toNumber(exec);
 
-    if (isnan(arg2))
+    if (std::isnan(arg2))
         return jsNaN(exec);
-    if (isinf(arg2) && fabs(arg) == 1)
+    if (std::isinf(arg2) && fabs(arg) == 1)
         return jsNaN(exec);
     return jsNumber(exec, pow(arg, arg2));
 }
