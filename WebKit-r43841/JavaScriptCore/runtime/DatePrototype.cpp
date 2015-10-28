@@ -110,7 +110,7 @@ static JSValue JSC_HOST_CALL dateProtoFuncToUTCString(ExecState*, JSObject*, JSV
 
 }
 
-#include "DatePrototype.lut.h"
+#include "../DerivedSources/JavaScriptCore/DatePrototype.lut.h"
 
 namespace JSC {
 
@@ -288,7 +288,7 @@ static bool fillStructuresUsingTimeArgs(ExecState* exec, const ArgList& args, in
     // milliseconds
     if (idx < numArgs) {
         double millis = args.at(idx).toNumber(exec);
-        ok = isfinite(millis);
+        ok = std::isfinite(millis);
         milliseconds += millis;
     } else
         milliseconds += *ms;
@@ -404,7 +404,7 @@ JSValue JSC_HOST_CALL dateProtoFuncToString(ExecState* exec, JSObject*, JSValue 
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNontrivialString(exec, "Invalid Date");
 
     GregorianDateTime t;
@@ -421,7 +421,7 @@ JSValue JSC_HOST_CALL dateProtoFuncToUTCString(ExecState* exec, JSObject*, JSVal
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNontrivialString(exec, "Invalid Date");
 
     GregorianDateTime t;
@@ -438,7 +438,7 @@ JSValue JSC_HOST_CALL dateProtoFuncToDateString(ExecState* exec, JSObject*, JSVa
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNontrivialString(exec, "Invalid Date");
 
     GregorianDateTime t;
@@ -455,7 +455,7 @@ JSValue JSC_HOST_CALL dateProtoFuncToTimeString(ExecState* exec, JSObject*, JSVa
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNontrivialString(exec, "Invalid Date");
 
     GregorianDateTime t;
@@ -470,7 +470,7 @@ JSValue JSC_HOST_CALL dateProtoFuncToLocaleString(ExecState* exec, JSObject*, JS
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNontrivialString(exec, "Invalid Date");
 
     return formatLocaleDate(exec, thisDateObj, milli, LocaleDateAndTime, args);
@@ -483,7 +483,7 @@ JSValue JSC_HOST_CALL dateProtoFuncToLocaleDateString(ExecState* exec, JSObject*
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNontrivialString(exec, "Invalid Date");
 
     return formatLocaleDate(exec, thisDateObj, milli, LocaleDate, args);
@@ -496,7 +496,7 @@ JSValue JSC_HOST_CALL dateProtoFuncToLocaleTimeString(ExecState* exec, JSObject*
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNontrivialString(exec, "Invalid Date");
 
     return formatLocaleDate(exec, thisDateObj, milli, LocaleTime, args);
@@ -509,7 +509,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetTime(ExecState* exec, JSObject*, JSValue t
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     return jsNumber(exec, milli);
@@ -524,7 +524,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetFullYear(ExecState* exec, JSObject*, JSVal
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -541,7 +541,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetUTCFullYear(ExecState* exec, JSObject*, JS
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -558,7 +558,7 @@ JSValue JSC_HOST_CALL dateProtoFuncToGMTString(ExecState* exec, JSObject*, JSVal
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNontrivialString(exec, "Invalid Date");
 
     GregorianDateTime t;
@@ -575,7 +575,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetMonth(ExecState* exec, JSObject*, JSValue 
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -592,7 +592,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetUTCMonth(ExecState* exec, JSObject*, JSVal
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -609,7 +609,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetDate(ExecState* exec, JSObject*, JSValue t
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -626,7 +626,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetUTCDate(ExecState* exec, JSObject*, JSValu
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -643,7 +643,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetDay(ExecState* exec, JSObject*, JSValue th
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -660,7 +660,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetUTCDay(ExecState* exec, JSObject*, JSValue
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -677,7 +677,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetHours(ExecState* exec, JSObject*, JSValue 
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -694,7 +694,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetUTCHours(ExecState* exec, JSObject*, JSVal
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -711,7 +711,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetMinutes(ExecState* exec, JSObject*, JSValu
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -728,7 +728,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetUTCMinutes(ExecState* exec, JSObject*, JSV
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -745,7 +745,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetSeconds(ExecState* exec, JSObject*, JSValu
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -762,7 +762,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetUTCSeconds(ExecState* exec, JSObject*, JSV
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -777,7 +777,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetMilliSeconds(ExecState* exec, JSObject*, J
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     double secs = floor(milli / msPerSecond);
@@ -792,7 +792,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetUTCMilliseconds(ExecState* exec, JSObject*
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     double secs = floor(milli / msPerSecond);
@@ -809,7 +809,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetTimezoneOffset(ExecState* exec, JSObject*,
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;
@@ -838,7 +838,7 @@ static JSValue setNewValueFromTimeArgs(ExecState* exec, JSValue thisValue, const
     DateInstance* thisDateObj = asDateInstance(thisValue);
     double milli = thisDateObj->internalNumber();
     
-    if (args.isEmpty() || isnan(milli)) {
+    if (args.isEmpty() || std::isnan(milli)) {
         JSValue result = jsNaN(exec);
         thisDateObj->setInternalValue(result);
         return result;
@@ -877,7 +877,7 @@ static JSValue setNewValueFromDateArgs(ExecState* exec, JSValue thisValue, const
     double ms = 0;
 
     GregorianDateTime t;
-    if (numArgsToUse == 3 && isnan(milli))
+    if (numArgsToUse == 3 && std::isnan(milli))
         // Based on ECMA 262 15.9.5.40 - .41 (set[UTC]FullYear)
         // the time must be reset to +0 if it is NaN. 
         thisDateObj->msToGregorianDateTime(0, true, t);
@@ -1000,7 +1000,7 @@ JSValue JSC_HOST_CALL dateProtoFuncSetYear(ExecState* exec, JSObject*, JSValue t
     double ms = 0;
 
     GregorianDateTime t;
-    if (isnan(milli))
+    if (std::isnan(milli))
         // Based on ECMA 262 B.2.5 (setYear)
         // the time must be reset to +0 if it is NaN. 
         thisDateObj->msToGregorianDateTime(0, true, t);
@@ -1033,7 +1033,7 @@ JSValue JSC_HOST_CALL dateProtoFuncGetYear(ExecState* exec, JSObject*, JSValue t
 
     DateInstance* thisDateObj = asDateInstance(thisValue); 
     double milli = thisDateObj->internalNumber();
-    if (isnan(milli))
+    if (std::isnan(milli))
         return jsNaN(exec);
 
     GregorianDateTime t;

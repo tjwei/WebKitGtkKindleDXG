@@ -883,7 +883,7 @@ double parseDate(const UString &date)
 
 double timeClip(double t)
 {
-    if (!isfinite(t))
+    if (!std::isfinite(t))
         return NaN;
     if (fabs(t) > 8.64E15)
         return NaN;

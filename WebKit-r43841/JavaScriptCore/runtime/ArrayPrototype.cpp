@@ -63,7 +63,7 @@ static JSValue JSC_HOST_CALL arrayProtoFuncLastIndexOf(ExecState*, JSObject*, JS
 
 }
 
-#include "ArrayPrototype.lut.h"
+#include "../DerivedSources/JavaScriptCore/ArrayPrototype.lut.h"
 
 namespace JSC {
 

@@ -31,6 +31,7 @@
 #include <wtf/ASCIICType.h>
 #include <wtf/MathExtras.h>
 #include <wtf/unicode/Collator.h>
+#include <cmath>
 
 using namespace WTF;
 
@@ -71,7 +72,7 @@ static JSValue JSC_HOST_CALL stringProtoFuncLink(ExecState*, JSObject*, JSValue,
 
 }
 
-#include "StringPrototype.lut.h"
+#include "DerivedSources/JavaScriptCore/StringPrototype.lut.h"
 
 namespace JSC {
 
@@ -648,9 +649,9 @@ JSValue JSC_HOST_CALL stringProtoFuncSubstring(ExecState* exec, JSObject*, JSVal
 
     double start = a0.toNumber(exec);
     double end = a1.toNumber(exec);
-    if (isnan(start))
+    if (std::isnan(start))
         start = 0;
-    if (isnan(end))
+    if (std::isnan(end))
         end = 0;
     if (start < 0)
         start = 0;

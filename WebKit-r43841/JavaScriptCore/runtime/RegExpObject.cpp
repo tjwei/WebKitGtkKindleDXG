@@ -39,7 +39,7 @@ static void setRegExpObjectLastIndex(ExecState*, JSObject*, JSValue);
 
 } // namespace JSC
 
-#include "RegExpObject.lut.h"
+#include "DerivedSources/JavaScriptCore/RegExpObject.lut.h"
 
 namespace JSC {
 

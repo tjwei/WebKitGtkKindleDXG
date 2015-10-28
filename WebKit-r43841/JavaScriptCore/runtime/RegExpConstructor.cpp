@@ -54,7 +54,7 @@ static void setRegExpConstructorMultiline(ExecState*, JSObject*, JSValue);
 
 } // namespace JSC
 
-#include "RegExpConstructor.lut.h"
+#include "DerivedSources/JavaScriptCore/RegExpConstructor.lut.h"
 
 namespace JSC {
 

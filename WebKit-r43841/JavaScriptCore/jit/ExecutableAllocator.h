@@ -31,6 +31,7 @@
 #include <wtf/RefCounted.h>
 #include <wtf/Vector.h>
 
+#include <cstddef>
 #include <limits>
 
 #define JIT_ALLOCATOR_PAGE_SIZE (ExecutableAllocator::pageSize)

@@ -37,7 +37,7 @@ static JSValue numberConstructorMinValue(ExecState*, const Identifier&, const Pr
 
 } // namespace JSC
 
-#include "NumberConstructor.lut.h"
+#include "DerivedSources/JavaScriptCore/NumberConstructor.lut.h"
 
 namespace JSC {
 

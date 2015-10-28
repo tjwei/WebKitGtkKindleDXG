@@ -158,8 +158,8 @@ Structure::~Structure()
         if (m_previous->m_usingSingleTransitionSlot) {
             m_previous->m_transitions.singleTransition = 0;
         } else {
-            ASSERT(m_previous->m_transitions.table->contains(make_pair(m_nameInPrevious.get(), m_attributesInPrevious)));
-            m_previous->m_transitions.table->remove(make_pair(m_nameInPrevious.get(), m_attributesInPrevious));
+            ASSERT(m_previous->m_transitions.table->contains(make_pair(m_nameInPrevious.get(), +m_attributesInPrevious)));
+            m_previous->m_transitions.table->remove(make_pair(m_nameInPrevious.get(), +m_attributesInPrevious));
         }
     }
 
@@ -401,7 +401,7 @@ PassRefPtr<Structure> Structure::addPropertyTransition(Structure* structure, con
         structure->m_usingSingleTransitionSlot = false;
         StructureTransitionTable* transitionTable = new StructureTransitionTable;
         structure->m_transitions.table = transitionTable;
-        transitionTable->add(make_pair(existingTransition->m_nameInPrevious.get(), existingTransition->m_attributesInPrevious), existingTransition);
+        transitionTable->add(make_pair(existingTransition->m_nameInPrevious.get(), +existingTransition->m_attributesInPrevious), existingTransition);
     }
     structure->m_transitions.table->add(make_pair(propertyName.ustring().rep(), attributes), transition.get());
     return transition.release();
